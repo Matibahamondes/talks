@@ -637,13 +637,15 @@ Loop (cada episodio):
 :::
 
 ::: {.column width="52%"}
+<br>
+
 ![Fig. 13.1: REINFORCE en el corredor corto. Con buen $\alpha$, converge al óptimo $v_*(s_0) \approx -11.6$. El step size importa: $\alpha = 2^{-13}$ es óptimo aquí. *(S&B)*](images/fig_131_reinforce_convergence_crop.png)
 :::
 :::
 
 ------------------------------------------------------------------------
 
-## REINFORCE con Baseline {.scrollable}
+## REINFORCE con Baseline 
 
 **Generalización del teorema** — para cualquier $b(s)$ independiente de $a$:
 
@@ -665,7 +667,7 @@ $$\theta_{t+1} \doteq \theta_t + \alpha \underbrace{\big(G_t - \hat{v}(S_t, w)\b
 :::
 
 ::: {.column width="52%"}
-![Fig. 13.2: La baseline reduce varianza significativamente — convergencia mucho más rápida. El baseline no introduce sesgo pero cambia la **tasa** de aprendizaje. *(S&B)*](images/fig_132_baseline_comparison_crop.png)
+![Fig. 13.2: La baseline reduce varianza significativamente — convergencia mucho más rápida. El baseline no introduce sesgo pero cambia la **tasa** de aprendizaje.](images/fig_132_baseline_comparison_crop.png)
 :::
 :::
 
@@ -769,31 +771,76 @@ El Policy Gradient Theorem tiene la **misma forma** en ambos casos. La prueba es
 
 ## Políticas para acciones continuas
 
-::: columns
-::: {.column width="50%"}
-En lugar de probabilidades discretas, aprender una **distribución Gaussiana**:
+::: {.columns}
+::: {.column width="25%"}
 
-$$\pi(a|s,\theta) \doteq \frac{1}{\sigma(s,\theta)\sqrt{2\pi}} \exp\!\left(-\frac{(a-\mu(s,\theta))^2}{2\sigma(s,\theta)^2}\right)$$
+::: {.callout-note icon="false"}
+## 🎯 Idea central
 
-**Lo que se aprende:** estadísticos de la distribución, no probabilidades directas.
+**No aprender acciones** directamente, sino **una distribución** sobre ellas:
 
-$$\mu(s,\theta) = \theta_\mu^\top \mathbf{x}^\mu(s), \quad \sigma(s,\theta) = \exp\!\left(\theta_\sigma^\top \mathbf{x}^\sigma(s)\right)$$
+$$\pi(a \mid s, \boldsymbol{\theta}) = \mathcal{N}\!\left(\mu,\, \sigma^2\right)$$
+
+$$\mu = \boldsymbol{\theta}_\mu^\top \mathbf{x}^\mu(s)$$
+$$\sigma = \exp\!\left(\boldsymbol{\theta}_\sigma^\top \mathbf{x}^\sigma(s)\right)$$
+
+> **¿Por qué $\exp$?** Garantiza $\sigma > 0$ sin restricciones sobre $\boldsymbol{\theta}_\sigma$.
+:::
+
+:::
+::: {.column width="25%"}
 
 ::: {.callout-tip icon="false"}
-## ¿Por qué $\exp$ para $\sigma$?
+## 📐 Eligibility vector
 
-Garantiza positividad **sin restricciones** en la optimización. Se puede optimizar $\theta_\sigma$ libremente en $\mathbb{R}^d$.
+$\nabla\ln\pi$ en **dos componentes**:
+
+**Media** $\boldsymbol{\theta}_\mu$:
+$$\nabla\ln\pi_\mu = \frac{a - \mu}{\sigma^2}\,\mathbf{x}^\mu(s)$$
+
+**Escala** $\boldsymbol{\theta}_\sigma$:
+$$\nabla\ln\pi_\sigma = \!\left(\frac{(a-\mu)^2}{\sigma^2} - 1\right)\mathbf{x}^\sigma(s)$$
+
+<br>
+
 :::
+
+:::
+::: {.column width="25%"}
+
+::: {.callout-warning icon="false"}
+## 🧮 Demostración (resumen)
+
+Partiendo de $\nabla v_\pi(s)$ por Bellman y promediando sobre $s \sim \mu(s)$:
+
+$$\nabla J = \sum_s \mu(s)\sum_a \nabla\pi(a|s)\,q_\pi(s,a)$$
+
+Aplicando $\nabla\pi = \pi \cdot \nabla\ln\pi$:
+
+$$\nabla J = \mathbb{E}_\pi\!\left[\nabla\ln\pi(a|s)\,q_\pi(s,a)\right]$$
+
+<br><br><br>
+
 :::
 
-::: {.column width="50%"}
-![Distintas Gaussianas con parámetros $\mu$ y $\sigma$. Se aprende la **distribución**, no la acción directamente. *(S&B, Sec. 13.7)*](images/fig_gaussian_actions_crop.png)
+:::
+::: {.column width="25%"}
 
-**Eligibility vector Gaussiano** (dos partes):
+::: {.callout-important icon="false"}
+## ✅ Resultado
 
-$$\nabla\ln\pi(a|s,\theta_\mu) = \frac{a - \mu(s,\theta)}{\sigma(s,\theta)^2}\,\mathbf{x}^\mu(s)$$
+El teorema PG es **idéntico** al caso episódico:
 
-$$\nabla\ln\pi(a|s,\theta_\sigma) = \left(\frac{(a-\mu)^2}{\sigma^2} - 1\right)\mathbf{x}^\sigma(s)$$
+$$\boxed{\nabla J(\boldsymbol{\theta}) = \mathbb{E}_\pi\!\left[G_t\,\nabla\ln\pi(a|s,\boldsymbol{\theta})\right]}$$
+
+Solo cambia cómo se calcula $\nabla\ln\pi$.
+
+**REINFORCE no cambia.** La política Gaussiana es un *plug-in*.
+
+<br><br><br>
+
+:::
+
 :::
 :::
 
@@ -923,10 +970,18 @@ El framework dominante en Deep RL actual.
 :::
 
 ::: fragment
-::: {.callout-note icon="false"}
-## La pregunta para tu proyecto
+::: {.callout-tip icon="false"}
+##  📝 Preguntas
 
-¿Cuándo en **tu problema** tiene más sentido aprender $\pi$ directamente que aprender $Q$ primero? ¿El óptimo podría ser estocástico? ¿El espacio de acciones es continuo?
+¿En **tu problema**: espacio continuo, óptimo estocástico, o política directa más natural que $Q$?
+:::
+:::
+
+::: fragment
+::: {.callout-tip icon="false"}
+## 🔗 Recursos
+
+[💻 Google Colab — Notebook](https://colab.research.google.com/drive/1FJ6C7CyK7dLkocyJR_hrMPhMxnilhfpR?usp=sharing) · [🎧 NotebookLM — Capítulo 13](https://notebooklm.google.com/notebook/eead14c2-204e-4bb6-bc95-8d11c00df412)
 :::
 :::
 
