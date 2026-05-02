@@ -38,17 +38,39 @@ Curso en focado en temas de aprendizaje por refuerzo.\
 ## Charlas
 
 ::: card
-### Más allá del bien y el mal (Seth & Nut)
+### Lo que nadie te dice sobre la IA generativa
+
+Una mirada a las capacidades reales, los límites técnicos y las tendencias emergentes de la IA.\
+**Presentaciones:** [Lo que nadie te dice sobre la IA generativa](ai/pyday_2026.html)
+:::
+
+::: card
+### Datos, storytelling e IA: el nuevo arte de contar con datos
+
+Cómo la inteligencia artificial transforma la narrativa con datos (técnicas, herramientas y más).\
+**Presentaciones:** [Datos, storytelling e IA](ai/datasaturday_2026.html)
+:::
+
+::: card
+### Crea, Innova y Presenta: Data Storytelling + A.I.
+
+Fundamentos cognitivos y sociológicos del storytelling con datos (Visualización + IA).\
+**Presentaciones:** [Crea, Innova y Presenta](ai/datafrontiers_2026.html)
+:::
+
+
+## Más Charlas
+
+::: card
+### Más allá del bien y el mal
 
 IA, poder y los valores que nadie eligió — Nietzsche, Karen Hao y Eliezer Yudkowsky.\
 **Presentaciones:** [Más allá del bien y el mal](ai/mas_alla_bien_mal.html)
 :::
 
 ::: card
-### Límites y proyecciones de la IA generativa (Seth & Nut)
+### Límites y proyecciones de la IA generativa 
 
 Prompts, RAG, agentes, vibe coding y seguridad — para audiencias no técnicas.\
 **Presentaciones:** [Límites y proyecciones de la IA](ai/limites_proyecciones_ia.html)
 :::
-
-
