@@ -1,0 +1,295 @@
+---
+title: "TICS-411 Minería de Datos"
+subtitle: "Clase 2: Exploratory Data Analysis (EDA)"
+author: Alfonso Tobar-Arancibia
+institute: <alfonso.tobar.a@edu.uai.cl>
+format:
+  revealjs: 
+    width: 1366
+    height: 768
+    theme: simple
+    slide-number: true
+    controls: true
+    controls-layout: edges
+    controls-back-arrows: faded
+    transition: slide
+    transition-speed: fast
+    chalkboard: true
+    callout-appearance: simple
+    logo: ../logo.jpg
+    css: ../logo.css
+    code-copy: true
+    highlight-style: arrow
+---
+
+# Análisis Exploratorio
+
+## EDA {.smaller}
+
+> El `Analisis Exploratorio de Datos` (EDA, por sus siglas en inglés) es procedimiento en el cual se analiza un dataset para explorar sus características principales.
+
+-   Su objetivo principal es poder familiarizarse con los datos además de encontrar potenciales problemas en su calidad.
+-   Principalmente hace uso de técnicas de manipulación de datos y visualizaciones.
+
+::: columns
+::: column
+![](img/clase-2/eda_obj.png){.lightbox fig-align="center" width="90%"}
+:::
+
+::: {.column .fragment}
+::: callout-note
+Los hallazgos importantes dentro del proceso se les denomina `insights`.
+:::
+
+::: callout-important
+El uso de visualizaciones inadecuadas podría llevar a **conclusiones erróneas**.
+:::
+
+::: callout-tip
+-   Summary.
+-   Visualización.
+:::
+:::
+:::
+
+# EDA: Summary
+
+## Medidas de Tendencia Central
+
+![](img/clase-2/central_tend.png){.lightbox fig-align="center" width="70%"}
+
+## Medidas de Dispersión y Asimetría
+
+![](img/clase-2/spread_meas.png){.lightbox fig-align="center" width="40%"}
+
+::: columns
+::: column
+![](img/clase-2/rangos.png){.lightbox fig-align="center" width="50%"}
+:::
+
+::: column
+![](img/clase-2/skewness.png){.lightbox fig-align="center" width="90%"}
+:::
+:::
+
+# Visualizaciones
+
+## EDA: Visualización {.smaller}
+
+> La visualización de datos es la presentación de datos en forma gráfica. Permite simplificar conceptos más complejos en especial a altos mandos.
+
+> Gracias a la evolución del cerebro humano somos capaces de detectar patrones complejos en la naturaleza a partir de la `Visión`.
+
+::: {.callout-important .fragment}
+Puede ser difícil de aplicar si el tamaño de los datos es grande (sea en instancias o atributos). Por ejemplo, si los datos están en 4 dimensiones.
+:::
+
+::: {.callout-note .fragment}
+-   Se suelen resumir los datos en `estadísticas simples`.
+-   Graficar datos en 1D, 2D y 3D (evitar dentro de lo posible).
+-   La visualización debe ser comprensible ojalá sin ninguna explicación.
+:::
+
+::: {.callout-tip .fragment}
+En caso de datos de alta dimensionalidad puede ser una buena idea reducir dimensiones mediante técnicas como:
+
+-   PCA
+-   UMAP
+-   etc.
+:::
+
+## Caso de Visualización
+
+![](img/clase-2/visual_problem.png){.lightbox fig-align="center" width="60%"}
+
+::: notes
+-   Figuras
+-   Escala de Colores.
+-   Tamaño de los puntos.
+-   Demasiada información en un sólo gráfico.
+-   No se entiende el mensaje.
+:::
+
+## Canales Visuales
+
+::: columns
+::: column
+::: r-stack
+::: {.fragment .fade-out fragment-index="2"}
+![](img/clase-2/visual_channels.png){.lightbox .fragment fig-align="center" width="90%" fragment-index="1"}
+:::
+
+![](img/clase-2/best_channels.png){.lightbox .fragment fig-align="center" width="70%" fragment-index="2"}
+:::
+:::
+
+::: {.column .fragment fragment-index="1"}
+::: callout-note
+-   Se les llama canales visuales a elementos visuales que pueden utilizarse para expresar información **(Clase Visualizacion Andreas Mueller)**.
+-   La idea es poder mapear cada uno de estos canales a valores que queremos visualizar.
+:::
+
+::: callout-caution
+-   No todos los canales son igual de útiles ni fáciles de entender.
+:::
+:::
+:::
+
+## Visualizaciones: Distribuciones {.smaller}
+
+Histograma
+
+:   El histograma permite visualizar distribuciones univariadas acumulando los datos en rangos de igual tamaño (`bins`).
+
+-   Permite visualizar el `centro`, la `extensión`, la `asimetría` y `outliers`.
+
+::: callout-important
+-   El histograma puede ser "engañoso" para conjuntos de datos pequeños.
+-   La visualización puede resultar de manera muy distintas dependiendo del número de `bins`.
+:::
+
+![](img/clase-2/hist.png){.lightbox fig-align="center" width="70%"}
+
+## Visualizaciones: Distribuciones {.smaller}
+
+Kernel Density
+
+:   Corresponde a un suavizamiento de un Histograma en el cuál se usa un `Kernel` **(función no negativa que suma 1 y tiene media 0)** para agrupar los puntos vecinos.
+
+::: columns
+::: {.column width="50%"}
+La función estimada es:
+
+$$f(x) = \frac{1}{n} = \sum_{i=1}^n K \left(\frac{x - x(i)}{h}\right)$$
+
+-   $K(u)$ es el Kernel.
+-   $h$ es el ancho de banda.
+
+![](img/clase-2/kernel_type.png){.lightbox fig-align="center" width="60%"}
+:::
+
+::: {.column width="50%"}
+![](img/clase-2/kernel.png){.lightbox fig-align="center" width="100%"}
+
+![](img/clase-2/kernel_07.png){.lightbox fig-align="center" width="100%"}
+:::
+:::
+
+## Visualizaciones: Distribuciones {.smaller}
+
+Boxplot (Caja y Bigotes)
+
+:   Es un tipo de gráfico que muestra la distribución de manera univariada.
+
+::: columns
+::: column
+![](img/clase-2/box_def.png){.lightbox fig-align="center" width="50%"}
+
+::: {.callout-note style="font-size: 70%;"}
+-   Tiene la capacidad de mostrar varias distribuciones a la vez.
+-   Además presenta estadísticos de interés: Mediana, IQR y outliers.
+-   Los puntos fuera de los bigotes son considerados Outliers.
+:::
+
+::: {.callout-tip style="font-size: 70%;"}
+-   Los bigotes pueden representar:
+    -   Mínimo y Máximo. (En este caso no hay outliers).
+    -   $\mu \pm 3\sigma$
+    -   Percentiles 5 y 95.
+    -   Otros valores.
+:::
+:::
+
+::: column
+![](img/clase-2/boxplot.png){.lightbox fig-align="center"}
+:::
+:::
+
+## Visualizaciones: Barras {.smaller}
+
+Bar Plot
+
+:   La altura de la barra (normalmente Eje y) representa una agregación asociada a una categoría (normalmente Eje x).
+
+::: columns
+::: column
+![](img/clase-2/bar_plot1.png){.lightbox fig-align="center" width="65%"}
+:::
+
+::: column
+![](img/clase-2/bar_plot2.png){.lightbox fig-align="center" width="65%"}
+:::
+:::
+
+::: {.callout-warning .fragment}
+-   Otras convenciones llaman a este gráfico `Column Plot`, mientras que el `Bar Plot` tiene las barras de manera horizontal.
+:::
+
+## Visualizaciones: Puntos {.smaller}
+
+Scatter
+
+:   Gráfico empleado para mostrar distribución de datos bivariados
+
+-   Muestra la relación entre una variable independiente (Eje X) y una variable dependiente (Eje Y).
+-   Permite mostrar relaciones lineales o no-lineales (Correlaciones).
+-   Outliers.
+-   Simplemente ubicación de Puntos en el Espacio.
+
+![](img/clase-2/scatter.png){.lightbox fig-align="center" width="30%"}
+
+## Visualizaciones: Líneas {.smaller}
+
+Lineplot
+
+:   Gráfico empleado para visualizar tendencias y su evolución de una medida (Eje Y) en el tiempo (Eje X).
+
+::: columns
+::: column
+![](img/clase-2/line.png){.lightbox fig-align="center" width="70%"}
+:::
+
+::: column
+![](img/clase-2/line_2.png){.lightbox fig-align="center" width="70%"}
+:::
+:::
+
+::: {.callout-important .fragment}
+-   Si bien es posible utilizarlo para gráficar dos medidas continuas, las buenas prácticas indican que el eje X siempre debería contener una componente temporal.
+:::
+
+## Estadísticos vs Visualizaciones
+
+::: columns
+::: column
+![](img/clase-2/cuarteto_anscombe.png){.lightbox fig-align="center" width="80%"}
+:::
+
+::: column
+<br>
+
+![](img/clase-2/anscombe_data.png){.lightbox fig-align="center" width="80%"}
+:::
+:::
+
+## ¿Otras Visualizaciones?
+
+![](img/clase-2/charts.png){.lightbox fig-align="center" width="60%"}
+
+# Preguntas para terminar
+
+-   ¿Por qué usar visualizaciones? ¿Qué son los canales visuales?
+-   ¿Por qué es necesario el EDA?
+-   ¿Por qué es necesario utilizar tanto Estadísticos como Visualizaciones?
+
+# Le cours est terminé
+
+::: footer
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+
+[Tics-411 Minería de Datos]{property="dct:title"} está licenciado bajo <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0
+
+<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/></a>
+
+</p>
+:::
