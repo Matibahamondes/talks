@@ -1,425 +1,816 @@
 ---
-pagetitle: "Educación Abierta y Comunidad"
-author: 
-  - Francisco Alfaro
-  - Valeska Canales
-  - Dorian Villegas
-date: 16 oct 2025
-format: 
+title: "Google Colab"
+subtitle: "Ejecuta código Python y R desde el navegador, sin instalar nada"
+author: "Francisco Alfaro Medina"
+institute: "Dirección de Transformación Digital · UTFSM"
+date: today
+date-format: "MMMM YYYY"
+
+format:
   revealjs:
-    theme: style2.scss
+    theme: [default, custom.scss]
+    slide-number: true
+    progress: true
+    history: false
     transition: fade
-    title-slide-attributes: 
-      data-background-image: images/background.jpg
-    logo: images/mes132.png
-filters:
-  - quarto-ext/shinylive
+    transition-speed: fast
+    incremental: false
+    fig-align: center
+    highlight-style: github
+    code-block-bg: true
+    center: false
+    width: 1600
+    height: 800
+    #footer: "Unidad de Educación a Distancia · UTFSM · 2026"
+    logo: "images/usm.png"
+    scrollable: false
+execute:
+  echo: false
+  warning: false
 ---
 
-##  {#hello-quarto-title data-menu-title="Hola Quarto" background-image="images/horst_penguins_telescope.png" data-state="no-logo"}
 
-[Innovación en la enseñanza <br>de la matemática escolar]{.custom-title}
+##  {.title-slide background-color="#0F2044"}
 
-[<br>con Python y herramientas opensource]{.custom-subtitle}
+::: title-block
+**Google Colab**
 
-[Francisco Alfaro Medina <br> Valeska Canales Pozo <br> Dorian Villegas Rojas]{.custom-author}
-
-[<https://sethnut.com/talks>]{.custom-url}
-
-##  { background-opacity="0.25" transition="zoom"}
-
-<br>
-
-::: r-stack
-![](images/intro1.png){.fragment .fade-in-then-out fig-align="center"}
-
-![](images/intro2.webp){.fragment .fade-in-then-out fig-align="center"}
-
-![](images/intro3.jpg){.fragment fig-align="center"}
+Ejecuta código desde el navegador
 :::
 
+::: subtitle-block
+Python · R · Datos · Drive · IA con Gemini\
+MOOC propedéutico — Aprende USM 2026
+:::
+
+::: author-block
+Francisco Alfaro Medina\
+Dirección de Transformación Digital · UTFSM\
+Unidad de Educación a Distancia · 2026
+:::
+
+
+## ¿Te ha pasado esto?
+
+::: r-stack
+<br>
+
+
+![](images/intro_01.jpg){.fragment .fade-in-then-out fig-align="center" width="100%"}
+
+![](images/intro_02.png){.fragment .fade-in-then-out fig-align="center" width="100%"}
+
+![](images/intro_04.jpg){.fragment fig-align="center" width="100%"}
+:::
 
 ------------------------------------------------------------------------
 
-## Objetivos del Estudio { background-opacity="0.25"}
-
-<br>
+## Objetivos
 
 ::: columns
-::: {.column width="35%"}
-<img src="images/logo-vertical.png" style="width:600px; height:400px; border-radius: 10px;"/>
-:::
-
-::: {.column width="65%" .incremental}
-
-<br>
-
-- Incorporar **contextos sociales reales** en actividades de modelación matemática.
-- Explorar el uso de **narrativas digitales con Python** en talleres interactivos.
-- Evaluar **satisfacción y motivación estudiantil** en jóvenes de 13–17 años.
-
-
-:::
-:::
-
-
-
-
-# <br> Comencemos! {.title-top-light background-image="images/horst_quarto_penguins_teach.png" data-state="no-logo"}
-
-## Pregunta de Investigación {background-opacity="0.25" transition="fade" }
-
-<br><br>
-
-
-<div class="fragment fade-in" style="
-  background: rgba(255,255,255,0.75);
-  padding: 2rem;
-  border-radius: 18px;
-  border-left: 10px solid #2E86C1;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-  font-size: 2rem;
-  text-align: center;
-  line-height: 1.4;
-">
-¿Cómo el uso de herramientas digitales abiertas —<b>Python, Quarto y Streamlit</b>—<br>
-favorece la <b>modelación matemática</b> y el <b>pensamiento computacional</b><br>
-en estudiantes escolares de 13 a 17 años?
-</div>
-
-
-## Marco Teórico {background-opacity="0.25" transition="fade"}
-
-<br><br>
-
-::: columns
-::: {.column width="33%"}
-::: {style="text-align:center;"}
-<img src="images/valpo.png" width="200px" height="200px"/><br>
-**Modelación y sociedad**\
-La matemática para comprender contextos reales.
-:::
-:::
-
-::: {.column .fragment width="34%"}
-::: {style="text-align:center;"}
-<img src="images/mt2.png" width="200px" height="200px"/><br>
-**Tecnologías digitales**\
-LaTeX, IA y Quarto como herramientas educativas.
-:::
-:::
-
-::: {.column .fragment width="33%"}
-::: {style="text-align:center;"}
-<img src="images/mt3.png" width="200px" height="200px"/><br>
-**Pensamiento lógico**\
-Integración de matemática y computación.
-:::
-:::
-:::
-
-
-
-
-## Contexto y Participantes {background-opacity="0.25" transition="fade"}
-
-<br><br><br>
-
-<div class="fragment fade-in" style="
-  background: rgba(255,255,255,0.80);
-  padding: 2.2rem;
-  border-radius: 18px;
-  border-left: 10px solid #2E86C1;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-  font-size: 1.8rem;
-  text-align: left;
-  line-height: 1.55;
-  max-width: 85%;
-  margin: 0 auto;
-">
-
-<b>Público:</b> estudiantes de 13–17 años.<br>
-<b>Contextos:</b> Olimpiadas de Matemática USM y talleres colaborativos USM–UChile.<br>
-<b>Duración:</b> sesiones de 60–90 minutos por taller.<br>
-<b>Enfoque pedagógico:</b> aprendizaje activo con modelación y visualización.<br>
-<b>Herramientas:</b> Python, Quarto, Streamlit y Google Colab.
-
-</div>
-
-
-##  { background-opacity="0.25" transition="zoom"}
-
-<br>
-
+::: {.column width="40%"}
 ::: {style="text-align: center;"}
-<img src="images/m1.png" alt="Tachado" style="width: 1400px; height: 600px; border-radius: 10px;"/>
+<img src="images/index2.png" alt="Objetivos" style="width: 100%; border-radius: 10px;"/>
+:::
 :::
 
-##  { background-opacity="0.25" transition="zoom"}
+::: {.column .incremental width="60%"}
+<br>
 
-<br><br>
-
-::: {style="text-align: center;"}
-<img src="images/metodologia4.png" alt="Tachado" style="width: 1200px; height: 500px; border-radius: 10px;"/>
+-   **Conocer Colab**: Qué es y para qué sirve en docencia e investigación.
+-   **Primeros pasos**: Celdas de código, Markdown y ejecución en la nube.
+-   **Recursos y datos**: RAM, CPU, librerías, kernels y cómo subir archivos.
+-   **Integraciones**: Google Drive, credenciales seguras y Gemini IA.
 :::
-
-
+:::
 
 ------------------------------------------------------------------------
 
-##  { background-opacity="0.25" transition="zoom"}
+##  {background-image="images/background_slides3.png" background-opacity="0.3"}
 
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Google Colab]{style="font-size: 2em"}
 
-<br>
-
-::: r-stack
-::: {.fragment .fade-in-then-out}
-<iframe src="https://falfaro.xyz/DMAT-SJ-Olimpiadas/" width="1200" height="600" frameborder="0" scrolling="si" style="max-width:100%; border:1px solid #CCC; border-radius:10px;" allowfullscreen>
-
-</iframe>
+[¿Qué es y para qué sirve?]{style="font-size: 2.5em"}
 :::
 
-::: fragment
-<iframe src="https://sethnut.com/ws-usm_uchile-2025/" width="1200" height="600" frameborder="0" scrolling="si" style="max-width:100%; border:1px solid #CCC; border-radius:10px;" allowfullscreen>
+------------------------------------------------------------------------
 
-</iframe>
-:::
-:::
-
-
-## Resultados {background-opacity="0.25" transition="fade-in slide-out"}
-
-::: r-stack
-![](images/rr1.png){.fragment .fade-in-then-out fig-align="center" width="70%"}
-
-![](images/rr2.png){.fragment fig-align="center" width="90%"}
-:::
-
-
-## Opiniones { background-opacity="0.25" size="50%"}
-
-<br><br>
+## ¿Qué es Google Colab?
 
 ::: columns
-::: {.column .fragment width="50%"}
-::: {.callout-important title="Negativos"}
-- Poco tiempo para dudas
-- Faltaron ejemplos
-- Ritmo rápido
-- Poca práctica guiada
+::: {.column width="40%"}
+::: {style="text-align: center;"}
+<img src="images/colab.png" alt="Google Colab Logo" style="width: 100%; border-radius: 10px;"/>
 :::
 :::
 
-::: {.column .fragment width="50%"}
-::: {.callout-note title="Positivos"}
-- Profesor claro y motivador
-- Actividades útiles
-- Buen uso de herramientas
-- Taller dinámico y entretenido
-:::
+::: {.column .incremental width="60%"}
+<br>
+
+-   **¿Qué es?**
+    -   Entorno de notebooks Jupyter en la nube, gratuito y sin instalación.
+-   **¿Para qué sirve?**
+    -   Ejecutar código Python (y R) directamente desde el navegador.\
+    -   Compartir análisis, tareas y proyectos con un enlace.\
+    -   Acceder a GPU/TPU gratuita para proyectos de datos e IA.
 :::
 :::
 
-##  Experiencias Similares{background-opacity="0.25" transition="fade-in slide-out"}
+. . .
 
-
-::: {style="text-align: center;" .fragment}
-<img src="images/experiencias.svg" alt="Tachado" style="width: 1200px; height: 600px; border-radius: 10px;"/>
-:::
-
+> 🌿 Solo necesitas una cuenta de Google para empezar en [colab.research.google.com](https://colab.research.google.com).
 
 ------------------------------------------------------------------------
 
-##  { background-opacity="0.25" transition="zoom"}
-
+## Ejemplos 
 
 <br>
 
 ::: r-stack
-::: {.fragment .fade-in-then-out}
-<iframe src="https://falfaro.xyz/pyschool_content/" width="1200" height="600" frameborder="0" scrolling="si" style="max-width:100%; border:1px solid #CCC; border-radius:10px;" allowfullscreen>
+<br>
 
-</iframe>
+
+![](images/example_01.png){.fragment .fade-in-then-out fig-align="center" width="80%"}
+
+
+![](images/example_02.png){.fragment fig-align="center" width="90%"}
 :::
-
-::: fragment
-<iframe src="https://sebastiandres.github.io/pyschool_2025/space_station/rooms/sala_00.html" width="1200" height="600" frameborder="0" scrolling="si" style="max-width:100%; border:1px solid #CCC; border-radius:10px;" allowfullscreen>
-
-</iframe>
-:::
-:::
-
-
-## Discusión {background-opacity="0.25" transition="fade"}
-
-<br><br><br>
-
-<div class="fragment fade-in" style="
-  background: rgba(255,255,255,0.80);
-  padding: 2rem;
-  border-radius: 18px;
-  border-left: 10px solid #2E86C1;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-  font-size: 1.7rem;
-  text-align: center;
-  line-height: 1.5;
-  max-width: 85%;
-  margin: 0 auto;
-">
-<b>La integración de herramientas digitales abiertas</b> permitió que la matemática<br>
-dejara de percibirse como un conjunto de procedimientos aislados,<br>
-transformándose en un <b>lenguaje para interpretar y comunicar fenómenos reales</b>.<br><br>
-La programación y la visualización favorecieron la participación activa<br>
-y la construcción de narrativas matemáticas con sentido social.
-</div>
-
-
-
-
-# Hora del "adiós" {.title-top-dark background-image="images/horst_quarto_penguins_thankyou.png" data-state="no-logo"}
 
 ------------------------------------------------------------------------
 
+##  {background-image="images/background_slides3.png" background-opacity="0.3"}
 
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Google Colab]{style="font-size: 2em"}
 
+[Lo que necesitas saber]{style="font-size: 2.5em"}
+:::
 
+------------------------------------------------------------------------
+
+## Celdas: el corazón de Colab
+
+::: panel-tabset
+
+## Markdown
+
+::: columns
+::: {.column width="50%"}
+✏️ **Celda de texto (Markdown):**
+
+```markdown
+# Mi Análisis
+
+Este notebook explora los datos de estudiantes
+de la UTFSM durante el semestre 2026.
+
+## Objetivos
+- Explorar distribuciones
+- Visualizar tendencias
+- Ajustar un modelo
+```
+:::
+
+::: {.column width="50%"}
+👁️ **Se renderiza así:**
+
+Título visible, secciones organizadas y texto formateado — igual que en GitHub README, pero dentro del notebook.
+
+::: {style="background: #f0f4ff; border-left: 4px solid #0F2044; border-radius: 6px; padding: 0.5em 1em; font-size: 0.85em; margin-top: 1em;"}
+💡 Usa celdas de texto para explicar cada paso. Un buen notebook se lee como un informe.
+:::
+:::
+:::
+
+## Python
+
+::: columns
+::: {.column width="50%"}
+✏️ **Celda de código Python:**
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Cargar datos
+df = pd.read_csv("datos.csv")
+
+# Visualizar
+df["nota"].hist(bins=20, color="#0F2044")
+plt.title("Distribución de notas")
+plt.xlabel("Nota")
+plt.show()
+```
+:::
+
+::: {.column width="50%"}
+👁️ **¿Qué hace?**
+
+- Importa librerías ya instaladas en Colab.
+- Carga un archivo CSV.
+- Genera un histograma directo en el notebook.
+
+::: {style="background: #f0f4ff; border-left: 4px solid #0F2044; border-radius: 6px; padding: 0.5em 1em; font-size: 0.85em; margin-top: 1em;"}
+💡 Python es el lenguaje principal de Colab — y el más usado en ciencia de datos.
+:::
+:::
+:::
+
+## R
+
+::: columns
+::: {.column width="50%"}
+✏️ **Activar R en Colab:**
+
+En el menú: **Runtime → Change runtime type → R**
+
+```r
+# Cargar datos
+df <- read.csv("datos.csv")
+
+# Visualizar con ggplot2
+library(ggplot2)
+ggplot(df, aes(x = nota)) +
+  geom_histogram(fill = "#0F2044",
+                 bins = 20) +
+  labs(title = "Distribución de notas")
+```
+:::
+
+::: {.column width="50%"}
+👁️ **¿Qué hace?**
+
+- Cambia el kernel de Python a R con un clic.
+- Permite usar R y sus librerías (`ggplot2`, `dplyr`, `tidyr`) directamente.
+- Ideal si tu curso usa R como lenguaje principal.
+
+::: {style="background: #f0f4ff; border-left: 4px solid #0F2044; border-radius: 6px; padding: 0.5em 1em; font-size: 0.85em; margin-top: 1em;"}
+💡 No necesitas instalar R en tu computador — Colab lo tiene listo.
+:::
+:::
+:::
+
+:::
+
+------------------------------------------------------------------------
+
+##  {background-image="images/background_slides3.png" background-opacity="0.3"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Google Colab]{style="font-size: 2em"}
+
+[Recursos, Librerías y Kernels]{style="font-size: 2.5em"}
+:::
+
+------------------------------------------------------------------------
+
+## ¿Qué tiene la máquina?
+
+::: columns
+::: {.column width="40%"}
+::: {style="text-align: center;"}
+<img src="images/vm.png" alt="Runtime" style="width: 90%; border-radius: 10px;"/>
+:::
+:::
+
+::: {.column .incremental width="60%"}
+<br>
+
+-   **CPU**: ~2 núcleos Intel Xeon — suficiente para análisis de datos típicos.
+-   **RAM**: ~12 GB — para datasets medianos sin problema.
+-   **Disco**: ~100 GB temporales — se borran al cerrar la sesión.
+-   **GPU T4** *(gratis)*: disponible bajo demanda para modelos de ML.
+
+:::
+:::
+
+. . .
+
+> ⚠️ **Sesiones temporales**: si la sesión se desconecta, los archivos locales se pierden. Guarda siempre en Drive.
+
+------------------------------------------------------------------------
+
+## Verificar recursos disponibles
+
+```python
+# Ver RAM y CPU
+import psutil, platform
+
+print(f"Sistema: {platform.system()}")
+print(f"CPU: {psutil.cpu_count()} núcleos")
+print(f"RAM total:     {psutil.virtual_memory().total / 1e9:.1f} GB")
+print(f"RAM disponible:{psutil.virtual_memory().available / 1e9:.1f} GB")
+```
+
+```python
+# Ver GPU asignada
+!nvidia-smi --query-gpu=name,memory.total --format=csv,noheader
+```
+
+```python
+# Ver disco disponible
+!df -h /
+```
+
+. . .
+
+> 🌿 Corre estas celdas al inicio de tu sesión para saber con qué recursos cuentas.
+
+------------------------------------------------------------------------
+
+## Librerías: ya instaladas vs. extras
+
+::: columns
+::: {.column width="50%"}
+
+**✅ Ya vienen instaladas:**
+
+::: {style="font-size: 0.85em;"}
+| Librería | Para qué sirve |
+|---|---|
+| `pandas` | Datos tabulares |
+| `numpy` | Álgebra numérica |
+| `matplotlib` | Gráficos básicos |
+| `scikit-learn` | Machine Learning |
+| `tensorflow` | Deep Learning |
+| `seaborn` | Visualización estadística |
+:::
+
+:::
+
+::: {.column width="50%"}
+
+**📦 Instalar librerías extra:**
+
+```python
+# Con pip (Python)
+!pip install polars lightgbm
+
+# Con apt (sistema)
+!apt-get install -y libgdal-dev
+
+# Para R (kernel R)
+install.packages("tidymodels")
+```
+
+::: {style="background: #fff3cd; border-left: 4px solid #e6a817; border-radius: 6px; padding: 0.5em 1em; font-size: 0.85em; margin-top: 0.8em;"}
+⚠️ Las librerías instaladas con `!pip` se pierden al reiniciar la sesión.
+:::
+
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Cambiar el Kernel (Runtime)
+
+::: columns
+::: {.column width="40%"}
+::: {style="text-align: center;"}
+<img src="images/runtime.png" alt="Cambiar Kernel" style="width: 90%; border-radius: 10px;"/>
+:::
+:::
+
+::: {.column .incremental width="60%"}
+<br>
+
+**Menú: Runtime → Change runtime type**
+
+-   **CPU**: para análisis de datos y scripts generales.
+-   **GPU T4**: para entrenamiento de modelos de ML/DL.
+-   **TPU**: para modelos muy grandes con TensorFlow.
+-   **R**: para cambiar completamente el lenguaje del entorno.
+
+:::
+:::
+
+. . .
+
+> 🌿 Cambiar el runtime **reinicia la sesión** — guarda tu trabajo antes de hacerlo.
+
+------------------------------------------------------------------------
+
+##  {background-image="images/background_slides3.png" background-opacity="0.3"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Google Colab]{style="font-size: 2em"}
+
+[Datos, Drive y Credenciales]{style="font-size: 2.5em"}
+:::
+
+------------------------------------------------------------------------
+
+## Subir datos a Colab
+
+::: panel-tabset
+
+## Subida directa
+
+::: columns
+::: {.column width="50%"}
+✏️ **Desde el panel lateral:**
+
+```
+📁 Ícono de carpeta (izquierda)
+  → Subir archivo
+  → Selecciona tu CSV o Excel
+```
+
+O desde código:
+
+```python
+from google.colab import files
+uploaded = files.upload()
+# → abre un selector de archivos
+```
+:::
+
+::: {.column width="50%"}
+👁️ **¿Cuándo usarlo?**
+
+- Archivos pequeños (< 50 MB).
+- Uso puntual en una sola sesión.
+
+::: {style="background: #fff3cd; border-left: 4px solid #e6a817; border-radius: 6px; padding: 0.5em 1em; font-size: 0.85em; margin-top: 1em;"}
+⚠️ El archivo desaparece al cerrar la sesión. No es la opción más estable.
+:::
+:::
+:::
+
+## Desde URL
+
+::: columns
+::: {.column width="50%"}
+✏️ **Descargar desde internet:**
+
+```python
+import pandas as pd
+
+# Desde GitHub (raw)
+url = "https://raw.githubusercontent.com/"\
+      "usuario/repo/main/datos.csv"
+df = pd.read_csv(url)
+
+# Desde Google Sheets (publicado como CSV)
+sheet_url = "https://docs.google.com/spreadsheets"\
+            "/d/ID/export?format=csv"
+df = pd.read_csv(sheet_url)
+
+df.head()
+```
+:::
+
+::: {.column width="50%"}
+👁️ **¿Cuándo usarlo?**
+
+- Datos públicos en GitHub o repositorios abiertos.
+- Google Sheets compartidos del curso.
+
+::: {style="background: #f0f4ff; border-left: 4px solid #0F2044; border-radius: 6px; padding: 0.5em 1em; font-size: 0.85em; margin-top: 1em;"}
+💡 Es la forma más **reproducible** — el notebook funciona para cualquiera que lo abra.
+:::
+:::
+:::
+
+## Google Drive
+
+::: columns
+::: {.column width="50%"}
+✏️ **Montar tu Drive:**
+
+```python
+from google.colab import drive
+drive.mount("/content/drive")
+
+# Acceder a tus archivos como carpeta local
+import pandas as pd
+
+ruta = "/content/drive/MyDrive/datos/notas.csv"
+df = pd.read_csv(ruta)
+df.head()
+```
+:::
+
+::: {.column width="50%"}
+👁️ **¿Por qué es lo mejor?**
+
+- Los archivos **persisten** aunque se reinicie la sesión.
+- Organiza datos en carpetas de Drive como si fuera tu escritorio.
+- Funciona igual que una carpeta local.
+
+::: {style="background: #f0f4ff; border-left: 4px solid #0F2044; border-radius: 6px; padding: 0.5em 1em; font-size: 0.85em; margin-top: 1em;"}
+💡 Recomendado para proyectos que se retoman en múltiples sesiones.
+:::
+:::
+:::
+
+## Credenciales Seguras
+
+::: columns
+::: {.column width="50%"}
+
+❌ **Nunca hagas esto:**
+
+```python
+# Expone tu clave en el notebook
+API_KEY = "sk-abc123supersecreta"
+PASSWORD = "mi_clave_secreta"
+```
+
+✅ **Usa Secrets de Colab:**
+
+```python
+from google.colab import userdata
+
+api_key = userdata.get("MI_API_KEY")
+```
+:::
+
+::: {.column width="50%"}
+👁️ **¿Cómo configurar Secrets?**
+
+```
+🔑 Ícono de llave (panel izquierdo)
+  → "Add new secret"
+  → Nombre: MI_API_KEY
+  → Valor: tu clave real
+  → Activar acceso al notebook
+```
+
+::: {style="background: #fde8e8; border-left: 4px solid #c0392b; border-radius: 6px; padding: 0.5em 1em; font-size: 0.85em; margin-top: 1em;"}
+🔐 Nunca compartas un notebook con claves escritas directamente en el código.
+:::
+:::
+:::
+
+:::
+
+------------------------------------------------------------------------
+
+##  {background-image="images/background_slides3.png" background-opacity="0.3"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Google Colab]{style="font-size: 2em"}
+
+[IA con Gemini integrado]{style="font-size: 2.5em"}
+:::
+
+------------------------------------------------------------------------
+
+## Gemini en Colab
+
+::: columns
+::: {.column width="40%"}
+::: {style="text-align: center;"}
+<img src="images/gemini.gif" alt="Gemini en Colab" style="width: 100%; border-radius: 10px;"/>
+:::
+:::
+
+::: {.column .incremental width="60%"}
+<br>
+
+-   **¿Qué es Gemini en Colab?**
+    -   Asistente IA integrado directamente en el entorno de notebooks.
+-   **¿Qué puede hacer?**
+    -   Generar y explicar celdas de código.\
+    -   Corregir errores y sugerir mejoras.\
+    -   Responder preguntas sobre librerías y análisis sin salir de Colab.
+:::
+:::
+
+. . .
+
+> 🌿 Disponible con cuenta Google — el ícono ✨ aparece en cada celda de código.
+
+------------------------------------------------------------------------
+
+## Gemini: ejemplos prácticos
+
+::: panel-tabset
+
+## Generar código
+
+::: columns
+::: {.column width="50%"}
+✨ **Le pides a Gemini:**
+
+> *"Crea un gráfico de barras con matplotlib que muestre las notas promedio por carrera, usando la paleta 'tab10'."*
+:::
+
+::: {.column width="50%"}
+✅ **Gemini genera:**
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+carreras = ["Ing. Civil", "Informática",
+            "Electrónica", "Industrial"]
+promedios = [5.2, 5.8, 4.9, 5.5]
+
+fig, ax = plt.subplots(figsize=(8, 5))
+colors = plt.cm.tab10(np.linspace(0, 1, len(carreras)))
+ax.bar(carreras, promedios, color=colors)
+ax.set_title("Promedio de notas por carrera")
+ax.set_ylabel("Nota promedio")
+ax.set_ylim(1, 7)
+plt.tight_layout()
+plt.show()
+```
+:::
+:::
+
+## Explicar errores
+
+::: columns
+::: {.column width="50%"}
+✨ **Tienes este error:**
+
+```python
+df.groupby("carrera")["nota"].means()
+```
+
+```
+AttributeError: 'SeriesGroupBy' object
+has no attribute 'means'
+```
+
+> *"¿Por qué da este error y cómo lo corrijo?"*
+:::
+
+::: {.column width="50%"}
+✅ **Gemini explica:**
+
+❌ `means()` no existe — el método correcto es `mean()` (sin 's').
+
+✅ **Versión corregida:**
+
+```python
+df.groupby("carrera")["nota"].mean()
+```
+
+::: {style="background: #f0f4ff; border-left: 4px solid #0F2044; border-radius: 6px; padding: 0.5em 1em; font-size: 0.85em; margin-top: 0.8em;"}
+💡 Gemini también puede sugerir mejoras de eficiencia y estilo en tu código.
+:::
+:::
+:::
+
+## Analizar datos
+
+::: columns
+::: {.column width="50%"}
+✨ **Le pides a Gemini:**
+
+> *"Tengo un DataFrame con columnas `nota`, `carrera` y `año_ingreso`. Sugiere un análisis exploratorio básico."*
+:::
+
+::: {.column width="50%"}
+✅ **Gemini propone:**
+
+```python
+# Estadísticas descriptivas
+print(df.describe())
+print(df["carrera"].value_counts())
+
+# Distribución de notas
+df["nota"].hist(bins=15, figsize=(8, 4))
+
+# Notas por carrera
+df.boxplot(column="nota", by="carrera",
+           figsize=(10, 5))
+
+# Evolución por año de ingreso
+df.groupby("año_ingreso")["nota"].mean()\
+  .plot(marker="o", title="Promedio por año")
+```
+:::
+:::
+
+:::
+
+------------------------------------------------------------------------
+
+##  {background-image="images/background_slides3.png" background-opacity="0.3"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Google Colab]{style="font-size: 2em"}
+
+[Manos a la Obra]{style="font-size: 2.5em"}
+:::
+
+------------------------------------------------------------------------
+
+## Actividad: Tu Primer Notebook
+
+<br>
+
+::: columns
+::: {.column width="40%"}
+::: {style="text-align: center;"}
+<img src="images/ejercicio.png" alt="Actividad" style="width: 80%; border-radius: 10px;"/>
+:::
+:::
+
+::: {.column .incremental width="60%"}
+1. **Abre** [colab.research.google.com](https://colab.research.google.com) y crea un nuevo notebook.
+2. **Agrega** una celda de texto con título, descripción y objetivos en Markdown.
+3. **Carga** un dataset desde URL *(puedes usar datos de [seaborn-data](https://github.com/mwaskom/seaborn-data))*.
+4. **Explora** los datos: `.head()`, `.describe()`, `.info()`.
+5. **Crea** al menos un gráfico con `matplotlib` o `seaborn`.
+6. *(Extra)* Usa **Gemini** para generar o mejorar alguna celda de código.
+:::
+:::
+
+. . .
+
+> ⏱️ Tiempo de la actividad: 15–20 minutos.
+
+------------------------------------------------------------------------
+
+##  {background-image="images/background_slides3.png" background-opacity="0.3"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Google Colab]{style="font-size: 1em"}
+
+[Conclusiones]{style="font-size: 1.5em"}
+:::
+
+------------------------------------------------------------------------
 
 ## Conclusiones
 
-::: columns
-::: {.column width="5%"}
+<br>
+
+::: fragment
+::: {style="display: flex; flex-direction: column; gap: 0.75em; font-size: 0.95em;"}
+
+::: {style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #0F2044; border-radius: 8px; padding: 0.6em 1em;"}
+✅ &nbsp; **Google Colab** permite ejecutar código Python y R sin instalar nada.
 :::
 
-::: {.column width="40%"}
-::: bulletbox
-::: {.fragment .fade-in-then-semi-out}
-![](images/horst_quarto_ball-1_4.png){width="50px"}\
-**Motivación**: Los talleres aumentaron el interés por aprender.
-:::
-:::
+::: {style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #1a3a6b; border-radius: 8px; padding: 0.6em 1em;"}
+✅ &nbsp; Los **notebooks** combinan código, texto y visualizaciones en un solo lugar.
 :::
 
-::: {.column width="5%"}
+::: {style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #2a5298; border-radius: 8px; padding: 0.6em 1em;"}
+✅ &nbsp; **Google Drive** es la forma más estable de persistir datos entre sesiones.
 :::
 
-::: {.column width="40%"}
-::: bulletbox
-::: {.fragment .fade-in-then-semi-out}
-![](images/horst_quarto_ball-2_4.png){width="50px"}\
-**Claridad**: La docencia fueron aspectos altamente valorados.
-:::
-:::
+::: {style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #3a6bc4; border-radius: 8px; padding: 0.6em 1em;"}
+✅ &nbsp; Las **credenciales** deben guardarse en Secrets, nunca escritas en el código.
 :::
 
-::: {.column width="5%"}
-:::
-:::
-
-::: columns
-::: {.column width="5%"}
+::: {style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #4a84e0; border-radius: 8px; padding: 0.6em 1em;"}
+✅ &nbsp; **Gemini** integrado acelera el aprendizaje y la escritura de código.
 :::
 
-::: {.column width="40%"}
-::: bulletbox
-::: {.fragment .fade-in-then-semi-out}
-![](images/horst_quarto_ball-3_4.png){width="50px"}\
-**Interactividad**: Las actividades prácticas facilitaron el aprendizaje.
 :::
 :::
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="40%"}
-::: bulletbox
-::: {.fragment .fade-in-then-semi-out}
-![](images/horst_quarto_ball-4_4.png){width="50px"}\
-**Mejoras**: Se requiere más tiempo para dudas y ejemplos.
-:::
-:::
-:::
-
-::: {.column width="5%"}
-:::
-:::
-
 
 ------------------------------------------------------------------------
 
-## 🎉 Agradecimientos {background-opacity="0.25" transition="fade"}
-
-
-::: r-stack
-![](https://sethnut.com/resources/talks/es/2024-olimpiadas/images/img_03.jpeg){.fragment .fade-in-then-out fig-align="center" width="850px" height="600px"}
-
-![](https://sethnut.com/resources/talks/es/2025-escuela/images/img_07.jpeg){.fragment .fade-in-then-out fig-align="center" width="850px" height="600px"}
-
-![](https://sethnut.com/resources/talks/es/2025-escuela/images/img_02.jpeg){.fragment .fade-in-then-out fig-align="center" width="850px" height="600px"}
-
-![](https://sethnut.com/resources/talks/es/2024-olimpiadas/images/img_01.jpeg){.fragment fig-align="center" width="850px" height="600px"}
-:::
-
-
-
-
-------------------------------------------------------------------------
-
-
-## 🎉 ¡Gracias por Participar! { background-opacity="0.25"}
+## 🎉 ¡Gracias por Participar!
 
 ::: columns
 ::: {.column width="50%"}
 <br>
 
-❓ ¿Preguntas?
+❓¿Preguntas?
 
-👏 Responder [encuesta](https://forms.gle/SHNh4LEJpfWSvZRk7)
+👏 Responder [encuesta](https://forms.gle/WMYcViob6Z6WbPZD7)
 
-🥳 Disfrutar del Evento!
+🥳 ¡Disfrutar del Curso!
 :::
 
 ::: {.column width="50%" align="center"}
-![](images/qr_mes13.png){width="400"}
+![](images/qr.png){width="400"}
 :::
 :::
 
-> 🔗 Nuestro Sitio Web: [sethnut.com/talks](https://sethnut.com/talks/)
-
+> 🔗 Nuestro Sitio Web: [educacionadistancia.usm.cl/](https://educacionadistancia.usm.cl/)
 
 ```{=html}
 <style>
-/* Ajusta el tamaño del título y subtítulo */
 .reveal .slides h1 {
-  font-size: 2em; /* Tamaño más pequeño para el título */
+  font-size: 2em;
 }
-
 .reveal .slides h2 {
-  font-size: 1.5em; /* Tamaño más pequeño para el subtítulo */
+  font-size: 1.5em;
 }
-
-/* Ajusta el tamaño del texto en los párrafos */
 .reveal .slides p {
-  font-size: 0.8em; /* Texto más pequeño */
+  font-size: 0.8em;
 }
-
-/* Ajusta el tamaño de las tablas */
 .reveal .slides table {
-  font-size: 0.8em; /* Tamaño de fuente más pequeño en las tablas */
-  width: 90%; /* Ajusta el ancho de la tabla */
-  margin: 0 auto; /* Centra la tabla */
+  font-size: 0.8em;
+  width: 90%;
+  margin: 0 auto;
 }
-
-/* Ajusta el tamaño de los bullets */
 .reveal .slides ul {
-  font-size: 0.8em; /* Tamaño de fuente más pequeño en los bullets */
-
+  font-size: 0.8em;
 }
-
 .reveal .slide-logo {
    max-height: 2.5em !important;
-
 }
-
 </style>
 ```

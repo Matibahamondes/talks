@@ -30,7 +30,7 @@
   </url>
   <url>
     <loc>https://falfaro.xyz/talks/index.html</loc>
-    <lastmod>2026-05-08T02:34:40.985Z</lastmod>
+    <lastmod>2026-05-08T03:55:27.771Z</lastmod>
   </url>
   <url>
     <loc>https://falfaro.xyz/talks/hello-quarto/presentacion.html</loc>
@@ -122,11 +122,11 @@
   </url>
   <url>
     <loc>https://falfaro.xyz/talks/tools/quarto/presentacion.html</loc>
-    <lastmod>2026-05-08T03:05:05.472Z</lastmod>
+    <lastmod>2026-05-09T23:19:55.566Z</lastmod>
   </url>
   <url>
     <loc>https://falfaro.xyz/talks/tools/github/presentacion.html</loc>
-    <lastmod>2026-05-08T03:45:08.067Z</lastmod>
+    <lastmod>2026-05-10T00:50:46.233Z</lastmod>
   </url>
   <url>
     <loc>https://falfaro.xyz/talks/tools/github/presentacion_github.html</loc>
@@ -134,6 +134,14 @@
   </url>
   <url>
     <loc>https://falfaro.xyz/talks/tools/eds_presentation.html</loc>
-    <lastmod>2026-05-08T03:54:21.250Z</lastmod>
+    <lastmod>2026-05-09T22:46:37.452Z</lastmod>
+  </url>
+  <url>
+    <loc>https://falfaro.xyz/talks/tools/latex/presentacion.html</loc>
+    <lastmod>2026-05-10T00:52:01.115Z</lastmod>
+  </url>
+  <url>
+    <loc>https://falfaro.xyz/talks/tools/colab/presentacion.html</loc>
+    <lastmod>2026-05-10T01:17:02.718Z</lastmod>
   </url>
 </urlset>

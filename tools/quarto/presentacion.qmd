@@ -59,7 +59,6 @@ Quarto es un sistema abierto de<br> publicación científica y técnica
 ![](images/horst_quarto_schematic.png){fig-align="center" width="1100px" fig-alt="Un esquema que representa la versatilidad de Quarto para entrada multilenguaje (por ejemplo, Python, R, Observable, Julia) y salida multi-formato (por ejemplo, PDF, HTML, documentos Word y más)."}
 :::
 
-
 # Compartir {.title-middle-dark background-image="images/horst_quarto_penguins_share.png" data-state="no-logo"}
 
 ## ¿Por qué Quarto? {transition="zoom"}

@@ -2419,7 +2419,7 @@
     "href": "index.html#cursos",
     "title": "🎉 Presentaciones",
     "section": "Cursos",
-    "text": "Cursos\n\nOfimática Avanzada (USM)\nHerramientas modernas de documentación y colaboración: Quarto, LaTeX, GitHub y Google Colab.\nPresentaciones:\nQuarto · LaTeX · GitHub · Colab\n\n\nSeminario Avanzado De TIC - IPD446 (USM)\nCurso en focado en temas de aprendizaje por refuerzo.\nPresentaciones:\nCharla Capítulo 13 · Avance del Tema ·Presentación Final"
+    "text": "Cursos\n\nHerramientas Digitales para la Docencia (USM)\nMOOC propedéutico para modernizar la práctica académica: GitHub, Google Colab, LaTeX/Overleaf, Quarto e IA — todo desde el navegador, sin instalar nada.\nPresentaciones:\nPresentación\n\n\nOfimática Avanzada (USM)\nHerramientas modernas de documentación y colaboración: Quarto, LaTeX, GitHub y Google Colab.\nPresentaciones:\nQuarto · LaTeX · GitHub · Colab\n\n\nSeminario Avanzado De TIC - IPD446 (USM)\nCurso en focado en temas de aprendizaje por refuerzo.\nPresentaciones:\nCharla Capítulo 13 · Avance del Tema ·Presentación Final"
   },
   {
     "objectID": "ipd446/talk3.html#a.i.-en-el-día-a-día",
@@ -5511,9 +5511,9 @@
   {
     "objectID": "tools/github/presentacion.html#ejemplos",
     "href": "tools/github/presentacion.html#ejemplos",
-    "title": "Talks",
+    "title": "GitHub",
     "section": "Ejemplos",
-    "text": "Ejemplos"
+    "text": "Ejemplos\n\n\n\nRepositorio del Curso\n\n\nPortafolio Estudiantes"
   },
   {
     "objectID": "tools/github/presentacion.html#quarto-organiza-cada-paso-del-renderizado",
@@ -5553,16 +5553,16 @@
   {
     "objectID": "tools/github/presentacion.html#section",
     "href": "tools/github/presentacion.html#section",
-    "title": "Talks",
+    "title": "GitHub",
     "section": "",
-    "text": "Código: hello.qmd\n---\ntitle: \"Hello, Quarto\"\nformat: html\neditor: visual\n---\n\n## Meet Quarto\n\nQuarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see &lt;https://quarto.org&gt;.\n\n## Meet the penguins\n\n![](https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/get-started/hello/rstudio/lter_penguins.png){style=\"float:right;\" fig-alt=\"Illustration of three species of Palmer Archipelago penguins: Chinstrap, Gentoo, and Adelie. Artwork by @allison_horst.\" width=\"401\"}\n\nThe `penguins` data from the [**palmerpenguins**](https://allisonhorst.github.io/palmerpenguins \"palmerpenguins R package\") package contains size measurements for `{r} nrow(penguins)` penguins from three species observed on three islands in the Palmer Archipelago, Antarctica.\n\nThe plot below shows the relationship between flipper and bill lengths of these penguins.\n\nHTML: hello.html"
+    "text": "GitHub\nOrganiza, comparte y colabora\n\n\nRepositorios · README · Portafolio · Perfil Profesional\nMOOC propedéutico — Aprende USM 2026\n\n\nFrancisco Alfaro Medina\nDirección de Transformación Digital · UTFSM\nUnidad de Educación a Distancia · 2026"
   },
   {
     "objectID": "tools/github/presentacion.html#section-1",
     "href": "tools/github/presentacion.html#section-1",
-    "title": "Talks",
+    "title": "GitHub",
     "section": "",
-    "text": "Código: example.qmd\n---\ntitle: \"Habits\"\nauthor: \"John Doe\"\nformat:\n  revealjs:\n    transition: fade\n    theme: black\n    toc: true\n    center: true\n---\n\n## Getting up\n\n- Turn off alarm\n- Get out of bed\n\n---\n\n## Going to sleep \n::: { .incremental }\n\n- Get in bed\n- Count sheep\n\n:::\n\nSlides: example.html"
+    "text": "GitHub\n¿Qué es y por qué usarlo?"
   },
   {
     "objectID": "tools/github/presentacion.html#qué-podemos-hacer-con-quarto",
@@ -5700,9 +5700,9 @@
   {
     "objectID": "tools/github/presentacion.html#conclusiones",
     "href": "tools/github/presentacion.html#conclusiones",
-    "title": "Talks",
+    "title": "GitHub",
     "section": "Conclusiones",
-    "text": "Conclusiones\n\n\n\n\n\n\n\nCompartir: Un mismo .qmd genera HTML, PDF, slides o sitios web, pasando de lo estático a lo interactivo.\n\n\n\n\n\n\n\n\nColaborar: Con un archivo sencillo ya se puede crear y publicar material reproducible, iniciando el trabajo en equipo.\n\n\n\n\n\n\n\n\n\n\n\n\n\nEnseñar: Sus features integran texto, código y visualizaciones, mejorando la enseñanza con recursos dinámicos.\n\n\n\n\n\n\n\n\nReimaginar: Tecnologías como WebR, Pyodide o Shiny abren nuevas formas de aprender e innovar en educación."
+    "text": "Conclusiones\n\n\n\n\n✅   GitHub es una plataforma esencial para organizar y compartir trabajo académico.\n\n\n✅   Los repositorios permiten versionar y compartir proyectos con un solo enlace.\n\n\n✅   Markdown y README son herramientas simples para documentar con claridad.\n\n\n✅   El perfil de GitHub funciona como portafolio profesional y académico.\n\n\n✅   Todo se puede hacer desde el navegador, sin instalar nada."
   },
   {
     "objectID": "tools/github/presentacion.html#referencias-y-recursos",
@@ -5714,9 +5714,9 @@
   {
     "objectID": "tools/github/presentacion.html#gracias-por-participar",
     "href": "tools/github/presentacion.html#gracias-por-participar",
-    "title": "Talks",
+    "title": "GitHub",
     "section": "🎉 ¡Gracias por Participar!",
-    "text": "🎉 ¡Gracias por Participar!\n\n\n\n❓¿Preguntas?\n👏 Responder encuesta\n🥳 Disfrutar del Curso!\n\n\n\n\n\n🔗 Nuestro Sitio Web: educacionadistancia.usm.cl/"
+    "text": "🎉 ¡Gracias por Participar!\n\n\n\n❓¿Preguntas?\n👏 Responder encuesta\n🥳 ¡Disfrutar del Curso!\n\n\n\n\n\n🔗 Nuestro Sitio Web: educacionadistancia.usm.cl/"
   },
   {
     "objectID": "tools/github/presentacion_github.html#title",
@@ -5955,5 +5955,593 @@
     "title": "Herramientas Digitales para la Docencia",
     "section": "",
     "text": "¿Conversamos?\n\nFrancisco Alfaro Medina\nDirección de Transformación Digital · UTFSM\nColaboración con Unidad de Educación a Distancia · 2026\n\n🔗 fralfaro.github.io/academic-digital-skills\n🐙 github.com/fralfaro/academic-digital-skills\n\n\n\n\n\n\nUnidad de Educación a Distancia · UTFSM · 2026"
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#te-ha-pasado-esto",
+    "href": "tools/latex/presentacion.html#te-ha-pasado-esto",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "¿Te ha pasado esto?",
+    "text": "¿Te ha pasado esto?"
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#objetivos",
+    "href": "tools/latex/presentacion.html#objetivos",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "Objetivos",
+    "text": "Objetivos\n\n\n\n\n\n\n\n\nConocer LaTeX: Qué es y por qué usarlo frente a otros editores.\n\nPrimeros pasos: Crear, compilar y estructurar un documento básico.\n\nElementos clave: Texto, secciones, listas, imágenes y fórmulas.\n\nBuenas prácticas: Organización, plantillas y recursos recomendados."
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#section",
+    "href": "tools/latex/presentacion.html#section",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "",
+    "text": "LaTeX y Overleaf para la Docencia\nEscribe documentos académicos profesionales\n\n\nInformes · Artículos · Presentaciones · Tesis\nMOOC propedéutico — Aprende USM 2026\n\n\nFrancisco Alfaro Medina\nDirección de Transformación Digital · UTFSM\nUnidad de Educación a Distancia · 2026"
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#qué-es-latex",
+    "href": "tools/latex/presentacion.html#qué-es-latex",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "¿Qué es LaTeX?",
+    "text": "¿Qué es LaTeX?\n\n\n\n\n\n\n\n\n¿Qué es LaTeX?\n\nSistema para crear documentos académicos y científicos con formato profesional.\n\nVentajas:\n\nAutomatiza referencias, citas y ecuaciones.\n\nControl total sobre formato y estructura.\n\nIdeal para documentos extensos y complejos."
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#ejemplos-de-latex",
+    "href": "tools/latex/presentacion.html#ejemplos-de-latex",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "Ejemplos de LaTeX",
+    "text": "Ejemplos de LaTeX"
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#cómo-empezar",
+    "href": "tools/latex/presentacion.html#cómo-empezar",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "¿Cómo empezar?",
+    "text": "¿Cómo empezar?\n\n\n\n\n\n\n\n\nEditor recomendado:\n\nOverleaf (en línea, sin instalación)\n\nInstalaciones locales:\n\nTeX Live, MiKTeX, MacTeX\n\nEditores útiles:\n\nTeXstudio, VSCode + LaTeX Workshop\n\n\n\n\n\n\n\n🌿 En este taller nos centraremos en Overleaf, fácil y en línea."
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#overleaf-latex-online",
+    "href": "tools/latex/presentacion.html#overleaf-latex-online",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "Overleaf: LaTeX Online",
+    "text": "Overleaf: LaTeX Online\n\n\n\n\n\n\n\n\n¿Qué es?\n\nPlataforma en línea para escribir y compilar documentos en LaTeX sin instalación.\n\n¿Por qué usarlo?\n\nEdición colaborativa en tiempo real.\n\nIntegración con GitHub y la nube.\n\nCompilación y previsualización instantánea.\n\n\n\n\n\n\n\n🌿 Para este taller, crea tu cuenta gratuita en Overleaf."
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#ejemplos-en-overleaf",
+    "href": "tools/latex/presentacion.html#ejemplos-en-overleaf",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "Ejemplos en Overleaf",
+    "text": "Ejemplos en Overleaf"
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#section-1",
+    "href": "tools/latex/presentacion.html#section-1",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "",
+    "text": "LaTeX\n¿Qué es y por qué usarlo?"
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#actividad-artículo-en-overleaf",
+    "href": "tools/latex/presentacion.html#actividad-artículo-en-overleaf",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "📄 Actividad: Artículo en Overleaf",
+    "text": "📄 Actividad: Artículo en Overleaf\n\n\n\n\n\n\n\n\nNuevo proyecto en Overleaf.\nCopia la plantilla.\nEdita: título, texto e imágenes.\nCompila y revisa.\n(Extra) Añade cita y bibliografía.\n\n\n\n\n\n⏱️ Tiempo de la actividad: 05-10 minutos."
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#section-2",
+    "href": "tools/latex/presentacion.html#section-2",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "",
+    "text": "LaTeX\nExplora y aprende con plantillas"
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#overleaf-gallery",
+    "href": "tools/latex/presentacion.html#overleaf-gallery",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "Overleaf Gallery",
+    "text": "Overleaf Gallery\n\n\n\n\n\n\n\n\nPlantillas listas para usar:\n\nArtículos, tesis, pósters y presentaciones.\n\nAprende explorando:\n\nAbre una plantilla y estudia su código.\n\nPersonaliza y reutiliza:\n\nCambia texto, imágenes y estilo.\n\n\n\n\n\n\n🌿 Veamos algunos ejemplos en Overleaf Gallery."
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#ejemplos-de-plantillas",
+    "href": "tools/latex/presentacion.html#ejemplos-de-plantillas",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "Ejemplos de plantillas",
+    "text": "Ejemplos de plantillas"
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#section-3",
+    "href": "tools/latex/presentacion.html#section-3",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "",
+    "text": "LaTeX\nMás Herramientas"
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#herramientas-útiles",
+    "href": "tools/latex/presentacion.html#herramientas-útiles",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "Herramientas Útiles",
+    "text": "Herramientas Útiles\n\n\n\n\n\n\n\n\n📊 Tables Generator\nCrea y exporta fácilmente tablas en formato LaTeX.\n🔢 LaTeX Equation Editor\nGenera ecuaciones LaTeX en tiempo real.\n🧾 BibTeX Editor\nCrea referencias bibliográficas en formato BibTeX.\n🧠 Detexify\nDibuja un símbolo y encuentra su comando LaTeX."
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#ejemplos-de-herramientas-útiles",
+    "href": "tools/latex/presentacion.html#ejemplos-de-herramientas-útiles",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "Ejemplos de herramientas útiles",
+    "text": "Ejemplos de herramientas útiles"
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#latex-inteligencia-artificial",
+    "href": "tools/latex/presentacion.html#latex-inteligencia-artificial",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "LaTeX + Inteligencia Artificial",
+    "text": "LaTeX + Inteligencia Artificial\n\n\n\n\n\n\n\n\nChatGPT, Gemini, Claude:\n\nGeneran y corrigen código LaTeX.\nCrean ecuaciones, tablas y bibliografía.\nExplican comandos y paquetes.\nMejoran el formato y detectan errores.\n\n\n\n\n\n\n🤖 Consejo: usa prompts claros, incluye tu código y pide explicaciones paso a paso."
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#ejemplos-de-prompts",
+    "href": "tools/latex/presentacion.html#ejemplos-de-prompts",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "Ejemplos de Prompts",
+    "text": "Ejemplos de Prompts\n\nFórmulasTablasCorrecciónBibliografía\n\n\n\n\n✨ Prompt:\n\n“Escríbeme en LaTeX la fórmula de la distribución normal estándar, con una breve explicación de cada parámetro.”\n\n\n✅ Resultado:\nf(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}}\n       \\exp\\left(-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right)\nDonde \\(\\mu\\) es la media, \\(\\sigma\\) la desviación estándar y \\(x\\) el valor observado.\n\n\n\n\n\n\n✨ Prompt:\n\n“Crea una tabla en LaTeX con booktabs que compare tres lenguajes de programación: Python, R y Julia, según velocidad, facilidad de uso y comunidad.”\n\n\n✅ Resultado:\n\\begin{table}[h]\n\\centering\n\\begin{tabular}{lccc}\n\\toprule\n\\textbf{Criterio} & \\textbf{Python} & \\textbf{R} & \\textbf{Julia} \\\\\n\\midrule\nVelocidad    & Media  & Baja  & Alta \\\\\nFacilidad    & Alta   & Media & Media \\\\\nComunidad    & Grande & Grande & Pequeña \\\\\n\\bottomrule\n\\end{tabular}\n\\caption{Comparación de lenguajes}\n\\end{table}\n\n\n\n\n\n\n✨ Prompt:\n\n“Este código LaTeX no compila, ¿qué está mal?”\n\n\\begin{equation}\nf(x) = \\int_0^\\infty e^-x^2 dx\n\\end{equation}\n\n✅ Resultado:\nSe detectan 2 errores:\n❌ e^-x^2 — el exponente debe ir entre llaves: e^{-x^2}\n❌ dx sin espacio — mejor tipografía con \\,dx\n✅ Versión corregida:\n\\begin{equation}\nf(x) = \\int_0^\\infty e^{-x^2}\\,dx\n\\end{equation}\n\n\n\n\n\n\n✨ Prompt:\n\n“Genera la entrada BibTeX para el libro The Elements of Statistical Learning de Hastie, Tibshirani y Friedman (2009, Springer).”\n\n\n✅ Resultado:\n@book{hastie2009elements,\n  title     = {The Elements of Statistical Learning},\n  author    = {Hastie, Trevor and Tibshirani, Robert\n               and Friedman, Jerome},\n  year      = {2009},\n  publisher = {Springer},\n  edition   = {2nd},\n  url       = {https://hastie.su.domains/ElemStatLearn/}\n}"
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#section-4",
+    "href": "tools/latex/presentacion.html#section-4",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "",
+    "text": "LaTeX\nManos a la Obra"
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#actividad-beamer-en-overleaf",
+    "href": "tools/latex/presentacion.html#actividad-beamer-en-overleaf",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "📄 Actividad: Beamer en Overleaf",
+    "text": "📄 Actividad: Beamer en Overleaf\n\n\n\n\n\n\n\n\nNuevo proyecto en Overleaf.\nCopia la plantilla.\nEdita: título, texto e imágenes.\nCompila y revisa.\n(Extra) Añade cita y bibliografía.\n\n\n\n\n\n⏱️ Tiempo de la actividad: 05-10 minutos."
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#section-5",
+    "href": "tools/latex/presentacion.html#section-5",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "",
+    "text": "LaTeX\nConclusiones"
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#conclusiones",
+    "href": "tools/latex/presentacion.html#conclusiones",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "Conclusiones",
+    "text": "Conclusiones\n\n\n\n\n✅   LaTeX permite redactar documentos con calidad profesional.\n\n\n✅   Ofrece control total sobre el diseño y la estructura del documento.\n\n\n✅   Existen herramientas y plantillas que simplifican su uso desde el primer día.\n\n\n✅   Con asistentes IA, escribir en LaTeX es más rápido y eficiente.\n\n\n✅   Overleaf permite comenzar sin instalar nada, desde cualquier navegador."
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#gracias-por-participar",
+    "href": "tools/latex/presentacion.html#gracias-por-participar",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "🎉 ¡Gracias por Participar!",
+    "text": "🎉 ¡Gracias por Participar!\n\n\n\n❓¿Preguntas?\n👏 Responder encuesta\n🥳 Disfrutar del Curso!\n\n\n\n\n\n🔗 Nuestro Sitio Web: educacionadistancia.usm.cl/"
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#hello-quarto-title",
+    "href": "tools/colab/presentacion.html#hello-quarto-title",
+    "title": "Talks",
+    "section": "",
+    "text": "Innovación en la enseñanza de la matemática escolar\ncon Python y herramientas opensource\nFrancisco Alfaro Medina  Valeska Canales Pozo  Dorian Villegas Rojas\nhttps://sethnut.com/talks"
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#objetivos-del-estudio",
+    "href": "tools/colab/presentacion.html#objetivos-del-estudio",
+    "title": "Talks",
+    "section": "Objetivos del Estudio",
+    "text": "Objetivos del Estudio\n\n\n\n\n\n\n\nIncorporar contextos sociales reales en actividades de modelación matemática.\nExplorar el uso de narrativas digitales con Python en talleres interactivos.\nEvaluar satisfacción y motivación estudiantil en jóvenes de 13–17 años."
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#pregunta-de-investigación",
+    "href": "tools/colab/presentacion.html#pregunta-de-investigación",
+    "title": "Talks",
+    "section": "Pregunta de Investigación",
+    "text": "Pregunta de Investigación\n\n\n¿Cómo el uso de herramientas digitales abiertas —Python, Quarto y Streamlit— favorece la modelación matemática y el pensamiento computacional en estudiantes escolares de 13 a 17 años?"
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#marco-teórico",
+    "href": "tools/colab/presentacion.html#marco-teórico",
+    "title": "Talks",
+    "section": "Marco Teórico",
+    "text": "Marco Teórico\n\n\n\n\n Modelación y sociedad\nLa matemática para comprender contextos reales.\n\n\n\n Tecnologías digitales\nLaTeX, IA y Quarto como herramientas educativas.\n\n\n\n Pensamiento lógico\nIntegración de matemática y computación."
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#contexto-y-participantes",
+    "href": "tools/colab/presentacion.html#contexto-y-participantes",
+    "title": "Talks",
+    "section": "Contexto y Participantes",
+    "text": "Contexto y Participantes\n\n\nPúblico: estudiantes de 13–17 años. Contextos: Olimpiadas de Matemática USM y talleres colaborativos USM–UChile. Duración: sesiones de 60–90 minutos por taller. Enfoque pedagógico: aprendizaje activo con modelación y visualización. Herramientas: Python, Quarto, Streamlit y Google Colab."
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#resultados",
+    "href": "tools/colab/presentacion.html#resultados",
+    "title": "Talks",
+    "section": "Resultados",
+    "text": "Resultados"
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#opiniones",
+    "href": "tools/colab/presentacion.html#opiniones",
+    "title": "Talks",
+    "section": "Opiniones",
+    "text": "Opiniones\n\n\n\n\n\n\n\n\n\n\nNegativos\n\n\n\nPoco tiempo para dudas\nFaltaron ejemplos\nRitmo rápido\nPoca práctica guiada\n\n\n\n\n\n\n\n\n\n\n\n\n\nPositivos\n\n\n\nProfesor claro y motivador\nActividades útiles\nBuen uso de herramientas\nTaller dinámico y entretenido"
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#experiencias-similares",
+    "href": "tools/colab/presentacion.html#experiencias-similares",
+    "title": "Talks",
+    "section": "Experiencias Similares",
+    "text": "Experiencias Similares"
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#discusión",
+    "href": "tools/colab/presentacion.html#discusión",
+    "title": "Talks",
+    "section": "Discusión",
+    "text": "Discusión\n\n\nLa integración de herramientas digitales abiertas permitió que la matemática dejara de percibirse como un conjunto de procedimientos aislados, transformándose en un lenguaje para interpretar y comunicar fenómenos reales. La programación y la visualización favorecieron la participación activa y la construcción de narrativas matemáticas con sentido social."
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#conclusiones",
+    "href": "tools/colab/presentacion.html#conclusiones",
+    "title": "Google Colab",
+    "section": "Conclusiones",
+    "text": "Conclusiones\n\n\n\n\n✅   Google Colab permite ejecutar código Python y R sin instalar nada.\n\n\n✅   Los notebooks combinan código, texto y visualizaciones en un solo lugar.\n\n\n✅   Google Drive es la forma más estable de persistir datos entre sesiones.\n\n\n✅   Las credenciales deben guardarse en Secrets, nunca escritas en el código.\n\n\n✅   Gemini integrado acelera el aprendizaje y la escritura de código."
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#agradecimientos",
+    "href": "tools/colab/presentacion.html#agradecimientos",
+    "title": "Talks",
+    "section": "🎉 Agradecimientos",
+    "text": "🎉 Agradecimientos"
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#gracias-por-participar",
+    "href": "tools/colab/presentacion.html#gracias-por-participar",
+    "title": "Google Colab",
+    "section": "🎉 ¡Gracias por Participar!",
+    "text": "🎉 ¡Gracias por Participar!\n\n\n\n❓¿Preguntas?\n👏 Responder encuesta\n🥳 ¡Disfrutar del Curso!\n\n\n\n\n\n🔗 Nuestro Sitio Web: educacionadistancia.usm.cl/"
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#section-6",
+    "href": "tools/latex/presentacion.html#section-6",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "",
+    "text": "LaTeX\nConclusiones"
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#actividad-paper-con-ia-paso-a-paso",
+    "href": "tools/latex/presentacion.html#actividad-paper-con-ia-paso-a-paso",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "🤖 Actividad: Paper con IA paso a paso",
+    "text": "🤖 Actividad: Paper con IA paso a paso\n\n\n\n\n\n⏱️ 15–20 minutos\n\n\n\nAbre Claude u otro asistente IA y sigue los prompts:\n\n📋 Prompts en orden:\n1. Estructura del paper &gt; “Crea la estructura básica en LaTeX de un paper corto sobre [tu tema]. Incluye título, autor, abstract y 3 secciones.”\n2. Ecuación &gt; “Agrega una ecuación relevante al tema con su explicación dentro del paper.”\n3. Tabla &gt; “Inserta una tabla comparativa con booktabs dentro de la sección de resultados.”\n4. Bibliografía &gt; “Agrega 2 referencias en BibTeX y cítalas en el texto con \\cite{}.”\n5. Compilar y corregir &gt; “Tengo este error al compilar: [pega el error]. ¿Cómo lo soluciono?”\n\n\n\n\n\n💡 Copia cada respuesta en Overleaf, compila y observa el resultado antes de pedir el siguiente prompt."
+  },
+  {
+    "objectID": "tools/latex/presentacion.html#actividad-paper-con-ia-en-overleaf",
+    "href": "tools/latex/presentacion.html#actividad-paper-con-ia-en-overleaf",
+    "title": "LaTeX y Overleaf para la Docencia",
+    "section": "Actividad: Paper con IA en Overleaf",
+    "text": "Actividad: Paper con IA en Overleaf\n\n\n\n\n\n\n\n\nElige una plantilla en Overleaf Academic Journal Templates.\nEscoge un tema libre (IA, redes sociales, clima, deporte, etc.).\nAbre un asistente IA (ChatGPT, Gemini, Claude, Copilot…) y pide:\n\nEstructura del paper con título, abstract y secciones.\nUna ecuación relevante al tema.\nUna tabla comparativa con booktabs.\nDos referencias en BibTeX con \\cite{}.\n\nCopia cada respuesta en Overleaf y compila.\n(Extra) Pídele al asistente que corrija algún error de compilación.\n\n\n\n\n\n⏱️ Tiempo de la actividad: 15–20 minutos."
+  },
+  {
+    "objectID": "tools/github/presentacion.html#te-ha-pasado-esto",
+    "href": "tools/github/presentacion.html#te-ha-pasado-esto",
+    "title": "GitHub",
+    "section": "¿Te ha pasado esto?",
+    "text": "¿Te ha pasado esto?"
+  },
+  {
+    "objectID": "tools/github/presentacion.html#objetivos",
+    "href": "tools/github/presentacion.html#objetivos",
+    "title": "GitHub",
+    "section": "Objetivos",
+    "text": "Objetivos\n\n\n\n\n\n\n\n\nConocer GitHub: Qué es y por qué usarlo en contexto académico.\nRepositorios: Crear, organizar y compartir proyectos desde la web.\nREADME y Markdown: Documentar tu trabajo de forma clara y profesional.\nPerfil GitHub: Construir un portafolio visible para el mundo."
+  },
+  {
+    "objectID": "tools/github/presentacion.html#qué-es-github",
+    "href": "tools/github/presentacion.html#qué-es-github",
+    "title": "GitHub",
+    "section": "¿Qué es GitHub?",
+    "text": "¿Qué es GitHub?\n\n\n\n\n\n\n\n\n¿Qué es GitHub?\n\nPlataforma web para alojar, versionar y compartir proyectos de forma colaborativa.\n\n¿Por qué usarlo en eduación?\n\nOrganiza apuntes, tareas y proyectos en un solo lugar.\n\nPermite compartir materiales con estudiantes y colegas.\n\nDeja registro de cada cambio y versión de tu trabajo."
+  },
+  {
+    "objectID": "tools/github/presentacion.html#ejemplos-de-uso-académico",
+    "href": "tools/github/presentacion.html#ejemplos-de-uso-académico",
+    "title": "GitHub",
+    "section": "Ejemplos de uso académico",
+    "text": "Ejemplos de uso académico"
+  },
+  {
+    "objectID": "tools/github/presentacion.html#crear-una-cuenta",
+    "href": "tools/github/presentacion.html#crear-una-cuenta",
+    "title": "GitHub",
+    "section": "Crear una cuenta",
+    "text": "Crear una cuenta\n\n\n\n\n\n\n\n\nPaso a paso:\n\nVe a github.com y haz clic en Sign up.\nIngresa tu correo, crea una contraseña y elige un nombre de usuario.\nVerifica tu cuenta y completa el perfil básico.\n\nConsejos:\n\nUsa un nombre de usuario profesional (ej: francisco-alfaro).\nAgrega foto de perfil y una bio breve.\n\n\n\n\n\n\n🌿 Con una cuenta gratuita tienes acceso a repositorios públicos y privados ilimitados."
+  },
+  {
+    "objectID": "tools/github/presentacion.html#section-2",
+    "href": "tools/github/presentacion.html#section-2",
+    "title": "GitHub",
+    "section": "",
+    "text": "GitHub\nRepositorios: tu espacio de trabajo"
+  },
+  {
+    "objectID": "tools/github/presentacion.html#qué-es-un-repositorio",
+    "href": "tools/github/presentacion.html#qué-es-un-repositorio",
+    "title": "GitHub",
+    "section": "¿Qué es un repositorio?",
+    "text": "¿Qué es un repositorio?\n\n\n\n\n\n\n\n\n¿Qué es?\n\nUna carpeta en la nube donde viven todos los archivos de un proyecto.\n\n¿Para qué sirve en docencia?\n\nGuardar apuntes, notebooks, datos y entregables.\n\nCompartir materiales con un simple enlace.\n\nMantener un historial de cambios de tu trabajo."
+  },
+  {
+    "objectID": "tools/github/presentacion.html#crear-un-repositorio",
+    "href": "tools/github/presentacion.html#crear-un-repositorio",
+    "title": "GitHub",
+    "section": "Crear un repositorio",
+    "text": "Crear un repositorio\n\n\n\n\n\n\n\n\nEn tu perfil, haz clic en New repository.\nPon un nombre descriptivo (ej: mat281-apuntes).\nElige Public o Private según el caso.\nMarca ✅ Add a README file.\nHaz clic en Create repository.\n\n\n\n\n\n🌿 Desde la web puedes subir archivos, editar texto y organizar carpetas sin instalar nada."
+  },
+  {
+    "objectID": "tools/github/presentacion.html#ejemplos-de-repositorios",
+    "href": "tools/github/presentacion.html#ejemplos-de-repositorios",
+    "title": "GitHub",
+    "section": "Ejemplos de repositorios",
+    "text": "Ejemplos de repositorios"
+  },
+  {
+    "objectID": "tools/github/presentacion.html#section-3",
+    "href": "tools/github/presentacion.html#section-3",
+    "title": "GitHub",
+    "section": "",
+    "text": "GitHub\nREADME y Markdown"
+  },
+  {
+    "objectID": "tools/github/presentacion.html#qué-es-el-readme",
+    "href": "tools/github/presentacion.html#qué-es-el-readme",
+    "title": "GitHub",
+    "section": "¿Qué es el README?",
+    "text": "¿Qué es el README?\n\n\n\n\n\n\n\n\n¿Qué es?\n\nEl archivo README.md es la “portada” de tu repositorio.\n\n¿Para qué sirve?\n\nExplica de qué trata el proyecto.\n\nGuía a quien visita el repositorio.\n\nEn docencia: describe el curso, los contenidos y cómo navegar los materiales.\n\n\n\n\n\n\n🌿 Se escribe en Markdown, un lenguaje simple y legible."
+  },
+  {
+    "objectID": "tools/github/presentacion.html#markdown-lo-esencial",
+    "href": "tools/github/presentacion.html#markdown-lo-esencial",
+    "title": "GitHub",
+    "section": "Markdown: lo esencial",
+    "text": "Markdown: lo esencial\n\nTextoListas y LinksTablasREADME de curso\n\n\n\n\n✏️ Código Markdown:\n# Título principal\n## Subtítulo\n### Sección\n\n**negrita**, *cursiva*, `código`\n\n&gt; Cita o nota importante\n\n👁️ Se ve así:\n\nTítulo principal\n\n\n\nSubtítulo\nSección\nnegrita, cursiva, código\n\nCita o nota importante\n\n\n\n\n\n\n\n\n\n✏️ Código Markdown:\n- Elemento 1\n- Elemento 2\n  - Sub-elemento\n\n1. Primero\n2. Segundo\n\n[UTFSM](https://www.usm.cl)\n![Logo](images/usm.png)\n\n👁️ Se ve así:\n\nElemento 1\nElemento 2\n\nSub-elemento\n\n\n\nPrimero\nSegundo\n\nUTFSM\n\n\n\n\n\n\n✏️ Código Markdown:\n| Semana | Tema           | Material  |\n|--------|----------------|-----------|\n| 1      | Introducción   | [Slides]  |\n| 2      | GitHub         | [Repo]    |\n| 3      | Google Colab   | [Notebook]|\n\n👁️ Se ve así:\n\n\n\nSemana\nTema\nMaterial\n\n\n\n\n1\nIntroducción\nSlides\n\n\n2\nGitHub\nRepo\n\n\n3\nGoogle Colab\nNotebook\n\n\n\n\n\n\n\n\n\n✏️ Estructura recomendada:\n# 📚 MAT281 — Matemáticas Aplicadas\n\n&gt; Curso de la UTFSM · 2026\n\n## 📋 Descripción\nBreve descripción del curso.\n\n## 🗂️ Contenidos\n- Semana 1: Introducción\n- Semana 2: GitHub\n- ...\n\n## 🔗 Links útiles\n- [Sitio web del curso](url)\n- [Campus Virtual](url)\n\n## 👨‍🏫 Profesor\nFrancisco Alfaro Medina\n\n👁️ Resultado:\nUn README claro que funciona como syllabus visual del curso, con toda la información en un solo lugar.\n\n💡 Usa emojis para secciones, son visualmente útiles y no distraen."
+  },
+  {
+    "objectID": "tools/github/presentacion.html#subtítulo",
+    "href": "tools/github/presentacion.html#subtítulo",
+    "title": "GitHub",
+    "section": "Subtítulo",
+    "text": "Subtítulo\nSección\nnegrita, cursiva, código\n\nCita o nota importante"
+  },
+  {
+    "objectID": "tools/github/presentacion.html#section-4",
+    "href": "tools/github/presentacion.html#section-4",
+    "title": "GitHub",
+    "section": "",
+    "text": "GitHub\nTu Perfil Profesional"
+  },
+  {
+    "objectID": "tools/github/presentacion.html#github-profile",
+    "href": "tools/github/presentacion.html#github-profile",
+    "title": "GitHub",
+    "section": "GitHub Profile",
+    "text": "GitHub Profile\n\n\n\n\n\n\n\n\n¿Qué es?\n\nTu página pública en GitHub: muestra quién eres y qué has hecho.\n\n¿Por qué importa?\n\nFunciona como un portafolio académico y profesional.\n\nEs lo primero que ven empleadores, colegas y estudiantes.\n\nRefleja tu actividad, proyectos y áreas de interés.\n\n\n\n\n\n\n🌿 Crear un perfil atractivo es más fácil de lo que parece — y marca la diferencia."
+  },
+  {
+    "objectID": "tools/github/presentacion.html#cómo-crear-tu-perfil-especial",
+    "href": "tools/github/presentacion.html#cómo-crear-tu-perfil-especial",
+    "title": "GitHub",
+    "section": "Cómo crear tu perfil especial",
+    "text": "Cómo crear tu perfil especial\n\n\n\n\n\n\n\n\nCrea un repositorio con el mismo nombre que tu usuario (ej: fralfaro/fralfaro).\nGitHub lo reconoce automáticamente como tu perfil README.\nEdita el README.md con tu presentación personal.\n¡Se muestra en la portada de tu perfil para todo el mundo!\n\n\n\n\n\n🌿 Es un repositorio especial — cuando el nombre coincide con tu usuario, GitHub lo usa como tu página de perfil."
+  },
+  {
+    "objectID": "tools/github/presentacion.html#tips-para-un-buen-perfil",
+    "href": "tools/github/presentacion.html#tips-para-un-buen-perfil",
+    "title": "GitHub",
+    "section": "Tips para un buen perfil",
+    "text": "Tips para un buen perfil\n\n\n\n\n👤   Preséntate brevemente: nombre, rol, institución e intereses.\n\n\n📌   Ancla tus mejores repositorios en la sección Pinned.\n\n\n🛠️   Lista tus herramientas favoritas: Python, R, LaTeX, Quarto…\n\n\n\n\n\n🔗   Agrega links a tu sitio web, LinkedIn o publicaciones.\n\n\n📊   Activa las estadísticas con GitHub Readme Stats.\n\n\n✨   Inspírate en Awesome GitHub Profile README."
+  },
+  {
+    "objectID": "tools/github/presentacion.html#section-5",
+    "href": "tools/github/presentacion.html#section-5",
+    "title": "GitHub",
+    "section": "",
+    "text": "GitHub\nManos a la Obra"
+  },
+  {
+    "objectID": "tools/github/presentacion.html#actividad-tu-repositorio-en-github",
+    "href": "tools/github/presentacion.html#actividad-tu-repositorio-en-github",
+    "title": "GitHub",
+    "section": "Actividad: Tu Repositorio en GitHub",
+    "text": "Actividad: Tu Repositorio en GitHub\n\n\n\n\n\n\n\n\nCrea tu cuenta en github.com (si aún no tienes).\nCrea un repositorio llamado mi-curso-herramientas.\nAgrega un README.md usando la estructura de syllabus vista en clase.\nIncluye: título, descripción, tabla de contenidos y al menos un link.\n(Extra) Crea tu repositorio de perfil con tu nombre de usuario.\n\n\n\n\n\n⏱️ Tiempo de la actividad: 15–20 minutos."
+  },
+  {
+    "objectID": "tools/github/presentacion.html#section-6",
+    "href": "tools/github/presentacion.html#section-6",
+    "title": "GitHub",
+    "section": "",
+    "text": "GitHub\nConclusiones"
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#section",
+    "href": "tools/colab/presentacion.html#section",
+    "title": "Google Colab",
+    "section": "",
+    "text": "Google Colab\nEjecuta código desde el navegador\n\n\nPython · R · Datos · Drive · IA con Gemini\nMOOC propedéutico — Aprende USM 2026\n\n\nFrancisco Alfaro Medina\nDirección de Transformación Digital · UTFSM\nUnidad de Educación a Distancia · 2026"
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#te-ha-pasado-esto",
+    "href": "tools/colab/presentacion.html#te-ha-pasado-esto",
+    "title": "Google Colab",
+    "section": "¿Te ha pasado esto?",
+    "text": "¿Te ha pasado esto?"
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#objetivos",
+    "href": "tools/colab/presentacion.html#objetivos",
+    "title": "Google Colab",
+    "section": "Objetivos",
+    "text": "Objetivos\n\n\n\n\n\n\n\n\nConocer Colab: Qué es y para qué sirve en docencia e investigación.\nPrimeros pasos: Celdas de código, Markdown y ejecución en la nube.\nRecursos y datos: RAM, CPU, librerías, kernels y cómo subir archivos.\nIntegraciones: Google Drive, credenciales seguras y Gemini IA."
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#section-1",
+    "href": "tools/colab/presentacion.html#section-1",
+    "title": "Google Colab",
+    "section": "",
+    "text": "Google Colab\n¿Qué es y para qué sirve?"
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#qué-es-google-colab",
+    "href": "tools/colab/presentacion.html#qué-es-google-colab",
+    "title": "Google Colab",
+    "section": "¿Qué es Google Colab?",
+    "text": "¿Qué es Google Colab?\n\n\n\n\n\n\n\n\n¿Qué es?\n\nEntorno de notebooks Jupyter en la nube, gratuito y sin instalación.\n\n¿Para qué sirve?\n\nEjecutar código Python (y R) directamente desde el navegador.\n\nCompartir análisis, tareas y proyectos con un enlace.\n\nAcceder a GPU/TPU gratuita para proyectos de datos e IA.\n\n\n\n\n\n\n🌿 Solo necesitas una cuenta de Google para empezar en colab.research.google.com."
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#ejemplos-de-uso-académico",
+    "href": "tools/colab/presentacion.html#ejemplos-de-uso-académico",
+    "title": "Google Colab",
+    "section": "Ejemplos de uso académico",
+    "text": "Ejemplos de uso académico"
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#section-2",
+    "href": "tools/colab/presentacion.html#section-2",
+    "title": "Google Colab",
+    "section": "",
+    "text": "Google Colab\nLo que necesitas saber"
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#celdas-el-corazón-de-colab",
+    "href": "tools/colab/presentacion.html#celdas-el-corazón-de-colab",
+    "title": "Google Colab",
+    "section": "Celdas: el corazón de Colab",
+    "text": "Celdas: el corazón de Colab\n\nMarkdownPythonR\n\n\n\n\n✏️ Celda de texto (Markdown):\n# Mi Análisis\n\nEste notebook explora los datos de estudiantes\nde la UTFSM durante el semestre 2026.\n\n## Objetivos\n- Explorar distribuciones\n- Visualizar tendencias\n- Ajustar un modelo\n\n👁️ Se renderiza así:\nTítulo visible, secciones organizadas y texto formateado — igual que en GitHub README, pero dentro del notebook.\n\n💡 Usa celdas de texto para explicar cada paso. Un buen notebook se lee como un informe.\n\n\n\n\n\n\n\n✏️ Celda de código Python:\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Cargar datos\ndf = pd.read_csv(\"datos.csv\")\n\n# Visualizar\ndf[\"nota\"].hist(bins=20, color=\"#0F2044\")\nplt.title(\"Distribución de notas\")\nplt.xlabel(\"Nota\")\nplt.show()\n\n👁️ ¿Qué hace?\n\nImporta librerías ya instaladas en Colab.\nCarga un archivo CSV.\nGenera un histograma directo en el notebook.\n\n\n💡 Python es el lenguaje principal de Colab — y el más usado en ciencia de datos.\n\n\n\n\n\n\n\n✏️ Activar R en Colab:\nEn el menú: Runtime → Change runtime type → R\n# Cargar datos\ndf &lt;- read.csv(\"datos.csv\")\n\n# Visualizar con ggplot2\nlibrary(ggplot2)\nggplot(df, aes(x = nota)) +\n  geom_histogram(fill = \"#0F2044\",\n                 bins = 20) +\n  labs(title = \"Distribución de notas\")\n\n👁️ ¿Qué hace?\n\nCambia el kernel de Python a R con un clic.\nPermite usar R y sus librerías (ggplot2, dplyr, tidyr) directamente.\nIdeal si tu curso usa R como lenguaje principal.\n\n\n💡 No necesitas instalar R en tu computador — Colab lo tiene listo."
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#section-3",
+    "href": "tools/colab/presentacion.html#section-3",
+    "title": "Google Colab",
+    "section": "",
+    "text": "Google Colab\nRecursos, Librerías y Kernels"
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#qué-tiene-la-máquina",
+    "href": "tools/colab/presentacion.html#qué-tiene-la-máquina",
+    "title": "Google Colab",
+    "section": "¿Qué tiene la máquina?",
+    "text": "¿Qué tiene la máquina?\n\n\n\n\n\n\n\n\nCPU: ~2 núcleos Intel Xeon — suficiente para análisis de datos típicos.\nRAM: ~12 GB — para datasets medianos sin problema.\nDisco: ~100 GB temporales — se borran al cerrar la sesión.\nGPU T4 (gratis): disponible bajo demanda para modelos de ML.\n\n\n\n\n\n⚠️ Sesiones temporales: si la sesión se desconecta, los archivos locales se pierden. Guarda siempre en Drive."
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#verificar-recursos-disponibles",
+    "href": "tools/colab/presentacion.html#verificar-recursos-disponibles",
+    "title": "Google Colab",
+    "section": "Verificar recursos disponibles",
+    "text": "Verificar recursos disponibles\n# Ver RAM y CPU\nimport psutil, platform\n\nprint(f\"Sistema: {platform.system()}\")\nprint(f\"CPU: {psutil.cpu_count()} núcleos\")\nprint(f\"RAM total:     {psutil.virtual_memory().total / 1e9:.1f} GB\")\nprint(f\"RAM disponible:{psutil.virtual_memory().available / 1e9:.1f} GB\")\n# Ver GPU asignada\n!nvidia-smi --query-gpu=name,memory.total --format=csv,noheader\n# Ver disco disponible\n!df -h /\n\n\n🌿 Corre estas celdas al inicio de tu sesión para saber con qué recursos cuentas."
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#librerías-ya-instaladas-vs.-extras",
+    "href": "tools/colab/presentacion.html#librerías-ya-instaladas-vs.-extras",
+    "title": "Google Colab",
+    "section": "Librerías: ya instaladas vs. extras",
+    "text": "Librerías: ya instaladas vs. extras\n\n\n✅ Ya vienen instaladas:\n\n\n\n\nLibrería\nPara qué sirve\n\n\n\n\npandas\nDatos tabulares\n\n\nnumpy\nÁlgebra numérica\n\n\nmatplotlib\nGráficos básicos\n\n\nscikit-learn\nMachine Learning\n\n\ntensorflow\nDeep Learning\n\n\nseaborn\nVisualización estadística\n\n\n\n\n\n📦 Instalar librerías extra:\n# Con pip (Python)\n!pip install polars lightgbm\n\n# Con apt (sistema)\n!apt-get install -y libgdal-dev\n\n# Para R (kernel R)\ninstall.packages(\"tidymodels\")\n\n⚠️ Las librerías instaladas con !pip se pierden al reiniciar la sesión."
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#cambiar-el-kernel-runtime",
+    "href": "tools/colab/presentacion.html#cambiar-el-kernel-runtime",
+    "title": "Google Colab",
+    "section": "Cambiar el Kernel (Runtime)",
+    "text": "Cambiar el Kernel (Runtime)\n\n\n\n\n\n\n\nMenú: Runtime → Change runtime type\n\nCPU: para análisis de datos y scripts generales.\nGPU T4: para entrenamiento de modelos de ML/DL.\nTPU: para modelos muy grandes con TensorFlow.\nR: para cambiar completamente el lenguaje del entorno.\n\n\n\n\n\n🌿 Cambiar el runtime reinicia la sesión — guarda tu trabajo antes de hacerlo."
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#section-4",
+    "href": "tools/colab/presentacion.html#section-4",
+    "title": "Google Colab",
+    "section": "",
+    "text": "Google Colab\nDatos, Drive y Credenciales"
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#subir-datos-a-colab",
+    "href": "tools/colab/presentacion.html#subir-datos-a-colab",
+    "title": "Google Colab",
+    "section": "Subir datos a Colab",
+    "text": "Subir datos a Colab\n\nSubida directaDesde URLGoogle DriveCredenciales Seguras\n\n\n\n\n✏️ Desde el panel lateral:\n📁 Ícono de carpeta (izquierda)\n  → Subir archivo\n  → Selecciona tu CSV o Excel\nO desde código:\nfrom google.colab import files\nuploaded = files.upload()\n# → abre un selector de archivos\n\n👁️ ¿Cuándo usarlo?\n\nArchivos pequeños (&lt; 50 MB).\nUso puntual en una sola sesión.\n\n\n⚠️ El archivo desaparece al cerrar la sesión. No es la opción más estable.\n\n\n\n\n\n\n\n✏️ Descargar desde internet:\nimport pandas as pd\n\n# Desde GitHub (raw)\nurl = \"https://raw.githubusercontent.com/\"\\\n      \"usuario/repo/main/datos.csv\"\ndf = pd.read_csv(url)\n\n# Desde Google Sheets (publicado como CSV)\nsheet_url = \"https://docs.google.com/spreadsheets\"\\\n            \"/d/ID/export?format=csv\"\ndf = pd.read_csv(sheet_url)\n\ndf.head()\n\n👁️ ¿Cuándo usarlo?\n\nDatos públicos en GitHub o repositorios abiertos.\nGoogle Sheets compartidos del curso.\n\n\n💡 Es la forma más reproducible — el notebook funciona para cualquiera que lo abra.\n\n\n\n\n\n\n\n✏️ Montar tu Drive:\nfrom google.colab import drive\ndrive.mount(\"/content/drive\")\n\n# Acceder a tus archivos como carpeta local\nimport pandas as pd\n\nruta = \"/content/drive/MyDrive/datos/notas.csv\"\ndf = pd.read_csv(ruta)\ndf.head()\n\n👁️ ¿Por qué es lo mejor?\n\nLos archivos persisten aunque se reinicie la sesión.\nOrganiza datos en carpetas de Drive como si fuera tu escritorio.\nFunciona igual que una carpeta local.\n\n\n💡 Recomendado para proyectos que se retoman en múltiples sesiones.\n\n\n\n\n\n\n\n❌ Nunca hagas esto:\n# Expone tu clave en el notebook\nAPI_KEY = \"sk-abc123supersecreta\"\nPASSWORD = \"mi_clave_secreta\"\n✅ Usa Secrets de Colab:\nfrom google.colab import userdata\n\napi_key = userdata.get(\"MI_API_KEY\")\n\n👁️ ¿Cómo configurar Secrets?\n🔑 Ícono de llave (panel izquierdo)\n  → \"Add new secret\"\n  → Nombre: MI_API_KEY\n  → Valor: tu clave real\n  → Activar acceso al notebook\n\n🔐 Nunca compartas un notebook con claves escritas directamente en el código."
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#section-5",
+    "href": "tools/colab/presentacion.html#section-5",
+    "title": "Google Colab",
+    "section": "",
+    "text": "Google Colab\nIA con Gemini integrado"
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#gemini-en-colab",
+    "href": "tools/colab/presentacion.html#gemini-en-colab",
+    "title": "Google Colab",
+    "section": "Gemini en Colab",
+    "text": "Gemini en Colab\n\n\n\n\n\n\n\n\n¿Qué es Gemini en Colab?\n\nAsistente IA integrado directamente en el entorno de notebooks.\n\n¿Qué puede hacer?\n\nGenerar y explicar celdas de código.\n\nCorregir errores y sugerir mejoras.\n\nResponder preguntas sobre librerías y análisis sin salir de Colab.\n\n\n\n\n\n\n🌿 Disponible con cuenta Google — el ícono ✨ aparece en cada celda de código."
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#gemini-ejemplos-prácticos",
+    "href": "tools/colab/presentacion.html#gemini-ejemplos-prácticos",
+    "title": "Google Colab",
+    "section": "Gemini: ejemplos prácticos",
+    "text": "Gemini: ejemplos prácticos\n\nGenerar códigoExplicar erroresAnalizar datos\n\n\n\n\n✨ Le pides a Gemini:\n\n“Crea un gráfico de barras con matplotlib que muestre las notas promedio por carrera, usando la paleta ‘tab10’.”\n\n\n✅ Gemini genera:\nimport matplotlib.pyplot as plt\nimport numpy as np\n\ncarreras = [\"Ing. Civil\", \"Informática\",\n            \"Electrónica\", \"Industrial\"]\npromedios = [5.2, 5.8, 4.9, 5.5]\n\nfig, ax = plt.subplots(figsize=(8, 5))\ncolors = plt.cm.tab10(np.linspace(0, 1, len(carreras)))\nax.bar(carreras, promedios, color=colors)\nax.set_title(\"Promedio de notas por carrera\")\nax.set_ylabel(\"Nota promedio\")\nax.set_ylim(1, 7)\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n✨ Tienes este error:\ndf.groupby(\"carrera\")[\"nota\"].means()\nAttributeError: 'SeriesGroupBy' object\nhas no attribute 'means'\n\n“¿Por qué da este error y cómo lo corrijo?”\n\n\n✅ Gemini explica:\n❌ means() no existe — el método correcto es mean() (sin ‘s’).\n✅ Versión corregida:\ndf.groupby(\"carrera\")[\"nota\"].mean()\n\n💡 Gemini también puede sugerir mejoras de eficiencia y estilo en tu código.\n\n\n\n\n\n\n\n✨ Le pides a Gemini:\n\n“Tengo un DataFrame con columnas nota, carrera y año_ingreso. Sugiere un análisis exploratorio básico.”\n\n\n✅ Gemini propone:\n# Estadísticas descriptivas\nprint(df.describe())\nprint(df[\"carrera\"].value_counts())\n\n# Distribución de notas\ndf[\"nota\"].hist(bins=15, figsize=(8, 4))\n\n# Notas por carrera\ndf.boxplot(column=\"nota\", by=\"carrera\",\n           figsize=(10, 5))\n\n# Evolución por año de ingreso\ndf.groupby(\"año_ingreso\")[\"nota\"].mean()\\\n  .plot(marker=\"o\", title=\"Promedio por año\")"
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#section-6",
+    "href": "tools/colab/presentacion.html#section-6",
+    "title": "Google Colab",
+    "section": "",
+    "text": "Google Colab\nManos a la Obra"
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#actividad-tu-primer-notebook",
+    "href": "tools/colab/presentacion.html#actividad-tu-primer-notebook",
+    "title": "Google Colab",
+    "section": "Actividad: Tu Primer Notebook",
+    "text": "Actividad: Tu Primer Notebook\n\n\n\n\n\n\n\n\nAbre colab.research.google.com y crea un nuevo notebook.\nAgrega una celda de texto con título, descripción y objetivos en Markdown.\nCarga un dataset desde URL (puedes usar datos de seaborn-data).\nExplora los datos: .head(), .describe(), .info().\nCrea al menos un gráfico con matplotlib o seaborn.\n(Extra) Usa Gemini para generar o mejorar alguna celda de código.\n\n\n\n\n\n⏱️ Tiempo de la actividad: 15–20 minutos."
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#section-7",
+    "href": "tools/colab/presentacion.html#section-7",
+    "title": "Google Colab",
+    "section": "",
+    "text": "Google Colab\nConclusiones"
+  },
+  {
+    "objectID": "tools/github/presentacion.html#paso-a-paso",
+    "href": "tools/github/presentacion.html#paso-a-paso",
+    "title": "GitHub",
+    "section": "Paso a paso",
+    "text": "Paso a paso"
+  },
+  {
+    "objectID": "tools/github/presentacion.html#paso-a-paso-1",
+    "href": "tools/github/presentacion.html#paso-a-paso-1",
+    "title": "GitHub",
+    "section": "Paso a paso",
+    "text": "Paso a paso"
+  },
+  {
+    "objectID": "tools/github/presentacion.html#ejemplos-de-readme",
+    "href": "tools/github/presentacion.html#ejemplos-de-readme",
+    "title": "GitHub",
+    "section": "Ejemplos de Readme",
+    "text": "Ejemplos de Readme\n\n\n\n\n\n\n🔗 Para más ejemplos de README, visita awesome-readme."
+  },
+  {
+    "objectID": "tools/github/presentacion.html#ejemplos-de-profile",
+    "href": "tools/github/presentacion.html#ejemplos-de-profile",
+    "title": "GitHub",
+    "section": "Ejemplos de Profile",
+    "text": "Ejemplos de Profile\n\n\n\n\n\n\n🔗 Para más ejemplos de PROFILE, visita awesome-profile."
+  },
+  {
+    "objectID": "tools/colab/presentacion.html#ejemplos",
+    "href": "tools/colab/presentacion.html#ejemplos",
+    "title": "Google Colab",
+    "section": "Ejemplos",
+    "text": "Ejemplos"
   }
 ]

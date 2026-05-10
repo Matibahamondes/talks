@@ -56,26 +56,22 @@ Unidad de Educación a Distancia · 2026
 
 ::: columns
 ::: {.column width="55%"}
-
 ::: {.callout-important icon="false"}
 ## ¿Qué nos frena hoy?
 
-- 📁 Material disperso en correos, USBs y carpetas locales
-- 🔄 Documentos que hay que rehacer desde cero cada semestre
-- 💻 "Funciona en mi máquina, en la tuya no sé"
-- 🤝 Colaborar implica enviar versiones por correo
-- 🔒 Herramientas institucionales costosas o restrictivas
+-   📁 Material disperso en correos, USBs y carpetas locales
+-   🔄 Documentos que hay que rehacer desde cero cada semestre
+-   💻 "Funciona en mi máquina, en la tuya no sé"
+-   🤝 Colaborar implica enviar versiones por correo
+-   🔒 Herramientas institucionales costosas o restrictivas
 :::
-
 :::
 
 ::: {.column width="45%"}
-
 ::: {.callout-note icon="false"}
 ## La pregunta central
 
 > ¿Cómo producimos material académico de **calidad profesional**, de forma **reproducible** y **colaborativa**, **sin instalar nada**?
-
 :::
 
 ::: {.callout-tip icon="false"}
@@ -83,7 +79,6 @@ Unidad de Educación a Distancia · 2026
 
 Todo en la nube · Gratuito · Con las mismas herramientas que usa la comunidad científica internacional.
 :::
-
 :::
 :::
 
@@ -95,23 +90,19 @@ Todo en la nube · Gratuito · Con las mismas herramientas que usa la comunidad 
 
 ::: columns
 ::: {.column width="50%"}
-
-| Propuesta de valor UED | Cómo lo abordamos |
-|---|---|
-| Seguimiento al estudiante | GitHub Issues + repositorios de entregables |
-| Certificaciones y educación continua | MOOC en Quarto, auto-contenido y reutilizable |
-| Calidad en educación | Estándares internacionales: Git, LaTeX, Quarto |
-| Gestión del conocimiento | Todo versionado, público y reproducible |
-
+| Propuesta de valor UED               | Cómo lo abordamos                              |
+|------------------------------------|------------------------------------|
+| Seguimiento al estudiante            | GitHub Issues + repositorios de entregables    |
+| Certificaciones y educación continua | MOOC en Quarto, auto-contenido y reutilizable  |
+| Calidad en educación                 | Estándares internacionales: Git, LaTeX, Quarto |
+| Gestión del conocimiento             | Todo versionado, público y reproducible        |
 :::
 
 ::: {.column width="50%"}
-
 ::: {.callout-note icon="false"}
 ## Misión UED
 
 *"Potenciar el crecimiento y generación de metodologías de enseñanza a distancia mediante la asesoría y desarrollo de contenidos pedagógicos."*
-
 :::
 
 ::: {.callout-tip icon="false"}
@@ -119,7 +110,6 @@ Todo en la nube · Gratuito · Con las mismas herramientas que usa la comunidad 
 
 Docentes con herramientas modernas → mejores contenidos → mejor educación a distancia.
 :::
-
 :::
 :::
 
@@ -134,16 +124,14 @@ Docentes con herramientas modernas → mejores contenidos → mejor educación a
 :::
 
 ::: {.column width="60%"}
-
-| Sesión | Herramienta | Foco |
-|---|---|---|
-| 0 | Introducción | Metodología y contexto |
-| 1 | **GitHub** | Repositorios y portafolio docente |
-| 2 | **Google Colab** | Notebooks en la nube + IA |
-| 3 | **LaTeX / Overleaf** | Documentos académicos profesionales |
-| 4 | **Quarto** | Material reproducible y publicación |
-| 5 | **IA para docencia** | NotebookLM, Gemini, Claude, ChatGPT |
-
+| Sesión | Herramienta          | Foco                                |
+|--------|----------------------|-------------------------------------|
+| 0      | Introducción         | Metodología y contexto              |
+| 1      | **GitHub**           | Repositorios y portafolio docente   |
+| 2      | **Google Colab**     | Notebooks en la nube + IA           |
+| 3      | **LaTeX / Overleaf** | Documentos académicos profesionales |
+| 4      | **Quarto**           | Material reproducible y publicación |
+| 5      | **IA para docencia** | NotebookLM, Gemini, Claude, ChatGPT |
 :::
 
 ::: {.column width="20%"}
@@ -166,29 +154,26 @@ Docentes con herramientas modernas → mejores contenidos → mejor educación a
 
 ::: columns
 ::: {.column width="50%"}
-
 **¿Qué aprenderán?**
 
-- Crear y gestionar repositorios académicos
-- Construir un perfil profesional en GitHub
-- Organizar tareas y entregas con Issues
-- Publicar material con GitHub Pages
+-   Crear y gestionar repositorios académicos
+-   Construir un perfil profesional en GitHub
+-   Organizar tareas y entregas con Issues
+-   Publicar material con GitHub Pages
 
 **Ejemplo de uso docente:**
 
 > Un repositorio por asignatura → los estudiantes hacen fork → entregan con pull request → el docente revisa con comentarios en línea.
-
 :::
 
 ::: {.column width="50%"}
-
 ::: {.callout-tip icon="false"}
 ## ¿Por qué GitHub?
 
-- Usado por +100M de desarrolladores y académicos
-- Control de versiones: nunca más `informe_v3_FINAL2.docx`
-- Gratuito para repositorios públicos y educación
-- Integra con todas las otras herramientas del curso
+-   Usado por +100M de desarrolladores y académicos
+-   Control de versiones: nunca más `informe_v3_FINAL2.docx`
+-   Gratuito para repositorios públicos y educación
+-   Integra con todas las otras herramientas del curso
 :::
 
 ::: {.callout-note icon="false"}
@@ -196,7 +181,6 @@ Docentes con herramientas modernas → mejores contenidos → mejor educación a
 
 🔗 [`fralfaro.github.io/academic-digital-skills`](https://fralfaro.github.io/academic-digital-skills/material/01_github/index.html)
 :::
-
 :::
 :::
 
@@ -208,23 +192,20 @@ Docentes con herramientas modernas → mejores contenidos → mejor educación a
 
 ::: columns
 ::: {.column width="50%"}
-
 **¿Qué aprenderán?**
 
-- Crear y ejecutar notebooks en el navegador
-- Markdown, LaTeX y código en el mismo documento
-- Análisis de datos con Python/R
-- Usar GPU gratuita para tareas computacionales
-- **Gemini integrado**: autocompletado y chat IA
+-   Crear y ejecutar notebooks en el navegador
+-   Markdown, LaTeX y código en el mismo documento
+-   Análisis de datos con Python/R
+-   Usar GPU gratuita para tareas computacionales
+-   **Gemini integrado**: autocompletado y chat IA
 
 **Ejemplo de uso docente:**
 
 > Distribuir un notebook con teoría + ejercicios → los estudiantes completan las celdas → entregan el `.ipynb` como evidencia reproducible.
-
 :::
 
 ::: {.column width="50%"}
-
 ::: {.callout-tip icon="false"}
 ## Sin instalación, sin barreras
 
@@ -236,7 +217,6 @@ Funciona en cualquier dispositivo con navegador, incluso tablets. Sin dependenci
 
 Gemini puede **explicar código**, **generar ejercicios**, **corregir errores** y **transformar soluciones** — todo sin salir del notebook.
 :::
-
 :::
 :::
 
@@ -248,23 +228,20 @@ Gemini puede **explicar código**, **generar ejercicios**, **corregir errores** 
 
 ::: columns
 ::: {.column width="50%"}
-
 **¿Qué aprenderán?**
 
-- Estructura de documentos LaTeX
-- Ecuaciones, tablas y figuras con calidad tipográfica
-- Bibliografía automática con BibTeX
-- Plantillas para informes, tesis y artículos
-- Colaboración en tiempo real con Overleaf
+-   Estructura de documentos LaTeX
+-   Ecuaciones, tablas y figuras con calidad tipográfica
+-   Bibliografía automática con BibTeX
+-   Plantillas para informes, tesis y artículos
+-   Colaboración en tiempo real con Overleaf
 
 **Ejemplo de uso docente:**
 
 > Plantilla de informe de laboratorio en Overleaf → los estudiantes la clonan y completan → el docente comenta directamente en el PDF.
-
 :::
 
 ::: {.column width="50%"}
-
 ::: {.callout-tip icon="false"}
 ## ¿Por qué Overleaf?
 
@@ -276,7 +253,6 @@ El estándar internacional para publicaciones científicas. Las revistas y congr
 
 🔗 [`fralfaro.github.io/academic-digital-skills`](https://fralfaro.github.io/academic-digital-skills/material/03_latex/index.html)
 :::
-
 :::
 :::
 
@@ -288,31 +264,29 @@ El estándar internacional para publicaciones científicas. Las revistas y congr
 
 ::: columns
 ::: {.column width="50%"}
-
 **¿Qué aprenderán?**
 
-- Crear documentos, presentaciones y libros con Quarto
-- Publicar con GitHub Pages o Quarto Pub (URL propia)
-- Usar Posit Cloud como entorno sin instalación
-- Integrar código Python/R ejecutable en el material
+-   Crear documentos, presentaciones y libros con Quarto
+-   Publicar con GitHub Pages o Quarto Pub (URL propia)
+-   Usar Posit Cloud como entorno sin instalación
+-   Integrar código Python/R ejecutable en el material
 
 **Ejemplo de uso docente:**
 
 > Este mismo curso está hecho en Quarto → sitio web con todos los contenidos, navegación estructurada y reproducible desde el repositorio en GitHub.
-
 :::
 
 ::: {.column width="50%"}
-
 ::: {.callout-important icon="false"}
 ## Un `.qmd` → múltiples formatos
 
-```yaml
+``` yaml
 format: html        # sitio web
 format: revealjs    # presentación
 format: pdf         # documento
 format: docx        # Word
 ```
+
 El mismo archivo, cuatro salidas distintas.
 :::
 
@@ -321,7 +295,6 @@ El mismo archivo, cuatro salidas distintas.
 
 🔗 [`fralfaro.github.io/academic-digital-skills`](https://fralfaro.github.io/academic-digital-skills)
 :::
-
 :::
 :::
 
@@ -333,27 +306,20 @@ El mismo archivo, cuatro salidas distintas.
 
 ::: columns
 ::: {.column width="55%"}
-
 **¿Qué aprenderán?**
 
-- Visión general de herramientas IA actuales
-- **NotebookLM**: explorar bibliografía con IA
-- **Gemini / ChatGPT / Claude**: prompting efectivo
-- Generación de material didáctico asistida por IA
-- Riesgos, ética y uso responsable en educación
-
+-   Visión general de herramientas IA actuales
+-   **NotebookLM**: explorar bibliografía con IA
+-   **Gemini / ChatGPT / Claude**: prompting efectivo
+-   Generación de material didáctico asistida por IA
+-   Riesgos, ética y uso responsable en educación
 :::
 
 ::: {.column width="45%"}
-
 ::: {.callout-tip icon="false"}
 ## La IA no reemplaza al docente
 
-La convierte en un **amplificador de su experiencia**:
-- Generar variaciones de ejercicios
-- Crear rúbricas de evaluación
-- Resumir bibliografía extensa
-- Dar feedback preliminar a estudiantes
+La convierte en un **amplificador de su experiencia**: - Generar variaciones de ejercicios - Crear rúbricas de evaluación - Resumir bibliografía extensa - Dar feedback preliminar a estudiantes
 :::
 
 ::: {.callout-important icon="false"}
@@ -361,7 +327,6 @@ La convierte en un **amplificador de su experiencia**:
 
 🎙️ [NotebookLM del curso](https://notebooklm.google.com/notebook/b9be6c21-4d89-4841-8f0e-51639531cac2) — explora el contenido conversando con IA.
 :::
-
 :::
 :::
 
@@ -373,7 +338,6 @@ La convierte en un **amplificador de su experiencia**:
 
 ::: columns
 ::: {.column width="33%"}
-
 ::: result-box
 **Repositorio de contenidos**
 
@@ -382,11 +346,9 @@ La convierte en un **amplificador de su experiencia**:
 
 Código fuente de todos los materiales, versionado y público.
 :::
-
 :::
 
 ::: {.column width="33%"}
-
 ::: result-box
 **Sitio web del curso**
 
@@ -395,11 +357,9 @@ Código fuente de todos los materiales, versionado y público.
 
 Navegación estructurada, accesible desde cualquier dispositivo.
 :::
-
 :::
 
 ::: {.column width="33%"}
-
 ::: result-box
 **Entregables de estudiantes**
 
@@ -408,7 +368,6 @@ Navegación estructurada, accesible desde cualquier dispositivo.
 
 Cada participante clona el template y entrega via GitHub.
 :::
-
 :::
 :::
 
@@ -428,25 +387,22 @@ No hay brecha entre el discurso y la práctica — el curso vive en las herramie
 
 ::: columns
 ::: {.column width="50%"}
-
 **Para docentes:**
 
-- Material versionado, reutilizable y actualizable
-- Flujo de entrega y revisión sin correos con adjuntos
-- Portafolio académico digital con URL propia
-- Capacidad de producir documentos al estándar internacional
+-   Material versionado, reutilizable y actualizable
+-   Flujo de entrega y revisión sin correos con adjuntos
+-   Portafolio académico digital con URL propia
+-   Capacidad de producir documentos al estándar internacional
 
 **Para estudiantes:**
 
-- Herramientas que usan en la industria y la investigación
-- Portfolio técnico visible en GitHub desde el primer semestre
-- Acceso a IA para apoyar su aprendizaje de forma guiada
-- Materiales siempre disponibles, sin barreras de acceso
-
+-   Herramientas que usan en la industria y la investigación
+-   Portfolio técnico visible en GitHub desde el primer semestre
+-   Acceso a IA para apoyar su aprendizaje de forma guiada
+-   Materiales siempre disponibles, sin barreras de acceso
 :::
 
 ::: {.column width="50%"}
-
 ::: {.callout-important icon="false"}
 ## Alineación con transformación digital USM
 
@@ -454,7 +410,6 @@ Este curso forma parte de la agenda de modernización docente que impulsa la **D
 
 Herramientas modernas → docentes empoderados → mejor experiencia de aprendizaje → egresados más competitivos.
 :::
-
 :::
 :::
 
@@ -466,32 +421,28 @@ Herramientas modernas → docentes empoderados → mejor experiencia de aprendiz
 
 ::: columns
 ::: {.column width="50%"}
-
 **Lo que ya existe:**
 
-- ✅ Repositorio en GitHub: `fralfaro/academic-digital-skills`
-- ✅ Sitio web Quarto Book publicado
-- ✅ Contenido de las 6 sesiones estructurado
-- ✅ Template de entregables para participantes
-- ✅ Recurso NotebookLM con todo el material
-
+-   ✅ Repositorio en GitHub: `fralfaro/academic-digital-skills`
+-   ✅ Sitio web Quarto Book publicado
+-   ✅ Contenido de las 6 sesiones estructurado
+-   ✅ Template de entregables para participantes
+-   ✅ Recurso NotebookLM con todo el material
 :::
 
 ::: {.column width="50%"}
-
 **Lo que proponemos:**
 
-- 🤝 Piloto con docentes UTFSM (Campus Valparaíso, San Joaquín, Concepción)
-- 📅 Formato: 6 sesiones de 90 min, modalidad híbrida
-- 🎓 Certificado de participación UED
-- 📊 Evaluación de impacto y mejora iterativa
+-   🤝 Piloto con docentes UTFSM (Campus Valparaíso, San Joaquín, Concepción)
+-   📅 Formato: 6 sesiones de 90 min, modalidad híbrida
+-   🎓 Certificado de participación UED
+-   📊 Evaluación de impacto y mejora iterativa
 
 ::: {.callout-tip icon="false"}
 ## El material ya está listo
 
 Podemos comenzar cuando la UED esté disponible — la infraestructura está desplegada.
 :::
-
 :::
 :::
 

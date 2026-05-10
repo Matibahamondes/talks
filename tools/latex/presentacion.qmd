@@ -1,39 +1,71 @@
 ---
-title: "¡Adiós Word, Hola LaTeX! "
-subtitle: "El Poder de Escribir como un Profesional"
-author: 
-- Valeska Canales
-date: 19 Aug 2025
-format: 
+title: "LaTeX y Overleaf para la Docencia"
+subtitle: "Escribe documentos académicos profesionales desde el navegador"
+author: "Francisco Alfaro Medina"
+institute: "Dirección de Transformación Digital · UTFSM"
+date: today
+date-format: "MMMM YYYY"
+
+format:
   revealjs:
-    transition: slide
-    title-slide-attributes: 
-      data-background-image: images/background.jpg
-    slide-attributes:
-      data-background-image: images/background.jpg
-    logo: images/usm.png
+    theme: [default, custom.scss]
+    slide-number: true
+    progress: true
+    history: false
+    transition: fade
+    transition-speed: fast
+    incremental: false
+    fig-align: center
+    highlight-style: github
+    code-block-bg: true
+    center: false
+    width: 1600
+    height: 800
+    #footer: "Unidad de Educación a Distancia · UTFSM · 2026"
+    logo: "images/usm.png"
+    scrollable: false
+execute:
+  echo: false
+  warning: false
 ---
 
-## 📝 ¿Te ha pasado esto? {background-image="images/background.jpg" background-opacity="0.25"}
+##  {.title-slide background-color="#0F2044"}
+
+::: title-block
+**LaTeX y Overleaf para la Docencia**
+
+Escribe documentos académicos profesionales
+:::
+
+::: subtitle-block
+Informes · Artículos · Presentaciones · Tesis\
+MOOC propedéutico — Aprende USM 2026
+:::
+
+::: author-block
+Francisco Alfaro Medina\
+Dirección de Transformación Digital · UTFSM\
+Unidad de Educación a Distancia · 2026
+:::
+
+## ¿Te ha pasado esto?
 
 ::: r-stack
 <br>
 
-![](images/intro1.jpeg){.fragment .fade-in-then-out fig-align="center" width="50%"}
+![](images/intro_01.jpg){.fragment .fade-in-then-out fig-align="center" width="100%"}
 
-![](images/intro2.jpeg){.fragment .fade-in-then-out fig-align="center" width="50%"}
-
-![](images/latexword2.jpg){.fragment fig-align="center" width="75%"}
+![](images/latexword2.jpg){.fragment fig-align="center" width="70%"}
 :::
 
 ------------------------------------------------------------------------
 
-## 🎯 Objetivos {background-image="images/background.jpg" background-opacity="0.25"}
+## Objetivos
 
 ::: columns
 ::: {.column width="40%"}
 ::: {style="text-align: center;"}
-<img src="images/intro3.jpeg" alt="Tachado" style="width: 100%; border-radius: 10px;"/>
+<img src="images/index2.png" alt="Tachado" style="width: 100%; border-radius: 10px;"/>
 :::
 :::
 
@@ -52,14 +84,14 @@ format:
 ##  {background-image="images/background_slides3.png" background-opacity="0.3"}
 
 ::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
-[LaTeX]{style="font-size: 1em"}
+[LaTeX]{style="font-size: 2em"}
 
-[¿Qué es y por qué usarlo?]{style="font-size: 1.5em"}
+[¿Qué es y por qué usarlo?]{style="font-size: 2.5em"}
 :::
 
 ------------------------------------------------------------------------
 
-## ¿Qué es LaTeX? {background-image="images/background.jpg" background-opacity="0.25"}
+## ¿Qué es LaTeX?
 
 ::: columns
 ::: {.column width="40%"}
@@ -82,7 +114,9 @@ format:
 
 ------------------------------------------------------------------------
 
-## Ejemplos de LaTeX {background-image="images/background.jpg" background-opacity="0.25"}
+## Ejemplos de LaTeX
+
+<br>
 
 ::: r-stack
 ::: {.fragment .fade-in-then-out}
@@ -106,7 +140,7 @@ format:
 
 ------------------------------------------------------------------------
 
-## ¿Cómo empezar? {background-image="images/background.jpg" background-opacity="0.25"}
+## ¿Cómo empezar?
 
 ::: columns
 ::: {.column width="40%"}
@@ -133,7 +167,7 @@ format:
 
 ------------------------------------------------------------------------
 
-## Overleaf: LaTeX Online {background-image="images/background.jpg" background-opacity="0.25"}
+## Overleaf: LaTeX Online
 
 ::: columns
 ::: {.column width="40%"}
@@ -160,14 +194,12 @@ format:
 
 ------------------------------------------------------------------------
 
-## Ejemplos en Overleaf {background-image="images/background.jpg" background-opacity="0.25"}
+## Ejemplos en Overleaf
 
 ::: r-stack
-<br>
+![](images/overleaf1.jpg){.fragment .fade-in-then-out fig-align="center" width="75%"}
 
-![](images/overleaf1.jpg){.fragment .fade-in-then-out fig-align="center" width="90%"}
-
-![](images/ovealeaf2.png){.fragment fig-align="center" width="75%"}
+![](images/ovealeaf2.png){.fragment fig-align="center" width="70%"}
 :::
 
 ------------------------------------------------------------------------
@@ -175,50 +207,14 @@ format:
 ##  {background-image="images/background_slides3.png" background-opacity="0.3"}
 
 ::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
-[LaTeX]{style="font-size: 1em"}
+[LaTeX]{style="font-size: 2em"}
 
-[Manos a la Obra]{style="font-size: 1.5em"}
+[Explora y aprende con plantillas]{style="font-size: 2.5em"}
 :::
 
 ------------------------------------------------------------------------
 
-## 📄 Actividad: Artículo en Overleaf {background-image="images/background.jpg" background-opacity="0.25"}
-
-<br>
-
-::: columns
-::: {.column width="40%"}
-::: {style="text-align: center;"}
-<img src="images/ejercicio.png" alt="Overleaf Logo" style="width: 80%; border-radius: 10px;"/>
-:::
-:::
-
-::: {.column .incremental width="60%"}
-1.  **Nuevo proyecto en Overleaf**.
-2.  **Copia** la [plantilla](https://www.overleaf.com/read/qfrqrpxfqhkj#f66dd7).
-3.  **Edita**: título, texto e imágenes.
-4.  **Compila** y revisa.
-5.  *(Extra)* Añade cita y bibliografía.
-:::
-:::
-
-. . .
-
-> ⏱️ Tiempo de la actividad: 05-10 minutos.
-
-------------------------------------------------------------------------
-
-##  {background-image="images/background_slides3.png" background-opacity="0.3"}
-
-::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
-[LaTeX]{style="font-size: 1em"}
-
-[Explora y aprende con plantillas]{style="font-size: 1.5em"}
-:::
-
-------------------------------------------------------------------------
-
-## Overleaf Gallery {background-image="images/background.jpg" background-opacity="0.25"}
+## Overleaf Gallery
 
 ::: columns
 ::: {.column width="40%"}
@@ -245,12 +241,10 @@ format:
 
 ------------------------------------------------------------------------
 
-## Ejemplos de plantillas {background-image="images/background.jpg" background-opacity="0.25"}
+## Ejemplos de plantillas
 
 ::: r-stack
-<br>
-
-![](images/templates1.png){.fragment .fade-in-then-out fig-align="center" width="90%"}
+![](images/templates1.png){.fragment .fade-in-then-out fig-align="center" width="100%"}
 
 ![](images/templates2.png){.fragment fig-align="center" width="75%"}
 :::
@@ -260,14 +254,14 @@ format:
 ##  {background-image="images/background_slides3.png" background-opacity="0.3"}
 
 ::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
-[LaTeX]{style="font-size: 1em"}
+[LaTeX]{style="font-size: 2em"}
 
-[Más Herramientas]{style="font-size: 1.5em"}
+[Más Herramientas]{style="font-size: 2.5em"}
 :::
 
 ------------------------------------------------------------------------
 
-## Herramientas Útiles {background-image="images/background.jpg" background-opacity="0.25"}
+## Herramientas Útiles
 
 ::: columns
 ::: {.column width="45%"}
@@ -295,21 +289,21 @@ format:
 
 ------------------------------------------------------------------------
 
-## Ejemplos de herramientas útiles {background-image="images/background.jpg" background-opacity="0.25"}
+## Ejemplos de herramientas útiles
 
 ::: r-stack
-![](images/tool2.png){.fragment .fade-in-then-out fig-align="center" width="85%"}
+![](images/tool2.png){.fragment .fade-in-then-out fig-align="center" width="75%"}
 
 ![](images/tool3.png){.fragment .fade-in-then-out fig-align="center" width="80%"}
 
-![](images/tool4.png){.fragment .fade-in-then-out fig-align="center" width="80%"}
+![](images/tool4.png){.fragment .fade-in-then-out fig-align="center" width="75%"}
 
-![](images/tool1.png){.fragment fig-align="center" width="85%"}
+![](images/tool1.png){.fragment fig-align="center" width="75%"}
 :::
 
 ------------------------------------------------------------------------
 
-## LaTeX + Inteligencia Artificial {background-image="images/background.jpg" background-opacity="0.25"}
+## LaTeX + Inteligencia Artificial
 
 ::: columns
 ::: {.column width="40%"}
@@ -321,7 +315,7 @@ format:
 ::: {.column .incremental width="60%"}
 <br><br>
 
--   [**ChatGPT**](https://chat.openai.com/), [**Gemini**](https://gemini.google.com/), [**DeepSeek**](https://www.deepseek.com/):
+-   [**ChatGPT**](https://chat.openai.com/), [**Gemini**](https://gemini.google.com/), [**Claude**](https://claude.ai/):
 
     -   Generan y corrigen código LaTeX.
     -   Crean ecuaciones, tablas y bibliografía.
@@ -336,7 +330,7 @@ format:
 
 ------------------------------------------------------------------------
 
-## Ejemplos de Prompts {background-image="images/background.jpg" background-opacity="0.25"}
+## Ejemplos de Prompts
 
 ::: panel-tabset
 ## Fórmulas
@@ -345,44 +339,47 @@ format:
 ::: {.column width="50%"}
 ✨ **Prompt:**
 
-"Escríbeme la fórmula de la función cuadrática en LaTeX."
+> "Escríbeme en LaTeX la fórmula de la distribución normal estándar, con una breve explicación de cada parámetro."
 :::
 
-::: {.column .incremental width="50%"}
-✅ **Esperado:**
-
-¡Por supuesto! Aquí tienes la **fórmula cuadrática** escrita en **LaTeX**:
+::: {.column width="50%"}
+✅ **Resultado:**
 
 ``` latex
-x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+f(x) = \frac{1}{\sigma\sqrt{2\pi}}
+       \exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)
 ```
+
+Donde $\mu$ es la media, $\sigma$ la desviación estándar y $x$ el valor observado.
 :::
 :::
 
-## Estructuración
+## Tablas
 
 ::: columns
 ::: {.column width="50%"}
 ✨ **Prompt:**
 
-“Haz una tabla de derivadas básicas en LaTeX (función vs. derivada)."
+> "Crea una tabla en LaTeX con booktabs que compare tres lenguajes de programación: Python, R y Julia, según velocidad, facilidad de uso y comunidad."
 :::
 
-::: {.column .incremental width="50%"}
-✅ **Esperado:**
+::: {.column width="50%"}
+✅ **Resultado:**
 
 ``` latex
-\begin{tabular}{|c|c|}
-\hline
-\textbf{Función} & \textbf{Derivada} \\
-\hline
-$c$ & $0$ \\
-$x$ & $1$ \\
-$x^n$ & $nx^{n-1}$ \\
-$\sqrt{x}$ & $\dfrac{1}{2\sqrt{x}}$ \\
-...
-\hline
+\begin{table}[h]
+\centering
+\begin{tabular}{lccc}
+\toprule
+\textbf{Criterio} & \textbf{Python} & \textbf{R} & \textbf{Julia} \\
+\midrule
+Velocidad    & Media  & Baja  & Alta \\
+Facilidad    & Alta   & Media & Media \\
+Comunidad    & Grande & Grande & Pequeña \\
+\bottomrule
 \end{tabular}
+\caption{Comparación de lenguajes}
+\end{table}
 ```
 :::
 :::
@@ -393,7 +390,7 @@ $\sqrt{x}$ & $\dfrac{1}{2\sqrt{x}}$ \\
 ::: {.column width="50%"}
 ✨ **Prompt:**
 
-“Estoy tratando de compilar esta ecuación en LaTeX, pero me da error. ¿Me puedes ayudar?”
+> "Este código LaTeX no compila, ¿qué está mal?"
 
 ``` latex
 \begin{equation}
@@ -402,12 +399,48 @@ f(x) = \int_0^\infty e^-x^2 dx
 ```
 :::
 
-::: {.column .incremental width="50%"}
-✅ **Esperado:**
+::: {.column width="50%"}
+✅ **Resultado:**
 
-❌ `e^-x^2` está mal escrito. Falta agrupar el exponente con llaves.
+Se detectan **2 errores**:
 
-❌ Se recomienda escribir `\,dx` para buena tipografía.
+❌ `e^-x^2` — el exponente debe ir entre llaves: `e^{-x^2}`
+
+❌ `dx` sin espacio — mejor tipografía con `\,dx`
+
+✅ **Versión corregida:**
+
+``` latex
+\begin{equation}
+f(x) = \int_0^\infty e^{-x^2}\,dx
+\end{equation}
+```
+:::
+:::
+
+## Bibliografía
+
+::: columns
+::: {.column width="50%"}
+✨ **Prompt:**
+
+> "Genera la entrada BibTeX para el libro *The Elements of Statistical Learning* de Hastie, Tibshirani y Friedman (2009, Springer)."
+:::
+
+::: {.column width="50%"}
+✅ **Resultado:**
+
+``` bibtex
+@book{hastie2009elements,
+  title     = {The Elements of Statistical Learning},
+  author    = {Hastie, Trevor and Tibshirani, Robert
+               and Friedman, Jerome},
+  year      = {2009},
+  publisher = {Springer},
+  edition   = {2nd},
+  url       = {https://hastie.su.domains/ElemStatLearn/}
+}
+```
 :::
 :::
 :::
@@ -417,14 +450,14 @@ f(x) = \int_0^\infty e^-x^2 dx
 ##  {background-image="images/background_slides3.png" background-opacity="0.3"}
 
 ::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
-[LaTeX]{style="font-size: 1em"}
+[LaTeX]{style="font-size: 2em"}
 
-[Manos a la Obra]{style="font-size: 1.5em"}
+[Manos a la Obra]{style="font-size: 2.5em"}
 :::
 
 ------------------------------------------------------------------------
 
-## 📄 Actividad: Beamer en Overleaf {background-image="images/background.jpg" background-opacity="0.25"}
+## Actividad: Paper con IA en Overleaf
 
 <br>
 
@@ -436,17 +469,21 @@ f(x) = \int_0^\infty e^-x^2 dx
 :::
 
 ::: {.column .incremental width="60%"}
-1.  **Nuevo proyecto en Overleaf**.
-2.  **Copia** la [plantilla](https://www.overleaf.com/read/gxqqsjhzfvdc#f623dc).
-3.  **Edita**: título, texto e imágenes.
-4.  **Compila** y revisa.
-5.  *(Extra)* Añade cita y bibliografía.
+1.  **Elige** una plantilla en [Overleaf Academic Journal Templates](https://www.overleaf.com/latex/templates/tagged/academic-journal).
+2.  **Escoge** un tema libre *(IA, redes sociales, clima, deporte, etc.)*.
+3.  **Abre** un asistente IA *(ChatGPT, Gemini, Claude, Copilot…)* y pide:
+    -   Estructura del paper con título, abstract y secciones.
+    -   Una ecuación relevante al tema.
+    -   Una tabla comparativa con `booktabs`.
+    -   Dos referencias en BibTeX con `\cite{}`.
+4.  **Copia** cada respuesta en Overleaf y **compila**.
+5.  *(Extra)* Pídele al asistente que corrija algún error de compilación.
 :::
 :::
 
 . . .
 
-> ⏱️ Tiempo de la actividad: 05-10 minutos.
+> ⏱️ Tiempo de la actividad: 15–20 minutos.
 
 ------------------------------------------------------------------------
 
@@ -458,17 +495,39 @@ f(x) = \int_0^\infty e^-x^2 dx
 [Conclusiones]{style="font-size: 1.5em"}
 :::
 
-## Conclusiones {background-image="images/background.jpg" background-opacity="0.25"}
+------------------------------------------------------------------------
 
-<br> <br>
+## Conclusiones
+
+<br>
 
 ::: fragment
-✅ **LaTeX** permite redactar textos con calidad profesional. <br> ✅ Ofrece **control total** en diseño y estructura. <br> ✅ Existen varias **herramientas** que simplifican su uso. <br> ✅ Con **IA**, trabajar en LaTeX resulta más eficiente. <br> ✅ **Overleaf** facilita empezar sin instalar programas. <br>
+::: {style="display: flex; flex-direction: column; gap: 0.75em; font-size: 0.95em;"}
+::: {style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #0F2044; border-radius: 8px; padding: 0.6em 1em;"}
+✅   **LaTeX** permite redactar documentos con calidad profesional.
+:::
+
+::: {style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #1a3a6b; border-radius: 8px; padding: 0.6em 1em;"}
+✅   Ofrece **control total** sobre el diseño y la estructura del documento.
+:::
+
+::: {style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #2a5298; border-radius: 8px; padding: 0.6em 1em;"}
+✅   Existen **herramientas y plantillas** que simplifican su uso desde el primer día.
+:::
+
+::: {style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #3a6bc4; border-radius: 8px; padding: 0.6em 1em;"}
+✅   Con **asistentes IA**, escribir en LaTeX es más rápido y eficiente.
+:::
+
+::: {style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #4a84e0; border-radius: 8px; padding: 0.6em 1em;"}
+✅   **Overleaf** permite comenzar sin instalar nada, desde cualquier navegador.
+:::
+:::
 :::
 
 ------------------------------------------------------------------------
 
-## 🎉 ¡Gracias por Participar! {background-image="images/background.jpg" background-opacity="0.25"}
+## 🎉 ¡Gracias por Participar!
 
 ::: columns
 ::: {.column width="50%"}
@@ -478,7 +537,7 @@ f(x) = \int_0^\infty e^-x^2 dx
 
 👏 Responder [encuesta](https://forms.gle/WMYcViob6Z6WbPZD7)
 
-🥳 Disfrutar del Evento!
+🥳 Disfrutar del Curso!
 :::
 
 ::: {.column width="50%" align="center"}
@@ -486,7 +545,7 @@ f(x) = \int_0^\infty e^-x^2 dx
 :::
 :::
 
-> 🔗 Nuestro Sitio Web: [sethnut.com/talks](https://sethnut.com/talks/)
+> 🔗 Nuestro Sitio Web: [educacionadistancia.usm.cl/](https://educacionadistancia.usm.cl/)
 
 ```{=html}
 <style>
