@@ -4505,7 +4505,7 @@
     "href": "ai/pyday_2026.html#section",
     "title": "Lo que nadie te dice sobre la IA generativa",
     "section": "",
-    "text": "Lo que nadie te dice sobre la IA generativa\nLímites, técnicas y lo que viene\n\n\nUn recorrido honesto para quienes construyen con Python sobre estos sistemas\n\n\nFrancisco Alfaro · Seth & Nut · UTFSM\nPyDay Valparaíso · 5 junio 2026"
+    "text": "Lo que nadie te dice sobre la IA generativa\nLímites, técnicas y lo que viene\n\n\nLLMs · Prompt Engineering · RAG · Agentes · Seguridad · Python\nPyCon Chile 2026\n\n\nFrancisco Alfaro Medina\nDirección de Transformación Digital · UTFSM\nfralfaro.github.io/portfolio"
   },
   {
     "objectID": "ai/pyday_2026.html#el-punto-de-partida",
@@ -4645,14 +4645,14 @@
     "href": "ai/pyday_2026.html#section-6",
     "title": "Lo que nadie te dice sobre la IA generativa",
     "section": "",
-    "text": "¿Preguntas?\n\nFrancisco Alfaro\nSeth & Nut · UTFSM\nfrancisco.alfaro@usm.cl\n\n“La IA no es inteligente ni artificial.\nEs estadística a escala — y los humanos decidiendo qué optimizar.”\nPyDay Valparaíso · 2026\n\n\n\n\n\n\nLo que nadie te dice sobre la IA generativa · PyDay Valparaíso 2026"
+    "text": "Storytelling principle #4\n\n\nTu primera versión será siempre horrible.\n\n…y hoy la IA te ayuda a llegar más rápido a la buena.\n\n\n\n\n\n\n\nBad first drafts are normal — always were.\nWhat changes in 2026 is the speed of iteration.\nThe principle stays. The tools change."
   },
   {
     "objectID": "ai/datasaturday_2026.html#section",
     "href": "ai/datasaturday_2026.html#section",
-    "title": "Datos, storytelling e IA",
+    "title": "Google Colab",
     "section": "",
-    "text": "Datos, storytelling e IA\nEl nuevo arte de contar con datos\n\n\nCómo la IA generativa está cambiando quién puede contar historias con datos — y qué significa eso para los que ya sabíamos hacerlo\n\n\nFrancisco Alfaro · Valeska Canales\nSeth & Nut · UTFSM · Data Saturday Santiago · 6 junio 2026"
+    "text": "Google Colab\nEjecuta código desde el navegador\n\n\nPython · R · Datos · Drive · IA con Gemini\nMOOC propedéutico — Aprende USM 2026\n\n\nFrancisco Alfaro Medina\nDirección de Transformación Digital · UTFSM\nUnidad de Educación a Distancia · 2026"
   },
   {
     "objectID": "ai/datasaturday_2026.html#de-qué-vamos-a-hablar-hoy",
@@ -4860,9 +4860,9 @@
   {
     "objectID": "ai/datasaturday_2026.html#section-6",
     "href": "ai/datasaturday_2026.html#section-6",
-    "title": "Datos, storytelling e IA",
+    "title": "Google Colab",
     "section": "",
-    "text": "¿Preguntas?\n\nFrancisco Alfaro · Valeska Canales\nSeth & Nut · sethnut.com/talks\n\n“La IA democratizó el primer borrador.\nEl criterio sobre qué historia importa — eso sigue siendo humano.”\nData Saturday Santiago · 2026\n\n\n\n\n\nDatos, storytelling e IA · Data Saturday Santiago 2026"
+    "text": "Google Colab\nManos a la Obra"
   },
   {
     "objectID": "ai/datasaturday_2026.html#el-problema-que-vamos-a-resolver-hoy",
@@ -4995,7 +4995,7 @@
     "href": "ai/datafrontiers_2026.html#section",
     "title": "Crea, Innova y Presenta",
     "section": "",
-    "text": "Crea, Innova y Presenta\nData Storytelling + A.I.\n\n\nUna perspectiva sociológica, cognitiva y técnica sobre la comunicación con datos en la era de la IA generativa\n\n\nFrancisco Alfaro · Valeska Canales\nDepartamento de Matemáticas · UTFSM · sethnut.com/talks"
+    "text": "Crea, Innova y Presenta\nData Storytelling + Inteligencia Artificial\n\n\nStorytelling · Visualización · IA · Narrativa con Datos\nConferencia — 2024\n\n\nFrancisco Alfaro Medina · Valeska Canales · Aníbal Romo\nUniversidad Técnica Federico Santa María\nDirección de Transformación Digital · 2024"
   },
   {
     "objectID": "ai/datafrontiers_2026.html#resumen",
@@ -5156,7 +5156,7 @@
     "href": "ai/datafrontiers_2026.html#section-6",
     "title": "Crea, Innova y Presenta",
     "section": "",
-    "text": "¿Preguntas?\n\nFrancisco Alfaro · francisco.alfaro@usm.cl\nValeska Canales\nDepartamento de Matemáticas · UTFSM\nsethnut.com/talks\n\n“El dato informa. La historia mueve.\nLa IA escala la generación — el juicio sobre qué historia importa sigue siendo humano.”\nData Frontiers 2026\n\n\n\n\n\nCrea, Innova y Presenta: Data Storytelling + A.I. · Data Frontiers 2026"
+    "text": "Storytelling principle #4\n\n\nTu primera versión será siempre horrible.\n\n…y hoy la IA te ayuda a llegar más rápido a la buena.\n\n\n\n\n\n\n\nBad first drafts are normal — always were.\nWhat changes in 2026 is the speed of iteration.\nThe principle stays. The tools change."
   },
   {
     "objectID": "ai/pyday_2026.html#estado-del-arte-modelos-frontier-mayo-2026",
@@ -6543,5 +6543,887 @@
     "title": "Google Colab",
     "section": "Ejemplos",
     "text": "Ejemplos"
+  },
+  {
+    "objectID": "ai/datasaturday_2026.html#te-ha-pasado-esto",
+    "href": "ai/datasaturday_2026.html#te-ha-pasado-esto",
+    "title": "Google Colab",
+    "section": "¿Te ha pasado esto?",
+    "text": "¿Te ha pasado esto?"
+  },
+  {
+    "objectID": "ai/datasaturday_2026.html#objetivos",
+    "href": "ai/datasaturday_2026.html#objetivos",
+    "title": "Google Colab",
+    "section": "Objetivos",
+    "text": "Objetivos\n\n\n\n\n\n\n\n\nConocer Colab: Qué es y para qué sirve en docencia e investigación.\nPrimeros pasos: Celdas de código, Markdown y ejecución en la nube.\nRecursos y datos: RAM, CPU, librerías, kernels y cómo subir archivos.\nIntegraciones: Google Drive, credenciales seguras y Gemini IA."
+  },
+  {
+    "objectID": "ai/datasaturday_2026.html#section-1",
+    "href": "ai/datasaturday_2026.html#section-1",
+    "title": "Google Colab",
+    "section": "",
+    "text": "Google Colab\n¿Qué es y para qué sirve?"
+  },
+  {
+    "objectID": "ai/datasaturday_2026.html#qué-es-google-colab",
+    "href": "ai/datasaturday_2026.html#qué-es-google-colab",
+    "title": "Google Colab",
+    "section": "¿Qué es Google Colab?",
+    "text": "¿Qué es Google Colab?\n\n\n\n\n\n\n\n\n¿Qué es?\n\nEntorno de notebooks Jupyter en la nube, gratuito y sin instalación.\n\n¿Para qué sirve?\n\nEjecutar código Python (y R) directamente desde el navegador.\n\nCompartir análisis, tareas y proyectos con un enlace.\n\nAcceder a GPU/TPU gratuita para proyectos de datos e IA.\n\n\n\n\n\n\n🌿 Solo necesitas una cuenta de Google para empezar en colab.research.google.com."
+  },
+  {
+    "objectID": "ai/datasaturday_2026.html#ejemplos",
+    "href": "ai/datasaturday_2026.html#ejemplos",
+    "title": "Google Colab",
+    "section": "Ejemplos",
+    "text": "Ejemplos"
+  },
+  {
+    "objectID": "ai/datasaturday_2026.html#section-2",
+    "href": "ai/datasaturday_2026.html#section-2",
+    "title": "Google Colab",
+    "section": "",
+    "text": "Google Colab\nLo que necesitas saber"
+  },
+  {
+    "objectID": "ai/datasaturday_2026.html#celdas-el-corazón-de-colab",
+    "href": "ai/datasaturday_2026.html#celdas-el-corazón-de-colab",
+    "title": "Google Colab",
+    "section": "Celdas: el corazón de Colab",
+    "text": "Celdas: el corazón de Colab\n\nMarkdownPythonR\n\n\n\n\n✏️ Celda de texto (Markdown):\n# Mi Análisis\n\nEste notebook explora los datos de estudiantes\nde la UTFSM durante el semestre 2026.\n\n## Objetivos\n- Explorar distribuciones\n- Visualizar tendencias\n- Ajustar un modelo\n\n👁️ Se renderiza así:\nTítulo visible, secciones organizadas y texto formateado — igual que en GitHub README, pero dentro del notebook.\n\n💡 Usa celdas de texto para explicar cada paso. Un buen notebook se lee como un informe.\n\n\n\n\n\n\n\n✏️ Celda de código Python:\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Cargar datos\ndf = pd.read_csv(\"datos.csv\")\n\n# Visualizar\ndf[\"nota\"].hist(bins=20, color=\"#0F2044\")\nplt.title(\"Distribución de notas\")\nplt.xlabel(\"Nota\")\nplt.show()\n\n👁️ ¿Qué hace?\n\nImporta librerías ya instaladas en Colab.\nCarga un archivo CSV.\nGenera un histograma directo en el notebook.\n\n\n💡 Python es el lenguaje principal de Colab — y el más usado en ciencia de datos.\n\n\n\n\n\n\n\n✏️ Activar R en Colab:\nEn el menú: Runtime → Change runtime type → R\n# Cargar datos\ndf &lt;- read.csv(\"datos.csv\")\n\n# Visualizar con ggplot2\nlibrary(ggplot2)\nggplot(df, aes(x = nota)) +\n  geom_histogram(fill = \"#0F2044\",\n                 bins = 20) +\n  labs(title = \"Distribución de notas\")\n\n👁️ ¿Qué hace?\n\nCambia el kernel de Python a R con un clic.\nPermite usar R y sus librerías (ggplot2, dplyr, tidyr) directamente.\nIdeal si tu curso usa R como lenguaje principal.\n\n\n💡 No necesitas instalar R en tu computador — Colab lo tiene listo."
+  },
+  {
+    "objectID": "ai/datasaturday_2026.html#section-3",
+    "href": "ai/datasaturday_2026.html#section-3",
+    "title": "Google Colab",
+    "section": "",
+    "text": "Google Colab\nRecursos, Librerías y Kernels"
+  },
+  {
+    "objectID": "ai/datasaturday_2026.html#qué-tiene-la-máquina",
+    "href": "ai/datasaturday_2026.html#qué-tiene-la-máquina",
+    "title": "Google Colab",
+    "section": "¿Qué tiene la máquina?",
+    "text": "¿Qué tiene la máquina?\n\n\n\n\n\n\n\n\nCPU: ~2 núcleos Intel Xeon — suficiente para análisis de datos típicos.\nRAM: ~12 GB — para datasets medianos sin problema.\nDisco: ~100 GB temporales — se borran al cerrar la sesión.\nGPU T4 (gratis): disponible bajo demanda para modelos de ML.\n\n\n\n\n\n⚠️ Sesiones temporales: si la sesión se desconecta, los archivos locales se pierden. Guarda siempre en Drive."
+  },
+  {
+    "objectID": "ai/datasaturday_2026.html#verificar-recursos-disponibles",
+    "href": "ai/datasaturday_2026.html#verificar-recursos-disponibles",
+    "title": "Google Colab",
+    "section": "Verificar recursos disponibles",
+    "text": "Verificar recursos disponibles\n# Ver RAM y CPU\nimport psutil, platform\n\nprint(f\"Sistema: {platform.system()}\")\nprint(f\"CPU: {psutil.cpu_count()} núcleos\")\nprint(f\"RAM total:     {psutil.virtual_memory().total / 1e9:.1f} GB\")\nprint(f\"RAM disponible:{psutil.virtual_memory().available / 1e9:.1f} GB\")\n# Ver GPU asignada\n!nvidia-smi --query-gpu=name,memory.total --format=csv,noheader\n# Ver disco disponible\n!df -h /\n\n\n🌿 Corre estas celdas al inicio de tu sesión para saber con qué recursos cuentas."
+  },
+  {
+    "objectID": "ai/datasaturday_2026.html#librerías-ya-instaladas-vs.-extras",
+    "href": "ai/datasaturday_2026.html#librerías-ya-instaladas-vs.-extras",
+    "title": "Google Colab",
+    "section": "Librerías: ya instaladas vs. extras",
+    "text": "Librerías: ya instaladas vs. extras\n\n\n✅ Ya vienen instaladas:\n\n\n\n\nLibrería\nPara qué sirve\n\n\n\n\npandas\nDatos tabulares\n\n\nnumpy\nÁlgebra numérica\n\n\nmatplotlib\nGráficos básicos\n\n\nscikit-learn\nMachine Learning\n\n\ntensorflow\nDeep Learning\n\n\nseaborn\nVisualización estadística\n\n\n\n\n\n📦 Instalar librerías extra:\n# Con pip (Python)\n!pip install polars lightgbm\n\n# Con apt (sistema)\n!apt-get install -y libgdal-dev\n\n# Para R (kernel R)\ninstall.packages(\"tidymodels\")\n\n⚠️ Las librerías instaladas con !pip se pierden al reiniciar la sesión."
+  },
+  {
+    "objectID": "ai/datasaturday_2026.html#cambiar-el-kernel-runtime",
+    "href": "ai/datasaturday_2026.html#cambiar-el-kernel-runtime",
+    "title": "Google Colab",
+    "section": "Cambiar el Kernel (Runtime)",
+    "text": "Cambiar el Kernel (Runtime)\n\n\n\n\n\n\n\nMenú: Runtime → Change runtime type\n\nCPU: para análisis de datos y scripts generales.\nGPU T4: para entrenamiento de modelos de ML/DL.\nTPU: para modelos muy grandes con TensorFlow.\nR: para cambiar completamente el lenguaje del entorno.\n\n\n\n\n\n🌿 Cambiar el runtime reinicia la sesión — guarda tu trabajo antes de hacerlo."
+  },
+  {
+    "objectID": "ai/datasaturday_2026.html#section-4",
+    "href": "ai/datasaturday_2026.html#section-4",
+    "title": "Google Colab",
+    "section": "",
+    "text": "Google Colab\nDatos, Drive y Credenciales"
+  },
+  {
+    "objectID": "ai/datasaturday_2026.html#subir-datos-a-colab",
+    "href": "ai/datasaturday_2026.html#subir-datos-a-colab",
+    "title": "Google Colab",
+    "section": "Subir datos a Colab",
+    "text": "Subir datos a Colab\n\nSubida directaDesde URLGoogle DriveCredenciales Seguras\n\n\n\n\n✏️ Desde el panel lateral:\n📁 Ícono de carpeta (izquierda)\n  → Subir archivo\n  → Selecciona tu CSV o Excel\nO desde código:\nfrom google.colab import files\nuploaded = files.upload()\n# → abre un selector de archivos\n\n👁️ ¿Cuándo usarlo?\n\nArchivos pequeños (&lt; 50 MB).\nUso puntual en una sola sesión.\n\n\n⚠️ El archivo desaparece al cerrar la sesión. No es la opción más estable.\n\n\n\n\n\n\n\n✏️ Descargar desde internet:\nimport pandas as pd\n\n# Desde GitHub (raw)\nurl = \"https://raw.githubusercontent.com/\"\\\n      \"usuario/repo/main/datos.csv\"\ndf = pd.read_csv(url)\n\n# Desde Google Sheets (publicado como CSV)\nsheet_url = \"https://docs.google.com/spreadsheets\"\\\n            \"/d/ID/export?format=csv\"\ndf = pd.read_csv(sheet_url)\n\ndf.head()\n\n👁️ ¿Cuándo usarlo?\n\nDatos públicos en GitHub o repositorios abiertos.\nGoogle Sheets compartidos del curso.\n\n\n💡 Es la forma más reproducible — el notebook funciona para cualquiera que lo abra.\n\n\n\n\n\n\n\n✏️ Montar tu Drive:\nfrom google.colab import drive\ndrive.mount(\"/content/drive\")\n\n# Acceder a tus archivos como carpeta local\nimport pandas as pd\n\nruta = \"/content/drive/MyDrive/datos/notas.csv\"\ndf = pd.read_csv(ruta)\ndf.head()\n\n👁️ ¿Por qué es lo mejor?\n\nLos archivos persisten aunque se reinicie la sesión.\nOrganiza datos en carpetas de Drive como si fuera tu escritorio.\nFunciona igual que una carpeta local.\n\n\n💡 Recomendado para proyectos que se retoman en múltiples sesiones.\n\n\n\n\n\n\n\n❌ Nunca hagas esto:\n# Expone tu clave en el notebook\nAPI_KEY = \"sk-abc123supersecreta\"\nPASSWORD = \"mi_clave_secreta\"\n✅ Usa Secrets de Colab:\nfrom google.colab import userdata\n\napi_key = userdata.get(\"MI_API_KEY\")\n\n👁️ ¿Cómo configurar Secrets?\n🔑 Ícono de llave (panel izquierdo)\n  → \"Add new secret\"\n  → Nombre: MI_API_KEY\n  → Valor: tu clave real\n  → Activar acceso al notebook\n\n🔐 Nunca compartas un notebook con claves escritas directamente en el código."
+  },
+  {
+    "objectID": "ai/datasaturday_2026.html#section-5",
+    "href": "ai/datasaturday_2026.html#section-5",
+    "title": "Google Colab",
+    "section": "",
+    "text": "Google Colab\nIA con Gemini integrado"
+  },
+  {
+    "objectID": "ai/datasaturday_2026.html#gemini-en-colab",
+    "href": "ai/datasaturday_2026.html#gemini-en-colab",
+    "title": "Google Colab",
+    "section": "Gemini en Colab",
+    "text": "Gemini en Colab\n\n\n\n\n\n\n\n\n¿Qué es Gemini en Colab?\n\nAsistente IA integrado directamente en el entorno de notebooks.\n\n¿Qué puede hacer?\n\nGenerar y explicar celdas de código.\n\nCorregir errores y sugerir mejoras.\n\nResponder preguntas sobre librerías y análisis sin salir de Colab.\n\n\n\n\n\n\n🌿 Disponible con cuenta Google — el ícono ✨ aparece en cada celda de código."
+  },
+  {
+    "objectID": "ai/datasaturday_2026.html#gemini-ejemplos-prácticos",
+    "href": "ai/datasaturday_2026.html#gemini-ejemplos-prácticos",
+    "title": "Google Colab",
+    "section": "Gemini: ejemplos prácticos",
+    "text": "Gemini: ejemplos prácticos\n\nGenerar códigoExplicar erroresAnalizar datos\n\n\n\n\n✨ Le pides a Gemini:\n\n“Crea un gráfico de barras con matplotlib que muestre las notas promedio por carrera, usando la paleta ‘tab10’.”\n\n\n✅ Gemini genera:\nimport matplotlib.pyplot as plt\nimport numpy as np\n\ncarreras = [\"Ing. Civil\", \"Informática\",\n            \"Electrónica\", \"Industrial\"]\npromedios = [5.2, 5.8, 4.9, 5.5]\n\nfig, ax = plt.subplots(figsize=(8, 5))\ncolors = plt.cm.tab10(np.linspace(0, 1, len(carreras)))\nax.bar(carreras, promedios, color=colors)\nax.set_title(\"Promedio de notas por carrera\")\nax.set_ylabel(\"Nota promedio\")\nax.set_ylim(1, 7)\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n✨ Tienes este error:\ndf.groupby(\"carrera\")[\"nota\"].means()\nAttributeError: 'SeriesGroupBy' object\nhas no attribute 'means'\n\n“¿Por qué da este error y cómo lo corrijo?”\n\n\n✅ Gemini explica:\n❌ means() no existe — el método correcto es mean() (sin ‘s’).\n✅ Versión corregida:\ndf.groupby(\"carrera\")[\"nota\"].mean()\n\n💡 Gemini también puede sugerir mejoras de eficiencia y estilo en tu código.\n\n\n\n\n\n\n\n✨ Le pides a Gemini:\n\n“Tengo un DataFrame con columnas nota, carrera y año_ingreso. Sugiere un análisis exploratorio básico.”\n\n\n✅ Gemini propone:\n# Estadísticas descriptivas\nprint(df.describe())\nprint(df[\"carrera\"].value_counts())\n\n# Distribución de notas\ndf[\"nota\"].hist(bins=15, figsize=(8, 4))\n\n# Notas por carrera\ndf.boxplot(column=\"nota\", by=\"carrera\",\n           figsize=(10, 5))\n\n# Evolución por año de ingreso\ndf.groupby(\"año_ingreso\")[\"nota\"].mean()\\\n  .plot(marker=\"o\", title=\"Promedio por año\")"
+  },
+  {
+    "objectID": "ai/datasaturday_2026.html#actividad-tu-primer-notebook",
+    "href": "ai/datasaturday_2026.html#actividad-tu-primer-notebook",
+    "title": "Google Colab",
+    "section": "Actividad: Tu Primer Notebook",
+    "text": "Actividad: Tu Primer Notebook\n\n\n\n\n\n\n\n\nAbre colab.research.google.com y crea un nuevo notebook.\nAgrega una celda de texto con título, descripción y objetivos en Markdown.\nCarga un dataset desde URL (puedes usar datos de seaborn-data).\nExplora los datos: .head(), .describe(), .info().\nCrea al menos un gráfico con matplotlib o seaborn.\n(Extra) Usa Gemini para generar o mejorar alguna celda de código.\n\n\n\n\n\n⏱️ Tiempo de la actividad: 15–20 minutos."
+  },
+  {
+    "objectID": "ai/datasaturday_2026.html#section-7",
+    "href": "ai/datasaturday_2026.html#section-7",
+    "title": "Google Colab",
+    "section": "",
+    "text": "Google Colab\nConclusiones"
+  },
+  {
+    "objectID": "ai/datasaturday_2026.html#conclusiones",
+    "href": "ai/datasaturday_2026.html#conclusiones",
+    "title": "Google Colab",
+    "section": "Conclusiones",
+    "text": "Conclusiones\n\n\n\n\n✅   Google Colab permite ejecutar código Python y R sin instalar nada.\n\n\n✅   Los notebooks combinan código, texto y visualizaciones en un solo lugar.\n\n\n✅   Google Drive es la forma más estable de persistir datos entre sesiones.\n\n\n✅   Las credenciales deben guardarse en Secrets, nunca escritas en el código.\n\n\n✅   Gemini integrado acelera el aprendizaje y la escritura de código."
+  },
+  {
+    "objectID": "ai/datasaturday_2026.html#gracias-por-participar",
+    "href": "ai/datasaturday_2026.html#gracias-por-participar",
+    "title": "Google Colab",
+    "section": "🎉 ¡Gracias por Participar!",
+    "text": "🎉 ¡Gracias por Participar!\n\n\n\n❓¿Preguntas?\n👏 Responder encuesta\n🥳 ¡Disfrutar del Curso!\n\n\n\n\n\n🔗 Nuestro Sitio Web: educacionadistancia.usm.cl/"
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#sobre-nosotros",
+    "href": "ai/datafrontiers_2026.html#sobre-nosotros",
+    "title": "Crea, Innova y Presenta",
+    "section": "Sobre Nosotros",
+    "text": "Sobre Nosotros\n\n\n\n\n  \n    \n      FA\n      Francisco Alfaro\n      Líder de Análisis y Modelación Avanzada\n    \n    \n    \n      Especialista en inteligencia artificial, estadística y educación.\n      🌐 Portfolio\n    \n  \n  \n    \n      VC\n      Valeska Canales\n      Científica de Datos\n    \n    \n    \n      Especialista en visualización, storytelling y comunicación de datos.\n      🌐 Portfolio\n    \n  \n  \n    \n      AR\n      Aníbal Romo\n      Gestión del Cambio Organizacional\n    \n    \n    \n      Profesional en transformación digital e innovación institucional.\n      💼 LinkedIn"
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#agenda",
+    "href": "ai/datafrontiers_2026.html#agenda",
+    "title": "Crea, Innova y Presenta",
+    "section": "Agenda",
+    "text": "Agenda\n\n\n\n\nNo\nNope\nNo chance"
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#section-1",
+    "href": "ai/datafrontiers_2026.html#section-1",
+    "title": "Crea, Innova y Presenta",
+    "section": "",
+    "text": "Storytelling principle #1\n\n\nNunca revelar el final antes de tiempo.\nSiempre eleva la tensión y el drama"
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#agenda-v2",
+    "href": "ai/datafrontiers_2026.html#agenda-v2",
+    "title": "Crea, Innova y Presenta",
+    "section": "Agenda (v2)",
+    "text": "Agenda (v2)\n\n\nNunca reveles el final\n\nLos detalles son importantes, pero no todos los detalles.\n\nExplicar menos, Mostrar más\nTu primera versión será horrible."
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#qué-es-storytelling",
+    "href": "ai/datafrontiers_2026.html#qué-es-storytelling",
+    "title": "Crea, Innova y Presenta",
+    "section": "Qué es Storytelling?",
+    "text": "Qué es Storytelling?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n🔥 Las historias son la primera tecnología humana.\n\n\nStories are how humans share knowledge.\nIt’s our oldest learning tool — built for memory, connection, and meaning.\nUse it well."
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#qué-es-data-storytelling",
+    "href": "ai/datafrontiers_2026.html#qué-es-data-storytelling",
+    "title": "Crea, Innova y Presenta",
+    "section": "Qué es Data Storytelling?",
+    "text": "Qué es Data Storytelling?\n\n\n\n\n\n\n\n\n\n\n\n📊 Data Storytelling es una forma de comunicar con datos."
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#el-poder-del-qué-y-cómo-visualizar",
+    "href": "ai/datafrontiers_2026.html#el-poder-del-qué-y-cómo-visualizar",
+    "title": "Crea, Innova y Presenta",
+    "section": "El poder del qué y cómo visualizar",
+    "text": "El poder del qué y cómo visualizar"
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#ohh-nuestros-cerebros-son-hackables",
+    "href": "ai/datafrontiers_2026.html#ohh-nuestros-cerebros-son-hackables",
+    "title": "Crea, Innova y Presenta",
+    "section": "Ohh, nuestros cerebros son hackables…",
+    "text": "Ohh, nuestros cerebros son hackables…"
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#atención-y-memoria",
+    "href": "ai/datafrontiers_2026.html#atención-y-memoria",
+    "title": "Crea, Innova y Presenta",
+    "section": "Atención y memoria",
+    "text": "Atención y memoria"
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#narrativa",
+    "href": "ai/datafrontiers_2026.html#narrativa",
+    "title": "Crea, Innova y Presenta",
+    "section": "Narrativa",
+    "text": "Narrativa\n\n\n\nUsa trucos de Storytelling (narrativa) para crear presentaciones que serán recordadas y que causarán impacto\n\n\n\n\n\n\n\n\n\n\n🎭 Emociones inspiran acción\n\n\nGreat ideas need great communication.\nStorytelling is your toolkit to move people.\nFacts inform — emotions inspire action."
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#más-que-gráficos-bonitos",
+    "href": "ai/datafrontiers_2026.html#más-que-gráficos-bonitos",
+    "title": "Crea, Innova y Presenta",
+    "section": "Más que gráficos bonitos",
+    "text": "Más que gráficos bonitos\n\n\n 🔢 No compartas números\n\n 🪶Comparte una historia\n\n\n\n (C) Storytelling with Data, por Cole Nussbaumer Knaflic."
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#section-2",
+    "href": "ai/datafrontiers_2026.html#section-2",
+    "title": "Crea, Innova y Presenta",
+    "section": "",
+    "text": "Storytelling principle #2\n\n\nLos detalles son importantes, pero no todos los detalles son importantes.\n\n\n\n\n\nDetails guide attention.\nShow less — but better.\nFocus only on what moves the story forward."
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#visualización-1",
+    "href": "ai/datafrontiers_2026.html#visualización-1",
+    "title": "Crea, Innova y Presenta",
+    "section": "Visualización …",
+    "text": "Visualización …\n\n\n\n\nGráficos claros y comprensibles\nElección correcta del gráfico\nPatrones y anomalías visibles\nDatos complejos → ideas simples\n\n\n\n\n\n\n\n\n\n\n\n⌛ Si no se entiende en 5-7 segundos, simplifica o cambia el título."
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#section-3",
+    "href": "ai/datafrontiers_2026.html#section-3",
+    "title": "Crea, Innova y Presenta",
+    "section": "",
+    "text": "Más fácil de distinguir ⟵────────────────────────────⟶ Más difícil de distinguir"
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#ejemplos",
+    "href": "ai/datafrontiers_2026.html#ejemplos",
+    "title": "Crea, Innova y Presenta",
+    "section": "Ejemplos",
+    "text": "Ejemplos\n\n\n\n\n\n\n\n\n ❌ Chartjunk\n\n\n\n\n\n\n✅ Good Chart"
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#section-4",
+    "href": "ai/datafrontiers_2026.html#section-4",
+    "title": "Crea, Innova y Presenta",
+    "section": "",
+    "text": "Storytelling principle #3\n\n\nExplicar Menos, Mostrar Más"
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#mejores-gráficos-para-tus-datos",
+    "href": "ai/datafrontiers_2026.html#mejores-gráficos-para-tus-datos",
+    "title": "Crea, Innova y Presenta",
+    "section": "Mejores Gráficos para tus Datos",
+    "text": "Mejores Gráficos para tus Datos\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(C) Essential chart types for data visualization, by Atlassian.\n\nYou don’t need fancy charts.\nBar, scatter, box, heatmap, big text — that’s 90% of data storytelling.\nSimple wins."
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#section-5",
+    "href": "ai/datafrontiers_2026.html#section-5",
+    "title": "Crea, Innova y Presenta",
+    "section": "",
+    "text": "🥱 1° versión \\(&lt;\\) … \\(&lt;\\) 😊 última versión\n\n\nFirst versions are never perfect.\nDraft → feedback → improve.\nIn 2026, AI compresses this cycle dramatically.\nWhat took days now takes hours."
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#de-las-ideas-al-impacto-con-ia",
+    "href": "ai/datafrontiers_2026.html#de-las-ideas-al-impacto-con-ia",
+    "title": "Crea, Innova y Presenta",
+    "section": "De las Ideas al Impacto … con IA",
+    "text": "De las Ideas al Impacto … con IA\n\n\n\n\nEstructura más rápida, menos esfuerzo\n\nHistorias más claras, mayor impacto\n\nVisuales en segundos\n\nMás tiempo para la creatividad\n\n\n\n\n\n\n\n\n\n\n\n🤖 Tools: ChatGPT, Gemini, Napkin AI, Midjourney, Copilot\n\n\nFirst drafts are messy — that’s normal.\nAI helps you go from idea → clarity → impact much faster.\nLess time stuck, more time creating."
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#caso-de-estudio",
+    "href": "ai/datafrontiers_2026.html#caso-de-estudio",
+    "title": "Crea, Innova y Presenta",
+    "section": "🤖 Caso de Estudio",
+    "text": "🤖 Caso de Estudio\n\n\n\n\n\n\n\nProblemática\n\n\nDebes preparar un pitch para gerencia a partir de un dataset de retención estudiantil por cohorte y programa.\nEl reto: extraer la historia clave y comunicarla de forma clara en menos de 30 minutos.\n\n\n\n\n\n\n\nPipeline con IA en 2026:\n\nJulius AI / ChatGPT o1 → sube el CSV, pide los 3 insights más relevantes\nNotebookLM → genera un briefing de contexto\nNapkin AI → convierte los insights en diagramas\nGamma → arma la presentación completa\nClaude Code → ajusta el código de los gráficos si necesitas personalización\n\n\n\n\n⏱️ Antes: 2–3 días\n🤖 Hoy: &lt; 1 hora\n🎯 El criterio sigue\nsiendo tuyo\n\n\n\n\nThe dataset here mirrors SAT-E context — feel free to swap for a more generic example.\nThe key message: AI handles the mechanical parts.\nYou handle the judgment: what story to tell, to whom, and why."
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#agenda-v2-1",
+    "href": "ai/datafrontiers_2026.html#agenda-v2-1",
+    "title": "Crea, Innova y Presenta",
+    "section": "Agenda (v2)",
+    "text": "Agenda (v2)\n\n\nNunca reveles el final\n\nLos detalles son importantes, pero no todos los detalles\n\nExplica menos, muestra más\n\nTu primer borrador será horrible\n\n\n\n\nA mysterious agenda — like a good story.\nNow you’ve seen how each point connects.\nSimple rules to tell better stories with data."
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#gracias-por-participar",
+    "href": "ai/datafrontiers_2026.html#gracias-por-participar",
+    "title": "Crea, Innova y Presenta",
+    "section": "🎉 ¡Gracias por Participar!",
+    "text": "🎉 ¡Gracias por Participar!\n\n\n\n❓ ¿Preguntas?\n👏 Responder encuesta\n🥳 Disfrutar del Evento!"
+  },
+  {
+    "objectID": "ai/pyday_2026.html#te-ha-pasado-esto",
+    "href": "ai/pyday_2026.html#te-ha-pasado-esto",
+    "title": "Google Colab",
+    "section": "¿Te ha pasado esto?",
+    "text": "¿Te ha pasado esto?"
+  },
+  {
+    "objectID": "ai/pyday_2026.html#objetivos",
+    "href": "ai/pyday_2026.html#objetivos",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "🎯 Objetivos",
+    "text": "🎯 Objetivos\n\n\n\n\n\n\n\n\nComprender los LLM: Definición, funcionamiento y aplicaciones.\n\nAsistentes Virtuales: Uso, prompts y desafíos comunes.\n\nÉtica: Consideraciones y buenas prácticas."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#section-1",
+    "href": "ai/pyday_2026.html#section-1",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "",
+    "text": "Explicación sobre los LLMs\n¿ Qué son los LLM ?"
+  },
+  {
+    "objectID": "ai/pyday_2026.html#qué-es-google-colab",
+    "href": "ai/pyday_2026.html#qué-es-google-colab",
+    "title": "Google Colab",
+    "section": "¿Qué es Google Colab?",
+    "text": "¿Qué es Google Colab?\n\n\n\n\n\n\n\n\n¿Qué es?\n\nEntorno de notebooks Jupyter en la nube, gratuito y sin instalación.\n\n¿Para qué sirve?\n\nEjecutar código Python (y R) directamente desde el navegador.\n\nCompartir análisis, tareas y proyectos con un enlace.\n\nAcceder a GPU/TPU gratuita para proyectos de datos e IA.\n\n\n\n\n\n\n🌿 Solo necesitas una cuenta de Google para empezar en colab.research.google.com."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#ejemplos",
+    "href": "ai/pyday_2026.html#ejemplos",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "📝 Ejemplos",
+    "text": "📝 Ejemplos\n\nPregunta directa: “¿Qué es la inteligencia artificial?”\nInstrucción: “Escribe una historia corta sobre un viaje al espacio.”\nComando: “Genera un código Python para calcular el promedio de una lista.”"
+  },
+  {
+    "objectID": "ai/pyday_2026.html#section-2",
+    "href": "ai/pyday_2026.html#section-2",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "",
+    "text": "Storytelling principle #2\n\n\nLos detalles son importantes, pero no todos los detalles son importantes.\n\n\n\n\n\nDetails guide attention.\nShow less — but better.\nFocus only on what moves the story forward."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#celdas-el-corazón-de-colab",
+    "href": "ai/pyday_2026.html#celdas-el-corazón-de-colab",
+    "title": "Google Colab",
+    "section": "Celdas: el corazón de Colab",
+    "text": "Celdas: el corazón de Colab\n\nMarkdownPythonR\n\n\n\n\n✏️ Celda de texto (Markdown):\n# Mi Análisis\n\nEste notebook explora los datos de estudiantes\nde la UTFSM durante el semestre 2026.\n\n## Objetivos\n- Explorar distribuciones\n- Visualizar tendencias\n- Ajustar un modelo\n\n👁️ Se renderiza así:\nTítulo visible, secciones organizadas y texto formateado — igual que en GitHub README, pero dentro del notebook.\n\n💡 Usa celdas de texto para explicar cada paso. Un buen notebook se lee como un informe.\n\n\n\n\n\n\n\n✏️ Celda de código Python:\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Cargar datos\ndf = pd.read_csv(\"datos.csv\")\n\n# Visualizar\ndf[\"nota\"].hist(bins=20, color=\"#0F2044\")\nplt.title(\"Distribución de notas\")\nplt.xlabel(\"Nota\")\nplt.show()\n\n👁️ ¿Qué hace?\n\nImporta librerías ya instaladas en Colab.\nCarga un archivo CSV.\nGenera un histograma directo en el notebook.\n\n\n💡 Python es el lenguaje principal de Colab — y el más usado en ciencia de datos.\n\n\n\n\n\n\n\n✏️ Activar R en Colab:\nEn el menú: Runtime → Change runtime type → R\n# Cargar datos\ndf &lt;- read.csv(\"datos.csv\")\n\n# Visualizar con ggplot2\nlibrary(ggplot2)\nggplot(df, aes(x = nota)) +\n  geom_histogram(fill = \"#0F2044\",\n                 bins = 20) +\n  labs(title = \"Distribución de notas\")\n\n👁️ ¿Qué hace?\n\nCambia el kernel de Python a R con un clic.\nPermite usar R y sus librerías (ggplot2, dplyr, tidyr) directamente.\nIdeal si tu curso usa R como lenguaje principal.\n\n\n💡 No necesitas instalar R en tu computador — Colab lo tiene listo."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#section-3",
+    "href": "ai/pyday_2026.html#section-3",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "",
+    "text": "Más fácil de distinguir ⟵────────────────────────────⟶ Más difícil de distinguir"
+  },
+  {
+    "objectID": "ai/pyday_2026.html#qué-tiene-la-máquina",
+    "href": "ai/pyday_2026.html#qué-tiene-la-máquina",
+    "title": "Google Colab",
+    "section": "¿Qué tiene la máquina?",
+    "text": "¿Qué tiene la máquina?\n\n\n\n\n\n\n\n\nCPU: ~2 núcleos Intel Xeon — suficiente para análisis de datos típicos.\nRAM: ~12 GB — para datasets medianos sin problema.\nDisco: ~100 GB temporales — se borran al cerrar la sesión.\nGPU T4 (gratis): disponible bajo demanda para modelos de ML.\n\n\n\n\n\n⚠️ Sesiones temporales: si la sesión se desconecta, los archivos locales se pierden. Guarda siempre en Drive."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#verificar-recursos-disponibles",
+    "href": "ai/pyday_2026.html#verificar-recursos-disponibles",
+    "title": "Google Colab",
+    "section": "Verificar recursos disponibles",
+    "text": "Verificar recursos disponibles\n# Ver RAM y CPU\nimport psutil, platform\n\nprint(f\"Sistema: {platform.system()}\")\nprint(f\"CPU: {psutil.cpu_count()} núcleos\")\nprint(f\"RAM total:     {psutil.virtual_memory().total / 1e9:.1f} GB\")\nprint(f\"RAM disponible:{psutil.virtual_memory().available / 1e9:.1f} GB\")\n# Ver GPU asignada\n!nvidia-smi --query-gpu=name,memory.total --format=csv,noheader\n# Ver disco disponible\n!df -h /\n\n\n🌿 Corre estas celdas al inicio de tu sesión para saber con qué recursos cuentas."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#librerías-ya-instaladas-vs.-extras",
+    "href": "ai/pyday_2026.html#librerías-ya-instaladas-vs.-extras",
+    "title": "Google Colab",
+    "section": "Librerías: ya instaladas vs. extras",
+    "text": "Librerías: ya instaladas vs. extras\n\n\n✅ Ya vienen instaladas:\n\n\n\n\nLibrería\nPara qué sirve\n\n\n\n\npandas\nDatos tabulares\n\n\nnumpy\nÁlgebra numérica\n\n\nmatplotlib\nGráficos básicos\n\n\nscikit-learn\nMachine Learning\n\n\ntensorflow\nDeep Learning\n\n\nseaborn\nVisualización estadística\n\n\n\n\n\n📦 Instalar librerías extra:\n# Con pip (Python)\n!pip install polars lightgbm\n\n# Con apt (sistema)\n!apt-get install -y libgdal-dev\n\n# Para R (kernel R)\ninstall.packages(\"tidymodels\")\n\n⚠️ Las librerías instaladas con !pip se pierden al reiniciar la sesión."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#cambiar-el-kernel-runtime",
+    "href": "ai/pyday_2026.html#cambiar-el-kernel-runtime",
+    "title": "Google Colab",
+    "section": "Cambiar el Kernel (Runtime)",
+    "text": "Cambiar el Kernel (Runtime)\n\n\n\n\n\n\n\nMenú: Runtime → Change runtime type\n\nCPU: para análisis de datos y scripts generales.\nGPU T4: para entrenamiento de modelos de ML/DL.\nTPU: para modelos muy grandes con TensorFlow.\nR: para cambiar completamente el lenguaje del entorno.\n\n\n\n\n\n🌿 Cambiar el runtime reinicia la sesión — guarda tu trabajo antes de hacerlo."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#section-4",
+    "href": "ai/pyday_2026.html#section-4",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "",
+    "text": "No es Magia, es Ciencia\n¿Qué son los Prompts?"
+  },
+  {
+    "objectID": "ai/pyday_2026.html#subir-datos-a-colab",
+    "href": "ai/pyday_2026.html#subir-datos-a-colab",
+    "title": "Google Colab",
+    "section": "Subir datos a Colab",
+    "text": "Subir datos a Colab\n\nSubida directaDesde URLGoogle DriveCredenciales Seguras\n\n\n\n\n✏️ Desde el panel lateral:\n📁 Ícono de carpeta (izquierda)\n  → Subir archivo\n  → Selecciona tu CSV o Excel\nO desde código:\nfrom google.colab import files\nuploaded = files.upload()\n# → abre un selector de archivos\n\n👁️ ¿Cuándo usarlo?\n\nArchivos pequeños (&lt; 50 MB).\nUso puntual en una sola sesión.\n\n\n⚠️ El archivo desaparece al cerrar la sesión. No es la opción más estable.\n\n\n\n\n\n\n\n✏️ Descargar desde internet:\nimport pandas as pd\n\n# Desde GitHub (raw)\nurl = \"https://raw.githubusercontent.com/\"\\\n      \"usuario/repo/main/datos.csv\"\ndf = pd.read_csv(url)\n\n# Desde Google Sheets (publicado como CSV)\nsheet_url = \"https://docs.google.com/spreadsheets\"\\\n            \"/d/ID/export?format=csv\"\ndf = pd.read_csv(sheet_url)\n\ndf.head()\n\n👁️ ¿Cuándo usarlo?\n\nDatos públicos en GitHub o repositorios abiertos.\nGoogle Sheets compartidos del curso.\n\n\n💡 Es la forma más reproducible — el notebook funciona para cualquiera que lo abra.\n\n\n\n\n\n\n\n✏️ Montar tu Drive:\nfrom google.colab import drive\ndrive.mount(\"/content/drive\")\n\n# Acceder a tus archivos como carpeta local\nimport pandas as pd\n\nruta = \"/content/drive/MyDrive/datos/notas.csv\"\ndf = pd.read_csv(ruta)\ndf.head()\n\n👁️ ¿Por qué es lo mejor?\n\nLos archivos persisten aunque se reinicie la sesión.\nOrganiza datos en carpetas de Drive como si fuera tu escritorio.\nFunciona igual que una carpeta local.\n\n\n💡 Recomendado para proyectos que se retoman en múltiples sesiones.\n\n\n\n\n\n\n\n❌ Nunca hagas esto:\n# Expone tu clave en el notebook\nAPI_KEY = \"sk-abc123supersecreta\"\nPASSWORD = \"mi_clave_secreta\"\n✅ Usa Secrets de Colab:\nfrom google.colab import userdata\n\napi_key = userdata.get(\"MI_API_KEY\")\n\n👁️ ¿Cómo configurar Secrets?\n🔑 Ícono de llave (panel izquierdo)\n  → \"Add new secret\"\n  → Nombre: MI_API_KEY\n  → Valor: tu clave real\n  → Activar acceso al notebook\n\n🔐 Nunca compartas un notebook con claves escritas directamente en el código."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#section-5",
+    "href": "ai/pyday_2026.html#section-5",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "",
+    "text": "🥱 1° versión \\(&lt;\\) … \\(&lt;\\) 😊 última versión\n\n\nFirst versions are never perfect.\nDraft → feedback → improve.\nIn 2026, AI compresses this cycle dramatically.\nWhat took days now takes hours."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#gemini-en-colab",
+    "href": "ai/pyday_2026.html#gemini-en-colab",
+    "title": "Google Colab",
+    "section": "Gemini en Colab",
+    "text": "Gemini en Colab\n\n\n\n\n\n\n\n\n¿Qué es Gemini en Colab?\n\nAsistente IA integrado directamente en el entorno de notebooks.\n\n¿Qué puede hacer?\n\nGenerar y explicar celdas de código.\n\nCorregir errores y sugerir mejoras.\n\nResponder preguntas sobre librerías y análisis sin salir de Colab.\n\n\n\n\n\n\n🌿 Disponible con cuenta Google — el ícono ✨ aparece en cada celda de código."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#gemini-ejemplos-prácticos",
+    "href": "ai/pyday_2026.html#gemini-ejemplos-prácticos",
+    "title": "Google Colab",
+    "section": "Gemini: ejemplos prácticos",
+    "text": "Gemini: ejemplos prácticos\n\nGenerar códigoExplicar erroresAnalizar datos\n\n\n\n\n✨ Le pides a Gemini:\n\n“Crea un gráfico de barras con matplotlib que muestre las notas promedio por carrera, usando la paleta ‘tab10’.”\n\n\n✅ Gemini genera:\nimport matplotlib.pyplot as plt\nimport numpy as np\n\ncarreras = [\"Ing. Civil\", \"Informática\",\n            \"Electrónica\", \"Industrial\"]\npromedios = [5.2, 5.8, 4.9, 5.5]\n\nfig, ax = plt.subplots(figsize=(8, 5))\ncolors = plt.cm.tab10(np.linspace(0, 1, len(carreras)))\nax.bar(carreras, promedios, color=colors)\nax.set_title(\"Promedio de notas por carrera\")\nax.set_ylabel(\"Nota promedio\")\nax.set_ylim(1, 7)\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n✨ Tienes este error:\ndf.groupby(\"carrera\")[\"nota\"].means()\nAttributeError: 'SeriesGroupBy' object\nhas no attribute 'means'\n\n“¿Por qué da este error y cómo lo corrijo?”\n\n\n✅ Gemini explica:\n❌ means() no existe — el método correcto es mean() (sin ‘s’).\n✅ Versión corregida:\ndf.groupby(\"carrera\")[\"nota\"].mean()\n\n💡 Gemini también puede sugerir mejoras de eficiencia y estilo en tu código.\n\n\n\n\n\n\n\n✨ Le pides a Gemini:\n\n“Tengo un DataFrame con columnas nota, carrera y año_ingreso. Sugiere un análisis exploratorio básico.”\n\n\n✅ Gemini propone:\n# Estadísticas descriptivas\nprint(df.describe())\nprint(df[\"carrera\"].value_counts())\n\n# Distribución de notas\ndf[\"nota\"].hist(bins=15, figsize=(8, 4))\n\n# Notas por carrera\ndf.boxplot(column=\"nota\", by=\"carrera\",\n           figsize=(10, 5))\n\n# Evolución por año de ingreso\ndf.groupby(\"año_ingreso\")[\"nota\"].mean()\\\n  .plot(marker=\"o\", title=\"Promedio por año\")"
+  },
+  {
+    "objectID": "ai/pyday_2026.html#actividad-tu-primer-notebook",
+    "href": "ai/pyday_2026.html#actividad-tu-primer-notebook",
+    "title": "Google Colab",
+    "section": "Actividad: Tu Primer Notebook",
+    "text": "Actividad: Tu Primer Notebook\n\n\n\n\n\n\n\n\nAbre colab.research.google.com y crea un nuevo notebook.\nAgrega una celda de texto con título, descripción y objetivos en Markdown.\nCarga un dataset desde URL (puedes usar datos de seaborn-data).\nExplora los datos: .head(), .describe(), .info().\nCrea al menos un gráfico con matplotlib o seaborn.\n(Extra) Usa Gemini para generar o mejorar alguna celda de código.\n\n\n\n\n\n⏱️ Tiempo de la actividad: 15–20 minutos."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#section-7",
+    "href": "ai/pyday_2026.html#section-7",
+    "title": "Google Colab",
+    "section": "",
+    "text": "Google Colab\nConclusiones"
+  },
+  {
+    "objectID": "ai/pyday_2026.html#conclusiones",
+    "href": "ai/pyday_2026.html#conclusiones",
+    "title": "Google Colab",
+    "section": "Conclusiones",
+    "text": "Conclusiones\n\n\n\n\n✅   Google Colab permite ejecutar código Python y R sin instalar nada.\n\n\n✅   Los notebooks combinan código, texto y visualizaciones en un solo lugar.\n\n\n✅   Google Drive es la forma más estable de persistir datos entre sesiones.\n\n\n✅   Las credenciales deben guardarse en Secrets, nunca escritas en el código.\n\n\n✅   Gemini integrado acelera el aprendizaje y la escritura de código."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#gracias-por-participar",
+    "href": "ai/pyday_2026.html#gracias-por-participar",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "🎉 ¡Gracias por Participar!",
+    "text": "🎉 ¡Gracias por Participar!\n\n\n\n❓ ¿Preguntas?\n👏 Responder encuesta\n🥳 Disfrutar del Evento!"
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#cuando-las-estadísticas-confunden",
+    "href": "ai/datafrontiers_2026.html#cuando-las-estadísticas-confunden",
+    "title": "Crea, Innova y Presenta",
+    "section": "Cuando las estadísticas confunden …",
+    "text": "Cuando las estadísticas confunden …\n\n\n\n\n\n\n\n\n \n\n\n\nCuarteto de Anscombe: Mismos números, patrones distintos"
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#ejemplo-spotify-wrapped",
+    "href": "ai/datafrontiers_2026.html#ejemplo-spotify-wrapped",
+    "title": "Crea, Innova y Presenta",
+    "section": "Ejemplo: Spotify Wrapped",
+    "text": "Ejemplo: Spotify Wrapped\n\n\n\n\n\n\n\n\n\nCómo hacer millones de personas  compartir estadísticas en redes sociales?"
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#pilares-visualización---noah-iliinsky",
+    "href": "ai/datafrontiers_2026.html#pilares-visualización---noah-iliinsky",
+    "title": "Crea, Innova y Presenta",
+    "section": "4 Pilares Visualización - Noah Iliinsky",
+    "text": "4 Pilares Visualización - Noah Iliinsky\n\n\n\n\nPropósito: Define la meta.\nContenido: Datos relevantes.\nEstructura: Organización clara.\nFormato: Gráfico adecuado.\n\n\n\n\n\n\n\n\n\n\n(C) Noah Iliinsky: “Four Pillars of Visualization” - YouTube."
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#herramientas",
+    "href": "ai/datafrontiers_2026.html#herramientas",
+    "title": "Crea, Innova y Presenta",
+    "section": "Herramientas",
+    "text": "Herramientas"
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#el-nuevo-stack-de-data-storytelling",
+    "href": "ai/datafrontiers_2026.html#el-nuevo-stack-de-data-storytelling",
+    "title": "Crea, Innova y Presenta",
+    "section": "El nuevo stack de Data Storytelling",
+    "text": "El nuevo stack de Data Storytelling\n\n\nGenerar narrativa\n\nChatGPT o1 / Claude 3.5 → guión, insights, resumen ejecutivo\nGemini 2.0 → análisis multimodal (sube el gráfico, pide la historia)\nNotebookLM → convierte tu dataset en podcast o briefing\n\nCrear visualizaciones\n\nNapkin AI → texto → diagrama en segundos\nGamma → datos → presentación completa\nJulius AI → chat con tu CSV, genera gráficos automáticamente\n\n\n\nEjecutar y desplegar\n\nStreamlit + Claude API → apps de datos con lenguaje natural\nEvidence.dev → reportes en Markdown con SQL en vivo\nObservable Framework → dashboards estáticos de alto rendimiento\n\nModelos locales (sin mandar datos a la nube)\n\nOllama + LLaMA 3 / Mistral → corre modelos en tu laptop\nLM Studio → interfaz visual para modelos locales\nAnything LLM → RAG local sobre tus propios documentos\n\n\n\n\nThe stack has exploded since 2023.\nKey shift: you can now run serious models locally — no data leaves your machine.\nFor institutional data (UTFSM, health, finance) this is critical."
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#agentes-de-ia-para-datos",
+    "href": "ai/datafrontiers_2026.html#agentes-de-ia-para-datos",
+    "title": "Crea, Innova y Presenta",
+    "section": "Agentes de IA para datos",
+    "text": "Agentes de IA para datos\n\n\n\nUn agente no solo responde — planifica, ejecuta pasos y usa herramientas.\n\n\n\n\n\nFrameworks en 2026\n\n\n\nHerramienta\nPara qué\n\n\n\n\nClaude Code\nAgente de código en terminal\n\n\nLangGraph\nFlujos multi-agente complejos\n\n\nCrewAI\nEquipos de agentes especializados\n\n\nn8n\nAutomatización sin código\n\n\nCopilot Studio\nAgentes empresariales (Microsoft)\n\n\n\n\n\n\nAgents are the big shift in 2026.\nYou stop prompting and start delegating.\nFor data storytelling: the agent does the EDA, you review the story."
+  },
+  {
+    "objectID": "ai/datafrontiers_2026.html#ia-visualización-el-estado-del-arte",
+    "href": "ai/datafrontiers_2026.html#ia-visualización-el-estado-del-arte",
+    "title": "Crea, Innova y Presenta",
+    "section": "IA + Visualización: el estado del arte",
+    "text": "IA + Visualización: el estado del arte\n\n\n\n\nGamma: de bullet points a presentación completa\n\n\n\n\n\nJulius AI: chat con tu CSV\n\n\n\n\n\nNapkin AI: texto → diagrama\n\n\n\n\n\nNotebookLM: tu dataset como fuente\n\n\n\n\nReplace these GIFs with screen recordings if you have them.\nGamma: https://gamma.app — best for fast deck generation.\nJulius: https://julius.ai — best for CSV chat.\nNapkin: https://napkin.one — best for diagrams from text.\nNotebookLM: https://notebooklm.google.com — best for document Q&A."
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#section",
+    "href": "ai/presentacion_datasaturday.html#section",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "",
+    "text": "Lo que nadie te dice sobre la IA generativa\nLímites, técnicas y lo que viene\n\n\nLLMs · Prompt Engineering · RAG · Agentes · Seguridad · Python\nPyCon Chile 2026\n\n\nFrancisco Alfaro Medina\nDirección de Transformación Digital · UTFSM\nfralfaro.github.io/portfolio"
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#sobre-nosotros",
+    "href": "ai/presentacion_datasaturday.html#sobre-nosotros",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Sobre Nosotros",
+    "text": "Sobre Nosotros\n\n\n\n\n  \n    \n      FA\n      Francisco Alfaro\n      Líder de Análisis y Modelación Avanzada\n    \n    \n    \n      Especialista en inteligencia artificial, estadística y educación.\n      🌐 Portfolio\n    \n  \n  \n    \n      VC\n      Valeska Canales\n      Científica de Datos\n    \n    \n    \n      Especialista en visualización, storytelling y comunicación de datos.\n      🌐 Portfolio\n    \n  \n  \n    \n      AR\n      Aníbal Romo\n      Gestión del Cambio Organizacional\n    \n    \n    \n      Profesional en transformación digital e innovación institucional.\n      💼 LinkedIn"
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#agenda",
+    "href": "ai/presentacion_datasaturday.html#agenda",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Agenda",
+    "text": "Agenda\n\n\n\n\nNo\nNope\nNo chance"
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#section-1",
+    "href": "ai/presentacion_datasaturday.html#section-1",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "",
+    "text": "Storytelling principle #1\n\n\nNunca revelar el final antes de tiempo.\nSiempre eleva la tensión y el drama"
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#agenda-v2",
+    "href": "ai/presentacion_datasaturday.html#agenda-v2",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Agenda (v2)",
+    "text": "Agenda (v2)\n\n\nNunca reveles el final\n\nLos detalles son importantes, pero no todos los detalles.\n\nExplicar menos, Mostrar más\nTu primera versión será horrible."
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#qué-es-storytelling",
+    "href": "ai/presentacion_datasaturday.html#qué-es-storytelling",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Qué es Storytelling?",
+    "text": "Qué es Storytelling?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n🔥 Las historias son la primera tecnología humana.\n\n\nStories are how humans share knowledge.\nIt’s our oldest learning tool — built for memory, connection, and meaning.\nUse it well."
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#qué-es-data-storytelling",
+    "href": "ai/presentacion_datasaturday.html#qué-es-data-storytelling",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Qué es Data Storytelling?",
+    "text": "Qué es Data Storytelling?\n\n\n\n\n\n\n\n\n\n\n\n📊 Data Storytelling es una forma de comunicar con datos."
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#ohh-nuestros-cerebros-son-hackables",
+    "href": "ai/presentacion_datasaturday.html#ohh-nuestros-cerebros-son-hackables",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Ohh, nuestros cerebros son hackables…",
+    "text": "Ohh, nuestros cerebros son hackables…"
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#atención-y-memoria",
+    "href": "ai/presentacion_datasaturday.html#atención-y-memoria",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Atención y memoria",
+    "text": "Atención y memoria"
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#narrativa",
+    "href": "ai/presentacion_datasaturday.html#narrativa",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Narrativa",
+    "text": "Narrativa\n\n\n\nUsa trucos de Storytelling (narrativa) para crear presentaciones que serán recordadas y que causarán impacto\n\n\n\n\n\n\n\n\n\n\n🎭 Emociones inspiran acción\n\n\nGreat ideas need great communication.\nStorytelling is your toolkit to move people.\nFacts inform — emotions inspire action."
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#más-que-gráficos-bonitos",
+    "href": "ai/presentacion_datasaturday.html#más-que-gráficos-bonitos",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Más que gráficos bonitos",
+    "text": "Más que gráficos bonitos\n\n\n 🔢 No compartas números\n\n 🪶Comparte una historia\n\n\n\n (C) Storytelling with Data, por Cole Nussbaumer Knaflic."
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#section-2",
+    "href": "ai/presentacion_datasaturday.html#section-2",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "",
+    "text": "Storytelling principle #2\n\n\nLos detalles son importantes, pero no todos los detalles son importantes.\n\n\n\n\n\nDetails guide attention.\nShow less — but better.\nFocus only on what moves the story forward."
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#ejemplo-spotify-wrapped",
+    "href": "ai/presentacion_datasaturday.html#ejemplo-spotify-wrapped",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Ejemplo: Spotify Wrapped",
+    "text": "Ejemplo: Spotify Wrapped\n\n\n\n\n\n\n\n\n\nCómo hacer millones de personas  compartir estadísticas en redes sociales?"
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#visualización-1",
+    "href": "ai/presentacion_datasaturday.html#visualización-1",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Visualización …",
+    "text": "Visualización …\n\n\n\n\nGráficos claros y comprensibles\nElección correcta del gráfico\nPatrones y anomalías visibles\nDatos complejos → ideas simples\n\n\n\n\n\n\n\n\n\n\n\n⌛ Si no se entiende en 5-7 segundos, simplifica o cambia el título."
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#section-3",
+    "href": "ai/presentacion_datasaturday.html#section-3",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "",
+    "text": "Más fácil de distinguir ⟵────────────────────────────⟶ Más difícil de distinguir"
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#ejemplos",
+    "href": "ai/presentacion_datasaturday.html#ejemplos",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Ejemplos",
+    "text": "Ejemplos\n\n\n\n\n\n\n\n\n ❌ Chartjunk\n\n\n\n\n\n\n✅ Good Chart"
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#section-4",
+    "href": "ai/presentacion_datasaturday.html#section-4",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "",
+    "text": "Storytelling principle #3\n\n\nExplicar Menos, Mostrar Más"
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#mejores-gráficos-para-tus-datos",
+    "href": "ai/presentacion_datasaturday.html#mejores-gráficos-para-tus-datos",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Mejores Gráficos para tus Datos",
+    "text": "Mejores Gráficos para tus Datos\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(C) Essential chart types for data visualization, by Atlassian.\n\nYou don’t need fancy charts.\nBar, scatter, box, heatmap, big text — that’s 90% of data storytelling.\nSimple wins."
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#pilares-visualización---noah-iliinsky",
+    "href": "ai/presentacion_datasaturday.html#pilares-visualización---noah-iliinsky",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "4 Pilares Visualización - Noah Iliinsky",
+    "text": "4 Pilares Visualización - Noah Iliinsky\n\n\n\n\nPropósito: Define la meta.\nContenido: Datos relevantes.\nEstructura: Organización clara.\nFormato: Gráfico adecuado.\n\n\n\n\n\n\n\n\n\n\n(C) Noah Iliinsky: “Four Pillars of Visualization” - YouTube."
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#herramientas",
+    "href": "ai/presentacion_datasaturday.html#herramientas",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Herramientas",
+    "text": "Herramientas"
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#section-5",
+    "href": "ai/presentacion_datasaturday.html#section-5",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "",
+    "text": "🥱 1° versión \\(&lt;\\) … \\(&lt;\\) 😊 última versión\n\n\nFirst versions are never perfect.\nDraft → feedback → improve.\nIn 2026, AI compresses this cycle dramatically.\nWhat took days now takes hours."
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#section-6",
+    "href": "ai/presentacion_datasaturday.html#section-6",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "",
+    "text": "Storytelling principle #4\n\n\nTu primera versión será siempre horrible.\n\n…y hoy la IA te ayuda a llegar más rápido a la buena.\n\n\n\n\n\n\n\nBad first drafts are normal — always were.\nWhat changes in 2026 is the speed of iteration.\nThe principle stays. The tools change."
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#el-nuevo-stack-de-data-storytelling",
+    "href": "ai/presentacion_datasaturday.html#el-nuevo-stack-de-data-storytelling",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "El nuevo stack de Data Storytelling",
+    "text": "El nuevo stack de Data Storytelling\n\n\nGenerar narrativa\n\nChatGPT o1 / Claude 3.5 → guión, insights, resumen ejecutivo\nGemini 2.0 → análisis multimodal (sube el gráfico, pide la historia)\nNotebookLM → convierte tu dataset en podcast o briefing\n\nCrear visualizaciones\n\nNapkin AI → texto → diagrama en segundos\nGamma → datos → presentación completa\nJulius AI → chat con tu CSV, genera gráficos automáticamente\n\n\n\nEjecutar y desplegar\n\nStreamlit + Claude API → apps de datos con lenguaje natural\nEvidence.dev → reportes en Markdown con SQL en vivo\nObservable Framework → dashboards estáticos de alto rendimiento\n\nModelos locales (sin mandar datos a la nube)\n\nOllama + LLaMA 3 / Mistral → corre modelos en tu laptop\nLM Studio → interfaz visual para modelos locales\nAnything LLM → RAG local sobre tus propios documentos\n\n\n\n\nThe stack has exploded since 2023.\nKey shift: you can now run serious models locally — no data leaves your machine.\nFor institutional data (UTFSM, health, finance) this is critical."
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#agentes-de-ia-para-datos",
+    "href": "ai/presentacion_datasaturday.html#agentes-de-ia-para-datos",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Agentes de IA para datos",
+    "text": "Agentes de IA para datos\n\n\n\nUn agente no solo responde — planifica, ejecuta pasos y usa herramientas.\n\n\n\n\n\nFrameworks en 2026\n\n\n\nHerramienta\nPara qué\n\n\n\n\nClaude Code\nAgente de código en terminal\n\n\nLangGraph\nFlujos multi-agente complejos\n\n\nCrewAI\nEquipos de agentes especializados\n\n\nn8n\nAutomatización sin código\n\n\nCopilot Studio\nAgentes empresariales (Microsoft)\n\n\n\n\n\n\nAgents are the big shift in 2026.\nYou stop prompting and start delegating.\nFor data storytelling: the agent does the EDA, you review the story."
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#ia-visualización-el-estado-del-arte",
+    "href": "ai/presentacion_datasaturday.html#ia-visualización-el-estado-del-arte",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "IA + Visualización: el estado del arte",
+    "text": "IA + Visualización: el estado del arte\n\n\n\n\nGamma: de bullet points a presentación completa\n\n\n\n\n\nJulius AI: chat con tu CSV\n\n\n\n\n\nNapkin AI: texto → diagrama\n\n\n\n\n\nNotebookLM: tu dataset como fuente\n\n\n\n\nReplace these GIFs with screen recordings if you have them.\nGamma: https://gamma.app — best for fast deck generation.\nJulius: https://julius.ai — best for CSV chat.\nNapkin: https://napkin.one — best for diagrams from text.\nNotebookLM: https://notebooklm.google.com — best for document Q&A."
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#agenda-v2-1",
+    "href": "ai/presentacion_datasaturday.html#agenda-v2-1",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Agenda (v2)",
+    "text": "Agenda (v2)\n\n\nNunca reveles el final\n\nLos detalles son importantes, pero no todos los detalles\n\nExplica menos, muestra más\n\nTu primer borrador será horrible\n\n\n\n\nA mysterious agenda — like a good story.\nNow you’ve seen how each point connects.\nSimple rules to tell better stories with data."
+  },
+  {
+    "objectID": "ai/presentacion_datasaturday.html#gracias-por-participar",
+    "href": "ai/presentacion_datasaturday.html#gracias-por-participar",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "🎉 ¡Gracias por Participar!",
+    "text": "🎉 ¡Gracias por Participar!\n\n\n\n❓ ¿Preguntas?\n👏 Responder encuesta\n🥳 Disfrutar del Evento!"
+  },
+  {
+    "objectID": "ai/pyday_2026.html#sobre-nosotros",
+    "href": "ai/pyday_2026.html#sobre-nosotros",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Sobre Nosotros",
+    "text": "Sobre Nosotros\n\n\n\n\n  \n    \n      FA\n      Francisco Alfaro\n      Líder de Análisis y Modelación Avanzada\n    \n    \n    \n      Especialista en inteligencia artificial, estadística y educación.\n      🌐 Portfolio\n    \n  \n  \n    \n      VC\n      Valeska Canales\n      Científica de Datos\n    \n    \n    \n      Especialista en visualización, storytelling y comunicación de datos.\n      🌐 Portfolio\n    \n  \n  \n    \n      AR\n      Aníbal Romo\n      Gestión del Cambio Organizacional\n    \n    \n    \n      Profesional en transformación digital e innovación institucional.\n      💼 LinkedIn"
+  },
+  {
+    "objectID": "ai/pyday_2026.html#agenda",
+    "href": "ai/pyday_2026.html#agenda",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Agenda",
+    "text": "Agenda\n\n\n\n\nNo\nNope\nNo chance"
+  },
+  {
+    "objectID": "ai/pyday_2026.html#agenda-v2",
+    "href": "ai/pyday_2026.html#agenda-v2",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Agenda (v2)",
+    "text": "Agenda (v2)\n\n\nNunca reveles el final\n\nLos detalles son importantes, pero no todos los detalles.\n\nExplicar menos, Mostrar más\nTu primera versión será horrible."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#qué-es-storytelling",
+    "href": "ai/pyday_2026.html#qué-es-storytelling",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Qué es Storytelling?",
+    "text": "Qué es Storytelling?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n🔥 Las historias son la primera tecnología humana.\n\n\nStories are how humans share knowledge.\nIt’s our oldest learning tool — built for memory, connection, and meaning.\nUse it well."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#qué-es-data-storytelling",
+    "href": "ai/pyday_2026.html#qué-es-data-storytelling",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Qué es Data Storytelling?",
+    "text": "Qué es Data Storytelling?\n\n\n\n\n\n\n\n\n\n\n\n📊 Data Storytelling es una forma de comunicar con datos."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#ohh-nuestros-cerebros-son-hackables",
+    "href": "ai/pyday_2026.html#ohh-nuestros-cerebros-son-hackables",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Ohh, nuestros cerebros son hackables…",
+    "text": "Ohh, nuestros cerebros son hackables…"
+  },
+  {
+    "objectID": "ai/pyday_2026.html#atención-y-memoria",
+    "href": "ai/pyday_2026.html#atención-y-memoria",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Atención y memoria",
+    "text": "Atención y memoria"
+  },
+  {
+    "objectID": "ai/pyday_2026.html#narrativa",
+    "href": "ai/pyday_2026.html#narrativa",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Narrativa",
+    "text": "Narrativa\n\n\n\nUsa trucos de Storytelling (narrativa) para crear presentaciones que serán recordadas y que causarán impacto\n\n\n\n\n\n\n\n\n\n\n🎭 Emociones inspiran acción\n\n\nGreat ideas need great communication.\nStorytelling is your toolkit to move people.\nFacts inform — emotions inspire action."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#más-que-gráficos-bonitos",
+    "href": "ai/pyday_2026.html#más-que-gráficos-bonitos",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Más que gráficos bonitos",
+    "text": "Más que gráficos bonitos\n\n\n 🔢 No compartas números\n\n 🪶Comparte una historia\n\n\n\n (C) Storytelling with Data, por Cole Nussbaumer Knaflic."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#ejemplo-spotify-wrapped",
+    "href": "ai/pyday_2026.html#ejemplo-spotify-wrapped",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Ejemplo: Spotify Wrapped",
+    "text": "Ejemplo: Spotify Wrapped\n\n\n\n\n\n\n\n\n\nCómo hacer millones de personas  compartir estadísticas en redes sociales?"
+  },
+  {
+    "objectID": "ai/pyday_2026.html#visualización-1",
+    "href": "ai/pyday_2026.html#visualización-1",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Visualización …",
+    "text": "Visualización …\n\n\n\n\nGráficos claros y comprensibles\nElección correcta del gráfico\nPatrones y anomalías visibles\nDatos complejos → ideas simples\n\n\n\n\n\n\n\n\n\n\n\n⌛ Si no se entiende en 5-7 segundos, simplifica o cambia el título."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#mejores-gráficos-para-tus-datos",
+    "href": "ai/pyday_2026.html#mejores-gráficos-para-tus-datos",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Mejores Gráficos para tus Datos",
+    "text": "Mejores Gráficos para tus Datos\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(C) Essential chart types for data visualization, by Atlassian.\n\nYou don’t need fancy charts.\nBar, scatter, box, heatmap, big text — that’s 90% of data storytelling.\nSimple wins."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#pilares-visualización---noah-iliinsky",
+    "href": "ai/pyday_2026.html#pilares-visualización---noah-iliinsky",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "4 Pilares Visualización - Noah Iliinsky",
+    "text": "4 Pilares Visualización - Noah Iliinsky\n\n\n\n\nPropósito: Define la meta.\nContenido: Datos relevantes.\nEstructura: Organización clara.\nFormato: Gráfico adecuado.\n\n\n\n\n\n\n\n\n\n\n(C) Noah Iliinsky: “Four Pillars of Visualization” - YouTube."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#herramientas",
+    "href": "ai/pyday_2026.html#herramientas",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Herramientas",
+    "text": "Herramientas"
+  },
+  {
+    "objectID": "ai/pyday_2026.html#el-nuevo-stack-de-data-storytelling",
+    "href": "ai/pyday_2026.html#el-nuevo-stack-de-data-storytelling",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "El nuevo stack de Data Storytelling",
+    "text": "El nuevo stack de Data Storytelling\n\n\nGenerar narrativa\n\nChatGPT o1 / Claude 3.5 → guión, insights, resumen ejecutivo\nGemini 2.0 → análisis multimodal (sube el gráfico, pide la historia)\nNotebookLM → convierte tu dataset en podcast o briefing\n\nCrear visualizaciones\n\nNapkin AI → texto → diagrama en segundos\nGamma → datos → presentación completa\nJulius AI → chat con tu CSV, genera gráficos automáticamente\n\n\n\nEjecutar y desplegar\n\nStreamlit + Claude API → apps de datos con lenguaje natural\nEvidence.dev → reportes en Markdown con SQL en vivo\nObservable Framework → dashboards estáticos de alto rendimiento\n\nModelos locales (sin mandar datos a la nube)\n\nOllama + LLaMA 3 / Mistral → corre modelos en tu laptop\nLM Studio → interfaz visual para modelos locales\nAnything LLM → RAG local sobre tus propios documentos\n\n\n\n\nThe stack has exploded since 2023.\nKey shift: you can now run serious models locally — no data leaves your machine.\nFor institutional data (UTFSM, health, finance) this is critical."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#agentes-de-ia-para-datos",
+    "href": "ai/pyday_2026.html#agentes-de-ia-para-datos",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Agentes de IA para datos",
+    "text": "Agentes de IA para datos\n\n\n\nUn agente no solo responde — planifica, ejecuta pasos y usa herramientas.\n\n\n\n\n\nFrameworks en 2026\n\n\n\nHerramienta\nPara qué\n\n\n\n\nClaude Code\nAgente de código en terminal\n\n\nLangGraph\nFlujos multi-agente complejos\n\n\nCrewAI\nEquipos de agentes especializados\n\n\nn8n\nAutomatización sin código\n\n\nCopilot Studio\nAgentes empresariales (Microsoft)\n\n\n\n\n\n\nAgents are the big shift in 2026.\nYou stop prompting and start delegating.\nFor data storytelling: the agent does the EDA, you review the story."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#ia-visualización-el-estado-del-arte",
+    "href": "ai/pyday_2026.html#ia-visualización-el-estado-del-arte",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "IA + Visualización: el estado del arte",
+    "text": "IA + Visualización: el estado del arte\n\n\n\n\nGamma: de bullet points a presentación completa\n\n\n\n\n\nJulius AI: chat con tu CSV\n\n\n\n\n\nNapkin AI: texto → diagrama\n\n\n\n\n\nNotebookLM: tu dataset como fuente\n\n\n\n\nReplace these GIFs with screen recordings if you have them.\nGamma: https://gamma.app — best for fast deck generation.\nJulius: https://julius.ai — best for CSV chat.\nNapkin: https://napkin.one — best for diagrams from text.\nNotebookLM: https://notebooklm.google.com — best for document Q&A."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#agenda-v2-1",
+    "href": "ai/pyday_2026.html#agenda-v2-1",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Agenda (v2)",
+    "text": "Agenda (v2)\n\n\nNunca reveles el final\n\nLos detalles son importantes, pero no todos los detalles\n\nExplica menos, muestra más\n\nTu primer borrador será horrible\n\n\n\n\nA mysterious agenda — like a good story.\nNow you’ve seen how each point connects.\nSimple rules to tell better stories with data."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#a.i.-en-el-día-a-día",
+    "href": "ai/pyday_2026.html#a.i.-en-el-día-a-día",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "🤖 A.I. en el día a día",
+    "text": "🤖 A.I. en el día a día"
+  },
+  {
+    "objectID": "ai/pyday_2026.html#large-language-model",
+    "href": "ai/pyday_2026.html#large-language-model",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Large language Model",
+    "text": "Large language Model\n\n\n\n\nLos LLMs generan lenguaje natural tras entrenarse con grandes volúmenes de texto.\nSe usan en chatbots, asistentes virtuales y tareas de procesamiento de lenguaje."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#historia-de-los-llm",
+    "href": "ai/pyday_2026.html#historia-de-los-llm",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "⏳ Historia de los LLM",
+    "text": "⏳ Historia de los LLM"
+  },
+  {
+    "objectID": "ai/pyday_2026.html#cómo-representar-una-palabra",
+    "href": "ai/pyday_2026.html#cómo-representar-una-palabra",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "¿Cómo representar una palabra?",
+    "text": "¿Cómo representar una palabra?"
+  },
+  {
+    "objectID": "ai/pyday_2026.html#representación-textual",
+    "href": "ai/pyday_2026.html#representación-textual",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "📝 Representación textual",
+    "text": "📝 Representación textual\nTranscribir texto es guardar letras como bits.\n\nTeoríaEjemplo\n\n\n\n\n\nASCII\n\n1 byte (8 bits): 128 carácteres posibles\n0 (48) … 9 (57)\nA (65) … Z (90)\na (97) … z (122)\nProblema: Faltan muchos carácteres: Ñ, ñ, á, é, í, ó, ú, u\n\n\nUTF-8\n\n1 a 4 bytes (8 a 32 bits)\nMantiene ASCII sin cambios\nPermite representar alfabetos latinos, griego, árabe, … además de caracteres chinos, japoneses y coreanos\nIncluye emojis 😁, simbolos ✅ y mil cosas más 🗿\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#representación-semántica",
+    "href": "ai/pyday_2026.html#representación-semántica",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Representación semántica",
+    "text": "Representación semántica\n\n\n\n\nSemántica significa el sentido o significado de las palabras.\nNecesitamos guardarla como un todo o dividirla en partes con sentido (tokens)."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#diagrama-técnico-de-un-llm",
+    "href": "ai/pyday_2026.html#diagrama-técnico-de-un-llm",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "Diagrama técnico de un LLM",
+    "text": "Diagrama técnico de un LLM"
+  },
+  {
+    "objectID": "ai/pyday_2026.html#aprendizajes",
+    "href": "ai/pyday_2026.html#aprendizajes",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "💡 Aprendizajes",
+    "text": "💡 Aprendizajes\n\n\n✅ El texto se convierte en bits con ASCII o UTF-8. ✅ Las palabras se representan con tokens. ✅ Los LLM aprenden patrones del lenguaje. ✅ Predicen palabras una por una, sin entender. ✅ Se usan en asistentes y chatbots."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#qué-son-los-prompts",
+    "href": "ai/pyday_2026.html#qué-son-los-prompts",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "📝 Qué son los Prompts?",
+    "text": "📝 Qué son los Prompts?\n\nLos prompts son las instrucciones que se le dan a un modelo de lenguaje, como ChatGPT, para generar una respuesta o realizar una tarea específica. Pueden ser preguntas, frases o directrices que guían el modelo hacia el resultado deseado."
+  },
+  {
+    "objectID": "ai/pyday_2026.html#asistentes-virtuales-inteligentes",
+    "href": "ai/pyday_2026.html#asistentes-virtuales-inteligentes",
+    "title": "Lo que nadie te dice sobre la IA generativa",
+    "section": "🤖 Asistentes Virtuales Inteligentes",
+    "text": "🤖 Asistentes Virtuales Inteligentes\n\n\nLos asistentes virtuales impulsados por IA suelen usar LLMs para comprender y generar lenguaje natural, lo que mejora su capacidad de comunicación, automatización y soporte en distintas industrias."
   }
 ]

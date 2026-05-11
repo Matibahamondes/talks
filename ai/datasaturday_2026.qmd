@@ -1,13 +1,11 @@
 ---
-title: "Datos, storytelling e IA"
-subtitle: "El nuevo arte de contar con datos"
-author:
-  - name: Francisco Alfaro
-    affiliation: Seth & Nut · UTFSM
-  - name: Valeska Canales
-    affiliation: Seth & Nut · UTFSM
-date: "2026-06-06"
-date-format: "D [de] MMMM YYYY"
+title: "Lo que nadie te dice sobre la IA generativa"
+subtitle: "Límites, técnicas y lo que viene"
+author: 
+  - "Francisco Alfaro Medina"
+institute: "Dirección de Transformación Digital · UTFSM"
+date: today
+date-format: "MMMM YYYY"
 
 format:
   revealjs:
@@ -22,989 +20,657 @@ format:
     highlight-style: github
     code-block-bg: true
     center: false
-    width: 1280
-    height: 720
-    margin: 0.08
-    footer: "Datos, storytelling e IA · Data Saturday Santiago 2026"
-    logo: "../assets/img/brand/brand__usm.png"
-
+    width: 1600
+    height: 800
+    logo: "images/usm.png"
+    scrollable: false
 execute:
   echo: false
   warning: false
 ---
 
-##  {.title-slide background-color="#0D1117" background-image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=80" background-opacity="0.13"}
+##  {.title-slide background-color="#0F2044"}
 
 ::: title-block
-**Datos, storytelling e IA**
+**Lo que nadie te dice sobre la IA generativa**
 
-El nuevo arte de contar con datos
+Límites, técnicas y lo que viene
 :::
 
 ::: subtitle-block
-Cómo la IA generativa está cambiando quién puede contar historias con datos — y qué significa eso para los que ya sabíamos hacerlo
+LLMs · Prompt Engineering · RAG · Agentes · Seguridad · Python\
+PyCon Chile 2026
 :::
 
 ::: author-block
-Francisco Alfaro · Valeska Canales\
-Seth & Nut · UTFSM · Data Saturday Santiago · 6 junio 2026
+Francisco Alfaro Medina\
+Dirección de Transformación Digital · UTFSM\
+fralfaro.github.io/portfolio
 :::
+
+------------------------------------------------------------------------
+
+## Sobre Nosotros {background-color="#f8f9fa"}
+
+
+<br>
 
 ```{=html}
-<!--
-  🖼️ IMAGEN PORTADA:
-  https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=80
-  (dashboard abstracto, datos, azul oscuro)
-  Alternativa: https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&q=80
--->
+<style>
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 1rem 0; }
+.card { background: #0F2044; border-radius: 12px; overflow: hidden; border: 0.5px solid rgba(255,255,255,0.1); }
+.card-top { background: #0F2044; padding: 1.5rem 1rem 0; text-align: center; }
+.avatar { width: 72px; height: 72px; border-radius: 50%; border: 2.5px solid #C9A84C; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 500; color: #C9A84C; margin: 0 auto 0.75rem; background: #0a1a38; }
+.card-name { font-size: 15px; font-weight: 500; color: #ffffff; margin: 0 0 0.25rem; }
+.card-role { font-size: 11px; color: #8FA8C8; margin: 0 0 1rem; line-height: 1.4; }
+.card-wave { height: 32px; background: #ffffff; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
+.card-bottom { background: #ffffff; padding: 0.75rem 1rem 1rem; }
+.card-bio { font-size: 12px; color: #555; line-height: 1.5; margin: 0 0 0.875rem; }
+.btn-link { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #185FA5; border: 0.5px solid #378ADD; border-radius: 8px; padding: 5px 12px; text-decoration: none; background: #E6F1FB; }
+</style>
+
+<div class="team-grid">
+  <div class="card">
+    <div class="card-top">
+      <div class="avatar">FA</div>
+      <p class="card-name">Francisco Alfaro</p>
+      <p class="card-role">Líder de Análisis y Modelación Avanzada</p>
+    </div>
+    <div class="card-wave"></div>
+    <div class="card-bottom">
+      <p class="card-bio">Especialista en inteligencia artificial, estadística y educación.</p>
+      <a class="btn-link" href="https://fralfaro.github.io/portfolio/">🌐 Portfolio</a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <div class="avatar">VC</div>
+      <p class="card-name">Valeska Canales</p>
+      <p class="card-role">Científica de Datos</p>
+    </div>
+    <div class="card-wave"></div>
+    <div class="card-bottom">
+      <p class="card-bio">Especialista en visualización, storytelling y comunicación de datos.</p>
+      <a class="btn-link" href="https://vcanalesp.github.io/portafolio/">🌐 Portfolio</a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <div class="avatar">AR</div>
+      <p class="card-name">Aníbal Romo</p>
+      <p class="card-role">Gestión del Cambio Organizacional</p>
+    </div>
+    <div class="card-wave"></div>
+    <div class="card-bottom">
+      <p class="card-bio">Profesional en transformación digital e innovación institucional.</p>
+      <a class="btn-link" href="#">💼 LinkedIn</a>
+    </div>
+  </div>
+</div>
 ```
 
-------------------------------------------------------------------------
-
-## El problema que vamos a resolver hoy {background-color="#0D1117"}
+## Agenda 
 
 ::: columns
-::: {.column width="55%"}
-Contar historias con datos **siempre fue difícil**.
+::: {.column .incremental width="30%"}
+-   
 
-Transformar números en narrativas que informen, persuadan y movilicen requiere tres cosas al mismo tiempo:
+-   No
 
-🎯 **Claridad visual** — el gráfico correcto para el mensaje correcto\
-🧵 **Estructura narrativa** — un hilo conductor que no se pierda\
-🎭 **Criterio comunicacional** — adaptar el mensaje a quién escucha
+-   Nope
 
-Durante años, ese trabajo dependía **casi completamente** del analista.
-
-Hoy, la IA está cambiando esa ecuación — de formas que recién empezamos a entender.
+-   No chance
 :::
 
-::: {.column width="45%"}
-::: {.callout-note icon="false"}
-## Una promesa honesta
-
-Esta charla no es "la IA lo hace todo por ti."
-
-Es sobre **qué cambia, qué no cambia, y qué tienes que aprender** para que la IA amplifica tu criterio en lugar de reemplazarlo.
-:::
-
-::: {.callout-warning icon="false"}
-## Una advertencia
-
-La IA no sabe qué historia importa, ni para quién, ni por qué ahora.
-
-**Sabe generar. No decide.**
-:::
+::: {.column .fragment width="70%"}
+<img src="images/neg.png" alt="Tachado" style="width: 50%; height: auto;"/>
 :::
 :::
 
 ------------------------------------------------------------------------
 
-## Agenda — pero con una advertencia {background-color="#0D1117"}
+##  
 
-::: columns
-::: {.column width="55%"}
-::: {.callout-tip icon="false"}
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+
+::: {.callout-note style="font-size: 1.5em;"}
 ## Storytelling principle #1
 
-**Nunca revelar el final antes de tiempo.**\
-Siempre eleva la tensión y el drama.
+Nunca revelar el final antes de tiempo.\
+[Siempre eleva la tensión y el drama]{.fragment}
+:::
 :::
 
+<br>
+
+------------------------------------------------------------------------
+
+## Agenda (v2) 
+
+::: incremental
+1.  Nunca reveles [el final]{style="background-color:black;"}\
+2.  Los detalles son importantes, pero [no **todos** los detalles.]{style="background-color:black;"}\
+3.  Explicar menos, [Mostrar más]{style="background-color:black;"}
+4.  Tu primera versión será [horrible.]{style="background-color:black;"}\
 :::
 
-::: {.column width="45%"}
-```{=html}
-<!--
-  🖼️ IMAGEN SUGERIDA:
-  https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80
-  (circuito, tecnología, misterio)
-  
-  ![](https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80){width=100% style="border-radius:8px; opacity:0.7;"}
--->
-```
+# Storytelling {.title-middle-dark background-image="images/horst_quarto_penguins_share.png" data-state="no-logo"}
+
+------------------------------------------------------------------------
+
+## Qué es Storytelling? 
+
+::: columns
+::: {.column width="50%"}
+![](images/cave.jpg){fig-align="center" width="90%"}
+:::
+
+::: {.column .fragment width="50%"}
+![](images/fire.jpg){fig-align="center" width="100%"}
 :::
 :::
 
 . . .
 
-**Agenda (versión honesta):**
+::: {style="text-align: center; "}
+🔥 Las **historias** son la primera tecnología humana.
+:::
 
-::: incremental
-1.  Las historias y los datos — por qué funciona lo que funciona
-2.  Los detalles importan, pero [no **todos** los detalles importan]{style="background-color:#1A1A2E; padding: 2px 6px; border-radius: 3px;"}
-3.  Explicar menos, [mostrar más]{style="background-color:#1A1A2E; padding: 2px 6px; border-radius: 3px;"}
-4.  La IA como copiloto — tu primer borrador será [horrible]{style="background-color:#1A1A2E; padding: 2px 6px; border-radius: 3px;"}, y está bien
+::: notes
+Stories are how humans share knowledge.\
+It’s our oldest learning tool — built for memory, connection, and meaning.\
+Use it well.
 :::
 
 ------------------------------------------------------------------------
 
-##  {.section-slide background-color="#0A1628"}
+## Qué es Data Storytelling? 
 
-::: center-content
-## Parte I
+<br>
 
-**Storytelling**
+::: r-stack
+![](images/storytelling/dst2.png){.fragment fig-align="center" width="70%"}
+:::
 
-*La primera tecnología humana*
+. . .
+
+<br>
+
+::: {style="text-align: center; "}
+📊 **Data Storytelling** es una forma de comunicar con datos.
+:::
+
+
+------------------------------------------------------------------------
+
+## Ohh, nuestros cerebros son hackables... 
+
+::: r-stack
+![](images/storytelling/sketplanation2.png){.fragment .fade-in-then-out fig-align="center" width="70%"}
+
+![](images/storytelling/got.jpg){.fragment fig-align="center" width="100%"}
 :::
 
 ------------------------------------------------------------------------
 
-## Las historias son tecnología {background-color="#0D1117"}
+## Atención y memoria 
 
-::: columns
-::: {.column width="55%"}
-Antes de la escritura, antes de los números, antes de los datos —\
-existían **las historias**.
+<br>
 
-Las historias son la forma en que los humanos:
+::: r-stack
+![](images/storytelling/pi.png){.fragment .fade-in-then-out fig-align="center" width="90%"}
 
-🧠 **Transmiten conocimiento** a través del tiempo\
-❤️ **Crean conexión** entre personas\
-🎯 **Generan acción** en comunidades
-
-El cerebro humano no procesa estadísticas.\
-**Procesa narrativas.**
-
-> *"El cerebro que escucha una historia bien contada libera cortisol, dopamina y oxitocina. Ningún dashboard hace eso."*
-:::
-
-::: {.column width="45%"}
-```{=html}
-<!--
-  🖼️ IMAGEN: cueva con pinturas rupestres, o fuego primitivo
-  https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&q=80
-  (código/fuego abstracto, metáfora de transmisión de conocimiento)
-
-  ![](https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&q=80){width=100% style="border-radius:8px; opacity:0.8;"}
--->
-```
-
-::: {.callout-note icon="false"}
-## El problema del análisis sin narrativa
-
-Un dashboard con 47 métricas no es un análisis.\
-Es un almacén de números con buena tipografía.
-
-**Los datos no hablan solos. Necesitan narrador.**
-:::
-:::
+![](images/storytelling/pi2.jpg){.fragment fig-align="center" width="100%"}
 :::
 
 ------------------------------------------------------------------------
 
-## Qué es data storytelling — y qué no es {background-color="#0D1117"}
-
-::: columns
-::: {.column width="55%"}
-**Data storytelling** es la disciplina que combina:
-
-📊 **Datos** — evidencia, precisión, credibilidad\
-🎨 **Visualización** — traducción visual del patrón\
-🧵 **Narrativa** — estructura que guía hacia una conclusión
-
-La intersección de los tres es donde ocurre la comunicación real.
-
-**Lo que NO es data storytelling:**
-
-❌ Un gráfico bonito sin contexto\
-❌ Un informe con 40 páginas de tablas\
-❌ Una presentación que resume todo lo que hiciste\
-❌ Una historia sin datos que la sostengan
-:::
-
-::: {.column width="45%"}
-```{mermaid}
-graph TD
-    D["📊 Datos\n(evidencia)"]
-    V["🎨 Visualización\n(traducción visual)"]
-    N["🧵 Narrativa\n(estructura y propósito)"]
-    DS["✨ Data\nStorytelling"]
-
-    D --> DS
-    V --> DS
-    N --> DS
-
-    style DS fill:#1E3A5F,color:#fff,font-weight:bold
-    style D fill:#2D3748,color:#fff
-    style V fill:#2D3748,color:#fff
-    style N fill:#2D3748,color:#fff
-```
-
-::: {.callout-tip icon="false"}
-## La pregunta clave
-
-¿Tu audiencia termina la presentación sabiendo **qué hacer** diferente?
-
-Si la respuesta es "no sé" — todavía no es storytelling.
-:::
-:::
-:::
-
-------------------------------------------------------------------------
-
-## El cerebro es hackeable — en el buen sentido {background-color="#0D1117"}
-
-::: columns
-::: {.column width="55%"}
-El cerebro humano tiene bugs cognitivos predecibles.\
-El buen storytelling los usa a su favor.
-
-**Algunos que importan para datos:**
-
-🔴 **Pre-atención** — color, posición y tamaño llegan antes del pensamiento consciente. Un punto rojo en un gráfico de puntos negros se ve sin leer.
-
-📖 **Narrativa y memoria** — la información organizada como historia se retiene 22 veces más que listas de hechos (Jerome Bruner, Stanford).
-
-⚡ **Peak-end rule** — las audiencias recuerdan el pico emocional y el final. El medio se olvida.
-
-😮 **Surprise gap** — la tensión entre lo esperado y lo real genera atención sostenida.
-:::
-
-::: {.column width="45%"}
-::: {.callout-warning icon="false"}
-## El Cuarteto de Anscombe
-
-Cuatro datasets completamente distintos.\
-Media idéntica: 7.5.\
-Varianza idéntica: 4.12.\
-Correlación idéntica: 0.816.
-
-**Sin el gráfico, son indistinguibles.**
-
-La estadística resume. La visualización revela.
-:::
-
-::: {.callout-note icon="false"}
-## Para datos: emociones → acción
-
-Los hechos informan.\
-Las emociones mueven.
-
-La mejor historia de datos combina los dos:\
-**rigor que convence + emoción que activa.**
-:::
-:::
-:::
-
-------------------------------------------------------------------------
-
-##  {.section-slide background-color="#0A1F0A"}
-
-::: center-content
-## Parte II
-
-**Visualización**
-
-*No todos los detalles son importantes*
-:::
-
-```{=html}
-<!--
-  🖼️ IMAGEN FONDO:
-  https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=80
-  (dashboard, gráficos, datos)
-  background-opacity="0.12"
--->
-```
-
-------------------------------------------------------------------------
-
-## Visualización no es decoración {background-color="#0D1117"}
-
-::: columns
-::: {.column width="55%"}
-Una visualización efectiva cumple **una sola función**:\
-hacer que un patrón en los datos sea obvio para quien lo mira.
-
-**Los criterios que importan:**
-
-✅ **Gráfico correcto para el patrón correcto** — comparación, distribución, composición, relación\
-✅ **Carga cognitiva mínima** — si no se entiende en 5 segundos, hay que simplificar o cambiar el título\
-✅ **Jerarquía visual clara** — lo más importante, más prominente\
-✅ **Sin chartjunk** — todo elemento visual que no agrega información, la resta
-
-> *"Simplifica hasta que duela. Luego simplifica un poco más."*
-> — Edward Tufte
-:::
-
-::: {.column width="45%"}
-::: {.callout-tip icon="false"}
-## Los 4 Pilares — Noah Iliinsky
-
-1. **Propósito** — ¿por qué existe este gráfico?
-2. **Contenido** — ¿qué datos son realmente necesarios?
-3. **Estructura** — ¿cómo se organiza la información?
-4. **Formato** — ¿cuál es el gráfico adecuado?
-
-Si no puedes responder el propósito en una oración, el gráfico no está listo.
-:::
-
-::: {.callout-warning icon="false"}
-## La trampa de la velocidad
-
-La IA puede generar visualizaciones en segundos.\
-Eso no significa que sean las correctas.
-
-**Rapidez ≠ claridad.**
-:::
-:::
-:::
-
-------------------------------------------------------------------------
-
-## Cómo elegir el gráfico correcto {background-color="#0D1117"}
-
-::: columns
-::: {.column width="55%"}
-La pregunta no es "¿qué gráfico me gusta?"\
-Es **"¿qué relación en los datos quiero mostrar?"**
-
-| Relación | Gráfico recomendado |
-|---|---|
-| **Comparación** entre categorías | Barras horizontales |
-| **Evolución** en el tiempo | Línea simple |
-| **Composición** de un todo | Barras apiladas, treemap |
-| **Distribución** de valores | Histograma, box plot |
-| **Correlación** entre variables | Scatter plot |
-| **Un número** que importa | Big number + contexto |
-
-::: {.callout-note icon="false"}
-## La regla de Storytelling #2
-
-**Los detalles son importantes — pero no todos los detalles son importantes.**
-
-Mostrar todo es lo mismo que no mostrar nada.
-:::
-:::
-
-::: {.column width="45%"}
-```{mermaid}
-graph TD
-    P["❓ ¿Qué quiero mostrar?"]
-    C1["📊 Comparar\ncategorías"]
-    C2["📈 Evolución\ntemporal"]
-    C3["🥧 Composición\nde un todo"]
-    C4["🔗 Correlación\nentre variables"]
-    C5["📉 Distribución\nde valores"]
-
-    G1["→ Barras"]
-    G2["→ Línea"]
-    G3["→ Treemap"]
-    G4["→ Scatter"]
-    G5["→ Box / Histograma"]
-
-    P --> C1 --> G1
-    P --> C2 --> G2
-    P --> C3 --> G3
-    P --> C4 --> G4
-    P --> C5 --> G5
-
-    style P fill:#1E3A5F,color:#fff
-```
-:::
-:::
-
-------------------------------------------------------------------------
-
-## Ejemplo: lo que Spotify entendió {background-color="#0D1117"}
+## Narrativa 
 
 ::: columns
 ::: {.column width="60%"}
-Spotify Wrapped no es un análisis.\
-Es **data storytelling a escala de millones.**
+<br><br>
 
-¿Cómo hacen que millones de personas compartan voluntariamente sus estadísticas de consumo en redes sociales?
+Usa **trucos** de Storytelling (narrativa) para crear presentaciones que serán **recordadas** y que causarán **impacto**
+:::
 
-**Tres principios clásicos aplicados:**
+::: {.column .fragment width="40%"}
+![](images/emotions.png){fig-align="center"}
+:::
+:::
 
-🎯 **Una sola historia por tarjeta** — no acumulan datos, los secuencian\
-📱 **Formato diseñado para compartir** — la historia termina en una identidad\
-😮 **Tension → resolución** — "¿cuál será mi canción #1?" genera expectativa
+. . .
 
-**El dato más importante no es el número.**\
-Es lo que el número dice sobre ti.
+::: {style="text-align: center;"}
+🎭 Emociones inspiran acción
+:::
+
+::: notes
+Great ideas need great communication.\
+Storytelling is your toolkit to move people.\
+Facts inform — emotions inspire action.
+:::
+
+------------------------------------------------------------------------
+
+## Más que gráficos bonitos 
+
+::: columns
+::: {.column width="50%"}
+![](images/dst_before.png){fig-align="center"} *🔢 No compartas números*
+:::
+
+::: {.column .fragment width="50%"}
+![](images/dst_after.png){fig-align="center"} *🪶Comparte una historia*
+:::
+:::
+
+. . .
+
+<br><br> [(C) Storytelling with Data, por Cole Nussbaumer Knaflic.]{style="font-size: 0.75em; color: gray"}
+
+------------------------------------------------------------------------
+
+##  
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+::: callout-note
+## Storytelling principle #2
+
+Los detalles son importantes, [pero no **todos** los detalles son importantes.]{.fragment}
+:::
+:::
+
+::: notes
+Details guide attention.\
+Show less — but better.\
+Focus only on what moves the story forward.
+:::
+
+------------------------------------------------------------------------
+
+## Ejemplo: Spotify Wrapped 
+
+::: columns
+::: {.column .fragment width="30%" fragment-index="1"}
+![](images/storytelling/spotify1.png){fig-align="center" width="85%" height="100%"}
+:::
+
+::: {.column .center width="40%"}
+<br><br><br><br>
+
+Cómo hacer millones de personas <br>
+compartir estadísticas en redes sociales?
+:::
+
+::: {.column .fragment width="30%" fragment-index="1"}
+![](images/storytelling/spotify2.png){fig-align="center"  width="85%" height="100%"}
+:::
+:::
+
+# Visualización {.title-top-ice background-image="images/horst_penguins_telescope.png" data-state="no-logo"}
+
+------------------------------------------------------------------------
+
+## Visualización ... 
+
+::: columns
+::: {.column .fragment width="60%"}
+<br><br>
+
+-   Gráficos claros y comprensibles
+-   Elección correcta del gráfico
+-   Patrones y anomalías visibles
+-   Datos complejos → ideas simples
 :::
 
 ::: {.column width="40%"}
-::: {.callout-tip icon="false"}
-## La pregunta de Wrapped
-
-¿Cómo conviertes un CSV de historial de reproducción en algo que la gente quiere mostrar a sus amigos?
-
-**Respuesta:** conviertes el dato en identidad. Haces que el número diga algo sobre quién eres.
-
-Ese es el trabajo del data storyteller — antes y después de la IA.
+![](images/viz/ojo.png){fig-align="center"}
 :::
+:::
+
+. . .
+
+> ⌛ Si no se entiende en 5-7 segundos, simplifica o cambia el título.
+
+------------------------------------------------------------------------
+
+##  
+
+<br>
+
+![](images/viz/tasks3.png){fig-align="center" width="80%"}
+
+. . .
+
+<br>
+
+::: {style="text-align:center; font-size:25px; font-family:sans-serif;"}
+[Más fácil de distinguir]{style="color:green; font-weight:bold;"} [⟵────────────────────────────⟶]{style="margin: 0 15px; font-size:18px; background: linear-gradient(to right, green, orange, red); -webkit-background-clip: text; color: transparent;"} [Más difícil de distinguir]{style="color:red; font-weight:bold;"}
+:::
+
+------------------------------------------------------------------------
+
+## Ejemplos {background-image="images/slide-normal.jpg" transition="zoom"}
+
+<br>
+
+::: columns
+::: {.column width="50%" style="text-align: center;"}
+![](images/viz/monster.jpg){fig-align="center" width="82%"}
+
+<br> *❌ Chartjunk*
+:::
+
+::: {.column .fragment width="50%" style="text-align: center;"}
+![](images/viz/viz_03.png){fig-align="center" width="100%"}
+
+*✅ Good Chart*
 :::
 :::
 
 ------------------------------------------------------------------------
 
-##  {.section-slide background-color="#1A0F28"}
+##  
 
-::: center-content
-## Parte III
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+::: callout-note
+## Storytelling principle #3
 
-**La IA como copiloto narrativo**
+[Explicar Menos]{style="color: red"}, [Mostrar Más]{.fragment style="color: green"}
+:::
+:::
 
-*Qué cambia, qué no cambia*
+------------------------------------------------------------------------
+
+## Mejores Gráficos para tus Datos 
+
+::: r-stack
+<br>
+
+![](images/storytelling/plot1.png){.fragment .fade-in-then-out fig-align="left"}
+
+![](images/storytelling/plot2.png){.fragment fig-align="right"}
+:::
+
+. . .
+
+[(C) Essential chart types for data visualization, by Atlassian.]{style="font-size: 0.75em; color: gray"}
+
+::: notes
+You don’t need fancy charts.\
+Bar, scatter, box, heatmap, big text — that's 90% of data storytelling.\
+Simple wins.
+:::
+
+## 4 Pilares Visualización - Noah Iliinsky 
+
+::: columns
+::: {.column .fragment .incremental width="60%"}
+<br>
+
+1.  **Propósito**: Define la meta.
+2.  **Contenido**: Datos relevantes.
+3.  **Estructura**: Organización clara.
+4.  **Formato**: Gráfico adecuado.
+:::
+
+::: {.column width="40%"}
+![](images/viz/pilar2.png){fig-align="center"}
+:::
+:::
+
+. . .
+
+[(C) Noah Iliinsky: "Four Pillars of Visualization" - YouTube.]{style="font-size: 0.75em; color: gray"}
+
+## Herramientas 
+
+::: r-stack
+![](images/toolsbi.png){.fragment .fade-in-then-out fig-align="center" width="100%"}
+
+![](https://web.mat.upc.edu/joaquim.puig/posts/quarto-ojs/quarto-ojs.gif){.fragment .fade-in-then-out fig-align="center" width="100%"}
+
+![](https://miro.medium.com/v2/resize:fit:1400/1*6BWaj0W5VZLXvvuygeJQhg.gif){.fragment .fade-in-then-out fig-align="center" width="60%"}
+
+![](https://images.ctfassets.net/2vbtnveccz5s/2iorjhUm2wp4EEHv4kDKiV/4cb6e193184f1fc88547f25272e8f976/specialized1.gif){.fragment .fade-in-then-out fig-align="center" width="90%"}
+
+![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFs16F08eDlXUPU4No8uxpRTbdCnj94I1epbMgtf-dTvNjIyI6UudYp1xBlOi6oNRTFle59JMyZYKg0Sv9K4Fb1KAZRmcyvsg84wkEl9nnL0fgnBl8OGVbZfBIllHznyzTr8DtGo4sqXVSCGvWLHl0L-J5ZdHV_UCSMq1ytpr8StJstxoqOzEVgn98LQ/s16000/1%20Zoom%20In%20on%20Desktop%20Windows.gif){.fragment fig-align="center" width="80%"}
+:::
+
+# Inteligencia Artificial {.title-middle-ice background-image="images/horst_quarto_penguins_teach.png" data-state="no-logo"}
+
+------------------------------------------------------------------------
+
+##  {background-image="images/slide-normal.jpg"}
+
+<br><br>
+
+::: columns
+::: {.column width="35%"}
+![](images/gh_before.png){.fragment fig-align="center"}
+:::
+
+::: {.column width="30%"}
+![](images/proceso.svg){.fragment fig-align="center" width="100%"}
+:::
+
+::: {.column width="35%"}
+![](images/gh_after.png){.fragment fig-align="center"}
+:::
+:::
+
+. . .
+
+::: {style="text-align: center;"}
+🥱 1° versión $<$ ... $<$ 😊 última versión
+:::
+
+::: notes
+First versions are never perfect.\
+Draft → feedback → improve.\
+In 2026, AI compresses this cycle dramatically.\
+What took days now takes hours.
+:::
+
+------------------------------------------------------------------------
+
+##  {background-image="images/slide-normal.jpg"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+::: {.callout-note style="font-size: 1.5em; max-width: 75%; margin: auto;"}
+## Storytelling principle #4
+
+Tu primera versión será [**siempre** horrible.]{.fragment}
+
+::: {.fragment style="font-size: 0.65em; color: #666; margin-top: 0.75rem;"}
+*...y hoy la IA te ayuda a llegar más rápido a la buena.*
+:::
+:::
+:::
+
+::: notes
+Bad first drafts are normal — always were.\
+What changes in 2026 is the speed of iteration.\
+The principle stays. The tools change.
+:::
+
+------------------------------------------------------------------------
+
+## El nuevo stack de Data Storytelling {background-image="images/slide-normal.jpg"}
+
+::: columns
+::: {.column width="50%"}
+
+### Generar narrativa
+- **ChatGPT o1 / Claude 3.5** → guión, insights, resumen ejecutivo
+- **Gemini 2.0** → análisis multimodal (sube el gráfico, pide la historia)
+- **NotebookLM** → convierte tu dataset en podcast o briefing
+
+### Crear visualizaciones
+- **Napkin AI** → texto → diagrama en segundos
+- **Gamma** → datos → presentación completa
+- **Julius AI** → chat con tu CSV, genera gráficos automáticamente
+:::
+
+::: {.column .fragment width="50%"}
+
+### Ejecutar y desplegar
+- **Streamlit + Claude API** → apps de datos con lenguaje natural
+- **Evidence.dev** → reportes en Markdown con SQL en vivo
+- **Observable Framework** → dashboards estáticos de alto rendimiento
+
+### Modelos locales (sin mandar datos a la nube)
+- **Ollama + LLaMA 3 / Mistral** → corre modelos en tu laptop
+- **LM Studio** → interfaz visual para modelos locales
+- **Anything LLM** → RAG local sobre tus propios documentos
+
+:::
+:::
+
+::: notes
+The stack has exploded since 2023.\
+Key shift: you can now run serious models locally — no data leaves your machine.\
+For institutional data (UTFSM, health, finance) this is critical.
+:::
+
+------------------------------------------------------------------------
+
+## Agentes de IA para datos {background-image="images/slide-normal.jpg"}
+
+::: columns
+::: {.column width="55%"}
+
+<br>
+
+Un **agente** no solo responde — planifica, ejecuta pasos y usa herramientas.
+
+::: {.fragment}
+
+:::
+:::
+
+::: {.column .fragment width="45%"}
+
+### Frameworks en 2026
+
+| Herramienta | Para qué |
+|-------------|----------|
+| **Claude Code** | Agente de código en terminal |
+| **LangGraph** | Flujos multi-agente complejos |
+| **CrewAI** | Equipos de agentes especializados |
+| **n8n** | Automatización sin código |
+| **Copilot Studio** | Agentes empresariales (Microsoft) |
+
+:::
+:::
+
+::: notes
+Agents are the big shift in 2026.\
+You stop prompting and start delegating.\
+For data storytelling: the agent does the EDA, you review the story.
+:::
+
+------------------------------------------------------------------------
+
+## IA + Visualización: el estado del arte {background-image="images/slide-normal.jpg"}
+
+::: {.r-stack}
+
+![Gamma: de bullet points a presentación completa](images/ai/gamma_demo.gif){.fragment .fade-in-then-out fig-align="center" width="85%"}
+
+![Julius AI: chat con tu CSV](images/ai/julius_demo.gif){.fragment .fade-in-then-out fig-align="center" width="85%"}
+
+![Napkin AI: texto → diagrama](images/ai/napkin_demo.gif){.fragment .fade-in-then-out fig-align="center" width="75%"}
+
+![NotebookLM: tu dataset como fuente](images/ai/notebooklm_demo.gif){.fragment fig-align="center" width="80%"}
+
+:::
+
+::: notes
+Replace these GIFs with screen recordings if you have them.\
+Gamma: https://gamma.app — best for fast deck generation.\
+Julius: https://julius.ai — best for CSV chat.\
+Napkin: https://napkin.one — best for diagrams from text.\
+NotebookLM: https://notebooklm.google.com — best for document Q&A.
+:::
+
+------------------------------------------------------------------------
+
+# Conclusiones {.title-top-dark background-image="images/horst_quarto_penguins_thankyou.png" data-state="no-logo"}
+
+------------------------------------------------------------------------
+
+## Agenda (v2) 
+
+::: incremental
+1.  Nunca reveles el [**final**]{.fragment style="color:grey;"}\
+2.  Los detalles son importantes, pero [no **todos** los detalles]{.fragment style="color:grey;"}\
+3.  Explica menos, [**muestra más**]{.fragment style="color:grey;"}\
+4.  Tu primer borrador será [**horrible**]{.fragment style="color:grey;"}\
+:::
+
+::: notes
+A mysterious agenda — like a good story.
+
+Now you’ve seen how each point connects.
+
+Simple rules to tell better stories with data.
+:::
+
+------------------------------------------------------------------------
+
+## 🎉 ¡Gracias por Participar! 
+
+::: columns
+::: {.column width="50%"}
+<br>
+
+❓ ¿Preguntas?
+
+👏 Responder [encuesta](https://docs.google.com/forms/d/e/1FAIpQLScrKncFmj2n8vLUOhEd9GrY_zfWBwGFEtLJFKj2lsBQ0ERxSg/viewform?usp=dialog)
+
+🥳 Disfrutar del Evento!
+:::
+
+::: {.column width="50%" align="center"}
+![](images/qr_data.png){width="400"}
+:::
 :::
 
 ```{=html}
-<!--
-  🖼️ IMAGEN FONDO:
-  https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1400&q=80
-  (IA abstracta, cerebro digital)
-  background-opacity="0.14"
--->
+<style>
+/* Ajusta el tamaño del título y subtítulo */
+.reveal .slides h1 {
+  font-size: 2em; /* Tamaño más pequeño para el título */
+}
+
+.reveal .slides h2 {
+  font-size: 1.5em; /* Tamaño más pequeño para el subtítulo */
+}
+
+/* Ajusta el tamaño del texto en los párrafos */
+.reveal .slides p {
+  font-size: 0.8em; /* Texto más pequeño */
+}
+
+/* Ajusta el tamaño de las tablas */
+.reveal .slides table {
+  font-size: 0.8em; /* Tamaño de fuente más pequeño en las tablas */
+  width: 90%; /* Ajusta el ancho de la tabla */
+  margin: 0 auto; /* Centra la tabla */
+}
+
+/* Ajusta el tamaño de los bullets */
+.reveal .slides ul {
+  font-size: 1em; /* Tamaño de fuente más pequeño en los bullets */
+
+}
+
+.reveal .slide-logo {
+   max-height: 3em !important;
+
+}
+
+</style>
 ```
-
-------------------------------------------------------------------------
-
-## De herramienta a copiloto — el cambio real {background-color="#0D1117"}
-
-::: columns
-::: {.column width="55%"}
-**Antes (2022):** la IA era un complemento.\
-Limpiar datos. Sugerir un gráfico. Generar un template.
-
-**Hoy (2026):** la IA puede hacer el primer 80% de la historia.
-
-**Qué puede hacer un LLM hoy con tus datos:**
-
-✅ Proponer una estructura narrativa completa\
-✅ Generar 3 versiones del mismo insight para audencias distintas\
-✅ Adaptar el tono: técnico vs ejecutivo vs público general\
-✅ Identificar la tensión central en un dataset\
-✅ Generar visualizaciones desde texto o código\
-✅ Traducir hallazgos a lenguaje no especializado
-
-**Lo que esto cambia:**
-
-El punto de partida ya no es el lienzo en blanco.\
-Es **evaluar, refinar y hacer propio** lo que la IA propone.
-:::
-
-::: {.column width="45%"}
-```{mermaid}
-graph TD
-    D["📊 Dataset\n(tu insumo)"]
-    
-    subgraph Antes ["Antes"]
-        A1["Explorar\ny limpiar"]
-        A2["Encontrar\nel patrón"]
-        A3["Construir\nla historia"]
-        A4["Diseñar\nvisualización"]
-        A1 --> A2 --> A3 --> A4
-    end
-
-    subgraph Ahora ["Ahora con IA"]
-        B1["IA propone\nestructura narrativa"]
-        B2["Tú evalúas\ny refinas"]
-        B3["IA genera\nvisualizaciones"]
-        B4["Tú decides\nqué importa"]
-        B1 --> B2 --> B3 --> B4
-    end
-
-    D --> Antes
-    D --> Ahora
-
-    style B2 fill:#1E5F1E,color:#fff
-    style B4 fill:#1E5F1E,color:#fff
-```
-:::
-:::
-
-------------------------------------------------------------------------
-
-## El pipeline con IA — herramientas reales {background-color="#0D1117"}
-
-::: columns
-::: {.column width="50%"}
-### 🧠 Narrativa y estructura
-
-**ChatGPT / Claude / Gemini**\
-→ Genera guiones narrativos desde datos\
-→ Propone frames según audiencia\
-→ Reescribe para distintos tonos
-
-**NotebookLM (Google)**\
-→ Analiza documentos y encuentra el hilo conductor\
-→ Genera resúmenes ejecutivos y podcasts
-
-### 🎨 Visualización generativa
-
-**Napkin AI**\
-→ De texto a diagrama visual en segundos
-
-**Copilot en Power BI / Excel**\
-→ Genera gráficos desde lenguaje natural\
-→ Describe patrones en lenguaje accesible
-:::
-
-::: {.column width="50%"}
-### 🐍 Para Pythonistas
-
-**Claude Code + Quarto**\
-→ Describe el gráfico en lenguaje natural\
-→ El agente escribe el código, ejecuta, itera
-
-**Pandas AI / LlamaIndex**\
-→ Preguntas en lenguaje natural sobre DataFrames
-
-**Vega-Altair + LLM**\
-→ Genera especificaciones de visualización desde descripción
-
-::: {.callout-warning icon="false"}
-## La trampa más común
-
-Usar la IA para generar una visualización bonita **sin haber definido primero qué historia quieres contar**.
-
-La IA amplifica tu criterio.\
-Si no tienes criterio, amplifica el ruido.
-:::
-:::
-:::
-
-------------------------------------------------------------------------
-
-## Visualización generativa — velocidad vs criterio {background-color="#0D1117"}
-
-::: columns
-::: {.column width="55%"}
-La promesa es real: pasar de datos crudos a una visualización en segundos.
-
-Eso es una **ventaja genuina** cuando sabes qué buscas.
-
-Es una **trampa** cuando la velocidad sustituye al pensamiento.
-
-**Los casos donde la IA ayuda:**
-
-✅ Exploración rápida de un dataset nuevo\
-✅ Generar múltiples opciones para elegir\
-✅ Prototipar antes de invertir en diseño final\
-✅ Traducir código de visualización entre librerías
-
-**Los casos donde acelerar sin pensar confunde:**
-
-❌ Gráfico de torta con 12 segmentos para "simplificar"\
-❌ Línea temporal con demasiadas series sin jerarquía\
-❌ Dashboard con 20 KPIs sin propósito narrativo\
-❌ Insight generado que no responde ninguna pregunta real
-:::
-
-::: {.column width="45%"}
-::: {.callout-note icon="false"}
-## Storytelling principle #3
-
-**Explicar menos. Mostrar más.**
-
-La IA tiende a sobre-explicar.\
-Tu trabajo como analista es editar.
-
-Cada elemento visual que no agrega significado lo resta.
-:::
-
-::: {.callout-tip icon="false"}
-## El test de los 5 segundos
-
-Muéstrale tu visualización a alguien de tu audiencia durante 5 segundos. Tápala.
-
-Pregunta: ¿qué viste?
-
-Si la respuesta no coincide con tu mensaje principal — el problema no es la persona, es el diseño.
-:::
-:::
-:::
-
-------------------------------------------------------------------------
-
-## El juicio humano como ventaja competitiva {background-color="#0D1117"}
-
-::: columns
-::: {.column width="55%"}
-La IA no sabe cuatro cosas que tú sí sabes:
-
-🎯 **Qué historia importa** en este contexto específico\
-👥 **Para quién** — el gerente, el congresista, el ciudadano\
-⏰ **Por qué ahora** — el momento político, el evento reciente, la urgencia\
-🔍 **Qué no está en los datos** pero es crucial para interpretarlos
-
-Esas cuatro cosas son **juicio**, no generación.
-
-Y el juicio es lo que convierte:
-
-- Un dashboard bonito → en una historia que mueve a la acción
-- Una tabla de resultados → en una recomendación estratégica
-- Un hallazgo estadístico → en una política pública
-
-**La IA democratizó el primer borrador.\
-El criterio sigue siendo escaso.**
-:::
-
-::: {.column width="45%"}
-```{mermaid}
-graph TD
-    IA["🤖 IA genera"]
-    H["👤 Humano decide"]
-    
-    IA --> E1["Estructura narrativa"]
-    IA --> E2["Opciones de visualización"]
-    IA --> E3["Versiones por audiencia"]
-    IA --> E4["Código y prototipo"]
-
-    H --> D1["Qué historia importa"]
-    H --> D2["Para quién y por qué ahora"]
-    H --> D3["Qué no está en los datos"]
-    H --> D4["Qué acción se espera"]
-
-    style H fill:#1E5F1E,color:#fff,font-weight:bold
-    style IA fill:#1E3A5F,color:#fff
-```
-:::
-:::
-
-------------------------------------------------------------------------
-
-##  {.section-slide background-color="#0A0F1F"}
-
-::: center-content
-## Parte IV
-
-**El framework**
-
-*Propósito · Audiencia · Tensión · Resolución*
-:::
-
-------------------------------------------------------------------------
-
-## El framework PATR — datos que mueven a la acción {background-color="#0D1117"}
-
-::: columns
-::: {.column width="55%"}
-Cuatro preguntas. Si las puedes responder antes de abrir Python, tienes una historia.
-
-**🎯 Propósito**\
-¿Qué decisión o acción debería ocurrir después de esta presentación?\
-*"Aprobar el presupuesto" es propósito. "Informar" no lo es.*
-
-**👥 Audiencia**\
-¿Quién escucha, qué saben, qué les importa, qué los mueve?\
-*El CFO y el equipo técnico no son la misma audiencia.*
-
-**⚡ Tensión**\
-¿Cuál es la brecha entre donde estamos y donde deberíamos estar?\
-*Sin tensión no hay historia — solo reporte.*
-
-**✅ Resolución**\
-¿Qué cierra la tensión? ¿Qué propones?\
-*La resolución es tu recomendación, no tu conclusión.*
-:::
-
-::: {.column width="45%"}
-```{mermaid}
-graph LR
-    P["🎯 Propósito\n¿Qué acción?"]
-    A["👥 Audiencia\n¿Para quién?"]
-    T["⚡ Tensión\n¿Cuál es la brecha?"]
-    R["✅ Resolución\n¿Qué propones?"]
-
-    P --> A --> T --> R
-
-    style P fill:#1E3A5F,color:#fff
-    style A fill:#2D3748,color:#fff
-    style T fill:#5F1E1E,color:#fff
-    style R fill:#1E5F1E,color:#fff
-```
-
-::: {.callout-tip icon="false"}
-## Cómo usar el framework con IA
-
-Dale el PATR al modelo como contexto.\
-Pídele que proponga la estructura narrativa.\
-Luego evalúa: ¿refleja lo que realmente importa?
-
-La IA puede llenar el esqueleto.\
-Tú defines los huesos.
-:::
-:::
-:::
-
-------------------------------------------------------------------------
-
-## Demo en vivo — flujo real con Python y IA {background-color="#0D1117"}
-
-::: columns
-::: {.column width="55%"}
-**El escenario:**
-
-Tienes un dataset de ventas por región y trimestre.\
-Gerencia necesita entender qué pasó y qué hacer.\
-Tienes 20 minutos para preparar la presentación.
-
-**El flujo:**
-
-1. **Cargar y explorar** — pandas, describe(), primeros patrones
-2. **Preguntarle a la IA** — "¿qué historia hay aquí? propone estructura PATR"
-3. **Generar visualizaciones** — matplotlib / plotly + revisión crítica
-4. **Narrar con Quarto** — el mismo notebook es la presentación
-5. **Iterar** — la IA refina el texto; tú refinas el criterio
-
-::: {.callout-note icon="false"}
-## Storytelling principle #4
-
-**Tu primer borrador siempre será horrible.**
-
-La diferencia con la IA: el borrador horrible llega en 2 minutos, no en 2 horas.
-
-Eso libera tiempo para lo que importa: refinarlo.
-:::
-:::
-
-::: {.column width="45%"}
-```python
-# Paso 2: preguntarle a la IA el PATR
-import anthropic
-
-client = anthropic.Anthropic()
-
-resumen_datos = df.describe().to_string()
-tendencias = df.groupby(['region','trimestre'])
-               ['ventas'].sum().to_string()
-
-prompt = f"""
-Eres un analista experto en data storytelling.
-Tengo este dataset de ventas:
-
-{resumen_datos}
-
-Tendencias por región y trimestre:
-{tendencias}
-
-La audiencia es gerencia senior.
-El objetivo es tomar decisiones de inversión.
-
-Usando el framework PATR (Propósito,
-Audiencia, Tensión, Resolución), propone
-la estructura narrativa para una presentación
-de 10 minutos.
-"""
-
-response = client.messages.create(
-    model="claude-sonnet-4-6",
-    max_tokens=1000,
-    messages=[{"role": "user", "content": prompt}]
-)
-print(response.content[0].text)
-```
-:::
-:::
-
-------------------------------------------------------------------------
-
-## Lo que cambia para el analista de datos {background-color="#0D1117"}
-
-::: columns
-::: {.column width="50%"}
-### ✅ Lo que se acelera con IA
-
-- Exploración inicial de datasets nuevos
-- Generación de múltiples opciones narrativas
-- Adaptación de mensajes por audiencia
-- Primeros borradores de texto y visualización
-- Traducción de hallazgos técnicos a lenguaje ejecutivo
-- Prototipado rápido de dashboards
-- Código de visualización en distintas librerías
-
-:::
-
-::: {.column width="50%"}
-### 👤 Lo que sigue siendo tuyo
-
-- Saber qué pregunta vale la pena hacer
-- Entender el contexto organizacional de los datos
-- Detectar cuando el hallazgo es ruido vs señal
-- Evaluar si la visualización es honesta
-- Decidir qué no mostrar (tan importante como qué mostrar)
-- Asumir responsabilidad por la historia que cuentas
-
-::: {.callout-important icon="false"}
-## La competencia que más escasea en 2026
-
-No es generar visualizaciones con IA.\
-Es **evaluar si la historia que generó la IA es la historia correcta.**
-:::
-:::
-:::
-
-------------------------------------------------------------------------
-
-## Casos concretos — IA que ayuda vs IA que confunde {background-color="#0D1117"}
-
-::: columns
-::: {.column width="50%"}
-### ✅ IA que amplifica el criterio
-
-**Caso 1 — INE Chile**\
-Analista tiene microdatos del Censo.\
-Le pide a Claude que proponga 3 ángulos narrativos para prensa, académicos y policy.\
-Elige el ángulo, la IA adapta el lenguaje.\
-**Resultado:** 3 comunicados distintos en 30 minutos.
-
-**Caso 2 — Docencia en MAT281**\
-Estudiante entrega análisis de datos.\
-La IA propone estructura narrativa del reporte.\
-El docente evalúa si el criterio estadístico es correcto.\
-**Resultado:** más tiempo para discutir el qué, menos para el cómo.
-:::
-
-::: {.column width="50%"}
-### ❌ IA que produce ruido visual
-
-**Caso 3 — Dashboard ejecutivo "generado por IA"**\
-Copilot generó 15 visualizaciones automáticas.\
-Ninguna tenía un propósito narrativo definido.\
-El CEO preguntó: "¿y esto qué significa?"\
-**Resultado:** velocidad máxima hacia ninguna parte.
-
-**Caso 4 — Informe de ventas con "insights automáticos"**\
-LLM generó 5 "insights" del dataset.\
-Tres eran triviales (lo que sube, sube).\
-Uno era incorrecto (confundió causalidad con correlación).\
-**Resultado:** el analista que lo firmó perdió credibilidad.
-:::
-:::
-
-::: fragment
-::: {.callout-warning icon="false"}
-## La diferencia entre los casos
-
-En los casos exitosos, **el humano definió el propósito antes de pedir a la IA**.\
-En los casos fallidos, **se le delegó también la decisión de qué importa**.
-:::
-:::
-
-------------------------------------------------------------------------
-
-##  {.section-slide background-color="#0A1520"}
-
-::: center-content
-## Cierre
-
-**Lo que te llevas**
-
-*Un framework, no una receta*
-:::
-
-------------------------------------------------------------------------
-
-## El framework completo — para aplicar hoy {background-color="#0D1117"}
-
-::: r-stack
-::: {.fragment .fade-in-then-out}
-### 1 — Define el PATR antes de abrir Python
-
-Propósito · Audiencia · Tensión · Resolución.\
-Sin esto, la IA va a generar bien lo que tú no sabes qué es.\
-**El análisis empieza con preguntas, no con datos.**
-:::
-
-::: {.fragment .fade-in-then-out}
-### 2 — Usa la IA para el primer 80%
-
-Narrativa, estructura, opciones de visualización, adaptación de tono.\
-Deja que la IA llene el borrador.\
-**Tu trabajo es evaluar, no empezar desde cero.**
-:::
-
-::: {.fragment .fade-in-then-out}
-### 3 — Aplica el test de los 5 segundos
-
-Cada visualización debe comunicar su mensaje principal en 5 segundos.\
-Si no lo hace — simplifica hasta que duela, luego simplifica un poco más.\
-**La claridad es un acto de respeto hacia la audiencia.**
-:::
-
-::: {.fragment .fade-in}
-### 4 — El criterio no se delega
-
-La IA no sabe qué historia importa, para quién, ni por qué ahora.\
-Eso lo sabes tú.\
-**La ventaja competitiva no es usar IA — es combinarla con juicio.**
-:::
-:::
-
-------------------------------------------------------------------------
-
-## Recursos para profundizar {background-color="#0D1117"}
-
-::: columns
-::: {.column width="33%"}
-### 📚 Libros fundamentales
-
-**Storytelling with Data**\
-Cole Nussbaumer Knaflic\
-*El estándar de la disciplina*
-
-**The Functional Art**\
-Alberto Cairo\
-*Visualización con propósito*
-
-**Made to Stick**\
-Chip & Dan Heath\
-*Por qué algunas ideas perduran*
-:::
-
-::: {.column width="33%"}
-### 🐍 Herramientas Python
-
-**Altair / Vega-Lite**\
-Visualización declarativa, composable
-
-**Quarto**\
-Notebooks que son presentaciones
-
-**Claude API / Anthropic**\
-Para pipelines de narrativa con IA
-
-**Streamlit + LLM**\
-Dashboards con lenguaje natural
-:::
-
-::: {.column width="33%"}
-### 🌐 IA para storytelling
-
-**Napkin AI** — napkin.ai\
-Texto → diagrama visual
-
-**NotebookLM** — notebooklm.google\
-Análisis de documentos, podcasts
-
-**Claude** — claude.ai\
-Narrativa, adaptación de tono, PATR
-
-**Copilot en Power BI**\
-Lenguaje natural → visualizaciones
-:::
-:::
-
-------------------------------------------------------------------------
-
-##  {.final-slide background-color="#0D1117" background-image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=80" background-opacity="0.08"}
-
-::: center-content
-**¿Preguntas?**
-
-------------------------------------------------------------------------
-
-Francisco Alfaro · Valeska Canales\
-Seth & Nut · `sethnut.com/talks`
-
-------------------------------------------------------------------------
-
-*"La IA democratizó el primer borrador.*\
-*El criterio sobre qué historia importa — eso sigue siendo humano."*
-
-*Data Saturday Santiago · 2026*
-:::

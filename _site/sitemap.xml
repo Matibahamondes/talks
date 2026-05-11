@@ -30,7 +30,7 @@
   </url>
   <url>
     <loc>https://falfaro.xyz/talks/index.html</loc>
-    <lastmod>2026-05-08T03:55:27.771Z</lastmod>
+    <lastmod>2026-05-11T02:49:32.775Z</lastmod>
   </url>
   <url>
     <loc>https://falfaro.xyz/talks/hello-quarto/presentacion.html</loc>
@@ -110,15 +110,15 @@
   </url>
   <url>
     <loc>https://falfaro.xyz/talks/ai/pyday_2026.html</loc>
-    <lastmod>2026-05-02T18:52:50.092Z</lastmod>
+    <lastmod>2026-05-11T03:12:41.872Z</lastmod>
   </url>
   <url>
     <loc>https://falfaro.xyz/talks/ai/datasaturday_2026.html</loc>
-    <lastmod>2026-05-02T18:58:04.409Z</lastmod>
+    <lastmod>2026-05-11T02:50:02.014Z</lastmod>
   </url>
   <url>
     <loc>https://falfaro.xyz/talks/ai/datafrontiers_2026.html</loc>
-    <lastmod>2026-05-02T19:10:17.057Z</lastmod>
+    <lastmod>2026-05-11T02:25:11.026Z</lastmod>
   </url>
   <url>
     <loc>https://falfaro.xyz/talks/tools/quarto/presentacion.html</loc>
@@ -143,5 +143,9 @@
   <url>
     <loc>https://falfaro.xyz/talks/tools/colab/presentacion.html</loc>
     <lastmod>2026-05-10T01:17:02.718Z</lastmod>
+  </url>
+  <url>
+    <loc>https://falfaro.xyz/talks/ai/presentacion_datasaturday.html</loc>
+    <lastmod>2026-05-11T02:48:43.140Z</lastmod>
   </url>
 </urlset>

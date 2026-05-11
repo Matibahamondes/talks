@@ -11,9 +11,8 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.554">
 
-  <meta name="author" content="Francisco Alfaro">
-  <meta name="author" content="Valeska Canales">
-  <title>Talks - Datos, storytelling e IA</title>
+  <meta name="author" content="Francisco Alfaro Medina">
+  <title>Talks - Google Colab</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -387,966 +386,701 @@
       margin-right: 0; 
     }
   </style>
-  <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Datos, storytelling e IA</h1>
-  <p class="subtitle">El nuevo arte de contar con datos</p>
+  <h1 class="title">Google Colab</h1>
+  <p class="subtitle">Ejecuta código Python y R desde el navegador, sin instalar nada</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Francisco Alfaro 
+Francisco Alfaro Medina 
 </div>
         <p class="quarto-title-affiliation">
-            Seth &amp; Nut · UTFSM
-          </p>
-    </div>
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Valeska Canales 
-</div>
-        <p class="quarto-title-affiliation">
-            Seth &amp; Nut · UTFSM
+            Dirección de Transformación Digital · UTFSM
           </p>
     </div>
 </div>
 
-  <p class="date">6 de junio 2026</p>
+  <p class="date">mayo 2026</p>
 </section>
-<section id="section" class="slide level2 title-slide center" data-background-color="#0D1117" data-background-image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&amp;q=80" data-background-opacity="0.13">
+<section id="section" class="slide level2 title-slide center" data-background-color="#0F2044">
 <h2></h2>
 <div class="title-block">
-<p><strong>Datos, storytelling e IA</strong></p>
-<p>El nuevo arte de contar con datos</p>
+<p><strong>Google Colab</strong></p>
+<p>Ejecuta código desde el navegador</p>
 </div>
 <div class="subtitle-block">
-<p>Cómo la IA generativa está cambiando quién puede contar historias con datos — y qué significa eso para los que ya sabíamos hacerlo</p>
+<p>Python · R · Datos · Drive · IA con Gemini<br>
+MOOC propedéutico — Aprende USM 2026</p>
 </div>
 <div class="author-block">
-<p>Francisco Alfaro · Valeska Canales<br>
-Seth &amp; Nut · UTFSM · Data Saturday Santiago · 6 junio 2026</p>
+<p>Francisco Alfaro Medina<br>
+Dirección de Transformación Digital · UTFSM<br>
+Unidad de Educación a Distancia · 2026</p>
 </div>
-<!--
-  🖼️ IMAGEN PORTADA:
-  https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=80
-  (dashboard abstracto, datos, azul oscuro)
-  Alternativa: https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&q=80
--->
 </section>
-<section id="el-problema-que-vamos-a-resolver-hoy" class="slide level2" data-background-color="#0D1117">
-<h2>El problema que vamos a resolver hoy</h2>
-<div class="columns">
-<div class="column" style="width:55%;">
-<p>Contar historias con datos <strong>siempre fue difícil</strong>.</p>
-<p>Transformar números en narrativas que informen, persuadan y movilicen requiere tres cosas al mismo tiempo:</p>
-<p>🎯 <strong>Claridad visual</strong> — el gráfico correcto para el mensaje correcto<br>
-🧵 <strong>Estructura narrativa</strong> — un hilo conductor que no se pierda<br>
-🎭 <strong>Criterio comunicacional</strong> — adaptar el mensaje a quién escucha</p>
-<p>Durante años, ese trabajo dependía <strong>casi completamente</strong> del analista.</p>
-<p>Hoy, la IA está cambiando esa ecuación — de formas que recién empezamos a entender.</p>
-</div><div class="column" style="width:45%;">
-<div class="callout callout-note no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Una promesa honesta</strong></p>
+<section id="te-ha-pasado-esto" class="slide level2">
+<h2>¿Te ha pasado esto?</h2>
+<div class="r-stack">
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/intro_01.jpg" class="fragment fade-in-then-out quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
 </div>
-<div class="callout-content">
-<p>Esta charla no es “la IA lo hace todo por ti.”</p>
-<p>Es sobre <strong>qué cambia, qué no cambia, y qué tienes que aprender</strong> para que la IA amplifica tu criterio en lugar de reemplazarlo.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/intro_02.png" class="fragment fade-in-then-out quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
 </div>
-</div>
-</div>
-<div class="callout callout-warning no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Una advertencia</strong></p>
-</div>
-<div class="callout-content">
-<p>La IA no sabe qué historia importa, ni para quién, ni por qué ahora.</p>
-<p><strong>Sabe generar. No decide.</strong></p>
-</div>
-</div>
-</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/intro_04.jpg" class="fragment quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
 </div>
 </div>
 </section>
-<section id="agenda-pero-con-una-advertencia" class="slide level2" data-background-color="#0D1117">
-<h2>Agenda — pero con una advertencia</h2>
+<section id="objetivos" class="slide level2">
+<h2>Objetivos</h2>
 <div class="columns">
-<div class="column" style="width:55%;">
-<div class="callout callout-tip no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Storytelling principle #1</strong></p>
+<div class="column" style="width:40%;">
+<div style="text-align: center;">
+<p><img src="images/index2.png" alt="Objetivos" style="width: 100%; border-radius: 10px;"></p>
 </div>
-<div class="callout-content">
-<p><strong>Nunca revelar el final antes de tiempo.</strong><br>
-Siempre eleva la tensión y el drama.</p>
+</div><div class="column" style="width:60%;">
+<p><br></p>
+<ul>
+<li class="fragment"><strong>Conocer Colab</strong>: Qué es y para qué sirve en docencia e investigación.</li>
+<li class="fragment"><strong>Primeros pasos</strong>: Celdas de código, Markdown y ejecución en la nube.</li>
+<li class="fragment"><strong>Recursos y datos</strong>: RAM, CPU, librerías, kernels y cómo subir archivos.</li>
+<li class="fragment"><strong>Integraciones</strong>: Google Drive, credenciales seguras y Gemini IA.</li>
+</ul>
 </div>
 </div>
+</section>
+<section id="section-1" class="slide level2" data-background-image="images/background_slides3.png" data-background-opacity="0.3">
+<h2></h2>
+<div style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;">
+<p><span style="font-size: 2em">Google Colab</span></p>
+<p><span style="font-size: 2.5em">¿Qué es y para qué sirve?</span></p>
 </div>
-</div><div class="column" style="width:45%;">
-<!--
-  🖼️ IMAGEN SUGERIDA:
-  https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80
-  (circuito, tecnología, misterio)
-  
-  ![](https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80){width=100% style="border-radius:8px; opacity:0.7;"}
--->
+</section>
+<section id="qué-es-google-colab" class="slide level2">
+<h2>¿Qué es Google Colab?</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div style="text-align: center;">
+<p><img src="images/colab.png" alt="Google Colab Logo" style="width: 100%; border-radius: 10px;"></p>
+</div>
+</div><div class="column" style="width:60%;">
+<p><br></p>
+<ul>
+<li class="fragment"><strong>¿Qué es?</strong>
+<ul>
+<li class="fragment">Entorno de notebooks Jupyter en la nube, gratuito y sin instalación.</li>
+</ul></li>
+<li class="fragment"><strong>¿Para qué sirve?</strong>
+<ul>
+<li class="fragment">Ejecutar código Python (y R) directamente desde el navegador.<br>
+</li>
+<li class="fragment">Compartir análisis, tareas y proyectos con un enlace.<br>
+</li>
+<li class="fragment">Acceder a GPU/TPU gratuita para proyectos de datos e IA.</li>
+</ul></li>
+</ul>
 </div>
 </div>
 <div class="fragment">
-<p><strong>Agenda (versión honesta):</strong></p>
-<div>
-<ol type="1">
-<li class="fragment">Las historias y los datos — por qué funciona lo que funciona</li>
-<li class="fragment">Los detalles importan, pero <span style="background-color:#1A1A2E; padding: 2px 6px; border-radius: 3px;">no <strong>todos</strong> los detalles importan</span></li>
-<li class="fragment">Explicar menos, <span style="background-color:#1A1A2E; padding: 2px 6px; border-radius: 3px;">mostrar más</span></li>
-<li class="fragment">La IA como copiloto — tu primer borrador será <span style="background-color:#1A1A2E; padding: 2px 6px; border-radius: 3px;">horrible</span>, y está bien</li>
-</ol>
-</div>
-</div>
-</section>
-<section id="section-1" class="slide level2 section-slide" data-background-color="#0A1628">
-<h2></h2>
-</section>
-<section id="parte-i" class="slide level2 center-content">
-<h2>Parte I</h2>
-<p><strong>Storytelling</strong></p>
-<p><em>La primera tecnología humana</em></p>
-</section>
-<section id="las-historias-son-tecnología" class="slide level2" data-background-color="#0D1117">
-<h2>Las historias son tecnología</h2>
-<div class="columns">
-<div class="column" style="width:55%;">
-<p>Antes de la escritura, antes de los números, antes de los datos —<br>
-existían <strong>las historias</strong>.</p>
-<p>Las historias son la forma en que los humanos:</p>
-<p>🧠 <strong>Transmiten conocimiento</strong> a través del tiempo<br>
-❤️ <strong>Crean conexión</strong> entre personas<br>
-🎯 <strong>Generan acción</strong> en comunidades</p>
-<p>El cerebro humano no procesa estadísticas.<br>
-<strong>Procesa narrativas.</strong></p>
 <blockquote>
-<p><em>“El cerebro que escucha una historia bien contada libera cortisol, dopamina y oxitocina. Ningún dashboard hace eso.”</em></p>
+<p>🌿 Solo necesitas una cuenta de Google para empezar en <a href="https://colab.research.google.com">colab.research.google.com</a>.</p>
 </blockquote>
-</div><div class="column" style="width:45%;">
-<!--
-  🖼️ IMAGEN: cueva con pinturas rupestres, o fuego primitivo
-  https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&q=80
-  (código/fuego abstracto, metáfora de transmisión de conocimiento)
-
-  ![](https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&q=80){width=100% style="border-radius:8px; opacity:0.8;"}
--->
-<div class="callout callout-note no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>El problema del análisis sin narrativa</strong></p>
 </div>
-<div class="callout-content">
-<p>Un dashboard con 47 métricas no es un análisis.<br>
-Es un almacén de números con buena tipografía.</p>
-<p><strong>Los datos no hablan solos. Necesitan narrador.</strong></p>
+</section>
+<section id="ejemplos" class="slide level2">
+<h2>Ejemplos</h2>
+<p><br></p>
+<div class="r-stack">
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/example_01.png" class="fragment fade-in-then-out quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
 </div>
-</div>
-</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/example_02.png" class="fragment quarto-figure quarto-figure-center" style="width:90.0%"></p>
+</figure>
 </div>
 </div>
 </section>
-<section id="qué-es-data-storytelling-y-qué-no-es" class="slide level2" data-background-color="#0D1117">
-<h2>Qué es data storytelling — y qué no es</h2>
-<div class="columns">
-<div class="column" style="width:55%;">
-<p><strong>Data storytelling</strong> es la disciplina que combina:</p>
-<p>📊 <strong>Datos</strong> — evidencia, precisión, credibilidad<br>
-🎨 <strong>Visualización</strong> — traducción visual del patrón<br>
-🧵 <strong>Narrativa</strong> — estructura que guía hacia una conclusión</p>
-<p>La intersección de los tres es donde ocurre la comunicación real.</p>
-<p><strong>Lo que NO es data storytelling:</strong></p>
-<p>❌ Un gráfico bonito sin contexto<br>
-❌ Un informe con 40 páginas de tablas<br>
-❌ Una presentación que resume todo lo que hiciste<br>
-❌ Una historia sin datos que la sostengan</p>
-</div><div class="column" style="width:45%;">
-<div class="cell" data-reveal="true" data-layout-align="center">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph TD
-    D["📊 Datos\n(evidencia)"]
-    V["🎨 Visualización\n(traducción visual)"]
-    N["🧵 Narrativa\n(estructura y propósito)"]
-    DS["✨ Data\nStorytelling"]
-
-    D --&gt; DS
-    V --&gt; DS
-    N --&gt; DS
-
-    style DS fill:#1E3A5F,color:#fff,font-weight:bold
-    style D fill:#2D3748,color:#fff
-    style V fill:#2D3748,color:#fff
-    style N fill:#2D3748,color:#fff
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<div class="callout callout-tip no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>La pregunta clave</strong></p>
-</div>
-<div class="callout-content">
-<p>¿Tu audiencia termina la presentación sabiendo <strong>qué hacer</strong> diferente?</p>
-<p>Si la respuesta es “no sé” — todavía no es storytelling.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="el-cerebro-es-hackeable-en-el-buen-sentido" class="slide level2" data-background-color="#0D1117">
-<h2>El cerebro es hackeable — en el buen sentido</h2>
-<div class="columns">
-<div class="column" style="width:55%;">
-<p>El cerebro humano tiene bugs cognitivos predecibles.<br>
-El buen storytelling los usa a su favor.</p>
-<p><strong>Algunos que importan para datos:</strong></p>
-<p>🔴 <strong>Pre-atención</strong> — color, posición y tamaño llegan antes del pensamiento consciente. Un punto rojo en un gráfico de puntos negros se ve sin leer.</p>
-<p>📖 <strong>Narrativa y memoria</strong> — la información organizada como historia se retiene 22 veces más que listas de hechos (Jerome Bruner, Stanford).</p>
-<p>⚡ <strong>Peak-end rule</strong> — las audiencias recuerdan el pico emocional y el final. El medio se olvida.</p>
-<p>😮 <strong>Surprise gap</strong> — la tensión entre lo esperado y lo real genera atención sostenida.</p>
-</div><div class="column" style="width:45%;">
-<div class="callout callout-warning no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>El Cuarteto de Anscombe</strong></p>
-</div>
-<div class="callout-content">
-<p>Cuatro datasets completamente distintos.<br>
-Media idéntica: 7.5.<br>
-Varianza idéntica: 4.12.<br>
-Correlación idéntica: 0.816.</p>
-<p><strong>Sin el gráfico, son indistinguibles.</strong></p>
-<p>La estadística resume. La visualización revela.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-note no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Para datos: emociones → acción</strong></p>
-</div>
-<div class="callout-content">
-<p>Los hechos informan.<br>
-Las emociones mueven.</p>
-<p>La mejor historia de datos combina los dos:<br>
-<strong>rigor que convence + emoción que activa.</strong></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="section-2" class="slide level2 section-slide" data-background-color="#0A1F0A">
+<section id="section-2" class="slide level2" data-background-image="images/background_slides3.png" data-background-opacity="0.3">
 <h2></h2>
+<div style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;">
+<p><span style="font-size: 2em">Google Colab</span></p>
+<p><span style="font-size: 2.5em">Lo que necesitas saber</span></p>
+</div>
 </section>
-<section id="parte-ii" class="slide level2 center-content">
-<h2>Parte II</h2>
-<p><strong>Visualización</strong></p>
-<p><em>No todos los detalles son importantes</em></p>
-</section>
-<!--
-  🖼️ IMAGEN FONDO:
-  https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=80
-  (dashboard, gráficos, datos)
-  background-opacity="0.12"
--->
-<section id="visualización-no-es-decoración" class="slide level2" data-background-color="#0D1117">
-<h2>Visualización no es decoración</h2>
+<section id="celdas-el-corazón-de-colab" class="slide level2">
+<h2>Celdas: el corazón de Colab</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Markdown</a></li><li><a href="#tabset-1-2">Python</a></li><li><a href="#tabset-1-3">R</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
 <div class="columns">
-<div class="column" style="width:55%;">
-<p>Una visualización efectiva cumple <strong>una sola función</strong>:<br>
-hacer que un patrón en los datos sea obvio para quien lo mira.</p>
-<p><strong>Los criterios que importan:</strong></p>
-<p>✅ <strong>Gráfico correcto para el patrón correcto</strong> — comparación, distribución, composición, relación<br>
-✅ <strong>Carga cognitiva mínima</strong> — si no se entiende en 5 segundos, hay que simplificar o cambiar el título<br>
-✅ <strong>Jerarquía visual clara</strong> — lo más importante, más prominente<br>
-✅ <strong>Sin chartjunk</strong> — todo elemento visual que no agrega información, la resta</p>
+<div class="column" style="width:50%;">
+<p>✏️ <strong>Celda de texto (Markdown):</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a></a><span class="fu"># Mi Análisis</span></span>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a>Este notebook explora los datos de estudiantes</span>
+<span id="cb1-4"><a></a>de la UTFSM durante el semestre 2026.</span>
+<span id="cb1-5"><a></a></span>
+<span id="cb1-6"><a></a><span class="fu">## Objetivos</span></span>
+<span id="cb1-7"><a></a><span class="ss">- </span>Explorar distribuciones</span>
+<span id="cb1-8"><a></a><span class="ss">- </span>Visualizar tendencias</span>
+<span id="cb1-9"><a></a><span class="ss">- </span>Ajustar un modelo</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<p>👁️ <strong>Se renderiza así:</strong></p>
+<p>Título visible, secciones organizadas y texto formateado — igual que en GitHub README, pero dentro del notebook.</p>
+<div style="background: #f0f4ff; border-left: 4px solid #0F2044; border-radius: 6px; padding: 0.5em 1em; font-size: 0.85em; margin-top: 1em;">
+<p>💡 Usa celdas de texto para explicar cada paso. Un buen notebook se lee como un informe.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>✏️ <strong>Celda de código Python:</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a></a></span>
+<span id="cb2-4"><a></a><span class="co"># Cargar datos</span></span>
+<span id="cb2-5"><a></a>df <span class="op">=</span> pd.read_csv(<span class="st">"datos.csv"</span>)</span>
+<span id="cb2-6"><a></a></span>
+<span id="cb2-7"><a></a><span class="co"># Visualizar</span></span>
+<span id="cb2-8"><a></a>df[<span class="st">"nota"</span>].hist(bins<span class="op">=</span><span class="dv">20</span>, color<span class="op">=</span><span class="st">"#0F2044"</span>)</span>
+<span id="cb2-9"><a></a>plt.title(<span class="st">"Distribución de notas"</span>)</span>
+<span id="cb2-10"><a></a>plt.xlabel(<span class="st">"Nota"</span>)</span>
+<span id="cb2-11"><a></a>plt.show()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<p>👁️ <strong>¿Qué hace?</strong></p>
+<ul>
+<li>Importa librerías ya instaladas en Colab.</li>
+<li>Carga un archivo CSV.</li>
+<li>Genera un histograma directo en el notebook.</li>
+</ul>
+<div style="background: #f0f4ff; border-left: 4px solid #0F2044; border-radius: 6px; padding: 0.5em 1em; font-size: 0.85em; margin-top: 1em;">
+<p>💡 Python es el lenguaje principal de Colab — y el más usado en ciencia de datos.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-3">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>✏️ <strong>Activar R en Colab:</strong></p>
+<p>En el menú: <strong>Runtime → Change runtime type → R</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># Cargar datos</span></span>
+<span id="cb3-2"><a></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"datos.csv"</span>)</span>
+<span id="cb3-3"><a></a></span>
+<span id="cb3-4"><a></a><span class="co"># Visualizar con ggplot2</span></span>
+<span id="cb3-5"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-6"><a></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> nota)) <span class="sc">+</span></span>
+<span id="cb3-7"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">"#0F2044"</span>,</span>
+<span id="cb3-8"><a></a>                 <span class="at">bins =</span> <span class="dv">20</span>) <span class="sc">+</span></span>
+<span id="cb3-9"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribución de notas"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<p>👁️ <strong>¿Qué hace?</strong></p>
+<ul>
+<li>Cambia el kernel de Python a R con un clic.</li>
+<li>Permite usar R y sus librerías (<code>ggplot2</code>, <code>dplyr</code>, <code>tidyr</code>) directamente.</li>
+<li>Ideal si tu curso usa R como lenguaje principal.</li>
+</ul>
+<div style="background: #f0f4ff; border-left: 4px solid #0F2044; border-radius: 6px; padding: 0.5em 1em; font-size: 0.85em; margin-top: 1em;">
+<p>💡 No necesitas instalar R en tu computador — Colab lo tiene listo.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-3" class="slide level2" data-background-image="images/background_slides3.png" data-background-opacity="0.3">
+<h2></h2>
+<div style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;">
+<p><span style="font-size: 2em">Google Colab</span></p>
+<p><span style="font-size: 2.5em">Recursos, Librerías y Kernels</span></p>
+</div>
+</section>
+<section id="qué-tiene-la-máquina" class="slide level2">
+<h2>¿Qué tiene la máquina?</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div style="text-align: center;">
+<p><img src="images/vm.png" alt="Runtime" style="width: 90%; border-radius: 10px;"></p>
+</div>
+</div><div class="column" style="width:60%;">
+<p><br></p>
+<ul>
+<li class="fragment"><strong>CPU</strong>: ~2 núcleos Intel Xeon — suficiente para análisis de datos típicos.</li>
+<li class="fragment"><strong>RAM</strong>: ~12 GB — para datasets medianos sin problema.</li>
+<li class="fragment"><strong>Disco</strong>: ~100 GB temporales — se borran al cerrar la sesión.</li>
+<li class="fragment"><strong>GPU T4</strong> <em>(gratis)</em>: disponible bajo demanda para modelos de ML.</li>
+</ul>
+</div>
+</div>
+<div class="fragment">
 <blockquote>
-<p><em>“Simplifica hasta que duela. Luego simplifica un poco más.”</em> — Edward Tufte</p>
+<p>⚠️ <strong>Sesiones temporales</strong>: si la sesión se desconecta, los archivos locales se pierden. Guarda siempre en Drive.</p>
 </blockquote>
-</div><div class="column" style="width:45%;">
-<div class="callout callout-tip no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Los 4 Pilares — Noah Iliinsky</strong></p>
-</div>
-<div class="callout-content">
-<ol type="1">
-<li><strong>Propósito</strong> — ¿por qué existe este gráfico?</li>
-<li><strong>Contenido</strong> — ¿qué datos son realmente necesarios?</li>
-<li><strong>Estructura</strong> — ¿cómo se organiza la información?</li>
-<li><strong>Formato</strong> — ¿cuál es el gráfico adecuado?</li>
-</ol>
-<p>Si no puedes responder el propósito en una oración, el gráfico no está listo.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-warning no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>La trampa de la velocidad</strong></p>
-</div>
-<div class="callout-content">
-<p>La IA puede generar visualizaciones en segundos.<br>
-Eso no significa que sean las correctas.</p>
-<p><strong>Rapidez ≠ claridad.</strong></p>
-</div>
-</div>
-</div>
-</div>
 </div>
 </section>
-<section id="cómo-elegir-el-gráfico-correcto" class="slide level2" data-background-color="#0D1117">
-<h2>Cómo elegir el gráfico correcto</h2>
+<section id="verificar-recursos-disponibles" class="slide level2">
+<h2>Verificar recursos disponibles</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="co"># Ver RAM y CPU</span></span>
+<span id="cb4-2"><a></a><span class="im">import</span> psutil, platform</span>
+<span id="cb4-3"><a></a></span>
+<span id="cb4-4"><a></a><span class="bu">print</span>(<span class="ss">f"Sistema: </span><span class="sc">{</span>platform<span class="sc">.</span>system()<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-5"><a></a><span class="bu">print</span>(<span class="ss">f"CPU: </span><span class="sc">{</span>psutil<span class="sc">.</span>cpu_count()<span class="sc">}</span><span class="ss"> núcleos"</span>)</span>
+<span id="cb4-6"><a></a><span class="bu">print</span>(<span class="ss">f"RAM total:     </span><span class="sc">{</span>psutil<span class="sc">.</span>virtual_memory()<span class="sc">.</span>total <span class="op">/</span> <span class="fl">1e9</span><span class="sc">:.1f}</span><span class="ss"> GB"</span>)</span>
+<span id="cb4-7"><a></a><span class="bu">print</span>(<span class="ss">f"RAM disponible:</span><span class="sc">{</span>psutil<span class="sc">.</span>virtual_memory()<span class="sc">.</span>available <span class="op">/</span> <span class="fl">1e9</span><span class="sc">:.1f}</span><span class="ss"> GB"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="co"># Ver GPU asignada</span></span>
+<span id="cb5-2"><a></a><span class="op">!</span>nvidia<span class="op">-</span>smi <span class="op">--</span>query<span class="op">-</span>gpu<span class="op">=</span>name,memory.total <span class="op">--</span><span class="bu">format</span><span class="op">=</span>csv,noheader</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co"># Ver disco disponible</span></span>
+<span id="cb6-2"><a></a><span class="op">!</span>df <span class="op">-</span>h <span class="op">/</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<blockquote>
+<p>🌿 Corre estas celdas al inicio de tu sesión para saber con qué recursos cuentas.</p>
+</blockquote>
+</div>
+</section>
+<section id="librerías-ya-instaladas-vs.-extras" class="slide level2">
+<h2>Librerías: ya instaladas vs.&nbsp;extras</h2>
 <div class="columns">
-<div class="column" style="width:55%;">
-<p>La pregunta no es “¿qué gráfico me gusta?”<br>
-Es <strong>“¿qué relación en los datos quiero mostrar?”</strong></p>
+<div class="column" style="width:50%;">
+<p><strong>✅ Ya vienen instaladas:</strong></p>
+<div style="font-size: 0.85em;">
 <table>
 <thead>
 <tr class="header">
-<th>Relación</th>
-<th>Gráfico recomendado</th>
+<th>Librería</th>
+<th>Para qué sirve</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Comparación</strong> entre categorías</td>
-<td>Barras horizontales</td>
+<td><code>pandas</code></td>
+<td>Datos tabulares</td>
 </tr>
 <tr class="even">
-<td><strong>Evolución</strong> en el tiempo</td>
-<td>Línea simple</td>
+<td><code>numpy</code></td>
+<td>Álgebra numérica</td>
 </tr>
 <tr class="odd">
-<td><strong>Composición</strong> de un todo</td>
-<td>Barras apiladas, treemap</td>
+<td><code>matplotlib</code></td>
+<td>Gráficos básicos</td>
 </tr>
 <tr class="even">
-<td><strong>Distribución</strong> de valores</td>
-<td>Histograma, box plot</td>
+<td><code>scikit-learn</code></td>
+<td>Machine Learning</td>
 </tr>
 <tr class="odd">
-<td><strong>Correlación</strong> entre variables</td>
-<td>Scatter plot</td>
+<td><code>tensorflow</code></td>
+<td>Deep Learning</td>
 </tr>
 <tr class="even">
-<td><strong>Un número</strong> que importa</td>
-<td>Big number + contexto</td>
+<td><code>seaborn</code></td>
+<td>Visualización estadística</td>
 </tr>
 </tbody>
 </table>
-<div class="callout callout-note no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>La regla de Storytelling #2</strong></p>
 </div>
-<div class="callout-content">
-<p><strong>Los detalles son importantes — pero no todos los detalles son importantes.</strong></p>
-<p>Mostrar todo es lo mismo que no mostrar nada.</p>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:45%;">
-<div class="cell" data-reveal="true" data-layout-align="center">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph TD
-    P["❓ ¿Qué quiero mostrar?"]
-    C1["📊 Comparar\ncategorías"]
-    C2["📈 Evolución\ntemporal"]
-    C3["🥧 Composición\nde un todo"]
-    C4["🔗 Correlación\nentre variables"]
-    C5["📉 Distribución\nde valores"]
-
-    G1["→ Barras"]
-    G2["→ Línea"]
-    G3["→ Treemap"]
-    G4["→ Scatter"]
-    G5["→ Box / Histograma"]
-
-    P --&gt; C1 --&gt; G1
-    P --&gt; C2 --&gt; G2
-    P --&gt; C3 --&gt; G3
-    P --&gt; C4 --&gt; G4
-    P --&gt; C5 --&gt; G5
-
-    style P fill:#1E3A5F,color:#fff
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="ejemplo-lo-que-spotify-entendió" class="slide level2" data-background-color="#0D1117">
-<h2>Ejemplo: lo que Spotify entendió</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>Spotify Wrapped no es un análisis.<br>
-Es <strong>data storytelling a escala de millones.</strong></p>
-<p>¿Cómo hacen que millones de personas compartan voluntariamente sus estadísticas de consumo en redes sociales?</p>
-<p><strong>Tres principios clásicos aplicados:</strong></p>
-<p>🎯 <strong>Una sola historia por tarjeta</strong> — no acumulan datos, los secuencian<br>
-📱 <strong>Formato diseñado para compartir</strong> — la historia termina en una identidad<br>
-😮 <strong>Tension → resolución</strong> — “¿cuál será mi canción #1?” genera expectativa</p>
-<p><strong>El dato más importante no es el número.</strong><br>
-Es lo que el número dice sobre ti.</p>
-</div><div class="column" style="width:40%;">
-<div class="callout callout-tip no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>La pregunta de Wrapped</strong></p>
-</div>
-<div class="callout-content">
-<p>¿Cómo conviertes un CSV de historial de reproducción en algo que la gente quiere mostrar a sus amigos?</p>
-<p><strong>Respuesta:</strong> conviertes el dato en identidad. Haces que el número diga algo sobre quién eres.</p>
-<p>Ese es el trabajo del data storyteller — antes y después de la IA.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="section-3" class="slide level2 section-slide" data-background-color="#1A0F28">
-<h2></h2>
-</section>
-<section id="parte-iii" class="slide level2 center-content">
-<h2>Parte III</h2>
-<p><strong>La IA como copiloto narrativo</strong></p>
-<p><em>Qué cambia, qué no cambia</em></p>
-</section>
-<!--
-  🖼️ IMAGEN FONDO:
-  https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1400&q=80
-  (IA abstracta, cerebro digital)
-  background-opacity="0.14"
--->
-<section id="de-herramienta-a-copiloto-el-cambio-real" class="slide level2" data-background-color="#0D1117">
-<h2>De herramienta a copiloto — el cambio real</h2>
-<div class="columns">
-<div class="column" style="width:55%;">
-<p><strong>Antes (2022):</strong> la IA era un complemento.<br>
-Limpiar datos. Sugerir un gráfico. Generar un template.</p>
-<p><strong>Hoy (2026):</strong> la IA puede hacer el primer 80% de la historia.</p>
-<p><strong>Qué puede hacer un LLM hoy con tus datos:</strong></p>
-<p>✅ Proponer una estructura narrativa completa<br>
-✅ Generar 3 versiones del mismo insight para audencias distintas<br>
-✅ Adaptar el tono: técnico vs ejecutivo vs público general<br>
-✅ Identificar la tensión central en un dataset<br>
-✅ Generar visualizaciones desde texto o código<br>
-✅ Traducir hallazgos a lenguaje no especializado</p>
-<p><strong>Lo que esto cambia:</strong></p>
-<p>El punto de partida ya no es el lienzo en blanco.<br>
-Es <strong>evaluar, refinar y hacer propio</strong> lo que la IA propone.</p>
-</div><div class="column" style="width:45%;">
-<div class="cell" data-reveal="true" data-layout-align="center">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph TD
-    D["📊 Dataset\n(tu insumo)"]
-    
-    subgraph Antes ["Antes"]
-        A1["Explorar\ny limpiar"]
-        A2["Encontrar\nel patrón"]
-        A3["Construir\nla historia"]
-        A4["Diseñar\nvisualización"]
-        A1 --&gt; A2 --&gt; A3 --&gt; A4
-    end
-
-    subgraph Ahora ["Ahora con IA"]
-        B1["IA propone\nestructura narrativa"]
-        B2["Tú evalúas\ny refinas"]
-        B3["IA genera\nvisualizaciones"]
-        B4["Tú decides\nqué importa"]
-        B1 --&gt; B2 --&gt; B3 --&gt; B4
-    end
-
-    D --&gt; Antes
-    D --&gt; Ahora
-
-    style B2 fill:#1E5F1E,color:#fff
-    style B4 fill:#1E5F1E,color:#fff
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="el-pipeline-con-ia-herramientas-reales" class="slide level2" data-background-color="#0D1117">
-<h2>El pipeline con IA — herramientas reales</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="narrativa-y-estructura">🧠 Narrativa y estructura</h3>
-<p><strong>ChatGPT / Claude / Gemini</strong><br>
-→ Genera guiones narrativos desde datos<br>
-→ Propone frames según audiencia<br>
-→ Reescribe para distintos tonos</p>
-<p><strong>NotebookLM (Google)</strong><br>
-→ Analiza documentos y encuentra el hilo conductor<br>
-→ Genera resúmenes ejecutivos y podcasts</p>
-<h3 id="visualización-generativa">🎨 Visualización generativa</h3>
-<p><strong>Napkin AI</strong><br>
-→ De texto a diagrama visual en segundos</p>
-<p><strong>Copilot en Power BI / Excel</strong><br>
-→ Genera gráficos desde lenguaje natural<br>
-→ Describe patrones en lenguaje accesible</p>
 </div><div class="column" style="width:50%;">
-<h3 id="para-pythonistas">🐍 Para Pythonistas</h3>
-<p><strong>Claude Code + Quarto</strong><br>
-→ Describe el gráfico en lenguaje natural<br>
-→ El agente escribe el código, ejecuta, itera</p>
-<p><strong>Pandas AI / LlamaIndex</strong><br>
-→ Preguntas en lenguaje natural sobre DataFrames</p>
-<p><strong>Vega-Altair + LLM</strong><br>
-→ Genera especificaciones de visualización desde descripción</p>
-<div class="callout callout-warning no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>La trampa más común</strong></p>
-</div>
-<div class="callout-content">
-<p>Usar la IA para generar una visualización bonita <strong>sin haber definido primero qué historia quieres contar</strong>.</p>
-<p>La IA amplifica tu criterio.<br>
-Si no tienes criterio, amplifica el ruido.</p>
-</div>
-</div>
+<p><strong>📦 Instalar librerías extra:</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="co"># Con pip (Python)</span></span>
+<span id="cb7-2"><a></a><span class="op">!</span>pip install polars lightgbm</span>
+<span id="cb7-3"><a></a></span>
+<span id="cb7-4"><a></a><span class="co"># Con apt (sistema)</span></span>
+<span id="cb7-5"><a></a><span class="op">!</span>apt<span class="op">-</span>get install <span class="op">-</span>y libgdal<span class="op">-</span>dev</span>
+<span id="cb7-6"><a></a></span>
+<span id="cb7-7"><a></a><span class="co"># Para R (kernel R)</span></span>
+<span id="cb7-8"><a></a>install.packages(<span class="st">"tidymodels"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="background: #fff3cd; border-left: 4px solid #e6a817; border-radius: 6px; padding: 0.5em 1em; font-size: 0.85em; margin-top: 0.8em;">
+<p>⚠️ Las librerías instaladas con <code>!pip</code> se pierden al reiniciar la sesión.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="visualización-generativa-velocidad-vs-criterio" class="slide level2" data-background-color="#0D1117">
-<h2>Visualización generativa — velocidad vs criterio</h2>
+<section id="cambiar-el-kernel-runtime" class="slide level2">
+<h2>Cambiar el Kernel (Runtime)</h2>
 <div class="columns">
-<div class="column" style="width:55%;">
-<p>La promesa es real: pasar de datos crudos a una visualización en segundos.</p>
-<p>Eso es una <strong>ventaja genuina</strong> cuando sabes qué buscas.</p>
-<p>Es una <strong>trampa</strong> cuando la velocidad sustituye al pensamiento.</p>
-<p><strong>Los casos donde la IA ayuda:</strong></p>
-<p>✅ Exploración rápida de un dataset nuevo<br>
-✅ Generar múltiples opciones para elegir<br>
-✅ Prototipar antes de invertir en diseño final<br>
-✅ Traducir código de visualización entre librerías</p>
-<p><strong>Los casos donde acelerar sin pensar confunde:</strong></p>
-<p>❌ Gráfico de torta con 12 segmentos para “simplificar”<br>
-❌ Línea temporal con demasiadas series sin jerarquía<br>
-❌ Dashboard con 20 KPIs sin propósito narrativo<br>
-❌ Insight generado que no responde ninguna pregunta real</p>
-</div><div class="column" style="width:45%;">
-<div class="callout callout-note no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Storytelling principle #3</strong></p>
+<div class="column" style="width:40%;">
+<div style="text-align: center;">
+<p><img src="images/runtime.png" alt="Cambiar Kernel" style="width: 90%; border-radius: 10px;"></p>
 </div>
-<div class="callout-content">
-<p><strong>Explicar menos. Mostrar más.</strong></p>
-<p>La IA tiende a sobre-explicar.<br>
-Tu trabajo como analista es editar.</p>
-<p>Cada elemento visual que no agrega significado lo resta.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-tip no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>El test de los 5 segundos</strong></p>
-</div>
-<div class="callout-content">
-<p>Muéstrale tu visualización a alguien de tu audiencia durante 5 segundos. Tápala.</p>
-<p>Pregunta: ¿qué viste?</p>
-<p>Si la respuesta no coincide con tu mensaje principal — el problema no es la persona, es el diseño.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="el-juicio-humano-como-ventaja-competitiva" class="slide level2" data-background-color="#0D1117">
-<h2>El juicio humano como ventaja competitiva</h2>
-<div class="columns">
-<div class="column" style="width:55%;">
-<p>La IA no sabe cuatro cosas que tú sí sabes:</p>
-<p>🎯 <strong>Qué historia importa</strong> en este contexto específico<br>
-👥 <strong>Para quién</strong> — el gerente, el congresista, el ciudadano<br>
-⏰ <strong>Por qué ahora</strong> — el momento político, el evento reciente, la urgencia<br>
-🔍 <strong>Qué no está en los datos</strong> pero es crucial para interpretarlos</p>
-<p>Esas cuatro cosas son <strong>juicio</strong>, no generación.</p>
-<p>Y el juicio es lo que convierte:</p>
+</div><div class="column" style="width:60%;">
+<p><br></p>
+<p><strong>Menú: Runtime → Change runtime type</strong></p>
 <ul>
-<li>Un dashboard bonito → en una historia que mueve a la acción</li>
-<li>Una tabla de resultados → en una recomendación estratégica</li>
-<li>Un hallazgo estadístico → en una política pública</li>
+<li class="fragment"><strong>CPU</strong>: para análisis de datos y scripts generales.</li>
+<li class="fragment"><strong>GPU T4</strong>: para entrenamiento de modelos de ML/DL.</li>
+<li class="fragment"><strong>TPU</strong>: para modelos muy grandes con TensorFlow.</li>
+<li class="fragment"><strong>R</strong>: para cambiar completamente el lenguaje del entorno.</li>
 </ul>
-<p><strong>La IA democratizó el primer borrador.<br>
-El criterio sigue siendo escaso.</strong></p>
-</div><div class="column" style="width:45%;">
-<div class="cell" data-reveal="true" data-layout-align="center">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph TD
-    IA["🤖 IA genera"]
-    H["👤 Humano decide"]
-    
-    IA --&gt; E1["Estructura narrativa"]
-    IA --&gt; E2["Opciones de visualización"]
-    IA --&gt; E3["Versiones por audiencia"]
-    IA --&gt; E4["Código y prototipo"]
-
-    H --&gt; D1["Qué historia importa"]
-    H --&gt; D2["Para quién y por qué ahora"]
-    H --&gt; D3["Qué no está en los datos"]
-    H --&gt; D4["Qué acción se espera"]
-
-    style H fill:#1E5F1E,color:#fff,font-weight:bold
-    style IA fill:#1E3A5F,color:#fff
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="section-4" class="slide level2 section-slide" data-background-color="#0A0F1F">
-<h2></h2>
-</section>
-<section id="parte-iv" class="slide level2 center-content">
-<h2>Parte IV</h2>
-<p><strong>El framework</strong></p>
-<p><em>Propósito · Audiencia · Tensión · Resolución</em></p>
-</section>
-<section id="el-framework-patr-datos-que-mueven-a-la-acción" class="slide level2" data-background-color="#0D1117">
-<h2>El framework PATR — datos que mueven a la acción</h2>
-<div class="columns">
-<div class="column" style="width:55%;">
-<p>Cuatro preguntas. Si las puedes responder antes de abrir Python, tienes una historia.</p>
-<p><strong>🎯 Propósito</strong><br>
-¿Qué decisión o acción debería ocurrir después de esta presentación?<br>
-<em>“Aprobar el presupuesto” es propósito. “Informar” no lo es.</em></p>
-<p><strong>👥 Audiencia</strong><br>
-¿Quién escucha, qué saben, qué les importa, qué los mueve?<br>
-<em>El CFO y el equipo técnico no son la misma audiencia.</em></p>
-<p><strong>⚡ Tensión</strong><br>
-¿Cuál es la brecha entre donde estamos y donde deberíamos estar?<br>
-<em>Sin tensión no hay historia — solo reporte.</em></p>
-<p><strong>✅ Resolución</strong><br>
-¿Qué cierra la tensión? ¿Qué propones?<br>
-<em>La resolución es tu recomendación, no tu conclusión.</em></p>
-</div><div class="column" style="width:45%;">
-<div class="cell" data-reveal="true" data-layout-align="center">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph LR
-    P["🎯 Propósito\n¿Qué acción?"]
-    A["👥 Audiencia\n¿Para quién?"]
-    T["⚡ Tensión\n¿Cuál es la brecha?"]
-    R["✅ Resolución\n¿Qué propones?"]
-
-    P --&gt; A --&gt; T --&gt; R
-
-    style P fill:#1E3A5F,color:#fff
-    style A fill:#2D3748,color:#fff
-    style T fill:#5F1E1E,color:#fff
-    style R fill:#1E5F1E,color:#fff
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<div class="callout callout-tip no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Cómo usar el framework con IA</strong></p>
-</div>
-<div class="callout-content">
-<p>Dale el PATR al modelo como contexto.<br>
-Pídele que proponga la estructura narrativa.<br>
-Luego evalúa: ¿refleja lo que realmente importa?</p>
-<p>La IA puede llenar el esqueleto.<br>
-Tú defines los huesos.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="demo-en-vivo-flujo-real-con-python-y-ia" class="slide level2" data-background-color="#0D1117">
-<h2>Demo en vivo — flujo real con Python y IA</h2>
-<div class="columns">
-<div class="column" style="width:55%;">
-<p><strong>El escenario:</strong></p>
-<p>Tienes un dataset de ventas por región y trimestre.<br>
-Gerencia necesita entender qué pasó y qué hacer.<br>
-Tienes 20 minutos para preparar la presentación.</p>
-<p><strong>El flujo:</strong></p>
-<ol type="1">
-<li><strong>Cargar y explorar</strong> — pandas, describe(), primeros patrones</li>
-<li><strong>Preguntarle a la IA</strong> — “¿qué historia hay aquí? propone estructura PATR”</li>
-<li><strong>Generar visualizaciones</strong> — matplotlib / plotly + revisión crítica</li>
-<li><strong>Narrar con Quarto</strong> — el mismo notebook es la presentación</li>
-<li><strong>Iterar</strong> — la IA refina el texto; tú refinas el criterio</li>
-</ol>
-<div class="callout callout-note no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Storytelling principle #4</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Tu primer borrador siempre será horrible.</strong></p>
-<p>La diferencia con la IA: el borrador horrible llega en 2 minutos, no en 2 horas.</p>
-<p>Eso libera tiempo para lo que importa: refinarlo.</p>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:45%;">
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="co"># Paso 2: preguntarle a la IA el PATR</span></span>
-<span id="cb1-2"><a></a><span class="im">import</span> anthropic</span>
-<span id="cb1-3"><a></a></span>
-<span id="cb1-4"><a></a>client <span class="op">=</span> anthropic.Anthropic()</span>
-<span id="cb1-5"><a></a></span>
-<span id="cb1-6"><a></a>resumen_datos <span class="op">=</span> df.describe().to_string()</span>
-<span id="cb1-7"><a></a>tendencias <span class="op">=</span> df.groupby([<span class="st">'region'</span>,<span class="st">'trimestre'</span>])</span>
-<span id="cb1-8"><a></a>               [<span class="st">'ventas'</span>].<span class="bu">sum</span>().to_string()</span>
-<span id="cb1-9"><a></a></span>
-<span id="cb1-10"><a></a>prompt <span class="op">=</span> <span class="ss">f"""</span></span>
-<span id="cb1-11"><a></a><span class="ss">Eres un analista experto en data storytelling.</span></span>
-<span id="cb1-12"><a></a><span class="ss">Tengo este dataset de ventas:</span></span>
-<span id="cb1-13"><a></a></span>
-<span id="cb1-14"><a></a><span class="sc">{</span>resumen_datos<span class="sc">}</span></span>
-<span id="cb1-15"><a></a></span>
-<span id="cb1-16"><a></a><span class="ss">Tendencias por región y trimestre:</span></span>
-<span id="cb1-17"><a></a><span class="sc">{</span>tendencias<span class="sc">}</span></span>
-<span id="cb1-18"><a></a></span>
-<span id="cb1-19"><a></a><span class="ss">La audiencia es gerencia senior.</span></span>
-<span id="cb1-20"><a></a><span class="ss">El objetivo es tomar decisiones de inversión.</span></span>
-<span id="cb1-21"><a></a></span>
-<span id="cb1-22"><a></a><span class="ss">Usando el framework PATR (Propósito,</span></span>
-<span id="cb1-23"><a></a><span class="ss">Audiencia, Tensión, Resolución), propone</span></span>
-<span id="cb1-24"><a></a><span class="ss">la estructura narrativa para una presentación</span></span>
-<span id="cb1-25"><a></a><span class="ss">de 10 minutos.</span></span>
-<span id="cb1-26"><a></a><span class="ss">"""</span></span>
-<span id="cb1-27"><a></a></span>
-<span id="cb1-28"><a></a>response <span class="op">=</span> client.messages.create(</span>
-<span id="cb1-29"><a></a>    model<span class="op">=</span><span class="st">"claude-sonnet-4-6"</span>,</span>
-<span id="cb1-30"><a></a>    max_tokens<span class="op">=</span><span class="dv">1000</span>,</span>
-<span id="cb1-31"><a></a>    messages<span class="op">=</span>[{<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: prompt}]</span>
-<span id="cb1-32"><a></a>)</span>
-<span id="cb1-33"><a></a><span class="bu">print</span>(response.content[<span class="dv">0</span>].text)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</section>
-<section id="lo-que-cambia-para-el-analista-de-datos" class="slide level2" data-background-color="#0D1117">
-<h2>Lo que cambia para el analista de datos</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="lo-que-se-acelera-con-ia">✅ Lo que se acelera con IA</h3>
-<ul>
-<li>Exploración inicial de datasets nuevos</li>
-<li>Generación de múltiples opciones narrativas</li>
-<li>Adaptación de mensajes por audiencia</li>
-<li>Primeros borradores de texto y visualización</li>
-<li>Traducción de hallazgos técnicos a lenguaje ejecutivo</li>
-<li>Prototipado rápido de dashboards</li>
-<li>Código de visualización en distintas librerías</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<h3 id="lo-que-sigue-siendo-tuyo">👤 Lo que sigue siendo tuyo</h3>
-<ul>
-<li>Saber qué pregunta vale la pena hacer</li>
-<li>Entender el contexto organizacional de los datos</li>
-<li>Detectar cuando el hallazgo es ruido vs señal</li>
-<li>Evaluar si la visualización es honesta</li>
-<li>Decidir qué no mostrar (tan importante como qué mostrar)</li>
-<li>Asumir responsabilidad por la historia que cuentas</li>
-</ul>
-<div class="callout callout-important no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>La competencia que más escasea en 2026</strong></p>
-</div>
-<div class="callout-content">
-<p>No es generar visualizaciones con IA.<br>
-Es <strong>evaluar si la historia que generó la IA es la historia correcta.</strong></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="casos-concretos-ia-que-ayuda-vs-ia-que-confunde" class="slide level2" data-background-color="#0D1117">
-<h2>Casos concretos — IA que ayuda vs IA que confunde</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="ia-que-amplifica-el-criterio">✅ IA que amplifica el criterio</h3>
-<p><strong>Caso 1 — INE Chile</strong><br>
-Analista tiene microdatos del Censo.<br>
-Le pide a Claude que proponga 3 ángulos narrativos para prensa, académicos y policy.<br>
-Elige el ángulo, la IA adapta el lenguaje.<br>
-<strong>Resultado:</strong> 3 comunicados distintos en 30 minutos.</p>
-<p><strong>Caso 2 — Docencia en MAT281</strong><br>
-Estudiante entrega análisis de datos.<br>
-La IA propone estructura narrativa del reporte.<br>
-El docente evalúa si el criterio estadístico es correcto.<br>
-<strong>Resultado:</strong> más tiempo para discutir el qué, menos para el cómo.</p>
-</div><div class="column" style="width:50%;">
-<h3 id="ia-que-produce-ruido-visual">❌ IA que produce ruido visual</h3>
-<p><strong>Caso 3 — Dashboard ejecutivo “generado por IA”</strong><br>
-Copilot generó 15 visualizaciones automáticas.<br>
-Ninguna tenía un propósito narrativo definido.<br>
-El CEO preguntó: “¿y esto qué significa?”<br>
-<strong>Resultado:</strong> velocidad máxima hacia ninguna parte.</p>
-<p><strong>Caso 4 — Informe de ventas con “insights automáticos”</strong><br>
-LLM generó 5 “insights” del dataset.<br>
-Tres eran triviales (lo que sube, sube).<br>
-Uno era incorrecto (confundió causalidad con correlación).<br>
-<strong>Resultado:</strong> el analista que lo firmó perdió credibilidad.</p>
 </div>
 </div>
 <div class="fragment">
-<div class="callout callout-warning no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>La diferencia entre los casos</strong></p>
-</div>
-<div class="callout-content">
-<p>En los casos exitosos, <strong>el humano definió el propósito antes de pedir a la IA</strong>.<br>
-En los casos fallidos, <strong>se le delegó también la decisión de qué importa</strong>.</p>
-</div>
-</div>
-</div>
+<blockquote>
+<p>🌿 Cambiar el runtime <strong>reinicia la sesión</strong> — guarda tu trabajo antes de hacerlo.</p>
+</blockquote>
 </div>
 </section>
-<section id="section-5" class="slide level2 section-slide" data-background-color="#0A1520">
+<section id="section-4" class="slide level2" data-background-image="images/background_slides3.png" data-background-opacity="0.3">
 <h2></h2>
-</section>
-<section id="cierre" class="slide level2 center-content">
-<h2>Cierre</h2>
-<p><strong>Lo que te llevas</strong></p>
-<p><em>Un framework, no una receta</em></p>
-</section>
-<section id="el-framework-completo-para-aplicar-hoy" class="slide level2" data-background-color="#0D1117">
-<h2>El framework completo — para aplicar hoy</h2>
-<div class="r-stack">
-<div class="fragment fade-in-then-out">
-<!-- -->
-<h3 id="define-el-patr-antes-de-abrir-python">1 — Define el PATR antes de abrir Python</h3>
-<p>Propósito · Audiencia · Tensión · Resolución.<br>
-Sin esto, la IA va a generar bien lo que tú no sabes qué es.<br>
-<strong>El análisis empieza con preguntas, no con datos.</strong></p>
-</div>
-<div class="fragment fade-in-then-out">
-<!-- -->
-<h3 id="usa-la-ia-para-el-primer-80">2 — Usa la IA para el primer 80%</h3>
-<p>Narrativa, estructura, opciones de visualización, adaptación de tono.<br>
-Deja que la IA llene el borrador.<br>
-<strong>Tu trabajo es evaluar, no empezar desde cero.</strong></p>
-</div>
-<div class="fragment fade-in-then-out">
-<!-- -->
-<h3 id="aplica-el-test-de-los-5-segundos">3 — Aplica el test de los 5 segundos</h3>
-<p>Cada visualización debe comunicar su mensaje principal en 5 segundos.<br>
-Si no lo hace — simplifica hasta que duela, luego simplifica un poco más.<br>
-<strong>La claridad es un acto de respeto hacia la audiencia.</strong></p>
-</div>
-<div class="fragment fade-in">
-<!-- -->
-<h3 id="el-criterio-no-se-delega">4 — El criterio no se delega</h3>
-<p>La IA no sabe qué historia importa, para quién, ni por qué ahora.<br>
-Eso lo sabes tú.<br>
-<strong>La ventaja competitiva no es usar IA — es combinarla con juicio.</strong></p>
-</div>
+<div style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;">
+<p><span style="font-size: 2em">Google Colab</span></p>
+<p><span style="font-size: 2.5em">Datos, Drive y Credenciales</span></p>
 </div>
 </section>
-<section id="recursos-para-profundizar" class="slide level2" data-background-color="#0D1117">
-<h2>Recursos para profundizar</h2>
+<section id="subir-datos-a-colab" class="slide level2">
+<h2>Subir datos a Colab</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Subida directa</a></li><li><a href="#tabset-2-2">Desde URL</a></li><li><a href="#tabset-2-3">Google Drive</a></li><li><a href="#tabset-2-4">Credenciales Seguras</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
 <div class="columns">
-<div class="column" style="width:33%;">
-<h3 id="libros-fundamentales">📚 Libros fundamentales</h3>
-<p><strong>Storytelling with Data</strong><br>
-Cole Nussbaumer Knaflic<br>
-<em>El estándar de la disciplina</em></p>
-<p><strong>The Functional Art</strong><br>
-Alberto Cairo<br>
-<em>Visualización con propósito</em></p>
-<p><strong>Made to Stick</strong><br>
-Chip &amp; Dan Heath<br>
-<em>Por qué algunas ideas perduran</em></p>
-</div><div class="column" style="width:33%;">
-<h3 id="herramientas-python">🐍 Herramientas Python</h3>
-<p><strong>Altair / Vega-Lite</strong><br>
-Visualización declarativa, composable</p>
-<p><strong>Quarto</strong><br>
-Notebooks que son presentaciones</p>
-<p><strong>Claude API / Anthropic</strong><br>
-Para pipelines de narrativa con IA</p>
-<p><strong>Streamlit + LLM</strong><br>
-Dashboards con lenguaje natural</p>
-</div><div class="column" style="width:33%;">
-<h3 id="ia-para-storytelling">🌐 IA para storytelling</h3>
-<p><strong>Napkin AI</strong> — napkin.ai<br>
-Texto → diagrama visual</p>
-<p><strong>NotebookLM</strong> — notebooklm.google<br>
-Análisis de documentos, podcasts</p>
-<p><strong>Claude</strong> — claude.ai<br>
-Narrativa, adaptación de tono, PATR</p>
-<p><strong>Copilot en Power BI</strong><br>
-Lenguaje natural → visualizaciones</p>
+<div class="column" style="width:50%;">
+<p>✏️ <strong>Desde el panel lateral:</strong></p>
+<pre><code>📁 Ícono de carpeta (izquierda)
+  → Subir archivo
+  → Selecciona tu CSV o Excel</code></pre>
+<p>O desde código:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="im">from</span> google.colab <span class="im">import</span> files</span>
+<span id="cb9-2"><a></a>uploaded <span class="op">=</span> files.upload()</span>
+<span id="cb9-3"><a></a><span class="co"># → abre un selector de archivos</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<p>👁️ <strong>¿Cuándo usarlo?</strong></p>
+<ul>
+<li>Archivos pequeños (&lt; 50 MB).</li>
+<li>Uso puntual en una sola sesión.</li>
+</ul>
+<div style="background: #fff3cd; border-left: 4px solid #e6a817; border-radius: 6px; padding: 0.5em 1em; font-size: 0.85em; margin-top: 1em;">
+<p>⚠️ El archivo desaparece al cerrar la sesión. No es la opción más estable.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-2">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>✏️ <strong>Descargar desde internet:</strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb10-2"><a></a></span>
+<span id="cb10-3"><a></a><span class="co"># Desde GitHub (raw)</span></span>
+<span id="cb10-4"><a></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/"</span>\</span>
+<span id="cb10-5"><a></a>      <span class="st">"usuario/repo/main/datos.csv"</span></span>
+<span id="cb10-6"><a></a>df <span class="op">=</span> pd.read_csv(url)</span>
+<span id="cb10-7"><a></a></span>
+<span id="cb10-8"><a></a><span class="co"># Desde Google Sheets (publicado como CSV)</span></span>
+<span id="cb10-9"><a></a>sheet_url <span class="op">=</span> <span class="st">"https://docs.google.com/spreadsheets"</span>\</span>
+<span id="cb10-10"><a></a>            <span class="st">"/d/ID/export?format=csv"</span></span>
+<span id="cb10-11"><a></a>df <span class="op">=</span> pd.read_csv(sheet_url)</span>
+<span id="cb10-12"><a></a></span>
+<span id="cb10-13"><a></a>df.head()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<p>👁️ <strong>¿Cuándo usarlo?</strong></p>
+<ul>
+<li>Datos públicos en GitHub o repositorios abiertos.</li>
+<li>Google Sheets compartidos del curso.</li>
+</ul>
+<div style="background: #f0f4ff; border-left: 4px solid #0F2044; border-radius: 6px; padding: 0.5em 1em; font-size: 0.85em; margin-top: 1em;">
+<p>💡 Es la forma más <strong>reproducible</strong> — el notebook funciona para cualquiera que lo abra.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-3">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>✏️ <strong>Montar tu Drive:</strong></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="im">from</span> google.colab <span class="im">import</span> drive</span>
+<span id="cb11-2"><a></a>drive.mount(<span class="st">"/content/drive"</span>)</span>
+<span id="cb11-3"><a></a></span>
+<span id="cb11-4"><a></a><span class="co"># Acceder a tus archivos como carpeta local</span></span>
+<span id="cb11-5"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb11-6"><a></a></span>
+<span id="cb11-7"><a></a>ruta <span class="op">=</span> <span class="st">"/content/drive/MyDrive/datos/notas.csv"</span></span>
+<span id="cb11-8"><a></a>df <span class="op">=</span> pd.read_csv(ruta)</span>
+<span id="cb11-9"><a></a>df.head()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<p>👁️ <strong>¿Por qué es lo mejor?</strong></p>
+<ul>
+<li>Los archivos <strong>persisten</strong> aunque se reinicie la sesión.</li>
+<li>Organiza datos en carpetas de Drive como si fuera tu escritorio.</li>
+<li>Funciona igual que una carpeta local.</li>
+</ul>
+<div style="background: #f0f4ff; border-left: 4px solid #0F2044; border-radius: 6px; padding: 0.5em 1em; font-size: 0.85em; margin-top: 1em;">
+<p>💡 Recomendado para proyectos que se retoman en múltiples sesiones.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-4">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>❌ <strong>Nunca hagas esto:</strong></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="co"># Expone tu clave en el notebook</span></span>
+<span id="cb12-2"><a></a>API_KEY <span class="op">=</span> <span class="st">"sk-abc123supersecreta"</span></span>
+<span id="cb12-3"><a></a>PASSWORD <span class="op">=</span> <span class="st">"mi_clave_secreta"</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>✅ <strong>Usa Secrets de Colab:</strong></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a><span class="im">from</span> google.colab <span class="im">import</span> userdata</span>
+<span id="cb13-2"><a></a></span>
+<span id="cb13-3"><a></a>api_key <span class="op">=</span> userdata.get(<span class="st">"MI_API_KEY"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<p>👁️ <strong>¿Cómo configurar Secrets?</strong></p>
+<pre><code>🔑 Ícono de llave (panel izquierdo)
+  → "Add new secret"
+  → Nombre: MI_API_KEY
+  → Valor: tu clave real
+  → Activar acceso al notebook</code></pre>
+<div style="background: #fde8e8; border-left: 4px solid #c0392b; border-radius: 6px; padding: 0.5em 1em; font-size: 0.85em; margin-top: 1em;">
+<p>🔐 Nunca compartas un notebook con claves escritas directamente en el código.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </section>
-<section id="section-6" class="slide level2 final-slide" data-background-color="#0D1117" data-background-image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&amp;q=80" data-background-opacity="0.08">
+<section id="section-5" class="slide level2" data-background-image="images/background_slides3.png" data-background-opacity="0.3">
 <h2></h2>
-<div class="center-content">
-<p><strong>¿Preguntas?</strong></p>
-<hr>
-<p>Francisco Alfaro · Valeska Canales<br>
-Seth &amp; Nut · <code>sethnut.com/talks</code></p>
-<hr>
-<p><em>“La IA democratizó el primer borrador.<em><br>
-</em>El criterio sobre qué historia importa — eso sigue siendo humano.”</em></p>
-<p><em>Data Saturday Santiago · 2026</em></p>
+<div style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;">
+<p><span style="font-size: 2em">Google Colab</span></p>
+<p><span style="font-size: 2.5em">IA con Gemini integrado</span></p>
 </div>
+</section>
+<section id="gemini-en-colab" class="slide level2">
+<h2>Gemini en Colab</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div style="text-align: center;">
+<p><img src="images/gemini.gif" alt="Gemini en Colab" style="width: 100%; border-radius: 10px;"></p>
+</div>
+</div><div class="column" style="width:60%;">
+<p><br></p>
+<ul>
+<li class="fragment"><strong>¿Qué es Gemini en Colab?</strong>
+<ul>
+<li class="fragment">Asistente IA integrado directamente en el entorno de notebooks.</li>
+</ul></li>
+<li class="fragment"><strong>¿Qué puede hacer?</strong>
+<ul>
+<li class="fragment">Generar y explicar celdas de código.<br>
+</li>
+<li class="fragment">Corregir errores y sugerir mejoras.<br>
+</li>
+<li class="fragment">Responder preguntas sobre librerías y análisis sin salir de Colab.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<blockquote>
+<p>🌿 Disponible con cuenta Google — el ícono ✨ aparece en cada celda de código.</p>
+</blockquote>
+</div>
+</section>
+<section id="gemini-ejemplos-prácticos" class="slide level2">
+<h2>Gemini: ejemplos prácticos</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Generar código</a></li><li><a href="#tabset-3-2">Explicar errores</a></li><li><a href="#tabset-3-3">Analizar datos</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>✨ <strong>Le pides a Gemini:</strong></p>
+<blockquote>
+<p><em>“Crea un gráfico de barras con matplotlib que muestre las notas promedio por carrera, usando la paleta ‘tab10’.”</em></p>
+</blockquote>
+</div><div class="column" style="width:50%;">
+<p>✅ <strong>Gemini genera:</strong></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb15-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb15-3"><a></a></span>
+<span id="cb15-4"><a></a>carreras <span class="op">=</span> [<span class="st">"Ing. Civil"</span>, <span class="st">"Informática"</span>,</span>
+<span id="cb15-5"><a></a>            <span class="st">"Electrónica"</span>, <span class="st">"Industrial"</span>]</span>
+<span id="cb15-6"><a></a>promedios <span class="op">=</span> [<span class="fl">5.2</span>, <span class="fl">5.8</span>, <span class="fl">4.9</span>, <span class="fl">5.5</span>]</span>
+<span id="cb15-7"><a></a></span>
+<span id="cb15-8"><a></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb15-9"><a></a>colors <span class="op">=</span> plt.cm.tab10(np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="bu">len</span>(carreras)))</span>
+<span id="cb15-10"><a></a>ax.bar(carreras, promedios, color<span class="op">=</span>colors)</span>
+<span id="cb15-11"><a></a>ax.set_title(<span class="st">"Promedio de notas por carrera"</span>)</span>
+<span id="cb15-12"><a></a>ax.set_ylabel(<span class="st">"Nota promedio"</span>)</span>
+<span id="cb15-13"><a></a>ax.set_ylim(<span class="dv">1</span>, <span class="dv">7</span>)</span>
+<span id="cb15-14"><a></a>plt.tight_layout()</span>
+<span id="cb15-15"><a></a>plt.show()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div id="tabset-3-2">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>✨ <strong>Tienes este error:</strong></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a>df.groupby(<span class="st">"carrera"</span>)[<span class="st">"nota"</span>].means()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>AttributeError: 'SeriesGroupBy' object
+has no attribute 'means'</code></pre>
+<blockquote>
+<p><em>“¿Por qué da este error y cómo lo corrijo?”</em></p>
+</blockquote>
+</div><div class="column" style="width:50%;">
+<p>✅ <strong>Gemini explica:</strong></p>
+<p>❌ <code>means()</code> no existe — el método correcto es <code>mean()</code> (sin ‘s’).</p>
+<p>✅ <strong>Versión corregida:</strong></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a>df.groupby(<span class="st">"carrera"</span>)[<span class="st">"nota"</span>].mean()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="background: #f0f4ff; border-left: 4px solid #0F2044; border-radius: 6px; padding: 0.5em 1em; font-size: 0.85em; margin-top: 0.8em;">
+<p>💡 Gemini también puede sugerir mejoras de eficiencia y estilo en tu código.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-3-3">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>✨ <strong>Le pides a Gemini:</strong></p>
+<blockquote>
+<p><em>“Tengo un DataFrame con columnas <code>nota</code>, <code>carrera</code> y <code>año_ingreso</code>. Sugiere un análisis exploratorio básico.”</em></p>
+</blockquote>
+</div><div class="column" style="width:50%;">
+<p>✅ <strong>Gemini propone:</strong></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a><span class="co"># Estadísticas descriptivas</span></span>
+<span id="cb19-2"><a></a><span class="bu">print</span>(df.describe())</span>
+<span id="cb19-3"><a></a><span class="bu">print</span>(df[<span class="st">"carrera"</span>].value_counts())</span>
+<span id="cb19-4"><a></a></span>
+<span id="cb19-5"><a></a><span class="co"># Distribución de notas</span></span>
+<span id="cb19-6"><a></a>df[<span class="st">"nota"</span>].hist(bins<span class="op">=</span><span class="dv">15</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb19-7"><a></a></span>
+<span id="cb19-8"><a></a><span class="co"># Notas por carrera</span></span>
+<span id="cb19-9"><a></a>df.boxplot(column<span class="op">=</span><span class="st">"nota"</span>, by<span class="op">=</span><span class="st">"carrera"</span>,</span>
+<span id="cb19-10"><a></a>           figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb19-11"><a></a></span>
+<span id="cb19-12"><a></a><span class="co"># Evolución por año de ingreso</span></span>
+<span id="cb19-13"><a></a>df.groupby(<span class="st">"año_ingreso"</span>)[<span class="st">"nota"</span>].mean()<span class="op">\</span></span>
+<span id="cb19-14"><a></a>  .plot(marker<span class="op">=</span><span class="st">"o"</span>, title<span class="op">=</span><span class="st">"Promedio por año"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-6" class="slide level2" data-background-image="images/background_slides3.png" data-background-opacity="0.3">
+<h2></h2>
+<div style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;">
+<p><span style="font-size: 2em">Google Colab</span></p>
+<p><span style="font-size: 2.5em">Manos a la Obra</span></p>
+</div>
+</section>
+<section id="actividad-tu-primer-notebook" class="slide level2">
+<h2>Actividad: Tu Primer Notebook</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div style="text-align: center;">
+<p><img src="images/ejercicio.png" alt="Actividad" style="width: 80%; border-radius: 10px;"></p>
+</div>
+</div><div class="column" style="width:60%;">
+<ol type="1">
+<li class="fragment"><strong>Abre</strong> <a href="https://colab.research.google.com">colab.research.google.com</a> y crea un nuevo notebook.</li>
+<li class="fragment"><strong>Agrega</strong> una celda de texto con título, descripción y objetivos en Markdown.</li>
+<li class="fragment"><strong>Carga</strong> un dataset desde URL <em>(puedes usar datos de <a href="https://github.com/mwaskom/seaborn-data">seaborn-data</a>)</em>.</li>
+<li class="fragment"><strong>Explora</strong> los datos: <code>.head()</code>, <code>.describe()</code>, <code>.info()</code>.</li>
+<li class="fragment"><strong>Crea</strong> al menos un gráfico con <code>matplotlib</code> o <code>seaborn</code>.</li>
+<li class="fragment"><em>(Extra)</em> Usa <strong>Gemini</strong> para generar o mejorar alguna celda de código.</li>
+</ol>
+</div>
+</div>
+<div class="fragment">
+<blockquote>
+<p>⏱️ Tiempo de la actividad: 15–20 minutos.</p>
+</blockquote>
+</div>
+</section>
+<section id="section-7" class="slide level2" data-background-image="images/background_slides3.png" data-background-opacity="0.3">
+<h2></h2>
+<div style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;">
+<p><span style="font-size: 1em">Google Colab</span></p>
+<p><span style="font-size: 1.5em">Conclusiones</span></p>
+</div>
+</section>
+<section id="conclusiones" class="slide level2">
+<h2>Conclusiones</h2>
+<p><br></p>
+<div class="fragment">
+<div style="display: flex; flex-direction: column; gap: 0.75em; font-size: 0.95em;">
+<div style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #0F2044; border-radius: 8px; padding: 0.6em 1em;">
+<p>✅ &nbsp; <strong>Google Colab</strong> permite ejecutar código Python y R sin instalar nada.</p>
+</div>
+<div style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #1a3a6b; border-radius: 8px; padding: 0.6em 1em;">
+<p>✅ &nbsp; Los <strong>notebooks</strong> combinan código, texto y visualizaciones en un solo lugar.</p>
+</div>
+<div style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #2a5298; border-radius: 8px; padding: 0.6em 1em;">
+<p>✅ &nbsp; <strong>Google Drive</strong> es la forma más estable de persistir datos entre sesiones.</p>
+</div>
+<div style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #3a6bc4; border-radius: 8px; padding: 0.6em 1em;">
+<p>✅ &nbsp; Las <strong>credenciales</strong> deben guardarse en Secrets, nunca escritas en el código.</p>
+</div>
+<div style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #4a84e0; border-radius: 8px; padding: 0.6em 1em;">
+<p>✅ &nbsp; <strong>Gemini</strong> integrado acelera el aprendizaje y la escritura de código.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="gracias-por-participar" class="slide level2">
+<h2>🎉 ¡Gracias por Participar!</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<p>❓¿Preguntas?</p>
+<p>👏 Responder <a href="https://forms.gle/WMYcViob6Z6WbPZD7">encuesta</a></p>
+<p>🥳 ¡Disfrutar del Curso!</p>
+</div><div class="column" data-align="center" style="width:50%;">
+<p><img data-src="images/qr.png" width="400"></p>
+</div>
+</div>
+<blockquote>
+<p>🔗 Nuestro Sitio Web: <a href="https://educacionadistancia.usm.cl/">educacionadistancia.usm.cl/</a></p>
+</blockquote>
+<style>
+.reveal .slides h1 {
+  font-size: 2em;
+}
+.reveal .slides h2 {
+  font-size: 1.5em;
+}
+.reveal .slides p {
+  font-size: 0.8em;
+}
+.reveal .slides table {
+  font-size: 0.8em;
+  width: 90%;
+  margin: 0 auto;
+}
+.reveal .slides ul {
+  font-size: 0.8em;
+}
+.reveal .slide-logo {
+   max-height: 2.5em !important;
+}
+</style>
 
 <div class="quarto-auto-generated-content">
-<p><img src="../assets/img/brand/brand__usm.png" class="slide-logo"></p>
+<p><img src="images/usm.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>Datos, storytelling e IA · Data Saturday Santiago 2026</p>
+
 </div>
 </div>
 </section>
@@ -1526,12 +1260,12 @@ Seth &amp; Nut · <code>sethnut.com/talks</code></p>
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1280,
+        width: 1600,
 
-        height: 720,
+        height: 800,
 
         // Factor of the display size that should remain empty around the content
-        margin: 8.0e-2,
+        margin: 0.1,
 
         math: {
           mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
