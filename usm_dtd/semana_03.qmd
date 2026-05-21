@@ -1,29 +1,93 @@
 ---
-title: "Diplomado Transformación Digital"
-subtitle: "M3 - Semana 03"
+title: "Toma de Decisiones Basadas en Datos e IA"
+subtitle: "Módulo 3 · Clase 3: Inteligencia Artificial Generativa"
 author: 
-  - Francisco Alfaro
-date: 21 may 2026
-format: 
+  - "Francisco Alfaro Medina"
+institute: "Dirección de Transformación Digital · UTFSM"
+date: "Mayo 2026"
+date-format: "MMMM YYYY"
+
+format:
   revealjs:
-    width: 1366
-    height: 768
-    theme: simple
+    theme: [default, custom.scss]
     slide-number: true
-    controls: true
-    controls-layout: edges
-    controls-back-arrows: faded
-    transition: slide
-    chalkboard: true
-    callout-appearance: simple
-    code-copy: true
-    highlight-style: arrow
-    title-slide-attributes: 
-      data-background-image: images/background.jpg
-    logo: images/usm.png
+    progress: true
+    history: false
+    transition: fade
+    transition-speed: fast
+    incremental: false
+    fig-align: center
+    highlight-style: github
+    code-block-bg: true
+    center: false
+    width: 1600
+    height: 800
+    logo: "images/usm.png"
+    scrollable: false
+execute:
+  echo: false
+  warning: false
 ---
 
-## 🤖 A.I. en el día a día {background-image="images/background.jpg" background-opacity="0.25"}
+##  {.title-slide background-color="#0F2044"}
+
+::: title-block
+**Toma de Decisiones Basadas en Datos e IA**
+
+Módulo 3 · Clase 3: Inteligencia Artificial Generativa
+:::
+
+::: subtitle-block
+LLMs · Prompts · Asistentes Virtuales · Ética · Uso Responsable\
+Diplomado Transformación Digital · DGEC UTFSM · 2026
+:::
+
+::: author-block
+Francisco Alfaro Medina\
+Universidad Técnica Federico Santa María\
+Dirección de Transformación Digital · 2026
+:::
+
+------------------------------------------------------------------------
+
+## Resumen del módulo y hoja de ruta de hoy
+
+```{=html}
+<div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; font-size:0.78em; margin-top:0.5rem;">
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; border-left:4px solid #6B7A8D; opacity:0.8;">
+    <div style="color:#8FA8C8; font-size:0.8em; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.6rem;">✅ Clase 1</div>
+    <div style="color:#d0dce8; line-height:1.7; font-size:0.95em;">
+      Ecosistema de datos · Tipos de datos · EDA · Visualización · 4 tipos de analítica
+    </div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; border-left:4px solid #6B7A8D; opacity:0.8;">
+    <div style="color:#8FA8C8; font-size:0.8em; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.6rem;">✅ Clase 2</div>
+    <div style="color:#d0dce8; line-height:1.7; font-size:0.95em;">
+      Tipos de aprendizaje · Regresión y clasificación · Overfitting · CRISP-DM · Scikit-learn
+    </div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; border-left:4px solid #C9A84C;">
+    <div style="color:#C9A84C; font-size:0.8em; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.6rem;">🎯 Clase 3 — Hoy</div>
+    <div style="color:#d0dce8; line-height:1.7; font-size:0.95em;">
+      ¿Qué son los LLMs? · Tokens · Asistentes virtuales · Prompt engineering · Límites · Ética · Actividad final
+    </div>
+  </div>
+
+</div>
+```
+
+<br>
+
+::: {style="text-align: center; background: rgba(201,168,76,0.1); border-left: 4px solid #C9A84C; padding: 0.75rem 1.5rem; border-radius: 4px; font-size: 0.9rem;"}
+Esta clase cierra el módulo con la pieza más visible de la IA actual: los modelos de lenguaje y cómo usarlos con criterio.
+:::
+
+------------------------------------------------------------------------
+
+## 🤖 IA en el día a día
 
 ::: r-stack
 <br>
@@ -37,76 +101,100 @@ format:
 
 ------------------------------------------------------------------------
 
-## 🎯 Objetivos {background-image="images/background.jpg" background-opacity="0.25"}
+## Objetivos de esta clase
 
 ::: columns
 ::: {.column width="40%"}
 ::: {style="text-align: center;"}
-<img src="images/intro_04.png" alt="Tachado" style="width: 100%; border-radius: 10px;"/>
+<img src="images/intro_04.png" style="width: 100%; border-radius: 10px;"/>
 :::
 :::
 
-::: {.column .incremental width="60%"}
+::: {.column width="60%"}
 <br><br>
 
--   **Comprender los LLM**: Definición, funcionamiento y aplicaciones.\
--   **Asistentes Virtuales**: Uso, prompts y desafíos comunes.\
--   **Ética**: Consideraciones y buenas prácticas.
+```{=html}
+<div style="display:flex; flex-direction:column; gap:0.8rem; font-size:0.82em;">
+  <div style="background:#0F2044; border-radius:8px; padding:0.9rem 1.2rem; color:white; border-left:3px solid #4A9FD4;">
+    <strong style="color:#4A9FD4;">🧠 Comprender los LLMs</strong><br>
+    <span style="color:#8FA8C8;">Qué son, cómo funcionan internamente y qué los hace diferentes de los modelos de ML clásicos.</span>
+  </div>
+  <div style="background:#0F2044; border-radius:8px; padding:0.9rem 1.2rem; color:white; border-left:3px solid #4A9FD4;">
+    <strong style="color:#4A9FD4;">🤖 Asistentes virtuales y prompts</strong><br>
+    <span style="color:#8FA8C8;">Cómo comunicarse con precisión con un LLM y sacarle el máximo provecho organizacional.</span>
+  </div>
+  <div style="background:#0F2044; border-radius:8px; padding:0.9rem 1.2rem; color:white; border-left:3px solid #4A9FD4;">
+    <strong style="color:#4A9FD4;">⚖️ Ética y uso responsable</strong><br>
+    <span style="color:#8FA8C8;">Límites reales de la IA, riesgos concretos y criterios para tomar mejores decisiones con estas herramientas.</span>
+  </div>
+</div>
+```
+
 :::
 :::
 
 ------------------------------------------------------------------------
 
-##  {background-image="images/background_slides3.png" background-opacity="0.3"}
+##  {background-color="#0F2044"}
 
 ::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
-[No es Magia, es Ciencia]{style="font-size: 1em"}
+[Parte 1]{style="font-size: 1em; color: #4A9FD4;"}
 
-[¿ Qué son los LLM ?]{style="font-size: 2em"}
+[¿Qué son los LLMs?]{style="font-size: 2em; font-weight: bold;"}
+
+[No es magia, es ciencia — y tiene límites]{style="font-size: 1em; color: #6B7A8D; font-style: italic;"}
 :::
 
 ------------------------------------------------------------------------
 
-## 📖 Large language Model {background-image="images/background.jpg" background-opacity="0.25"}
+## Large Language Models
 
 ::: columns
-::: {.column .incremental width="60%"}
-<br><br>
+::: {.column width="58%"}
+<br>
 
--   🧠 Los LLMs generan lenguaje natural tras entrenarse con grandes volúmenes de texto.
--   🤖 Se usan en chatbots, asistentes virtuales y tareas de procesamiento de lenguaje.
+- Un **LLM** (Large Language Model) es una red neuronal entrenada con cantidades masivas de texto.
+- Aprende distribuciones de probabilidad sobre secuencias de palabras y frases.
+- Su tarea fundamental: **predecir el siguiente token más probable**.
+- No tiene un modelo del mundo. No tiene intenciones. No "entiende" en el sentido humano.
+
+::: {.callout-important}
+## La frase más importante de esta clase
+**Un LLM no razona, predice.** Entender esto es la diferencia entre usarlo bien y confiar ciegamente en él.
 :::
 
-::: {.column width="40%"}
+:::
+::: {.column width="42%"}
 ::: {style="text-align: center;"}
-<img src="images/llm_01.png" alt="Tachado" style="width: 80%; border-radius: 10px;"/>
+<img src="images/llm_01.png" style="width: 85%; border-radius: 10px;"/>
 :::
 :::
 :::
 
 ------------------------------------------------------------------------
 
-## 📖 Características LLM {background-image="images/background.jpg" background-opacity="0.25"}
+## Características de los LLMs
 
 ::: columns
-::: {.column .incremental width="50%"}
-<br><br>
+::: {.column width="50%"}
+<br>
 
--   📦 Entrenados con billones de parámetros y textos masivos
--   🛠️ Adaptables a múltiples tareas (traducción, resumen, Q&A, etc.)
--   🌍 Aplicables en dominios diversos: salud, educación, negocios
+- 📦 **Escala masiva** — entrenados con billones de parámetros sobre cientos de GB de texto (libros, Wikipedia, internet)
+- 🛠️ **Multitarea** — un mismo modelo puede traducir, resumir, responder preguntas, generar código y analizar sentimientos
+- 🌍 **Multidominio** — aplicables en salud, educación, derecho, finanzas, ingeniería
+- ⚡ **Emergencia** — capacidades que no fueron explícitamente programadas aparecen con el escalamiento
+
 :::
-
 ::: {.column width="50%"}
 ::: {style="text-align: center;"}
-<img src="images/llm1.png" alt="Tachado" style="width: 100%; border-radius: 10px;"/>
+<img src="images/llm1.png" style="width: 100%; border-radius: 10px;"/>
 :::
 :::
 :::
 
 ------------------------------------------------------------------------
 
-## ⏳ Historia de los LLM {background-image="images/background.jpg" background-opacity="0.25"}
+## Historia y evolución de los LLMs
 
 ::: r-stack
 ![](images/llm_04a.png){.fragment fig-align="center"}
@@ -116,7 +204,19 @@ format:
 
 ------------------------------------------------------------------------
 
-## 🔥 Desafío {background-image="images/background.jpg" background-opacity="0.25"}
+##  {background-color="#0F2044"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Parte 2]{style="font-size: 1em; color: #4A9FD4;"}
+
+[Cómo funcionan: de bits a tokens]{style="font-size: 2em; font-weight: bold;"}
+
+[Todo en el computador son bits — el contexto lo es todo]{style="font-size: 1em; color: #6B7A8D; font-style: italic;"}
+:::
+
+------------------------------------------------------------------------
+
+## 🔥 Desafío: ¿Qué contiene este string de bits?
 
 <br><br>
 
@@ -126,140 +226,154 @@ format:
 
 ------------------------------------------------------------------------
 
-##  {background-image="images/background.jpg" background-opacity="0.25"}
+##  {background-color="#0F2044"}
 
 <br><br><br>
 
 [00000000]{style="font-size: 80px; margin: 0px; color: white"} [00101010]{style="font-size: 80px; margin: 0px;"}
 
-[Podría ser el número 42 escrito en binario...]{.fragment}
+[Podría ser el número **42** escrito en binario...]{.fragment style="font-size:1.1em; color:#4A9FD4;"}
 
 ------------------------------------------------------------------------
 
-##  {background-image="images/background.jpg" background-opacity="0.25"}
+##  {background-color="#0F2044"}
 
 <br><br><br>
 
 [00000000]{style="font-size: 80px; margin: 0px; color: white"} [00101010]{style="font-size: 80px; margin: 0px;"}
 
-[Podría ser el carácter `*` en la convención ascii...]{.fragment}
+[Podría ser el carácter `*` en la convención ASCII...]{.fragment style="font-size:1.1em; color:#C9A84C;"}
 
 ------------------------------------------------------------------------
 
-##  {background-image="images/background.jpg" background-opacity="0.25"}
+##  {background-color="#0F2044"}
 
 <br><br><br>
 
 [00000000]{style="font-size: 80px; margin: 0px; color:#D3D3D3"} [00101010]{style="font-size: 80px; margin: 0px;"} [00000101]{style="font-size: 80px; margin: 0px; color:#D3D3D3"} [00000101]{style="font-size: 80px; margin: 0px; color:#D3D3D3"} [00000101]{style="font-size: 80px; margin: 0px; color:#D3D3D3"} [00000101]{style="font-size: 80px; margin: 0px; color:#D3D3D3"}
 
-[Podría ser parte de un número decimal, 0.4523 o $\pi$...]{.fragment}
+[Podría ser parte de un número decimal, 0.4523 o $\pi$...]{.fragment style="font-size:1.1em; color:#4A9FD4;"}
 
 ------------------------------------------------------------------------
 
-##  {background-image="images/background.jpg" background-opacity="0.25"}
+##  {background-color="#0F2044"}
 
 <br><br>
 
-[10000101]{style="font-size: 80px; margin: 0px; color:#D3D3D3"} [00100001]{style="font-size: 80px; margin: 0px; color:#D3D3D3"} [01000111]{style="font-size: 80px; margin: 0px; color:#D3D3D3"} [00001000]{style="font-size: 80px; margin: 0px; color:#D3D3D3"} [00101010]{style="font-size: 80px; margin: 0px;"} [01000101]{style="font-size: 80px; margin: 0px; color:#D3D3D3"} [11111111]{style="font-size: 80px; margin: 0px; color:#D3D3D3"} [11001101]{style="font-size: 80px; margin: 0px; color:#D3D3D3"} [01000111]{style="font-size: 80px; margin: 0px; color:#D3D3D3"} [00000101]{style="font-size: 80px; margin: 0px; color:#D3D3D3"} [00000101]{style="font-size: 80px; margin: 0px; color:#D3D3D3"} [01110111]{style="font-size: 80px; margin: 0px; color:#D3D3D3"}
+[10000101]{style="font-size: 55px; margin: 0px; color:#D3D3D3"} [00100001]{style="font-size: 55px; margin: 0px; color:#D3D3D3"} [01000111]{style="font-size: 55px; margin: 0px; color:#D3D3D3"} [00001000]{style="font-size: 55px; margin: 0px; color:#D3D3D3"} [00101010]{style="font-size: 55px; margin: 0px;"} [01000101]{style="font-size: 55px; margin: 0px; color:#D3D3D3"} [11111111]{style="font-size: 55px; margin: 0px; color:#D3D3D3"} [11001101]{style="font-size: 55px; margin: 0px; color:#D3D3D3"} [01000111]{style="font-size: 55px; margin: 0px; color:#D3D3D3"} [00000101]{style="font-size: 55px; margin: 0px; color:#D3D3D3"} [00000101]{style="font-size: 55px; margin: 0px; color:#D3D3D3"} [01110111]{style="font-size: 55px; margin: 0px; color:#D3D3D3"}
 
-[Podría ser parte de un archivo multimedia (video, imagen, audio, etc.)...]{.fragment}
+[Podría ser parte de un archivo multimedia (video, imagen, audio)...]{.fragment style="font-size:1.1em; color:#C9A84C;"}
 
 ------------------------------------------------------------------------
 
-## Representación {background-image="images/background.jpg" background-opacity="0.25"}
+## Representación = bits + contexto
 
 ::: columns
-::: {.column .fragment width="60%"}
-<br><br>
+::: {.column width="58%"}
+<br>
 
--   **TODO** en el computador son bits
--   `representación` `=` `bits` `+` `contexto`
+::: {.fragment}
+- **TODO** en el computador son bits — la diferencia está en cómo se interpretan.
+- `representación` = `bits` + `contexto`
+- Aplicado al lenguaje: necesitamos una forma de convertir texto en números que el modelo pueda procesar.
 :::
 
-::: {.column width="40%"}
+::: {.callout-note .fragment}
+**La pregunta clave para los LLMs:**
+¿Cómo representamos el *significado* de las palabras, no solo sus caracteres? Eso es la semántica.
+:::
+
+:::
+::: {.column width="42%"}
 ![](images/context.png){fig-align="center"}
 :::
 :::
 
 ------------------------------------------------------------------------
 
-## ¿Cómo representar una palabra? {background-image="images/background.jpg" background-opacity="0.25"}
-
-::: {.fragment style="text-align: center;"}
-<img src="images/representacion.png" alt="Tachado" style="width: 75%; border-radius: 10px;"/>
-:::
-
-------------------------------------------------------------------------
-
-## 📝 Representación textual {background-image="images/background.jpg" background-opacity="0.25"}
-
-Transcribir texto es guardar letras como bits.
-
-::: panel-tabset
-### ASCII
-
--   1 byte (8 bits)
--   128 caracteres
--   No incluye ñ ni tildes
-
-### UTF-8
-
--   1 a 4 bytes
--   Compatible con ASCII
--   Incluye emojis 😁
-:::
-
-------------------------------------------------------------------------
-
-## 🧠 Representación semántica {background-image="images/background.jpg" background-opacity="0.25"}
+## Representación textual: ASCII y UTF-8
 
 ::: columns
-::: {.column .fragment width="60%"}
-<br><br>
+::: {.column width="50%"}
 
--   **Semántica** significa **el sentido o significado** de las palabras.
--   Necesitamos guardarla como un **todo** o dividirla en **partes con sentido** (tokens).
+**Del texto a bits** — transcribir texto es guardar letras como bits.
+
+::: {.callout-note}
+## ASCII
+- 1 byte (8 bits) por carácter
+- 128 caracteres posibles
+- Cubre inglés básico
+- No incluye ñ, tildes ni emojis
 :::
 
-::: {.column width="40%"}
-<br> ![](images/semantica.jpg){fig-align="center"}
+::: {.callout-tip}
+## UTF-8
+- 1 a 4 bytes según el carácter
+- Compatible con ASCII
+- Cubre todos los idiomas
+- Incluye emojis 😁
+:::
+
+:::
+::: {.column width="50%"}
+<br>
+
+::: {style="text-align: center;"}
+<img src="images/representacion.png" style="width: 85%; border-radius: 10px;"/>
+:::
+
 :::
 :::
 
 ------------------------------------------------------------------------
 
-##  {background-image="images/background.jpg" background-opacity="0.25"}
+## Representación semántica: tokens
+
+::: columns
+::: {.column width="58%"}
+<br>
+
+- **Semántica** significa el **sentido o significado** de las palabras, no solo sus letras.
+- Los LLMs no procesan caracteres ni palabras completas — procesan **tokens** (fragmentos de texto).
+- Un token ≈ 0.75 palabras en inglés. En español, suelen requerirse **más tokens** por las tildes y morfología.
+
+::: {.callout-note}
+## Aprendizajes clave
+- Palabra ≠ Token
+- Cada token tiene un **ID único** en el vocabulario del modelo
+- En inglés, **100 tokens ≈ 75 palabras**
+- Dos palabras iguales pueden tener tokens distintos según el contexto
+:::
+
+:::
+::: {.column width="42%"}
+<br>
+![](images/semantica.jpg){fig-align="center"}
+:::
+:::
+
+------------------------------------------------------------------------
+
+## 
 
 ::: {style="text-align: center;"}
 <iframe src="https://agents-course-the-tokenizer-playground.static.hf.space" frameborder="0" width="950" height="650">
-
 </iframe>
 :::
 
 ------------------------------------------------------------------------
 
-## 💡 Aprendizajes {background-image="images/background.jpg" background-opacity="0.25"}
+## ⚙️ Diagrama técnico de un LLM
 
-<br>
+Diagrama de funcionamiento de un LLM que se *filtró* de OpenAI:
 
--   Palabra ≠ Token
--   Cada **token** tiene un **ID único**\
--   En inglés, **100 tokens ≈ 75 palabras**\
--   Dos palabras **iguales** pueden tener **tokens distintos**, según el contexto
-
-------------------------------------------------------------------------
-
-## ⚙️ Diagrama técnico de un LLM {background-image="images/background.jpg" background-opacity="0.25"}
-
-Diagrama de funcionamiento de un LLM que se filtró de OpenAI:
-
-[**¡¡¡No difundir!!!**]{.fragment style="color: red;"}
+[**¡¡¡No difundir!!!**]{.fragment style="color: #E74C3C; font-weight: bold;"}
 
 ![](images/LLM_words.gif){.fragment fig-align="center" height="500px"}
 
 ------------------------------------------------------------------------
 
-## ⚙️ Diagrama técnico de un LLM {background-image="images/background.jpg" background-opacity="0.25"}
+## ⚙️ Arquitectura interna: Transformer
 
 ::: r-stack
 <br>
@@ -271,151 +385,164 @@ Diagrama de funcionamiento de un LLM que se filtró de OpenAI:
 
 ------------------------------------------------------------------------
 
-##  {background-image="images/background.jpg" background-opacity="0.25"}
+## 
 
 ::: {style="text-align: center;"}
 <iframe src="https://agents-course-decoding-visualizer.hf.space" frameborder="0" width="950" height="650">
-
 </iframe>
 :::
 
 ------------------------------------------------------------------------
 
-## 💡 Aprendizajes {background-image="images/background.jpg" background-opacity="0.25"}
+## Lo que aprendimos sobre el funcionamiento de los LLMs
 
 <br>
 
--   El LLM **no reflexiona**, solo predice el **token más probable**.\
--   La predicción es **secuencial**, token por token.\
--   No tiene **memoria**: siempre parte desde cero.
+```{=html}
+<div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; font-size:0.80em;">
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; text-align:center;">
+    <div style="font-size:2rem; margin-bottom:0.5rem;">🎲</div>
+    <div style="color:#4A9FD4; font-weight:700; margin-bottom:0.4rem;">No razona, predice</div>
+    <div style="color:#8FA8C8; line-height:1.5;">El LLM genera el token más probable dado el contexto anterior. No tiene un modelo interno del mundo ni comprensión real.</div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; text-align:center;">
+    <div style="font-size:2rem; margin-bottom:0.5rem;">🔢</div>
+    <div style="color:#4A9FD4; font-weight:700; margin-bottom:0.4rem;">Predicción secuencial</div>
+    <div style="color:#8FA8C8; line-height:1.5;">Genera un token a la vez, condicionado en todos los anteriores. Una mala predicción temprana propaga el error.</div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; text-align:center;">
+    <div style="font-size:2rem; margin-bottom:0.5rem;">🧹</div>
+    <div style="color:#4A9FD4; font-weight:700; margin-bottom:0.4rem;">Sin memoria persistente</div>
+    <div style="color:#8FA8C8; line-height:1.5;">Cada conversación parte desde cero (salvo sistemas con memoria externa). Lo que no está en el contexto no existe para el modelo.</div>
+  </div>
+
+</div>
+```
 
 ------------------------------------------------------------------------
 
-##  {background-image="images/background_slides3.png" background-opacity="0.3"}
+##  {background-color="#0F2044"}
 
 ::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
-[No es Magia, es Ciencia]{style="font-size: 1em"}
+[Parte 3]{style="font-size: 1em; color: #4A9FD4;"}
 
-[¿Qué son los Prompts?]{style="font-size: 1.5em"}
+[Asistentes virtuales y Prompt Engineering]{style="font-size: 2em; font-weight: bold;"}
+
+[Cómo comunicarse con precisión con un sistema que toma las palabras literalmente]{style="font-size: 0.9em; color: #6B7A8D; font-style: italic;"}
 :::
 
 ------------------------------------------------------------------------
 
-## 🤖 Asistentes Virtuales Inteligentes {background-image="images/background.jpg" background-opacity="0.25"}
-
-<br><br>
-
-Los **asistentes virtuales** impulsados por **IA** facilitan la comunicación, automatización y soporte en diversas industrias.
-
-::: {style="text-align: center;"}
-<img src="images/chat_013.png" alt="Tachado" style="width: 30%; border-radius: 10px;"/>
-:::
-
-------------------------------------------------------------------------
-
-## 🤖 Asistentes Virtuales Inteligentes {background-image="images/background.jpg" background-opacity="0.25"}
+## Asistentes virtuales inteligentes
 
 ::: columns
-::: {.column .incremental width="60%"}
-<br><br>
+::: {.column width="55%"}
+<br>
 
-**Asistentes más destacados**:
+Los **asistentes virtuales** impulsados por LLMs pueden comprender y generar lenguaje natural de forma fluida, lo que los hace útiles para automatizar, resumir, analizar y comunicar en múltiples contextos organizacionales.
 
--   [ChatGPT (OpenAI)](https://openai.com/chatgpt/)
--   [Gemini (Google DeepMind)](https://deepmind.google/gemini/)
--   [Meta AI (Meta)](https://ai.meta.com/)
--   [DeepSeek (DeepSeek)](https://chat.deepseek.com/)
+**Asistentes más destacados en 2026:**
+
+- [ChatGPT (OpenAI)](https://openai.com/chatgpt/) — el más conocido
+- [Claude (Anthropic)](https://claude.ai) — foco en análisis y seguridad
+- [Gemini (Google DeepMind)](https://deepmind.google/gemini/) — integrado con Google Workspace
+- [Meta AI (Meta)](https://ai.meta.com/) — integrado en WhatsApp e Instagram
+- [DeepSeek](https://chat.deepseek.com/) — modelo chino de alto rendimiento
+
 :::
-
-::: {.column width="40%"}
+::: {.column width="45%"}
 ::: {style="text-align: center;"}
-<br> <img src="images/chat_013.png" alt="Asistentes Virtuales" style="width: 100%; border-radius: 10px;"/>
+<img src="images/chat_013.png" style="width: 75%; border-radius: 10px;"/>
 :::
 :::
 :::
 
 ------------------------------------------------------------------------
 
-## 📱¿Qué podemos hacer? {background-image="images/background.jpg" background-opacity="0.25"}
+## ¿Qué pueden hacer estos asistentes?
 
 ::: columns
 ::: {.column width="40%"}
 ::: {style="text-align: center;"}
-<img src="images/chat_02.png" alt="Tachado" style="width: 100%; border-radius: 10px;"/>
+<img src="images/chat_02.png" style="width: 100%; border-radius: 10px;"/>
 :::
 :::
 
-::: {.column .incremental width="60%"}
+::: {.column width="60%"}
 <br>
 
--   🎓 **Educación**: Tutor virtual.\
--   🩺 **Salud**: Asistencia en consultas.\
--   📝 **Contenido**: Redacción y resumen.\
--   💻 **Software**: Generación/corrección código.\
--   💬 **Cliente**: Respuestas automáticas.
+```{=html}
+<div style="display:flex; flex-direction:column; gap:0.6rem; font-size:0.80em;">
+  <div style="background:#0F2044; border-radius:8px; padding:0.7rem 1rem; color:white; display:flex; gap:0.8rem; align-items:center;">
+    <span style="font-size:1.3rem;">🎓</span>
+    <div><strong style="color:#4A9FD4;">Educación:</strong> <span style="color:#d0dce8;">Tutor virtual, explicación de conceptos, generación de ejercicios.</span></div>
+  </div>
+  <div style="background:#0F2044; border-radius:8px; padding:0.7rem 1rem; color:white; display:flex; gap:0.8rem; align-items:center;">
+    <span style="font-size:1.3rem;">📝</span>
+    <div><strong style="color:#4A9FD4;">Contenido:</strong> <span style="color:#d0dce8;">Redacción de informes, resúmenes ejecutivos, actas de reunión.</span></div>
+  </div>
+  <div style="background:#0F2044; border-radius:8px; padding:0.7rem 1rem; color:white; display:flex; gap:0.8rem; align-items:center;">
+    <span style="font-size:1.3rem;">💻</span>
+    <div><strong style="color:#4A9FD4;">Software:</strong> <span style="color:#d0dce8;">Generación y explicación de código, debugging, documentación.</span></div>
+  </div>
+  <div style="background:#0F2044; border-radius:8px; padding:0.7rem 1rem; color:white; display:flex; gap:0.8rem; align-items:center;">
+    <span style="font-size:1.3rem;">💬</span>
+    <div><strong style="color:#4A9FD4;">Atención:</strong> <span style="color:#d0dce8;">Respuestas automáticas, FAQs, soporte de primer nivel.</span></div>
+  </div>
+  <div style="background:#0F2044; border-radius:8px; padding:0.7rem 1rem; color:white; display:flex; gap:0.8rem; align-items:center;">
+    <span style="font-size:1.3rem;">📊</span>
+    <div><strong style="color:#4A9FD4;">Análisis:</strong> <span style="color:#d0dce8;">Interpretación de datos, generación de visualizaciones, narrativas de KPIs.</span></div>
+  </div>
+</div>
+```
+
 :::
 :::
 
 ------------------------------------------------------------------------
 
-## 📝 Prompts en ChatGPT {background-image="images/background.jpg" background-opacity="0.25"}
-
-Los **prompts** son las **instrucciones** que se le dan a un modelo de lenguaje, como **ChatGPT**, para generar una **respuesta** o realizar una **tarea específica**. Pueden ser preguntas, frases o directrices que guían el modelo hacia el resultado deseado.
-
-::: {style="text-align: center;"}
-<img src="images/pro_01.jpg" alt="Tachado" style="width: 60%; border-radius: 10px;"/>
-:::
-
-------------------------------------------------------------------------
-
-## 📝 Prompts en ChatGPT {background-image="images/background.jpg" background-opacity="0.25"}
-
-**Pregunta directa**: "¿Qué es la inteligencia artificial?"
-
-**Instrucción**: "Escribe una historia corta sobre un viaje al espacio."
-
-**Comando**: "Genera un código Python para calcular el promedio de una lista."
-
-::: {style="text-align: center;"}
-<img src="images/pro_01.jpg" alt="Tachado" style="width: 60%; border-radius: 10px;"/>
-:::
-
-------------------------------------------------------------------------
-
-## [🎯 Actividad: ¡Probemos algunos Prompts!]{style="font-size:0.8em;"} {background-image="images/background.jpg" background-opacity="0.25"}
-
-<br>
+## ¿Qué es un Prompt?
 
 ::: columns
-::: {.column width="40%"}
-::: {style="text-align: center;"}
-<img src="images/activity.png" alt="Tachado" style="width: 100%; border-radius: 10px;"/>
-:::
-:::
-
-::: {.column .incremental width="60%"}
+::: {.column width="55%"}
 <br>
 
--   👩‍💻 **Paso 1:** Elige un asistente ( [ChatGPT](https://openai.com/chatgpt/), [Gemini](https://deepmind.google/gemini/), [Meta AI](https://ai.meta.com/), [DeepSeek](https://chat.deepseek.com/) )
--   📝 **Paso 2:** Escribe o copia un prompt
--   🔍 **Paso 3:** Observa la respuesta
--   🤔 **Paso 4:** Compara con otros asistentes
+Un **prompt** es la instrucción que le das al modelo para que genere una respuesta o realice una tarea.
+
+El modelo toma tus palabras **literalmente** — la ambigüedad en el prompt produce ambigüedad en la respuesta.
+
+**Tipos básicos:**
+
+- **Pregunta directa:** "¿Qué es la inteligencia artificial?"
+- **Instrucción:** "Escribe un resumen ejecutivo de este informe."
+- **Comando:** "Genera un código Python para calcular la deserción mensual."
+- **Rol + Tarea:** "Eres un analista senior. Evalúa este plan de acción e identifica los 3 riesgos principales."
+
+:::
+::: {.column width="45%"}
+::: {style="text-align: center;"}
+<img src="images/pro_01.jpg" style="width: 85%; border-radius: 10px;"/>
+:::
 :::
 :::
 
 ------------------------------------------------------------------------
 
-## Estructura de un Buen Prompts {background-image="images/background.jpg" background-opacity="0.25"}
+## Estructura de un buen prompt
 
 ::: {style="text-align: center;"}
-<img src="images/pro_031.png" alt="Tachado" style="width: 100%; border-radius: 10px;"/>
+<img src="images/pro_031.png" style="width: 95%; border-radius: 10px;"/>
 :::
 
 ------------------------------------------------------------------------
 
-## 🧠 Estructura de un Buen Prompt {background-image="images/background.jpg" background-opacity="0.25"}
+## Prompt simple vs. prompt estructurado
 
 ::: panel-tabset
+
 ## ❌ Prompt simple
 
 > **Prompt:**
@@ -426,166 +553,220 @@ Los **prompts** son las **instrucciones** que se le dan a un modelo de lenguaje,
 
 <br>
 
-👎 Resultado muy genérico, sin explicación ni opciones personalizadas.
+👎 Resultado muy genérico — sin explicación, sin opciones, sin contexto de uso.
 
 ## ✅ Prompt estructurado
 
 > **Prompt:**
 >
 > ``` text
-> Eres un profesor de programación enseñando a estudiantes principiantes.  
-> Tu tarea es crear un ejemplo en Python para ordenar una lista de números.  
-> Explica paso a paso el código, usando comentarios.  
-> Usa dos métodos: el método `.sort()` y el algoritmo de burbuja.  
-> Incluye ejemplos de entrada y salida.  
-> El objetivo es ayudar a comprender el funcionamiento de ambos métodos.
+> Eres un profesor de programación enseñando a estudiantes universitarios sin experiencia previa.
+> Tu tarea es crear un ejemplo en Python para ordenar una lista de números.
+> Explica paso a paso el código usando comentarios dentro del mismo.
+> Usa dos métodos: el método .sort() y el algoritmo de burbuja.
+> Incluye ejemplos de entrada y salida esperados.
+> El objetivo es que el estudiante entienda la diferencia entre ambos métodos.
 > ```
 
 <br>
 
-👍 El resultado incluye: código claro, explicaciones y enfoque didáctico.
+👍 Resultado incluye: código comentado, explicación pedagógica y comparación de métodos.
 
 ## ✨ ¿Qué lo hace mejor?
 
 <br>
 
--   👨‍🏫 **Rol**: Define que el modelo actúe como *profesor*
--   📌 **Tarea**: Especifica *crear un ejemplo y explicar*
--   🧩 **Detalles**: Métodos `.sort()` y burbuja
--   🎓 **Contexto**: Enseñanza a estudiantes
--   📝 **Extras**: Comentarios y ejemplos de uso
+- 👨‍🏫 **Rol** — "eres un profesor de programación" activa el registro correcto
+- 📌 **Tarea** — especifica exactamente qué producir
+- 🧩 **Detalles** — dos métodos concretos, no uno genérico
+- 🎓 **Contexto** — audiencia sin experiencia previa
+- 📝 **Formato** — comentarios dentro del código, ejemplos de E/S
+
 :::
 
 ------------------------------------------------------------------------
 
-## ♟️Técnicas para Mejorar los Prompts {background-image="images/background.jpg" background-opacity="0.25"}
-
-<br>
-
-::: {style="text-align: center;"}
-<img src="images/pro_04.png" alt="Tachado" style="width: 100%; border-radius: 10px;"/>
-:::
-
-------------------------------------------------------------------------
-
-## ♟️Técnicas para Mejorar los Prompts {background-image="images/background.jpg" background-opacity="0.25"}
+## Técnicas de Prompt Engineering
 
 ::: panel-tabset
+
 ## Zero-shot
 
-**Definición:** Se da un **prompt sin ejemplos previos**, y se espera que el modelo genere una respuesta basada en su conocimiento previo.
+**Sin ejemplos previos** — el modelo genera a partir de su conocimiento.
 
 ::: columns
 ::: {.column width="50%"}
-✨ **Ejemplo de prompt:**
+✨ **Prompt:**
 
 > "¿Qué es la fotosíntesis?"
 :::
+::: {.column width="50%"}
+✅ **Cuándo usarlo:**
 
-::: {.column .incremental width="50%"}
-✅ **Esperado:**
-
-> "La fotosíntesis es el proceso por el cual las plantas convierten la luz solar en energía química utilizando dióxido de carbono y agua."
+Tareas simples y bien definidas donde el modelo tiene conocimiento confiable. Ideal para primer acercamiento.
 :::
 :::
 
-## ♟️ Few-shot
+## Few-shot
 
-**Definición:** Se proporcionan **pocos ejemplos** en el prompt para ayudar al modelo a generar una respuesta más precisa.
+**Con pocos ejemplos** — guías el patrón de respuesta mostrando ejemplos del formato esperado.
 
 ::: columns
 ::: {.column width="50%"}
-✨ **Ejemplo de prompt:**
+✨ **Prompt:**
 
-> "Traduce las siguientes frases al francés:\
+> "Traduce al francés:\
 > - Hello → Bonjour\
 > - Thank you → Merci\
 > - Good morning → ?"
 :::
+::: {.column width="50%"}
+✅ **Cuándo usarlo:**
 
-::: {.column .incremental width="50%"}
-✅ **Esperado:**
-
-> "Good morning → Bonjour"
+Cuando el formato de salida importa mucho (clasificaciones, tablas, traducciones). Mucho más preciso que zero-shot para tareas estructuradas.
 :::
 :::
 
-## ♟️ CoT
+## Chain-of-Thought
 
-**Definición:** Se fomenta el **razonamiento paso a paso** (*Chain-of-Thought* ) para obtener respuestas más estructuradas y detalladas.
+**Razonamiento paso a paso** — el modelo "piensa en voz alta" antes de responder.
 
 ::: columns
 ::: {.column width="50%"}
-✨ **Ejemplo de prompt:**
+✨ **Prompt:**
 
-> "Si un tren viaja a 80 km/h y recorre 240 km, ¿cuánto tiempo tarda en llegar? Explica tu razonamiento."
+> "Un tren a 80 km/h recorre 240 km. ¿Cuánto tiempo tarda? **Razona paso a paso.**"
 :::
+::: {.column width="50%"}
+✅ **Por qué funciona:**
 
-::: {.column .incremental width="50%"}
-✅ **Esperado:**
-
-> "El tren viaja a 80 km/h y debe recorrer 240 km. Para calcular el tiempo, usamos la fórmula:\
-> **tiempo = distancia / velocidad**\
-> **240 km ÷ 80 km/h = 3 horas.**\
-> Por lo tanto, el tren tarda 3 horas en llegar."
+Cada token generado puede ser condicionado por el anterior — externalizar el razonamiento mejora la precisión en matemáticas, lógica y análisis complejo.
 :::
 :::
 
-## ♟️ Chaining
+## Chaining
 
-**Definición:** Se descompone una tarea compleja en **múltiples prompts encadenados**, donde la salida de un prompt se usa como entrada para el siguiente.
+**Prompts encadenados** — la salida de un prompt alimenta el siguiente.
 
 ::: columns
 ::: {.column width="50%"}
-✨ **Ejemplo de prompt:**
+✨ **Paso 1:**
 
-> **Paso 1:** "Resume en 3 frases la Revolución Industrial."\
-> **Paso 2:** (Usando la respuesta del primer prompt) "Ahora expande cada frase en un párrafo detallado."
+> "Resume en 3 frases la Revolución Industrial."
+
+✨ **Paso 2 (usa la respuesta anterior):**
+
+> "Expande cada frase en un párrafo con evidencia concreta."
+:::
+::: {.column width="50%"}
+✅ **Cuándo usarlo:**
+
+Tareas complejas que se benefician de descomposición: análisis de riesgo por etapas, generación de reportes multi-sección, pipelines de análisis de texto.
+:::
 :::
 
-::: {.column .incremental width="50%"}
-✅ **Esperado:**
-
-> **Paso 1:** "La Revolución Industrial marcó el inicio de la producción mecanizada, el crecimiento de las ciudades y el avance del transporte."\
-> **Paso 2:** Se genera un desarrollo más detallado de cada punto.
 :::
+
+------------------------------------------------------------------------
+
+## 🎯 Actividad: ¡Probemos algunos prompts!
+
+::: columns
+::: {.column width="40%"}
+::: {style="text-align: center;"}
+<img src="images/activity.png" style="width: 100%; border-radius: 10px;"/>
+:::
+:::
+
+::: {.column width="60%"}
+<br>
+
+**Instrucciones:**
+
+::: incremental
+- 👩‍💻 **Paso 1:** Elige un asistente ([ChatGPT](https://openai.com/chatgpt/), [Claude](https://claude.ai), [Gemini](https://deepmind.google/gemini/), [DeepSeek](https://chat.deepseek.com/))
+- 📝 **Paso 2:** Escribe el mismo prompt en al menos dos asistentes distintos
+- 🔍 **Paso 3:** Compara las respuestas — ¿difieren en formato, tono, precisión?
+- 🤔 **Paso 4:** Ahora aplica la estructura completa (Rol + Tarea + Contexto + Formato) y observa cómo cambia el resultado
+- 💬 **Paso 5:** Comparte con el grupo: ¿qué diferencias encontraron?
+:::
+
 :::
 :::
 
 ------------------------------------------------------------------------
 
-##  {background-image="images/background_slides3.png" background-opacity="0.3"}
+##  {background-color="#0F2044"}
 
 ::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
-[No es Magia, es Ciencia]{style="font-size: 1em"}
+[Parte 4]{style="font-size: 1em; color: #4A9FD4;"}
 
-[Una mirada crítica a los LLMs]{style="font-size: 1.5em"}
+[Límites reales y ética en el uso de IA]{style="font-size: 2em; font-weight: bold;"}
+
+[Una mirada crítica — indispensable antes de desplegar]{style="font-size: 1em; color: #6B7A8D; font-style: italic;"}
 :::
 
 ------------------------------------------------------------------------
 
-## ⚠️ Problemas comunes con los LLM {background-image="images/background.jpg" background-opacity="0.25"}
+## ⚠️ Problemas comunes con los LLMs
 
 ::: {style="text-align: center;"}
-<img src="images/pro_22.png" alt="Tachado" style="width: 90%; border-radius: 10px;"/>
+<img src="images/pro_22.png" style="width: 88%; border-radius: 10px;"/>
 :::
 
 ------------------------------------------------------------------------
 
-## ⚠️ Problemas Comunes con los LLM {background-image="images/background.jpg" background-opacity="0.25"}
+## Los cuatro límites que todo decisor debe conocer
 
 <br>
 
-| 🚨 **Error**               | 💬 **Prompt**                           | ❌ **Respuesta Incorrecta**           |
-|----------------------------|-----------------------------------------|---------------------------------------|
-| **Información Incorrecta** | *¿Cuántos continentes hay?*             | *Hay 4 continentes.*                  |
-| **Datos Obsoletos**        | *¿Quién es el presidente de Argentina?* | *Mauricio Macri.*                     |
-| **Respuesta Ambigua**      | *¿País más grande?*                     | *Podría ser China o EE.UU.*           |
-| **Sesgo o Estereotipo**    | *¿Quién programa mejor?*                | *Los hombres, por su lógica natural.* |
+| 🚨 **Problema** | 💬 **Ejemplo de prompt** | ❌ **Falla del modelo** | 🛡️ **Mitigación** |
+|---|---|---|---|
+| **Alucinaciones** | *¿Cuántos continentes hay?* | *Hay 4 continentes.* | Verificar con fuentes externas |
+| **Datos obsoletos** | *¿Quién es el presidente de Argentina?* | *Mauricio Macri.* | RAG con datos actualizados |
+| **Ambigüedad** | *¿País más grande?* | *Podría ser China o EE.UU.* | Prompt más específico |
+| **Sesgo** | *¿Quién programa mejor?* | *Los hombres, por su lógica natural.* | Evaluar outputs críticamente |
+
+<br>
+
+::: {.callout-important}
+## Para decisores organizacionales
+Las alucinaciones no son bugs que se arreglarán — son una **consecuencia estructural** de cómo aprenden estos modelos. Un LLM responde con igual confianza cuando sabe y cuando no sabe.
+:::
 
 ------------------------------------------------------------------------
 
-## ⚖️ Ética en el Uso de la A.I. {background-image="images/background.jpg" background-opacity="0.25"}
+## Los 4 límites estructurales de los LLMs
+
+```{=html}
+<div style="display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; font-size:0.78em; margin-top:0.5rem;">
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; border-left:4px solid #E74C3C;">
+    <div style="color:#ff7070; font-weight:700; margin-bottom:0.5rem;">🎭 Alucinaciones</div>
+    <div style="color:#d0c0c0; line-height:1.6;">El modelo genera respuestas fluidas, confiadas y falsas. No tiene mecanismo para saber que no sabe. <em>No se arreglará: es inherente al diseño.</em></div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; border-left:4px solid #F39C12;">
+    <div style="color:#fbbf24; font-weight:700; margin-bottom:0.5rem;">📅 Corte temporal</div>
+    <div style="color:#d0c0c0; line-height:1.6;">El modelo tiene una fecha de entrenamiento fija. No conoce eventos recientes. Para decisiones que dependen de información actual, necesita búsqueda externa (RAG).</div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; border-left:4px solid #8B5CF6;">
+    <div style="color:#a78bfa; font-weight:700; margin-bottom:0.5rem;">📐 Sesgo en el entrenamiento</div>
+    <div style="color:#d0c0c0; line-height:1.6;">Aprende los sesgos presentes en los datos: de género, culturales, históricos. La respuesta "promedio" de internet no siempre es neutral ni correcta.</div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; border-left:4px solid #4A9FD4;">
+    <div style="color:#4A9FD4; font-weight:700; margin-bottom:0.5rem;">🔒 Sin contexto organizacional</div>
+    <div style="color:#d0c0c0; line-height:1.6;">El modelo no sabe nada de tu institución, tu cultura interna, tus restricciones ni tu audiencia específica. Ese contexto debe ser provisto siempre por el usuario.</div>
+  </div>
+
+</div>
+```
+
+------------------------------------------------------------------------
+
+## ⚖️ Ética en el uso de la IA
 
 ::: r-stack
 <br>
@@ -597,200 +778,303 @@ Los **prompts** son las **instrucciones** que se le dan a un modelo de lenguaje,
 
 ------------------------------------------------------------------------
 
-## ⚖️ Ejemplos {background-image="images/background.jpg" background-opacity="0.25"}
+## Ética aplicada: casos concretos
 
 ::: panel-tabset
-## ⚠️ Credenciales
 
-**Definición:** Se debe evitar compartir información sensible como contraseñas, tokens de acceso o datos privados en prompts de IA.
+## 🔑 Credenciales
+
+**Nunca compartas información sensible en prompts de IA.**
 
 ::: columns
 ::: {.column width="50%"}
-❌ **Mal prompt:**
+❌ **Prompt inadecuado:**
 
-> "Mi API key es `1234-5678`, y mi contraseña es `mypassword123`. ¿Puedes conectarte por mí?"
+> "Mi API key es `1234-5678` y mi contraseña es `mypassword123`. ¿Puedes conectarte por mí?"
 :::
-
-::: {.column .incremental width="50%"}
-✅ **Buen prompt:**
+::: {.column width="50%"}
+✅ **Prompt correcto:**
 
 > "¿Cómo guardar credenciales en un archivo `.env` y cargarlas de forma segura en Python?"
 :::
 :::
 
+::: {.callout-important style="font-size:0.80em;"}
+Los prompts enviados a servicios en la nube pueden ser almacenados, usados para entrenamiento o accedidos por terceros según los términos de servicio.
+:::
+
 ## 🔒 Privacidad
 
-**Definición:** Los prompts no deben solicitar ni exponer datos personales. Es esencial proteger la identidad y privacidad de las personas al interactuar con modelos de lenguaje.
+**Los prompts no deben exponer datos personales de terceros.**
 
 ::: columns
 ::: {.column width="50%"}
 ❌ **Prompt inadecuado:**
 
-> "Tengo el RUT y dirección de una persona. ¿Puedes decirme su número de teléfono o redes sociales?"
+> "Tengo el RUT y dirección de una persona. ¿Puedes decirme su número de teléfono?"
+:::
+::: {.column width="50%"}
+✅ **Prompt correcto:**
+
+> "¿Cómo anonimizar datos personales antes de usarlos en un análisis?"
+:::
 :::
 
-::: {.column .incremental width="50%"}
-✅ **Prompt recomendado:**
-
-> "Explícame cómo anonimizar datos sensibles correctamente."
-:::
+::: {.callout-important style="font-size:0.80em;"}
+La Ley 19.628 de Chile regula el tratamiento de datos personales. Compartir datos identificables con servicios externos puede constituir una infracción.
 :::
 
-## 📐 Tareas {background-image="images/background.jpg" background-opacity="0.25"}
+## 📐 Aprendizaje y tareas
 
-**Definición:** Los prompts deben promover el **razonamiento y aprendizaje**, evitando solicitudes que generen respuestas incorrectas o superficiales.
+**Usar IA para aprender, no para evadir el aprendizaje.**
 
 ::: columns
 ::: {.column width="50%"}
 ❌ **Prompt inadecuado:**
 
-> **Paso 1:** "Resuelve esta ecuación sin explicaciones: \$x\^2 + 5x + 6 = 0\$."\
-> **Paso 2:** "Solo quiero la respuesta final."
+> "Resuelve este ejercicio sin explicaciones: $x^2 + 5x + 6 = 0$. Solo dame la respuesta."
+:::
+::: {.column width="50%"}
+✅ **Prompt correcto:**
+
+> "Resuelve paso a paso $x^2 + 5x + 6 = 0$ usando factorización. Explica por qué se eligen esos factores y sugiere otro método."
+:::
 :::
 
-::: {.column .incremental width="50%"}
-✅ **Prompt recomendado:**
+::: {.callout-tip style="font-size:0.80em;"}
+La IA como copiloto amplifica tu aprendizaje. La IA como reemplazo lo bloquea. La diferencia está en **cómo formulas el prompt**.
+:::
 
-> **Paso 1:** "Resuelve paso a paso la ecuación \$x\^2 + 5x + 6 = 0\$ usando factorización."\
-> **Paso 2:** "Explica por qué se eligen esos factores y sugiere otro método de resolución."
+## 🏛️ Uso institucional
+
+**En el contexto organizacional, la IA implica responsabilidades adicionales.**
+
+::: columns
+::: {.column width="50%"}
+**⚠️ Riesgos institucionales:**
+
+- Compartir datos estratégicos confidenciales con servicios externos
+- Publicar contenido generado por IA sin revisión ni validación
+- Usar IA para tomar decisiones sobre personas sin supervisión humana
+- Presentar outputs de IA como trabajo propio sin transparencia
+:::
+::: {.column width="50%"}
+**✅ Buenas prácticas:**
+
+- Revisar y validar siempre los outputs antes de usar
+- Declarar el uso de IA en informes y entregables cuando corresponde
+- Mantener al ser humano en el loop para decisiones que afectan a personas
+- Establecer políticas institucionales claras sobre uso de IA
 :::
 :::
+
 :::
 
 ------------------------------------------------------------------------
 
-##  {background-image="images/background_slides3.png" background-opacity="0.3"}
+##  {background-color="#0F2044"}
 
 ::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
-[No es Magia, es Ciencia]{style="font-size: 1em"}
+[Parte 5]{style="font-size: 1em; color: #4A9FD4;"}
 
-[Actividad]{style="font-size: 1.5em"}
+[Actividad final]{style="font-size: 2em; font-weight: bold;"}
+
+[Crear tu propio chatbot con IA]{style="font-size: 1em; color: #6B7A8D; font-style: italic;"}
 :::
 
 ------------------------------------------------------------------------
 
-## 🤖 Actividad: ¡Crea tu chatbot! {background-image="images/background_slides3.png" background-opacity="0.3"}
+## 🤖 Actividad: ¡Crea tu chatbot!
 
 ::: panel-tabset
+
 ## 🎯 ¿Qué haremos?
 
 <br>
 
-Vamos a crear un chatbot divertido en [NUT-AI](https://cittripio-v2.streamlit.app/) que responda preguntas sobre un tema.
+Vamos a crear un chatbot en [NUT-AI](https://cittripio-v2.streamlit.app/) que responda preguntas sobre un tema elegido por el grupo.
 
-Ejemplos:
+**Ejemplos de personajes:**
 
--   🧙 Un mago que enseña matemáticas
--   🧑‍🍳 Un chef que habla como robot
--   🦸 Un superhéroe que da consejos de salud
+- 🧙 Un mago que enseña matemáticas con metáforas medievales
+- 🧑‍🍳 Un chef que explica conceptos de datos usando recetas de cocina
+- 🦸 Un superhéroe analítico que evalúa riesgos organizacionales
+- 🌍 Un geógrafo que responde preguntas de gestión usando ejemplos de países
+
+::: {.callout-tip}
+El objetivo no es solo que funcione — es que el **system prompt** esté bien diseñado, aplicando los principios de la clase: rol, tarea, contexto y formato.
+:::
 
 ## 🛠️ Pasos
 
 <br>
 
--   Júntate en grupo (2 a 4 personas)
--   Elige un tema
--   Escribe cómo debe hablar el bot
--   Prueba hacerle preguntas
--   Muestra tu bot a los demás 🎉
+1. **Formaos en grupos** de 2 a 4 personas
+2. **Elegid un tema y personaje** para vuestro chatbot
+3. **Escribid el system prompt** usando la estructura: Rol + Tarea + Contexto + Restricciones
+4. **Probad el chatbot** con al menos 5 preguntas distintas
+5. **Identificad sus límites**: ¿en qué falla? ¿cuándo alucina?
+6. **Preparad una presentación breve** (2 min) mostrando el bot y lo aprendido
 
 ## 📦 Entrega
 
 <br>
 
--   El texto que le da personalidad
--   5 preguntas + respuestas
--   Una imagen del bot funcionando
--   Una idea o reflexión (opcional)
+Para cada grupo:
+
+- 📝 El **system prompt** completo que usaron (con la estructura Rol/Tarea/Contexto/Restricciones)
+- 💬 **5 preguntas + respuestas** que demuestran que el bot funciona bien
+- ⚠️ **1 caso donde el bot falla** o alucina (y por qué ocurre)
+- 📸 Una captura de pantalla del bot en funcionamiento
+- 💡 Una reflexión: ¿qué cambiarían en el prompt para mejorar el bot?
 
 ## 🏆 Evaluación
 
 <br>
 
-| ✅ Qué se evalúa     | Puntos  |
-|----------------------|---------|
-| Creatividad 🎨       | 20      |
-| Claridad 🧠          | 20      |
-| Funciona bien ⚙️     | 20      |
-| Buenas respuestas 💬 | 20      |
-| Presentación 🎤      | 20      |
-| **Total**            | **100** |
+| ✅ Qué se evalúa | Descripción | Puntos |
+|---|---|---|
+| 🎨 Creatividad | Originalidad del personaje y tema elegido | 20 |
+| 🧠 Claridad del prompt | Estructura Rol+Tarea+Contexto bien aplicada | 20 |
+| ⚙️ Funcionamiento | El bot responde correctamente las preguntas | 20 |
+| 💬 Calidad de respuestas | Las respuestas son útiles, relevantes y precisas | 20 |
+| 🎤 Presentación | Comunicación clara de lo aprendido y los límites | 20 |
+| **Total** | | **100** |
+
 :::
 
 ------------------------------------------------------------------------
 
-##  {background-image="images/background_slides3.png" background-opacity="0.3"}
-
-::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
-[No es Magia, es Ciencia]{style="font-size: 1em"}
-
-[Conclusiones]{style="font-size: 1.5em"}
-:::
-
-------------------------------------------------------------------------
-
-## 💡Conclusiones {background-image="images/background.jpg" background-opacity="0.25"}
+## Conclusiones del módulo
 
 <br>
 
--   🤔 **Entender la importancia de los prompts**: Un buen diseño de prompts es clave para obtener respuestas más precisas y útiles al interactuar con modelos de lenguaje como ChatGPT.
+```{=html}
+<div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; font-size:0.78em;">
 
--   🌱 **Aplicaciones y uso responsable**: Los modelos de lenguaje tienen un gran potencial, pero es crucial utilizarlos de manera ética y responsable.
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; border-top:4px solid #4A9FD4;">
+    <div style="color:#4A9FD4; font-weight:700; font-size:1.05em; margin-bottom:0.6rem;">📊 Los datos son el insumo</div>
+    <div style="color:#8FA8C8; line-height:1.6;">
+      Sin datos de calidad, ni el mejor modelo ni la mejor IA producen valor. El EDA, la visualización y la comprensión del dominio son siempre el primer paso.
+    </div>
+  </div>
 
--   🚀 **Evolución y futuro de los LLM**: La IA conversacional sigue mejorando, y los avances esperados tendrán un gran impacto en cómo interactuamos con la tecnología en el futuro.
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; border-top:4px solid #C9A84C;">
+    <div style="color:#C9A84C; font-weight:700; font-size:1.05em; margin-bottom:0.6rem;">🧠 Los modelos son herramientas</div>
+    <div style="color:#8FA8C8; line-height:1.6;">
+      ML supervisado, no supervisado e IA generativa son herramientas distintas para problemas distintos. La clave es saber cuándo usar cada una — y cuándo no usarlas.
+    </div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; border-top:4px solid #27AE60;">
+    <div style="color:#6fcf6f; font-weight:700; font-size:1.05em; margin-bottom:0.6rem;">🎯 El criterio es tuyo</div>
+    <div style="color:#8FA8C8; line-height:1.6;">
+      La IA puede generar, resumir, predecir y sugerir. Pero no puede saber qué historia importa, para quién, ni por qué ahora. Ese juicio sigue siendo el valor diferencial del decisor.
+    </div>
+  </div>
+
+</div>
+```
+
+<br>
+
+::: {style="text-align: center; background: rgba(74,159,212,0.1); border-left: 4px solid #4A9FD4; padding: 0.75rem 1.5rem; border-radius: 4px; font-size: 0.9rem;"}
+**RA3.1 + RA3.2 cumplidos:** implementar metodologías analíticas para decisiones estratégicas y evaluar el uso de IA considerando sus beneficios, limitaciones y aplicaciones responsables.
+:::
 
 ------------------------------------------------------------------------
 
-## 🎉 ¡Gracias por Participar! {background-image="images/background.jpg" background-opacity="0.25"}
+## Próximos pasos: evaluaciones del módulo
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+
+::: {.callout-note}
+## 📊 Presentación aplicada (60%) — RA3.1
+
+Analiza un conjunto de datos organizacionales (reales o simulados) y formula decisiones estratégicas a partir de visualizaciones y hallazgos.
+
+**Elementos esperados:**
+- EDA documentado con estadísticos y gráficos
+- Insight principal claramente comunicado
+- Decisión estratégica fundamentada en los datos
+- Presentación de 10–15 minutos
+:::
+
+:::
+::: {.column width="50%"}
+
+::: {.callout-important}
+## 📝 Ensayo breve (40%) — RA3.2
+
+Evaluación crítica de una aplicación de IA en gestión organizacional, identificando riesgos, beneficios y condiciones para su implementación responsable.
+
+**Elementos esperados:**
+- Descripción del caso de IA analizado
+- Análisis de beneficios con evidencia
+- Identificación de riesgos concretos
+- Condiciones y recomendaciones para implementación responsable
+- 3–5 páginas, formato académico
+:::
+
+:::
+:::
+
+------------------------------------------------------------------------
+
+## 🎉 ¡Gracias por Participar!
 
 ::: columns
 ::: {.column width="50%"}
 <br>
 
-❓¿Preguntas?
+❓ ¿Preguntas?
 
 👏 Responder [encuesta](https://docs.google.com/forms/d/e/1FAIpQLSd2CseqhHUjdmvr46ZDb_Aa2iUYEjLAIE4MwLztled5ytRJvg/viewform?usp=dialog)
 
-🥳 Disfrutar del Evento!
-:::
+🥳 ¡Gracias por el módulo completo!
 
+<br>
+
+**Contacto:**
+
+- 🌐 [fralfaro.github.io/portfolio](https://fralfaro.github.io/portfolio/)
+- 💼 [linkedin.com/in/faam](https://www.linkedin.com/in/faam/)
+- 📧 francisco.alfaro@usm.cl
+
+:::
 ::: {.column width="50%" align="center"}
-![](images/qr_citt2.png){width="400"}
-:::
-:::
+![](images/qr_citt2.png){width="380"}
 
-> 🔗 Nuestro Sitio Web: [sethnut.com/talks](https://sethnut.com/talks/)
+::: {style="font-size: 0.75em; color: #6B7A8D; margin-top: 0.5rem;"}
+🔗 [sethnut.com/talks](https://sethnut.com/talks/)
+:::
+:::
+:::
 
 ```{=html}
 <style>
-/* Ajusta el tamaño del título y subtítulo */
 .reveal .slides h1 {
-  font-size: 2em; /* Tamaño más pequeño para el título */
+  font-size: 2em;
 }
-
 .reveal .slides h2 {
-  font-size: 1.5em; /* Tamaño más pequeño para el subtítulo */
+  font-size: 1.5em;
 }
-
-/* Ajusta el tamaño del texto en los párrafos */
 .reveal .slides p {
-  font-size: 0.8em; /* Texto más pequeño */
+  font-size: 0.8em;
 }
-
-/* Ajusta el tamaño de las tablas */
 .reveal .slides table {
-  font-size: 0.8em; /* Tamaño de fuente más pequeño en las tablas */
-  width: 90%; /* Ajusta el ancho de la tabla */
-  margin: 0 auto; /* Centra la tabla */
+  font-size: 0.8em;
+  width: 90%;
+  margin: 0 auto;
 }
-
-/* Ajusta el tamaño de los bullets */
 .reveal .slides ul {
-  font-size: 0.8em; /* Tamaño de fuente más pequeño en los bullets */
+  font-size: 1em;
 }
-
 .reveal .slide-logo {
-   max-height: 2em !important;
+   max-height: 3em !important;
 }
 </style>
 ```

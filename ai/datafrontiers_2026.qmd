@@ -43,21 +43,20 @@ Conferencia — 2024
 :::
 
 ::: author-block
-Francisco Alfaro Medina · Valeska Canales · Aníbal Romo\
+Francisco Alfaro Medina · Valeska Canales\
 Universidad Técnica Federico Santa María\
-Dirección de Transformación Digital · 2024
+Dirección de Transformación Digital · 2026
 :::
 
 ------------------------------------------------------------------------
 
 ## Sobre Nosotros {background-color="#f8f9fa"}
 
-
 <br>
 
 ```{=html}
 <style>
-.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 1rem 0; }
+.team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 1rem 0; }
 .card { background: #0F2044; border-radius: 12px; overflow: hidden; border: 0.5px solid rgba(255,255,255,0.1); }
 .card-top { background: #0F2044; padding: 1.5rem 1rem 0; text-align: center; }
 .avatar { width: 72px; height: 72px; border-radius: 50%; border: 2.5px solid #C9A84C; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 500; color: #C9A84C; margin: 0 auto 0.75rem; background: #0a1a38; }
@@ -93,23 +92,10 @@ Dirección de Transformación Digital · 2024
       <p class="card-bio">Especialista en visualización, storytelling y comunicación de datos.</p>
       <a class="btn-link" href="https://vcanalesp.github.io/portafolio/">🌐 Portfolio</a>
     </div>
-  </div>
-  <div class="card">
-    <div class="card-top">
-      <div class="avatar">AR</div>
-      <p class="card-name">Aníbal Romo</p>
-      <p class="card-role">Gestión del Cambio Organizacional</p>
-    </div>
-    <div class="card-wave"></div>
-    <div class="card-bottom">
-      <p class="card-bio">Profesional en transformación digital e innovación institucional.</p>
-      <a class="btn-link" href="#">💼 LinkedIn</a>
-    </div>
-  </div>
 </div>
 ```
 
-## Agenda 
+## Agenda
 
 ::: columns
 ::: {.column .incremental width="30%"}
@@ -129,10 +115,9 @@ Dirección de Transformación Digital · 2024
 
 ------------------------------------------------------------------------
 
-##  
+## 
 
 ::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
-
 ::: {.callout-note style="font-size: 1.5em;"}
 ## Storytelling principle #1
 
@@ -145,7 +130,7 @@ Nunca revelar el final antes de tiempo.\
 
 ------------------------------------------------------------------------
 
-## Agenda (v2) 
+## Agenda (v2)
 
 ::: incremental
 1.  Nunca reveles [el final]{style="background-color:black;"}\
@@ -158,7 +143,7 @@ Nunca revelar el final antes de tiempo.\
 
 ------------------------------------------------------------------------
 
-## Qué es Storytelling? 
+## Qué es Storytelling?
 
 ::: columns
 ::: {.column width="50%"}
@@ -184,7 +169,7 @@ Use it well.
 
 ------------------------------------------------------------------------
 
-## Qué es Data Storytelling? 
+## Qué es Data Storytelling?
 
 <br>
 
@@ -200,10 +185,9 @@ Use it well.
 📊 **Data Storytelling** es una forma de comunicar con datos.
 :::
 
-
 ------------------------------------------------------------------------
 
-## Ohh, nuestros cerebros son hackables... 
+## Ohh, nuestros cerebros son hackables...
 
 ::: r-stack
 ![](images/storytelling/sketplanation2.png){.fragment .fade-in-then-out fig-align="center" width="70%"}
@@ -213,7 +197,7 @@ Use it well.
 
 ------------------------------------------------------------------------
 
-## Atención y memoria 
+## Atención y memoria
 
 <br>
 
@@ -225,7 +209,7 @@ Use it well.
 
 ------------------------------------------------------------------------
 
-## Narrativa 
+## Narrativa
 
 ::: columns
 ::: {.column width="60%"}
@@ -253,7 +237,7 @@ Facts inform — emotions inspire action.
 
 ------------------------------------------------------------------------
 
-## Más que gráficos bonitos 
+## Más que gráficos bonitos
 
 ::: columns
 ::: {.column width="50%"}
@@ -271,7 +255,7 @@ Facts inform — emotions inspire action.
 
 ------------------------------------------------------------------------
 
-##  
+## 
 
 ::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
 ::: callout-note
@@ -289,7 +273,7 @@ Focus only on what moves the story forward.
 
 ------------------------------------------------------------------------
 
-## Ejemplo: Spotify Wrapped 
+## Ejemplo: Spotify Wrapped
 
 ::: columns
 ::: {.column .fragment width="30%" fragment-index="1"}
@@ -299,12 +283,11 @@ Focus only on what moves the story forward.
 ::: {.column .center width="40%"}
 <br><br><br><br>
 
-Cómo hacer millones de personas <br>
-compartir estadísticas en redes sociales?
+Cómo hacer millones de personas <br> compartir estadísticas en redes sociales?
 :::
 
 ::: {.column .fragment width="30%" fragment-index="1"}
-![](images/storytelling/spotify2.png){fig-align="center"  width="85%" height="100%"}
+![](images/storytelling/spotify2.png){fig-align="center" width="85%" height="100%"}
 :::
 :::
 
@@ -312,7 +295,7 @@ compartir estadísticas en redes sociales?
 
 ------------------------------------------------------------------------
 
-## Visualización ... 
+## Visualización ...
 
 ::: columns
 ::: {.column .fragment width="60%"}
@@ -335,7 +318,7 @@ compartir estadísticas en redes sociales?
 
 ------------------------------------------------------------------------
 
-##  
+## 
 
 <br>
 
@@ -371,7 +354,7 @@ compartir estadísticas en redes sociales?
 
 ------------------------------------------------------------------------
 
-##  
+## 
 
 ::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
 ::: callout-note
@@ -383,7 +366,7 @@ compartir estadísticas en redes sociales?
 
 ------------------------------------------------------------------------
 
-## Mejores Gráficos para tus Datos 
+## Mejores Gráficos para tus Datos
 
 ::: r-stack
 <br>
@@ -403,7 +386,7 @@ Bar, scatter, box, heatmap, big text — that's 90% of data storytelling.\
 Simple wins.
 :::
 
-## 4 Pilares Visualización - Noah Iliinsky 
+## 4 Pilares Visualización - Noah Iliinsky
 
 ::: columns
 ::: {.column .fragment .incremental width="60%"}
@@ -424,7 +407,7 @@ Simple wins.
 
 [(C) Noah Iliinsky: "Four Pillars of Visualization" - YouTube.]{style="font-size: 0.75em; color: gray"}
 
-## Herramientas 
+## Herramientas
 
 ::: r-stack
 ![](images/toolsbi.png){.fragment .fade-in-then-out fig-align="center" width="100%"}
@@ -501,30 +484,31 @@ The principle stays. The tools change.
 
 ::: columns
 ::: {.column width="50%"}
-
 ### Generar narrativa
-- **ChatGPT o1 / Claude 3.5** → guión, insights, resumen ejecutivo
-- **Gemini 2.0** → análisis multimodal (sube el gráfico, pide la historia)
-- **NotebookLM** → convierte tu dataset en podcast o briefing
+
+-   **ChatGPT o1 / Claude 3.5** → guión, insights, resumen ejecutivo
+-   **Gemini 2.0** → análisis multimodal (sube el gráfico, pide la historia)
+-   **NotebookLM** → convierte tu dataset en podcast o briefing
 
 ### Crear visualizaciones
-- **Napkin AI** → texto → diagrama en segundos
-- **Gamma** → datos → presentación completa
-- **Julius AI** → chat con tu CSV, genera gráficos automáticamente
+
+-   **Napkin AI** → texto → diagrama en segundos
+-   **Gamma** → datos → presentación completa
+-   **Julius AI** → chat con tu CSV, genera gráficos automáticamente
 :::
 
 ::: {.column .fragment width="50%"}
-
 ### Ejecutar y desplegar
-- **Streamlit + Claude API** → apps de datos con lenguaje natural
-- **Evidence.dev** → reportes en Markdown con SQL en vivo
-- **Observable Framework** → dashboards estáticos de alto rendimiento
+
+-   **Streamlit + Claude API** → apps de datos con lenguaje natural
+-   **Evidence.dev** → reportes en Markdown con SQL en vivo
+-   **Observable Framework** → dashboards estáticos de alto rendimiento
 
 ### Modelos locales (sin mandar datos a la nube)
-- **Ollama + LLaMA 3 / Mistral** → corre modelos en tu laptop
-- **LM Studio** → interfaz visual para modelos locales
-- **Anything LLM** → RAG local sobre tus propios documentos
 
+-   **Ollama + LLaMA 3 / Mistral** → corre modelos en tu laptop
+-   **LM Studio** → interfaz visual para modelos locales
+-   **Anything LLM** → RAG local sobre tus propios documentos
 :::
 :::
 
@@ -540,28 +524,24 @@ For institutional data (UTFSM, health, finance) this is critical.
 
 ::: columns
 ::: {.column width="55%"}
-
 <br>
 
 Un **agente** no solo responde — planifica, ejecuta pasos y usa herramientas.
 
-::: {.fragment}
-
+::: fragment
 :::
 :::
 
 ::: {.column .fragment width="45%"}
-
 ### Frameworks en 2026
 
-| Herramienta | Para qué |
-|-------------|----------|
-| **Claude Code** | Agente de código en terminal |
-| **LangGraph** | Flujos multi-agente complejos |
-| **CrewAI** | Equipos de agentes especializados |
-| **n8n** | Automatización sin código |
+| Herramienta        | Para qué                          |
+|--------------------|-----------------------------------|
+| **Claude Code**    | Agente de código en terminal      |
+| **LangGraph**      | Flujos multi-agente complejos     |
+| **CrewAI**         | Equipos de agentes especializados |
+| **n8n**            | Automatización sin código         |
 | **Copilot Studio** | Agentes empresariales (Microsoft) |
-
 :::
 :::
 
@@ -575,8 +555,7 @@ For data storytelling: the agent does the EDA, you review the story.
 
 ## IA + Visualización: el estado del arte {background-image="images/slide-normal.jpg"}
 
-::: {.r-stack}
-
+::: r-stack
 ![Gamma: de bullet points a presentación completa](images/ai/gamma_demo.gif){.fragment .fade-in-then-out fig-align="center" width="85%"}
 
 ![Julius AI: chat con tu CSV](images/ai/julius_demo.gif){.fragment .fade-in-then-out fig-align="center" width="85%"}
@@ -584,7 +563,6 @@ For data storytelling: the agent does the EDA, you review the story.
 ![Napkin AI: texto → diagrama](images/ai/napkin_demo.gif){.fragment .fade-in-then-out fig-align="center" width="75%"}
 
 ![NotebookLM: tu dataset como fuente](images/ai/notebooklm_demo.gif){.fragment fig-align="center" width="80%"}
-
 :::
 
 ::: notes
@@ -601,7 +579,7 @@ NotebookLM: https://notebooklm.google.com — best for document Q&A.
 
 ------------------------------------------------------------------------
 
-## Agenda (v2) 
+## Agenda (v2)
 
 ::: incremental
 1.  Nunca reveles el [**final**]{.fragment style="color:grey;"}\
@@ -620,7 +598,7 @@ Simple rules to tell better stories with data.
 
 ------------------------------------------------------------------------
 
-## 🎉 ¡Gracias por Participar! 
+## 🎉 ¡Gracias por Participar!
 
 ::: columns
 ::: {.column width="50%"}

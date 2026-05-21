@@ -51,7 +51,6 @@ Dirección de Transformación Digital · 2026
 
 ## Sobre Nosotros {background-color="#f8f9fa"}
 
-
 <br>
 
 ```{=html}
@@ -112,7 +111,7 @@ Dirección de Transformación Digital · 2026
 
 ::: columns
 ::: {.column .incremental width="30%"}
--
+-   
 
 -   No
 
@@ -128,10 +127,9 @@ Dirección de Transformación Digital · 2026
 
 ------------------------------------------------------------------------
 
-##
+## 
 
 ::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
-
 ::: {.callout-note style="font-size: 1.5em;"}
 ## Storytelling principle #1
 
@@ -151,6 +149,47 @@ Nunca revelar el final antes de tiempo.\
 2.  Visualizar más rápido [no siempre es mejor.]{style="background-color:black;"}
 3.  El juicio humano [es tu ventaja competitiva.]{style="background-color:black;"}
 4.  Tu primera versión [seguirá siendo horrible.]{style="background-color:black;"}
+:::
+
+------------------------------------------------------------------------
+
+## ¿Por qué esta charla ahora? {background-image="images/slide-normal.jpg"}
+
+<br>
+
+```{=html}
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; font-size:0.80em;">
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.4rem; color:white;">
+    <div style="color:#C9A84C; font-size:1em; margin-bottom:0.8rem; font-weight:700;">📈 El contexto ha cambiado</div>
+    <div style="display:flex; flex-direction:column; gap:0.5rem; color:#8FA8C8; line-height:1.6;">
+      <div>• GPT-4 era un prototipo hace 3 años. Hoy es la baseline.</div>
+      <div>• Los analistas de datos compiten con herramientas que producen dashboards en segundos.</div>
+      <div>• La presión por "resultados rápidos con IA" llega desde arriba y desde abajo.</div>
+    </div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.4rem; color:white;">
+    <div style="color:#C9A84C; font-size:1em; margin-bottom:0.8rem; font-weight:700;">🎯 Lo que no cambió</div>
+    <div style="display:flex; flex-direction:column; gap:0.5rem; color:#8FA8C8; line-height:1.6;">
+      <div>• Los datos por sí solos nunca convencieron a nadie.</div>
+      <div>• Una decisión mala tomada más rápido sigue siendo una mala decisión.</div>
+      <div>• El criterio sobre qué historia contar sigue siendo territorio humano.</div>
+    </div>
+  </div>
+
+</div>
+```
+
+. . .
+
+::: {style="text-align: center; background: rgba(201,168,76,0.1); border-left: 4px solid #C9A84C; padding: 0.75rem 1.5rem; border-radius: 4px; font-size: 0.95rem; margin-top:1rem;"}
+La pregunta no es si usar IA para tus datos. Es **cómo usarla sin perder el juicio**.
+:::
+
+::: notes
+This is the "why now" framing. The landscape shifted fast.\
+The analytic craft still matters — but the tools have fundamentally changed the starting point.
 :::
 
 # Storytelling {.title-middle-dark background-image="images/horst_quarto_penguins_share.png" data-state="no-logo"}
@@ -198,7 +237,6 @@ Use it well.
 ::: {style="text-align: center; "}
 📊 **Data Storytelling** es una forma de comunicar con datos.
 :::
-
 
 ------------------------------------------------------------------------
 
@@ -270,7 +308,7 @@ Facts inform — emotions inspire action.
 
 ------------------------------------------------------------------------
 
-##
+## 
 
 ::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
 ::: callout-note
@@ -298,12 +336,11 @@ Focus only on what moves the story forward.
 ::: {.column .center width="40%"}
 <br><br><br><br>
 
-Cómo hacer millones de personas <br>
-compartir estadísticas en redes sociales?
+Cómo hacer millones de personas <br> compartir estadísticas en redes sociales?
 :::
 
 ::: {.column .fragment width="30%" fragment-index="1"}
-![](images/storytelling/spotify2.png){fig-align="center"  width="85%" height="100%"}
+![](images/storytelling/spotify2.png){fig-align="center" width="85%" height="100%"}
 :::
 :::
 
@@ -334,7 +371,7 @@ compartir estadísticas en redes sociales?
 
 ------------------------------------------------------------------------
 
-##
+## 
 
 <br>
 
@@ -370,7 +407,7 @@ compartir estadísticas en redes sociales?
 
 ------------------------------------------------------------------------
 
-##
+## 
 
 ::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
 ::: callout-note
@@ -502,23 +539,20 @@ The principle stays. The tools change.
 
 ::: columns
 ::: {.column width="55%"}
-
 > *"Contar historias con datos siempre ha sido un desafío. Transformar números en narrativas que informen, persuadan y movilicen requiere claridad visual, estructura narrativa y criterio comunicacional."*
 
 <br>
 
-::: {.fragment}
+::: fragment
 Durante años, ese trabajo dependía **casi completamente del analista**:
 
-- ✍️ Elegir el gráfico correcto
-- 🧵 Encontrar el hilo conductor
-- 🎯 Adaptar el mensaje a la audiencia
+-   ✍️ Elegir el gráfico correcto
+-   🧵 Encontrar el hilo conductor
+-   🎯 Adaptar el mensaje a la audiencia
 :::
-
 :::
 
 ::: {.column .fragment width="45%"}
-
 <br><br>
 
 ```{=html}
@@ -528,7 +562,6 @@ Durante años, ese trabajo dependía **casi completamente del analista**:
   <p style="color: #ffffff; font-size: 0.95rem; margin: 0;">está cambiando esa ecuación<br>de formas que recién<br>empezamos a entender.</p>
 </div>
 ```
-
 :::
 :::
 
@@ -697,25 +730,23 @@ The analyst's critical thinking is more valuable than ever.
 
 ::: columns
 ::: {.column width="50%"}
-
 <br>
 
 ### Narrativa
-- Proponer **estructuras narrativas** (problema → tensión → resolución)
-- Generar **versiones por audiencia**: directivo, técnico, prensa
-- Escribir **resúmenes ejecutivos** desde un dataset
-- Identificar el **insight principal** entre cientos de métricas
 
+-   Proponer **estructuras narrativas** (problema → tensión → resolución)
+-   Generar **versiones por audiencia**: directivo, técnico, prensa
+-   Escribir **resúmenes ejecutivos** desde un dataset
+-   Identificar el **insight principal** entre cientos de métricas
 :::
 
 ::: {.column .fragment width="50%"}
-
 ### Visualización
-- Sugerir el **tipo de gráfico** más adecuado para cada mensaje
-- Describir en lenguaje natural **qué muestra** un gráfico
-- Generar **código completo** (Python/R/Vega-Lite) desde una descripción
-- Proponer **paletas y jerarquía visual** según la historia
 
+-   Sugerir el **tipo de gráfico** más adecuado para cada mensaje
+-   Describir en lenguaje natural **qué muestra** un gráfico
+-   Generar **código completo** (Python/R/Vega-Lite) desde una descripción
+-   Proponer **paletas y jerarquía visual** según la historia
 :::
 :::
 
@@ -738,30 +769,31 @@ Every one of these capabilities requires human review, context, and judgment to 
 
 ::: columns
 ::: {.column width="50%"}
-
 ### Generar narrativa
-- **ChatGPT o1 / Claude 3.5** → guión, insights, resumen ejecutivo
-- **Gemini 2.0** → análisis multimodal (sube el gráfico, pide la historia)
-- **NotebookLM** → convierte tu dataset en podcast o briefing
+
+-   **ChatGPT o1 / Claude 3.5** → guión, insights, resumen ejecutivo
+-   **Gemini 2.0** → análisis multimodal (sube el gráfico, pide la historia)
+-   **NotebookLM** → convierte tu dataset en podcast o briefing
 
 ### Crear visualizaciones
-- **Napkin AI** → texto → diagrama en segundos
-- **Gamma** → datos → presentación completa
-- **Julius AI** → chat con tu CSV, genera gráficos automáticamente
+
+-   **Napkin AI** → texto → diagrama en segundos
+-   **Gamma** → datos → presentación completa
+-   **Julius AI** → chat con tu CSV, genera gráficos automáticamente
 :::
 
 ::: {.column .fragment width="50%"}
-
 ### Ejecutar y desplegar
-- **Streamlit + Claude API** → apps de datos con lenguaje natural
-- **Evidence.dev** → reportes en Markdown con SQL en vivo
-- **Observable Framework** → dashboards estáticos de alto rendimiento
+
+-   **Streamlit + Claude API** → apps de datos con lenguaje natural
+-   **Evidence.dev** → reportes en Markdown con SQL en vivo
+-   **Observable Framework** → dashboards estáticos de alto rendimiento
 
 ### Modelos locales (sin mandar datos a la nube)
-- **Ollama + LLaMA 3 / Mistral** → corre modelos en tu laptop
-- **LM Studio** → interfaz visual para modelos locales
-- **Anything LLM** → RAG local sobre tus propios documentos
 
+-   **Ollama + LLaMA 3 / Mistral** → corre modelos en tu laptop
+-   **LM Studio** → interfaz visual para modelos locales
+-   **Anything LLM** → RAG local sobre tus propios documentos
 :::
 :::
 
@@ -798,24 +830,21 @@ Speed is a real advantage. But speed without judgment is a trap.
 
 ::: columns
 ::: {.column width="55%"}
-
 Herramientas como **Napkin AI**, **Copilot en Power BI** y los modelos multimodales permiten pasar de datos crudos a visualizaciones en segundos.
 
 <br>
 
-::: {.fragment}
+::: fragment
 Eso es una **ventaja real**:
 
-- ⚡ Explorar decenas de opciones visuales en minutos
-- 🔄 Iterar el mismo gráfico para distintas audiencias
-- 💡 Descubrir patrones que no habrías buscado
-- 🧪 Probar hipótesis visuales sin escribir código
+-   ⚡ Explorar decenas de opciones visuales en minutos
+-   🔄 Iterar el mismo gráfico para distintas audiencias
+-   💡 Descubrir patrones que no habrías buscado
+-   🧪 Probar hipótesis visuales sin escribir código
 :::
-
 :::
 
 ::: {.column .fragment width="45%"}
-
 ```{=html}
 <div style="background: #0F2044; border-radius: 12px; padding: 1.75rem; border: 1px solid rgba(201,168,76,0.4);">
   <p style="color: #C9A84C; font-weight: 700; font-size: 1rem; margin: 0 0 1rem;">Flujo tradicional</p>
@@ -830,7 +859,6 @@ Eso es una **ventaja real**:
   <p style="color: #C9A84C; font-size: 0.82rem; font-weight: 600; margin: 0;">🧑‍⚖️ Analista: curar + validar (45 min)</p>
 </div>
 ```
-
 :::
 :::
 
@@ -847,7 +875,6 @@ More time on judgment, less on mechanics. This is a good trade — if you know t
 
 ::: columns
 ::: {.column width="50%"}
-
 ```{=html}
 <div style="background: #1a0a0a; border-radius: 12px; padding: 1.5rem; border: 2px solid #cc3333;">
   <p style="color: #ff6b6b; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 1rem;">⚠️ Caso real: el gráfico que confunde</p>
@@ -856,28 +883,25 @@ More time on judgment, less on mechanics. This is a good trade — if you know t
   <p style="color: #ff9999; font-size: 0.85rem; line-height: 1.6; margin: 0; font-weight: 600;">Pero nadie puede leerlo en 7 segundos. Y el insight que importa está enterrado en la cuarta barra del segundo año.</p>
 </div>
 ```
-
 :::
 
 ::: {.column .fragment width="50%"}
-
 <br>
 
 **Por qué ocurre:**
 
-- La IA optimiza para *completitud*, no para *claridad*
-- No sabe cuál es el **insight que importa**
-- El gráfico "bonito" genera confianza falsa
-- La velocidad reduce el tiempo de reflexión crítica
+-   La IA optimiza para *completitud*, no para *claridad*
+-   No sabe cuál es el **insight que importa**
+-   El gráfico "bonito" genera confianza falsa
+-   La velocidad reduce el tiempo de reflexión crítica
 
 <br>
 
-::: {.fragment}
+::: fragment
 ::: {style="background: rgba(201,168,76,0.1); border-left: 4px solid #C9A84C; padding: 0.75rem 1.2rem; border-radius: 4px; font-size: 0.9rem;"}
 **El gráfico perfecto para la historia incorrecta sigue siendo un error.**
 :::
 :::
-
 :::
 :::
 
@@ -936,8 +960,7 @@ If you can't answer that in 5 seconds, the chart isn't done yet.
 
 ## IA + Visualización: el estado del arte {background-image="images/slide-normal.jpg"}
 
-::: {.r-stack}
-
+::: r-stack
 ![Gamma: de bullet points a presentación completa](images/ai/gamma_demo.gif){.fragment .fade-in-then-out fig-align="center" width="85%"}
 
 ![Julius AI: chat con tu CSV](images/ai/julius_demo.gif){.fragment .fade-in-then-out fig-align="center" width="85%"}
@@ -945,7 +968,6 @@ If you can't answer that in 5 seconds, the chart isn't done yet.
 ![Napkin AI: texto → diagrama](images/ai/napkin_demo.gif){.fragment .fade-in-then-out fig-align="center" width="75%"}
 
 ![NotebookLM: tu dataset como fuente](images/ai/notebooklm_demo.gif){.fragment fig-align="center" width="80%"}
-
 :::
 
 ::: notes
@@ -962,37 +984,32 @@ NotebookLM: https://notebooklm.google.com — best for document Q&A.
 
 ::: columns
 ::: {.column width="55%"}
-
 <br>
 
 Un **agente** no solo responde — planifica, ejecuta pasos y usa herramientas.
 
-::: {.fragment}
-
+::: fragment
 <br>
 
 **En data storytelling:**
 
-- 🔍 El agente hace el EDA y describe los patrones
-- 📊 Elige y genera la visualización adecuada
-- 📝 Propone una narrativa por audiencia
-- 🔁 El analista **revisa la historia, no el código**
-
+-   🔍 El agente hace el EDA y describe los patrones
+-   📊 Elige y genera la visualización adecuada
+-   📝 Propone una narrativa por audiencia
+-   🔁 El analista **revisa la historia, no el código**
 :::
 :::
 
 ::: {.column .fragment width="45%"}
-
 ### Frameworks en 2026
 
-| Herramienta | Para qué |
-|-------------|----------|
-| **Claude Code** | Agente de código en terminal |
-| **LangGraph** | Flujos multi-agente complejos |
-| **CrewAI** | Equipos de agentes especializados |
-| **n8n** | Automatización sin código |
+| Herramienta        | Para qué                          |
+|--------------------|-----------------------------------|
+| **Claude Code**    | Agente de código en terminal      |
+| **LangGraph**      | Flujos multi-agente complejos     |
+| **CrewAI**         | Equipos de agentes especializados |
+| **n8n**            | Automatización sin código         |
 | **Copilot Studio** | Agentes empresariales (Microsoft) |
-
 :::
 :::
 
@@ -1145,23 +1162,20 @@ AI amplifies each step. Humans own the decisions at each step.
 
 ::: columns
 ::: {.column width="48%"}
-
 **El dato:** La tasa de deserción estudiantil en primer año aumentó un 18% en el último semestre.
 
 <br>
 
-::: {.fragment}
+::: fragment
 **Sin framework** (lo que haría la IA sola):
 
 > *"Las métricas de retención estudiantil muestran una variación negativa de 18 puntos porcentuales en el período analizado. Se recomienda revisar los factores asociados."*
 
 🔴 Correcto. Inútil.
 :::
-
 :::
 
 ::: {.column .fragment width="52%"}
-
 **Con framework** (analista + IA):
 
 ::: {style="font-size: 0.83rem; line-height: 1.6;"}
@@ -1173,7 +1187,6 @@ AI amplifies each step. Humans own the decisions at each step.
 
 ✅ **Resolución:** *"Tenemos la misma señal de alarma que en 2022. En 2022 no actuamos. Esta vez, tenemos 6 semanas para hacer la diferencia."*
 :::
-
 :::
 :::
 
@@ -1349,6 +1362,73 @@ The analyst keeps full control of the visual output — but starts from a much b
 
 ------------------------------------------------------------------------
 
+------------------------------------------------------------------------
+
+## Demo 4 · Checklist del analista: evaluar el output de la IA {background-image="images/slide-normal.jpg"}
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "|1-12|14-36|38-50"
+
+import anthropic
+import json
+
+client = anthropic.Anthropic()
+
+def evaluar_narrativa_ia(narrativa: str, proposito: str, audiencia: str) -> dict:
+    """
+    Usa la IA para autoevaluar su propio output narrativo contra
+    los criterios del framework Propósito-Audiencia-Tensión-Resolución.
+    El analista usa este score como punto de partida para la revisión.
+    """
+    
+    prompt = f"""Eres un editor senior de comunicación de datos.
+Evalúa esta narrativa generada por IA según 4 criterios.
+Responde SOLO en JSON, sin explicación adicional.
+
+NARRATIVA: {narrativa}
+PROPÓSITO DECLARADO: {proposito}
+AUDIENCIA: {audiencia}
+
+Evalúa cada criterio con score 1-5 y una observación concisa:
+{{
+  "proposito": {{"score": int, "obs": "str"}},
+  "audiencia": {{"score": int, "obs": "str"}},
+  "tension": {{"score": int, "obs": "str"}},
+  "resolucion": {{"score": int, "obs": "str"}},
+  "score_total": int,
+  "accion_recomendada": "str"
+}}"""
+
+    response = client.messages.create(
+        model="claude-sonnet-4-5",
+        max_tokens=512,
+        messages=[{"role": "user", "content": prompt}]
+    )
+    
+    return json.loads(response.content[0].text)
+
+# Uso real:
+narrativa_generada = """El análisis de los datos del último trimestre revela
+una tendencia negativa en la zona norte con un 18% de variación..."""
+
+resultado = evaluar_narrativa_ia(
+    narrativa=narrativa_generada,
+    proposito="aprobar inversión en zona norte antes de julio",
+    audiencia="directorio ejecutivo con presión presupuestaria"
+)
+
+print(f"Score total: {resultado['score_total']}/20")
+print(f"Acción: {resultado['accion_recomendada']}")
+```
+
+::: notes
+This is the meta-demo: using AI to evaluate AI output.\
+The analyst uses this as a structured checklist, not as a final verdict.\
+The key insight: making the evaluation criteria explicit forces you to think about them before generating.
+:::
+
 ## Lo que te llevas hoy {background-image="images/slide-normal.jpg"}
 
 <br>
@@ -1404,6 +1484,47 @@ Practical, actionable, no new tools required beyond what they already have.
 :::
 
 ------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+## El checklist del lunes por la mañana {background-image="images/slide-normal.jpg"}
+
+<br>
+
+```{=html}
+<style>
+.checklist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; font-size: 0.80em; }
+.cl-col { background: #0F2044; border-radius: 10px; padding: 1.4rem; color: white; }
+.cl-title { color: #C9A84C; font-weight: 700; font-size: 1em; margin-bottom: 0.8rem; }
+.cl-item { display: flex; align-items: flex-start; gap: 0.6rem; margin-bottom: 0.6rem; color: #d0dce8; line-height: 1.5; }
+.cl-check { color: #6fcf6f; flex-shrink: 0; }
+.cl-warn { color: #F39C12; flex-shrink: 0; }
+</style>
+
+<div class="checklist-grid">
+  <div class="cl-col">
+    <div class="cl-title">✅ Antes de generar con IA</div>
+    <div class="cl-item"><span class="cl-check">□</span><span>¿Tengo claro el propósito de esta historia?</span></div>
+    <div class="cl-item"><span class="cl-check">□</span><span>¿Sé quién es la audiencia específica (no genérica)?</span></div>
+    <div class="cl-item"><span class="cl-check">□</span><span>¿Conozco el contexto organizacional que el modelo no sabe?</span></div>
+    <div class="cl-item"><span class="cl-check">□</span><span>¿Qué acción concreta quiero provocar?</span></div>
+  </div>
+  <div class="cl-col">
+    <div class="cl-title">⚠️ Antes de entregar el output</div>
+    <div class="cl-item"><span class="cl-warn">□</span><span>¿El gráfico se entiende en menos de 7 segundos?</span></div>
+    <div class="cl-item"><span class="cl-warn">□</span><span>¿La narrativa refleja la tensión real, no solo los datos?</span></div>
+    <div class="cl-item"><span class="cl-warn">□</span><span>¿Verifiqué los números citados por la IA?</span></div>
+    <div class="cl-item"><span class="cl-warn">□</span><span>¿La resolución propuesta es realmente viable hoy?</span></div>
+    <div class="cl-item"><span class="cl-warn">□</span><span>¿Hice este output mío, o solo lo pasé?</span></div>
+  </div>
+</div>
+```
+
+::: notes
+Give this to them as a take-home artifact.\
+The key message: the checklist forces you to think BEFORE and AFTER the AI step.\
+That's where the human judgment lives.
+:::
 
 # Conclusiones {.title-top-dark background-image="images/horst_quarto_penguins_thankyou.png" data-state="no-logo"}
 

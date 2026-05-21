@@ -1,530 +1,1031 @@
 ---
-title: "Diplomado Transformación Digital"
-subtitle: "M3 - Semana 01"
+title: "Toma de Decisiones Basadas en Datos e IA"
+subtitle: "Módulo 3 · Clase 1: Introducción"
 author: 
-  - Francisco Alfaro
-date: 21 may 2026
-format: 
+  - "Francisco Alfaro Medina"
+institute: "Dirección de Transformación Digital · UTFSM"
+date: "Mayo 2026"
+date-format: "MMMM YYYY"
+
+format:
   revealjs:
-    width: 1366
-    height: 768
-    theme: simple
+    theme: [default, custom.scss]
     slide-number: true
-    controls: true
-    controls-layout: edges
-    controls-back-arrows: faded
-    transition: slide
-    chalkboard: true
-    callout-appearance: simple
-    code-copy: true
-    highlight-style: arrow
-    title-slide-attributes: 
-      data-background-image: images/background.jpg
-    logo: images/usm.png
+    progress: true
+    history: false
+    transition: fade
+    transition-speed: fast
+    incremental: false
+    fig-align: center
+    highlight-style: github
+    code-block-bg: true
+    center: false
+    width: 1600
+    height: 800
+    logo: "images/usm.png"
+    scrollable: false
+execute:
+  echo: false
+  warning: false
 ---
 
-## Hola mario
+##  {.title-slide background-color="#0F2044"}
 
-::: {=html}
-<iframe src="demo.html" width="100%" height="768px"></iframe>
+::: title-block
+**Toma de Decisiones Basadas en Datos e IA**
+
+Módulo 3 · Clase 1: Introducción al ecosistema de datos
 :::
 
-## Revolución de los Datos
-
-![](images/clase-0/internet_2023.png){.lightbox fig-align="center" width="50%"}
-
-::: notes
--   Hablar de los distintos tipos de Datos.
--   Todo es datos, y está lleno de ellos en Internet y el mundo.
+::: subtitle-block
+Datos · EDA · Visualización · Decisiones estratégicas\
+Diplomado Transformación Digital · DGEC UTFSM · 2026
 :::
 
-## Nace el Data Science (Ciencia de Datos)
-
-![](images/clase-0/data_science.png){.lightbox fig-align="center" width="50%"}
-
-::: notes
--   Explicar las distintas etapas. Qué son cada uno de ellos.
--   Explicar que no estoy de acuerdo con todas las definiciones.
+::: author-block
+Francisco Alfaro Medina\
+Universidad Técnica Federico Santa María\
+Dirección de Transformación Digital · 2026
 :::
 
-## ¿Cómo aprovechar la información que tenemos?
+------------------------------------------------------------------------
 
-::: fragment
+## Sobre el docente {background-color="#f8f9fa"}
 
-Data Mining (Minería de Datos)
+<br>
 
-:   "The process of identifying valid, novel, potentially useful, and ultimately understandable patterns in data." **(Fayyad, Piatetsky-Shapiro & Smith 1996)**
+```{=html}
+<style>
+.team-grid-1 { display: grid; grid-template-columns: 1fr 2fr; gap: 24px; padding: 1rem 0; max-width: 900px; margin: 0 auto; }
+.card { background: #0F2044; border-radius: 12px; overflow: hidden; border: 0.5px solid rgba(255,255,255,0.1); }
+.card-top { background: #0F2044; padding: 1.5rem 1rem 0; text-align: center; }
+.avatar { width: 80px; height: 80px; border-radius: 50%; border: 2.5px solid #C9A84C; display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 500; color: #C9A84C; margin: 0 auto 0.75rem; background: #0a1a38; }
+.card-name { font-size: 16px; font-weight: 500; color: #ffffff; margin: 0 0 0.25rem; }
+.card-role { font-size: 12px; color: #8FA8C8; margin: 0 0 1rem; line-height: 1.4; }
+.card-wave { height: 32px; background: #ffffff; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
+.card-bottom { background: #ffffff; padding: 0.75rem 1rem 1rem; }
+.card-bio { font-size: 12px; color: #555; line-height: 1.6; margin: 0 0 0.875rem; }
+.btn-link { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #185FA5; border: 0.5px solid #378ADD; border-radius: 8px; padding: 5px 12px; text-decoration: none; background: #E6F1FB; margin-right: 6px; }
+.info-card { background: #0F2044; border-radius: 12px; padding: 1.5rem; color: white; }
+.info-title { color: #C9A84C; font-size: 0.9em; font-weight: 700; margin-bottom: 1rem; }
+.info-item { display: flex; align-items: flex-start; gap: 0.6rem; margin-bottom: 0.7rem; font-size: 0.78em; color: #d0dce8; line-height: 1.5; }
+</style>
+
+<div class="team-grid-1">
+  <div class="card">
+    <div class="card-top">
+      <div class="avatar">FA</div>
+      <p class="card-name">Francisco Alfaro</p>
+      <p class="card-role">Líder de Análisis y Modelación Avanzada · DTD UTFSM</p>
+    </div>
+    <div class="card-wave"></div>
+    <div class="card-bottom">
+      <p class="card-bio">Ingeniero matemático especializado en estadística, ciencia de datos e inteligencia artificial. Docente e investigador doctoral en Ingeniería Electrónica, UTFSM.</p>
+      <a class="btn-link" href="https://fralfaro.github.io/portfolio/">🌐 Portfolio</a>
+      <a class="btn-link" href="https://www.linkedin.com/in/faam/">💼 LinkedIn</a>
+    </div>
+  </div>
+  <div class="info-card">
+    <div class="info-title">📋 Sobre este módulo</div>
+    <div class="info-item">📅 <span><strong>3 sesiones</strong> sincrónicas de 3h + actividades asíncronas</span></div>
+    <div class="info-item">🎯 <span>Clase 1: Ecosistema de datos, EDA y visualización</span></div>
+    <div class="info-item">🎯 <span>Clase 2: Modelos predictivos y analítica avanzada</span></div>
+    <div class="info-item">🎯 <span>Clase 3: Inteligencia Artificial en gestión organizacional</span></div>
+    <div class="info-item">📊 <span>Evaluación: Presentación aplicada (60%) + Ensayo breve (40%)</span></div>
+    <div class="info-item">🔗 <span>Metodología: casos reales, simulaciones y herramientas digitales</span></div>
+  </div>
+</div>
+```
+
+------------------------------------------------------------------------
+
+## ¿Qué aprenderemos en este módulo?
+
+<br>
+
+```{=html}
+<style>
+.comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; font-size: 0.80em; }
+.comp-card { background: #0F2044; border-radius: 10px; padding: 1.4rem; color: white; border-left: 4px solid #C9A84C; }
+.comp-label { color: #C9A84C; font-size: 0.8em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+.comp-title { color: white; font-size: 1em; font-weight: 600; margin-bottom: 0.7rem; }
+.comp-items { color: #8FA8C8; line-height: 1.8; }
+</style>
+
+<div class="comp-grid">
+  <div class="comp-card">
+    <div class="comp-label">CE1 — Competencia</div>
+    <div class="comp-title">Decisiones estratégicas basadas en evidencia</div>
+    <div class="comp-items">
+      Fortalecer la capacidad de tomar decisiones fundadas en análisis cuantitativo y el uso ético de herramientas digitales.<br><br>
+      <strong style="color:#4A9FD4;">RA3.1</strong> — Implementar metodologías analíticas para sustentar decisiones alineadas a objetivos organizacionales.
+    </div>
+  </div>
+  <div class="comp-card">
+    <div class="comp-label">CE2 — Competencia</div>
+    <div class="comp-title">Pensamiento analítico e IA aplicada</div>
+    <div class="comp-items">
+      Desarrollar habilidades en interpretación de datos y aprovechamiento de IA para procesos complejos en contextos organizacionales.<br><br>
+      <strong style="color:#4A9FD4;">RA3.2</strong> — Evaluar modelos de IA considerando beneficios, limitaciones y aplicaciones responsables.
+    </div>
+  </div>
+</div>
+```
+
+<br>
+
+::: {style="text-align: center; background: rgba(74,159,212,0.1); border-left: 4px solid #4A9FD4; padding: 0.75rem 1.5rem; border-radius: 4px; font-size: 0.9rem;"}
+El objetivo no es hacer de ustedes científicos de datos — es que **tomen mejores decisiones** usando datos e IA.
 :::
 
-::: fragment
+------------------------------------------------------------------------
 
-Machine Learning (Aprendizaje Automático)
+##  {background-color="#0F2044"}
 
-:   "A computer program is said to learn from experience `E` with respect to some class of tasks `T` and performance measure `P`, if its performance at tasks in `T`, as measured by `P`, improves with experience `E`." **(Mitchell, 2006)**
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Parte 1]{style="font-size: 1em; color: #4A9FD4;"}
+
+[La revolución de los datos]{style="font-size: 2em; font-weight: bold;"}
+
+[¿Por qué los datos cambiaron todo?]{style="font-size: 1em; color: #6B7A8D; font-style: italic;"}
 :::
 
-::: notes
--   Explicar que estos son dos tipos de Approaches con el que hoy en día se enfrentan los datos.
--   El primero más enfocado en un análisis manual.
--   El segundo en un enfoque más automático.
+------------------------------------------------------------------------
+
+## La revolución de los datos
+
+::: columns
+::: {.column width="55%"}
+<br>
+
+- Cada minuto se generan más datos que toda la información escrita en la historia humana hasta 1995.
+- El volumen no es el problema — **la capacidad de extraer valor** sí lo es.
+- Las organizaciones que toman decisiones basadas en datos tienen **5x más probabilidad** de ser más rentables que sus competidores.
+
+::: {.callout-note}
+## El cambio real
+La transformación digital no es sobre tecnología. Es sobre **cómo se toman las decisiones** dentro de una organización.
 :::
 
-## Tipos de Datos
+:::
+::: {.column width="45%"}
+::: {style="text-align: center;"}
+<img src="images/clase-0/internet_2023.png" style="width: 90%; border-radius: 10px;"/>
+:::
+:::
+:::
 
-::: {layout="[ 40, 60 ]"}
-::: {#first-column}
-::: {.fragment fragment-index="1"}
+------------------------------------------------------------------------
+
+## Nace la Ciencia de Datos
+
+::: columns
+::: {.column width="55%"}
+<br>
+
+La **Ciencia de Datos** es el campo interdisciplinario que combina:
+
+- Estadística y matemáticas
+- Programación e ingeniería
+- Conocimiento del dominio (negocio)
+
+Para extraer **conocimiento accionable** desde datos.
+
+::: {.callout-important}
+## Para directivos y gestores
+No necesitan programar — necesitan saber **qué preguntar**, **cómo interpretar** y **cuándo confiar** en un análisis.
+:::
+
+:::
+::: {.column width="45%"}
+::: {style="text-align: center;"}
+<img src="images/clase-0/data_science.png" style="width: 90%; border-radius: 10px;"/>
+:::
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Del dato a la decisión
+
+```{=html}
+<div style="display:flex; align-items:center; justify-content:center; gap:0; margin-top:1rem; font-size:0.78em;">
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem 1.4rem; color:white; text-align:center; min-width:140px;">
+    <div style="font-size:1.8rem; margin-bottom:0.4rem;">📥</div>
+    <div style="color:#4A9FD4; font-weight:700; margin-bottom:0.3rem;">Datos</div>
+    <div style="color:#8FA8C8; font-size:0.9em;">Registros, sensores, formularios, sistemas</div>
+  </div>
+
+  <div style="color:#4A9FD4; font-size:1.5rem; padding:0 0.5rem;">→</div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem 1.4rem; color:white; text-align:center; min-width:140px;">
+    <div style="font-size:1.8rem; margin-bottom:0.4rem;">🔍</div>
+    <div style="color:#4A9FD4; font-weight:700; margin-bottom:0.3rem;">Análisis</div>
+    <div style="color:#8FA8C8; font-size:0.9em;">EDA, estadísticas, visualizaciones</div>
+  </div>
+
+  <div style="color:#4A9FD4; font-size:1.5rem; padding:0 0.5rem;">→</div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem 1.4rem; color:white; text-align:center; min-width:140px;">
+    <div style="font-size:1.8rem; margin-bottom:0.4rem;">💡</div>
+    <div style="color:#4A9FD4; font-weight:700; margin-bottom:0.3rem;">Insights</div>
+    <div style="color:#8FA8C8; font-size:0.9em;">Patrones, anomalías, relaciones</div>
+  </div>
+
+  <div style="color:#4A9FD4; font-size:1.5rem; padding:0 0.5rem;">→</div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem 1.4rem; color:white; text-align:center; min-width:140px;">
+    <div style="font-size:1.8rem; margin-bottom:0.4rem;">📊</div>
+    <div style="color:#4A9FD4; font-weight:700; margin-bottom:0.3rem;">Modelos</div>
+    <div style="color:#8FA8C8; font-size:0.9em;">Predicción, clasificación, clustering</div>
+  </div>
+
+  <div style="color:#4A9FD4; font-size:1.5rem; padding:0 0.5rem;">→</div>
+
+  <div style="background:#1A3A6B; border-radius:10px; padding:1.2rem 1.4rem; color:white; text-align:center; min-width:140px; border:2px solid #C9A84C;">
+    <div style="font-size:1.8rem; margin-bottom:0.4rem;">🎯</div>
+    <div style="color:#C9A84C; font-weight:700; margin-bottom:0.3rem;">Decisión</div>
+    <div style="color:#8FA8C8; font-size:0.9em;">Estratégica, fundada en evidencia</div>
+  </div>
+
+</div>
+
+<div style="text-align:center; margin-top:1.2rem; color:#6B7A8D; font-size:0.78em; font-style:italic;">
+  En este módulo recorremos todo este pipeline — con foco en lo que hace diferente a un decisor analítico.
+</div>
+```
+
+------------------------------------------------------------------------
+
+## Dos enfoques para aprovechar los datos
+
+::: columns
+::: {.column width="50%"}
+
+**Data Mining** *(Minería de Datos)*
+
+> *"El proceso de identificar patrones válidos, novedosos, potencialmente útiles y comprensibles en los datos."*
+> — Fayyad, Piatetsky-Shapiro & Smith (1996)
+
+- Foco en **descubrimiento** de patrones
+- El analista guía la exploración
+- Resultado: hipóteses e insights
+- Más orientado a la **descripción**
+
+:::
+::: {.column width="50%"}
+
+**Machine Learning** *(Aprendizaje Automático)*
+
+> *"Un programa aprende de la experiencia E respecto a tareas T, si su rendimiento mejora con experiencia."*
+> — Mitchell (2006)
+
+- Foco en **predicción** automática
+- El modelo aprende de ejemplos
+- Resultado: función predictiva
+- Más orientado a la **prescripción**
+
+:::
+:::
+
+. . .
+
+::: {style="text-align: center; background: rgba(201,168,76,0.1); border-left: 4px solid #C9A84C; padding: 0.75rem 1.5rem; border-radius: 4px; font-size: 0.9rem; margin-top: 0.5rem;"}
+Ambos enfoques son complementarios. En este módulo aprenderemos cuándo usar cada uno.
+:::
+
+------------------------------------------------------------------------
+
+##  {background-color="#0F2044"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Parte 2]{style="font-size: 1em; color: #4A9FD4;"}
+
+[Tipos de datos que existen]{style="font-size: 2em; font-weight: bold;"}
+
+[No todos los datos se analizan igual]{style="font-size: 1em; color: #6B7A8D; font-style: italic;"}
+:::
+
+------------------------------------------------------------------------
+
+## El universo de los datos
+
+::: columns
+::: {.column width="50%"}
+<br>
+
 ### Datos Estructurados
-:::
-:::
+- Organizados en filas y columnas
+- Fáciles de consultar con SQL
+- Listos para modelos estadísticos clásicos
+- **Ejemplos:** planillas, bases de datos transaccionales, encuestas
 
-::: {#second-column}
-::: {.fragment fragment-index="5"}
+<br>
+
+### Datos Semi-estructurados
+- Tienen estructura pero no tabular
+- **Ejemplos:** JSON, XML, logs de sistemas
+
+:::
+::: {.column width="50%"}
+<br>
+
 ### Datos No Estructurados
+- Sin esquema predefinido
+- Requieren procesamiento especial
+- Representan **~80% de los datos** del mundo
+- **Ejemplos:** imágenes, texto libre, audio, video, redes sociales
+
+::: {.callout-important}
+## Dato clave para directivos
+La mayoría de los datos de su organización son no estructurados (emails, documentos, registros de voz). El valor está en aprender a procesarlos.
 :::
+
 :::
 :::
 
-::: {layout-ncol="6"}
-::: {.fragment fragment-index="2"}
-![](images/clase-0/table.png)
+------------------------------------------------------------------------
+
+## Datos Tabulares {.smaller}
+
+::: columns
+::: {.column width="55%"}
+<br>
+
+<img src="images/clase-0/tab_data.png" style="width: 95%; border-radius: 8px;"/>
+
+:::
+::: {.column width="45%"}
+<br>
+
+::: {.callout-tip}
+**Estructura básica:**
+- **Filas** → Observaciones, instancias, registros (normalmente independientes)
+- **Columnas** → Variables, atributos, features
 :::
 
-::: {.fragment fragment-index="3"}
-![](images/clase-0/ts.png)
+::: {.callout-note}
+**¿Por qué importan?**
+Son el tipo de dato más disponible en empresas y el más amigable para tomar decisiones. Toda planilla de Excel es un dato tabular.
 :::
 
-::: {.fragment fragment-index="6"}
-![](images/clase-0/image.png)
+::: {.callout-warning}
+**Cuidado:** Requieren **conocimiento del negocio** (domain knowledge). Un número sin contexto no dice nada.
 :::
 
-::: {.fragment fragment-index="7"}
-![](images/clase-0/text.png)
-:::
-
-::: {.fragment fragment-index="8"}
-![](images/clase-0/video.png)
-:::
-
-::: {.fragment fragment-index="9"}
-![](images/clase-0/graph.png)
-:::
-:::
-
-::: {layout="[ 40, 60 ]"}
-::: {#first-column}
-::: {.fragment fragment-index="4"}
-![](images/clase-0/ml.jpg){fig-align="left" width="80%"}
-:::
-:::
-
-::: {#second-column}
-::: {.fragment fragment-index="10"}
-![](images/clase-0/dl.png){fig-align="center" width="30%"}
-:::
 :::
 :::
 
-## Tipos de Datos: Datos Tabulares {.smaller}
+------------------------------------------------------------------------
 
-![](images/clase-0/tab_data.png){.lightbox fig-align="center"}
-
-::: callout-tip
--   Filas: Observaciones, instancias, registros. (Normalmente independientes).
--   Columnas: Variables, Atributos, Features.
-:::
-
-::: callout-note
--   Probablemente el tipo de datos más amigable.
--   Requiere conocimiento de negocio (**Domain Knowledge**)
-:::
-
-::: callout-warning
--   Es un % bajísimo del total de datos existentes en el Mundo. También el que más disponible está en las empresas.
--   Distintos `data types`, por lo que normalmente requiere de algún tipo de **preprocesamiento**.
-:::
-
-## Tipos de Datos: Series de Tiempo {.smaller}
-
-::: {layout-ncol="2"}
-![](images/clase-0/ts_data.png){.lightbox fig-align="center" width="70%"}
-
-![](images/clase-0/ts_plot.png){.lightbox fig-align="center" width="100%"}
-:::
-
-::: callout-tip
--   Filas: Instancias temporales (Normalmente interdependientes).
--   Columnas: Variables, Atributos, Features (Univariada o Multivariada).
-:::
-
-::: callout-warning
--   Es un % bajísimo del total de datos existentes en el Mundo.
--   Propiedad temporal requiere **preprocesamiento** y modelos especiales.
-:::
-
-## Tipos de Datos: Imágenes {.smaller}
+## Datos de Series de Tiempo {.smaller}
 
 ::: columns
 ::: {.column width="50%"}
-::: {.fragment fragment-index="1"}
-![](images/clase-0/image_tensor.png){.lightbox}
+<img src="images/clase-0/ts_data.png" style="width: 75%; border-radius: 8px;"/>
 :::
-
-::: {.fragment fragment-index="3"}
-::: callout-tip
--   Este es el tipo de Datos que disparó la Inteligencia Artificial.
--   [¿Cuántos computadores para identificar un Gato? 16,000](https://www.nytimes.com/2012/06/26/technology/in-a-big-network-of-computers-evidence-of-machine-learning.html)
-:::
-:::
-:::
-
 ::: {.column width="50%"}
-::: {.fragment fragment-index="2"}
-![](images/clase-0/tensor_rgb.jpg){.lightbox}
+<img src="images/clase-0/ts_plot.png" style="width: 95%; border-radius: 8px;"/>
 :::
 :::
+
+::: {.callout-tip}
+**Características:** Las instancias son temporales y **no son independientes** — lo que pasó ayer afecta lo que pasa hoy.
 :::
 
-::: notes
--   Explicar el concepto de Tensor, extensión de las matrices. Diferencia entre Grayscale y RGB.
+::: {.callout-note}
+**Ejemplos organizacionales:** ventas mensuales, ausentismo laboral, consumo de recursos, indicadores de productividad trimestral, matrícula universitaria por cohorte.
 :::
 
-## Tipos de Datos: Texto Libre {.smaller}
+------------------------------------------------------------------------
 
-![](images/clase-0/free_text.jpg){.lightbox fig-align="center"}
-
-::: callout-caution
--   Datos Masivos.
--   Dificiles de lidiar ya que deben ser llevarse a una representación numérica.
--   Alto nivel de Sesgo y Subjetividad.
-:::
-
-::: callout-tip
--   Gracias a este tipo de datos se han producido los avances más increíbles del último tiempo: [Transformers](https://arxiv.org/abs/1706.03762)
-:::
-
-## Tipos de Datos: Videos {.smaller}
-
-{{< video https://www.neuralframes.com/videos/new_landingpage_video_squirrel.webm width="800">}}
-
-::: callout-note
--   Los videos no son más que arreglos de imágenes.
--   Son un tipo de dato muy pesado y difícil de lidiar.
--   Requiere alto poder de Procesamiento.
-:::
-
-
-----------------------------------------------------
-
-
-## EDA {.smaller}
-
-> El `Analisis Exploratorio de Datos` (EDA, por sus siglas en inglés) es procedimiento en el cual se analiza un dataset para explorar sus características principales.
-
--   Su objetivo principal es poder familiarizarse con los datos además de encontrar potenciales problemas en su calidad.
--   Principalmente hace uso de técnicas de manipulación de datos y visualizaciones.
+## Imágenes, Texto y Video {.smaller}
 
 ::: columns
-::: column
-![](images/clase-2/eda_obj.png){.lightbox fig-align="center" width="90%"}
+::: {.column width="33%"}
+
+**🖼️ Imágenes**
+
+<img src="images/clase-0/image_tensor.png" style="width: 90%; border-radius: 8px;"/>
+
+Representadas como tensores numéricos (matrices 3D). Este tipo de dato **disparó la IA moderna** — antes de 2012, identificar un gato requería 16.000 computadores.
+
+:::
+::: {.column width="33%"}
+
+**📝 Texto Libre**
+
+<img src="images/clase-0/free_text.jpg" style="width: 90%; border-radius: 8px;"/>
+
+El tipo de dato más abundante en cualquier organización. Emails, actas, informes, reclamos. Gracias al texto surge la IA generativa actual.
+
+:::
+::: {.column width="33%"}
+
+**🎥 Video**
+
+::: {.callout-note style="font-size: 0.78em;"}
+Los videos son **secuencias de imágenes**. Requieren alto poder computacional. Casos de uso: seguridad, manufactura, análisis de comportamiento.
 :::
 
-::: {.column .fragment}
-::: callout-note
-Los hallazgos importantes dentro del proceso se les denomina `insights`.
+::: {.callout-caution style="font-size: 0.78em;"}
+Son el tipo de dato con mayor crecimiento en volumen. Aprovecharlos bien requiere IA especializada.
 :::
 
-::: callout-important
-El uso de visualizaciones inadecuadas podría llevar a **conclusiones erróneas**.
-:::
-
-::: callout-tip
--   Summary.
--   Visualización.
-:::
 :::
 :::
 
+------------------------------------------------------------------------
+
+##  {background-color="#0F2044"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Parte 3]{style="font-size: 1em; color: #4A9FD4;"}
+
+[Análisis Exploratorio de Datos (EDA)]{style="font-size: 2em; font-weight: bold;"}
+
+[Antes de decidir, hay que entender]{style="font-size: 1em; color: #6B7A8D; font-style: italic;"}
+:::
+
+------------------------------------------------------------------------
+
+## ¿Qué es el EDA?
+
+::: columns
+::: {.column width="55%"}
+<br>
+
+> El **Análisis Exploratorio de Datos (EDA)** es el proceso de examinar un dataset para entender sus características principales, descubrir patrones, detectar anomalías y formular hipótesis.
+
+**Objetivos del EDA:**
+
+- Familiarizarse con los datos disponibles
+- Detectar problemas de calidad (valores faltantes, outliers, errores)
+- Identificar relaciones entre variables
+- Generar preguntas que guíen el análisis posterior
+
+:::
+::: {.column width="45%"}
+<img src="images/clase-2/eda_obj.png" style="width: 90%; border-radius: 8px;"/>
+
+::: {.callout-note style="font-size: 0.78em;"}
+Los hallazgos importantes dentro del EDA se llaman **insights** — observaciones que tienen implicancias para la decisión.
+:::
+
+::: {.callout-important style="font-size: 0.78em;"}
+Visualizaciones inadecuadas pueden llevar a **conclusiones erróneas** aunque los datos estén bien.
+:::
+
+:::
+:::
+
+------------------------------------------------------------------------
+
+## EDA: el papel del decisor
+
+<br>
+
+```{=html}
+<div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.2rem; font-size:0.78em;">
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white;">
+    <div style="color:#4A9FD4; font-size:1.2em; margin-bottom:0.5rem;">🔢 Summary estadístico</div>
+    <div style="color:#8FA8C8; line-height:1.7;">
+      Media, mediana, desviación estándar, percentiles.<br>
+      <strong style="color:white;">Para el decisor:</strong> ¿Los números que veo son normales para este negocio o algo está fuera de rango?
+    </div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white;">
+    <div style="color:#4A9FD4; font-size:1.2em; margin-bottom:0.5rem;">📊 Visualización</div>
+    <div style="color:#8FA8C8; line-height:1.7;">
+      Histogramas, scatter plots, series de tiempo.<br>
+      <strong style="color:white;">Para el decisor:</strong> ¿Qué patrón me muestra el gráfico y qué acción implica?
+    </div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white;">
+    <div style="color:#4A9FD4; font-size:1.2em; margin-bottom:0.5rem;">🔍 Detección de problemas</div>
+    <div style="color:#8FA8C8; line-height:1.7;">
+      Outliers, valores faltantes, inconsistencias.<br>
+      <strong style="color:white;">Para el decisor:</strong> ¿Mis datos son confiables para tomar esta decisión?
+    </div>
+  </div>
+
+</div>
+```
+
+<br>
+
+::: {.callout-tip}
+## Regla práctica
+Antes de confiar en cualquier análisis o dashboard, pregunta: **¿Alguien hizo un EDA de estos datos?** Si la respuesta es no, los números pueden estar mintiendo.
+:::
+
+------------------------------------------------------------------------
 
 ## Medidas de Tendencia Central
 
-![](images/clase-2/central_tend.png){.lightbox fig-align="center" width="70%"}
+::: columns
+::: {.column width="55%"}
+<br>
+<img src="images/clase-2/central_tend.png" style="width: 90%; border-radius: 8px;"/>
+:::
+::: {.column width="45%"}
+<br>
 
-## Medidas de Dispersión y Asimetría
+**¿Por qué importan para decisiones?**
 
-![](images/clase-2/spread_meas.png){.lightbox fig-align="center" width="40%"}
+- La **media** es sensible a valores extremos. Una sola operación atípica puede distorsionar el promedio de ventas.
+- La **mediana** es más robusta. Cuando hablamos de ingresos o tiempos, la mediana suele ser más representativa.
+- La **moda** dice cuál es el valor más frecuente — útil para patrones de comportamiento.
+
+::: {.callout-important}
+**Ejemplo:** El sueldo promedio en Chile incluye a los ultramillonarios. La mediana da una imagen mucho más real de lo que gana "la mayoría".
+:::
+
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Medidas de Dispersión y Asimetría {.smaller}
 
 ::: columns
-::: column
-![](images/clase-2/rangos.png){.lightbox fig-align="center" width="50%"}
+::: {.column width="50%"}
+<img src="images/clase-2/spread_meas.png" style="width: 45%; border-radius: 8px;"/>
+
+<img src="images/clase-2/rangos.png" style="width: 55%; border-radius: 8px;"/>
+:::
+::: {.column width="50%"}
+<img src="images/clase-2/skewness.png" style="width: 90%; border-radius: 8px;"/>
+
+::: {.callout-note style="font-size: 0.78em;"}
+**Varianza y desviación estándar** miden cuánto se "separan" los datos de su media. Alta dispersión = alta incertidumbre en la decisión.
+
+**Asimetría (skewness)** indica si los datos están sesgados hacia valores bajos o altos. Clásico en ingresos, tiempos de respuesta, reclamos.
 :::
 
-::: column
-![](images/clase-2/skewness.png){.lightbox fig-align="center" width="90%"}
 :::
 :::
 
+------------------------------------------------------------------------
 
-## EDA: Visualización {.smaller}
+##  {background-color="#0F2044"}
 
-> La visualización de datos es la presentación de datos en forma gráfica. Permite simplificar conceptos más complejos en especial a altos mandos.
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Parte 4]{style="font-size: 1em; color: #4A9FD4;"}
 
-> Gracias a la evolución del cerebro humano somos capaces de detectar patrones complejos en la naturaleza a partir de la `Visión`.
+[Visualización de Datos]{style="font-size: 2em; font-weight: bold;"}
 
-::: {.callout-important .fragment}
-Puede ser difícil de aplicar si el tamaño de los datos es grande (sea en instancias o atributos). Por ejemplo, si los datos están en 4 dimensiones.
+[Un buen gráfico vale más que mil números]{style="font-size: 1em; color: #6B7A8D; font-style: italic;"}
 :::
 
-::: {.callout-note .fragment}
--   Se suelen resumir los datos en `estadísticas simples`.
--   Graficar datos en 1D, 2D y 3D (evitar dentro de lo posible).
--   La visualización debe ser comprensible ojalá sin ninguna explicación.
+------------------------------------------------------------------------
+
+## ¿Por qué visualizar?
+
+::: columns
+::: {.column width="55%"}
+<br>
+
+> La **visualización de datos** es la presentación de datos en forma gráfica para simplificar conceptos complejos y facilitar la detección de patrones.
+
+Gracias a la evolución del cerebro humano, somos capaces de detectar patrones complejos a través de la **visión** en milisegundos — algo que tomaría minutos leyendo una tabla.
+
+::: {.callout-important}
+## La regla de los 7 segundos
+Si un gráfico no comunica su mensaje principal en menos de 7 segundos, simplifica o cambia el título. Un gráfico que requiere explicación es un gráfico mal hecho.
 :::
 
-::: {.callout-tip .fragment}
-En caso de datos de alta dimensionalidad puede ser una buena idea reducir dimensiones mediante técnicas como:
-
--   PCA
--   UMAP
--   etc.
+:::
+::: {.column width="45%"}
+<img src="images/viz/ojo.png" style="width: 85%; border-radius: 8px;"/>
+:::
 :::
 
-## Caso de Visualización
-
-![](images/clase-2/visual_problem.png){.lightbox fig-align="center" width="60%"}
-
-::: notes
--   Figuras
--   Escala de Colores.
--   Tamaño de los puntos.
--   Demasiada información en un sólo gráfico.
--   No se entiende el mensaje.
-:::
+------------------------------------------------------------------------
 
 ## Canales Visuales
 
 ::: columns
-::: column
+::: {.column width="55%"}
+
 ::: r-stack
 ::: {.fragment .fade-out fragment-index="2"}
-![](images/clase-2/visual_channels.png){.lightbox .fragment fig-align="center" width="90%" fragment-index="1"}
+<img src="images/clase-2/visual_channels.png" style="width: 88%; border-radius: 8px;"/>
+:::
+<img src="images/clase-2/best_channels.png" style="width: 68%; border-radius: 8px;" class="fragment" data-fragment-index="2"/>
 :::
 
-![](images/clase-2/best_channels.png){.lightbox .fragment fig-align="center" width="70%" fragment-index="2"}
 :::
-:::
-
-::: {.column .fragment fragment-index="1"}
-::: callout-note
--   Se les llama canales visuales a elementos visuales que pueden utilizarse para expresar información **(Clase Visualizacion Andreas Mueller)**.
--   La idea es poder mapear cada uno de estos canales a valores que queremos visualizar.
-:::
-
-::: callout-caution
--   No todos los canales son igual de útiles ni fáciles de entender.
-:::
-:::
-:::
-
-## Visualizaciones: Distribuciones {.smaller}
-
-Histograma
-
-:   El histograma permite visualizar distribuciones univariadas acumulando los datos en rangos de igual tamaño (`bins`).
-
--   Permite visualizar el `centro`, la `extensión`, la `asimetría` y `outliers`.
-
-::: callout-important
--   El histograma puede ser "engañoso" para conjuntos de datos pequeños.
--   La visualización puede resultar de manera muy distintas dependiendo del número de `bins`.
-:::
-
-![](images/clase-2/hist.png){.lightbox fig-align="center" width="70%"}
-
-## Visualizaciones: Distribuciones {.smaller}
-
-Kernel Density
-
-:   Corresponde a un suavizamiento de un Histograma en el cuál se usa un `Kernel` **(función no negativa que suma 1 y tiene media 0)** para agrupar los puntos vecinos.
-
-::: columns
-::: {.column width="50%"}
-La función estimada es:
-
-$$f(x) = \frac{1}{n} = \sum_{i=1}^n K \left(\frac{x - x(i)}{h}\right)$$
-
--   $K(u)$ es el Kernel.
--   $h$ es el ancho de banda.
-
-![](images/clase-2/kernel_type.png){.lightbox fig-align="center" width="60%"}
-:::
-
-::: {.column width="50%"}
-![](images/clase-2/kernel.png){.lightbox fig-align="center" width="100%"}
-
-![](images/clase-2/kernel_07.png){.lightbox fig-align="center" width="100%"}
-:::
-:::
-
-## Visualizaciones: Distribuciones {.smaller}
-
-Boxplot (Caja y Bigotes)
-
-:   Es un tipo de gráfico que muestra la distribución de manera univariada.
-
-::: columns
-::: column
-![](images/clase-2/box_def.png){.lightbox fig-align="center" width="50%"}
-
-::: {.callout-note style="font-size: 70%;"}
--   Tiene la capacidad de mostrar varias distribuciones a la vez.
--   Además presenta estadísticos de interés: Mediana, IQR y outliers.
--   Los puntos fuera de los bigotes son considerados Outliers.
-:::
-
-::: {.callout-tip style="font-size: 70%;"}
--   Los bigotes pueden representar:
-    -   Mínimo y Máximo. (En este caso no hay outliers).
-    -   $\mu \pm 3\sigma$
-    -   Percentiles 5 y 95.
-    -   Otros valores.
-:::
-:::
-
-::: column
-![](images/clase-2/boxplot.png){.lightbox fig-align="center"}
-:::
-:::
-
-## Visualizaciones: Barras {.smaller}
-
-Bar Plot
-
-:   La altura de la barra (normalmente Eje y) representa una agregación asociada a una categoría (normalmente Eje x).
-
-::: columns
-::: column
-![](images/clase-2/bar_plot1.png){.lightbox fig-align="center" width="65%"}
-:::
-
-::: column
-![](images/clase-2/bar_plot2.png){.lightbox fig-align="center" width="65%"}
-:::
-:::
-
-::: {.callout-warning .fragment}
--   Otras convenciones llaman a este gráfico `Column Plot`, mientras que el `Bar Plot` tiene las barras de manera horizontal.
-:::
-
-## Visualizaciones: Puntos {.smaller}
-
-Scatter
-
-:   Gráfico empleado para mostrar distribución de datos bivariados
-
--   Muestra la relación entre una variable independiente (Eje X) y una variable dependiente (Eje Y).
--   Permite mostrar relaciones lineales o no-lineales (Correlaciones).
--   Outliers.
--   Simplemente ubicación de Puntos en el Espacio.
-
-![](images/clase-2/scatter.png){.lightbox fig-align="center" width="30%"}
-
-## Visualizaciones: Líneas {.smaller}
-
-Lineplot
-
-:   Gráfico empleado para visualizar tendencias y su evolución de una medida (Eje Y) en el tiempo (Eje X).
-
-::: columns
-::: column
-![](images/clase-2/line.png){.lightbox fig-align="center" width="70%"}
-:::
-
-::: column
-![](images/clase-2/line_2.png){.lightbox fig-align="center" width="70%"}
-:::
-:::
-
-::: {.callout-important .fragment}
--   Si bien es posible utilizarlo para gráficar dos medidas continuas, las buenas prácticas indican que el eje X siempre debería contener una componente temporal.
-:::
-
-## Estadísticos vs Visualizaciones
-
-::: columns
-::: column
-![](images/clase-2/cuarteto_anscombe.png){.lightbox fig-align="center" width="80%"}
-:::
-
-::: column
+::: {.column width="45%"}
 <br>
 
-![](images/clase-2/anscombe_data.png){.lightbox fig-align="center" width="80%"}
+::: {.callout-note}
+Los **canales visuales** son los elementos gráficos (posición, color, tamaño, forma, etc.) que usamos para codificar información. Cada canal tiene diferente capacidad para transmitir con precisión.
+:::
+
+::: {.callout-caution}
+No todos los canales son igual de efectivos. La **posición** (eje X/Y) es el canal más preciso. El **color** es potente para categorías pero problemático para valores continuos.
+:::
+
+::: {.callout-tip}
+**Para decisiones:** privilegia posición y longitud. Evita gráficos de donut, 3D y mapas de calor complejos cuando puedas usar barras o líneas.
+:::
+
 :::
 :::
-
-## ¿Otras Visualizaciones?
-
-![](images/clase-2/charts.png){.lightbox fig-align="center" width="60%"}
-
-## Preguntas para terminar
-
--   ¿Por qué usar visualizaciones? ¿Qué son los canales visuales?
--   ¿Por qué es necesario el EDA?
--   ¿Por qué es necesario utilizar tanto Estadísticos como Visualizaciones?
 
 ------------------------------------------------------------------------
 
-## 🎉 ¡Gracias por Participar! {background-image="images/background.jpg" background-opacity="0.25"}
+## Ejemplo: la trampa del gráfico "bonito" {background-image="images/slide-normal.jpg"}
+
+::: columns
+::: {.column width="50%" style="text-align: center;"}
+<img src="images/viz/monster.jpg" style="width: 80%; border-radius: 8px;"/>
+
+*❌ Chartjunk — información enterrada en decoración visual*
+:::
+::: {.column width="50%" style="text-align: center;"}
+
+::: {.fragment}
+<img src="images/viz/viz_03.png" style="width: 95%; border-radius: 8px;"/>
+
+*✅ Gráfico efectivo — mensaje claro en 3 segundos*
+:::
+
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Los tipos de gráficos que más necesitas
+
+<br>
+
+```{=html}
+<div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; font-size:0.75em;">
+
+  <div style="background:#0F2044; border-radius:10px; padding:1rem; color:white; text-align:center;">
+    <div style="font-size:1.4rem; margin-bottom:0.4rem;">📊</div>
+    <div style="color:#4A9FD4; font-weight:700; margin-bottom:0.4rem;">Barras</div>
+    <div style="color:#8FA8C8; line-height:1.5;">Comparar categorías. El más versátil y confiable. Fácil de leer, fácil de mentir mal.</div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1rem; color:white; text-align:center;">
+    <div style="font-size:1.4rem; margin-bottom:0.4rem;">📈</div>
+    <div style="color:#4A9FD4; font-weight:700; margin-bottom:0.4rem;">Líneas</div>
+    <div style="color:#8FA8C8; line-height:1.5;">Tendencias en el tiempo. Siempre con eje X temporal. Ideal para series de KPIs.</div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1rem; color:white; text-align:center;">
+    <div style="font-size:1.4rem; margin-bottom:0.4rem;">🔵</div>
+    <div style="color:#4A9FD4; font-weight:700; margin-bottom:0.4rem;">Scatter</div>
+    <div style="color:#8FA8C8; line-height:1.5;">Relación entre dos variables continuas. Muestra correlaciones y outliers.</div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1rem; color:white; text-align:center;">
+    <div style="font-size:1.4rem; margin-bottom:0.4rem;">📦</div>
+    <div style="color:#4A9FD4; font-weight:700; margin-bottom:0.4rem;">Boxplot</div>
+    <div style="color:#8FA8C8; line-height:1.5;">Distribuciones y outliers. Comparar grupos. Esencial en análisis de calidad.</div>
+  </div>
+
+</div>
+```
+
+<br>
+
+::: {.callout-tip}
+## El 90% del data storytelling usa solo estos 4 tipos
+Bar → comparar. Line → tiempo. Scatter → relación. Box → distribución. Antes de buscar un gráfico más "sofisticado", pregúntate si uno de estos cuatro no hace el trabajo.
+:::
+
+------------------------------------------------------------------------
+
+## Visualizaciones: Distribuciones (Histograma) {.smaller}
+
+**Histograma:** acumula datos en rangos de igual tamaño (*bins*) para visualizar su distribución.
+
+::: columns
+::: {.column width="55%"}
+<img src="images/clase-2/hist.png" style="width: 85%; border-radius: 8px;"/>
+:::
+::: {.column width="45%"}
+<br>
+
+- Muestra el **centro**, la **extensión**, la **asimetría** y los **outliers**.
+
+::: {.callout-important}
+El histograma puede ser engañoso con pocos datos. El número de *bins* cambia drásticamente la forma — siempre muestra más de una configuración antes de concluir.
+:::
+
+::: {.callout-note}
+**Uso organizacional:** distribución de tiempos de respuesta, distribución de montos de contratos, distribución de notas o evaluaciones.
+:::
+
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Visualizaciones: Boxplot {.smaller}
+
+::: columns
+::: {.column width="45%"}
+<img src="images/clase-2/box_def.png" style="width: 55%; border-radius: 8px;"/>
+
+::: {.callout-note style="font-size: 70%;"}
+Muestra: Mediana, IQR (rango intercuartílico) y outliers en un solo gráfico. Puede comparar múltiples grupos a la vez.
+:::
+
+::: {.callout-tip style="font-size: 70%;"}
+Los puntos fuera de los bigotes son **outliers** — casos atípicos que merecen atención especial. Pueden ser errores de datos o casos genuinamente excepcionales.
+:::
+
+:::
+::: {.column width="55%"}
+<img src="images/clase-2/boxplot.png" style="width: 90%; border-radius: 8px;"/>
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Visualizaciones: Scatter y Barras {.smaller}
+
+::: columns
+::: {.column width="50%"}
+
+**Scatter Plot** — relación entre dos variables
+
+<img src="images/clase-2/scatter.png" style="width: 55%; border-radius: 8px;"/>
+
+Muestra relaciones lineales/no-lineales (correlaciones) y outliers. Útil para: ¿están relacionados los presupuestos y los resultados? ¿el ausentismo afecta la productividad?
+
+:::
+::: {.column width="50%"}
+
+**Bar Plot** — comparación entre categorías
+
+::: columns
+::: {.column width="50%"}
+<img src="images/clase-2/bar_plot1.png" style="width: 100%; border-radius: 8px;"/>
+:::
+::: {.column width="50%"}
+<img src="images/clase-2/bar_plot2.png" style="width: 100%; border-radius: 8px;"/>
+:::
+:::
+
+Compara valores entre categorías. El gráfico más usado (y más fácil de manipular) en reportes corporativos.
+
+:::
+:::
+
+------------------------------------------------------------------------
+
+## El cuarteto de Anscombe: estadísticos no son suficientes
+
+::: columns
+::: {.column width="55%"}
+<img src="images/clase-2/cuarteto_anscombe.png" style="width: 90%; border-radius: 8px;"/>
+:::
+::: {.column width="45%"}
+<br>
+<img src="images/clase-2/anscombe_data.png" style="width: 85%; border-radius: 8px;"/>
+
+::: {.callout-important}
+## La lección más importante del EDA
+Estos 4 datasets tienen exactamente la **misma media, varianza, correlación y ecuación de regresión** — pero son completamente distintos. Nunca confíes solo en los estadísticos sin ver los datos.
+:::
+
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Los 4 pilares de la visualización efectiva
+
+::: columns
+::: {.column width="55%"}
+<br>
+
+Según **Noah Iliinsky**, toda visualización debe responder estas 4 preguntas antes de diseñarse:
+
+1. **Propósito** → ¿Qué decisión o comprensión busco generar?
+2. **Contenido** → ¿Qué datos son realmente necesarios para eso?
+3. **Estructura** → ¿Cómo organizo la información para que fluya?
+4. **Formato** → ¿Qué tipo de gráfico sirve mejor?
+
+::: {.callout-tip}
+El error más común: empezar por el formato ("quiero un pie chart") en lugar del propósito ("quiero que entiendan que una categoría domina el 70%").
+:::
+
+:::
+::: {.column width="45%"}
+<img src="images/viz/pilar2.png" style="width: 90%; border-radius: 8px;"/>
+:::
+:::
+
+------------------------------------------------------------------------
+
+##  {background-color="#0F2044"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Parte 5]{style="font-size: 1em; color: #4A9FD4;"}
+
+[Conectando con la decisión estratégica]{style="font-size: 2em; font-weight: bold;"}
+
+[Del análisis a la acción]{style="font-size: 1em; color: #6B7A8D; font-style: italic;"}
+:::
+
+------------------------------------------------------------------------
+
+## De los datos a las decisiones: tipos de analítica
+
+<br>
+
+```{=html}
+<div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; font-size:0.75em; margin-top:0.5rem;">
+
+  <div style="background:#0F2044; border-radius:10px; overflow:hidden;">
+    <div style="background:#1A3A6B; padding:0.6rem 1rem;">
+      <div style="color:#4A9FD4; font-weight:700; font-size:1em;">Descriptiva</div>
+      <div style="color:#8FA8C8; font-size:0.85em;">¿Qué pasó?</div>
+    </div>
+    <div style="padding:1rem; color:#d0dce8; line-height:1.6;">
+      Reportes, dashboards, KPIs históricos.<br><br>
+      <em style="color:#8FA8C8;">Ejemplo: ventas del mes pasado por región.</em>
+    </div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; overflow:hidden;">
+    <div style="background:#1A3A6B; padding:0.6rem 1rem;">
+      <div style="color:#4A9FD4; font-weight:700; font-size:1em;">Diagnóstica</div>
+      <div style="color:#8FA8C8; font-size:0.85em;">¿Por qué pasó?</div>
+    </div>
+    <div style="padding:1rem; color:#d0dce8; line-height:1.6;">
+      Análisis de causa raíz, correlaciones, drill-down.<br><br>
+      <em style="color:#8FA8C8;">Ejemplo: ¿por qué bajaron las ventas en zona norte?</em>
+    </div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; overflow:hidden;">
+    <div style="background:#1A3A6B; padding:0.6rem 1rem;">
+      <div style="color:#4A9FD4; font-weight:700; font-size:1em;">Predictiva</div>
+      <div style="color:#8FA8C8; font-size:0.85em;">¿Qué pasará?</div>
+    </div>
+    <div style="padding:1rem; color:#d0dce8; line-height:1.6;">
+      Modelos ML, series de tiempo, probabilidades.<br><br>
+      <em style="color:#8FA8C8;">Ejemplo: estimación de deserción para el próximo semestre.</em>
+    </div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; overflow:hidden; border:2px solid #C9A84C;">
+    <div style="background:#C9A84C; padding:0.6rem 1rem;">
+      <div style="color:#0F2044; font-weight:700; font-size:1em;">Prescriptiva</div>
+      <div style="color:#0F2044; font-size:0.85em; opacity:0.8;">¿Qué hacer?</div>
+    </div>
+    <div style="padding:1rem; color:#d0dce8; line-height:1.6;">
+      Recomendaciones, optimización, IA generativa.<br><br>
+      <em style="color:#8FA8C8;">Ejemplo: acciones concretas para reducir deserción.</em>
+    </div>
+  </div>
+
+</div>
+
+<div style="text-align:center; margin-top:1rem; font-size:0.78em; color:#6B7A8D; font-style:italic;">
+  La mayoría de las organizaciones está en analítica descriptiva. La ventaja competitiva está en avanzar hacia prescriptiva.
+</div>
+```
+
+------------------------------------------------------------------------
+
+## ¿Cuándo confiar en un análisis?
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+
+**Señales de alerta en un reporte o dashboard:**
+
+- 📛 Solo muestra lo que "salió bien"
+- 📛 No tiene fecha de actualización de los datos
+- 📛 Los números no tienen contexto (¿vs qué período? ¿vs qué benchmark?)
+- 📛 No muestra incertidumbre ni márgenes de error
+- 📛 El gráfico empieza el eje Y en un número distinto de 0
+- 📛 No hay fuente ni metodología documentada
+
+:::
+::: {.column width="50%"}
+
+**Preguntas que todo decisor debe hacer:**
+
+::: {.callout-tip}
+1. ¿De dónde vienen estos datos?
+2. ¿Cuándo fue la última actualización?
+3. ¿Qué casos/personas NO están incluidos?
+4. ¿Qué significa este número en contexto?
+5. ¿Cuál es la incertidumbre de esta estimación?
+6. ¿Qué acción concreta recomiendan estos datos?
+:::
+
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Preguntas de cierre — Clase 1
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+
+**Para reflexionar esta semana:**
+
+1. ¿Qué tipos de datos existen en tu organización? ¿Cuáles se aprovechan y cuáles no?
+
+2. ¿La última decisión importante que tomaste tuvo un análisis de datos detrás? ¿Cómo fue ese proceso?
+
+3. ¿Qué tan confiables son los dashboards que usas cotidianamente? ¿Sabes de dónde vienen los datos?
+
+4. ¿Qué gráfico de tu trabajo cotidiano podría mejorarse aplicando los 4 pilares de Iliinsky?
+
+:::
+::: {.column width="50%"}
+
+**Para la próxima clase:**
+
+::: {.callout-note}
+**Clase 2:** Modelos predictivos y analítica avanzada
+- ¿Qué es un modelo y para qué sirve?
+- Regresión, clasificación, clustering
+- Cómo evaluar si un modelo es bueno
+- Casos aplicados en gestión organizacional
+:::
+
+::: {.callout-tip}
+**Lectura recomendada:** Revisa el capítulo de analítica descriptiva del material del curso. Identifica un dataset real de tu organización que puedas traer a la Clase 2.
+:::
+
+:::
+:::
+
+------------------------------------------------------------------------
+
+## 🎉 ¡Gracias por Participar!
 
 ::: columns
 ::: {.column width="50%"}
 <br>
 
-❓¿Preguntas?
+❓ ¿Preguntas?
 
 👏 Responder [encuesta](https://docs.google.com/forms/d/e/1FAIpQLSd2CseqhHUjdmvr46ZDb_Aa2iUYEjLAIE4MwLztled5ytRJvg/viewform?usp=dialog)
 
-🥳 Disfrutar del Evento!
-:::
+🥳 ¡Hasta la próxima clase!
 
+<br>
+
+**Contacto:**
+
+- 🌐 [fralfaro.github.io/portfolio](https://fralfaro.github.io/portfolio/)
+- 💼 [linkedin.com/in/faam](https://www.linkedin.com/in/faam/)
+- 📧 francisco.alfaro@usm.cl
+
+:::
 ::: {.column width="50%" align="center"}
-![](images/qr_citt2.png){width="400"}
-:::
-:::
+![](images/qr_citt2.png){width="380"}
 
-> 🔗 Nuestro Sitio Web: [sethnut.com/talks](https://sethnut.com/talks/)
+::: {style="font-size: 0.75em; color: #6B7A8D; margin-top: 0.5rem;"}
+🔗 [sethnut.com/talks](https://sethnut.com/talks/)
+:::
+:::
+:::
 
 ```{=html}
 <style>
-/* Ajusta el tamaño del título y subtítulo */
 .reveal .slides h1 {
-  font-size: 2em; /* Tamaño más pequeño para el título */
+  font-size: 2em;
 }
-
 .reveal .slides h2 {
-  font-size: 1.5em; /* Tamaño más pequeño para el subtítulo */
+  font-size: 1.5em;
 }
-
-/* Ajusta el tamaño del texto en los párrafos */
 .reveal .slides p {
-  font-size: 0.8em; /* Texto más pequeño */
+  font-size: 0.8em;
 }
-
-/* Ajusta el tamaño de las tablas */
 .reveal .slides table {
-  font-size: 0.8em; /* Tamaño de fuente más pequeño en las tablas */
-  width: 90%; /* Ajusta el ancho de la tabla */
-  margin: 0 auto; /* Centra la tabla */
+  font-size: 0.8em;
+  width: 90%;
+  margin: 0 auto;
 }
-
-/* Ajusta el tamaño de los bullets */
 .reveal .slides ul {
-  font-size: 0.8em; /* Tamaño de fuente más pequeño en los bullets */
+  font-size: 1em;
 }
-
 .reveal .slide-logo {
-   max-height: 2em !important;
+   max-height: 3em !important;
 }
 </style>
 ```
