@@ -1,1 +1,11 @@
 /.quarto/
+
+**/*.quarto_ipynb
+_freeze/*
+_site/*
+*/.DS_Store
+*.ipynb_checkpoints
+*.Rhistory
+*.RData
+*.Rproj.user
+*.html

@@ -89,3 +89,10 @@ IA, poder y los valores que nadie eligió — Nietzsche, Karen Hao y Eliezer Yud
 Prompts, RAG, agentes, vibe coding y seguridad — para audiencias no técnicas.\
 **Presentaciones:** [Límites y proyecciones de la IA](ai/limites_proyecciones_ia.html)
 :::
+
+::: card
+### Gestión de Operaciones I y II
+
+AMPL + Python · Flujo de trabajo moderno.\
+**Presentaciones:** [Gestión de Operaciones](usm_dtd/geo.html)
+::::
