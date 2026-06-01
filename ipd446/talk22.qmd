@@ -1,0 +1,1058 @@
+---
+title: "Trayectorias Académicas Óptimas"
+subtitle: "Estado del Arte: Optimización Clásica vs. Aprendizaje por Refuerzo"
+author: "Francisco Alfaro Medina"
+institute: "Doctorado en Ingeniería Electrónica · UTFSM"
+date: today
+date-format: "MMMM YYYY"
+
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    progress: true
+    history: false
+    transition: fade
+    transition-speed: fast
+    incremental: false
+    fig-align: center
+    highlight-style: github
+    code-block-bg: true
+    center: false
+    width: 1600
+    height: 800
+    logo: "images/usm.png"
+    scrollable: false
+execute:
+  echo: false
+  warning: false
+---
+
+##  {.title-slide background-color="#0F2044"}
+
+::: title-block
+**Trayectorias Académicas Óptimas**
+
+Optimización Clásica vs. Aprendizaje por Refuerzo
+:::
+
+::: subtitle-block
+BACP · MDP · Q-Learning · Gratuidad\
+Presentación de Avance Doctoral — UTFSM 2026
+:::
+
+::: author-block
+Francisco Alfaro Medina\
+Doctorado en Ingeniería Electrónica · UTFSM\
+Supervisor: Dr. Mauricio Araya · 2026
+:::
+
+## Agenda
+
+:::::::: columns
+:::: {.column width="50%"}
+<br>
+
+::: {style="font-size: 0.88em; line-height: 2em;"}
+**1.** 🎯 La Problemática: deserción, reprobación y financiamiento
+
+**2.** 💸 Becas y beneficios: el costo real de atrasarse
+
+**3.** 🧭 El jefe de carrera: de la intuición a la evidencia
+
+**4.** 📚 Lo que se ha hecho: Optimización Clásica
+
+**5.** 🤖 Lo nuevo: Aprendizaje por Refuerzo y MDP
+
+**6.** 🔬 Los dos papers clave
+
+**7.** 📊 Mis datos: Cohorte UTFSM 2010–2018
+
+**8.** 🚀 Qué haré y qué se puede obtener
+:::
+::::
+
+::::: {.column width="50%"}
+:::: {style="text-align: center; margin-top: 2em;"}
+::: {style="background: linear-gradient(135deg, #0F2044, #1A3A6B); border-radius: 12px; padding: 1.5em; color: white; font-size: 0.85em;"}
+**Pregunta central**
+
+¿Cómo recomendar secuencias de cursos que maximicen la graduación oportuna de estudiantes bajo incertidumbre real de aprobación y restricciones de financiamiento?
+:::
+::::
+:::::
+::::::::
+
+------------------------------------------------------------------------
+
+##  {background-color="#0F2044"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Parte 1]{style="font-size: 1.5em; color: #4A9FD4;"}
+
+[La Problemática]{style="font-size: 2.5em; color: white; font-weight: bold;"}
+
+[Deserción, financiamiento y consejería académica]{style="font-size: 1.2em; color: #A8C4E0; font-style: italic;"}
+:::
+
+------------------------------------------------------------------------
+
+## El problema en números reales
+
+:::::::::::: columns
+::::::::: {.column width="55%"}
+**Cohorte UTFSM Ingeniería Civil en Construcción (2010–2018)**
+
+<br>
+
+:::::::: {style="display: flex; flex-direction: column; gap: 0.6em; font-size: 0.82em;"}
+::: {style="display: flex; align-items: center; gap: 1em; background: #fde8e8; border-left: 4px solid #c0392b; border-radius: 6px; padding: 0.6em 1em;"}
+🔴 **639 estudiantes** — solo **69 titulados** (10.8%) en el período observado
+:::
+
+::: {style="display: flex; align-items: center; gap: 1em; background: #fde8e8; border-left: 4px solid #e74c3c; border-radius: 6px; padding: 0.6em 1em;"}
+🔴 **165 eliminados + 134 desertores** = 46.8% no completa la carrera
+:::
+
+::: {style="display: flex; align-items: center; gap: 1em; background: #fff3cd; border-left: 4px solid #e6a817; border-radius: 6px; padding: 0.6em 1em;"}
+🟡 **18.6% de los estudiantes** supera el nivel 10 (plazo nominal)
+:::
+
+::: {style="display: flex; align-items: center; gap: 1em; background: #fff3cd; border-left: 4px solid #e6a817; border-radius: 6px; padding: 0.6em 1em;"}
+🟡 Tasa de reprobación global: **27.5%** de los intentos registrados
+:::
+
+::: {style="display: flex; align-items: center; gap: 1em; background: #eafaf1; border-left: 4px solid #27ae60; border-radius: 6px; padding: 0.6em 1em;"}
+🟢 **17.228 registros** de avance curricular disponibles para análisis
+:::
+::::::::
+:::::::::
+
+:::: {.column width="45%"}
+::: {style="background: linear-gradient(135deg, #0F2044, #2a5298); border-radius: 10px; padding: 1.2em; color: white; font-size: 0.82em; margin-top: 0.5em;"}
+**¿Por qué importa la Gratuidad?**
+
+La Ley de Gratuidad (Chile) financia hasta la duración nominal de la carrera.
+
+Superar ese umbral tiene un **costo real y cuantificable** para el estudiante.
+
+```         
+Duración nominal ICC:  10 semestres
+Nivel máximo observado: 16 semestres
+
+→ Hasta 6 semestres sin financiamiento
+→ Costo estimado: ~$1.5M CLP/semestre
+```
+
+**Nadie ha modelado esto en la función de recompensa de un MDP.**
+:::
+::::
+::::::::::::
+
+------------------------------------------------------------------------
+
+## El sistema de apoyo financiero: más que la Gratuidad
+
+::::::::: columns
+::::: {.column width="52%"}
+**El financiamiento no es binario — es un ecosistema complejo**
+
+::: {style="font-size: 0.8em; line-height: 1.7em;"}
+| Beneficio                 | Cobertura           | Condición de mantención  |
+|---------------------------|---------------------|--------------------------|
+| **Gratuidad**             | Arancel + matrícula | Avance ≥ 70% por año     |
+| **Beca Bicentenario**     | Arancel parcial     | Rendimiento mínimo anual |
+| **Beca J. Gómez Millas**  | Arancel parcial     | PSU + NEM alto ingreso   |
+| **Beca Excelencia Acad.** | Matrícula           | 1° quintil + NEM ≥ 5.5   |
+| **FSCU / CAE**            | Crédito arancel     | Sin condición académica  |
+| **Becas UTFSM internas**  | Parcial o total     | Rendimiento semestral    |
+:::
+
+<br>
+
+::: {style="background: #fde8e8; border-left: 4px solid #c0392b; border-radius: 6px; padding: 0.6em 1em; font-size: 0.8em;"}
+🔴 **La mayoría de los beneficios se pierden o reducen si el estudiante reprueba o se atrasa.** La trayectoria académica no es solo un tema de graduación — es un tema de sostenibilidad financiera.
+:::
+:::::
+
+::::: {.column width="48%"}
+::: {style="background: linear-gradient(135deg, #0F2044, #1A3A6B); border-radius: 10px; padding: 1.1em; color: white; font-size: 0.8em;"}
+**En la cohorte UTFSM ICC 2010–2018:**
+
+```         
+Estudiantes con beca:       ~60-70% de la cohorte
+Beneficio gratuidad:        variable por cohorte
+                            (Ley 2016 →cohortes 2017+)
+
+Consecuencia de reprobación:
+  → Pérdida de beca si nota < 4.0 o
+    avance < 70% de créditos del año
+  → El estudiante paga de su bolsillo
+    o abandona la carrera
+
+Costo sin financiamiento:
+  ~$1.5–2M CLP por semestre
+  × hasta 6 semestres de atraso
+  = $9–12M CLP de deuda potencial
+```
+:::
+
+::: {style="background: #EBF4FB; border-left: 4px solid #4A9FD4; border-radius: 6px; padding: 0.5em 0.8em; font-size: 0.78em; margin-top: 0.6em;"}
+💡 Un modelo que optimiza trayectorias debería **preservar el beneficio activo del estudiante**, no solo maximizar créditos aprobados.
+:::
+:::::
+:::::::::
+
+------------------------------------------------------------------------
+
+## El jefe de carrera como agente de decisión: el problema hoy
+
+:::::::::::::::::::: columns
+:::::::::: {.column width="50%"}
+**¿Cómo decide hoy un jefe de carrera?**
+
+::::::::: {style="font-size: 0.82em; line-height: 1.9em;"}
+:::::::: {style="display: flex; flex-direction: column; gap: 0.5em;"}
+::: {style="background: #fde8e8; border-left: 3px solid #e74c3c; border-radius: 5px; padding: 0.5em 0.8em;"}
+❌ **Intuición y experiencia personal** — no replicable ni escalable
+:::
+
+::: {style="background: #fde8e8; border-left: 3px solid #e74c3c; border-radius: 5px; padding: 0.5em 0.8em;"}
+❌ **Malla nominal** como única referencia — no considera el historial real del estudiante
+:::
+
+::: {style="background: #fde8e8; border-left: 3px solid #e74c3c; border-radius: 5px; padding: 0.5em 0.8em;"}
+❌ **Sin información de riesgo estructural** — no sabe qué cursos bloquean más trayectorias
+:::
+
+::: {style="background: #fff3cd; border-left: 3px solid #e6a817; border-radius: 5px; padding: 0.5em 0.8em;"}
+⚠️ **Consejería reactiva** — actúa cuando el estudiante ya está en riesgo, no antes
+:::
+
+::: {style="background: #fff3cd; border-left: 3px solid #e6a817; border-radius: 5px; padding: 0.5em 0.8em;"}
+⚠️ **Sin evidencia de trayectorias similares** — no puede decir "estudiantes como tú tomaron X y les fue mejor"
+:::
+::::::::
+:::::::::
+::::::::::
+
+::::::::::: {.column width="50%"}
+**¿Qué debería poder hacer con evidencia estadística?**
+
+::::::::: {style="font-size: 0.82em; line-height: 1.9em;"}
+:::::::: {style="display: flex; flex-direction: column; gap: 0.5em;"}
+::: {style="background: #eafaf1; border-left: 3px solid #27ae60; border-radius: 5px; padding: 0.5em 0.8em;"}
+✅ **Identificar el cubo de riesgo del estudiante** desde NEM, PSU y avance actual
+:::
+
+::: {style="background: #eafaf1; border-left: 3px solid #27ae60; border-radius: 5px; padding: 0.5em 0.8em;"}
+✅ **Recomendar carga semestral óptima** según el perfil y los cursos disponibles
+:::
+
+::: {style="background: #eafaf1; border-left: 3px solid #27ae60; border-radius: 5px; padding: 0.5em 0.8em;"}
+✅ **Alertar sobre cursos de alto riesgo estructural** antes de la matrícula
+:::
+
+::: {style="background: #eafaf1; border-left: 3px solid #27ae60; border-radius: 5px; padding: 0.5em 0.8em;"}
+✅ **Mostrar trayectorias de estudiantes similares** que se graduaron oportunamente
+:::
+
+::: {style="background: #eafaf1; border-left: 3px solid #27ae60; border-radius: 5px; padding: 0.5em 0.8em;"}
+✅ **Priorizar estudiantes en riesgo de perder su beca** antes del corte semestral
+:::
+::::::::
+:::::::::
+
+. . .
+
+::: {style="background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #0F2044; border-radius: 6px; padding: 0.6em 1em; font-size: 0.8em; margin-top: 0.3em;"}
+🎯 **Esta tesis propone el marco técnico** (MDP + evidencia histórica) que hace posible ese cambio de consejería reactiva a consejería predictiva basada en datos.
+:::
+:::::::::::
+::::::::::::::::::::
+
+------------------------------------------------------------------------
+
+## Los cursos que más dañan las trayectorias
+
+::::::: columns
+:::: {.column width="58%"}
+**Índice de riesgo estructural** = Factor de Bloqueo × Tasa de Reprobación
+
+| Sigla       | Nombre                     | Nivel | Aprobación | BF  |  Riesgo  |
+|-------------|----------------------------|:-----:|:----------:|:---:|:--------:|
+| **ICC-153** | Química de los Materiales  |   2   |   47.7%    |  7  | **3.66** |
+| **FIS-131** | Física General Mecánica 1  |   2   |   53.4%    |  7  | **3.26** |
+| **MAT-123** | Cálculo                    |   1   |   61.8%    |  8  | **3.06** |
+| **ICC-243** | Materiales de Construcción |   3   |   50.2%    |  6  | **2.99** |
+| **MAT-213** | Álgebra Lineal             |   2   |   52.1%    |  6  | **2.88** |
+
+<br>
+
+::: {style="background: #EBF4FB; border-left: 4px solid #4A9FD4; border-radius: 6px; padding: 0.6em 1em; font-size: 0.82em;"}
+💡 **ICC-153** reprueba al **52%** de los estudiantes *y* bloquea 7 cursos futuros. Es el principal cuello de botella estructural de la malla.
+:::
+::::
+
+:::: {.column width="42%"}
+::: {style="background: #F5F7FA; border-radius: 10px; padding: 1em; font-size: 0.8em;"}
+**¿Qué significa el Factor de Bloqueo (BF)?**
+
+```         
+MAT-123 (Cálculo, BF=8)
+    ↓ bloquea
+  MAT-203 (Cálculo 2)
+    ↓
+  FIS-131 (Física)
+    ↓
+  FIS-231 (Física 2)
+    ↓
+  ... y 4 cursos más
+
+Si el estudiante reprueba MAT-123,
+todos estos cursos se retrasan.
+```
+
+La malla tiene **57 cursos** en **10 niveles** con **197 créditos totales**.
+:::
+::::
+:::::::
+
+------------------------------------------------------------------------
+
+##  {background-color="#0F2044"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Parte 2]{style="font-size: 1.5em; color: #4A9FD4;"}
+
+[Lo que se ha hecho]{style="font-size: 2.5em; color: white; font-weight: bold;"}
+
+[Optimización clásica del currículo]{style="font-size: 1.2em; color: #A8C4E0; font-style: italic;"}
+:::
+
+------------------------------------------------------------------------
+
+## El Balanced Academic Curriculum Problem (BACP)
+
+::::::: columns
+::: {.column width="55%"}
+**Origen: Castro & Manzano (2001) — UTFSM**
+
+El BACP asigna cursos a semestres satisfaciendo:
+
+-   ✅ Prerrequisitos respetados
+-   ✅ Carga crediticia balanceada entre períodos
+-   ✅ Mínimo y máximo de cursos por semestre
+
+**Formalización:**
+
+$$\min_{x_{ij}} \sum_{p=1}^{P} \left( \sum_{i} c_i x_{ip} - \bar{c} \right)^2$$
+
+sujeto a: prerrequisitos, $L \leq \sum_i x_{ip} \leq U$
+
+**El problema es NP-Hard** → se usan heurísticas.
+:::
+
+::::: {.column width="45%"}
+**Métodos que la literatura ha aplicado:**
+
+::: {style="font-size: 0.8em; line-height: 1.8em;"}
+| Método           | Autores                | Año  |
+|------------------|------------------------|:----:|
+| ILP + CP         | Castro & Manzano       | 2001 |
+| Búsqueda Tabú    | Schaerf & Ceschia      | 2012 |
+| ACO + Genético   | Crawford et al. (PUCV) | 2014 |
+| DBACP (dinámico) | Schaerf & Ceschia      | 2016 |
+| SCT-Chile        | Villalobos-Cid (USACH) | 2019 |
+:::
+
+<br>
+
+::: {style="background: #fff3cd; border-left: 4px solid #e6a817; border-radius: 6px; padding: 0.6em 1em; font-size: 0.8em;"}
+⚠️ **Limitación fundamental:** todos estos métodos asumen que el estudiante *aprobará* los cursos asignados. La reprobación no existe en el modelo.
+:::
+:::::
+:::::::
+
+------------------------------------------------------------------------
+
+## Ventajas y límites de la optimización clásica
+
+::::::: columns
+:::: {.column width="50%"}
+**✅ Lo que hace bien:**
+
+::: {style="font-size: 0.82em; line-height: 2em;"}
+-   Garantía de optimalidad (ILP)
+-   Solución interpretable y auditable
+-   No requiere datos históricos de estudiantes
+-   Ideal para **diseñar la malla institucional**
+-   Rápido para instancias pequeñas
+:::
+::::
+
+:::: {.column width="50%"}
+**❌ Lo que no puede hacer:**
+
+::: {style="font-size: 0.82em; line-height: 2em;"}
+-   Modelar que la aprobación es **incierta**
+-   Actualizar el plan cuando el estudiante **reprueba**
+-   Diferenciar entre un estudiante de **alto y bajo riesgo**
+-   Incorporar la **Gratuidad** como restricción real
+-   Generar recomendaciones **personalizadas y dinámicas**
+:::
+::::
+:::::::
+
+. . .
+
+::: {style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #0F2044; border-radius: 8px; padding: 0.8em 1.2em; font-size: 0.85em; margin-top: 0.5em;"}
+🎯 **La brecha:** la optimización clásica diseña el plan ideal en un mundo sin incertidumbre. El mundo real tiene reprobaciones, deserción y financiamiento condicionado. Se necesita otro marco.
+:::
+
+------------------------------------------------------------------------
+
+##  {background-color="#0F2044"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Parte 3]{style="font-size: 1.5em; color: #4A9FD4;"}
+
+[Lo que es nuevo]{style="font-size: 2.5em; color: white; font-weight: bold;"}
+
+[Procesos de Decisión de Markov y Aprendizaje por Refuerzo]{style="font-size: 1.1em; color: #A8C4E0; font-style: italic;"}
+:::
+
+------------------------------------------------------------------------
+
+## ¿Por qué un MDP es el marco correcto?
+
+::::::: columns
+:::: {.column width="50%"}
+**El avance académico tiene estructura de MDP natural:**
+
+<br>
+
+::: {style="font-size: 0.82em;"}
+```         
+ESTADO s_t
+  ¿Dónde está el estudiante?
+  semestre actual + cursos aprobados
+  + perfil de riesgo
+
+ACCIÓN a_t
+  ¿Qué cursos tomar este semestre?
+  (decisión del consejero o sistema)
+
+TRANSICIÓN T(s, a, s')
+  El estudiante aprueba o reprueba
+  según P(aprobar | curso, perfil)
+  → nuevo estado el próximo semestre
+
+RECOMPENSA R(s, a, s')
+  + créditos aprobados
+  - penalización si t > 10  ← Gratuidad
+  - penalización si carga desbalanceada
+```
+:::
+::::
+
+:::: {.column width="50%"}
+**La diferencia clave con ILP:**
+
+| Dimensión                | ILP / Tabú |   MDP / RL    |
+|--------------------------|:----------:|:-------------:|
+| ¿Cuándo decide?          |  Una vez   | Cada semestre |
+| ¿Modela reprobación?     |     ❌     |      ✅       |
+| ¿Actualiza el plan?      |     ❌     |      ✅       |
+| ¿Personaliza por riesgo? |     ❌     |      ✅       |
+| ¿Incorpora Gratuidad?    |     ❌     |      ✅       |
+| Garantía de optimalidad  |     ✅     |      ❌       |
+| Interpretable            |     ✅     |    Parcial    |
+
+<br>
+
+::: {style="background: #eafaf1; border-left: 4px solid #27ae60; border-radius: 6px; padding: 0.5em 0.8em; font-size: 0.8em;"}
+🟢 El RL no reemplaza al ILP. Son marcos complementarios para preguntas distintas.
+:::
+::::
+:::::::
+
+------------------------------------------------------------------------
+
+##  {background-color="#0F2044"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Parte 4]{style="font-size: 1.5em; color: #4A9FD4;"}
+
+[Los dos papers clave]{style="font-size: 2.5em; color: white; font-weight: bold;"}
+
+[Xu et al. (2016) · Heileman & Slim (2021)]{style="font-size: 1.2em; color: #A8C4E0; font-style: italic;"}
+:::
+
+------------------------------------------------------------------------
+
+## Paper 1: Xu, Xing & van der Schaar (2016)
+
+:::::::: columns
+:::: {.column width="52%"}
+**"Personalized Course Sequence Recommendations"**\
+*IEEE Transactions on Signal Processing, 2016*
+
+**¿Qué resuelven?**
+
+Dado un estudiante con historial de notas, recomendar la secuencia de cursos que *minimiza el tiempo hasta graduación* y *maximiza el GPA*, actualizando la recomendación cada semestre.
+
+**Arquitectura en dos fases:**
+
+::: {style="font-size: 0.8em;"}
+```         
+Fase 1 — Offline
+  Dataset histórico → aprender políticas candidatas
+  Algoritmo: Backward Induction (horizonte finito)
+
+Fase 2 — Online
+  Estudiante nuevo → seleccionar política vía bandit
+  Algoritmo: Multi-Armed Contextual Bandit
+  Clustering adaptativo por similitud de perfiles
+```
+:::
+::::
+
+::::: {.column width="48%"}
+**Componentes del MDP:**
+
+::: {style="font-size: 0.78em;"}
+| Componente     | Definición                                   |
+|----------------|----------------------------------------------|
+| **Estado** `s` | Cursos completados + notas                   |
+| **Acción** `a` | Set de cursos del semestre                   |
+| **Transición** | Bandit contextual → P(nota \| curso, perfil) |
+| **Recompensa** | λ·GPA − (1−λ)·semestres restantes            |
+| **Horizonte**  | Finito (hasta graduación)                    |
+:::
+
+<br>
+
+::: {style="background: #fff3cd; border-left: 4px solid #e6a817; border-radius: 6px; padding: 0.6em 0.8em; font-size: 0.78em;"}
+⚠️ **Limitaciones para tu caso:**\
+✗ No impone restricción BACP (carga balanceada)\
+✗ No penaliza sobreduración bajo Gratuidad\
+✗ Sin código público disponible en Papers With Code
+:::
+:::::
+::::::::
+
+------------------------------------------------------------------------
+
+## Paper 2: Heileman & Slim (2021) ← **Tu paper de referencia**
+
+::::::::: columns
+:::: {.column width="52%"}
+**"A Markov Decision Processes Modeling for Curricular Analytics"**\
+*IEEE ICMLA, 2021*
+
+**¿Qué aportan?**
+
+Conectan la *estructura formal de la malla* con el *avance estocástico del estudiante* mediante tres métricas originales y un MDP analítico.
+
+**Las tres métricas clave:**
+
+::: {style="font-size: 0.8em;"}
+```         
+Factor de Bloqueo (BF):
+  Cursos futuros que dependen de este curso.
+  MAT-123 en tu malla → BF = 8
+
+Factor de Demora (DF):
+  Largo de la cadena de prerrequisitos.
+  Un curso al final de una cadena larga → DF alto
+
+Complejidad del curso = BF + DF
+Complejidad total = Σ(BF_i + DF_i) para todos los cursos
+```
+:::
+
+**Validación:** simulación Monte Carlo sobre cohortes reales.
+::::
+
+:::::: {.column width="48%"}
+**Lo nuevo respecto a los métodos anteriores:**
+
+::: {style="font-size: 0.78em;"}
+| Dimensión              | ILP/Tabú | Xu 2016 |   **Heileman 2021**   |
+|------------------------|:--------:|:-------:|:---------------------:|
+| Aprobación estocástica |    ❌    |   ✅    |          ✅           |
+| Métricas estructurales |    ❌    |   ❌    |       ✅ BF+DF        |
+| MDP a escala semestral |    ❌    |   ✅    |          ✅           |
+| Validación Monte Carlo |    ❌    |   ❌    |          ✅           |
+| Código disponible      |    ✗     |    ✗    | **✅ Julia + Python** |
+:::
+
+<br>
+
+::: {style="background: #eafaf1; border-left: 4px solid #27ae60; border-radius: 6px; padding: 0.6em 0.8em; font-size: 0.78em;"}
+✅ **Código oficial:** `CurricularAnalytics.jl`\
+`github.com/CurricularAnalytics/CurricularAnalytics.jl`\
+También disponible en R (CRAN) y Python (UCSD port)
+:::
+
+::: {style="background: #fff3cd; border-left: 4px solid #e6a817; border-radius: 6px; padding: 0.5em 0.8em; font-size: 0.78em; margin-top: 0.5em;"}
+⚠️ **Vacíos:** ✗ Sin restricción BACP · ✗ Sin Gratuidad · ✗ Sin comparación RL vs. ILP
+:::
+::::::
+:::::::::
+
+------------------------------------------------------------------------
+
+## Comparación directa: los dos papers
+
+::: {style="font-size: 0.82em;"}
+| Criterio | Xu et al. (2016) | Heileman/Slim (2021) |
+|------------------------|------------------------|------------------------|
+| **Problema** | Recomendar secuencia personalizada | Analizar impacto estructural de la malla |
+| **Marco** | MDP + Bandits contextuales | MDP analítico + Monte Carlo |
+| **Estado** | Notas + cursos completados | Semestre + cursos aprobados |
+| **Transición** | Bandit contextual (aprendido) | P(aprobar\|curso) empírica + geométrica |
+| **Recompensa** | GPA + tiempo a graduación | Llegar al estado "graduado" |
+| **Métricas propias** | No | BF, DF, Complejidad curricular |
+| **Código** | ❌ No disponible | ✅ Julia, R, Python |
+| **Complejidad impl.** | Alta (3–4 semanas) | Baja (2–3 días) |
+| **Uso en tu tesis** | Baseline teórico | **Paper a replicar** |
+:::
+
+. . .
+
+> 📌 Heileman/Slim es tu punto de partida: tiene código, métricas interpretables, y deja abierto exactamente el vacío que tú cierras.
+
+------------------------------------------------------------------------
+
+## El vacío que ninguno cierra
+
+:::::::: {style="display: flex; flex-direction: column; gap: 0.55em; font-size: 0.82em; margin-top: 0.5em;"}
+::: {style="display: flex; align-items: center; gap: 1em; background: #fde8e8; border-left: 4px solid #c0392b; border-radius: 6px; padding: 0.55em 1em;"}
+❌ Ningún paper aplica RL/MDP al **BACP o DBACP**. La intersección optimización curricular + incertidumbre no existe en la literatura.
+:::
+
+::: {style="display: flex; align-items: center; gap: 1em; background: #fde8e8; border-left: 4px solid #e74c3c; border-radius: 6px; padding: 0.55em 1em;"}
+❌ Ningún paper incorpora la **Gratuidad** (financiamiento condicional al plazo nominal) como componente de la función de recompensa ni como restricción.
+:::
+
+::: {style="display: flex; align-items: center; gap: 1em; background: #fff3cd; border-left: 4px solid #e6a817; border-radius: 6px; padding: 0.55em 1em;"}
+⚠️ Ningún paper compara **RL vs. ILP vs. Búsqueda Tabú** sobre los mismos datos del DBACP.
+:::
+
+::: {style="display: flex; align-items: center; gap: 1em; background: #fff3cd; border-left: 4px solid #e6a817; border-radius: 6px; padding: 0.55em 1em;"}
+⚠️ Ningún paper trabaja con una **cohorte chilena de ingeniería civil** con datos reales de reprobación y trayectorias completas.
+:::
+
+::: {style="display: flex; align-items: center; gap: 1em; background: #eafaf1; border-left: 4px solid #27ae60; border-radius: 6px; padding: 0.55em 1em;"}
+✅ **Tu tesis cierra los cuatro vacíos simultáneamente** usando la cohorte UTFSM 2010–2018.
+:::
+::::::::
+
+------------------------------------------------------------------------
+
+##  {background-color="#0F2044"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Parte 5]{style="font-size: 1.5em; color: #4A9FD4;"}
+
+[Mis datos]{style="font-size: 2.5em; color: white; font-weight: bold;"}
+
+[Cohorte UTFSM ICC 2010–2018]{style="font-size: 1.2em; color: #A8C4E0; font-style: italic;"}
+:::
+
+------------------------------------------------------------------------
+
+## Los tres archivos de datos
+
+::::::::::::::: panel-tabset
+## Malla curricular
+
+:::::: columns
+::: {.column width="55%"}
+**`00_malla.csv`** — 57 cursos, 10 niveles
+
+``` python
+sigla     nombre              creditos  nivel  aprobacion  nivel_dependencia
+MAT-113   Algebra             6         1      81.70       8
+MAT-123   Calculo             6         1      61.76       8
+ICC-153   Quimica Materiales  3         2      47.72       7
+FIS-131   Fisica Mecanica 1   4         2      53.36       7
+MAT-213   Algebra Lineal      4         2      52.08       6
+```
+
+**Columnas clave para el MDP:**
+
+-   `aprobacion` → **P(aprobar \| curso)** de la función de transición
+-   `nivel_dependencia` → **Factor de Bloqueo (BF)** de Heileman/Slim
+-   `prerrequisitos` → aristas del grafo de la malla
+:::
+
+:::: {.column width="45%"}
+::: {style="background: #EBF4FB; border-left: 4px solid #4A9FD4; border-radius: 6px; padding: 0.8em; font-size: 0.78em;"}
+**Estadísticas de la malla:**
+
+-   57 cursos · 10 niveles · 197 créditos
+-   8 cursos sin prerrequisito (entrada)
+-   Tasa de aprobación promedio: **77.3%**
+-   Curso más difícil: ICC-153 (47.7%)
+-   Curso más bloqueante: MAT-123 (BF=8)
+:::
+::::
+::::::
+
+## Demográfico
+
+:::::: columns
+::: {.column width="55%"}
+**`01_demografico.csv`** — 657 estudiantes
+
+``` python
+rut  nem   psu    region        tipo_colegio      cohorte  beca  beneficio_gratuidad
+539  5.6   607    DEL BIOBIO    Municipal         2011     100   0
+ 46  6.2   593    VALPARAISO    Municipal         2013      64   0
+438  5.5   658    METROPOLITANA Part.Subv.        2012       0   0
+170  5.9   604    METROPOLITANA Part.Subv.        2010     100   0
+```
+
+**Columnas clave para el MDP:**
+
+-   `nem` + `psu_matematica` → **cubo de riesgo** del estudiante
+-   `beneficio_gratuidad` → indicador de **restricción Gratuidad**
+-   `cohorte` → permite validación por año de ingreso
+:::
+
+:::: {.column width="45%"}
+::: {style="background: #EBF4FB; border-left: 4px solid #4A9FD4; border-radius: 6px; padding: 0.8em; font-size: 0.78em;"}
+**Estadísticas demográficas:**
+
+-   8 cohortes: 2010–2017
+-   Regiones representadas: todo Chile
+-   Tipos de colegio: Municipal, Part. Subv., Particular
+-   Variables de becas disponibles para análisis de equidad
+:::
+::::
+::::::
+
+## Avance curricular
+
+:::::: columns
+::: {.column width="55%"}
+**`02_avance_curricular.csv`** — 17.228 registros
+
+``` python
+rut  cohorte  estado    creditos  nivel_original  oportunidad  nota  estado_aprobacion
+197  2016     Desertor  6         1               1            6.5   A
+197  2016     Desertor  4         2               1            6.9   A
+197  2016     Desertor  4         2               1            6.6   A
+197  2016     Desertor  4         3               2            6.7   A
+```
+
+**Columnas clave para el MDP:**
+
+-   `estado_aprobacion` (A/R) → **función de transición** empírica
+-   `oportunidad` → intentos por curso (1, 2, 3...)
+-   `ultimo_nivel` → proxy del semestre alcanzado
+-   `estado` → Titulado / Eliminado / Desertor / Matriculado
+:::
+
+:::: {.column width="45%"}
+::: {style="background: #EBF4FB; border-left: 4px solid #4A9FD4; border-radius: 6px; padding: 0.8em; font-size: 0.78em;"}
+**Estadísticas de avance:**
+
+-   639 estudiantes únicos
+-   12.485 aprobaciones · 4.743 reprobaciones
+-   Oportunidades: 72.5% (1°) · 71.8% (2°) · 74.8% (3°)
+-   Nivel máximo observado: **16** semestres
+-   Estudiantes con nivel \> 10: **18.6%**
+:::
+::::
+::::::
+:::::::::::::::
+
+------------------------------------------------------------------------
+
+## El MDP con tus datos concretos
+
+::::::: columns
+:::: {.column width="52%"}
+**Mapeando los tres archivos al MDP:**
+
+::: {style="font-size: 0.8em; line-height: 1.6em;"}
+```         
+ESTADO s_t = (t, cubo_riesgo, créditos_aprobados)
+
+  t           → semestre actual (de avance_curricular)
+  cubo_riesgo → segmento por NEM + PSU (de demografico)
+                {bajo, medio, alto}
+  créditos    → avance relativo (de avance_curricular)
+
+ACCIÓN a_t = carga semestral × priorización de cursos
+  (definida sobre los cursos disponibles de la malla)
+
+TRANSICIÓN T(s, a, s')
+  = P(A | curso_i, cubo_riesgo_j, oportunidad_k)
+  Calibrada empíricamente desde avance_curricular
+  Ejemplo: P(A | ICC-153, riesgo_alto, op=1) = ?
+
+RECOMPENSA R(s, a, s')
+  + créditos aprobados en el semestre
+  - 10  si t > 10     ← Gratuidad (beneficio_gratuidad)
+  - δ   si carga desbalanceada ← BACP
+```
+:::
+::::
+
+:::: {.column width="48%"}
+::: {style="background: linear-gradient(135deg, #0F2044, #1A3A6B); border-radius: 10px; padding: 1em; color: white; font-size: 0.8em;"}
+**¿Por qué RL offline (por lotes)?**
+
+La exploración online con estudiantes reales es **éticamente inviable**.
+
+No podemos probar políticas experimentales en personas reales.
+
+**Solución:** aprender la política óptima *exclusivamente desde los 17.228 registros históricos* — sin interacción con el entorno.
+
+Esto se llama **RL offline o batch RL** y es el estándar en aplicaciones educativas de alto riesgo.
+
+`Algoritmo: Q-Learning tabular`\
+`|S| ≈ 10 × 3 × 3 = 90 estados → manejable`
+:::
+::::
+:::::::
+
+------------------------------------------------------------------------
+
+##  {background-color="#0F2044"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Parte 6]{style="font-size: 1.5em; color: #4A9FD4;"}
+
+[Qué haré y qué se puede obtener]{style="font-size: 2.5em; color: white; font-weight: bold;"}
+
+[Plan de trabajo y resultados esperados]{style="font-size: 1.2em; color: #A8C4E0; font-style: italic;"}
+:::
+
+------------------------------------------------------------------------
+
+## Plan de trabajo: replicar y extender Heileman/Slim
+
+:::::::: columns
+:::: {.column width="55%"}
+**Fase 1 — Replicar el paper (1–2 días)**
+
+::: {style="font-size: 0.8em; line-height: 1.7em;"}
+``` python
+# 1. Construir el grafo de la malla UTFSM
+import networkx as nx
+G = nx.DiGraph()
+# nodos = cursos, aristas = prerrequisitos
+# atributos = créditos, BF, aprobación
+
+# 2. Calcular métricas de Heileman
+BF[curso] = len(descendientes(G, curso))
+DF[curso] = camino_más_largo(G, curso)
+complejidad[curso] = BF + DF
+
+# 3. Calibrar P(aprobar | curso, riesgo)
+#    desde 02_avance_curricular.csv
+
+# 4. Simulación Monte Carlo
+for estudiante in range(N=1000):
+    simular_trayectoria(politica, P_aprobacion)
+```
+:::
+
+**Fase 2 — Agregar la novedad (2–3 días)**
+
+``` python
+# Función de recompensa con Gratuidad
+def recompensa(semestre, creditos_aprobados):
+    R = creditos_aprobados
+    if semestre > 10:
+        R -= 10  # penalización Gratuidad
+    return R
+```
+::::
+
+::::: {.column width="45%"}
+**Fase 3 — Comparación (1–2 semanas)**
+
+::: {style="font-size: 0.78em; line-height: 1.7em;"}
+| Método             | Herramienta              |
+|--------------------|--------------------------|
+| ILP                | `PuLP` / `Gurobi`        |
+| Búsqueda Tabú      | implementación propia    |
+| Q-Learning tabular | `numpy` / `gymnasium`    |
+| Simulación MDP     | `CurricularAnalytics.jl` |
+:::
+
+<br>
+
+**Métrica de comparación:**
+
+::: {style="background: #EBF4FB; border-left: 4px solid #4A9FD4; border-radius: 6px; padding: 0.7em; font-size: 0.78em;"}
+Para cada método se evalúa:
+
+-   \% estudiantes graduados ≤ 10 semestres
+-   Semestres promedio hasta graduación
+-   \% estudiantes que excede el umbral Gratuidad
+-   Distribución por cubo de riesgo
+:::
+:::::
+::::::::
+
+------------------------------------------------------------------------
+
+## Resultados esperados
+
+::::::: columns
+::: {.column width="50%"}
+**Resultado 1 — Mapa de riesgo estructural**
+
+Una figura que muestra la malla UTFSM con nodos coloreados por BF × (1 − aprobación):
+
+```         
+Rojo    → ICC-153, FIS-131, MAT-123
+Amarillo → ICC-243, MAT-213
+Verde   → cursos de niveles altos (>7)
+```
+
+Permite identificar **dónde intervenir** para reducir la duración media de la carrera.
+
+<br>
+
+**Resultado 2 — Distribución Monte Carlo**
+
+Histograma comparando: - Malla actual (política ingenua) - Política ILP óptima - Política RL con penalización Gratuidad
+:::
+
+::::: {.column width="50%"}
+**Resultado 3 — La Gratuidad como recompensa**
+
+La comparación central de la tesis:
+
+::: {style="font-size: 0.8em;"}
+| Escenario                       | \% titulados ≤ 10 sem | Sem. promedio  |
+|---------------------------------|:---------------------:|:--------------:|
+| Política actual (sin optimizar) |           ?           |    \~12–14     |
+| Política ILP (BACP)             |           ?           |       —        |
+| Política RL sin Gratuidad       |           ?           |       —        |
+| **Política RL con Gratuidad**   |         **?**         | **— ← aporte** |
+:::
+
+<br>
+
+::: {style="background: linear-gradient(90deg, #eafaf1, #f8fff9); border-left: 4px solid #27ae60; border-radius: 8px; padding: 0.7em 1em; font-size: 0.8em;"}
+🎯 **La hipótesis:** incorporar la Gratuidad en la función de recompensa produce políticas que reducen significativamente la proporción de estudiantes que excede el plazo nominal, especialmente en el segmento de riesgo medio.
+:::
+:::::
+:::::::
+
+------------------------------------------------------------------------
+
+## Las tres contribuciones originales
+
+<br>
+
+:::::: {style="display: flex; flex-direction: column; gap: 0.75em; font-size: 0.9em;"}
+::: {style="display: flex; align-items: flex-start; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #0F2044; border-radius: 8px; padding: 0.8em 1.2em;"}
+**①**   **Formulación** — Primera formalización del DBACP como MDP con aprobación estocástica calibrada en una cohorte chilena de Ingeniería Civil (UTFSM 2010–2018).
+:::
+
+::: {style="display: flex; align-items: flex-start; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #1a3a6b; border-radius: 8px; padding: 0.8em 1.2em;"}
+**②**   **Restricción** — Primera incorporación de la Gratuidad (penalización por sobreduración nominal) como componente explícito de la función de recompensa RL y función objetivo ILP/Tabú.
+:::
+
+::: {style="display: flex; align-items: flex-start; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #2a5298; border-radius: 8px; padding: 0.8em 1.2em;"}
+**③**   **Comparación empírica** — Primera comparación directa RL vs. ILP vs. Búsqueda Tabú sobre instancias idénticas del DBACP con datos reales de estudiantes chilenos.
+:::
+::::::
+
+------------------------------------------------------------------------
+
+## Tabla de posicionamiento en la literatura
+
+::: {style="font-size: 0.78em;"}
+| Trabajo | BACP/DBACP | MDP/RL | Aprob. Estocástica | Gratuidad | Datos Chile |
+|------------|:----------:|:----------:|:----------:|:----------:|:----------:|
+| Castro & Manzano (2001, UTFSM) | ✅ | ❌ | ❌ | ❌ | ✅ |
+| Schaerf & Ceschia (2012, Udine) | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Villalobos-Cid et al. (2019, USACH) | ✅ | ❌ | ❌ | ❌ | ✅ |
+| Xu, Xing & van der Schaar (2016) | ❌ | ✅ | ✅ | ❌ | ❌ |
+| Heileman & Slim (2021) | ❌ | ✅ | ✅ | ❌ | ❌ |
+| Yun et al. — DCQN (2024) | ❌ | ✅ | ❌ | ❌ | ❌ |
+| **Esta tesis (UTFSM 2010–2018)** | **✅** | **✅** | **✅** | **✅** | **✅** |
+:::
+
+. . .
+
+> 📌 La combinación de las cinco columnas en verde no existe en ningún trabajo previo. Esa es la posición original de esta tesis.
+
+------------------------------------------------------------------------
+
+## Resumen y próximos pasos
+
+<br>
+
+::::::: {style="display: flex; flex-direction: column; gap: 0.65em; font-size: 0.88em;"}
+::: {style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #0F2044; border-radius: 8px; padding: 0.6em 1em;"}
+✅ **El problema existe y tiene urgencia:** 46.8% de deserción + 18.6% supera el plazo nominal en la cohorte UTFSM ICC 2010–2018.
+:::
+
+::: {style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #1a3a6b; border-radius: 8px; padding: 0.6em 1em;"}
+✅ **La literatura tiene un vacío claro:** nadie ha combinado BACP + MDP/RL + Gratuidad sobre datos reales chilenos.
+:::
+
+::: {style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #2a5298; border-radius: 8px; padding: 0.6em 1em;"}
+✅ **Heileman/Slim (2021)** es el paper de referencia para replicar: tiene código abierto, métricas interpretables, y deja el vacío exacto que esta tesis cierra.
+:::
+
+::: {style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #3a6bc4; border-radius: 8px; padding: 0.6em 1em;"}
+🔜 **Próximo paso inmediato:** notebook Python con la malla UTFSM → cálculo de BF/DF → función de transición empírica → simulación Monte Carlo con penalización Gratuidad.
+:::
+:::::::
+
+------------------------------------------------------------------------
+
+##  {background-color="#0F2044"}
+
+:::: {style="display: flex; justify-content: center; align-items: center; height: 70vh; flex-direction: column; text-align: center;"}
+[¡Gracias!]{style="font-size: 3em; color: white; font-weight: bold;"}
+
+[Francisco Alfaro Medina]{style="font-size: 1.2em; color: #A8C4E0; margin-top: 0.5em;"}
+
+[Doctorado en Ingeniería Electrónica · UTFSM]{style="font-size: 0.9em; color: #7A9FC0;"}
+
+<br>
+
+::: {style="font-size: 0.85em; color: #4A9FD4; border-top: 1px solid #2A5080; padding-top: 1em; margin-top: 0.5em;"}
+❓ Preguntas y discusión
+:::
+::::
+
+```{=html}
+<style>
+.reveal .slides h1 {
+  font-size: 2em;
+}
+.reveal .slides h2 {
+  font-size: 1.5em;
+}
+.reveal .slides p {
+  font-size: 0.8em;
+}
+.reveal .slides table {
+  font-size: 0.78em;
+  width: 90%;
+  margin: 0 auto;
+}
+.reveal .slides ul {
+  font-size: 0.8em;
+}
+.reveal .slide-logo {
+   max-height: 2.5em !important;
+}
+</style>
+```

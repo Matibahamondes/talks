@@ -49,67 +49,10 @@ Dirección de Transformación Digital · 2026
 
 ------------------------------------------------------------------------
 
-## Sobre Nosotros {background-color="#f8f9fa"}
-
-<br>
-
-```{=html}
-<style>
-.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 1rem 0; }
-.card { background: #0F2044; border-radius: 12px; overflow: hidden; border: 0.5px solid rgba(255,255,255,0.1); }
-.card-top { background: #0F2044; padding: 1.5rem 1rem 0; text-align: center; }
-.avatar { width: 72px; height: 72px; border-radius: 50%; border: 2.5px solid #C9A84C; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 500; color: #C9A84C; margin: 0 auto 0.75rem; background: #0a1a38; }
-.card-name { font-size: 15px; font-weight: 500; color: #ffffff; margin: 0 0 0.25rem; }
-.card-role { font-size: 11px; color: #8FA8C8; margin: 0 0 1rem; line-height: 1.4; }
-.card-wave { height: 32px; background: #ffffff; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
-.card-bottom { background: #ffffff; padding: 0.75rem 1rem 1rem; }
-.card-bio { font-size: 12px; color: #555; line-height: 1.5; margin: 0 0 0.875rem; }
-.btn-link { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #185FA5; border: 0.5px solid #378ADD; border-radius: 8px; padding: 5px 12px; text-decoration: none; background: #E6F1FB; }
-</style>
-
-<div class="team-grid">
-  <div class="card">
-    <div class="card-top">
-      <div class="avatar">FA</div>
-      <p class="card-name">Francisco Alfaro</p>
-      <p class="card-role">Líder de Análisis y Modelación Avanzada</p>
-    </div>
-    <div class="card-wave"></div>
-    <div class="card-bottom">
-      <p class="card-bio">Especialista en inteligencia artificial, estadística y educación.</p>
-      <a class="btn-link" href="https://fralfaro.github.io/portfolio/">🌐 Portfolio</a>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-top">
-      <div class="avatar">VC</div>
-      <p class="card-name">Valeska Canales</p>
-      <p class="card-role">Científica de Datos</p>
-    </div>
-    <div class="card-wave"></div>
-    <div class="card-bottom">
-      <p class="card-bio">Especialista en visualización, storytelling y comunicación de datos.</p>
-      <a class="btn-link" href="https://vcanalesp.github.io/portafolio/">🌐 Portfolio</a>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-top">
-      <div class="avatar">AR</div>
-      <p class="card-name">Aníbal Romo</p>
-      <p class="card-role">Gestión del Cambio Organizacional</p>
-    </div>
-    <div class="card-wave"></div>
-    <div class="card-bottom">
-      <p class="card-bio">Profesional en transformación digital e innovación institucional.</p>
-      <a class="btn-link" href="#">💼 LinkedIn</a>
-    </div>
-  </div>
-</div>
-```
 
 ## Agenda
 
-::: columns
+::::: columns
 ::: {.column .incremental width="30%"}
 -   
 
@@ -123,20 +66,20 @@ Dirección de Transformación Digital · 2026
 ::: {.column .fragment width="70%"}
 <img src="images/neg.png" alt="Tachado" style="width: 50%; height: auto;"/>
 :::
-:::
+:::::
 
 ------------------------------------------------------------------------
 
 ## 
 
-::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+:::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
 ::: {.callout-note style="font-size: 1.5em;"}
 ## Storytelling principle #1
 
 Nunca revelar el final antes de tiempo.\
 [Siempre eleva la tensión y el drama]{.fragment}
 :::
-:::
+::::
 
 <br>
 
@@ -198,7 +141,7 @@ The analytic craft still matters — but the tools have fundamentally changed th
 
 ## Qué es Storytelling?
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ![](images/cave.jpg){fig-align="center" width="90%"}
 :::
@@ -206,7 +149,7 @@ The analytic craft still matters — but the tools have fundamentally changed th
 ::: {.column .fragment width="50%"}
 ![](images/fire.jpg){fig-align="center" width="100%"}
 :::
-:::
+:::::
 
 . . .
 
@@ -264,7 +207,7 @@ Use it well.
 
 ## Narrativa
 
-::: columns
+::::: columns
 ::: {.column width="60%"}
 <br><br>
 
@@ -274,7 +217,7 @@ Usa **trucos** de Storytelling (narrativa) para crear presentaciones que serán 
 ::: {.column .fragment width="40%"}
 ![](images/emotions.png){fig-align="center"}
 :::
-:::
+:::::
 
 . . .
 
@@ -292,7 +235,7 @@ Facts inform — emotions inspire action.
 
 ## Más que gráficos bonitos
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ![](images/dst_before.png){fig-align="center"} *🔢 No compartas números*
 :::
@@ -300,7 +243,7 @@ Facts inform — emotions inspire action.
 ::: {.column .fragment width="50%"}
 ![](images/dst_after.png){fig-align="center"} *🪶Comparte una historia*
 :::
-:::
+:::::
 
 . . .
 
@@ -310,13 +253,13 @@ Facts inform — emotions inspire action.
 
 ## 
 
-::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+:::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
 ::: callout-note
 ## Storytelling principle #2
 
 Los detalles son importantes, [pero no **todos** los detalles son importantes.]{.fragment}
 :::
-:::
+::::
 
 ::: notes
 Details guide attention.\
@@ -328,7 +271,7 @@ Focus only on what moves the story forward.
 
 ## Ejemplo: Spotify Wrapped
 
-::: columns
+:::::: columns
 ::: {.column .fragment width="30%" fragment-index="1"}
 ![](images/storytelling/spotify1.png){fig-align="center" width="85%" height="100%"}
 :::
@@ -342,7 +285,7 @@ Cómo hacer millones de personas <br> compartir estadísticas en redes sociales?
 ::: {.column .fragment width="30%" fragment-index="1"}
 ![](images/storytelling/spotify2.png){fig-align="center" width="85%" height="100%"}
 :::
-:::
+::::::
 
 # Visualización {.title-top-ice background-image="images/horst_penguins_telescope.png" data-state="no-logo"}
 
@@ -350,7 +293,7 @@ Cómo hacer millones de personas <br> compartir estadísticas en redes sociales?
 
 ## Visualización ...
 
-::: columns
+::::: columns
 ::: {.column .fragment width="60%"}
 <br><br>
 
@@ -363,7 +306,7 @@ Cómo hacer millones de personas <br> compartir estadísticas en redes sociales?
 ::: {.column width="40%"}
 ![](images/viz/ojo.png){fig-align="center"}
 :::
-:::
+:::::
 
 . . .
 
@@ -391,7 +334,7 @@ Cómo hacer millones de personas <br> compartir estadísticas en redes sociales?
 
 <br>
 
-::: columns
+::::: columns
 ::: {.column width="50%" style="text-align: center;"}
 ![](images/viz/monster.jpg){fig-align="center" width="82%"}
 
@@ -403,19 +346,19 @@ Cómo hacer millones de personas <br> compartir estadísticas en redes sociales?
 
 *✅ Good Chart*
 :::
-:::
+:::::
 
 ------------------------------------------------------------------------
 
 ## 
 
-::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+:::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
 ::: callout-note
 ## Storytelling principle #3
 
 [Explicar Menos]{style="color: red"}, [Mostrar Más]{.fragment style="color: green"}
 :::
-:::
+::::
 
 ------------------------------------------------------------------------
 
@@ -441,7 +384,7 @@ Simple wins.
 
 ## 4 Pilares Visualización - Noah Iliinsky
 
-::: columns
+::::: columns
 ::: {.column .fragment .incremental width="60%"}
 <br>
 
@@ -454,7 +397,7 @@ Simple wins.
 ::: {.column width="40%"}
 ![](images/viz/pilar2.png){fig-align="center"}
 :::
-:::
+:::::
 
 . . .
 
@@ -482,7 +425,7 @@ Simple wins.
 
 <br><br>
 
-::: columns
+:::::: columns
 ::: {.column width="35%"}
 ![](images/gh_before.png){.fragment fig-align="center"}
 :::
@@ -494,7 +437,7 @@ Simple wins.
 ::: {.column width="35%"}
 ![](images/gh_after.png){.fragment fig-align="center"}
 :::
-:::
+::::::
 
 . . .
 
@@ -513,8 +456,8 @@ What took days now takes hours.
 
 ##  {background-image="images/slide-normal.jpg"}
 
-::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
-::: {.callout-note style="font-size: 1.5em; max-width: 75%; margin: auto;"}
+::::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+:::: {.callout-note style="font-size: 1.5em; max-width: 75%; margin: auto;"}
 ## Storytelling principle #4
 
 Tu primera versión será [**siempre** horrible.]{.fragment}
@@ -522,8 +465,8 @@ Tu primera versión será [**siempre** horrible.]{.fragment}
 ::: {.fragment style="font-size: 0.65em; color: #666; margin-top: 0.75rem;"}
 *...y hoy la IA te ayuda a llegar más rápido a la buena.*
 :::
-:::
-:::
+::::
+:::::
 
 ::: notes
 Bad first drafts are normal — always were.\
@@ -537,8 +480,8 @@ The principle stays. The tools change.
 
 <br>
 
-::: columns
-::: {.column width="55%"}
+:::::: columns
+:::: {.column width="55%"}
 > *"Contar historias con datos siempre ha sido un desafío. Transformar números en narrativas que informen, persuadan y movilicen requiere claridad visual, estructura narrativa y criterio comunicacional."*
 
 <br>
@@ -550,7 +493,7 @@ Durante años, ese trabajo dependía **casi completamente del analista**:
 -   🧵 Encontrar el hilo conductor
 -   🎯 Adaptar el mensaje a la audiencia
 :::
-:::
+::::
 
 ::: {.column .fragment width="45%"}
 <br><br>
@@ -563,7 +506,7 @@ Durante años, ese trabajo dependía **casi completamente del analista**:
 </div>
 ```
 :::
-:::
+::::::
 
 ::: notes
 Set the stage. The problem hasn't changed — telling stories with data is still hard.\
@@ -728,7 +671,7 @@ The analyst's critical thinking is more valuable than ever.
 
 ## Qué puede hacer la IA hoy {background-image="images/slide-normal.jpg"}
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 <br>
 
@@ -748,7 +691,7 @@ The analyst's critical thinking is more valuable than ever.
 -   Generar **código completo** (Python/R/Vega-Lite) desde una descripción
 -   Proponer **paletas y jerarquía visual** según la historia
 :::
-:::
+:::::
 
 . . .
 
@@ -767,7 +710,7 @@ Every one of these capabilities requires human review, context, and judgment to 
 
 ## El nuevo stack de Data Storytelling {background-image="images/slide-normal.jpg"}
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ### Generar narrativa
 
@@ -795,7 +738,7 @@ Every one of these capabilities requires human review, context, and judgment to 
 -   **LM Studio** → interfaz visual para modelos locales
 -   **Anything LLM** → RAG local sobre tus propios documentos
 :::
-:::
+:::::
 
 ::: notes
 The stack has exploded since 2023.\
@@ -828,8 +771,8 @@ Speed is a real advantage. But speed without judgment is a trap.
 
 <br>
 
-::: columns
-::: {.column width="55%"}
+:::::: columns
+:::: {.column width="55%"}
 Herramientas como **Napkin AI**, **Copilot en Power BI** y los modelos multimodales permiten pasar de datos crudos a visualizaciones en segundos.
 
 <br>
@@ -842,7 +785,7 @@ Eso es una **ventaja real**:
 -   💡 Descubrir patrones que no habrías buscado
 -   🧪 Probar hipótesis visuales sin escribir código
 :::
-:::
+::::
 
 ::: {.column .fragment width="45%"}
 ```{=html}
@@ -860,7 +803,7 @@ Eso es una **ventaja real**:
 </div>
 ```
 :::
-:::
+::::::
 
 ::: notes
 The time savings are real but the breakdown changes.\
@@ -873,7 +816,7 @@ More time on judgment, less on mechanics. This is a good trade — if you know t
 
 <br>
 
-::: columns
+::::::: columns
 ::: {.column width="50%"}
 ```{=html}
 <div style="background: #1a0a0a; border-radius: 12px; padding: 1.5rem; border: 2px solid #cc3333;">
@@ -885,7 +828,7 @@ More time on judgment, less on mechanics. This is a good trade — if you know t
 ```
 :::
 
-::: {.column .fragment width="50%"}
+::::: {.column .fragment width="50%"}
 <br>
 
 **Por qué ocurre:**
@@ -897,13 +840,13 @@ More time on judgment, less on mechanics. This is a good trade — if you know t
 
 <br>
 
-::: fragment
+:::: fragment
 ::: {style="background: rgba(201,168,76,0.1); border-left: 4px solid #C9A84C; padding: 0.75rem 1.2rem; border-radius: 4px; font-size: 0.9rem;"}
 **El gráfico perfecto para la historia incorrecta sigue siendo un error.**
 :::
-:::
-:::
-:::
+::::
+:::::
+:::::::
 
 ::: notes
 The trap is subtle: a beautiful chart that misleads is worse than a plain chart that clarifies.\
@@ -982,8 +925,8 @@ NotebookLM: https://notebooklm.google.com — best for document Q&A.
 
 ## Agentes de IA para datos {background-image="images/slide-normal.jpg"}
 
-::: columns
-::: {.column width="55%"}
+:::::: columns
+:::: {.column width="55%"}
 <br>
 
 Un **agente** no solo responde — planifica, ejecuta pasos y usa herramientas.
@@ -998,7 +941,7 @@ Un **agente** no solo responde — planifica, ejecuta pasos y usa herramientas.
 -   📝 Propone una narrativa por audiencia
 -   🔁 El analista **revisa la historia, no el código**
 :::
-:::
+::::
 
 ::: {.column .fragment width="45%"}
 ### Frameworks en 2026
@@ -1011,7 +954,7 @@ Un **agente** no solo responde — planifica, ejecuta pasos y usa herramientas.
 | **n8n**            | Automatización sin código         |
 | **Copilot Studio** | Agentes empresariales (Microsoft) |
 :::
-:::
+::::::
 
 ::: notes
 Agents are the big shift in 2026.\
@@ -1160,8 +1103,8 @@ AI amplifies each step. Humans own the decisions at each step.
 
 ## Aplicando el framework: un ejemplo real {background-image="images/slide-normal.jpg"}
 
-::: columns
-::: {.column width="48%"}
+::::::: columns
+:::: {.column width="48%"}
 **El dato:** La tasa de deserción estudiantil en primer año aumentó un 18% en el último semestre.
 
 <br>
@@ -1173,9 +1116,9 @@ AI amplifies each step. Humans own the decisions at each step.
 
 🔴 Correcto. Inútil.
 :::
-:::
+::::
 
-::: {.column .fragment width="52%"}
+:::: {.column .fragment width="52%"}
 **Con framework** (analista + IA):
 
 ::: {style="font-size: 0.83rem; line-height: 1.6;"}
@@ -1187,8 +1130,8 @@ AI amplifies each step. Humans own the decisions at each step.
 
 ✅ **Resolución:** *"Tenemos la misma señal de alarma que en 2022. En 2022 no actuamos. Esta vez, tenemos 6 semanas para hacer la diferencia."*
 :::
-:::
-:::
+::::
+:::::::
 
 ::: notes
 Same data. Completely different outcome depending on whether you apply the framework.\
@@ -1548,7 +1491,7 @@ We just needed to live through the story first.
 
 ## 🎉 ¡Gracias por Participar!
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 <br>
 
@@ -1562,7 +1505,7 @@ We just needed to live through the story first.
 ::: {.column width="50%" align="center"}
 ![](images/qr_data.png){width="400"}
 :::
-:::
+:::::
 
 ```{=html}
 <style>

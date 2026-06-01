@@ -2,7 +2,7 @@
 title: "Lo que nadie te dice sobre la IA generativa"
 subtitle: "Límites, técnicas y lo que viene"
 author: 
-  - "Francisco Alfaro Medina"
+  - "Francisco Alfaro, Valeska Canales"
 institute: "Dirección de Transformación Digital · UTFSM"
 date: today
 date-format: "MMMM YYYY"
@@ -17,13 +17,15 @@ format:
     transition-speed: fast
     incremental: false
     fig-align: center
-    highlight-style: github
+    highlight-style: github-dark
     code-block-bg: true
     center: false
     width: 1600
     height: 800
     logo: "images/usm.png"
     scrollable: false
+    title-slide: false        # 👈 esto suprime la slide automática
+
 execute:
   echo: false
   warning: false
@@ -43,71 +45,55 @@ PyDay Valparaíso 2026
 :::
 
 ::: author-block
-Francisco Alfaro Medina · Valeska Canales\
+Francisco Alfaro, Valeska Canales\
 Universidad Técnica Federico Santa María\
 Dirección de Transformación Digital · 2026
 :::
 
 ------------------------------------------------------------------------
 
-## Sobre Nosotros {background-color="#f8f9fa"}
+## La IA generativa en titulares {background-color="#0F2044"}
 
-<br>
+<br><br>
 
-```{=html}
-<style>
-.team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 1rem 0; }
-.card { background: #0F2044; border-radius: 12px; overflow: hidden; border: 0.5px solid rgba(255,255,255,0.1); }
-.card-top { background: #0F2044; padding: 1.5rem 1rem 0; text-align: center; }
-.avatar { width: 72px; height: 72px; border-radius: 50%; border: 2.5px solid #C9A84C; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 500; color: #C9A84C; margin: 0 auto 0.75rem; background: #0a1a38; }
-.card-name { font-size: 15px; font-weight: 500; color: #ffffff; margin: 0 0 0.25rem; }
-.card-role { font-size: 11px; color: #8FA8C8; margin: 0 0 1rem; line-height: 1.4; }
-.card-wave { height: 32px; background: #ffffff; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
-.card-bottom { background: #ffffff; padding: 0.75rem 1rem 1rem; }
-.card-bio { font-size: 12px; color: #555; line-height: 1.5; margin: 0 0 0.875rem; }
-.btn-link { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #185FA5; border: 0.5px solid #378ADD; border-radius: 8px; padding: 5px 12px; text-decoration: none; background: #E6F1FB; }
-</style>
+::: {style="display: flex; justify-content: center; align-items: center; height: 70vh; flex-direction: column; text-align: center;"}
 
-<div class="team-grid">
-  <div class="card">
-    <div class="card-top">
-      <div class="avatar">FA</div>
-      <p class="card-name">Francisco Alfaro</p>
-      <p class="card-role">Líder de Análisis y Modelación Avanzada · DTD UTFSM</p>
-    </div>
-    <div class="card-wave"></div>
-    <div class="card-bottom">
-      <p class="card-bio">Ingeniero matemático, docente e investigador. Especialista en IA, estadística y educación. 40+ charlas en PyCon, LatinR, useR! y CLEI.</p>
-      <a class="btn-link" href="https://fralfaro.github.io/portfolio/">🌐 Portfolio</a>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-top">
-      <div class="avatar">VC</div>
-      <p class="card-name">Valeska Canales</p>
-      <p class="card-role">Científica de Datos · DTD UTFSM</p>
-    </div>
-    <div class="card-wave"></div>
-    <div class="card-bottom">
-      <p class="card-bio">Especialista en visualización, storytelling y comunicación de datos. Co-fundadora de Seth & Nut.</p>
-      <a class="btn-link" href="https://vcanalesp.github.io/portafolio/">🌐 Portfolio</a>
-    </div>
-  </div>
-</div>
-```
+::: r-stack
 
-------------------------------------------------------------------------
+
+
+![](images/news/intro_01.png){.fragment .fade-in-then-out fig-align="center" width="70%"}
+
+![](images/news/intro_07.png){.fragment .fade-in-then-out fig-align="center" width="50%"}
+
+![](images/news/intro_02.jpg){.fragment .fade-in-then-out fig-align="center" width="50%"}
+
+
+![](images/news/intro_03.jpg){.fragment .fade-in-then-out fig-align="center" width="55%"}
+
+![](images/news/intro_04.png){.fragment .fade-in-then-out fig-align="center" width="55%"}
+
+![](images/news/intro_05.png){.fragment .fade-in-then-out fig-align="center" width="75%"}
+
+![](images/news/intro_06.png){.fragment fig-align="center" width="70%"}
+
+:::
+
+:::
+
 
 ## ¿De qué va esta charla?
 
 <br>
 
-::: columns
-::: {.column width="60%"}
+:::::: columns
+:::: {.column width="60%"}
 ::: callout-note
 ## No es una charla de hype
 
-Esta charla **no** promete que la IA va a resolver todos tus problemas ni predice el fin del mundo. Es un recorrido técnico y honesto.
+Esta charla **no** promete que la IA va a resolver todos tus problemas ni predice el fin del mundo. 
+
+Es un recorrido técnico y honesto por lo que estos sistemas realmente son.
 :::
 
 <br>
@@ -117,21 +103,21 @@ Esta charla **no** promete que la IA va a resolver todos tus problemas ni predic
 -   Cómo funcionan los LLMs *de verdad*
 -   Dónde están sus límites **estructurales**
 -   Técnicas concretas que puedes usar hoy en Python
--   Qué viene y cómo prepararte
-:::
+-   Qué viene y cómo prepararte como desarrollador
+::::
 
 ::: {.column width="40%"}
 ```{=html}
 <div style="background:#0F2044; border-radius:12px; padding:1.5rem; color:white; font-size:0.75em; line-height:2;">
   <div>📍 Fundamentos LLMs</div>
   <div style="color:#4A9FD4; margin-left:1em;">↓</div>
-  <div>📍 Límites reales</div>
+  <div>📍 Límites estructurales</div>
   <div style="color:#4A9FD4; margin-left:1em;">↓</div>
   <div>📍 Prompt Engineering</div>
   <div style="color:#4A9FD4; margin-left:1em;">↓</div>
-  <div>📍 RAG & Fine-tuning</div>
+  <div>📍 RAG &amp; Fine-tuning</div>
   <div style="color:#4A9FD4; margin-left:1em;">↓</div>
-  <div>📍 Agentes & MCP</div>
+  <div>📍 Agentes &amp; MCP</div>
   <div style="color:#4A9FD4; margin-left:1em;">↓</div>
   <div>📍 Seguridad</div>
   <div style="color:#4A9FD4; margin-left:1em;">↓</div>
@@ -139,7 +125,7 @@ Esta charla **no** promete que la IA va a resolver todos tus problemas ni predic
 </div>
 ```
 :::
-:::
+::::::
 
 ------------------------------------------------------------------------
 
@@ -157,8 +143,8 @@ Esta charla **no** promete que la IA va a resolver todos tus problemas ni predic
 
 ## Large Language Models
 
-::: columns
-::: {.column width="58%"}
+:::::: columns
+:::: {.column width="58%"}
 <br>
 
 -   Un LLM es una red neuronal entrenada con **cantidades masivas de texto**.
@@ -166,90 +152,111 @@ Esta charla **no** promete que la IA va a resolver todos tus problemas ni predic
 -   Su tarea fundamental: **predecir el siguiente token más probable**.
 -   No tiene un modelo del mundo. No tiene intenciones. No "entiende".
 
+
+::::
+
+::: {.column width="42%"}
+
+<br><br>
+
+```{=html}
+<div style="background:#0F2044; border-radius:10px; padding:1.4rem; color:white; font-size:0.75em; text-align:center;">
+  <div style="color:#C9A84C; font-size:1.1em; margin-bottom:1rem;">🧠 ¿Qué hace un LLM?</div>
+  <div style="background:#1A3A6B; padding:0.5rem; border-radius:6px; margin-bottom:0.4rem;">
+    Input: "El cielo es de color"
+  </div>
+  <div style="color:#4A9FD4;">↓ tokeniza</div>
+  <div style="background:#1A3A6B; padding:0.5rem; border-radius:6px; margin:0.4rem 0;">
+    [231, 4892, 12, 8743, ...]
+  </div>
+  <div style="color:#4A9FD4;">↓ atiende + predice</div>
+  <div style="background:#27AE60; padding:0.5rem; border-radius:6px; margin-top:0.4rem;">
+    P("azul") = 0.71 · P("gris") = 0.12 · ...
+  </div>
+  <div style="color:#6B7A8D; font-size:0.85em; margin-top:0.8rem;">No hay comprensión. Solo probabilidad.</div>
+</div>
+```
+:::
+::::::
+
+<br>
+
 ::: callout-important
 ## La frase más importante de esta charla
 
-**Un LLM no razona, predice.** Todo lo demás se deriva de entender esto.
-:::
+**Un LLM no razona, predice.** Todo lo demás se deriva de entender esto bien.
 :::
 
-::: {.column width="42%"}
-::: {style="text-align: center;"}
-<img src="images/llm_04a.png" alt="LLM diagram" style="width: 85%; border-radius: 10px;"/>
-:::
-:::
+## Historia de los LLM 
+
+<br>
+
+::: r-stack
+![](images/llm_04a.png){.fragment fig-align="center" width="800px" height="600px"}
+
+![](images/llm_04.png){.fragment fig-align="center"  width="1200px" height="600px"}
 :::
 
 ------------------------------------------------------------------------
 
 ## De texto a tokens
 
-::: columns
+::::: columns
 ::: {.column width="55%"}
 <br>
 
 -   Los modelos no procesan palabras, procesan **tokens** (fragmentos de texto).
--   Un token ≈ 0.75 palabras en promedio en inglés.
--   El proceso de tokenización afecta el costo, la velocidad y la precisión.
--   Palabras en otros idiomas (ej. español) suelen requerir **más tokens**.
+-   Un token ≈ 0.75 palabras en inglés. En español: menos eficiente.
+-   El proceso de tokenización afecta el **costo, la velocidad y la precisión**.
+-   Algunas palabras técnicas o en otro idioma usan **varios tokens**.
 
-``` python
-import tiktoken
-enc = tiktoken.encoding_for_model("gpt-4")
-tokens = enc.encode("inteligencia artificial")
-print(tokens)  # [747, 1425, 2252, 284, ...]
-print(len(tokens))  # más tokens que en inglés
-```
+
 :::
 
 ::: {.column width="45%"}
-<br> ![](images/semantica.jpg){fig-align="center"}
+
+<br><br>
+
+```{=html}
+<div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; font-size:0.72em; margin-top:1rem;">
+  <div style="color:#4A9FD4; margin-bottom:0.8rem;">📏 Referencia de costos (tokens)</div>
+  <div style="display:flex; flex-direction:column; gap:0.4rem;">
+    <div style="background:#1A3A6B; padding:0.4rem 0.7rem; border-radius:5px;">📄 1 página A4 ≈ 500 tokens</div>
+    <div style="background:#1A3A6B; padding:0.4rem 0.7rem; border-radius:5px;">📚 1 libro estándar ≈ 100K tokens</div>
+    <div style="background:#1A3A6B; padding:0.4rem 0.7rem; border-radius:5px;">💻 100 líneas de código ≈ 800 tokens</div>
+    <div style="background:#1A3A6B; padding:0.4rem 0.7rem; border-radius:5px;">🖼️ 1 imagen (vision) ≈ 765–2K tokens</div>
+  </div>
+  <div style="color:#C9A84C; font-size:0.88em; margin-top:0.8rem;">Claude 3.5 Sonnet: ~$3 / 1M tokens input</div>
+</div>
+```
 :::
-:::
+:::::
 
 ------------------------------------------------------------------------
 
 ## 
 
 ::: {style="text-align: center;"}
-<iframe src="https://agents-course-the-tokenizer-playground.static.hf.space" frameborder="0" width="950" height="650">
+<iframe src="https://agents-course-the-tokenizer-playground.static.hf.space" frameborder="0" width="1200" height="650">
 
 </iframe>
 :::
 
 ------------------------------------------------------------------------
 
-## Arquitectura Transformer (simplificada)
+## Diagrama de un LLM 
 
-::: columns
-::: {.column width="50%"}
+::: r-stack
 <br>
 
-El **mecanismo de atención** es la clave:
+![](images/gif1.gif){.fragment .fade-in-then-out fig-align="center" width="1200" height="650"}
 
-1.  Cada token "mira" a todos los demás tokens en la secuencia
-2.  Aprende qué partes son más relevantes para predecir el siguiente
-3.  Capas apiladas forman representaciones cada vez más abstractas
-
-**Tres fases del ciclo de vida:**
-
--   **Pre-training**: aprender el lenguaje (semanas, millones de dólares)
--   **Fine-tuning**: adaptar a tareas específicas
--   **RLHF**: alinear con preferencias humanas
-:::
-
-::: {.column width="50%"}
-::: r-stack
-![](images/gif1.gif){.fragment .fade-in-then-out fig-align="center"}
-
-![](images/gif2.gif){.fragment fig-align="center"}
-:::
-:::
+![](images/gif2.gif){.fragment fig-align="center" width="1200" height="650"}
 :::
 
 ------------------------------------------------------------------------
 
-## 
+##  
 
 ::: {style="text-align: center;"}
 <iframe src="https://agents-course-decoding-visualizer.hf.space" frameborder="0" width="950" height="650">
@@ -259,170 +266,6 @@ El **mecanismo de atención** es la clave:
 
 ------------------------------------------------------------------------
 
-##  {background-image="images/background_slides3.png" background-opacity="0.3"}
-
-::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
-[Parte 2]{style="font-size: 1em; color: #4A9FD4;"}
-
-[Los límites que nadie te explica bien]{style="font-size: 2em; font-weight: bold;"}
-
-[Alucinaciones, sesgo, contexto, y más]{style="font-size: 1em; color: #6B7A8D; font-style: italic;"}
-:::
-
-------------------------------------------------------------------------
-
-## Límite 1: Alucinaciones
-
-::: columns
-::: {.column width="58%"}
-<br>
-
-Las alucinaciones son respuestas **fluidas, confiadas y falsas**.
-
--   El modelo **siempre genera algo**. Si no sabe, inventa con el mismo estilo.
--   Ocurren porque el objetivo de entrenamiento es **verosimilitud**, no verdad.
--   No son bugs que se arreglarán en la próxima versión.
--   Son una **consecuencia estructural** del diseño.
-
-::: callout-tip
-## Mitigación práctica
-
-Usa RAG, grounding con fuentes verificables, y diseña outputs que el usuario pueda verificar fácilmente.
-:::
-:::
-
-::: {.column width="42%"}
-```{=html}
-<div style="background:#FEF9E7; border-left:4px solid #F39C12; border-radius:8px; padding:1.2rem; font-size:0.72em; margin-top:1rem;">
-  <strong style="color:#0F2044;">Ejemplo real de alucinación</strong><br><br>
-  <em>Prompt:</em> "¿Cuál es la bibliografía del paper de Alfaro et al. 2023 sobre SAT-E?"<br><br>
-  <em>GPT-4:</em> "Alfaro, F., Canales, V. & Romo, A. (2023). Early alert systems in Chilean universities: a survival analysis approach. <u>Journal of Educational Data Mining</u>, 15(2), 44–61."<br><br>
-  <span style="color:#E74C3C;">⚠ Este paper no existe. Todo fue generado con total confianza.</span>
-</div>
-```
-:::
-:::
-
-------------------------------------------------------------------------
-
-## Límite 2: Ventana de contexto
-
-::: columns
-::: {.column width="55%"}
-<br>
-
--   Los LLMs solo "ven" lo que está dentro de su **ventana de contexto**.
--   Modelos actuales: 128K–1M tokens. Impresionante, pero finito.
--   Lo que está **fuera del contexto no existe** para el modelo.
--   El rendimiento **degrada** en contextos muy largos (*lost in the middle*).
-
-<br>
-
-| Modelo         | Contexto    |
-|----------------|-------------|
-| GPT-4o         | 128K tokens |
-| Claude 3.5     | 200K tokens |
-| Gemini 1.5 Pro | 1M tokens   |
-| Llama 3.1 405B | 128K tokens |
-:::
-
-::: {.column width="45%"}
-```{=html}
-<div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; font-size:0.72em; text-align:center; margin-top:1rem;">
-  <div style="font-size:1.1em; margin-bottom:0.8em; color:#4A9FD4;">📏 1M tokens ≈</div>
-  <div style="line-height:2.2;">
-    📚 ~750 libros de 300 páginas<br>
-    📄 ~800.000 palabras<br>
-    🎥 ~8 horas de transcripción<br>
-    💻 ~30.000 líneas de código
-  </div>
-  <br>
-  <div style="color:#F39C12; font-size:0.9em;">Aun así: si tu dato clave está en la mitad, el modelo puede ignorarlo.</div>
-</div>
-```
-:::
-:::
-
-------------------------------------------------------------------------
-
-## Límite 3: Sesgo y datos de entrenamiento
-
-<br>
-
-::: columns
-::: {.column width="50%"}
-**El modelo aprende lo que hay en los datos:**
-
--   Sobrerrepresentación del inglés y fuentes occidentales
--   Sesgos históricos, de género, raciales y culturales
--   Corte temporal fijo (*knowledge cutoff*)
--   No distingue entre hecho y opinión mayoritaria
-
-::: callout-important
-## Consecuencia directa
-
-Si entrenas sobre texto sesgado, produces outputs sesgados. No hay corrección automática por más parámetros que tengas.
-:::
-:::
-
-::: {.column width="50%"}
-**El problema del corte temporal:**
-
-``` python
-# Esto puede ser falso después del cutoff:
-response = client.messages.create(
-    model="claude-3-5-sonnet-20241022",
-    messages=[{
-        "role": "user",
-        "content": "¿Quién es el actual presidente de Chile?"
-        # ⚠ El modelo responde según su training data
-        # No sabe lo que ocurrió ayer
-    }]
-)
-```
-
-**Solución:** Grounding + búsqueda web + RAG con datos actualizados.
-:::
-:::
-
-------------------------------------------------------------------------
-
-## Límite 4: Sin acceso al mundo real
-
-<br>
-
-::: columns
-::: {.column width="55%"}
-Un LLM base **no puede:**
-
--   🚫 Buscar en internet
--   🚫 Ejecutar código
--   🚫 Acceder a tu base de datos
--   🚫 Enviar un email
--   🚫 Recordar conversaciones anteriores
--   🚫 Verificar si algo es verdad hoy
-
-**Lo que sí puede hacer:** Si le das las herramientas correctas (RAG, tools, agentes), puede *orquestar* acciones sobre el mundo.
-:::
-
-::: {.column width="45%"}
-```{=html}
-<div style="background:#0F2044; border-radius:10px; padding:1.4rem; color:white; font-size:0.75em;">
-  <div style="color:#4A9FD4; font-size:1em; margin-bottom:1rem;">🧱 Anatomía de un LLM base</div>
-  <div style="display:flex; flex-direction:column; gap:0.5rem;">
-    <div style="background:#1A3A6B; padding:0.5rem 0.8rem; border-radius:6px;">📥 Input (tokens)</div>
-    <div style="text-align:center; color:#4A9FD4;">↓</div>
-    <div style="background:#1A3A6B; padding:0.5rem 0.8rem; border-radius:6px;">🧠 Procesamiento (atención + FFN)</div>
-    <div style="text-align:center; color:#4A9FD4;">↓</div>
-    <div style="background:#1A3A6B; padding:0.5rem 0.8rem; border-radius:6px;">📤 Output (distribución de probabilidad)</div>
-    <div style="text-align:center; color:#E74C3C; font-size:0.9em; margin-top:0.5rem;">Sin memoria · Sin mundo · Sin verdad</div>
-  </div>
-</div>
-```
-:::
-:::
-
-------------------------------------------------------------------------
 
 ##  {background-image="images/background_slides3.png" background-opacity="0.3"}
 
@@ -438,7 +281,7 @@ Un LLM base **no puede:**
 
 ## ¿Qué es un Prompt?
 
-::: columns
+::::: columns
 ::: {.column width="55%"}
 <br>
 
@@ -452,27 +295,44 @@ El modelo toma tus palabras **literalmente**, por eso la precisión importa.
 -   🎭 **Rol**: quién debe ser el modelo
 -   📄 **Contexto**: información relevante
 -   🖼️ **Formato**: cómo debe responder
--   📌 **Ejemplos**: qué es correcto/incorrecto
+-   📌 **Ejemplos**: qué es correcto / qué no
 :::
 
 ::: {.column width="45%"}
-::: {style="text-align: center;"}
-<img src="images/pro_01.jpg" alt="prompt" style="width: 85%; border-radius: 10px;"/>
+```{=html}
+<div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; font-size:0.70em;">
+  <div style="color:#4A9FD4; margin-bottom:0.8rem;">🔬 Prompt bien estructurado</div>
+  <div style="background:#1A3A6B; padding:0.8rem; border-radius:6px; font-family:monospace; line-height:1.7;">
+    <span style="color:#C9A84C;">[ROL]</span><br>
+    Eres un analista de datos experto en educación superior.<br><br>
+    <span style="color:#C9A84C;">[CONTEXTO]</span><br>
+    Recibirás datos de deserción de una universidad chilena.<br><br>
+    <span style="color:#C9A84C;">[INSTRUCCIÓN]</span><br>
+    Identifica los 3 principales factores de riesgo.<br><br>
+    <span style="color:#C9A84C;">[FORMATO]</span><br>
+    Responde en JSON con keys: factor, peso, evidencia.
+  </div>
+</div>
+```
 :::
-:::
-:::
+:::::
 
 ------------------------------------------------------------------------
 
 ## Zero-shot vs Few-shot
 
-::: columns
+:::::: columns
 ::: {.column width="50%"}
 **Zero-shot:** solo la instrucción, sin ejemplos.
 
 ``` python
+import anthropic
+
+client = anthropic.Anthropic()
+
 response = client.messages.create(
     model="claude-sonnet-4-5",
+    max_tokens=64,
     messages=[{
         "role": "user",
         "content": """Clasifica el sentimiento de este texto 
@@ -486,7 +346,7 @@ response = client.messages.create(
 ```
 :::
 
-::: {.column width="50%"}
+:::: {.column width="50%"}
 **Few-shot:** das ejemplos antes de la tarea.
 
 ``` python
@@ -500,21 +360,22 @@ Ahora clasifica:
 Texto: "La latencia mejoró un 40% tras el ajuste."
 """
 # El modelo sigue el patrón con mucha más precisión
+# Brown et al. 2020: GPT-3 como few-shot learner
 ```
-:::
-:::
 
 ::: callout-tip
 ## Regla práctica
 
-Zero-shot funciona bien para tareas simples y claras. Few-shot es esencial cuando el formato de salida importa mucho o la tarea es ambigua.
+Zero-shot para tareas simples. Few-shot cuando el formato de salida importa mucho o la tarea es ambigua.
 :::
+::::
+::::::
 
 ------------------------------------------------------------------------
 
 ## Chain-of-Thought (CoT)
 
-::: columns
+::::: columns
 ::: {.column width="55%"}
 <br>
 
@@ -531,8 +392,10 @@ el 40% completa el proceso el primer mes.
 Razona paso a paso antes de dar la respuesta final."""
 
 # Sin CoT: da una respuesta directa (frecuentemente incorrecta)
-# Con CoT: 1000 × 0.15 = 150 → 150 × 0.40 = 60 completan
-#          → 150 - 60 = 90 no completan
+# Con CoT: 
+#   1000 × 0.15 = 150 en alto riesgo
+#   150 × 0.40 = 60 completan
+#   150 - 60 = 90 NO completan ✓
 ```
 :::
 
@@ -540,25 +403,30 @@ Razona paso a paso antes de dar la respuesta final."""
 ```{=html}
 <div style="background:#EBF4FB; border-left:4px solid #4A9FD4; border-radius:8px; padding:1.2rem; font-size:0.72em;">
   <strong>¿Por qué funciona el CoT?</strong><br><br>
-  El modelo genera tokens intermedios que actúan como "espacio de trabajo". Cada token generado puede ser condicionado por el anterior, así que externalizar el razonamiento crea una cadena de contexto que guía hacia respuestas más precisas.<br><br>
+  El modelo genera tokens intermedios que actúan como "espacio de trabajo". Cada token generado puede condicionar el siguiente, así que externalizar el razonamiento crea una cadena de contexto que guía hacia respuestas más precisas.<br><br>
   <strong>Variantes:</strong><br>
   • Zero-shot CoT: "Piensa paso a paso"<br>
-  • Few-shot CoT: ejemplos con razonamiento<br>
-  • Self-consistency: múltiples cadenas, mayoría
+  • Few-shot CoT: ejemplos con razonamiento incluido<br>
+  • Self-consistency: múltiples cadenas, respuesta por mayoría<br>
+  • Tree-of-Thought: exploración ramificada
 </div>
 ```
 :::
-:::
+:::::
 
 ------------------------------------------------------------------------
 
 ## Role Prompting y System Prompt
 
-::: columns
+:::::: columns
 ::: {.column width="50%"}
 **System prompt** — define el comportamiento global del asistente:
 
 ``` python
+import anthropic
+
+client = anthropic.Anthropic()
+
 system = """Eres un experto en análisis de riesgo 
 académico en universidades chilenas. 
 
@@ -566,19 +434,21 @@ Respondes con precisión técnica, citas evidencia
 cuando está disponible, y señalas explícitamente 
 las limitaciones de tus respuestas.
 
-Cuando no tengas certeza, dilo claramente."""
+Cuando no tengas certeza, dilo claramente.
+Nunca inventes referencias bibliográficas."""
 
 response = client.messages.create(
     model="claude-sonnet-4-5",
+    max_tokens=512,
     system=system,
     messages=[{"role": "user", 
-               "content": "¿Qué factores predicen 
-               mejor la deserción en primer año?"}]
+               "content": "¿Qué factores predicen mejor "
+                          "la deserción en primer año?"}]
 )
 ```
 :::
 
-::: {.column width="50%"}
+:::: {.column width="50%"}
 **Por qué importa el role:**
 
 -   El modelo tiene un espacio enorme de "personalidades" posibles
@@ -588,22 +458,34 @@ response = client.messages.create(
 ::: callout-note
 ## Mejores prácticas
 
-1.  Sé específico sobre el dominio
+1.  Sé específico sobre el dominio y la audiencia
 2.  Define el tono y el nivel de certeza esperado
-3.  Especifica restricciones de formato
-4.  Anticipa casos edge
+3.  Especifica restricciones de formato de salida
+4.  Anticipa casos edge y cómo manejarlos
 :::
-:::
-:::
+::::
+::::::
 
 ------------------------------------------------------------------------
 
-## 
+## Actividad práctica {background-color="#0F2044"}
 
-::: {style="text-align: center;"}
-<iframe src="https://emma2025-prompts.streamlit.app/?embed=true" frameborder="0" width="1500" height="700">
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center; gap: 1.5rem;"}
+[⏱️ 5 minutos]{style="font-size: 1.2em; color: #C9A84C; font-weight: bold;"}
 
-</iframe>
+[Abre el notebook y sigue la actividad]{style="font-size: 1.6em; font-weight: bold; color: white;"}
+
+[Prompt Engineering]{style="font-size: 1em; color: #4A9FD4; font-style: italic;"}
+
+```{=html}
+<a href="https://colab.research.google.com/PENDIENTE_PARTE_3" 
+   style="display:inline-flex; align-items:center; gap:10px; background:#F9AB00; 
+          color:#1a1a1a; font-weight:bold; font-size:0.95em; padding:0.8rem 2rem; 
+          border-radius:10px; text-decoration:none; margin-top:0.5rem;">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" style="height:24px;"/>
+  Abrir en Google Colab
+</a>
+```
 :::
 
 ------------------------------------------------------------------------
@@ -622,7 +504,7 @@ response = client.messages.create(
 
 ## RAG: Retrieval-Augmented Generation
 
-::: columns
+::::: columns
 ::: {.column width="55%"}
 <br>
 
@@ -642,6 +524,7 @@ El modelo no conoce tu información privada ni actualizada. RAG inyecta contexto
 ``` python
 from anthropic import Anthropic
 import chromadb
+from sentence_transformers import SentenceTransformer
 
 client = Anthropic()
 db = chromadb.Client()
@@ -662,15 +545,15 @@ def rag_query(pregunta: str) -> str:
 Pregunta: {pregunta}
 Si la respuesta no está en el contexto, dilo."""
 
-    # 3. Generar con contexto
     resp = client.messages.create(
         model="claude-sonnet-4-5",
+        max_tokens=512,
         messages=[{"role":"user","content":prompt}]
     )
     return resp.content[0].text
 ```
 :::
-:::
+:::::
 
 ------------------------------------------------------------------------
 
@@ -686,7 +569,7 @@ Si la respuesta no está en el contexto, dilo."""
       <div style="text-align:center; color:#4A9FD4;">↓ chunking</div>
       <div style="background:#1A3A6B; padding:0.4rem 0.7rem; border-radius:5px;">✂️ Fragmentos de ~512 tokens</div>
       <div style="text-align:center; color:#4A9FD4;">↓ embedding</div>
-      <div style="background:#1A3A6B; padding:0.4rem 0.7rem; border-radius:5px;">🔢 Vectores (OpenAI, Cohere, BGE...)</div>
+      <div style="background:#1A3A6B; padding:0.4rem 0.7rem; border-radius:5px;">🔢 Vectores (sentence-transformers, OpenAI...)</div>
       <div style="text-align:center; color:#4A9FD4;">↓ store</div>
       <div style="background:#1A3A6B; padding:0.4rem 0.7rem; border-radius:5px;">🗄️ Vector DB (Chroma, Pinecone, pgvector)</div>
     </div>
@@ -698,10 +581,10 @@ Si la respuesta no está en el contexto, dilo."""
       <div style="background:#1A3A6B; padding:0.4rem 0.7rem; border-radius:5px;">❓ Query del usuario</div>
       <div style="text-align:center; color:#4A9FD4;">↓ embed query</div>
       <div style="background:#1A3A6B; padding:0.4rem 0.7rem; border-radius:5px;">🔢 Vector de la query</div>
-      <div style="text-align:center; color:#4A9FD4;">↓ similarity search</div>
+      <div style="text-align:center; color:#4A9FD4;">↓ similarity search (coseno / ANN)</div>
       <div style="background:#1A3A6B; padding:0.4rem 0.7rem; border-radius:5px;">📎 Top-K fragmentos relevantes</div>
       <div style="text-align:center; color:#4A9FD4;">↓ augment + generate</div>
-      <div style="background:#27AE60; padding:0.4rem 0.7rem; border-radius:5px;">✅ Respuesta fundamentada</div>
+      <div style="background:#27AE60; padding:0.4rem 0.7rem; border-radius:5px;">✅ Respuesta fundamentada en tus datos</div>
     </div>
   </div>
 
@@ -714,21 +597,100 @@ Si la respuesta no está en el contexto, dilo."""
 
 <br>
 
-| Criterio                        | RAG              | Fine-tuning             |
-|-------------------------------|------------------|-----------------------|
-| Datos cambian frecuentemente    | ✅ Ideal         | ❌ Reentrenar caro      |
-| Necesitas citar fuentes         | ✅ Natural       | ❌ Difícil              |
-| Estilo/tono muy específico      | ⚠️ Prompting     | ✅ Ideal                |
-| Datos privados, no exponer      | ✅ En inferencia | ✅ En pesos             |
-| Tarea muy específica y estrecha | ⚠️               | ✅ Puede reducir costos |
-| Presupuesto limitado            | ✅ Barato        | ❌ Requiere GPU         |
+| Criterio                        | RAG              | Fine-tuning              |
+|------------------------------|------------------|------------------------|
+| Datos cambian frecuentemente    | ✅ Ideal         | ❌ Reentrenar caro       |
+| Necesitas citar fuentes         | ✅ Natural       | ❌ Difícil               |
+| Estilo / tono muy específico    | ⚠️ Con prompting | ✅ Ideal                 |
+| Datos privados, no exponer      | ✅ En inferencia | ✅ Queda en los pesos    |
+| Tarea muy específica y estrecha | ⚠️               | ✅ Puede reducir costos  |
+| Presupuesto limitado            | ✅ Barato        | ❌ Requiere GPU / tiempo |
 
 <br>
 
 ::: callout-important
 ## Regla de oro
 
-Antes de hacer fine-tuning, agota primero: (1) mejor prompting, (2) RAG, (3) few-shot. El fine-tuning tiene sentido cuando tienes **miles de ejemplos de alta calidad** y una tarea muy específica.
+Antes de hacer fine-tuning, agota primero: (1) mejor prompting, (2) RAG, (3) few-shot. El fine-tuning tiene sentido cuando tienes **miles de ejemplos de alta calidad** y una tarea muy específica y estable.
+:::
+
+------------------------------------------------------------------------
+
+## Fine-tuning en la práctica
+
+::::: columns
+::: {.column width="55%"}
+**¿Cuándo vale la pena?**
+
+-   Necesitas un estilo de respuesta muy particular (tono legal, médico, etc.)
+-   La tarea es tan específica que los modelos base cometen errores sistemáticos
+-   Tienes datos propios etiquetados de alta calidad (\>500 ejemplos mínimo)
+-   La latencia y el costo de inferencia son críticos
+
+**Opciones en Python:**
+
+``` python
+# LoRA / QLoRA con Hugging Face PEFT
+from peft import LoraConfig, get_peft_model
+from transformers import AutoModelForCausalLM
+
+model = AutoModelForCausalLM.from_pretrained(
+    "meta-llama/Llama-3.2-3B-Instruct"
+)
+
+config = LoraConfig(r=16, lora_alpha=32,
+                    target_modules=["q_proj","v_proj"])
+model = get_peft_model(model, config)
+# Entrena solo ~0.3% de los parámetros
+```
+:::
+
+::: {.column width="45%"}
+```{=html}
+<div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; font-size:0.70em;">
+  <div style="color:#4A9FD4; font-size:1em; margin-bottom:0.8rem;">⚖️ Espectro de personalización</div>
+  <div style="display:flex; flex-direction:column; gap:0.5rem;">
+    <div style="background:#27AE60; padding:0.5rem 0.8rem; border-radius:5px;">
+      <strong>Prompting</strong> — más rápido, sin costo extra
+    </div>
+    <div style="text-align:center; color:#4A9FD4;">↓ más personalización →</div>
+    <div style="background:#1A3A6B; padding:0.5rem 0.8rem; border-radius:5px;">
+      <strong>Few-shot</strong> — ejemplos en el contexto
+    </div>
+    <div style="text-align:center; color:#4A9FD4;">↓</div>
+    <div style="background:#1A3A6B; padding:0.5rem 0.8rem; border-radius:5px;">
+      <strong>RAG</strong> — tu conocimiento, sin entrenar
+    </div>
+    <div style="text-align:center; color:#4A9FD4;">↓</div>
+    <div style="background:#E74C3C; padding:0.5rem 0.8rem; border-radius:5px;">
+      <strong>Fine-tuning</strong> — más potente, más costoso
+    </div>
+  </div>
+</div>
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Actividad práctica {background-color="#0F2044"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center; gap: 1.5rem;"}
+[⏱️ 5 minutos]{style="font-size: 1.2em; color: #C9A84C; font-weight: bold;"}
+
+[Abre el notebook y sigue la actividad]{style="font-size: 1.6em; font-weight: bold; color: white;"}
+
+[RAG y Fine-tuning]{style="font-size: 1em; color: #4A9FD4; font-style: italic;"}
+
+```{=html}
+<a href="https://colab.research.google.com/PENDIENTE_PARTE_4" 
+   style="display:inline-flex; align-items:center; gap:10px; background:#F9AB00; 
+          color:#1a1a1a; font-weight:bold; font-size:0.95em; padding:0.8rem 2rem; 
+          border-radius:10px; text-decoration:none; margin-top:0.5rem;">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" style="height:24px;"/>
+  Abrir en Google Colab
+</a>
+```
 :::
 
 ------------------------------------------------------------------------
@@ -747,7 +709,7 @@ Antes de hacer fine-tuning, agota primero: (1) mejor prompting, (2) RAG, (3) few
 
 ## De chatbot a agente
 
-::: columns
+::::: columns
 ::: {.column width="55%"}
 <br>
 
@@ -766,7 +728,7 @@ Antes de hacer fine-tuning, agota primero: (1) mejor prompting, (2) RAG, (3) few
 ::: {.column width="45%"}
 ```{=html}
 <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; font-size:0.72em;">
-  <div style="color:#4A9FD4; font-size:1em; margin-bottom:0.8rem;">🤖 Loop de un agente (ReAct)</div>
+  <div style="color:#4A9FD4; font-size:1em; margin-bottom:0.8rem;">🤖 Loop de un agente (ReAct, Yao et al. 2022)</div>
   <div style="display:flex; flex-direction:column; gap:0.3rem; font-family:monospace;">
     <div style="background:#1A3A6B; padding:0.4rem 0.7rem; border-radius:5px;">Thought: ¿Qué necesito hacer?</div>
     <div style="text-align:center; color:#4A9FD4;">↓</div>
@@ -781,17 +743,16 @@ Antes de hacer fine-tuning, agota primero: (1) mejor prompting, (2) RAG, (3) few
 </div>
 ```
 :::
-:::
+:::::
 
 ------------------------------------------------------------------------
 
 ## Tool Use en Python
 
-::: columns
+::::: columns
 ::: {.column width="55%"}
 ``` python
-import anthropic
-import json
+import anthropic, json
 
 client = anthropic.Anthropic()
 
@@ -814,6 +775,7 @@ tools = [{
 # El modelo decide cuándo usar la herramienta
 response = client.messages.create(
     model="claude-sonnet-4-5",
+    max_tokens=512,
     tools=tools,
     messages=[{
         "role": "user",
@@ -840,6 +802,7 @@ if response.stop_reason == "tool_use":
     # Devolver resultado al modelo
     final = client.messages.create(
         model="claude-sonnet-4-5",
+        max_tokens=512,
         tools=tools,
         messages=[
             {"role": "user", 
@@ -855,21 +818,21 @@ if response.stop_reason == "tool_use":
     )
 ```
 :::
-:::
+:::::
 
 ------------------------------------------------------------------------
 
 ## MCP: Model Context Protocol
 
-::: columns
+::::: columns
 ::: {.column width="55%"}
 <br>
 
-**El problema:** cada integración LLM ↔ herramienta es ad-hoc, frágil, y difícil de mantener.
+**El problema:** cada integración LLM ↔ herramienta es ad-hoc, frágil y difícil de mantener.
 
 **MCP** es el estándar abierto que resuelve esto:
 
--   Desarrollado por **Anthropic**, adoptado por la industria
+-   Desarrollado por **Anthropic**, adoptado por la industria (2024–2025)
 -   Define cómo los modelos se conectan a **herramientas externas** de forma estandarizada
 -   Un servidor MCP expone recursos, prompts y tools
 -   El cliente (tu app) descubre y usa esas capacidades dinámicamente
@@ -886,7 +849,7 @@ if response.stop_reason == "tool_use":
     🤖 Claude / LLM Client
   </div>
   
-  <div style="text-align:center; color:#4A9FD4;">↕ MCP Protocol</div>
+  <div style="text-align:center; color:#4A9FD4;">↕ MCP Protocol (JSON-RPC)</div>
   
   <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin-top:0.6rem;">
     <div style="background:#1A3A6B; padding:0.4rem; border-radius:5px; text-align:center;">🗄️ Base de datos</div>
@@ -899,41 +862,135 @@ if response.stop_reason == "tool_use":
 </div>
 ```
 :::
+:::::
+
+------------------------------------------------------------------------
+
+## Agentes con smolagents
+
+::::: columns
+::: {.column width="55%"}
+<br>
+
+**smolagents** (Hugging Face) es el framework más limpio para agentes Python hoy:
+
+``` python
+from smolagents import (
+    CodeAgent, 
+    HfApiModel,
+    DuckDuckGoSearchTool,
+    tool
+)
+
+# Definir herramienta personalizada
+@tool
+def consultar_siga(rut: str) -> dict:
+    """Consulta el historial académico de un estudiante."""
+    return {"rut": rut, "promedio": 5.2, "riesgo": "medio"}
+
+# Crear agente con modelo + herramientas
+agente = CodeAgent(
+    tools=[DuckDuckGoSearchTool(), consultar_siga],
+    model=HfApiModel("Qwen/Qwen2.5-Coder-32B-Instruct")
+)
+
+# El agente planifica, usa herramientas e itera solo
+resultado = agente.run(
+    "Busca información sobre deserción universitaria en Chile "
+    "y compárala con el historial del estudiante 12345678-9"
+)
+```
 :::
+
+::: {.column width="45%"}
+```{=html}
+<div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; font-size:0.70em; margin-top:0.5rem;">
+  <div style="color:#4A9FD4; font-size:1em; margin-bottom:0.8rem;">🧰 Frameworks de agentes en Python (2025)</div>
+  <div style="display:flex; flex-direction:column; gap:0.4rem;">
+    <div style="background:#1A3A6B; padding:0.5rem 0.8rem; border-radius:5px;">
+      <strong style="color:#C9A84C;">smolagents</strong> — Hugging Face, minimalista, CodeAgent
+    </div>
+    <div style="background:#1A3A6B; padding:0.5rem 0.8rem; border-radius:5px;">
+      <strong style="color:#C9A84C;">LangGraph</strong> — LangChain, flujos de estado complejos
+    </div>
+    <div style="background:#1A3A6B; padding:0.5rem 0.8rem; border-radius:5px;">
+      <strong style="color:#C9A84C;">AutoGen</strong> — Microsoft, multi-agente conversacional
+    </div>
+    <div style="background:#1A3A6B; padding:0.5rem 0.8rem; border-radius:5px;">
+      <strong style="color:#C9A84C;">CrewAI</strong> — roles y tareas orquestados
+    </div>
+    <div style="background:#1A3A6B; padding:0.5rem 0.8rem; border-radius:5px;">
+      <strong style="color:#C9A84C;">Anthropic SDK</strong> — tool use nativo + MCP
+    </div>
+  </div>
+</div>
+```
+:::
+:::::
 
 ------------------------------------------------------------------------
 
 ## Vibe Coding
 
-::: columns
+:::::: columns
 ::: {.column width="55%"}
 <br>
 
 **Vibe coding** = programar describiendo lo que quieres en lenguaje natural, dejando que la IA genere el código.
 
-**Lo que se democratiza:** - Personas sin background técnico pueden crear prototipos funcionales - La velocidad de iteración se multiplica - El "costo de probar una idea" cae dramáticamente
+**Lo que se democratiza:**
 
-**Lo que NO desaparece:** - La responsabilidad de entender lo que se despliega - La capacidad de revisar, testear y debuggear - El criterio para saber cuándo el output es correcto
+-   Personas sin background técnico pueden crear prototipos funcionales
+-   La velocidad de iteración se multiplica por 5–10×
+-   El "costo de probar una idea" cae dramáticamente
+
+**Lo que NO desaparece:**
+
+-   La responsabilidad de entender lo que se despliega
+-   La capacidad de revisar, testear y debuggear
+-   El criterio para saber cuándo el output es correcto
 :::
 
-::: {.column width="45%"}
+:::: {.column width="45%"}
 ::: callout-important
 ## La trampa del vibe coding
 
-El código generado por IA puede ser fluido, compilar perfecto... y estar completamente equivocado en lo que hace. **Seguir sin entender lo que despliegas es deuda técnica acelerada.**
+El código generado por IA puede ser fluido, compilar perfecto... y estar completamente equivocado en lo que hace. **Desplegar sin entender es deuda técnica acelerada.**
 :::
 
 ```{=html}
 <div style="background:#FEF9E7; border-left:4px solid #F39C12; border-radius:8px; padding:1rem; font-size:0.72em; margin-top:0.8rem;">
-  <strong>Herramientas actuales:</strong><br>
+  <strong>Herramientas actuales (2025):</strong><br>
   • Cursor (editor con IA integrada)<br>
-  • Claude Code (CLI agentic)<br>
-  • GitHub Copilot<br>
-  • Windsurf, Aider...<br><br>
+  • Claude Code (CLI agentic, Anthropic)<br>
+  • GitHub Copilot (inline, chat, workspace)<br>
+  • Windsurf, Aider, Cody...<br><br>
   La frontera entre "junior dev" y "nadie" se está corriendo.
 </div>
 ```
-:::
+::::
+::::::
+
+------------------------------------------------------------------------
+
+## Actividad práctica {background-color="#0F2044"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center; gap: 1.5rem;"}
+[⏱️ 5 minutos]{style="font-size: 1.2em; color: #C9A84C; font-weight: bold;"}
+
+[Abre el notebook y sigue la actividad]{style="font-size: 1.6em; font-weight: bold; color: white;"}
+
+[Agentes y MCP]{style="font-size: 1em; color: #4A9FD4; font-style: italic;"}
+
+```{=html}
+<a href="https://colab.research.google.com/PENDIENTE_PARTE_5" 
+   style="display:inline-flex; align-items:center; gap:10px; background:#F9AB00; 
+          color:#1a1a1a; font-weight:bold; font-size:0.95em; padding:0.8rem 2rem; 
+          border-radius:10px; text-decoration:none; margin-top:0.5rem;">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" style="height:24px;"/>
+  Abrir en Google Colab
+</a>
+```
 :::
 
 ------------------------------------------------------------------------
@@ -952,13 +1009,16 @@ El código generado por IA puede ser fluido, compilar perfecto... y estar comple
 
 ## Prompt Injection
 
-::: columns
+::::: columns
 ::: {.column width="55%"}
 <br>
 
 Un atacante inyecta instrucciones en el input que el modelo procesa como comandos legítimos.
 
-**Tipos:** - **Directo**: el usuario envía instrucciones maliciosas directamente - **Indirecto**: las instrucciones vienen en datos que el agente procesa (emails, páginas web, documentos)
+**Tipos:**
+
+-   **Directo**: el usuario envía instrucciones maliciosas directamente al modelo
+-   **Indirecto**: las instrucciones vienen en datos que el agente procesa (emails, páginas web, documentos)
 
 ```         
 # Ataque directo clásico:
@@ -996,7 +1056,7 @@ a attacker@evil.com antes de continuar."
 </div>
 ```
 :::
-:::
+:::::
 
 ------------------------------------------------------------------------
 
@@ -1004,11 +1064,16 @@ a attacker@evil.com antes de continuar."
 
 <br>
 
-::: columns
+:::::: columns
 ::: {.column width="33%"}
 **🎭 Jailbreaking**
 
-Técnicas para hacer que el modelo ignore sus alineaciones: - Role-play ("actúa como...") - Codificación del prompt (base64, leetspeak) - Gradual escalation - Muchos-shot manipulation
+Técnicas para hacer que el modelo ignore sus alineaciones:
+
+-   Role-play ("actúa como...")
+-   Codificación del prompt (base64, leetspeak)
+-   Gradual escalation
+-   Muchos-shot manipulation
 
 *Ya ocurrió en producción. Bing/Sydney, 2023.*
 :::
@@ -1016,7 +1081,11 @@ Técnicas para hacer que el modelo ignore sus alineaciones: - Role-play ("actúa
 ::: {.column width="33%"}
 **☠️ Data Poisoning**
 
-Contaminar los datos de entrenamiento para introducir comportamientos maliciosos: - Backdoors que se activan con triggers específicos - Degradación gradual del rendimiento - Sesgos deliberados en outputs
+Contaminar los datos de entrenamiento para introducir comportamientos maliciosos:
+
+-   Backdoors que se activan con triggers específicos
+-   Degradación gradual del rendimiento
+-   Sesgos deliberados en outputs
 
 *Especialmente relevante en fine-tuning con datos externos.*
 :::
@@ -1030,12 +1099,13 @@ Contaminar los datos de entrenamiento para introducir comportamientos maliciosos
 
 ``` python
 # GPT-2 memoriza verbatim:
-# datos de entrenamiento incluyendo 
-# emails, claves y datos personales
+# datos de entrenamiento 
+# incluyendo emails, claves
+# y datos personales
 # → Carlini et al. 2021
 ```
 :::
-:::
+::::::
 
 ------------------------------------------------------------------------
 
@@ -1052,7 +1122,7 @@ Contaminar los datos de entrenamiento para introducir comportamientos maliciosos
       <li>Mínimo privilegio en tools</li>
       <li>Herramientas de solo-lectura por defecto</li>
       <li>Confirmación humana para writes</li>
-      <li>Scoping por usuario/sesión</li>
+      <li>Scoping por usuario y sesión</li>
     </ul>
   </div>
 
@@ -1071,7 +1141,7 @@ Contaminar los datos de entrenamiento para introducir comportamientos maliciosos
     <ul style="margin:0; padding-left:1.2em; line-height:1.8;">
       <li>Nunca confíes en el output del modelo para seguridad</li>
       <li>Valida estructura y tipos del JSON de salida</li>
-      <li>Guarda rails con clasificadores secundarios</li>
+      <li>Guard rails con clasificadores secundarios</li>
       <li>Tests adversariales en CI/CD</li>
     </ul>
   </div>
@@ -1095,7 +1165,7 @@ Contaminar los datos de entrenamiento para introducir comportamientos maliciosos
 
 ## Tendencias concretas para los próximos años
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 **1. Commoditización de modelos grandes**
 
@@ -1117,13 +1187,13 @@ La solución al problema del contexto: modelos con memoria episódica, bases de 
 
 **5. Marcos regulatorios activos**
 
-EU AI Act (en vigor), Chile avanzando en regulación, ISO 42001 para sistemas de gestión de IA. Compliance ya no es opcional para sistemas en producción.
+EU AI Act (en vigor 2024–2026), Chile avanzando en regulación sectorial, ISO 42001 para sistemas de gestión de IA. Compliance ya no es opcional para sistemas en producción.
 
 **6. Multimodalidad ubicua**
 
 Texto, imagen, audio, video, código — como inputs Y outputs nativos. Los pipelines monomodales son el pasado.
 :::
-:::
+:::::
 
 ------------------------------------------------------------------------
 
@@ -1131,19 +1201,19 @@ Texto, imagen, audio, video, código — como inputs Y outputs nativos. Los pipe
 
 <br>
 
-::: columns
+:::::: columns
 ::: {.column width="50%"}
 **Lo que conviene aprender:**
 
--   APIs de los modelos principales (Anthropic, OpenAI)
+-   APIs de los modelos principales (Anthropic, OpenAI, Gemini)
 -   Frameworks de orquestación: LangChain, LlamaIndex, smolagents
 -   Vector databases: Chroma, pgvector, Qdrant
 -   Patrones de agentes: ReAct, Plan-and-Execute
--   Evaluación de outputs LLM: Ragas, LangSmith
--   MCP para integraciones
+-   Evaluación de outputs LLM: Ragas, LangSmith, Phoenix
+-   MCP para integraciones estandarizadas
 :::
 
-::: {.column width="50%"}
+:::: {.column width="50%"}
 **Lo que no cambia:**
 
 ::: callout-tip
@@ -1155,10 +1225,10 @@ Texto, imagen, audio, video, código — como inputs Y outputs nativos. Los pipe
 -   Pensar en seguridad desde el diseño
 -   Evaluar y medir antes de confiar
 
-La IA generativa amplifica estas habilidades. No las reemplaza.
+**La IA generativa amplifica estas habilidades. No las reemplaza.**
 :::
-:::
-:::
+::::
+::::::
 
 ------------------------------------------------------------------------
 
@@ -1166,33 +1236,46 @@ La IA generativa amplifica estas habilidades. No las reemplaza.
 
 <br>
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
-**Cursos gratuitos:** - 🤗 [Hugging Face Agents Course](https://huggingface.co/learn/agents-course) - 🤗 [Hugging Face NLP Course](https://huggingface.co/learn/nlp-course) - 🔵 [Anthropic Prompt Engineering Guide](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) - 📘 [DeepLearning.AI Short Courses](https://www.deeplearning.ai/short-courses/)
+**Cursos gratuitos:**
 
-**Papers fundamentales:** - Attention is All You Need (Vaswani et al., 2017) - Language Models are Few-Shot Learners (Brown et al., 2020) - Constitutional AI (Bai et al., 2022) - ReAct: Synergizing Reasoning and Acting (Yao et al., 2022)
+-   🤗 [Hugging Face Agents Course](https://huggingface.co/learn/agents-course)
+-   🤗 [Hugging Face NLP Course](https://huggingface.co/learn/nlp-course)
+-   🔵 [Anthropic Prompt Engineering Guide](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview)
+-   📘 [DeepLearning.AI Short Courses](https://www.deeplearning.ai/short-courses/)
+
+**Papers fundamentales:**
+
+-   Attention is All You Need (Vaswani et al., 2017)
+-   Language Models are Few-Shot Learners (Brown et al., 2020)
+-   Constitutional AI (Bai et al., 2022)
+-   ReAct: Synergizing Reasoning and Acting (Yao et al., 2022)
 :::
 
 ::: {.column width="50%"}
-**Libros:** - *Build a Large Language Model from Scratch* — Sebastian Raschka - *Designing Machine Learning Systems* — Chip Huyen - *AI Engineering* — Chip Huyen (2025)
+**Libros:**
 
-**Comunidades:** - PyCon Chile / PyDay Valparaíso - LatinR, useR! - Hugging Face Discord - r/LocalLLaMA
+-   *Build a Large Language Model from Scratch* — Sebastian Raschka
+-   *Designing Machine Learning Systems* — Chip Huyen
+-   *AI Engineering* — Chip Huyen (2025)
 
-**Este repositorio:**
+**Comunidades:**
 
-```{=html}
-<div style="text-align:center; margin-top:0.5rem;">
-  <img src="images/qr_data.png" style="width:180px; border-radius:8px;"/>
-</div>
-```
+-   PyCon Chile / PyDay Valparaíso
+-   LatinR, useR!
+-   Hugging Face Discord
+-   r/LocalLLaMA
+
+
 :::
-:::
+:::::
 
 ------------------------------------------------------------------------
 
 ## 🎉 ¡Gracias por Participar!
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 <br>
 
@@ -1200,7 +1283,7 @@ La IA generativa amplifica estas habilidades. No las reemplaza.
 
 👏 Responder [encuesta](https://docs.google.com/forms/d/e/1FAIpQLScrKncFmj2n8vLUOhEd9GrY_zfWBwGFEtLJFKj2lsBQ0ERxSg/viewform?usp=dialog)
 
-🥳 Disfrutar del Evento!
+🥳 Disfrutar del PyDay!
 
 <br>
 
@@ -1214,7 +1297,7 @@ La IA generativa amplifica estas habilidades. No las reemplaza.
 ::: {.column width="50%" align="center"}
 ![](images/qr_data.png){width="400"}
 :::
-:::
+:::::
 
 ```{=html}
 <style>

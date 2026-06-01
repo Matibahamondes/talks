@@ -69,7 +69,7 @@ Quarto es un sistema abierto de<br> publicación científica y técnica
 
 <br>
 
-::: r-stack
+:::::: r-stack
 ::: {.fragment .fade-in-then-out}
 <iframe src="https://sethnut.com/resources/talks/es/2025-emma-cc/index.html" width="1200" height="700" frameborder="0" scrolling="si" style="max-width:100%; border:1px solid #CCC; border-radius:10px;" allowfullscreen>
 
@@ -87,7 +87,7 @@ Quarto es un sistema abierto de<br> publicación científica y técnica
 
 </iframe>
 :::
-:::
+::::::
 
 ## Quarto organiza<br>cada paso del renderizado {.takeaway .center}
 
@@ -97,9 +97,9 @@ Quarto es un sistema abierto de<br> publicación científica y técnica
 
 ## Quarto facilita el cambio entre formatos {.takeaway .center}
 
-::: columns
-::: {.column width="33%"}
-::: fragment
+:::::::::::: columns
+::::: {.column width="33%"}
+:::: fragment
 Document
 
 ::: {.code-file .sourceCode .cell-code}
@@ -110,11 +110,11 @@ Document
 title: "Lesson 1"
 format: html
 ```
-:::
-:::
+::::
+:::::
 
-::: {.column width="33%"}
-::: fragment
+::::: {.column width="33%"}
+:::: fragment
 Presentation
 
 ::: {.code-file .sourceCode .cell-code}
@@ -125,11 +125,11 @@ Presentation
 title: "Lesson 1"
 format: revealjs
 ```
-:::
-:::
+::::
+:::::
 
-::: {.column width="33%"}
-::: fragment
+::::: {.column width="33%"}
+:::: fragment
 Website
 
 ::: {.code-file .sourceCode .cell-code}
@@ -145,20 +145,20 @@ website:
     left:
       - lesson-1.qmd
 ```
-:::
-:::
-:::
+::::
+:::::
+::::::::::::
 
 ## Instalar y configurar Quarto {transition="zoom"}
 
 <br>
 
-::: columns
-::: {.column width="40%"}
+:::::: columns
+:::: {.column width="40%"}
 ::: {style="text-align: center;"}
 <img src="images/horst_quarto_ball_straight.png" alt="Overleaf" style="width: 90%; border-radius: 10px;"/>
 :::
-:::
+::::
 
 ::: {.column .incremental width="60%"}
 <br>
@@ -170,7 +170,7 @@ website:
 -   **Editores recomendados:**
     -   [Jupyter Notebook](https://jupyter.org/install) , [VSCode + Quarto Extension](https://marketplace.visualstudio.com/items?itemName=quarto.quarto)
 :::
-:::
+::::::
 
 ## Instalar y configurar Quarto {transition="fade"}
 
@@ -184,21 +184,21 @@ website:
 
 ##  {.center transition="zoom"}
 
-::: centered
-::: columns
-::: {.column width="45%"}
+:::::::: centered
+::::::: columns
+:::: {.column width="45%"}
 ::: borderbox
 ![](images/2-collaborate/tools-jupyterhub.png){fig-alt="Screenshot of RStudio IDE" width="100%"}
 :::
-:::
+::::
 
-::: {.column width="45%"}
+:::: {.column width="45%"}
 ::: borderbox
 ![](images/2-collaborate/tools-vscode-ide.png){fig-alt="Screenshot of VS Code IDE" width="100%"}
 :::
-:::
-:::
-:::
+::::
+:::::::
+::::::::
 
 . . .
 
@@ -208,7 +208,7 @@ website:
 
 ##  {.takeaway .center}
 
-::: columns
+::::: columns
 ::: {.column width="40%"}
 [Código: example.qmd]{style="font-size: 0.5em; color: gray"}
 
@@ -248,7 +248,7 @@ format:
 <iframe width=800 height=600 src="images/quarto_min.html"></iframe>
 ```
 :::
-:::
+:::::
 
 # Enseñar + <br> Reimaginar {.title-top-ice background-image="images/horst_quarto_penguins_reimagine.png" data-state="no-logo"}
 
@@ -383,7 +383,7 @@ df.head(5)  # primeras 10 filas
 
 ## Extensiones de Quarto
 
-::: columns
+::::: columns
 ::: {.column .fragment width="60%"}
 <br><br>
 
@@ -397,7 +397,7 @@ Las **extensiones** de Quarto permiten añadir nuevas características y potenci
 ::: {.column width="40%"}
 ![](images/quarto-ext.png)
 :::
-:::
+:::::
 
 ------------------------------------------------------------------------
 
@@ -495,135 +495,135 @@ app = App(app_ui, server)
 
 ## Conclusiones
 
-::: columns
+:::::::::::: columns
 ::: {.column width="5%"}
 :::
 
-::: {.column width="40%"}
-::: bulletbox
+::::: {.column width="40%"}
+:::: bulletbox
 ::: {.fragment .fade-in-then-semi-out}
 ![](images/horst_quarto_ball-1_4.png){width="50px"}\
 **Compartir**: Un mismo `.qmd` genera HTML, PDF, slides o sitios web, pasando de lo estático a lo interactivo.
 :::
-:::
-:::
+::::
+:::::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="40%"}
-::: bulletbox
+::::: {.column width="40%"}
+:::: bulletbox
 ::: {.fragment .fade-in-then-semi-out}
 ![](images/horst_quarto_ball-2_4.png){width="50px"}\
 **Colaborar**: Con un archivo sencillo ya se puede crear y publicar material reproducible, iniciando el trabajo en equipo.
 :::
-:::
-:::
+::::
+:::::
 
 ::: {.column width="5%"}
 :::
-:::
+::::::::::::
 
-::: columns
+:::::::::::: columns
 ::: {.column width="5%"}
 :::
 
-::: {.column width="40%"}
-::: bulletbox
+::::: {.column width="40%"}
+:::: bulletbox
 ::: {.fragment .fade-in-then-semi-out}
 ![](images/horst_quarto_ball-3_4.png){width="50px"}\
 **Enseñar**: Sus features integran texto, código y visualizaciones, mejorando la enseñanza con recursos dinámicos.
 :::
-:::
-:::
+::::
+:::::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="40%"}
-::: bulletbox
+::::: {.column width="40%"}
+:::: bulletbox
 ::: {.fragment .fade-in-then-semi-out}
 ![](images/horst_quarto_ball-4_4.png){width="50px"}\
 **Reimaginar**: Tecnologías como WebR, Pyodide o Shiny abren nuevas formas de aprender e innovar en educación.
 :::
-:::
-:::
+::::
+:::::
 
 ::: {.column width="5%"}
 :::
-:::
+::::::::::::
 
 ## Referencias y Recursos {transition="zoom"}
 
-::: columns
+:::::::::::: columns
 ::: {.column width="5%"}
 :::
 
-::: {.column width="40%"}
-::: bulletbox
+::::: {.column width="40%"}
+:::: bulletbox
 ::: {.fragment .fade-in-then-semi-out}
 ![](images/horst_quarto_ball-4_4.png){width="50px"}\
 **Documentación oficial**\
 🔗 [quarto.org](https://quarto.org)\
 Guías y ejemplos prácticos para comenzar de inmediato.
 :::
-:::
-:::
+::::
+:::::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="40%"}
-::: bulletbox
+::::: {.column width="40%"}
+:::: bulletbox
 ::: {.fragment .fade-in-then-semi-out}
 ![](images/youtube.png){width="50px"}\
 **Aprendizaje en video**\
 🔗 [Crash Course en YouTube](https://www.youtube.com/watch?v=_VKxTPWDhA4&t=3677s)\
 Introducción práctica a Quarto y sus distintos usos.
 :::
-:::
-:::
+::::
+:::::
 
 ::: {.column width="5%"}
 :::
-:::
+::::::::::::
 
-::: columns
+:::::::::::: columns
 ::: {.column width="5%"}
 :::
 
-::: {.column width="40%"}
-::: bulletbox
+::::: {.column width="40%"}
+:::: bulletbox
 ::: {.fragment .fade-in-then-semi-out}
 ![](images/github.png){width="50px"}\
 **Recursos de la comunidad**\
 🔗 [Mine Cetinkaya-Rundel](https://github.com/mine-cetinkaya-rundel)\
 Cursos, libros y presentaciones en Quarto en GitHub.
 :::
-:::
-:::
+::::
+:::::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="40%"}
-::: bulletbox
+::::: {.column width="40%"}
+:::: bulletbox
 ::: {.fragment .fade-in-then-semi-out}
 ![](images/hat.png){width="50px"}\
 **Aplicaciones en educación**\
 🔗 [sethnut.com/resources](https://sethnut.com/resources/)\
 Olimpiada Matemática, Verano Matemático, EMMA y más!
 :::
-:::
-:::
+::::
+:::::
 
 ::: {.column width="5%"}
 :::
-:::
+::::::::::::
 
 ## 🎉 ¡Gracias por Participar!
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 <br>
 
@@ -637,6 +637,6 @@ Olimpiada Matemática, Verano Matemático, EMMA y más!
 ::: {.column width="50%" align="center"}
 ![](images/qr-pycon.png){width="400"}
 :::
-:::
+:::::
 
 > 🔗 Nuestro Sitio Web: [sethnut.com/talks](https://sethnut.com/talks/)

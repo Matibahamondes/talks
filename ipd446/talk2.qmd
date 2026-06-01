@@ -1,1166 +1,932 @@
 ---
-title: "Diplomado Transformación Digital"
-subtitle: "M3 - Semana 02"
-author: 
-  - Francisco Alfaro
-date: 21 may 2026
-format: 
+title: "Trayectorias Académicas Óptimas"
+subtitle: "Estado del Arte: Optimización Clásica vs. Aprendizaje por Refuerzo"
+author: "Francisco Alfaro Medina"
+institute: "Doctorado en Ingeniería Electrónica · UTFSM"
+date: today
+date-format: "MMMM YYYY"
+
+format:
   revealjs:
-    width: 1366
-    height: 768
-    theme: simple
+    theme: [default, custom.scss]
     slide-number: true
-    controls: true
-    controls-layout: edges
-    controls-back-arrows: faded
-    transition: slide
-    chalkboard: true
-    callout-appearance: simple
-    code-copy: true
-    highlight-style: arrow
-    title-slide-attributes: 
-      data-background-image: images/background.jpg
-    logo: images/usm.png
+    progress: true
+    history: false
+    transition: fade
+    transition-speed: fast
+    incremental: false
+    fig-align: center
+    highlight-style: github
+    code-block-bg: true
+    center: false
+    width: 1600
+    height: 800
+    logo: "images/usm.png"
+    scrollable: false
+execute:
+  echo: false
+  warning: false
 ---
 
-## Tipos de Aprendizaje
+##  {.title-slide background-color="#0F2044"}
 
-![](images/clase-0/ML_types.png){.lightbox}
+::: title-block
+**Trayectorias Académicas Óptimas**
 
-## demo
-
-``` html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Herramientas IA Generativa</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --plagios:    #a78bfa;
-    --pres:       #60a5fa;
-    --av:         #34d399;
-    --pdf:        #f472b6;
-    --acad:       #fbbf24;
-    --revision:   #fb923c;
-    --datos:      #f87171;
-    --escritura:  #818cf8;
-    --bg: #0a0a1a;
-    --card: #13132a;
-  }
-
-  body {
-    background: var(--bg);
-    font-family: 'DM Sans', sans-serif;
-    color: #e2e8f0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px 60px;
-    overflow-x: hidden;
-  }
-
-  h1 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(1.4rem, 3vw, 2.2rem);
-    font-weight: 800;
-    text-align: center;
-    letter-spacing: -0.02em;
-    margin-bottom: 8px;
-    background: linear-gradient(135deg, #e0e7ff, #a5b4fc, #818cf8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .subtitle {
-    font-size: 0.9rem;
-    color: #64748b;
-    margin-bottom: 50px;
-    font-weight: 300;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  .wheel-wrapper {
-    position: relative;
-    width: min(700px, 92vw);
-    height: min(700px, 92vw);
-    margin-bottom: 60px;
-  }
-
-  .wheel-svg {
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 0 40px rgba(99,102,241,0.3));
-    animation: spin-in 1.2s cubic-bezier(0.34,1.56,0.64,1) both;
-  }
-
-  @keyframes spin-in {
-    from { opacity: 0; transform: scale(0.7) rotate(-30deg); }
-    to   { opacity: 1; transform: scale(1) rotate(0deg); }
-  }
-
-  .sector-path {
-    cursor: pointer;
-    transition: opacity 0.2s, filter 0.2s;
-    opacity: 0.85;
-  }
-  .sector-path:hover {
-    opacity: 1;
-    filter: brightness(1.25) drop-shadow(0 0 12px currentColor);
-  }
-  .sector-path.dimmed { opacity: 0.2; }
-  .sector-path.active  { opacity: 1; filter: brightness(1.3) drop-shadow(0 0 18px currentColor); }
-
-  .center-circle {
-    cursor: pointer;
-  }
-
-  /* Info panel */
-  .info-panel {
-    width: min(700px, 92vw);
-    background: var(--card);
-    border-radius: 20px;
-    padding: 0;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.06);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-    transition: all 0.4s cubic-bezier(0.34,1.2,0.64,1);
-    max-height: 0;
-    opacity: 0;
-  }
-  .info-panel.visible {
-    max-height: 500px;
-    opacity: 1;
-    margin-bottom: 40px;
-  }
-
-  .panel-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 24px 28px 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
-
-  .panel-dot {
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  .panel-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-  }
-
-  .panel-emoji {
-    font-size: 1.5rem;
-    margin-left: auto;
-  }
-
-  .tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 12px;
-    padding: 24px 28px;
-  }
-
-  .tool-card {
-    background: rgba(255,255,255,0.04);
-    border-radius: 12px;
-    padding: 14px 16px;
-    border: 1px solid rgba(255,255,255,0.07);
-    transition: transform 0.2s, background 0.2s;
-    animation: pop-in 0.3s cubic-bezier(0.34,1.56,0.64,1) both;
-  }
-
-  .tool-card:hover {
-    transform: translateY(-3px);
-    background: rgba(255,255,255,0.08);
-  }
-
-  @keyframes pop-in {
-    from { opacity: 0; transform: scale(0.8) translateY(8px); }
-    to   { opacity: 1; transform: scale(1) translateY(0); }
-  }
-
-  .tool-name {
-    font-weight: 500;
-    font-size: 0.9rem;
-    color: #e2e8f0;
-  }
-
-  .tool-desc {
-    font-size: 0.72rem;
-    color: #64748b;
-    margin-top: 3px;
-    line-height: 1.4;
-  }
-
-  /* Legend */
-  .legend {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
-    width: min(700px, 92vw);
-    animation: fadeUp 0.8s 0.8s both;
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 14px;
-    background: var(--card);
-    border-radius: 10px;
-    cursor: pointer;
-    border: 1px solid rgba(255,255,255,0.05);
-    transition: background 0.2s, transform 0.2s;
-  }
-  .legend-item:hover { background: rgba(255,255,255,0.07); transform: translateX(4px); }
-
-  .legend-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  .legend-label {
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: #cbd5e1;
-  }
-
-  .hint {
-    font-size: 0.78rem;
-    color: #475569;
-    text-align: center;
-    margin-bottom: 24px;
-    letter-spacing: 0.05em;
-  }
-</style>
-</head>
-<body>
-
-<h1>Herramientas de Inteligencia Artificial Generativa</h1>
-<p class="subtitle">Haz clic en cada sector para explorar las herramientas</p>
-
-<div class="wheel-wrapper">
-  <svg class="wheel-svg" viewBox="-10 -10 520 520" id="wheel">
-    <defs>
-      <filter id="glow">
-        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-        <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-      </filter>
-    </defs>
-    <!-- Sectors drawn via JS -->
-  </svg>
-</div>
-
-<div class="info-panel" id="infoPanel">
-  <div class="panel-header">
-    <div class="panel-dot" id="panelDot"></div>
-    <div class="panel-title" id="panelTitle"></div>
-    <div class="panel-emoji" id="panelEmoji"></div>
-  </div>
-  <div class="tools-grid" id="toolsGrid"></div>
-</div>
-
-<p class="hint">↑ Haz clic en un sector de la rueda o en la leyenda</p>
-
-<div class="legend" id="legend"></div>
-
-<script>
-const CX = 250, CY = 250, R_OUTER = 240, R_INNER = 90, R_LABEL = 175, R_ICON = 210;
-
-const sectors = [
-  {
-    id: "plagios",
-    label: "Detectar\nPlagios",
-    emoji: "🔍",
-    color: "#a78bfa",
-    tools: [
-      {name:"Copyleaks", desc:"Detección avanzada de plagio y contenido IA"},
-      {name:"ZeroGPT",   desc:"Identifica texto generado por IA"},
-      {name:"GPTZero",   desc:"Analiza escritura humana vs IA"},
-      {name:"Turnitin",  desc:"Estándar académico anti-plagio"},
-    ]
-  },
-  {
-    id: "pres",
-    label: "Crear\nPresentaciones",
-    emoji: "🎨",
-    color: "#60a5fa",
-    tools: [
-      {name:"Gamma",    desc:"Presentaciones con IA en segundos"},
-      {name:"SlidesAI", desc:"Convierte texto en slides"},
-      {name:"Pixelcut", desc:"Diseño gráfico con IA"},
-      {name:"Clipdrop", desc:"Edición de imágenes inteligente"},
-      {name:"OpenArt",  desc:"Generación de arte con IA"},
-    ]
-  },
-  {
-    id: "av",
-    label: "Crear Audio\ny Video",
-    emoji: "🎬",
-    color: "#34d399",
-    tools: [
-      {name:"Pictory",   desc:"Convierte texto a video"},
-      {name:"HeyGen",    desc:"Avatares con IA para video"},
-      {name:"D-ID",      desc:"Videos con presentadores digitales"},
-      {name:"Vidyo.ai",  desc:"Recorta clips virales con IA"},
-      {name:"CapCut",    desc:"Editor de video con IA integrada"},
-      {name:"Runway",    desc:"Efectos y generación de video"},
-      {name:"Synthesia", desc:"Video corporativo con avatares"},
-      {name:"Soundraw",  desc:"Música generada por IA"},
-    ]
-  },
-  {
-    id: "pdf",
-    label: "Extraer info\nde PDF",
-    emoji: "📄",
-    color: "#f472b6",
-    tools: [
-      {name:"Humata",   desc:"Pregunta sobre tus documentos"},
-      {name:"ChatPDF",  desc:"Chatea con cualquier PDF"},
-      {name:"ChatDOC",  desc:"Analiza documentos con IA"},
-      {name:"AskYourPDF", desc:"Extrae respuestas de PDFs"},
-    ]
-  },
-  {
-    id: "acad",
-    label: "Redacción\nAcadémica",
-    emoji: "🎓",
-    color: "#fbbf24",
-    tools: [
-      {name:"Trinka",  desc:"Corrección para ciencia y academia"},
-      {name:"Jenni",   desc:"Asistente de escritura académica"},
-      {name:"Elicit",  desc:"Busca y resume papers científicos"},
-      {name:"Consensus",desc:"Respuestas basadas en evidencia"},
-    ]
-  },
-  {
-    id: "revision",
-    label: "Edición y\nRevisión",
-    emoji: "✏️",
-    color: "#fb923c",
-    tools: [
-      {name:"Inger",     desc:"Corrección de textos científicos"},
-      {name:"Wordvice",  desc:"Edición y paráfrasis con IA"},
-      {name:"Paperpal",  desc:"Revisión académica en tiempo real"},
-      {name:"Smodin",    desc:"Reescritura y paráfrasis"},
-      {name:"Writefull", desc:"Revisión de lenguaje académico"},
-    ]
-  },
-  {
-    id: "datos",
-    label: "Visualización\nde Datos",
-    emoji: "📊",
-    color: "#f87171",
-    tools: [
-      {name:"Akkio",      desc:"Análisis predictivo sin código"},
-      {name:"Polymer",    desc:"Explora datos con IA"},
-      {name:"MonkeyLearn",desc:"Text analytics automático"},
-      {name:"Julius AI",  desc:"Analiza datos en lenguaje natural"},
-    ]
-  },
-  {
-    id: "escritura",
-    label: "Escritura\nAsistida",
-    emoji: "🖊️",
-    color: "#818cf8",
-    tools: [
-      {name:"ChatGPT",   desc:"Asistente conversacional de OpenAI"},
-      {name:"Jasper",    desc:"Copywriting y marketing con IA"},
-      {name:"Otter.ai",  desc:"Transcripción automática de audio"},
-      {name:"DeepL",     desc:"Traducción de alta calidad"},
-      {name:"Reverso",   desc:"Traducción y conjugación"},
-      {name:"Piktochart",desc:"Infografías con IA"},
-    ]
-  },
-];
-
-const n = sectors.length;
-const angleStep = (2 * Math.PI) / n;
-const startOffset = -Math.PI / 2;
-
-function polarToXY(cx, cy, r, angle) {
-  return [cx + r * Math.cos(angle), cy + r * Math.sin(angle)];
-}
-
-function sectorPath(i) {
-  const a1 = startOffset + i * angleStep + 0.015;
-  const a2 = startOffset + (i + 1) * angleStep - 0.015;
-  const [x1, y1] = polarToXY(CX, CY, R_OUTER, a1);
-  const [x2, y2] = polarToXY(CX, CY, R_OUTER, a2);
-  const [x3, y3] = polarToXY(CX, CY, R_INNER, a2);
-  const [x4, y4] = polarToXY(CX, CY, R_INNER, a1);
-  return `M ${x1} ${y1} A ${R_OUTER} ${R_OUTER} 0 0 1 ${x2} ${y2} L ${x3} ${y3} A ${R_INNER} ${R_INNER} 0 0 0 ${x4} ${y4} Z`;
-}
-
-const svg = document.getElementById('wheel');
-let activeIndex = null;
-
-// Draw sectors
-sectors.forEach((s, i) => {
-  const midAngle = startOffset + (i + 0.5) * angleStep;
-
-  // Sector path
-  const path = document.createElementNS("http://www.w3.org/2000/svg","path");
-  path.setAttribute("d", sectorPath(i));
-  path.setAttribute("fill", s.color);
-  path.setAttribute("class","sector-path");
-  path.setAttribute("data-i", i);
-  svg.appendChild(path);
-
-  // Emoji icon
-  const [ex, ey] = polarToXY(CX, CY, R_ICON, midAngle);
-  const emojiEl = document.createElementNS("http://www.w3.org/2000/svg","text");
-  emojiEl.setAttribute("x", ex);
-  emojiEl.setAttribute("y", ey);
-  emojiEl.setAttribute("text-anchor","middle");
-  emojiEl.setAttribute("dominant-baseline","central");
-  emojiEl.setAttribute("font-size","22");
-  emojiEl.setAttribute("style","pointer-events:none;");
-  emojiEl.textContent = s.emoji;
-  svg.appendChild(emojiEl);
-
-  // Label
-  const [lx, ly] = polarToXY(CX, CY, R_LABEL, midAngle);
-  const lines = s.label.split("\n");
-  const text = document.createElementNS("http://www.w3.org/2000/svg","text");
-  text.setAttribute("x", lx);
-  text.setAttribute("y", ly);
-  text.setAttribute("text-anchor","middle");
-  text.setAttribute("dominant-baseline","central");
-  text.setAttribute("font-family","Syne, sans-serif");
-  text.setAttribute("font-weight","700");
-  text.setAttribute("fill","#0a0a1a");
-  text.setAttribute("style","pointer-events:none;");
-  lines.forEach((line, li) => {
-    const tspan = document.createElementNS("http://www.w3.org/2000/svg","tspan");
-    tspan.setAttribute("x", lx);
-    tspan.setAttribute("dy", li === 0 ? (lines.length > 1 ? "-0.55em" : "0") : "1.2em");
-    tspan.setAttribute("font-size", lines[0].length > 8 ? "11" : "12");
-    tspan.textContent = line;
-    text.appendChild(tspan);
-  });
-  svg.appendChild(text);
-
-  // Click
-  path.addEventListener("click", () => toggleSector(i));
-});
-
-// Center circle
-const centerGroup = document.createElementNS("http://www.w3.org/2000/svg","g");
-centerGroup.setAttribute("class","center-circle");
-
-const centerBg = document.createElementNS("http://www.w3.org/2000/svg","circle");
-centerBg.setAttribute("cx", CX); centerBg.setAttribute("cy", CY);
-centerBg.setAttribute("r", R_INNER - 4);
-centerBg.setAttribute("fill","#0a0a1a");
-centerBg.setAttribute("stroke","rgba(255,255,255,0.1)");
-centerBg.setAttribute("stroke-width","2");
-
-const centerGlow = document.createElementNS("http://www.w3.org/2000/svg","circle");
-centerGlow.setAttribute("cx", CX); centerGlow.setAttribute("cy", CY);
-centerGlow.setAttribute("r", R_INNER - 10);
-centerGlow.setAttribute("fill","url(#cgradient)");
-centerGlow.setAttribute("opacity","0.3");
-
-const defs = document.createElementNS("http://www.w3.org/2000/svg","defs");
-const cgradient = document.createElementNS("http://www.w3.org/2000/svg","radialGradient");
-cgradient.setAttribute("id","cgradient");
-const stop1 = document.createElementNS("http://www.w3.org/2000/svg","stop");
-stop1.setAttribute("offset","0%"); stop1.setAttribute("stop-color","#818cf8");
-const stop2 = document.createElementNS("http://www.w3.org/2000/svg","stop");
-stop2.setAttribute("offset","100%"); stop2.setAttribute("stop-color","#0a0a1a");
-cgradient.appendChild(stop1); cgradient.appendChild(stop2);
-defs.appendChild(cgradient);
-svg.insertBefore(defs, svg.firstChild);
-
-const centerText1 = document.createElementNS("http://www.w3.org/2000/svg","text");
-centerText1.setAttribute("x", CX); centerText1.setAttribute("y", CY - 12);
-centerText1.setAttribute("text-anchor","middle");
-centerText1.setAttribute("font-family","Syne, sans-serif");
-centerText1.setAttribute("font-weight","800");
-centerText1.setAttribute("font-size","13");
-centerText1.setAttribute("fill","#e2e8f0");
-centerText1.textContent = "Herramientas";
-
-const centerText2 = document.createElementNS("http://www.w3.org/2000/svg","text");
-centerText2.setAttribute("x", CX); centerText2.setAttribute("y", CY + 6);
-centerText2.setAttribute("text-anchor","middle");
-centerText2.setAttribute("font-family","Syne, sans-serif");
-centerText2.setAttribute("font-weight","800");
-centerText2.setAttribute("font-size","13");
-centerText2.setAttribute("fill","#e2e8f0");
-centerText2.textContent = "IA Generativa";
-
-const centerEmoji = document.createElementNS("http://www.w3.org/2000/svg","text");
-centerEmoji.setAttribute("x", CX); centerEmoji.setAttribute("y", CY + 28);
-centerEmoji.setAttribute("text-anchor","middle");
-centerEmoji.setAttribute("font-size","18");
-centerEmoji.textContent = "🤖";
-
-centerGroup.appendChild(centerBg);
-centerGroup.appendChild(centerGlow);
-centerGroup.appendChild(centerText1);
-centerGroup.appendChild(centerText2);
-centerGroup.appendChild(centerEmoji);
-svg.appendChild(centerGroup);
-centerGroup.addEventListener("click", () => closePanel());
-
-// Legend
-const legend = document.getElementById("legend");
-sectors.forEach((s, i) => {
-  const item = document.createElement("div");
-  item.className = "legend-item";
-  item.innerHTML = `<div class="legend-dot" style="background:${s.color}"></div><span class="legend-label">${s.emoji} ${s.label.replace("\n"," ")}</span>`;
-  item.addEventListener("click", () => toggleSector(i));
-  legend.appendChild(item);
-});
-
-// Panel logic
-function toggleSector(i) {
-  if (activeIndex === i) { closePanel(); return; }
-  activeIndex = i;
-  updateSectorStyles();
-  showPanel(i);
-}
-
-function closePanel() {
-  activeIndex = null;
-  updateSectorStyles();
-  const panel = document.getElementById("infoPanel");
-  panel.classList.remove("visible");
-}
-
-function updateSectorStyles() {
-  document.querySelectorAll(".sector-path").forEach(p => {
-    const pi = parseInt(p.getAttribute("data-i"));
-    p.classList.remove("active","dimmed");
-    if (activeIndex !== null) {
-      if (pi === activeIndex) p.classList.add("active");
-      else p.classList.add("dimmed");
-    }
-  });
-}
-
-function showPanel(i) {
-  const s = sectors[i];
-  const panel = document.getElementById("infoPanel");
-  const dot = document.getElementById("panelDot");
-  const title = document.getElementById("panelTitle");
-  const emoji = document.getElementById("panelEmoji");
-  const grid = document.getElementById("toolsGrid");
-
-  panel.style.borderTop = `3px solid ${s.color}`;
-  dot.style.background = s.color;
-  title.textContent = s.label.replace("\n"," ");
-  title.style.color = s.color;
-  emoji.textContent = s.emoji;
-
-  grid.innerHTML = "";
-  s.tools.forEach((t, ti) => {
-    const card = document.createElement("div");
-    card.className = "tool-card";
-    card.style.animationDelay = `${ti * 0.05}s`;
-    card.style.borderTop = `2px solid ${s.color}40`;
-    card.innerHTML = `<div class="tool-name">${t.name}</div><div class="tool-desc">${t.desc}</div>`;
-    grid.appendChild(card);
-  });
-
-  panel.classList.add("visible");
-  panel.scrollIntoView({behavior:"smooth", block:"nearest"});
-}
-</script>
-</body>
-</html>
-```
-
-## Reinforcement Learning {.smaller}
-
-::: columns
-::: column
-::: r-stack
-![](images/clase-0/kira_3.jpeg){.lightbox .fragment width="50%" fig-align="center" fragment-index="1"}
-
-![](images/clase-0/kira_0.jpeg){.lightbox .fragment width="50%" fig-align="center" fragment-index="2"}
-
-![](images/clase-0/kira_2.jpeg){.lightbox .fragment width="50%" fig-align="center" fragment-index="3"}
-
-![](images/clase-0/kira_1.jpeg){.lightbox .fragment width="50%" fig-align="center" fragment-index="4"}
-
-![](images/clase-0/alpha_tensor.png){.lightbox .fragment fragment-index="5"}
-
-![](images/clase-0/alpha_fold.png){.lightbox .fragment fragment-index="6"}
-:::
+Optimización Clásica vs. Aprendizaje por Refuerzo
 :::
 
-::: column
-::: {.callout-note .fragment fragment-index="1"}
-En este tipo de aprendizaje se enseña por refuerzo. Es decir se da una recompensa si el sistema aprende lo que queremos.
+::: subtitle-block
+BACP · MDP · Q-Learning · Gratuidad\
+Presentación de Avance Doctoral — UTFSM 2026
 :::
 
-::: {.callout-tip .fragment fragment-index="2"}
-Si el premio es mayor, se pueden obtener aprendizajes mayores.
+::: author-block
+Francisco Alfaro Medina\
+Doctorado en Ingeniería Electrónica · UTFSM\
+Supervisor: Dr. Mauricio Araya · 2026
 :::
 
-::: {.callout-important .fragment fragment-index="5"}
-Un ejemplo de esto es **AlphaTensor** en el cual un modelo `aprendió` una nueva manera de multiplicar matrices que es más eficiente.
+## Agenda
+
+:::::::: columns
+:::: {.column width="50%"}
+<br>
+
+::: {style="font-size: 0.88em; line-height: 2em;"}
+**1.** 🎯 La Problemática
+
+**2.** 📚 Lo que se ha hecho: Optimización Clásica
+
+**3.** 🤖 Lo nuevo: Aprendizaje por Refuerzo y MDP
+
+**4.** 🔬 Los dos papers clave
+
+**5.** 📊 Mis datos: Cohorte UTFSM 2010–2018
+
+**6.** 🚀 Qué haré y qué se puede obtener
 :::
+::::
 
-::: {.callout-important .fragment fragment-index="6"}
-Otro ejemplo es **AlphaFold** donde el modelo `aprendió/descubrió` cómo se doblan las proteínas cuando se vuelven aminoácidos.
+::::: {.column width="50%"}
+:::: {style="text-align: center; margin-top: 2em;"}
+::: {style="background: linear-gradient(135deg, #0F2044, #1A3A6B); border-radius: 12px; padding: 1.5em; color: white; font-size: 0.85em;"}
+**Pregunta central**
+
+¿Cómo recomendar secuencias de cursos que maximicen la graduación oportuna de estudiantes bajo incertidumbre real de aprobación y restricciones de financiamiento?
 :::
-:::
-:::
-
-## Problemas Supervisados: Regresión y Clasificación {.smaller}
-
-::: columns
-::: {.column width="50%"}
-![](images/clase-0/clf_reg.jpeg){fig-align="center"}
-
-::: {.callout-tip .fragment fragment-index="3"}
--   **Regresión**: Se busca estimar un valor continuo.
-    -   `(Estimar el valor de una casa)`.
--   **Clasificación**: Se busca encontrar una categoría o un valor discreto.
-    -   `(Clasificar una imagen como Perro o Gato)`.
-:::
-
-::: {.callout-important .fragment fragment-index="3"}
--   Para entrenar este tipo de modelos se necesitan `etiquetas`, es decir, la respuesta esperada del modelo.
-:::
-:::
-
-::: {.column width="50%"}
-![](images/clase-0/house_pred.png){.fragment fragment-index="1" fig-align="center" width="60%"}
-
-![](images/clase-0/cat_dog.jpg){.fragment fragment-index="2" fig-align="center" width="60%"}
-:::
-:::
-
-::: notes
--   Ambos ejemplos se pueden realizar utilizando Largo (Eje Y) y Peso (Eje X).
-:::
-
-## Clustering {.smaller}
-
-![](images/clase-0/clustering.png){.lightbox fig-align="center" width="60%"}
-
-::: {.callout-tip .fragment}
--   **Clusters**: Una categoría en la que sus componentes son similares. Los clusters normalmente no tienen un nombre propio, sino que uno les asigna uno.
--   También se les llama segmentos. No usar la palabra `clase`.
-:::
-
-::: {.callout-caution .fragment}
--   No requiere de etiquetas, por lo tanto, no es posible evaluar su desempeño de manera 100% acertada.
-:::
-
-## Reducción de Dimensionalidad {.smaller}
-
-![](images/clase-0/dim_red.jpeg){.lightbox fig-align="center" height="60%"}
-
-::: callout-tip
--   **Reducción de la Dimensionalidad**: Eliminar complejidad sin perder información clave para poder entender su comportamiento.
-:::
-
-## Nuestro Sistema de ML {.smaller}
-
-Creemos un Sistema de ML que sea capaz de ver una imágen y pronunciar correctamente el uso de la letra `C`.
-
-::: callout-note
-Vamos a `Entrenar` un Modelo.
-:::
-
-![](images/clase-0/model.png){.fragment .lightbox fig-align="center" width="60%"}
-
-## Nuestro Sistema de ML: Entrenamiento {.smaller}
-
-::: {layout-ncol="3"}
-![`K`asa](images/clase-0/casa.png){fig-align="center" width="70%"}
-
-![`K`o`k`odrilo](images/clase-0/cocodrilo.png){fig-align="center" width="70%"}
-
-![`K`ubo](images/clase-0/cubo.png){fig-align="center" width="70%"}
-:::
-
-::: fragment
-::: callout-important
-**¿Qué patrones está aprendiendo el modelo?**
-:::
-:::
-
-Entrenamiento
-
-:   Es el proceso en el cuál se permite al modelo aprender. En este proceso se le entregan ejemplos (`Train Set`) para que el modelo de manera `autónoma` pueda aprender `patrones` que le permitan resolver la tarea dada.
-
-## Nuestro Sistema de ML: Inferencia {.smaller}
-
-Inferencia/Predicción
-
-:   Se refiere al proceso en el que el modelo tiene que demostrar cuál sería su decisión de acuerdo a los patrones aprendidos en el proceso de entrenamiento. Los ejemplos en los que se prueba se le denomina `Test Set`.
-
-::: {layout-ncol="4"}
-![](images/clase-0/correa.png){.fragment fig-align="center" width="50%" fragment-index="1"}
-
-![](images/clase-0/conejo.png){.fragment fig-align="center" width="50%" fragment-index="3"}
-
-![](images/clase-0/cuchillo.png){.fragment fig-align="center" width="50%" fragment-index="5"}
-
-![](images/clase-0/bicicleta.png){.fragment fig-align="center" width="50%" fragment-index="7"}
-:::
-
-::: {layout-ncol="4"}
-::: {.fragment fragment-index="2"}
-`K`ollar
-:::
-
-::: {.fragment fragment-index="4"}
-`K`onejo
-:::
-
-::: {.fragment fragment-index="6"}
-`K`u`k`illo
-:::
-
-::: {.fragment fragment-index="8"}
-Bi`k`i`k`leta
-:::
-:::
-
-::: {.fragment fragment-index="11"}
-
-Generalización
-
-:   Se le llama generalización a la capacidad del modelo de aplicar lo aprendido de manera correcta en ejemplos no vistos.
-:::
-
-## Nuestro Sistema de ML: Nuevas instancias de Entrenamiento
-
-::: {layout-ncol="3"}
-![`K`u`ch`illo](images/clase-0/cuchillo.png){.fragment .fade-out fig-align="center" width="70%" fragment-index="2"}
-
-![`Ch`o`k`olate](images/clase-0/chocolate.png){fig-align="center" width="70%"}
-
-![`S`in`s`el](images/clase-0/cincel.png){fig-align="center" width="70%"}
-:::
-
-::: {.callout-warning .fragment fragment-index="1"}
-No es bueno entrenar con las mismas instancias de de `Test`, es decir, con las cuales se evalúa el modelo. **¿Por qué?**
-:::
-
-::: notes
-Mencionar el caso de error de ImageNet.
-:::
-
-## Nuestro Sistema de ML: Reevaluemos nuestro Modelo {.smaller}
-
-::: {layout-ncol="5"}
-![](images/clase-0/correa.png){.fragment fig-align="center" width="50%" fragment-index="1"}
-
-![](images/clase-0/conejo.png){.fragment fig-align="center" width="50%" fragment-index="3"}
-
-![](images/clase-0/cuchillo.png){.fragment fig-align="center" width="50%" fragment-index="5"}
-
-![](images/clase-0/bicicleta.png){.fragment fig-align="center" width="50%" fragment-index="7"}
-:::
-
-::: {layout-ncol="4"}
-::: {.fragment fragment-index="2"}
-`K`ollar
-:::
-
-::: {.fragment fragment-index="4"}
-`K`onejo
-:::
-
-::: {.fragment fragment-index="6"}
-`K`u`ch`illo
-:::
-
-::: {.fragment fragment-index="8"}
-Bi`s`i`k`leta
-:::
-:::
-
-::: {.fragment fragment-index="9"}
-
-Evaluación
-
-:   Utilizar una métrica que permita `ponerle nota` al modelo.
-:::
-
-::: {.fragment fragment-index="10"}
--   1er Modelo: 2 correctas de 4, es decir **50%**.
-:::
-
-::: {.fragment fragment-index="11"}
--   2do Modelo: 4 correctas de 4, es decir **100%**.
-:::
-
-## Problemas del Aprendizaje {.smaller}
-
-::: {.fragment fragment-index="1"}
-Supongamos que queremos utilizar nuestro modelo para pronunciar palabras en otro idioma (otro `Test Set`).
-
-**¿Qué problemas podemos encontrar?**
-:::
-
-::: columns
-::: {.column .incremental}
--   Stomach $\rightarrow$ Stoma[k]{style="color:green;"}
-
--   Archer $\rightarrow$ Ar[ch]{style="color:green;"}er
-
--   Church $\rightarrow$ [Ch]{style="color:green;"}ur`k`
-
-    -   [Ch]{style="color:green;"}ur[ch]{style="color:green;"}.
-
--   Archeology $\rightarrow$ Ar`ch`eology
-
-    -   Ar[k]{style="color:green;"}eology.
-
--   Chicago $\rightarrow$ `Ch`icago
-
-    -   [Sh]{style="color:green;"}icago.
-
--   Muscle $\rightarrow$ Mus`k`le
-
-    -   Mus[\_]{style="color:green;"}le.
-
--   Ich mag Schweinefleisch $\rightarrow$ I`ch` mag S`ch`weinefleis`k`.
-
-    -   I[j]{style="color:green;"} mag [Sh]{style="color:green;"}vaineflai[sh]{style="color:green;"}.
-:::
-
-::: column
-::: {.callout-important .fragment}
-Claramente tenemos un problema. **¿A qué se debe esto?**
-:::
-:::
-:::
-
-## Problemas del Aprendizaje: Definiciones {.smaller}
-
-Overfitting (Sobreajuste)
-
-:   Se refiere a cuando un modelo no es capaz de generalizar de manera correcta, porque se ajusta `demasiado` bien (llegando a `memorizar`) a los datos de entrenamiento. **¿Cómo se puede mitigar este problema?**
-
-::: {.callout-caution .fragment}
-Se le tiende a llamar `sobreentrenamiento`, pero no es del todo correcto para el caso de modelos de Machine Learning. Lo más correcto es que el `sobreentrenamiento` provoca overfitting.
-:::
-
-::: notes
-Mostrar ejemplos en Pizarra de manera gráfica. Ejemplos típicos de Excel.
-:::
-
-::: fragment
-
-Underfitting (Subajuste)
-
-:   Se refiere a cuando un modelo no es capaz de generalizar de manera correcta, pero a diferencia del overfitting `no se ha ajustado` correctamente a los datos. **¿Cómo se vería el underfitting en nuestro ejemplo?**
-:::
-
-## Etapas del Modelamiento: Crisp-DM
-
-![](images/clase-0/crisp_dm.png){.lightbox width="50%" fig-align="center"}
-
-## Etapas del Modelamiento: KDD
-
-![](images/clase-0/kdd.png){.lightbox width="80%" fig-align="center"}
-
-## Etapas del Modelamiento: Semma
-
-![](images/clase-0/semma.png){.lightbox width="60%" fig-align="center"}
-
-## Etapas del Modelamiento: Metodología Propia
-
-![](images/clase-0/own.png){.lightbox width="50%" fig-align="center"}
-
-## Preguntas para terminar
-
--   ¿Qué tipo de modelo debo implementar si quiero estimar la temperatura del día de mañana?
--   ¿Qué tipo de modelo debo implementar si es que quiero detectar barrios de acuerdo a su condición socio-economica?
--   Si mi modelo aprende a resolver ejercicios de matemática.
-    -   ¿Cómo se vería el overfitting?
-    -   ¿Cómo se vería el underfitting?
+::::
+:::::
+::::::::
 
 ------------------------------------------------------------------------
 
-## ¿Qué es Scikit-Learn? {.smaller}
+##  {background-color="#0F2044"}
 
-::: columns
-::: {.column width="30%"}
-![](images/lab-0/sklearn.jpg)
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Parte 1]{style="font-size: 1.5em; color: #4A9FD4;"}
+
+[La Problemática]{style="font-size: 2.5em; color: white; font-weight: bold;"}
+
+[¿Por qué esto importa?]{style="font-size: 1.2em; color: #A8C4E0; font-style: italic;"}
 :::
-
-::: {.column width="70%"}
--   `Scikit-Learn` (`sklearn` para los amigos) es una librería creada por David Cournapeau, como un Google Summer Code Project y luego Matthieu Brucher en su tesis.
--   En 2010 queda a cargo de [INRIA](https://www.inria.cl/es) y tiene un ciclo de actualización de 3 meses.
--   Es la librería más famosa y poderosa para hacer Machine Learning hoy en día.
--   Su API es tan famosa, que hoy se sabe que una librería es de `calidad` si sigue los estándares implementados por `Scikit-Learn`.
--   Para que un algoritmo sea parte de `Scikit-Learn` debe poseer 3 años desde su publicación y 200+ citaciones mostrando su utilidad y amplio uso (ver [acá](https://scikit-learn.org/stable/faq.html#new-algorithms-inclusion-criteria)).
--   Además es una librería que obliga a que sus algoritmos tengan la capacidad de generalizar.
-:::
-:::
-
-## Diseño {.smaller}
-
--   `Scikit-Learn` sigue un patrón de `Programación Orientada a Objetos (POO)` basado en clases.
-
-::: callout-note
--   En programación, una clase es un objeto que internamente contiene estados que pueden ir cambiando en el tiempo.
-    -   Una clase posee:
-        -   **Métodos**: Funciones que cambian el comportamiento de la clase.
-        -   **Atributos**: Datos propios de la clase.
-:::
-
-::: {.incremental style="font-size: 90%;"}
-`Scikit-Learn` sigue el siguiente estándar:
-
--   Todas las Clases se escriben en `CamelCase`: Ej: `KMeans`,`LogisticRegression`, `StandardScaler`.
--   Las clases en Scikit-Learn pueden representar algoritmos, o etapas de un preprocesamiento.
-    -   Los algoritmos se denominan `Estimators`.
-    -   Los preprocesamientos se denominan `Transformers`.
--   Las funciones se escriben como `snake_case` y permiten realizar algunas operaciones básicas en el proceso de modelamiento. Ej: `train_test_split()`, `cross_val_score()`.
--   Normalmente se utilizan letras mayúsculas para denotar `Matrices` o `DataFrames`, mientras que las letras minúsculas denotan `Vectores` o `Series`.
-:::
-
-## Estimadores No supervisados
-
-``` {.python code-line-numbers="|1|2|3|5|7-8|"}
-from sklearn.sub_modulo import Estimator 
-model = Estimator(hp1=v1, hp2=v2,...) 
-model.fit(X) 
-
-y_pred = model.predict(X) 
-
-## Opcionalmente se puede entrenar y predecir a la vez.
-model.fit_predict(X) 
-```
-
-<br>
-
-::: {style="font-size: 75%;"}
-L1. Importar la clase a utilizar.
-
-L2. `Instanciar` el modelo y sus `hiperparámetros`.
-
-L3. `Entrenar` o ajustar el modelo (Requiere sólo de X).
-
-L5. `Predecir`. Los modelos de clasificación tienen la capacidad de generar probabilidades.
-
-L7-8. Este tipo de modelos permite entrenar y predecir en un sólo paso.
-:::
-
-## Estimadores Predictivos
-
-``` {.python code-line-numbers="|1|2|3|5-6|8|"}
-from sklearn.sub_modulo import Estimator 
-model = Estimator(hp1=v1, hp2=v2,...) 
-model.fit(X_train, y_train) 
-
-y_pred = model.predict(X_test) 
-y_pred_proba = model.predict_proba(X_test)
-
-model.score(X_test,y_test) 
-```
-
-<br>
-
-::: {style="font-size: 75%;"}
-L1. Importar la clase a utilizar.
-
-L2. `Instanciar` el modelo y sus `hiperparámetros`.
-
-L3. `Entrenar` o ajustar el modelo (Ojo, requiere de `X` e `y`).
-
-L5--6. `Predecir` en datos nuevos. (Algunos modelos pueden predecir probabilidades).
-
-L8. `Evaluar` el modelo en los datos nuevos.
-:::
-
-## Output de un Modelo {.smaller}
-
--   Los modelos no entregan directamente un output sino que los dejan almacenados en su interior como un estado.
--   Los Estimators tienen dos estados:
-    -   **Not Fitted**: Modelo antes de ser entrenado
-    -   **Fitted**: Una vez que el modelo ya está entrenado. (Después de aplicar `.fit()`)
-
-::: {.callout-tip .fragment}
-Muchos modelos pueden entregar información sólo luego de ser entrenados (su atributo termina con un `_`).
-
-Ej: `model.coef_`, `model.intercept_`.
-:::
-
-::: {.callout-note .fragment}
-El modelo es una herramienta a la cual le entregamos datos (Input), y nos devuelve datos (Predicciones).
-:::
-
-## Transformers
-
-::: {.callout-note style="font-size: 70%;"}
--   A diferencia de los `Estimators`, los `Transformers` no son modelos.
--   Su input y su output son datos.
--   Algunos `Transformers` permiten escalar los datos, transformar categorías en números, rellenar valores faltantes. (Veremos más acerca de esto en los `Preprocesamiento`).
-:::
-
-::: fragment
-``` {.python code-line-numbers="|1|2|3|5|7-8|"}
-from sklearn.preprocessing import Transformer 
-tr = Transformer(hp1=v1, hp2=v2,...) 
-tr.fit(X) 
-
-X_new = tr.transform(X) 
-
-## Opcionalmente
-X_new = tr.fit_transform(X) 
-```
-
-::: {style="font-size: 65%;"}
-L1. Importar la clase a utilizar (en este caso del submodulo `preprocessing`, aunque pueden haber otros como `impute`).
-
-L2. `Instanciar` el Transformer y sus `hiperparámetros`.
-
-L3. `Entrenar` o ajustar el Transformer.
-
-L5. `Transformar` los datos.
-
-L7-8. Adicionalmente se puede `entrenar` y `transformar` los datos en un sólo paso.
-:::
-:::
-
-## Pipelines {.smaller}
-
--   En ocasiones un Dataset requiere más de un preprocesamiento.
--   Estas Transformaciones normalmente se hacen en serie de manera consecutiva.
-
-![](images/lab-0/pipeline.png){.lightbox fig-align="center"}
-
-::: callout-tip
--   El Estimator es opcional, es decir, el Pipeline puede ser para combinar sólo `Transformers` o `Transformers + un Estimator`.
-:::
-
-::: callout-caution
-Un Pipeline puede tener **sólo un Estimator**.
-:::
-
-## Pipelines: Código
-
-``` {.python code-line-numbers="|1-2|3|5-9|11|12|14|"}
-from sklearn.tree import DecisionTreeClassifier 
-from sklearn.preprocessing import StandardScaler, OneHotEncoder 
-from sklearn.pipeline import Pipeline 
-
-pipe = Pipeline(steps=[ 
-    ("ohe", OneHotEncoder()),
-    ("sc", StandardScaler()),
-    ("model", DecisionTreeClassifier())
-])
-
-pipe.fit(X_train, y_train) 
-y_pred = pipe.predict(X_test) 
-
-pipe.score(X_test, y_test) 
-```
-
-::: {style="font-size: 50%;"}
-L1-2. Importo mi modelo y mis preprocesamientos
-
-L3. Importo el `Pipeline`.
-
-L5-9. Instancio un `Pipeline`.
-
-L11. Entreno el `Pipeline`.
-
-L12. Predigo utilizando el `Pipeline` entrenado.
-
-L14. Evalúo el modelo en datos no vistos.
-:::
-
-## Documentación
-
-> Probablemente `Scikit-Learn` tenga una de las mejores documentaciones existentes.
-
--   Veamos el caso de la Documentación del [One Hot Encoder](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html#sklearn.preprocessing.OneHotEncoder)
-
-![](images/lab-0/ohe_docs.png){.lightbox fig-align="center"}
-
-## Preguntas para terminar
-
--   ¿Cómo se importan las clases en Scikit-Learn?
--   ¿Cuál es la diferencia entre un Transformer y un Estimator?
--   ¿Cuándo es buena idea usar un Pipeline?
 
 ------------------------------------------------------------------------
 
-## 🎉 ¡Gracias por Participar! {background-image="images/background.jpg" background-opacity="0.25"}
+## El problema en números reales
 
-::: columns
-::: {.column width="50%"}
+:::::::::::: columns
+::::::::: {.column width="55%"}
+**Cohorte UTFSM Ingeniería Civil en Construcción (2010–2018)**
+
 <br>
 
-❓¿Preguntas?
-
-👏 Responder [encuesta](https://docs.google.com/forms/d/e/1FAIpQLSd2CseqhHUjdmvr46ZDb_Aa2iUYEjLAIE4MwLztled5ytRJvg/viewform?usp=dialog)
-
-🥳 Disfrutar del Evento!
+:::::::: {style="display: flex; flex-direction: column; gap: 0.6em; font-size: 0.82em;"}
+::: {style="display: flex; align-items: center; gap: 1em; background: #fde8e8; border-left: 4px solid #c0392b; border-radius: 6px; padding: 0.6em 1em;"}
+🔴 **639 estudiantes** — solo **69 titulados** (10.8%) en el período observado
 :::
 
-::: {.column width="50%" align="center"}
-![](images/qr_citt2.png){width="400"}
-:::
+::: {style="display: flex; align-items: center; gap: 1em; background: #fde8e8; border-left: 4px solid #e74c3c; border-radius: 6px; padding: 0.6em 1em;"}
+🔴 **165 eliminados + 134 desertores** = 46.8% no completa la carrera
 :::
 
-> 🔗 Nuestro Sitio Web: [sethnut.com/talks](https://sethnut.com/talks/)
+::: {style="display: flex; align-items: center; gap: 1em; background: #fff3cd; border-left: 4px solid #e6a817; border-radius: 6px; padding: 0.6em 1em;"}
+🟡 **18.6% de los estudiantes** supera el nivel 10 (plazo nominal)
+:::
+
+::: {style="display: flex; align-items: center; gap: 1em; background: #fff3cd; border-left: 4px solid #e6a817; border-radius: 6px; padding: 0.6em 1em;"}
+🟡 Tasa de reprobación global: **27.5%** de los intentos registrados
+:::
+
+::: {style="display: flex; align-items: center; gap: 1em; background: #eafaf1; border-left: 4px solid #27ae60; border-radius: 6px; padding: 0.6em 1em;"}
+🟢 **17.228 registros** de avance curricular disponibles para análisis
+:::
+::::::::
+:::::::::
+
+:::: {.column width="45%"}
+::: {style="background: linear-gradient(135deg, #0F2044, #2a5298); border-radius: 10px; padding: 1.2em; color: white; font-size: 0.82em; margin-top: 0.5em;"}
+**¿Por qué importa la Gratuidad?**
+
+La Ley de Gratuidad (Chile) financia hasta la duración nominal de la carrera.
+
+Superar ese umbral tiene un **costo real y cuantificable** para el estudiante.
+
+```         
+Duración nominal ICC:  10 semestres
+Nivel máximo observado: 16 semestres
+
+→ Hasta 6 semestres sin financiamiento
+→ Costo estimado: ~$1.5M CLP/semestre
+```
+
+**Nadie ha modelado esto en la función de recompensa de un MDP.**
+:::
+::::
+::::::::::::
+
+------------------------------------------------------------------------
+
+## Los cursos que más dañan las trayectorias
+
+::::::: columns
+:::: {.column width="58%"}
+**Índice de riesgo estructural** = Factor de Bloqueo × Tasa de Reprobación
+
+| Sigla       | Nombre                     | Nivel | Aprobación | BF  |  Riesgo  |
+|-------------|----------------------------|:-----:|:----------:|:---:|:--------:|
+| **ICC-153** | Química de los Materiales  |   2   |   47.7%    |  7  | **3.66** |
+| **FIS-131** | Física General Mecánica 1  |   2   |   53.4%    |  7  | **3.26** |
+| **MAT-123** | Cálculo                    |   1   |   61.8%    |  8  | **3.06** |
+| **ICC-243** | Materiales de Construcción |   3   |   50.2%    |  6  | **2.99** |
+| **MAT-213** | Álgebra Lineal             |   2   |   52.1%    |  6  | **2.88** |
+
+<br>
+
+::: {style="background: #EBF4FB; border-left: 4px solid #4A9FD4; border-radius: 6px; padding: 0.6em 1em; font-size: 0.82em;"}
+💡 **ICC-153** reprueba al **52%** de los estudiantes *y* bloquea 7 cursos futuros. Es el principal cuello de botella estructural de la malla.
+:::
+::::
+
+:::: {.column width="42%"}
+::: {style="background: #F5F7FA; border-radius: 10px; padding: 1em; font-size: 0.8em;"}
+**¿Qué significa el Factor de Bloqueo (BF)?**
+
+```         
+MAT-123 (Cálculo, BF=8)
+    ↓ bloquea
+  MAT-203 (Cálculo 2)
+    ↓
+  FIS-131 (Física)
+    ↓
+  FIS-231 (Física 2)
+    ↓
+  ... y 4 cursos más
+
+Si el estudiante reprueba MAT-123,
+todos estos cursos se retrasan.
+```
+
+La malla tiene **57 cursos** en **10 niveles** con **197 créditos totales**.
+:::
+::::
+:::::::
+
+------------------------------------------------------------------------
+
+##  {background-color="#0F2044"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Parte 2]{style="font-size: 1.5em; color: #4A9FD4;"}
+
+[Lo que se ha hecho]{style="font-size: 2.5em; color: white; font-weight: bold;"}
+
+[Optimización clásica del currículo]{style="font-size: 1.2em; color: #A8C4E0; font-style: italic;"}
+:::
+
+------------------------------------------------------------------------
+
+## El Balanced Academic Curriculum Problem (BACP)
+
+::::::: columns
+::: {.column width="55%"}
+**Origen: Castro & Manzano (2001) — UTFSM**
+
+El BACP asigna cursos a semestres satisfaciendo:
+
+-   ✅ Prerrequisitos respetados
+-   ✅ Carga crediticia balanceada entre períodos
+-   ✅ Mínimo y máximo de cursos por semestre
+
+**Formalización:**
+
+$$\min_{x_{ij}} \sum_{p=1}^{P} \left( \sum_{i} c_i x_{ip} - \bar{c} \right)^2$$
+
+sujeto a: prerrequisitos, $L \leq \sum_i x_{ip} \leq U$
+
+**El problema es NP-Hard** → se usan heurísticas.
+:::
+
+::::: {.column width="45%"}
+**Métodos que la literatura ha aplicado:**
+
+::: {style="font-size: 0.8em; line-height: 1.8em;"}
+| Método           | Autores                | Año  |
+|------------------|------------------------|:----:|
+| ILP + CP         | Castro & Manzano       | 2001 |
+| Búsqueda Tabú    | Schaerf & Ceschia      | 2012 |
+| ACO + Genético   | Crawford et al. (PUCV) | 2014 |
+| DBACP (dinámico) | Schaerf & Ceschia      | 2016 |
+| SCT-Chile        | Villalobos-Cid (USACH) | 2019 |
+:::
+
+<br>
+
+::: {style="background: #fff3cd; border-left: 4px solid #e6a817; border-radius: 6px; padding: 0.6em 1em; font-size: 0.8em;"}
+⚠️ **Limitación fundamental:** todos estos métodos asumen que el estudiante *aprobará* los cursos asignados. La reprobación no existe en el modelo.
+:::
+:::::
+:::::::
+
+------------------------------------------------------------------------
+
+## Ventajas y límites de la optimización clásica
+
+::::::: columns
+:::: {.column width="50%"}
+**✅ Lo que hace bien:**
+
+::: {style="font-size: 0.82em; line-height: 2em;"}
+-   Garantía de optimalidad (ILP)
+-   Solución interpretable y auditable
+-   No requiere datos históricos de estudiantes
+-   Ideal para **diseñar la malla institucional**
+-   Rápido para instancias pequeñas
+:::
+::::
+
+:::: {.column width="50%"}
+**❌ Lo que no puede hacer:**
+
+::: {style="font-size: 0.82em; line-height: 2em;"}
+-   Modelar que la aprobación es **incierta**
+-   Actualizar el plan cuando el estudiante **reprueba**
+-   Diferenciar entre un estudiante de **alto y bajo riesgo**
+-   Incorporar la **Gratuidad** como restricción real
+-   Generar recomendaciones **personalizadas y dinámicas**
+:::
+::::
+:::::::
+
+. . .
+
+::: {style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #0F2044; border-radius: 8px; padding: 0.8em 1.2em; font-size: 0.85em; margin-top: 0.5em;"}
+🎯 **La brecha:** la optimización clásica diseña el plan ideal en un mundo sin incertidumbre. El mundo real tiene reprobaciones, deserción y financiamiento condicionado. Se necesita otro marco.
+:::
+
+------------------------------------------------------------------------
+
+##  {background-color="#0F2044"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Parte 3]{style="font-size: 1.5em; color: #4A9FD4;"}
+
+[Lo que es nuevo]{style="font-size: 2.5em; color: white; font-weight: bold;"}
+
+[Procesos de Decisión de Markov y Aprendizaje por Refuerzo]{style="font-size: 1.1em; color: #A8C4E0; font-style: italic;"}
+:::
+
+------------------------------------------------------------------------
+
+## ¿Por qué un MDP es el marco correcto?
+
+::::::: columns
+:::: {.column width="50%"}
+**El avance académico tiene estructura de MDP natural:**
+
+<br>
+
+::: {style="font-size: 0.82em;"}
+```         
+ESTADO s_t
+  ¿Dónde está el estudiante?
+  semestre actual + cursos aprobados
+  + perfil de riesgo
+
+ACCIÓN a_t
+  ¿Qué cursos tomar este semestre?
+  (decisión del consejero o sistema)
+
+TRANSICIÓN T(s, a, s')
+  El estudiante aprueba o reprueba
+  según P(aprobar | curso, perfil)
+  → nuevo estado el próximo semestre
+
+RECOMPENSA R(s, a, s')
+  + créditos aprobados
+  - penalización si t > 10  ← Gratuidad
+  - penalización si carga desbalanceada
+```
+:::
+::::
+
+:::: {.column width="50%"}
+**La diferencia clave con ILP:**
+
+| Dimensión                | ILP / Tabú |   MDP / RL    |
+|--------------------------|:----------:|:-------------:|
+| ¿Cuándo decide?          |  Una vez   | Cada semestre |
+| ¿Modela reprobación?     |     ❌     |      ✅       |
+| ¿Actualiza el plan?      |     ❌     |      ✅       |
+| ¿Personaliza por riesgo? |     ❌     |      ✅       |
+| ¿Incorpora Gratuidad?    |     ❌     |      ✅       |
+| Garantía de optimalidad  |     ✅     |      ❌       |
+| Interpretable            |     ✅     |    Parcial    |
+
+<br>
+
+::: {style="background: #eafaf1; border-left: 4px solid #27ae60; border-radius: 6px; padding: 0.5em 0.8em; font-size: 0.8em;"}
+🟢 El RL no reemplaza al ILP. Son marcos complementarios para preguntas distintas.
+:::
+::::
+:::::::
+
+------------------------------------------------------------------------
+
+##  {background-color="#0F2044"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Parte 4]{style="font-size: 1.5em; color: #4A9FD4;"}
+
+[Los dos papers clave]{style="font-size: 2.5em; color: white; font-weight: bold;"}
+
+[Xu et al. (2016) · Heileman & Slim (2021)]{style="font-size: 1.2em; color: #A8C4E0; font-style: italic;"}
+:::
+
+------------------------------------------------------------------------
+
+## Paper 1: Xu, Xing & van der Schaar (2016)
+
+:::::::: columns
+:::: {.column width="52%"}
+**"Personalized Course Sequence Recommendations"**\
+*IEEE Transactions on Signal Processing, 2016*
+
+**¿Qué resuelven?**
+
+Dado un estudiante con historial de notas, recomendar la secuencia de cursos que *minimiza el tiempo hasta graduación* y *maximiza el GPA*, actualizando la recomendación cada semestre.
+
+**Arquitectura en dos fases:**
+
+::: {style="font-size: 0.8em;"}
+```         
+Fase 1 — Offline
+  Dataset histórico → aprender políticas candidatas
+  Algoritmo: Backward Induction (horizonte finito)
+
+Fase 2 — Online
+  Estudiante nuevo → seleccionar política vía bandit
+  Algoritmo: Multi-Armed Contextual Bandit
+  Clustering adaptativo por similitud de perfiles
+```
+:::
+::::
+
+::::: {.column width="48%"}
+**Componentes del MDP:**
+
+::: {style="font-size: 0.78em;"}
+| Componente     | Definición                                   |
+|----------------|----------------------------------------------|
+| **Estado** `s` | Cursos completados + notas                   |
+| **Acción** `a` | Set de cursos del semestre                   |
+| **Transición** | Bandit contextual → P(nota \| curso, perfil) |
+| **Recompensa** | λ·GPA − (1−λ)·semestres restantes            |
+| **Horizonte**  | Finito (hasta graduación)                    |
+:::
+
+<br>
+
+::: {style="background: #fff3cd; border-left: 4px solid #e6a817; border-radius: 6px; padding: 0.6em 0.8em; font-size: 0.78em;"}
+⚠️ **Limitaciones para tu caso:**\
+✗ No impone restricción BACP (carga balanceada)\
+✗ No penaliza sobreduración bajo Gratuidad\
+✗ Sin código público disponible en Papers With Code
+:::
+:::::
+::::::::
+
+------------------------------------------------------------------------
+
+## Paper 2: Heileman & Slim (2021) ← **Tu paper de referencia**
+
+::::::::: columns
+:::: {.column width="52%"}
+**"A Markov Decision Processes Modeling for Curricular Analytics"**\
+*IEEE ICMLA, 2021*
+
+**¿Qué aportan?**
+
+Conectan la *estructura formal de la malla* con el *avance estocástico del estudiante* mediante tres métricas originales y un MDP analítico.
+
+**Las tres métricas clave:**
+
+::: {style="font-size: 0.8em;"}
+```         
+Factor de Bloqueo (BF):
+  Cursos futuros que dependen de este curso.
+  MAT-123 en tu malla → BF = 8
+
+Factor de Demora (DF):
+  Largo de la cadena de prerrequisitos.
+  Un curso al final de una cadena larga → DF alto
+
+Complejidad del curso = BF + DF
+Complejidad total = Σ(BF_i + DF_i) para todos los cursos
+```
+:::
+
+**Validación:** simulación Monte Carlo sobre cohortes reales.
+::::
+
+:::::: {.column width="48%"}
+**Lo nuevo respecto a los métodos anteriores:**
+
+::: {style="font-size: 0.78em;"}
+| Dimensión              | ILP/Tabú | Xu 2016 |   **Heileman 2021**   |
+|------------------------|:--------:|:-------:|:---------------------:|
+| Aprobación estocástica |    ❌    |   ✅    |          ✅           |
+| Métricas estructurales |    ❌    |   ❌    |       ✅ BF+DF        |
+| MDP a escala semestral |    ❌    |   ✅    |          ✅           |
+| Validación Monte Carlo |    ❌    |   ❌    |          ✅           |
+| Código disponible      |    ✗     |    ✗    | **✅ Julia + Python** |
+:::
+
+<br>
+
+::: {style="background: #eafaf1; border-left: 4px solid #27ae60; border-radius: 6px; padding: 0.6em 0.8em; font-size: 0.78em;"}
+✅ **Código oficial:** `CurricularAnalytics.jl`\
+`github.com/CurricularAnalytics/CurricularAnalytics.jl`\
+También disponible en R (CRAN) y Python (UCSD port)
+:::
+
+::: {style="background: #fff3cd; border-left: 4px solid #e6a817; border-radius: 6px; padding: 0.5em 0.8em; font-size: 0.78em; margin-top: 0.5em;"}
+⚠️ **Vacíos:** ✗ Sin restricción BACP · ✗ Sin Gratuidad · ✗ Sin comparación RL vs. ILP
+:::
+::::::
+:::::::::
+
+------------------------------------------------------------------------
+
+## Comparación directa: los dos papers
+
+::: {style="font-size: 0.82em;"}
+| Criterio | Xu et al. (2016) | Heileman/Slim (2021) |
+|------------------------|------------------------|------------------------|
+| **Problema** | Recomendar secuencia personalizada | Analizar impacto estructural de la malla |
+| **Marco** | MDP + Bandits contextuales | MDP analítico + Monte Carlo |
+| **Estado** | Notas + cursos completados | Semestre + cursos aprobados |
+| **Transición** | Bandit contextual (aprendido) | P(aprobar\|curso) empírica + geométrica |
+| **Recompensa** | GPA + tiempo a graduación | Llegar al estado "graduado" |
+| **Métricas propias** | No | BF, DF, Complejidad curricular |
+| **Código** | ❌ No disponible | ✅ Julia, R, Python |
+| **Complejidad impl.** | Alta (3–4 semanas) | Baja (2–3 días) |
+| **Uso en tu tesis** | Baseline teórico | **Paper a replicar** |
+:::
+
+. . .
+
+> 📌 Heileman/Slim es tu punto de partida: tiene código, métricas interpretables, y deja abierto exactamente el vacío que tú cierras.
+
+------------------------------------------------------------------------
+
+## El vacío que ninguno cierra
+
+:::::::: {style="display: flex; flex-direction: column; gap: 0.55em; font-size: 0.82em; margin-top: 0.5em;"}
+::: {style="display: flex; align-items: center; gap: 1em; background: #fde8e8; border-left: 4px solid #c0392b; border-radius: 6px; padding: 0.55em 1em;"}
+❌ Ningún paper aplica RL/MDP al **BACP o DBACP**. La intersección optimización curricular + incertidumbre no existe en la literatura.
+:::
+
+::: {style="display: flex; align-items: center; gap: 1em; background: #fde8e8; border-left: 4px solid #e74c3c; border-radius: 6px; padding: 0.55em 1em;"}
+❌ Ningún paper incorpora la **Gratuidad** (financiamiento condicional al plazo nominal) como componente de la función de recompensa ni como restricción.
+:::
+
+::: {style="display: flex; align-items: center; gap: 1em; background: #fff3cd; border-left: 4px solid #e6a817; border-radius: 6px; padding: 0.55em 1em;"}
+⚠️ Ningún paper compara **RL vs. ILP vs. Búsqueda Tabú** sobre los mismos datos del DBACP.
+:::
+
+::: {style="display: flex; align-items: center; gap: 1em; background: #fff3cd; border-left: 4px solid #e6a817; border-radius: 6px; padding: 0.55em 1em;"}
+⚠️ Ningún paper trabaja con una **cohorte chilena de ingeniería civil** con datos reales de reprobación y trayectorias completas.
+:::
+
+::: {style="display: flex; align-items: center; gap: 1em; background: #eafaf1; border-left: 4px solid #27ae60; border-radius: 6px; padding: 0.55em 1em;"}
+✅ **Tu tesis cierra los cuatro vacíos simultáneamente** usando la cohorte UTFSM 2010–2018.
+:::
+::::::::
+
+------------------------------------------------------------------------
+
+##  {background-color="#0F2044"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Parte 5]{style="font-size: 1.5em; color: #4A9FD4;"}
+
+[Mis datos]{style="font-size: 2.5em; color: white; font-weight: bold;"}
+
+[Cohorte UTFSM ICC 2010–2018]{style="font-size: 1.2em; color: #A8C4E0; font-style: italic;"}
+:::
+
+------------------------------------------------------------------------
+
+## Los tres archivos de datos
+
+::::::::::::::: panel-tabset
+## Malla curricular
+
+:::::: columns
+::: {.column width="55%"}
+**`00_malla.csv`** — 57 cursos, 10 niveles
+
+``` python
+sigla     nombre              creditos  nivel  aprobacion  nivel_dependencia
+MAT-113   Algebra             6         1      81.70       8
+MAT-123   Calculo             6         1      61.76       8
+ICC-153   Quimica Materiales  3         2      47.72       7
+FIS-131   Fisica Mecanica 1   4         2      53.36       7
+MAT-213   Algebra Lineal      4         2      52.08       6
+```
+
+**Columnas clave para el MDP:**
+
+-   `aprobacion` → **P(aprobar \| curso)** de la función de transición
+-   `nivel_dependencia` → **Factor de Bloqueo (BF)** de Heileman/Slim
+-   `prerrequisitos` → aristas del grafo de la malla
+:::
+
+:::: {.column width="45%"}
+::: {style="background: #EBF4FB; border-left: 4px solid #4A9FD4; border-radius: 6px; padding: 0.8em; font-size: 0.78em;"}
+**Estadísticas de la malla:**
+
+-   57 cursos · 10 niveles · 197 créditos
+-   8 cursos sin prerrequisito (entrada)
+-   Tasa de aprobación promedio: **77.3%**
+-   Curso más difícil: ICC-153 (47.7%)
+-   Curso más bloqueante: MAT-123 (BF=8)
+:::
+::::
+::::::
+
+## Demográfico
+
+:::::: columns
+::: {.column width="55%"}
+**`01_demografico.csv`** — 657 estudiantes
+
+``` python
+rut  nem   psu    region        tipo_colegio      cohorte  beca  beneficio_gratuidad
+539  5.6   607    DEL BIOBIO    Municipal         2011     100   0
+ 46  6.2   593    VALPARAISO    Municipal         2013      64   0
+438  5.5   658    METROPOLITANA Part.Subv.        2012       0   0
+170  5.9   604    METROPOLITANA Part.Subv.        2010     100   0
+```
+
+**Columnas clave para el MDP:**
+
+-   `nem` + `psu_matematica` → **cubo de riesgo** del estudiante
+-   `beneficio_gratuidad` → indicador de **restricción Gratuidad**
+-   `cohorte` → permite validación por año de ingreso
+:::
+
+:::: {.column width="45%"}
+::: {style="background: #EBF4FB; border-left: 4px solid #4A9FD4; border-radius: 6px; padding: 0.8em; font-size: 0.78em;"}
+**Estadísticas demográficas:**
+
+-   8 cohortes: 2010–2017
+-   Regiones representadas: todo Chile
+-   Tipos de colegio: Municipal, Part. Subv., Particular
+-   Variables de becas disponibles para análisis de equidad
+:::
+::::
+::::::
+
+## Avance curricular
+
+:::::: columns
+::: {.column width="55%"}
+**`02_avance_curricular.csv`** — 17.228 registros
+
+``` python
+rut  cohorte  estado    creditos  nivel_original  oportunidad  nota  estado_aprobacion
+197  2016     Desertor  6         1               1            6.5   A
+197  2016     Desertor  4         2               1            6.9   A
+197  2016     Desertor  4         2               1            6.6   A
+197  2016     Desertor  4         3               2            6.7   A
+```
+
+**Columnas clave para el MDP:**
+
+-   `estado_aprobacion` (A/R) → **función de transición** empírica
+-   `oportunidad` → intentos por curso (1, 2, 3...)
+-   `ultimo_nivel` → proxy del semestre alcanzado
+-   `estado` → Titulado / Eliminado / Desertor / Matriculado
+:::
+
+:::: {.column width="45%"}
+::: {style="background: #EBF4FB; border-left: 4px solid #4A9FD4; border-radius: 6px; padding: 0.8em; font-size: 0.78em;"}
+**Estadísticas de avance:**
+
+-   639 estudiantes únicos
+-   12.485 aprobaciones · 4.743 reprobaciones
+-   Oportunidades: 72.5% (1°) · 71.8% (2°) · 74.8% (3°)
+-   Nivel máximo observado: **16** semestres
+-   Estudiantes con nivel \> 10: **18.6%**
+:::
+::::
+::::::
+:::::::::::::::
+
+------------------------------------------------------------------------
+
+## El MDP con tus datos concretos
+
+::::::: columns
+:::: {.column width="52%"}
+**Mapeando los tres archivos al MDP:**
+
+::: {style="font-size: 0.8em; line-height: 1.6em;"}
+```         
+ESTADO s_t = (t, cubo_riesgo, créditos_aprobados)
+
+  t           → semestre actual (de avance_curricular)
+  cubo_riesgo → segmento por NEM + PSU (de demografico)
+                {bajo, medio, alto}
+  créditos    → avance relativo (de avance_curricular)
+
+ACCIÓN a_t = carga semestral × priorización de cursos
+  (definida sobre los cursos disponibles de la malla)
+
+TRANSICIÓN T(s, a, s')
+  = P(A | curso_i, cubo_riesgo_j, oportunidad_k)
+  Calibrada empíricamente desde avance_curricular
+  Ejemplo: P(A | ICC-153, riesgo_alto, op=1) = ?
+
+RECOMPENSA R(s, a, s')
+  + créditos aprobados en el semestre
+  - 10  si t > 10     ← Gratuidad (beneficio_gratuidad)
+  - δ   si carga desbalanceada ← BACP
+```
+:::
+::::
+
+:::: {.column width="48%"}
+::: {style="background: linear-gradient(135deg, #0F2044, #1A3A6B); border-radius: 10px; padding: 1em; color: white; font-size: 0.8em;"}
+**¿Por qué RL offline (por lotes)?**
+
+La exploración online con estudiantes reales es **éticamente inviable**.
+
+No podemos probar políticas experimentales en personas reales.
+
+**Solución:** aprender la política óptima *exclusivamente desde los 17.228 registros históricos* — sin interacción con el entorno.
+
+Esto se llama **RL offline o batch RL** y es el estándar en aplicaciones educativas de alto riesgo.
+
+`Algoritmo: Q-Learning tabular`\
+`|S| ≈ 10 × 3 × 3 = 90 estados → manejable`
+:::
+::::
+:::::::
+
+------------------------------------------------------------------------
+
+##  {background-color="#0F2044"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Parte 6]{style="font-size: 1.5em; color: #4A9FD4;"}
+
+[Qué haré y qué se puede obtener]{style="font-size: 2.5em; color: white; font-weight: bold;"}
+
+[Plan de trabajo y resultados esperados]{style="font-size: 1.2em; color: #A8C4E0; font-style: italic;"}
+:::
+
+------------------------------------------------------------------------
+
+## Plan de trabajo: replicar y extender Heileman/Slim
+
+:::::::: columns
+:::: {.column width="55%"}
+**Fase 1 — Replicar el paper (1–2 días)**
+
+::: {style="font-size: 0.8em; line-height: 1.7em;"}
+``` python
+# 1. Construir el grafo de la malla UTFSM
+import networkx as nx
+G = nx.DiGraph()
+# nodos = cursos, aristas = prerrequisitos
+# atributos = créditos, BF, aprobación
+
+# 2. Calcular métricas de Heileman
+BF[curso] = len(descendientes(G, curso))
+DF[curso] = camino_más_largo(G, curso)
+complejidad[curso] = BF + DF
+
+# 3. Calibrar P(aprobar | curso, riesgo)
+#    desde 02_avance_curricular.csv
+
+# 4. Simulación Monte Carlo
+for estudiante in range(N=1000):
+    simular_trayectoria(politica, P_aprobacion)
+```
+:::
+
+**Fase 2 — Agregar la novedad (2–3 días)**
+
+``` python
+# Función de recompensa con Gratuidad
+def recompensa(semestre, creditos_aprobados):
+    R = creditos_aprobados
+    if semestre > 10:
+        R -= 10  # penalización Gratuidad
+    return R
+```
+::::
+
+::::: {.column width="45%"}
+**Fase 3 — Comparación (1–2 semanas)**
+
+::: {style="font-size: 0.78em; line-height: 1.7em;"}
+| Método             | Herramienta              |
+|--------------------|--------------------------|
+| ILP                | `PuLP` / `Gurobi`        |
+| Búsqueda Tabú      | implementación propia    |
+| Q-Learning tabular | `numpy` / `gymnasium`    |
+| Simulación MDP     | `CurricularAnalytics.jl` |
+:::
+
+<br>
+
+**Métrica de comparación:**
+
+::: {style="background: #EBF4FB; border-left: 4px solid #4A9FD4; border-radius: 6px; padding: 0.7em; font-size: 0.78em;"}
+Para cada método se evalúa:
+
+-   \% estudiantes graduados ≤ 10 semestres
+-   Semestres promedio hasta graduación
+-   \% estudiantes que excede el umbral Gratuidad
+-   Distribución por cubo de riesgo
+:::
+:::::
+::::::::
+
+------------------------------------------------------------------------
+
+## Resultados esperados
+
+::::::: columns
+::: {.column width="50%"}
+**Resultado 1 — Mapa de riesgo estructural**
+
+Una figura que muestra la malla UTFSM con nodos coloreados por BF × (1 − aprobación):
+
+```         
+Rojo    → ICC-153, FIS-131, MAT-123
+Amarillo → ICC-243, MAT-213
+Verde   → cursos de niveles altos (>7)
+```
+
+Permite identificar **dónde intervenir** para reducir la duración media de la carrera.
+
+<br>
+
+**Resultado 2 — Distribución Monte Carlo**
+
+Histograma comparando: - Malla actual (política ingenua) - Política ILP óptima - Política RL con penalización Gratuidad
+:::
+
+::::: {.column width="50%"}
+**Resultado 3 — La Gratuidad como recompensa**
+
+La comparación central de la tesis:
+
+::: {style="font-size: 0.8em;"}
+| Escenario                       | \% titulados ≤ 10 sem | Sem. promedio  |
+|---------------------------------|:---------------------:|:--------------:|
+| Política actual (sin optimizar) |           ?           |    \~12–14     |
+| Política ILP (BACP)             |           ?           |       —        |
+| Política RL sin Gratuidad       |           ?           |       —        |
+| **Política RL con Gratuidad**   |         **?**         | **— ← aporte** |
+:::
+
+<br>
+
+::: {style="background: linear-gradient(90deg, #eafaf1, #f8fff9); border-left: 4px solid #27ae60; border-radius: 8px; padding: 0.7em 1em; font-size: 0.8em;"}
+🎯 **La hipótesis:** incorporar la Gratuidad en la función de recompensa produce políticas que reducen significativamente la proporción de estudiantes que excede el plazo nominal, especialmente en el segmento de riesgo medio.
+:::
+:::::
+:::::::
+
+------------------------------------------------------------------------
+
+## Las tres contribuciones originales
+
+<br>
+
+:::::: {style="display: flex; flex-direction: column; gap: 0.75em; font-size: 0.9em;"}
+::: {style="display: flex; align-items: flex-start; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #0F2044; border-radius: 8px; padding: 0.8em 1.2em;"}
+**①**   **Formulación** — Primera formalización del DBACP como MDP con aprobación estocástica calibrada en una cohorte chilena de Ingeniería Civil (UTFSM 2010–2018).
+:::
+
+::: {style="display: flex; align-items: flex-start; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #1a3a6b; border-radius: 8px; padding: 0.8em 1.2em;"}
+**②**   **Restricción** — Primera incorporación de la Gratuidad (penalización por sobreduración nominal) como componente explícito de la función de recompensa RL y función objetivo ILP/Tabú.
+:::
+
+::: {style="display: flex; align-items: flex-start; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #2a5298; border-radius: 8px; padding: 0.8em 1.2em;"}
+**③**   **Comparación empírica** — Primera comparación directa RL vs. ILP vs. Búsqueda Tabú sobre instancias idénticas del DBACP con datos reales de estudiantes chilenos.
+:::
+::::::
+
+------------------------------------------------------------------------
+
+## Tabla de posicionamiento en la literatura
+
+::: {style="font-size: 0.78em;"}
+| Trabajo | BACP/DBACP | MDP/RL | Aprob. Estocástica | Gratuidad | Datos Chile |
+|------------|:----------:|:----------:|:----------:|:----------:|:----------:|
+| Castro & Manzano (2001, UTFSM) | ✅ | ❌ | ❌ | ❌ | ✅ |
+| Schaerf & Ceschia (2012, Udine) | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Villalobos-Cid et al. (2019, USACH) | ✅ | ❌ | ❌ | ❌ | ✅ |
+| Xu, Xing & van der Schaar (2016) | ❌ | ✅ | ✅ | ❌ | ❌ |
+| Heileman & Slim (2021) | ❌ | ✅ | ✅ | ❌ | ❌ |
+| Yun et al. — DCQN (2024) | ❌ | ✅ | ❌ | ❌ | ❌ |
+| **Esta tesis (UTFSM 2010–2018)** | **✅** | **✅** | **✅** | **✅** | **✅** |
+:::
+
+. . .
+
+> 📌 La combinación de las cinco columnas en verde no existe en ningún trabajo previo. Esa es la posición original de esta tesis.
+
+------------------------------------------------------------------------
+
+## Resumen y próximos pasos
+
+<br>
+
+::::::: {style="display: flex; flex-direction: column; gap: 0.65em; font-size: 0.88em;"}
+::: {style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #0F2044; border-radius: 8px; padding: 0.6em 1em;"}
+✅ **El problema existe y tiene urgencia:** 46.8% de deserción + 18.6% supera el plazo nominal en la cohorte UTFSM ICC 2010–2018.
+:::
+
+::: {style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #1a3a6b; border-radius: 8px; padding: 0.6em 1em;"}
+✅ **La literatura tiene un vacío claro:** nadie ha combinado BACP + MDP/RL + Gratuidad sobre datos reales chilenos.
+:::
+
+::: {style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #2a5298; border-radius: 8px; padding: 0.6em 1em;"}
+✅ **Heileman/Slim (2021)** es el paper de referencia para replicar: tiene código abierto, métricas interpretables, y deja el vacío exacto que esta tesis cierra.
+:::
+
+::: {style="display: flex; align-items: center; gap: 1em; background: linear-gradient(90deg, #e8f0fe, #f8f9ff); border-left: 4px solid #3a6bc4; border-radius: 8px; padding: 0.6em 1em;"}
+🔜 **Próximo paso inmediato:** notebook Python con la malla UTFSM → cálculo de BF/DF → función de transición empírica → simulación Monte Carlo con penalización Gratuidad.
+:::
+:::::::
+
+------------------------------------------------------------------------
+
+##  {background-color="#0F2044"}
+
+:::: {style="display: flex; justify-content: center; align-items: center; height: 70vh; flex-direction: column; text-align: center;"}
+[¡Gracias!]{style="font-size: 3em; color: white; font-weight: bold;"}
+
+[Francisco Alfaro Medina]{style="font-size: 1.2em; color: #A8C4E0; margin-top: 0.5em;"}
+
+[Doctorado en Ingeniería Electrónica · UTFSM]{style="font-size: 0.9em; color: #7A9FC0;"}
+
+<br>
+
+::: {style="font-size: 0.85em; color: #4A9FD4; border-top: 1px solid #2A5080; padding-top: 1em; margin-top: 0.5em;"}
+❓ Preguntas y discusión
+:::
+::::
 
 ```{=html}
 <style>
-/* Ajusta el tamaño del título y subtítulo */
 .reveal .slides h1 {
-  font-size: 2em; /* Tamaño más pequeño para el título */
+  font-size: 2em;
 }
-
 .reveal .slides h2 {
-  font-size: 1.5em; /* Tamaño más pequeño para el subtítulo */
+  font-size: 1.5em;
 }
-
-/* Ajusta el tamaño del texto en los párrafos */
 .reveal .slides p {
-  font-size: 0.8em; /* Texto más pequeño */
+  font-size: 0.8em;
 }
-
-/* Ajusta el tamaño de las tablas */
 .reveal .slides table {
-  font-size: 0.8em; /* Tamaño de fuente más pequeño en las tablas */
-  width: 90%; /* Ajusta el ancho de la tabla */
-  margin: 0 auto; /* Centra la tabla */
+  font-size: 0.78em;
+  width: 90%;
+  margin: 0 auto;
 }
-
-/* Ajusta el tamaño de los bullets */
 .reveal .slides ul {
-  font-size: 0.8em; /* Tamaño de fuente más pequeño en los bullets */
+  font-size: 0.8em;
 }
-
 .reveal .slide-logo {
-   max-height: 2em !important;
+   max-height: 2.5em !important;
 }
 </style>
 ```
