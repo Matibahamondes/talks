@@ -52,22 +52,17 @@ Dirección de Transformación Digital · 2026
 
 ------------------------------------------------------------------------
 
-## La IA generativa en titulares {background-color="#0F2044"}
+## Sobre la AI {background-color="#0F2044"}
 
 <br><br>
 
-::: {style="display: flex; justify-content: center; align-items: center; height: 70vh; flex-direction: column; text-align: center;"}
-
+:::: {style="display: flex; justify-content: center; align-items: center; height: 70vh; flex-direction: column; text-align: center;"}
 ::: r-stack
-
-
-
 ![](images/news/intro_01.png){.fragment .fade-in-then-out fig-align="center" width="70%"}
 
 ![](images/news/intro_07.png){.fragment .fade-in-then-out fig-align="center" width="50%"}
 
 ![](images/news/intro_02.jpg){.fragment .fade-in-then-out fig-align="center" width="50%"}
-
 
 ![](images/news/intro_03.jpg){.fragment .fade-in-then-out fig-align="center" width="55%"}
 
@@ -76,11 +71,8 @@ Dirección de Transformación Digital · 2026
 ![](images/news/intro_05.png){.fragment .fade-in-then-out fig-align="center" width="75%"}
 
 ![](images/news/intro_06.png){.fragment fig-align="center" width="70%"}
-
 :::
-
-:::
-
+::::
 
 ## ¿De qué va esta charla?
 
@@ -91,7 +83,7 @@ Dirección de Transformación Digital · 2026
 ::: callout-note
 ## No es una charla de hype
 
-Esta charla **no** promete que la IA va a resolver todos tus problemas ni predice el fin del mundo. 
+Esta charla **no** promete que la IA va a resolver todos tus problemas ni predice el fin del mundo.
 
 Es un recorrido técnico y honesto por lo que estos sistemas realmente son.
 :::
@@ -115,9 +107,9 @@ Es un recorrido técnico y honesto por lo que estos sistemas realmente son.
   <div style="color:#4A9FD4; margin-left:1em;">↓</div>
   <div>📍 Prompt Engineering</div>
   <div style="color:#4A9FD4; margin-left:1em;">↓</div>
-  <div>📍 RAG &amp; Fine-tuning</div>
+  <div>📍 RAG &amp; Fine-tuning (resumen)</div>
   <div style="color:#4A9FD4; margin-left:1em;">↓</div>
-  <div>📍 Agentes &amp; MCP</div>
+  <div>📍 Agentes, Claude Code &amp; Kiro</div>
   <div style="color:#4A9FD4; margin-left:1em;">↓</div>
   <div>📍 Seguridad</div>
   <div style="color:#4A9FD4; margin-left:1em;">↓</div>
@@ -143,20 +135,17 @@ Es un recorrido técnico y honesto por lo que estos sistemas realmente son.
 
 ## Large Language Models
 
-:::::: columns
-:::: {.column width="58%"}
+::::: columns
+::: {.column width="58%"}
 <br>
 
 -   Un LLM es una red neuronal entrenada con **cantidades masivas de texto**.
 -   Aprende distribuciones de probabilidad sobre secuencias de tokens.
 -   Su tarea fundamental: **predecir el siguiente token más probable**.
 -   No tiene un modelo del mundo. No tiene intenciones. No "entiende".
-
-
-::::
+:::
 
 ::: {.column width="42%"}
-
 <br><br>
 
 ```{=html}
@@ -177,7 +166,7 @@ Es un recorrido técnico y honesto por lo que estos sistemas realmente son.
 </div>
 ```
 :::
-::::::
+:::::
 
 <br>
 
@@ -187,14 +176,14 @@ Es un recorrido técnico y honesto por lo que estos sistemas realmente son.
 **Un LLM no razona, predice.** Todo lo demás se deriva de entender esto bien.
 :::
 
-## Historia de los LLM 
+## Historia de los LLM
 
 <br>
 
 ::: r-stack
 ![](images/llm_04a.png){.fragment fig-align="center" width="800px" height="600px"}
 
-![](images/llm_04.png){.fragment fig-align="center"  width="1200px" height="600px"}
+![](images/llm_04.png){.fragment fig-align="center" width="1200px" height="600px"}
 :::
 
 ------------------------------------------------------------------------
@@ -209,12 +198,9 @@ Es un recorrido técnico y honesto por lo que estos sistemas realmente son.
 -   Un token ≈ 0.75 palabras en inglés. En español: menos eficiente.
 -   El proceso de tokenización afecta el **costo, la velocidad y la precisión**.
 -   Algunas palabras técnicas o en otro idioma usan **varios tokens**.
-
-
 :::
 
 ::: {.column width="45%"}
-
 <br><br>
 
 ```{=html}
@@ -244,7 +230,7 @@ Es un recorrido técnico y honesto por lo que estos sistemas realmente son.
 
 ------------------------------------------------------------------------
 
-## Diagrama de un LLM 
+## Diagrama de un LLM
 
 ::: r-stack
 <br>
@@ -256,7 +242,7 @@ Es un recorrido técnico y honesto por lo que estos sistemas realmente son.
 
 ------------------------------------------------------------------------
 
-##  
+## 
 
 ::: {style="text-align: center;"}
 <iframe src="https://agents-course-decoding-visualizer.hf.space" frameborder="0" width="950" height="650">
@@ -265,7 +251,6 @@ Es un recorrido técnico y honesto por lo que estos sistemas realmente son.
 :::
 
 ------------------------------------------------------------------------
-
 
 ##  {background-image="images/background_slides3.png" background-opacity="0.3"}
 
@@ -316,6 +301,15 @@ El modelo toma tus palabras **literalmente**, por eso la precisión importa.
 ```
 :::
 :::::
+
+--------------
+
+## 
+
+
+::: r-stack
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*lErmU_DyUynyv2fQ-cqlGw.gif)
+:::
 
 ------------------------------------------------------------------------
 
@@ -555,6 +549,16 @@ Si la respuesta no está en el contexto, dilo."""
 :::
 :::::
 
+
+------------------
+
+## 
+
+
+::: r-stack
+![](https://miro.medium.com/v2/1*fT24_2esw3WdkKHuY-t-2Q.gif)
+:::
+
 ------------------------------------------------------------------------
 
 ## RAG: arquitectura detallada
@@ -593,75 +597,43 @@ Si la respuesta no está en el contexto, dilo."""
 
 ------------------------------------------------------------------------
 
-## Fine-tuning: cuándo sí, cuándo no
+## RAG vs Fine-tuning: ¿cuándo usar cada uno?
 
-<br>
-
+:::::: columns
+:::: {.column width="58%"}
 | Criterio                        | RAG              | Fine-tuning              |
 |------------------------------|------------------|------------------------|
 | Datos cambian frecuentemente    | ✅ Ideal         | ❌ Reentrenar caro       |
 | Necesitas citar fuentes         | ✅ Natural       | ❌ Difícil               |
 | Estilo / tono muy específico    | ⚠️ Con prompting | ✅ Ideal                 |
-| Datos privados, no exponer      | ✅ En inferencia | ✅ Queda en los pesos    |
+| Datos privados                  | ✅ En inferencia | ✅ Queda en los pesos    |
 | Tarea muy específica y estrecha | ⚠️               | ✅ Puede reducir costos  |
 | Presupuesto limitado            | ✅ Barato        | ❌ Requiere GPU / tiempo |
-
-<br>
 
 ::: callout-important
 ## Regla de oro
 
-Antes de hacer fine-tuning, agota primero: (1) mejor prompting, (2) RAG, (3) few-shot. El fine-tuning tiene sentido cuando tienes **miles de ejemplos de alta calidad** y una tarea muy específica y estable.
+Agota primero: **(1) mejor prompting → (2) few-shot → (3) RAG**. Fine-tuning solo si tienes miles de ejemplos de alta calidad y una tarea estable.
 :::
+::::
 
-------------------------------------------------------------------------
-
-## Fine-tuning en la práctica
-
-::::: columns
-::: {.column width="55%"}
-**¿Cuándo vale la pena?**
-
--   Necesitas un estilo de respuesta muy particular (tono legal, médico, etc.)
--   La tarea es tan específica que los modelos base cometen errores sistemáticos
--   Tienes datos propios etiquetados de alta calidad (\>500 ejemplos mínimo)
--   La latencia y el costo de inferencia son críticos
-
-**Opciones en Python:**
-
-``` python
-# LoRA / QLoRA con Hugging Face PEFT
-from peft import LoraConfig, get_peft_model
-from transformers import AutoModelForCausalLM
-
-model = AutoModelForCausalLM.from_pretrained(
-    "meta-llama/Llama-3.2-3B-Instruct"
-)
-
-config = LoraConfig(r=16, lora_alpha=32,
-                    target_modules=["q_proj","v_proj"])
-model = get_peft_model(model, config)
-# Entrena solo ~0.3% de los parámetros
-```
-:::
-
-::: {.column width="45%"}
+::: {.column width="42%"}
 ```{=html}
 <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; font-size:0.70em;">
   <div style="color:#4A9FD4; font-size:1em; margin-bottom:0.8rem;">⚖️ Espectro de personalización</div>
-  <div style="display:flex; flex-direction:column; gap:0.5rem;">
+  <div style="display:flex; flex-direction:column; gap:0.4rem;">
     <div style="background:#27AE60; padding:0.5rem 0.8rem; border-radius:5px;">
-      <strong>Prompting</strong> — más rápido, sin costo extra
+      <strong>Prompting</strong> — instantáneo, sin costo extra
     </div>
-    <div style="text-align:center; color:#4A9FD4;">↓ más personalización →</div>
+    <div style="text-align:center; color:#4A9FD4; font-size:0.9em;">↓ más personalización</div>
     <div style="background:#1A3A6B; padding:0.5rem 0.8rem; border-radius:5px;">
       <strong>Few-shot</strong> — ejemplos en el contexto
     </div>
-    <div style="text-align:center; color:#4A9FD4;">↓</div>
+    <div style="text-align:center; color:#4A9FD4; font-size:0.9em;">↓</div>
     <div style="background:#1A3A6B; padding:0.5rem 0.8rem; border-radius:5px;">
       <strong>RAG</strong> — tu conocimiento, sin entrenar
     </div>
-    <div style="text-align:center; color:#4A9FD4;">↓</div>
+    <div style="text-align:center; color:#4A9FD4; font-size:0.9em;">↓</div>
     <div style="background:#E74C3C; padding:0.5rem 0.8rem; border-radius:5px;">
       <strong>Fine-tuning</strong> — más potente, más costoso
     </div>
@@ -669,7 +641,7 @@ model = get_peft_model(model, config)
 </div>
 ```
 :::
-:::::
+::::::
 
 ------------------------------------------------------------------------
 
@@ -680,7 +652,7 @@ model = get_peft_model(model, config)
 
 [Abre el notebook y sigue la actividad]{style="font-size: 1.6em; font-weight: bold; color: white;"}
 
-[RAG y Fine-tuning]{style="font-size: 1em; color: #4A9FD4; font-style: italic;"}
+[RAG]{style="font-size: 1em; color: #4A9FD4; font-style: italic;"}
 
 ```{=html}
 <a href="https://colab.research.google.com/PENDIENTE_PARTE_4" 
@@ -745,82 +717,17 @@ model = get_peft_model(model, config)
 :::
 :::::
 
-------------------------------------------------------------------------
+------------------
 
-## Tool Use en Python
+## 
 
-::::: columns
-::: {.column width="55%"}
-``` python
-import anthropic, json
 
-client = anthropic.Anthropic()
-
-# Definir herramientas disponibles
-tools = [{
-    "name": "get_student_risk",
-    "description": "Obtiene el nivel de riesgo académico de un estudiante",
-    "input_schema": {
-        "type": "object",
-        "properties": {
-            "student_id": {
-                "type": "string",
-                "description": "RUT o ID del estudiante"
-            }
-        },
-        "required": ["student_id"]
-    }
-}]
-
-# El modelo decide cuándo usar la herramienta
-response = client.messages.create(
-    model="claude-sonnet-4-5",
-    max_tokens=512,
-    tools=tools,
-    messages=[{
-        "role": "user",
-        "content": "¿Cuál es el riesgo del estudiante 12345678-9?"
-    }]
-)
-```
+::: r-stack
+![](https://cdn.learnopencv.com/wp-content/uploads/2025/04/04082120/a2a-prtotcol-agents-workflow.gif)
 :::
 
-::: {.column width="45%"}
-``` python
-# Procesar la llamada a herramienta
-if response.stop_reason == "tool_use":
-    tool_call = next(
-        b for b in response.content 
-        if b.type == "tool_use"
-    )
-    
-    # Ejecutar tu función real
-    result = get_student_risk(
-        tool_call.input["student_id"]
-    )
-    
-    # Devolver resultado al modelo
-    final = client.messages.create(
-        model="claude-sonnet-4-5",
-        max_tokens=512,
-        tools=tools,
-        messages=[
-            {"role": "user", 
-             "content": "¿Cuál es el riesgo...?"},
-            {"role": "assistant", 
-             "content": response.content},
-            {"role": "user", "content": [{
-                "type": "tool_result",
-                "tool_use_id": tool_call.id,
-                "content": json.dumps(result)
-            }]}
-        ]
-    )
-```
-:::
-:::::
-
 ------------------------------------------------------------------------
+
 
 ## MCP: Model Context Protocol
 
@@ -864,112 +771,344 @@ if response.stop_reason == "tool_use":
 :::
 :::::
 
+--------------------
+
+## 
+
+
+::: r-stack
+![](https://miro.medium.com/v2/1*s93QDBWKx3Q_TrosXBmQ-g.gif)
+:::
+
+
 ------------------------------------------------------------------------
 
-## Agentes con smolagents
 
-::::: columns
-::: {.column width="55%"}
+
+## Claude Code: el agente en tu terminal
+
+:::::: columns
+:::: {.column width="55%"}
 <br>
 
-**smolagents** (Hugging Face) es el framework más limpio para agentes Python hoy:
+**Claude Code** es el agente de coding de Anthropic que vive en tu terminal. No es un autocompletado: es un agente que **razona, navega tu repo y ejecuta acciones**.
 
-``` python
-from smolagents import (
-    CodeAgent, 
-    HfApiModel,
-    DuckDuckGoSearchTool,
-    tool
-)
+**Capacidades reales:**
 
-# Definir herramienta personalizada
-@tool
-def consultar_siga(rut: str) -> dict:
-    """Consulta el historial académico de un estudiante."""
-    return {"rut": rut, "promedio": 5.2, "riesgo": "medio"}
+-   Lee y edita archivos de tu proyecto directamente
+-   Corre tests, interpreta errores y los corrige
+-   Hace commit y crea PRs con contexto real
+-   Busca en la web cuando necesita información externa
+-   Ejecuta comandos bash con tu confirmación
 
-# Crear agente con modelo + herramientas
-agente = CodeAgent(
-    tools=[DuckDuckGoSearchTool(), consultar_siga],
-    model=HfApiModel("Qwen/Qwen2.5-Coder-32B-Instruct")
-)
+**Instalación:**
 
-# El agente planifica, usa herramientas e itera solo
-resultado = agente.run(
-    "Busca información sobre deserción universitaria en Chile "
-    "y compárala con el historial del estudiante 12345678-9"
-)
+``` bash
+npm install -g @anthropic-ai/claude-code
+claude   # lanzar en tu proyecto
 ```
+
+::: callout-tip
+## No es "vibe coding"
+
+Claude Code **lee el código real** de tu proyecto. Entiende dependencias, estructura, tests existentes. No adivina: navega.
 :::
+::::
 
 ::: {.column width="45%"}
 ```{=html}
-<div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; font-size:0.70em; margin-top:0.5rem;">
-  <div style="color:#4A9FD4; font-size:1em; margin-bottom:0.8rem;">🧰 Frameworks de agentes en Python (2025)</div>
-  <div style="display:flex; flex-direction:column; gap:0.4rem;">
-    <div style="background:#1A3A6B; padding:0.5rem 0.8rem; border-radius:5px;">
-      <strong style="color:#C9A84C;">smolagents</strong> — Hugging Face, minimalista, CodeAgent
+<div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; font-size:0.70em;">
+  <div style="color:#4A9FD4; font-size:1em; margin-bottom:0.8rem;">⚡ Flujo típico con Claude Code</div>
+  <div style="display:flex; flex-direction:column; gap:0.35rem; font-family:monospace; font-size:0.95em;">
+    <div style="background:#1A3A6B; padding:0.4rem 0.7rem; border-radius:5px;">
+      <span style="color:#C9A84C;">$</span> claude
     </div>
-    <div style="background:#1A3A6B; padding:0.5rem 0.8rem; border-radius:5px;">
-      <strong style="color:#C9A84C;">LangGraph</strong> — LangChain, flujos de estado complejos
+    <div style="background:#1A3A6B; padding:0.4rem 0.7rem; border-radius:5px;">
+      <span style="color:#4A9FD4;">You:</span> Agrega tests para el módulo rag_pipeline.py
     </div>
-    <div style="background:#1A3A6B; padding:0.5rem 0.8rem; border-radius:5px;">
-      <strong style="color:#C9A84C;">AutoGen</strong> — Microsoft, multi-agente conversacional
+    <div style="background:#1A3A6B; padding:0.4rem 0.7rem; border-radius:5px;">
+      <span style="color:#27AE60;">Claude:</span> Leyendo rag_pipeline.py... encontré 4 funciones sin tests
     </div>
-    <div style="background:#1A3A6B; padding:0.5rem 0.8rem; border-radius:5px;">
-      <strong style="color:#C9A84C;">CrewAI</strong> — roles y tareas orquestados
+    <div style="background:#1A3A6B; padding:0.4rem 0.7rem; border-radius:5px;">
+      <span style="color:#27AE60;">Claude:</span> Creando tests/test_rag_pipeline.py...
     </div>
-    <div style="background:#1A3A6B; padding:0.5rem 0.8rem; border-radius:5px;">
-      <strong style="color:#C9A84C;">Anthropic SDK</strong> — tool use nativo + MCP
+    <div style="background:#1A3A6B; padding:0.4rem 0.7rem; border-radius:5px;">
+      <span style="color:#27AE60;">Claude:</span> Corriendo pytest... 1 fallo → corrigiendo
+    </div>
+    <div style="background:#27AE60; padding:0.4rem 0.7rem; border-radius:5px;">
+      ✅ 12/12 tests pasando. ¿Hago el commit?
     </div>
   </div>
 </div>
 ```
 :::
-:::::
+::::::
+
+
+-----
+
+
+## Claude Code en VS Code
+
+::: r-stack
+<br>
+
+![](https://miro.medium.com/v2/resize:fit:2000/1*3m2nd7J9sKo3bX-ymkN_XA.gif){.fragment .fade-in-then-out fig-align="center" width="1200" height="650"}
+
+![](https://miro.medium.com/v2/resize:fit:2000/1*uQjmMEDFPyoazHsEpFR1CQ.gif){.fragment fig-align="center" width="1200" height="650"}
+:::
 
 ------------------------------------------------------------------------
 
-## Vibe Coding
+## CLAUDE.md: dándole contexto permanente al agente
 
-:::::: columns
+:::: columns
 ::: {.column width="55%"}
-<br>
+**`CLAUDE.md`** es el archivo de instrucciones persistentes que Claude Code lee automáticamente al iniciar en tu proyecto. Es el equivalente a un onboarding técnico para el agente.
 
-**Vibe coding** = programar describiendo lo que quieres en lenguaje natural, dejando que la IA genere el código.
+**¿Qué va en un buen CLAUDE.md?**
 
-**Lo que se democratiza:**
+``` markdown
+# Proyecto: SAT-E (Sistema de Alerta Temprana)
 
--   Personas sin background técnico pueden crear prototipos funcionales
--   La velocidad de iteración se multiplica por 5–10×
--   El "costo de probar una idea" cae dramáticamente
+## Stack
+- Python 3.11, Kedro 0.19, XGBoost 2.x
+- PostgreSQL (datos académicos), Redis (caché)
+- Tests con pytest, cobertura mínima: 80%
 
-**Lo que NO desaparece:**
+## Convenciones
+- Nombres de variables en snake_case
+- Docstrings en español, código en inglés
+- Nunca commitear credenciales (.env ignorado)
 
--   La responsabilidad de entender lo que se despliega
--   La capacidad de revisar, testear y debuggear
--   El criterio para saber cuándo el output es correcto
+## Comandos frecuentes
+```bash
+kedro run                  # pipeline completo
+pytest tests/ -v           # correr tests
+kedro viz                  # visualizar DAG
+```
+
+## Contexto del dominio
+
+Modelo de riesgo académico estudiantil. Variables clave: NEM, PSU, créditos aprobados, brecha_creditos, PACE (binario). NUNCA eliminar columnas PACE sin confirmar.
+
+```         
+
 :::
 
 :::: {.column width="45%"}
-::: callout-important
-## La trampa del vibe coding
 
-El código generado por IA puede ser fluido, compilar perfecto... y estar completamente equivocado en lo que hace. **Desplegar sin entender es deuda técnica acelerada.**
+::: callout-important
+## Por qué importa
+
+Sin `CLAUDE.md`, Claude Code infiere el contexto desde el código. Con él, arranca sabiendo el stack, las restricciones del negocio y las convenciones del equipo. La diferencia es enorme en proyectos reales.
 :::
 
 ```{=html}
-<div style="background:#FEF9E7; border-left:4px solid #F39C12; border-radius:8px; padding:1rem; font-size:0.72em; margin-top:0.8rem;">
-  <strong>Herramientas actuales (2025):</strong><br>
-  • Cursor (editor con IA integrada)<br>
-  • Claude Code (CLI agentic, Anthropic)<br>
-  • GitHub Copilot (inline, chat, workspace)<br>
-  • Windsurf, Aider, Cody...<br><br>
-  La frontera entre "junior dev" y "nadie" se está corriendo.
+<div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; font-size:0.70em; margin-top:0.8rem;">
+  <div style="color:#4A9FD4; font-size:1em; margin-bottom:0.6rem;">📋 Secciones recomendadas</div>
+  <div style="display:flex; flex-direction:column; gap:0.4rem;">
+    <div style="background:#1A3A6B; padding:0.4rem 0.7rem; border-radius:5px;">🧩 Stack tecnológico y versiones</div>
+    <div style="background:#1A3A6B; padding:0.4rem 0.7rem; border-radius:5px;">⚙️ Comandos de build / test / run</div>
+    <div style="background:#1A3A6B; padding:0.4rem 0.7rem; border-radius:5px;">📐 Convenciones de código del equipo</div>
+    <div style="background:#1A3A6B; padding:0.4rem 0.7rem; border-radius:5px;">🚫 Restricciones críticas (nunca hacer X)</div>
+    <div style="background:#1A3A6B; padding:0.4rem 0.7rem; border-radius:5px;">🗺️ Mapa de módulos principales</div>
+    <div style="background:#1A3A6B; padding:0.4rem 0.7rem; border-radius:5px;">📚 Contexto del dominio de negocio</div>
+  </div>
+</div>
+```
+:::
+::::
+
+------------------------------------------------------------------------
+
+## Skills: superpoderes reutilizables para el agente
+
+:::::: columns
+::: {.column width="55%"}
+**Las Skills** son carpetas de instrucciones que le enseñan a Claude Code cómo hacer tareas específicas en tu entorno — sin repetir las mismas instrucciones cada vez.
+
+**Estructura de una Skill:**
+
+``` bash
+.claude/
+└── skills/
+    ├── kedro-pipeline/
+    │   └── SKILL.md        # cómo crear nodos Kedro
+    ├── quarto-slides/
+    │   └── SKILL.md        # cómo generar slides RevealJS
+    └── sql-postgres/
+        └── SKILL.md        # convenciones SQL del proyecto
+```
+
+**Ejemplo de SKILL.md para Kedro:**
+
+``` markdown
+# Skill: Crear nodo Kedro
+
+## Patrón estándar
+Los nodos siempre van en `src/<proyecto>/nodes/`.
+Cada nodo tiene su propia función con type hints.
+El catálogo usa nombres snake_case con prefijo
+del stage: raw_, int_, pri_, feat_, mdl_.
+
+## Al crear un nodo nuevo:
+1. Crea la función en el módulo correcto
+2. Registra en pipeline.py con inputs/outputs
+3. Agrega entrada al catalog.yml
+4. Crea test en tests/nodes/test_<nombre>.py
+```
+:::
+
+:::: {.column width="45%"}
+```{=html}
+<div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; font-size:0.70em;">
+  <div style="color:#4A9FD4; font-size:1em; margin-bottom:0.8rem;">🎯 Por qué usar Skills</div>
+  <div style="display:flex; flex-direction:column; gap:0.5rem;">
+    <div style="background:#1A3A6B; padding:0.5rem 0.8rem; border-radius:5px;">
+      <strong style="color:#C9A84C;">Sin Skills</strong><br>
+      "Crea un nodo Kedro... y sigue nuestras convenciones... y recuerda registrarlo... y los tests van en..."
+    </div>
+    <div style="text-align:center; color:#4A9FD4;">vs</div>
+    <div style="background:#27AE60; padding:0.5rem 0.8rem; border-radius:5px;">
+      <strong>Con Skills</strong><br>
+      "Crea un nodo Kedro para calcular el PSI de las variables del modelo M25."
+    </div>
+  </div>
+  <div style="margin-top:0.8rem; color:#6B7A8D; font-size:0.9em;">
+    Las Skills son <strong>conocimiento del equipo codificado</strong>.<br>
+    El agente las lee y las aplica automáticamente.
+  </div>
+</div>
+```
+
+::: callout-tip
+## Skills públicas vs privadas
+
+Puedes tener skills en el repo del proyecto (compartidas con el equipo) o en `~/.claude/skills/` (personales). Claude Code las combina al trabajar.
+:::
+::::
+::::::
+
+------------------------------------------------------------------------
+
+## Spec-Driven Development con Kiro
+
+:::::: columns
+::: {.column width="55%"}
+[**Kiro**](https://kiro.dev/) es el IDE de AWS que lleva los agentes un paso más allá: en lugar de escribir código directamente, el agente **primero genera una especificación**, la revisa contigo, y solo entonces implementa.
+
+**El flujo Spec-Driven:**
+
+1.  📝 **Spec** — describe la feature en lenguaje natural
+2.  📋 **Requirements** — el agente genera los requerimientos (EARS format)
+3.  🏗️ **Design** — genera el diseño técnico (módulos, interfaces, datos)
+4.  ✅ **Tasks** — lista de tareas atómicas con checklist
+5.  🤖 **Implementation** — el agente implementa tarea por tarea
+
+``` bash
+# En Kiro, dentro del panel "Specs":
+# 1. Escribe: "Quiero un módulo RAG con ChromaDB"
+# 2. Kiro genera spec/ con requirements.md,
+#    design.md y tasks.md
+# 3. Revisas y apruebas cada sección
+# 4. "Implement task 3" → el agente actúa
+```
+:::
+
+:::: {.column width="45%"}
+::: callout-note
+## ¿Por qué Spec-Driven?
+
+El problema del vibe coding es que el agente actúa antes de entender. Spec-Driven invierte el orden: **primero entender, luego actuar**. El spec es un contrato entre tú y el agente.
+:::
+
+```{=html}
+<div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; font-size:0.70em; margin-top:0.8rem;">
+  <div style="color:#4A9FD4; font-size:1em; margin-bottom:0.8rem;">📁 Estructura que genera Kiro</div>
+  <div style="background:#1A3A6B; border-radius:8px; padding:0.8rem; font-family:monospace; line-height:1.9;">
+    <div style="color:#C9A84C;">.kiro/specs/rag-module/</div>
+    <div style="margin-left:1em; color:#27AE60;">├── requirements.md</div>
+    <div style="margin-left:1.5em; color:#6B7A8D; font-size:0.9em;"># GIVEN/WHEN/THEN por feature</div>
+    <div style="margin-left:1em; color:#27AE60;">├── design.md</div>
+    <div style="margin-left:1.5em; color:#6B7A8D; font-size:0.9em;"># Diagrama de módulos, APIs</div>
+    <div style="margin-left:1em; color:#4A9FD4;">└── tasks.md</div>
+    <div style="margin-left:1.5em; color:#6B7A8D; font-size:0.9em;"># [ ] Task 1: crear vector store</div>
+    <div style="margin-left:1.5em; color:#6B7A8D; font-size:0.9em;"># [ ] Task 2: función de indexación</div>
+    <div style="margin-left:1.5em; color:#6B7A8D; font-size:0.9em;"># [x] Task 3: pipeline de consulta</div>
+  </div>
 </div>
 ```
 ::::
 ::::::
+
+------------------------------------------------------------------------
+
+## Claude Code + CLAUDE.md + Kiro: el flujo completo
+
+```{=html}
+<div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; font-size:0.70em; margin-top:0.5rem;">
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; border-top:3px solid #4A9FD4;">
+    <div style="color:#4A9FD4; font-size:1.1em; margin-bottom:0.8rem; text-align:center;">① Contexto</div>
+    <div style="text-align:center; font-size:2em; margin-bottom:0.5rem;">📄</div>
+    <div style="text-align:center; color:#C9A84C; margin-bottom:0.5rem;"><strong>CLAUDE.md</strong></div>
+    <ul style="margin:0; padding-left:1.2em; line-height:1.8; color:#ccc;">
+      <li>Stack y versiones</li>
+      <li>Comandos del proyecto</li>
+      <li>Convenciones del equipo</li>
+      <li>Restricciones críticas</li>
+    </ul>
+    <div style="color:#6B7A8D; font-size:0.85em; margin-top:0.6rem; text-align:center;">El agente sabe quién eres antes de empezar</div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; border-top:3px solid #C9A84C;">
+    <div style="color:#C9A84C; font-size:1.1em; margin-bottom:0.8rem; text-align:center;">② Capacidades</div>
+    <div style="text-align:center; font-size:2em; margin-bottom:0.5rem;">🧰</div>
+    <div style="text-align:center; color:#C9A84C; margin-bottom:0.5rem;"><strong>Skills</strong></div>
+    <ul style="margin:0; padding-left:1.2em; line-height:1.8; color:#ccc;">
+      <li>Patrones de código del equipo</li>
+      <li>Recetas reutilizables</li>
+      <li>Guías de frameworks internos</li>
+      <li>Convenciones de testing</li>
+    </ul>
+    <div style="color:#6B7A8D; font-size:0.85em; margin-top:0.6rem; text-align:center;">El agente sabe cómo hace las cosas tu equipo</div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; border-top:3px solid #27AE60;">
+    <div style="color:#27AE60; font-size:1.1em; margin-bottom:0.8rem; text-align:center;">③ Especificación</div>
+    <div style="text-align:center; font-size:2em; margin-bottom:0.5rem;">📋</div>
+    <div style="text-align:center; color:#C9A84C; margin-bottom:0.5rem;"><strong>Kiro Spec</strong></div>
+    <ul style="margin:0; padding-left:1.2em; line-height:1.8; color:#ccc;">
+      <li>Requirements.md</li>
+      <li>Design.md</li>
+      <li>Tasks.md con checklist</li>
+      <li>Revisión humana antes de actuar</li>
+    </ul>
+    <div style="color:#6B7A8D; font-size:0.85em; margin-top:0.6rem; text-align:center;">El agente sabe qué debe hacer y por qué</div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; border-top:3px solid #E74C3C;">
+    <div style="color:#E74C3C; font-size:1.1em; margin-bottom:0.8rem; text-align:center;">④ Ejecución</div>
+    <div style="text-align:center; font-size:2em; margin-bottom:0.5rem;">⚡</div>
+    <div style="text-align:center; color:#C9A84C; margin-bottom:0.5rem;"><strong>Claude Code</strong></div>
+    <ul style="margin:0; padding-left:1.2em; line-height:1.8; color:#ccc;">
+      <li>Lee, edita, ejecuta</li>
+      <li>Corre tests en tiempo real</li>
+      <li>Corrige errores en el loop</li>
+      <li>Commit + PR con contexto</li>
+    </ul>
+    <div style="color:#6B7A8D; font-size:0.85em; margin-top:0.6rem; text-align:center;">El agente actúa con propósito y supervisión</div>
+  </div>
+
+</div>
+```
+
+::: callout-important
+## La diferencia clave
+
+Sin este stack: el agente adivina el contexto, repite errores de convenciones, actúa antes de entender. **Con este stack: el agente tiene memoria institucional, opera dentro de las reglas del equipo y construye sobre especificaciones revisadas por humanos.**
+:::
 
 ------------------------------------------------------------------------
 
@@ -980,7 +1119,7 @@ El código generado por IA puede ser fluido, compilar perfecto... y estar comple
 
 [Abre el notebook y sigue la actividad]{style="font-size: 1.6em; font-weight: bold; color: white;"}
 
-[Agentes y MCP]{style="font-size: 1em; color: #4A9FD4; font-style: italic;"}
+[Agentes, Claude Code y MCP]{style="font-size: 1em; color: #4A9FD4; font-style: italic;"}
 
 ```{=html}
 <a href="https://colab.research.google.com/PENDIENTE_PARTE_5" 
@@ -1266,8 +1405,6 @@ Texto, imagen, audio, video, código — como inputs Y outputs nativos. Los pipe
 -   LatinR, useR!
 -   Hugging Face Discord
 -   r/LocalLLaMA
-
-
 :::
 :::::
 
