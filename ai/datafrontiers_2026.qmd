@@ -2,7 +2,7 @@
 format:
   revealjs:
     theme: [default, custom.scss]
-    slide-number: true
+    slide-number: false
     progress: true
     history: false
     transition: fade
@@ -33,7 +33,7 @@ Data Storytelling + Inteligencia Artificial
 
 ::: subtitle-block
 Storytelling · Visualización · IA · Narrativa con Datos\
-Conferencia — 2024
+DataFrontiers 2026
 :::
 
 ::: author-block
