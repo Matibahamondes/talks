@@ -158,7 +158,7 @@ Facts inform — emotions inspire action.
 ## 
 
 :::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
-::: callout-note
+::: {.callout-note style="font-size: 1.5em;"}
 ## Storytelling principle #2
 
 Los detalles son importantes, [pero no **todos** los detalles son importantes.]{.fragment}
@@ -219,7 +219,7 @@ Focus only on what moves the story forward.
 ## 
 
 :::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
-::: callout-note
+::: {.callout-note style="font-size: 1.5em;"}
 ## Storytelling principle #3
 
 [Explicar Menos]{style="color: red"}, [Mostrar Más]{.fragment style="color: green"}
@@ -285,8 +285,8 @@ What took days now takes hours.
 
 ## 
 
-::::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
-:::: {.callout-note style="font-size: 1.5em; max-width: 75%; margin: auto;"}
+:::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+::: {.callout-note style="font-size: 1.5em;"}
 ## Storytelling principle #4
 
 Tu primera versión será [**siempre** horrible.]{.fragment}
