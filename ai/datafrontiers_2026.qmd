@@ -21,26 +21,8 @@ execute:
   warning: false
 ---
 
+## {background-image="images/portada_df.png" background-size="cover" background-position="center" data-state="no-logo" }
 
-
-##  {.title-slide background-color="#0F2044"}
-
-::: title-block
-**Crea, Innova y Presenta**
-
-Data Storytelling + Inteligencia Artificial
-:::
-
-::: subtitle-block
-Storytelling · Visualización · IA · Narrativa con Datos\
-DataFrontiers 2026
-:::
-
-::: author-block
-Francisco Alfaro, Valeska Canales\
-Universidad Técnica Federico Santa María\
-Dirección de Transformación Digital · 2026
-:::
 
 ------------------------------------------------------------------------
 
@@ -88,10 +70,7 @@ Nunca revelar el final antes de tiempo.\
 4.  Tu primera versión será [horrible.]{style="background-color:black;"}\
 :::
 
-
-
 ------------------------------------------------------------------------
-
 
 ## Qué es Storytelling?
 
@@ -119,7 +98,6 @@ Use it well.
 
 ------------------------------------------------------------------------
 
-
 ## Ohh, nuestros cerebros son hackables...
 
 ::: r-stack
@@ -127,9 +105,6 @@ Use it well.
 
 ![](images/storytelling/got.jpg){.fragment fig-align="center" width="100%"}
 :::
-
-
-
 
 ------------------------------------------------------------------------
 
@@ -195,7 +170,6 @@ Show less — but better.\
 Focus only on what moves the story forward.
 :::
 
-
 ------------------------------------------------------------------------
 
 ## El arte de una buena visualización
@@ -221,8 +195,7 @@ Focus only on what moves the story forward.
 
 ------------------------------------------------------------------------
 
-
-## Ejemplos 
+## Ejemplos
 
 <br>
 
@@ -274,10 +247,9 @@ Bar, scatter, box, heatmap, big text — that's 90% of data storytelling.\
 Simple wins.
 :::
 
-
 ------------------------------------------------------------------------
 
-##  La AI en Data Storytelling
+## La AI en Data Storytelling
 
 <br><br>
 
@@ -310,7 +282,7 @@ What took days now takes hours.
 
 ------------------------------------------------------------------------
 
-##  
+## 
 
 ::::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
 :::: {.callout-note style="font-size: 1.5em; max-width: 75%; margin: auto;"}
@@ -333,23 +305,18 @@ The principle stays. The tools change.
 ## AI tools
 
 ::: r-stack
-
 ![](https://media.beehiiv.com/uploads/asset/file/882af82d-1a22-4feb-9444-24f143c08f32/gamma.gif?t=1728863209){.fragment .fade-in-then-out fig-align="center" width="100%"}
 
 ![](https://storage.googleapis.com/gweb-cloudblog-publish/original_images/1_DSA_Simplifies_Workflows.gif){.fragment .fade-in-then-out fig-align="center" width="80%"}
 
 ![](https://miro.medium.com/v2/0*S4mDgR2LnUbrQ-rV.gif){.fragment fig-align="center" width="70%"}
-
 :::
 
 ------------------------------------------------------------------------
 
+## Experiencias
 
-
-## Experiencias 
-
-::: r-stack
-
+:::::: r-stack
 ::: fragment
 ![](images/experiencias.svg){width="900px"}
 :::
@@ -359,17 +326,11 @@ The principle stays. The tools change.
 :::
 
 ::: fragment
-<iframe 
-  src="https://sebastiandres.github.io/pyschool_2025/space_station/rooms/sala_00.html" 
-  width="1200" height="600" frameborder="0" 
-  style="max-width:100%; border:1px solid #CCC; border-radius:10px;" 
-  allowfullscreen>
+<iframe src="https://sebastiandres.github.io/pyschool_2025/space_station/rooms/sala_00.html" width="1200" height="600" frameborder="0" style="max-width:100%; border:1px solid #CCC; border-radius:10px;" allowfullscreen>
+
 </iframe>
 :::
-
-
-
-:::
+::::::
 
 ------------------------------------------------------------------------
 
@@ -390,19 +351,15 @@ Now you’ve seen how each point connects.
 Simple rules to tell better stories with data.
 :::
 
-
-# { background-image="images/horst_quarto_penguins_thankyou.png" data-state="no-logo"}
+#  {background-image="images/horst_quarto_penguins_thankyou.png" data-state="no-logo"}
 
 ::: {style="display: flex; justify-content: center; align-items: flex-start; margin-top: 0vh; padding-top: 0vh; height: 60vh; flex-direction: column; text-align: center;"}
 [Hora del Adiós]{style="font-size: 4em; color: #1e6490;"}
 :::
 
-::: {style="position: fixed; bottom: -250px; right: -60px; text-align: center;"}
-![](images/qr_data.png){width="150px" style="border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.25);"}
+::: {style="position: fixed; bottom: -350px; right: -60px; text-align: center;"}
+![](images/qr_df.png){width="150px" style="border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.25);"}
 :::
-
-
-
 
 ```{=html}
 <style>
