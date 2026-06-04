@@ -21,7 +21,7 @@ execute:
   warning: false
 ---
 
-## {background-image="images/portada_df.png" background-size="cover" background-position="center" data-state="no-logo" }
+## {background-image="images/portada_df.jpeg"  background-position="center" data-state="no-logo" }
 
 
 ------------------------------------------------------------------------
