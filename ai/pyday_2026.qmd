@@ -29,13 +29,12 @@ execute:
 
 ## IA en los medios ...
 
-<br><br>
 
 :::: {style="display: flex; justify-content: center; align-items: center; height: 70vh; flex-direction: column; text-align: center;"}
 ::: r-stack
-![](images/news/intro_01.png){.fragment .fade-in-then-out fig-align="center" width="70%"}
+![](images/news/intro_01.png){.fragment .fade-in-then-out fig-align="center" width="80%"}
 
-![](images/news/intro_07.png){.fragment .fade-in-then-out fig-align="center" width="50%"}
+![](images/news/intro_07.png){.fragment .fade-in-then-out fig-align="center" width="60%"}
 
 :::
 ::::
