@@ -775,9 +775,9 @@ Evaluación crítica de una aplicación de IA en gestión organizacional, identi
 :::
 
 ::: {style="position: fixed; bottom: -350px; right: -60px; text-align: center;"}
-![](images/qr_df.png){width="150px" style="border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.25);"}
+![](images/qr_dtd2.png){width="150px" style="border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.25);"}
 :::
-
+ 
 
 ```{=html}
 <style>
