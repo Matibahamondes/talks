@@ -1,0 +1,1496 @@
+---
+title: "Stack tecnológico del área de Analítica"
+subtitle: "Herramientas, proyectos y flujos de trabajo — DTD UTFSM"
+author: "Dirección de Transformación Digital · UTFSM"
+date: today
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: false
+    progress: true
+    history: false
+    transition: fade
+    transition-speed: fast
+    incremental: false
+    fig-align: center
+    highlight-style: github-dark
+    code-block-bg: true
+    center: false
+    width: 1600
+    height: 800
+    logo: "images/usm.png"
+    scrollable: false
+execute:
+  echo: false
+  warning: false
+---
+
+
+
+## {background-color="#0F2044" data-state="no-logo"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 70vh; flex-direction: column; text-align: center;"}
+[Dirección de Transformación Digital · UTFSM]{style="font-size: 1em; color: #4A9FD4; letter-spacing: 0.1em; text-transform: uppercase;"}
+
+[Stack tecnológico del área de Analítica]{style="font-size: 2.4em; font-weight: bold; color: white; line-height: 1.2; margin: 0.4em 0;"}
+
+[Herramientas, proyectos y flujos de trabajo]{style="font-size: 1.1em; color: #6B7A8D; font-style: italic;"}
+
+[Valparaíso · Chile]{style="font-size: 0.8em; color: #C9A84C; margin-top: 1.5em;"}
+:::
+
+------------------------------------------------------------------------
+
+## ¿Qué hace el área de Analítica?
+
+::::: columns
+::: {.column width="55%"}
+<br>
+
+- Construimos **modelos predictivos** que anticipan riesgos y comportamientos institucionales.
+- Diseñamos **dashboards e indicadores** para apoyar la gestión y la toma de decisiones.
+- Operamos **sistemas de alerta temprana** que detectan problemas antes de que escalen.
+- Resolvemos problemas de **optimización** (asignación de salas, horarios, recursos).
+- Damos **soporte a la decisión institucional** con evidencia cuantitativa y reproducible.
+:::
+
+::: {.column width="45%"}
+<br>
+
+```{=html}
+<div style="background:#0F2044; border-radius:10px; padding:1.4rem; color:white; font-size:0.78em; font-family:inherit;">
+  <div style="color:#C9A84C; font-size:1.1em; margin-bottom:1rem; text-align:center;">🔄 El ciclo analítico</div>
+  <div style="background:#1A3A6B; padding:0.5rem 0.8rem; border-radius:6px; margin-bottom:0.4rem;">
+    <span style="color:#4A9FD4;">1 ·</span> Capturar datos
+  </div>
+  <div style="text-align:center; color:#4A9FD4;">↓</div>
+  <div style="background:#1A3A6B; padding:0.5rem 0.8rem; border-radius:6px; margin:0.4rem 0;">
+    <span style="color:#4A9FD4;">2 ·</span> Modelar & analizar
+  </div>
+  <div style="text-align:center; color:#4A9FD4;">↓</div>
+  <div style="background:#1A3A6B; padding:0.5rem 0.8rem; border-radius:6px; margin:0.4rem 0;">
+    <span style="color:#4A9FD4;">3 ·</span> Exponer como servicio
+  </div>
+  <div style="text-align:center; color:#4A9FD4;">↓</div>
+  <div style="background:#1A3A6B; padding:0.5rem 0.8rem; border-radius:6px; margin:0.4rem 0;">
+    <span style="color:#4A9FD4;">4 ·</span> Visualizar & comunicar
+  </div>
+  <div style="text-align:center; color:#C9A84C;">↺ decidir & retroalimentar</div>
+</div>
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## {background-image="images/background_slides3.png" background-opacity="0.3"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Sección 1]{style="font-size: 1em; color: #4A9FD4;"}
+
+[Capa de datos]{style="font-size: 2em; font-weight: bold;"}
+
+[Fuentes, formatos y conexiones]{style="font-size: 1em; color: #6B7A8D; font-style: italic;"}
+:::
+
+------------------------------------------------------------------------
+
+## Fuentes de datos
+
+::::: columns
+::: {.column width="52%"}
+<br>
+
+| Fuente | Formato | Uso típico |
+|--------|---------|------------|
+| BD institucional | SQL / Oracle | Matrículas, notas, cohortes |
+| Archivos planos | CSV / Excel | Cargas manuales, históricos |
+| APIs REST | JSON | Servicios internos y externos |
+| Formularios | Google Forms / SIAC | Encuestas, solicitudes |
+
+<br>
+
+::: callout-note
+La capa de datos **unifica fuentes heterogéneas** en un formato tabular limpio antes de modelar.
+:::
+:::
+
+::: {.column width="48%"}
+<br>
+
+```python
+import pandas as pd
+from sqlalchemy import create_engine
+
+# Archivos planos
+df_csv = pd.read_csv("matriculas_2025.csv")
+
+# Base de datos institucional
+engine = create_engine(
+    "oracle+oracledb://user:pwd@host:1521/dtd"
+)
+df_sql = pd.read_sql(
+    "SELECT rut, carrera, promedio "
+    "FROM academico.alumnos",
+    engine,
+)
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Validación y limpieza con pandas
+
+::::: columns
+::: {.column width="52%"}
+<br>
+
+- Antes de modelar: **un dato sucio es una alerta equivocada**.
+- `merge` con `validate="1:1"` detecta RUT duplicados al unir fuentes heterogéneas.
+- `pd.to_numeric(errors="coerce")` + `fillna` para tipos mixtos y huecos.
+- `astype("category")` reduce memoria en variables como carrera.
+- **pandera** convierte los supuestos en un *contrato* verificable del dataset.
+
+::: callout-note
+Validar con `lazy=True` acumula **todos** los errores en un solo reporte, en vez de fallar en el primero.
+:::
+:::
+
+::: {.column width="48%"}
+<br>
+
+```python
+import pandas as pd
+import pandera as pa
+from pandera import Column, Check
+
+# 1 · Merge de fuentes heterogéneas (BD + CSV + forms)
+df = (df_sql.merge(df_csv, on="rut", how="left", validate="1:1")
+            .merge(df_forms, on="rut", how="left"))
+
+# 2 · Casting de tipos y normalización
+df["rut"] = df["rut"].astype("string").str.replace(".", "", regex=False)
+df["promedio"] = pd.to_numeric(df["promedio"], errors="coerce")
+df["asistencia"] = df["asistencia"].fillna(df["asistencia"].median())
+df["carrera"] = df["carrera"].astype("category")
+
+# 3 · Validación de esquema (contrato de datos)
+schema = pa.DataFrameSchema({
+    "rut":        Column("string", unique=True),
+    "promedio":   Column(float, Check.in_range(1.0, 7.0)),
+    "asistencia": Column(float, Check.in_range(0, 100)),
+    "carrera":    Column("category", nullable=False),
+})
+df = schema.validate(df, lazy=True)   # acumula todos los errores
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## {background-image="images/background_slides3.png" background-opacity="0.3"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Sección 2]{style="font-size: 1em; color: #4A9FD4;"}
+
+[Capa de modelos]{style="font-size: 2em; font-weight: bold;"}
+
+[Machine learning, estadística y optimización]{style="font-size: 1em; color: #6B7A8D; font-style: italic;"}
+:::
+
+------------------------------------------------------------------------
+
+## Machine learning: XGBoost + SHAP
+
+::::: columns
+::: {.column width="55%"}
+<br>
+
+- **XGBoost** es un algoritmo de *gradient boosting* sobre árboles de decisión.
+- Es el **estándar de facto para datos tabulares**: notas, asistencia, cohortes.
+- Robusto a datos faltantes, escalas mixtas y relaciones no lineales.
+- **SHAP** explica cada predicción: cuánto aporta cada variable al riesgo.
+- Pasamos de una caja negra a una **decisión auditable y comunicable**.
+
+::: callout-tip
+## La frase clave del área
+No basta con predecir bien: la institución necesita **entender y confiar** en el porqué de cada alerta.
+:::
+:::
+
+::: {.column width="45%"}
+<br>
+
+```{=html}
+<div style="background:#0F2044; border-radius:10px; padding:1.3rem; color:white; font-size:0.74em; font-family:inherit;">
+  <div style="color:#C9A84C; margin-bottom:0.9rem; text-align:center;">📊 Aporte de cada variable (SHAP)</div>
+  <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.5rem;">
+    <span style="width:130px;">Asistencia</span>
+    <div style="background:#4A9FD4; height:16px; width:78%; border-radius:3px;"></div>
+  </div>
+  <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.5rem;">
+    <span style="width:130px;">Notas 1er sem.</span>
+    <div style="background:#3E86C0; height:16px; width:64%; border-radius:3px;"></div>
+  </div>
+  <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.5rem;">
+    <span style="width:130px;">Ramos reprobados</span>
+    <div style="background:#356FA0; height:16px; width:47%; border-radius:3px;"></div>
+  </div>
+  <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.5rem;">
+    <span style="width:130px;">PSU / PAES</span>
+    <div style="background:#2A5080; height:16px; width:31%; border-radius:3px;"></div>
+  </div>
+  <div style="display:flex; align-items:center; gap:0.6rem;">
+    <span style="width:130px;">Nivel socioecon.</span>
+    <div style="background:#1F3A60; height:16px; width:20%; border-radius:3px;"></div>
+  </div>
+  <div style="color:#6B7A8D; font-size:0.85em; margin-top:0.9rem; text-align:center;">→ mayor barra = mayor impacto en el riesgo</div>
+</div>
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Backtesting temporal: walk-forward por cohorte
+
+::::: columns
+::: {.column width="48%"}
+<br>
+
+- Validar con un split aleatorio **mira al futuro** (fuga temporal).
+- **Walk-forward**: se entrena con cohortes pasadas y se evalúa en la siguiente.
+- M23 → predice M24 · M23+M24 → predice M25.
+- Replica las condiciones reales: el modelo solo conoce el pasado.
+- Cada generación tiene su AUC → **medimos estabilidad en el tiempo**.
+
+::: callout-important
+Un AUC alto en cross-validation aleatorio puede ser un espejismo si las cohortes cambian. El backtesting temporal es la prueba honesta.
+:::
+:::
+
+::: {.column width="52%"}
+<br>
+
+```python
+# Walk-forward: entrenar en el pasado, validar en el futuro
+cohortes = ["M23", "M24", "M25"]
+resultados = []
+
+for i in range(1, len(cohortes)):
+    train = df[df["cohorte"].isin(cohortes[:i])]   # M23 → M23,M24
+    test  = df[df["cohorte"] == cohortes[i]]        # generación sgte.
+
+    Xtr, ytr = train.drop(columns="riesgo"), train["riesgo"]
+    Xte, yte = test.drop(columns="riesgo"),  test["riesgo"]
+
+    modelo = XGBClassifier(
+        n_estimators=400, max_depth=5,
+        learning_rate=0.05, eval_metric="auc",
+    ).fit(Xtr, ytr)
+
+    proba = modelo.predict_proba(Xte)[:, 1]
+    resultados.append({
+        "valida_en": cohortes[i],
+        "auc": roc_auc_score(yte, proba),
+        "n": len(yte),
+    })
+
+backtest = pd.DataFrame(resultados)   # AUC por generación
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Métricas de evaluación: ¿qué medimos?
+
+::::: columns
+::: {.column width="50%"}
+<br>
+
+- **AUC-ROC** → ¿el modelo ordena bien el riesgo? (independiente del umbral).
+- **F1** → equilibrio entre precisión y recall en la clase de riesgo.
+- **Precision@K** → de los *K* casos más prioritarios, ¿cuántos son aciertos?
+
+::: callout-important
+## Por qué precision@K y no accuracy
+La deserción es un evento **raro** (~10-15%). Un modelo que dice "nadie deserta" tendría ~85% de accuracy y sería inútil. Como las unidades solo pueden intervenir a un número limitado de estudiantes, lo que importa es **acertar en el top-K priorizado**.
+:::
+:::
+
+::: {.column width="50%"}
+<br>
+
+```python
+from sklearn.metrics import roc_auc_score, f1_score
+
+def precision_at_k(y_true, y_score, k):
+    """Precisión entre los k estudiantes de mayor riesgo."""
+    top_k = y_score.argsort()[::-1][:k]
+    return y_true.iloc[top_k].mean()
+
+auc = roc_auc_score(y_test, proba)        # ranking global
+f1  = f1_score(y_test, proba > 0.5)       # balance P/R
+
+# Las unidades solo pueden contactar a ~150 estudiantes
+p_at_150 = precision_at_k(y_test, proba, k=150)
+
+print(f"AUC-ROC      : {auc:.3f}")
+print(f"F1           : {f1:.3f}")
+print(f"Precision@150: {p_at_150:.3f}")
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Ejemplo concreto: SAT-E
+
+::::: columns
+::: {.column width="52%"}
+<br>
+
+**Sistema de Alerta Temprana Estudiantil**
+
+- Predice el **riesgo de deserción / bajo rendimiento** por estudiante.
+- Trabaja por **cohortes** y se actualiza cada semestre.
+- Variables: asistencia, notas, ramos reprobados, ingreso, trayectoria.
+- Genera una **Alerta 1** para los casos de mayor riesgo, priorizados.
+
+::: callout-note
+## Impacto
+Cubre a **toda la población de pregrado** de la USM y entrega a las unidades una lista accionable y explicada.
+:::
+:::
+
+::: {.column width="48%"}
+<br>
+
+```{=html}
+<div style="background:#0F2044; border-radius:10px; padding:1.3rem; color:white; font-size:0.74em; font-family:inherit;">
+  <div style="color:#C9A84C; margin-bottom:0.9rem; text-align:center;">⚙️ Esquema del modelo</div>
+  <div style="background:#1A3A6B; padding:0.5rem; border-radius:6px; text-align:center;">📥 datos académicos</div>
+  <div style="text-align:center; color:#4A9FD4;">↓</div>
+  <div style="background:#1A3A6B; padding:0.5rem; border-radius:6px; text-align:center;">🌲 XGBoost <span style="color:#C9A84C;">M23 / M24 / M25</span></div>
+  <div style="text-align:center; color:#4A9FD4;">↓</div>
+  <div style="background:#1A3A6B; padding:0.5rem; border-radius:6px; text-align:center;">🔍 SHAP — explicación</div>
+  <div style="text-align:center; color:#4A9FD4;">↓</div>
+  <div style="background:#1A3A6B; padding:0.5rem; border-radius:6px; text-align:center;">🎯 score de riesgo</div>
+  <div style="text-align:center; color:#4A9FD4;">↓</div>
+  <div style="background:#E74C3C; padding:0.5rem; border-radius:6px; text-align:center; font-weight:bold;">🚨 Alerta 1</div>
+</div>
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Modelos estadísticos y optimización
+
+<br>
+
+```{=html}
+<div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:1.2rem; font-family:inherit;">
+  <div style="background:rgba(255,255,255,0.06); border:1px solid #2A5080; border-radius:10px; padding:1.3rem;">
+    <div style="color:#C9A84C; font-size:1.05em; font-weight:bold; margin-bottom:0.7rem;">📈 Series temporales</div>
+    <div style="color:#2C3E50; font-size:0.82em; line-height:1.6;">
+      Regresión, ARIMA y descomposición de tendencias para proyectar matrícula, demanda y comportamientos institucionales.
+    </div>
+  </div>
+  <div style="background:rgba(255,255,255,0.06); border:1px solid #2A5080; border-radius:10px; padding:1.3rem;">
+    <div style="color:#C9A84C; font-size:1.05em; font-weight:bold; margin-bottom:0.7rem;">🧮 ILP / optimización</div>
+    <div style="color:#2C3E50; font-size:0.82em; line-height:1.6;">
+      Gurobi y programación lineal entera para <em>scheduling</em>: asignación óptima de salas, horarios y recursos.
+    </div>
+  </div>
+  <div style="background:rgba(255,255,255,0.06); border:1px solid #2A5080; border-radius:10px; padding:1.3rem;">
+    <div style="color:#C9A84C; font-size:1.05em; font-weight:bold; margin-bottom:0.7rem;">📐 Econometría</div>
+    <div style="color:#2C3E50; font-size:0.82em; line-height:1.6;">
+      Modelos de regresión, control de heteroscedasticidad e inferencia asintótica para análisis causal y de impacto.
+    </div>
+  </div>
+</div>
+```
+
+<br>
+
+::: callout-tip
+Cada problema elige su herramienta: **predecir** (ML), **explicar** (econometría) o **decidir óptimamente** (optimización).
+:::
+
+------------------------------------------------------------------------
+
+## Optimización: el modelo MILP del scheduler
+
+::::: columns
+::: {.column width="46%"}
+<br>
+
+Asignar cursos a salas y bloques minimizando huecos:
+
+$$\min \sum_{c,s,b} h_{csb}\, x_{csb}$$
+
+Sujeto a:
+
+$$\sum_{s,b} x_{csb} = 1 \quad \forall c$$
+
+$$\sum_{c} x_{csb} \le 1 \quad \forall s,b$$
+
+$$x_{csb}\, n_c \le \text{cap}_s \quad \forall c,s,b$$
+
+con $x_{csb} \in \{0,1\}$ · $n_c$ inscritos · $\text{cap}_s$ capacidad.
+:::
+
+::: {.column width="54%"}
+<br>
+
+```python
+import gurobipy as gp
+from gurobipy import GRB
+
+m = gp.Model("scheduler_salas")
+
+# x[c,s,b] = 1 si el curso c se dicta en sala s, bloque b
+x = m.addVars(cursos, salas, bloques, vtype=GRB.BINARY, name="x")
+
+# (1) Cada curso se asigna exactamente una vez
+m.addConstrs((gp.quicksum(x[c, s, b] for s in salas for b in bloques) == 1
+              for c in cursos), name="asignacion_unica")
+
+# (2) Una sala no puede tener dos cursos en el mismo bloque
+m.addConstrs((gp.quicksum(x[c, s, b] for c in cursos) <= 1
+              for s in salas for b in bloques), name="sala_sin_choque")
+
+# (3) Capacidad: la sala debe caber al curso
+m.addConstrs((x[c, s, b] * inscritos[c] <= capacidad[s]
+              for c in cursos for s in salas for b in bloques),
+             name="capacidad")
+
+m.setObjective(gp.quicksum(huecos[c, s, b] * x[c, s, b]
+               for c in cursos for s in salas for b in bloques),
+               GRB.MINIMIZE)
+m.optimize()
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Pipelines: Kedro + pandas
+
+::::: columns
+::: {.column width="52%"}
+<br>
+
+- **Kedro** es un framework de ingeniería de datos para Python.
+- Aporta **reproducibilidad**: cada paso es un *nodo* versionado y testeable.
+- El **Data Catalog** desacopla el código de las rutas y formatos de datos.
+- Los *pipelines* convierten notebooks frágiles en **producción mantenible**.
+
+::: callout-note
+Mismo pipeline corre en local, en CI y en el servidor — **sin reescribir nada**.
+:::
+:::
+
+::: {.column width="48%"}
+<br>
+
+```python
+from kedro.pipeline import node, pipeline
+
+def entrenar_modelo(datos, params):
+    X, y = datos.drop("riesgo", axis=1), datos["riesgo"]
+    modelo = XGBClassifier(**params).fit(X, y)
+    return modelo
+
+pipeline_sate = pipeline([
+    node(
+        func=entrenar_modelo,
+        inputs=["datos_limpios", "params:xgb"],
+        outputs="modelo_riesgo",
+        name="entrenar_riesgo",
+    ),
+])
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Kedro: el Data Catalog
+
+::::: columns
+::: {.column width="48%"}
+<br>
+
+- El **Data Catalog** declara *dónde* y *cómo* viven los datos — el código nunca toca rutas.
+- `CSVDataset`, `SQLTableDataset`, `ParquetDataset`, `PickleDataset`: un tipo por formato.
+- `credentials` separa secretos del repositorio (`credentials.yml`, fuera de git).
+- `versioned: true` guarda cada versión del modelo con timestamp → trazabilidad total.
+
+::: callout-note
+Cambiar de CSV a base de datos es **una línea en el catálogo**, sin tocar la lógica del pipeline.
+:::
+:::
+
+::: {.column width="52%"}
+<br>
+
+```yaml
+# conf/base/catalog.yml — contrato único de datos
+
+matriculas_raw:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/matriculas_2025.csv
+  load_args:
+    sep: ";"
+    encoding: latin-1
+
+alumnos_bd:
+  type: pandas.SQLTableDataset
+  table_name: academico.alumnos
+  credentials: db_oracle
+  load_args:
+    schema: dtd
+
+datos_limpios:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/datos_limpios.parquet
+
+modelo_riesgo:
+  type: pickle.PickleDataset
+  filepath: data/06_models/xgb_sate.pkl
+  versioned: true
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Kedro: el DAG del pipeline SAT-E
+
+::::: columns
+::: {.column width="42%"}
+<br>
+
+- Cada **nodo** es una función Python pura: entradas → transformación → salidas.
+- Kedro resuelve el **orden de ejecución** automáticamente desde el catálogo.
+- `kedro viz` genera el grafo interactivo; aquí su versión esquemática.
+- Nodos independientes corren en **paralelo**; los dependientes, en orden.
+
+::: callout-tip
+El DAG hace visible la dependencia entre datos y código: nada se ejecuta antes de que sus entradas existan.
+:::
+:::
+
+::: {.column width="58%"}
+<br>
+
+```{=html}
+<div style="background:#0F2044; border-radius:10px; padding:1.3rem; color:white; font-size:0.72em; font-family:inherit;">
+  <div style="color:#C9A84C; margin-bottom:0.9rem; text-align:center;">🧱 kedro viz — pipeline SAT-E</div>
+  <div style="display:flex; align-items:center; gap:0.5rem; justify-content:center; flex-wrap:wrap;">
+    <span style="background:#1F3A60; padding:0.4rem 0.6rem; border-radius:6px;">🗄️ alumnos_bd</span>
+    <span style="background:#1F3A60; padding:0.4rem 0.6rem; border-radius:6px;">📄 matriculas_raw</span>
+  </div>
+  <div style="text-align:center; color:#4A9FD4; margin:0.35rem 0;">↓</div>
+  <div style="text-align:center;"><span style="background:#1A3A6B; padding:0.4rem 0.8rem; border-radius:6px; border:1px solid #4A9FD4;">⚙️ limpiar_datos</span></div>
+  <div style="text-align:center; color:#4A9FD4; margin:0.35rem 0;">↓ <span style="color:#6B7A8D;">datos_limpios</span></div>
+  <div style="text-align:center;"><span style="background:#1A3A6B; padding:0.4rem 0.8rem; border-radius:6px; border:1px solid #4A9FD4;">🧪 feature_engineering</span></div>
+  <div style="text-align:center; color:#4A9FD4; margin:0.35rem 0;">↓ <span style="color:#6B7A8D;">features</span> &nbsp;+&nbsp; <span style="color:#C9A84C;">params:xgb</span></div>
+  <div style="text-align:center;"><span style="background:#1A3A6B; padding:0.4rem 0.8rem; border-radius:6px; border:1px solid #4A9FD4;">🌲 entrenar_modelo</span></div>
+  <div style="text-align:center; color:#4A9FD4; margin:0.35rem 0;">↓ <span style="color:#6B7A8D;">modelo_riesgo</span></div>
+  <div style="display:flex; align-items:center; gap:0.5rem; justify-content:center;">
+    <span style="background:#1A3A6B; padding:0.4rem 0.8rem; border-radius:6px; border:1px solid #4A9FD4;">🔍 explicar_shap</span>
+    <span style="color:#4A9FD4;">→</span>
+    <span style="background:#E74C3C; padding:0.4rem 0.8rem; border-radius:6px; font-weight:bold;">🚨 reporte_alertas</span>
+  </div>
+</div>
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## {background-image="images/background_slides3.png" background-opacity="0.3"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Sección 3]{style="font-size: 1em; color: #4A9FD4;"}
+
+[Backend y servicios]{style="font-size: 2em; font-weight: bold;"}
+
+[FastAPI, autenticación y gateway]{style="font-size: 1em; color: #6B7A8D; font-style: italic;"}
+:::
+
+------------------------------------------------------------------------
+
+## FastAPI
+
+::::: columns
+::: {.column width="50%"}
+<br>
+
+- Framework moderno para exponer **modelos ML como endpoints REST**.
+- Validación automática de entradas con **Pydantic**.
+- Soporte **async** nativo y alto rendimiento.
+- **Documentación interactiva** (Swagger) generada sola.
+
+::: callout-important
+## Ventaja sobre Flask
+Validación con Pydantic, *async* y docs automáticas: menos código de plomería, más foco en el modelo.
+:::
+:::
+
+::: {.column width="50%"}
+<br>
+
+```python
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+app = FastAPI()
+
+class Alumno(BaseModel):
+    asistencia: float
+    notas: float
+    reprobados: int
+
+@app.post("/predecir")
+def predecir(a: Alumno):
+    score = modelo.predict_proba(
+        [[a.asistencia, a.notas, a.reprobados]]
+    )[0, 1]
+    return {"riesgo": float(score)}
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## FastAPI: estructura del proyecto
+
+::::: columns
+::: {.column width="48%"}
+<br>
+
+- Separar por responsabilidad evita el "main.py de 2000 líneas".
+- `routers/` → endpoints · `schemas/` → contratos Pydantic · `services/` → lógica de negocio.
+- `models/` aísla la carga del `.pkl` para no recargarlo en cada request.
+- `APIRouter` registra y versiona grupos de endpoints bajo `/api/...`.
+
+::: callout-tip
+Es la estructura que recomienda la documentación oficial para *Bigger Applications*: escala sin reescrituras.
+:::
+:::
+
+::: {.column width="52%"}
+<br>
+
+```text
+app/
+├── main.py              # crea FastAPI(), incluye routers
+├── routers/
+│   ├── predecir.py      # POST /predecir  (endpoints SAT-E)
+│   └── salud.py         # GET  /health
+├── schemas/
+│   └── alumno.py        # modelos Pydantic (entrada/salida)
+├── models/
+│   └── riesgo.py        # carga del modelo XGBoost (.pkl)
+├── services/
+│   └── scoring.py       # lógica de negocio: score + SHAP
+└── core/
+    └── config.py        # settings, variables de entorno
+```
+
+```python
+# app/routers/predecir.py
+from fastapi import APIRouter
+from app.schemas.alumno import AlumnoIn, RiesgoOut
+from app.services.scoring import calcular_riesgo
+
+router = APIRouter(prefix="/api", tags=["SAT-E"])
+
+@router.post("/predecir", response_model=RiesgoOut)
+def predecir(alumno: AlumnoIn):
+    return calcular_riesgo(alumno)
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## FastAPI: autenticación con OAuth2 / JWT
+
+::::: columns
+::: {.column width="46%"}
+<br>
+
+- Los datos académicos son **sensibles**: cada endpoint exige identidad verificada.
+- `OAuth2PasswordBearer` extrae el **Bearer token** de la cabecera `Authorization`.
+- El **JWT** firmado lleva el usuario (`sub`) y expiración; se valida sin tocar la BD.
+- `Depends(usuario_actual)` protege cualquier endpoint con una sola línea.
+
+::: callout-important
+Si el token se manipula o expira, `jwt.decode` lanza `JWTError` y el acceso se rechaza con **401**.
+:::
+:::
+
+::: {.column width="54%"}
+<br>
+
+```python
+from fastapi import Depends, HTTPException, status
+from fastapi.security import OAuth2PasswordBearer
+from jose import jwt, JWTError
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="api/token")
+SECRET, ALGO = settings.jwt_secret, "HS256"
+
+def usuario_actual(token: str = Depends(oauth2_scheme)):
+    cred_error = HTTPException(
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail="Token inválido o expirado",
+        headers={"WWW-Authenticate": "Bearer"},
+    )
+    try:
+        payload = jwt.decode(token, SECRET, algorithms=[ALGO])
+        usuario = payload.get("sub")
+        if usuario is None:
+            raise cred_error
+    except JWTError:
+        raise cred_error
+    return usuario
+
+@router.get("/alertas")
+def listar_alertas(usuario: str = Depends(usuario_actual)):
+    return obtener_alertas_unidad(usuario)   # solo autenticados
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Nginx como gateway
+
+::::: columns
+::: {.column width="50%"}
+<br>
+
+**Qué hace en el área:**
+
+- **Proxy inverso**: una sola puerta de entrada pública.
+- Termina **SSL/TLS** (HTTPS) para todos los servicios.
+- **Routing por path**: cada ruta va a su servicio interno.
+- Balanceo de carga y archivos estáticos.
+
+<br>
+
+```{=html}
+<div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; font-size:0.78em; font-family:monospace;">
+  <div style="color:#C9A84C; margin-bottom:0.6rem;">Flujo de red</div>
+  🌐 Internet<br>
+  &nbsp;&nbsp;↓<br>
+  🛡️ <span style="color:#4A9FD4;">Nginx (443 / 80)</span><br>
+  &nbsp;&nbsp;├─→ FastAPI <span style="color:#6B7A8D;">:8000</span><br>
+  &nbsp;&nbsp;├─→ Streamlit <span style="color:#6B7A8D;">:8501</span><br>
+  &nbsp;&nbsp;└─→ React SPA <span style="color:#6B7A8D;">:3000</span>
+</div>
+```
+:::
+
+::: {.column width="50%"}
+<br>
+
+```nginx
+server {
+    listen 443 ssl;
+    server_name analitica.dtd.usm.cl;
+
+    location /api/ {
+        proxy_pass http://127.0.0.1:8000/;
+    }
+
+    location /app/ {
+        proxy_pass http://127.0.0.1:8501/;
+    }
+
+    location / {
+        proxy_pass http://127.0.0.1:3000/;
+    }
+}
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Orquestación con Docker Compose
+
+::::: columns
+::: {.column width="44%"}
+<br>
+
+- Un solo `docker compose up` levanta **todo el stack** reproducible.
+- `expose` mantiene los servicios internos; solo **Nginx publica puertos** (443/80).
+- `healthcheck` + `depends_on: service_healthy` → el dashboard arranca **solo si la API responde**.
+- `volumes` montan modelos y certificados sin reconstruir la imagen.
+
+::: callout-note
+El modelo se monta como volumen `:ro` (solo lectura): actualizar el `.pkl` no exige reconstruir la imagen de la API.
+:::
+:::
+
+::: {.column width="56%"}
+<br>
+
+```yaml
+services:
+  api:                          # FastAPI + XGBoost
+    build: ./api
+    expose: ["8000"]
+    environment:
+      - MODEL_PATH=/models/xgb_sate.pkl
+    volumes:
+      - ./models:/models:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      retries: 3
+
+  dashboard:                    # Streamlit
+    build: ./dashboard
+    expose: ["8501"]
+    depends_on:
+      api:
+        condition: service_healthy
+
+  nginx:                        # gateway público
+    image: nginx:1.25-alpine
+    ports: ["443:443", "80:80"]
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./certs:/etc/nginx/certs:ro
+    depends_on: [api, dashboard]
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## {background-image="images/background_slides3.png" background-opacity="0.3"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Sección 4]{style="font-size: 1em; color: #4A9FD4;"}
+
+[Capa de presentación]{style="font-size: 2em; font-weight: bold;"}
+
+[Tres herramientas, tres audiencias]{style="font-size: 1em; color: #6B7A8D; font-style: italic;"}
+:::
+
+------------------------------------------------------------------------
+
+## Streamlit: exploración rápida
+
+::::: columns
+::: {.column width="55%"}
+<br>
+
+- **Streamlit** convierte un script Python en una app web.
+- Para el área: **dashboards exploratorios**, demos de modelos y prototipos internos.
+- De idea a interfaz funcional **en minutos**, sin frontend.
+
+```python
+import streamlit as st
+
+st.title("Riesgo académico — SAT-E")
+df = cargar_cohorte()
+st.dataframe(df)
+st.plotly_chart(grafico_riesgo(df))
+```
+
+::: callout-tip
+## Streamlit vs React
+**Streamlit** para velocidad y uso interno; **React** cuando se necesita escala y uso masivo.
+:::
+:::
+
+::: {.column width="45%"}
+<br>
+
+```{=html}
+<div style="background:#0F2044; border-radius:10px; padding:1.4rem; color:white; font-family:inherit; text-align:center;">
+  <div style="color:#FF4B4B; font-size:2.2em; font-weight:bold;">▴ Streamlit</div>
+  <div style="color:#6B7A8D; font-size:0.85em; margin:0.6rem 0 1rem;">de script a app web</div>
+  <div style="background:#1A3A6B; padding:0.6rem; border-radius:6px; margin-bottom:0.5rem; font-size:0.8em;">⚡ Prototipado en minutos</div>
+  <div style="background:#1A3A6B; padding:0.6rem; border-radius:6px; margin-bottom:0.5rem; font-size:0.8em;">🐍 100% Python</div>
+  <div style="background:#1A3A6B; padding:0.6rem; border-radius:6px; font-size:0.8em;">📊 Demos de modelos</div>
+</div>
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Streamlit: estado con st.session_state
+
+::::: columns
+::: {.column width="48%"}
+<br>
+
+- Streamlit **re-ejecuta todo el script** en cada interacción → las variables se pierden.
+- `st.session_state` es un diccionario que **persiste entre reruns**.
+- Guardamos los filtros (campus, umbral) para no perder el contexto del usuario.
+- Habilita flujos multi-paso: seleccionar cohorte → filtrar → exportar, sin reiniciar.
+
+::: callout-tip
+Sin session_state, mover un slider reiniciaría los demás filtros. Con él, el dashboard se comporta como una app con memoria.
+:::
+:::
+
+::: {.column width="52%"}
+<br>
+
+```python
+import streamlit as st
+
+# Estado inicial (solo la primera vez)
+if "filtros" not in st.session_state:
+    st.session_state.filtros = {"campus": "Casa Central",
+                                "umbral": 0.7}
+
+# Los widgets leen y escriben en session_state
+st.session_state.filtros["campus"] = st.selectbox(
+    "Campus", CAMPUS,
+    index=CAMPUS.index(st.session_state.filtros["campus"]),
+)
+st.session_state.filtros["umbral"] = st.slider(
+    "Umbral de riesgo", 0.0, 1.0,
+    st.session_state.filtros["umbral"],
+)
+
+# El filtro sobrevive a cada rerun del script
+df_filtrado = aplicar_filtros(df, st.session_state.filtros)
+st.metric("Alumnos en alerta", len(df_filtrado))
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Streamlit ↔ FastAPI: consumir el modelo
+
+::::: columns
+::: {.column width="48%"}
+<br>
+
+- El dashboard **no carga el modelo**: lo consume vía la API (separación de capas).
+- `requests.get` con **Bearer token** reutiliza la autenticación JWT del backend.
+- `@st.cache_data(ttl=300)` evita golpear la API en cada rerun.
+- Mismo modelo, una sola fuente de verdad para Streamlit, React y Power BI.
+
+::: callout-note
+Desacoplar vista y modelo permite actualizar el XGBoost sin tocar el dashboard — solo cambia lo que responde la API.
+:::
+:::
+
+::: {.column width="52%"}
+<br>
+
+```python
+import streamlit as st
+import requests
+
+API = "https://analitica.dtd.usm.cl/api"
+
+@st.cache_data(ttl=300)            # cachea 5 min, evita llamar de más
+def consultar_riesgo(rut: str) -> dict:
+    r = requests.get(
+        f"{API}/predecir/{rut}",
+        headers={"Authorization": f"Bearer {st.session_state.token}"},
+        timeout=10,
+    )
+    r.raise_for_status()
+    return r.json()
+
+rut = st.text_input("RUT del estudiante")
+if rut:
+    datos = consultar_riesgo(rut)
+    st.metric("Riesgo", f"{datos['riesgo']:.0%}")
+    st.bar_chart(datos["shap"])     # aporte de cada variable
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## React 18 + MUI 5: SPA institucional
+
+::::: columns
+::: {.column width="50%"}
+<br>
+
+- **React 18** para aplicaciones de **uso masivo** y flujos complejos.
+- **MUI 5** aporta componentes Material Design: tablas, formularios, temas.
+- Para el área: interfaces para **toda la comunidad USM**.
+- Se construye como SPA y se **sirve detrás de Nginx**.
+:::
+
+::: {.column width="50%"}
+<br>
+
+```javascript
+import { DataGrid } from '@mui/x-data-grid';
+
+const columns = [
+  { field: 'rut', headerName: 'RUT', width: 120 },
+  { field: 'carrera', headerName: 'Carrera', width: 200 },
+  { field: 'riesgo', headerName: 'Riesgo', width: 110 },
+];
+
+export default function TablaRiesgo({ rows }) {
+  return <DataGrid rows={rows} columns={columns}
+                   pageSize={10} checkboxSelection />;
+}
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Power BI: reportes institucionales
+
+::::: columns
+::: {.column width="55%"}
+<br>
+
+- **Power BI** crea reportes y visualizaciones **sin código**.
+- Para el área: reportes para **autoridades** e indicadores de gestión.
+- Mejor que Streamlit/React cuando la audiencia es **no técnica**.
+- **Actualización automática** desde la base de datos institucional.
+
+::: callout-note
+## Integración
+Conecta directo a **SQL Server, Oracle y Excel** institucionales, con refresco programado.
+:::
+:::
+
+::: {.column width="45%"}
+<br>
+
+```{=html}
+<div style="background:#0F2044; border-radius:10px; padding:1.4rem; color:white; font-family:inherit; text-align:center;">
+  <div style="color:#F2C811; font-size:2em; font-weight:bold;">▮▮ Power BI</div>
+  <div style="color:#6B7A8D; font-size:0.85em; margin:0.6rem 0 1rem;">reportes para decidir</div>
+  <div style="background:#1A3A6B; padding:0.6rem; border-radius:6px; margin-bottom:0.5rem; font-size:0.8em;">👔 Audiencia ejecutiva</div>
+  <div style="background:#1A3A6B; padding:0.6rem; border-radius:6px; margin-bottom:0.5rem; font-size:0.8em;">🔄 Refresco automático</div>
+  <div style="background:#1A3A6B; padding:0.6rem; border-radius:6px; font-size:0.8em;">🖱️ Sin código</div>
+</div>
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## ¿Cuándo usar qué?
+
+<br>
+
+| Herramienta | Audiencia | Velocidad dev | Escala | Cuándo usarla |
+|-------------|-----------|---------------|--------|---------------|
+| **Streamlit** | Equipo técnico / interna | ⚡ Muy alta | Baja–media | Explorar datos, demos de modelos, prototipos |
+| **React + MUI** | Comunidad USM / masiva | 🐢 Media–baja | Alta | Apps de producción, flujos complejos, uso masivo |
+| **Power BI** | Autoridades / gestión | 🚀 Alta | Media | Reportes ejecutivos, indicadores, sin código |
+
+<br>
+
+::: callout-tip
+No hay herramienta "mejor": hay una **adecuada a cada audiencia y a cada escala**.
+:::
+
+------------------------------------------------------------------------
+
+## {background-image="images/background_slides3.png" background-opacity="0.3"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Sección 6]{style="font-size: 1em; color: #4A9FD4;"}
+
+[Control de calidad y reproducibilidad]{style="font-size: 2em; font-weight: bold;"}
+
+[Versionado, testing y monitoreo]{style="font-size: 1em; color: #6B7A8D; font-style: italic;"}
+:::
+
+------------------------------------------------------------------------
+
+## Control de versiones: Git + GitHub
+
+::::: columns
+::: {.column width="50%"}
+<br>
+
+- Todo el código vive en **GitHub**: pipelines, API, dashboards e infraestructura.
+- **Branching**: `main` (producción) ← `develop` ← `feature/sate-*`.
+- Nadie hace push directo a `main`: todo entra por **Pull Request**.
+- Cada PR exige **revisión de un par** + CI en verde antes de fusionar.
+- Tags de versión (`v2.3-M25`) marcan cada release del modelo.
+
+::: callout-tip
+La rama `main` siempre está desplegable. Si un experimento falla, se descarta la rama — producción nunca se rompe.
+:::
+:::
+
+::: {.column width="50%"}
+<br>
+
+```{=html}
+<div style="background:#0F2044; border-radius:10px; padding:1.4rem; color:white; font-size:0.78em; font-family:inherit;">
+  <div style="color:#C9A84C; margin-bottom:1rem; text-align:center;">🌿 Flujo de ramas del equipo</div>
+  <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.6rem;">
+    <span style="width:90px; color:#4A9FD4;">main</span>
+    <span style="background:#27AE60; padding:0.3rem 0.7rem; border-radius:6px;">● v2.2</span>
+    <span style="color:#6B7A8D;">────────</span>
+    <span style="background:#27AE60; padding:0.3rem 0.7rem; border-radius:6px;">● v2.3-M25</span>
+  </div>
+  <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.6rem;">
+    <span style="width:90px; color:#4A9FD4;">develop</span>
+    <span style="background:#1A3A6B; padding:0.3rem 0.7rem; border-radius:6px;">● ─ ● ─ ●</span>
+    <span style="color:#C9A84C;">↑ merge</span>
+  </div>
+  <div style="display:flex; align-items:center; gap:0.5rem;">
+    <span style="width:90px; color:#4A9FD4;">feature/*</span>
+    <span style="background:#1F3A60; padding:0.3rem 0.7rem; border-radius:6px;">● ─ ●</span>
+    <span style="color:#6B7A8D;">→ PR</span>
+  </div>
+  <div style="text-align:center; color:#C9A84C; margin-top:1rem;">PR + review + CI ✓ → merge a develop → release a main</div>
+</div>
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Testing en pipelines de datos
+
+::::: columns
+::: {.column width="46%"}
+<br>
+
+- **pytest** prueba la *lógica*: ¿la función de limpieza hace lo que prometemos?
+- **great_expectations** prueba los *datos*: ¿el dataset cumple sus expectativas?
+- Las expectativas corren en cada ejecución → un dato fuera de rango **frena el pipeline**.
+- Fixtures pequeños y deterministas hacen los tests rápidos y reproducibles.
+
+::: callout-important
+Un test que falla detiene el despliegue. Es preferible **frenar un pipeline** a publicar una alerta basada en datos corruptos.
+:::
+:::
+
+::: {.column width="54%"}
+<br>
+
+```python
+# tests/test_datos.py — pytest valida la lógica
+import pandas as pd
+from pipelines.limpieza import limpiar_datos
+
+def test_no_hay_ruts_duplicados():
+    df = limpiar_datos(cargar_fixture("muestra.csv"))
+    assert df["rut"].is_unique
+
+def test_promedios_en_rango():
+    df = limpiar_datos(cargar_fixture("muestra.csv"))
+    assert df["promedio"].between(1.0, 7.0).all()
+```
+
+```python
+# great_expectations — expectativas sobre el dataset
+import great_expectations as gx
+
+batch = gx.read_csv("data/03_primary/datos_limpios.parquet")
+batch.expect_column_values_to_not_be_null("rut")
+batch.expect_column_values_to_be_between("asistencia", 0, 100)
+batch.expect_column_values_to_be_in_set("campus", CAMPUS_USM)
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Drift detection: KS test y PSI
+
+::::: columns
+::: {.column width="46%"}
+<br>
+
+- Un modelo entrenado en M23 puede **degradarse** si las cohortes nuevas cambian.
+- **KS test** (`ks_2samp`) compara distribuciones: ¿train y producción difieren?
+- **PSI** cuantifica el desplazamiento: <0.1 estable · 0.1–0.25 alerta · >0.25 severo.
+- Monitoreamos las variables clave (asistencia, notas) en cada generación.
+
+::: callout-important
+El drift es la señal de "reentrenar". Sin monitoreo, el modelo envejece en silencio y las alertas pierden precisión sin que nadie lo note.
+:::
+:::
+
+::: {.column width="54%"}
+<br>
+
+```python
+from scipy.stats import ks_2samp
+import numpy as np
+
+def psi(esperado, actual, bins=10):
+    """Population Stability Index entre train y producción."""
+    cortes = np.quantile(esperado, np.linspace(0, 1, bins + 1))
+    e = np.histogram(esperado, cortes)[0] / len(esperado)
+    a = np.histogram(actual,   cortes)[0] / len(actual)
+    e, a = np.clip(e, 1e-4, None), np.clip(a, 1e-4, None)
+    return np.sum((a - e) * np.log(a / e))
+
+# KS test: ¿cambió la distribución de asistencia?
+stat, p = ks_2samp(train["asistencia"], prod["asistencia"])
+hay_drift_ks = p < 0.05
+
+psi_asist = psi(train["asistencia"], prod["asistencia"])
+# PSI > 0.25 → cambio severo, reentrenar el modelo
+print(f"KS p-value={p:.3f}  ·  PSI={psi_asist:.3f}")
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Registro de experimentos: MLflow
+
+::::: columns
+::: {.column width="46%"}
+<br>
+
+- Cada entrenamiento queda **registrado**: parámetros, métricas y artefactos.
+- `log_params` / `log_metrics` → comparar generaciones M23/M24/M25 lado a lado.
+- `log_model` versiona el `.pkl` en el **Model Registry** (staging → production).
+- Reproducibilidad total: cada alerta se rastrea al modelo exacto que la generó.
+
+::: callout-note
+MLflow responde la pregunta auditora: *"¿qué modelo, con qué datos y qué métricas, generó esta alerta?"* — clave en un sistema institucional.
+:::
+:::
+
+::: {.column width="54%"}
+<br>
+
+```python
+import mlflow, mlflow.sklearn
+
+mlflow.set_experiment("SAT-E")
+
+with mlflow.start_run(run_name="xgb_M25_walkforward"):
+    mlflow.log_params({
+        "n_estimators": 400, "max_depth": 5,
+        "learning_rate": 0.05, "cohorte_train": "M23+M24",
+    })
+
+    modelo = XGBClassifier(**params).fit(Xtr, ytr)
+    proba = modelo.predict_proba(Xte)[:, 1]
+
+    mlflow.log_metrics({
+        "auc": roc_auc_score(yte, proba),
+        "f1":  f1_score(yte, proba > 0.5),
+        "precision_at_150": precision_at_k(yte, proba, 150),
+    })
+    mlflow.sklearn.log_model(
+        modelo, "modelo", registered_model_name="sate")
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## {background-image="images/background_slides3.png" background-opacity="0.3"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Sección 7]{style="font-size: 1em; color: #4A9FD4;"}
+
+[Proyectos destacados]{style="font-size: 2em; font-weight: bold;"}
+
+[Del problema al producto]{style="font-size: 1em; color: #6B7A8D; font-style: italic;"}
+:::
+
+------------------------------------------------------------------------
+
+## Proyecto: SAT-E — arquitectura completa
+
+::::: columns
+::: {.column width="42%"}
+<br>
+
+**Sistema de Alerta Temprana Estudiantil**
+
+De los datos académicos a una alerta accionable y explicada, en un flujo reproducible de punta a punta.
+
+- **Datos** → BD institucional + cargas
+- **Pipeline** → Kedro + pandas
+- **Modelo** → XGBoost + SHAP
+- **Servicio** → FastAPI tras Nginx
+- **Vista** → dashboard para las unidades
+:::
+
+::: {.column width="58%"}
+<br>
+
+```{=html}
+<div style="background:#0F2044; border-radius:10px; padding:1.3rem; color:white; font-size:0.76em; font-family:inherit;">
+  <div style="color:#C9A84C; margin-bottom:0.9rem; text-align:center;">🏗️ Flujo técnico completo</div>
+  <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap; justify-content:center;">
+    <span style="background:#1A3A6B; padding:0.45rem 0.7rem; border-radius:6px;">🗄️ BD / CSV</span>
+    <span style="color:#4A9FD4;">→</span>
+    <span style="background:#1A3A6B; padding:0.45rem 0.7rem; border-radius:6px;">🧱 Kedro</span>
+    <span style="color:#4A9FD4;">→</span>
+    <span style="background:#1A3A6B; padding:0.45rem 0.7rem; border-radius:6px;">🌲 XGBoost</span>
+    <span style="color:#4A9FD4;">→</span>
+    <span style="background:#1A3A6B; padding:0.45rem 0.7rem; border-radius:6px;">🔍 SHAP</span>
+  </div>
+  <div style="text-align:center; color:#4A9FD4; margin:0.5rem 0;">↓</div>
+  <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap; justify-content:center;">
+    <span style="background:#1A3A6B; padding:0.45rem 0.7rem; border-radius:6px;">⚡ FastAPI</span>
+    <span style="color:#4A9FD4;">→</span>
+    <span style="background:#1A3A6B; padding:0.45rem 0.7rem; border-radius:6px;">🛡️ Nginx</span>
+    <span style="color:#4A9FD4;">→</span>
+    <span style="background:#1A3A6B; padding:0.45rem 0.7rem; border-radius:6px;">📊 Dashboard</span>
+    <span style="color:#4A9FD4;">→</span>
+    <span style="background:#E74C3C; padding:0.45rem 0.7rem; border-radius:6px; font-weight:bold;">🚨 Alerta 1</span>
+  </div>
+</div>
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Proyecto: USM Scheduler
+
+::::: columns
+::: {.column width="50%"}
+<br>
+
+**Optimización de espacios académicos**
+
+- **Problema**: asignar salas y horarios a cientos de cursos sin choques.
+- **Herramientas**: Gurobi, MILP, orquestado con Kedro.
+- **Resultado**: reducción de **conflictos de asignación** y mejor uso de salas.
+
+::: callout-important
+## Restricción clave resuelta
+Ningún profesor ni sala puede estar en **dos lugares a la vez** — modelado como restricciones de exclusión en el MILP.
+:::
+:::
+
+::: {.column width="50%"}
+<br>
+
+```{=html}
+<div style="background:#0F2044; border-radius:10px; padding:1.3rem; color:white; font-size:0.76em; font-family:inherit;">
+  <div style="color:#C9A84C; margin-bottom:0.9rem; text-align:center;">🧮 Modelo de optimización</div>
+  <div style="background:#1A3A6B; padding:0.55rem; border-radius:6px; margin-bottom:0.5rem;">
+    <span style="color:#4A9FD4;">Variables:</span> x[curso, sala, bloque] ∈ {0,1}
+  </div>
+  <div style="background:#1A3A6B; padding:0.55rem; border-radius:6px; margin-bottom:0.5rem;">
+    <span style="color:#4A9FD4;">Objetivo:</span> min conflictos + huecos
+  </div>
+  <div style="background:#1A3A6B; padding:0.55rem; border-radius:6px; margin-bottom:0.5rem;">
+    <span style="color:#4A9FD4;">Sujeto a:</span> capacidad de sala
+  </div>
+  <div style="background:#1A3A6B; padding:0.55rem; border-radius:6px;">
+    <span style="color:#4A9FD4;">Sujeto a:</span> no solapamiento profesor/sala
+  </div>
+  <div style="text-align:center; color:#27AE60; margin-top:0.8rem;">✓ resuelto con Gurobi (MILP)</div>
+</div>
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Recursos y referencias {background-color="#0F2044"}
+
+```{=html}
+<style>
+  .res-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; margin-top: 0.8rem; font-family: inherit; }
+  .res-card { background: rgba(255,255,255,0.06); border: 0.5px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 1.1rem 1.4rem; }
+  .res-card h4 { font-size: 0.88rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #C9A84C; margin: 0 0 0.8rem; }
+  .res-item { display: flex; align-items: flex-start; gap: 0.6rem; margin-bottom: 0.55rem; }
+  .res-dot { width: 7px; height: 7px; border-radius: 50%; margin-top: 12px; flex-shrink: 0; }
+  .res-item a { font-size: 1.25rem; color: #85B7EB; text-decoration: none; line-height: 1.5; }
+  .res-item span { font-size: 1.25rem; color: rgba(255,255,255,0.82); line-height: 1.5; }
+</style>
+
+<div class="res-grid">
+  <div class="res-card">
+    <h4>Documentación</h4>
+    <div class="res-item"><div class="res-dot" style="background:#4A9FD4;"></div><a href="https://fastapi.tiangolo.com/">FastAPI docs</a></div>
+    <div class="res-item"><div class="res-dot" style="background:#4A9FD4;"></div><a href="https://docs.streamlit.io/">Streamlit docs</a></div>
+    <div class="res-item"><div class="res-dot" style="background:#4A9FD4;"></div><a href="https://mui.com/material-ui/">MUI docs</a></div>
+    <div class="res-item"><div class="res-dot" style="background:#4A9FD4;"></div><a href="https://docs.kedro.org/">Kedro docs</a></div>
+  </div>
+  <div class="res-card">
+    <h4>Machine learning</h4>
+    <div class="res-item"><div class="res-dot" style="background:#27AE60;"></div><a href="https://shap.readthedocs.io/">SHAP docs</a></div>
+    <div class="res-item"><div class="res-dot" style="background:#27AE60;"></div><a href="https://arxiv.org/abs/1603.02754">XGBoost paper (Chen & Guestrin)</a></div>
+    <div class="res-item"><div class="res-dot" style="background:#27AE60;"></div><a href="https://scikit-learn.org/stable/user_guide.html">scikit-learn user guide</a></div>
+  </div>
+  <div class="res-card">
+    <h4>Optimización</h4>
+    <div class="res-item"><div class="res-dot" style="background:#C9A84C;"></div><a href="https://docs.gurobi.com/">Gurobi docs</a></div>
+    <div class="res-item"><div class="res-dot" style="background:#C9A84C;"></div><a href="https://docs.scipy.org/doc/scipy/reference/optimize.html">scipy.optimize</a></div>
+  </div>
+  <div class="res-card">
+    <h4>Comunidad DTD</h4>
+    <div class="res-item"><div class="res-dot" style="background:#E74C3C;"></div><span>Wiki interna del área de Analítica</span></div>
+    <div class="res-item"><div class="res-dot" style="background:#E74C3C;"></div><span>GitHub del área (repos de proyectos)</span></div>
+    <div class="res-item"><div class="res-dot" style="background:#E74C3C;"></div><span>Dirección de Transformación Digital · UTFSM</span></div>
+  </div>
+</div>
+```
+
+------------------------------------------------------------------------
+
+## {background-color="#0F2044" data-state="no-logo"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 70vh; flex-direction: column; text-align: center;"}
+[¿Preguntas?]{style="font-size: 3.5em; font-weight: bold; color: white;"}
+
+[Área de Analítica · Dirección de Transformación Digital]{style="font-size: 1.1em; color: #4A9FD4; margin-top: 0.5em;"}
+
+[analitica@dtd.usm.cl · github.com/dtd-usm]{style="font-size: 0.9em; color: #C9A84C; margin-top: 0.3em;"}
+
+[ ]{style="display:block; border-top:1px solid #2A5080; width:50%; margin:1.5em auto;"}
+
+[DTD · UTFSM · Valparaíso]{style="font-size: 0.8em; color: #6B7A8D;"}
+:::
+
+
+```{=html}
+<style>
+.reveal .slides h1 {
+  font-size: 2em;
+}
+.reveal .slides h2 {
+  font-size: 1.5em;
+}
+.reveal .slides p {
+  font-size: 0.8em;
+}
+.reveal .slides table {
+  font-size: 0.8em;
+  width: 90%;
+  margin: 0 auto;
+}
+.reveal .slides ul {
+  font-size: 1em;
+}
+.reveal .slide-logo {
+   max-height: 3em !important;
+}
+</style>
+```

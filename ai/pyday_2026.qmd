@@ -21,24 +21,19 @@ execute:
   warning: false
 ---
 
-
-
-## {background-image="images/portada_pd.jpg"  background-position="center" data-state="no-logo" }
+##  {background-image="images/portada_pd.jpg" background-position="center" data-state="no-logo"}
 
 ------------------------------------------------------------------------
 
-## IA en los medios ...
-
+## IA + maty + fco = \<3 ...
 
 :::: {style="display: flex; justify-content: center; align-items: center; height: 70vh; flex-direction: column; text-align: center;"}
 ::: r-stack
 ![](images/news/intro_01.png){.fragment .fade-in-then-out fig-align="center" width="80%"}
 
 ![](images/news/intro_07.png){.fragment .fade-in-then-out fig-align="center" width="60%"}
-
 :::
 ::::
-
 
 ## La realidad ...
 
@@ -46,21 +41,13 @@ execute:
 
 :::: {style="display: flex; justify-content: center; align-items: center; height: 70vh; flex-direction: column; text-align: center;"}
 ::: r-stack
-
 ![](images/news/intro_02.jpg){.fragment .fade-in-then-out fig-align="center" width="50%"}
 
 ![](images/news/intro_06.png){.fragment .fade-in-then-out fig-align="center" width="70%"}
 
-
-![](images/news/intro_05.png){.fragment  fig-align="center" width="75%"}
-
-
-
-
-
+![](images/news/intro_05.png){.fragment fig-align="center" width="75%"}
 :::
 ::::
-
 
 ## La triste realidad ...
 
@@ -68,17 +55,13 @@ execute:
 
 :::: {style="display: flex; justify-content: center; align-items: center; height: 70vh; flex-direction: column; text-align: center;"}
 ::: r-stack
-
-
 ![](images/news/intro_03.jpg){.fragment .fade-in-then-out fig-align="center" width="55%"}
 
-![](images/news/intro_04.png){.fragment  fig-align="center" width="55%"}
+![](images/news/intro_04.png){.fragment fig-align="center" width="55%"}
 :::
 ::::
 
 ------------------------------------------------------------------------
-
-
 
 ##  {background-image="images/background_slides3.png" background-opacity="0.3"}
 
@@ -98,11 +81,11 @@ execute:
 ::: {.column width="58%"}
 <br>
 
-- Un LLM es una red neuronal entrenada con **cantidades masivas de texto**.
-- Aprende distribuciones de probabilidad sobre secuencias de **tokens**.
-- Su tarea fundamental: **predecir el siguiente token más probable**.
-- No tiene un modelo del mundo. No tiene intenciones. No "entiende".
-- Todo lo que parece razonamiento es **interpolación estadística muy sofisticada**.
+-   Un LLM es una red neuronal entrenada con **cantidades masivas de texto**.
+-   Aprende distribuciones de probabilidad sobre secuencias de **tokens**.
+-   Su tarea fundamental: **predecir el siguiente token más probable**.
+-   No tiene un modelo del mundo. No tiene intenciones. No "entiende".
+-   Todo lo que parece razonamiento es **interpolación estadística muy sofisticada**.
 :::
 
 ::: {.column width="42%"}
@@ -148,10 +131,6 @@ execute:
 ![](images/llm_04.png){.fragment fig-align="center" width="1200px" height="600px"}
 :::
 
-
-
-
-
 ------------------------------------------------------------------------
 
 ## De texto a tokens — la unidad económica de la IA
@@ -160,15 +139,14 @@ execute:
 ::: {.column width="55%"}
 <br>
 
-- Los modelos no procesan palabras, procesan **tokens** (fragmentos de texto).
-- Un token ≈ 0.75 palabras en inglés. **En español: menos eficiente** (~0.6).
-- La tokenización afecta directamente el **costo, la velocidad y la precisión**.
-- Palabras técnicas, nombres propios o en otro idioma usan **varios tokens**.
-- **Cada token que envías y recibes se cobra.** Sin excepciones.
+-   Los modelos no procesan palabras, procesan **tokens** (fragmentos de texto).
+-   Un token ≈ 0.75 palabras en inglés. **En español: menos eficiente** (\~0.6).
+-   La tokenización afecta directamente el **costo, la velocidad y la precisión**.
+-   Palabras técnicas, nombres propios o en otro idioma usan **varios tokens**.
+-   **Cada token que envías y recibes se cobra.** Sin excepciones.
 :::
 
 ::: {.column width="45%"}
-
 <br><br>
 
 ```{=html}
@@ -193,6 +171,7 @@ execute:
 
 ::: {style="text-align: center;"}
 <iframe src="https://agents-course-the-tokenizer-playground.static.hf.space" frameborder="0" width="1200" height="620">
+
 </iframe>
 :::
 
@@ -219,7 +198,6 @@ execute:
 ![](images/costo_01.png){.fragment .fade-in-then-out fig-align="center" width="80%"}
 
 ![](images/costo_02.png){.fragment .fade-in-then-out fig-align="center" width="80%"}
-
 :::
 ::::
 
@@ -237,15 +215,11 @@ execute:
 
 ------------------------------------------------------------------------
 
-
 ## ¿Qué es un Prompt?
 
 ::::: columns
 ::: {.column width="48%"}
-
-![](https://learnprompting.org/docs/assets/basics/formal_prompt.svg){ fig-align="center" width="50%"}
-
-
+![](https://learnprompting.org/docs/assets/basics/formal_prompt.svg){fig-align="center" width="50%"}
 :::
 
 ::: {.column width="52%"}
@@ -255,11 +229,11 @@ Un **prompt** es la interfaz entre tú y el modelo. Cada palabra cuenta — lite
 
 **Componentes de un prompt efectivo:**
 
-- 🎯 **Instrucción**: qué quieres que haga
-- 🎭 **Rol**: quién debe ser el modelo
-- 📄 **Contexto**: info relevante (solo la necesaria)
-- 🖼️ **Formato**: cómo responder (JSON, número, tabla)
-- 📌 **Ejemplos**: qué es correcto / qué no
+-   🎯 **Instrucción**: qué quieres que haga
+-   🎭 **Rol**: quién debe ser el modelo
+-   📄 **Contexto**: info relevante (solo la necesaria)
+-   🖼️ **Formato**: cómo responder (JSON, número, tabla)
+-   📌 **Ejemplos**: qué es correcto / qué no
 
 ```{=html}
 <div style="background:#0F2044; border-radius:8px; padding:0.8rem; color:white; font-size:0.68em; font-family:monospace; margin-top:1rem; line-height:1.7;">
@@ -281,12 +255,7 @@ Un **prompt** es la interfaz entre tú y el modelo. Cada palabra cuenta — lite
 ![](https://miro.medium.com/v2/1*lErmU_DyUynyv2fQ-cqlGw.gif){.fragment .fade-in-then-out fig-align="center" width="100%"}
 
 ![](https://substackcdn.com/image/fetch/$s_!vlof!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F85b96d8b-3b29-4906-a7fb-d257134cd6c4_2364x1582.png){.fragment .fade-in-then-out fig-align="center" width="75%"}
-
 :::
-
-
-
-
 
 ------------------------------------------------------------------------
 
@@ -302,14 +271,11 @@ Un **prompt** es la interfaz entre tú y el modelo. Cada palabra cuenta — lite
 
 ------------------------------------------------------------------------
 
-
-
 ## RAG: Retrieval-Augmented Generation
 
 ::::: columns
 ::: {.column width="45%"}
-
-![](https://cdn.prod.website-files.com/5e71ed18578a651dd5c5f259/6763f4da2caeec1e3f6f2b0f_01_Chatbot_Lexikon_Retrieval%20Augmented%20Generation.svg){ fig-align="center" width="100%"}
+![](https://cdn.prod.website-files.com/5e71ed18578a651dd5c5f259/6763f4da2caeec1e3f6f2b0f_01_Chatbot_Lexikon_Retrieval%20Augmented%20Generation.svg){fig-align="center" width="100%"}
 :::
 
 ::: {.column width="55%"}
@@ -321,12 +287,10 @@ El modelo no conoce tu información privada ni actualizada. **Meter todo el data
 
 **Flujo básico:**
 
-1. 📄 **Ingest**: indexas tus documentos en una base vectorial
-2. 🔍 **Retrieve**: recuperas los fragmentos más relevantes
-3. 💬 **Augment**: inyectas esos fragmentos en el prompt
-4. 🤖 **Generate**: el modelo responde usando *tu información*
-
-
+1.  📄 **Ingest**: indexas tus documentos en una base vectorial
+2.  🔍 **Retrieve**: recuperas los fragmentos más relevantes
+3.  💬 **Augment**: inyectas esos fragmentos en el prompt
+4.  🤖 **Generate**: el modelo responde usando *tu información*
 :::
 :::::
 
@@ -340,17 +304,13 @@ RAG es como Google para tus datos privados: no te entrega toda la web, te entreg
 
 ## 
 
-
 ::: r-stack
 ![](https://miro.medium.com/v2/1*fT24_2esw3WdkKHuY-t-2Q.gif){.fragment .fade-in-then-out fig-align="center" width="100%"}
 
 ![](https://i0.wp.com/www.timpratt.me/wp-content/uploads/2025/01/Semantic-Embeddings.webp?fit=1024%2C576&ssl=1){.fragment fig-align="center" width="100%"}
-
 :::
 
-
 ------------------------------------------------------------------------
-
 
 ##  {background-image="images/background_slides3.png" background-opacity="0.3"}
 
@@ -368,9 +328,7 @@ RAG es como Google para tus datos privados: no te entrega toda la web, te entreg
 
 ::::: columns
 ::: {.column width="48%"}
-
-![](https://rodrigobaron.com/images/posts/mcp-agent/agent_diagram.svg){ fig-align="center" width="90%"}
-
+![](https://rodrigobaron.com/images/posts/mcp-agent/agent_diagram.svg){fig-align="center" width="90%"}
 :::
 
 ::: {.column width="52%"}
@@ -380,21 +338,18 @@ Un **agente** percibe su entorno, planifica y actúa de forma autónoma — repi
 
 **Componentes de un agente:**
 
-- 🌍 **Entorno**: el mundo con el que interactúa — SO, API, navegador
-- 🧠 **Planificación**: el LLM razona antes de actuar (ReAct, CoT, ToT)
-- 🗄 **Memoria**: contexto inmediato (corta) + base persistente (larga)
-- 🔧 **Herramientas**: funciones externas — búsqueda, código, BD, APIs
-- ↺ **Loop autónomo**: actúa → observa → replantea, sin humano en cada paso
-
-
+-   🌍 **Entorno**: el mundo con el que interactúa — SO, API, navegador
+-   🧠 **Planificación**: el LLM razona antes de actuar (ReAct, CoT, ToT)
+-   🗄 **Memoria**: contexto inmediato (corta) + base persistente (larga)
+-   🔧 **Herramientas**: funciones externas — búsqueda, código, BD, APIs
+-   ↺ **Loop autónomo**: actúa → observa → replantea, sin humano en cada paso
 :::
 :::::
 
 ## 
 
 ::: r-stack
-![](https://miro.medium.com/v2/0*S4mDgR2LnUbrQ-rV.gif){ fig-align="center" width="95%"}
-
+![](https://miro.medium.com/v2/0*S4mDgR2LnUbrQ-rV.gif){fig-align="center" width="95%"}
 :::
 
 ## Claude Code on VSCode
@@ -403,9 +358,7 @@ Un **agente** percibe su entorno, planifica y actúa de forma autónoma — repi
 ![](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*3m2nd7J9sKo3bX-ymkN_XA.gif){.fragment .fade-in-then-out fig-align="center" width="100%"}
 
 ![](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*uQjmMEDFPyoazHsEpFR1CQ.gif){.fragment .fade-in-then-out fig-align="center" width="100%"}
-
 :::
-
 
 ##  {background-image="images/background_slides3.png" background-opacity="0.3"}
 
@@ -439,9 +392,8 @@ Un **agente** percibe su entorno, planifica y actúa de forma autónoma — repi
 ```
 :::
 
-
-
 ------------------------------------------------------------------------
+
 ## Recursos para seguir aprendiendo {background-color="#0F2044"}
 
 ```{=html}
@@ -496,7 +448,6 @@ Un **agente** percibe su entorno, planifica y actúa de forma autónoma — repi
 ::: {style="position: fixed; bottom: -350px; right: -60px; text-align: center;"}
 ![](images/qr_pyday.png){width="150px" style="border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.25);"}
 :::
-
 
 ```{=html}
 <style>

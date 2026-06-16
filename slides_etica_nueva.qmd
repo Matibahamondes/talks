@@ -1,0 +1,480 @@
+------------------------------------------------------------------------
+
+##  {background-color="#0F2044"}
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+[Parte 4]{style="font-size: 1em; color: #4A9FD4;"}
+
+[Ética e IA en 2026: más allá de las alucinaciones]{style="font-size: 2em; font-weight: bold;"}
+
+[El debate ya no es si usar IA — es quién decide, quién responde y quién controla]{style="font-size: 1em; color: #6B7A8D; font-style: italic;"}
+:::
+
+------------------------------------------------------------------------
+
+## ⚠️ Problemas comunes con los LLMs
+
+::: {style="text-align: center;"}
+<img src="images/pro_22.png" style="width: 88%; border-radius: 10px;"/>
+:::
+
+------------------------------------------------------------------------
+
+## Los cuatro límites que todo decisor debe conocer
+
+<br>
+
+| 🚨 **Problema** | 💬 **Ejemplo de prompt** | ❌ **Falla del modelo** | 🛡️ **Mitigación** |
+|------------------|------------------|------------------|------------------|
+| **Alucinaciones** | *¿Cuántos continentes hay?* | *Hay 4 continentes.* | Verificar con fuentes externas |
+| **Datos obsoletos** | *¿Quién es el presidente de Argentina?* | *Mauricio Macri.* | RAG con datos actualizados |
+| **Ambigüedad** | *¿País más grande?* | *Podría ser China o EE.UU.* | Prompt más específico |
+| **Sesgo** | *¿Quién programa mejor?* | *Los hombres, por su lógica natural.* | Evaluar outputs críticamente |
+
+<br>
+
+::: callout-important
+## Para decisores organizacionales
+
+Las alucinaciones no son bugs que se arreglarán — son una **consecuencia estructural** de cómo aprenden estos modelos. Un LLM responde con igual confianza cuando sabe y cuando no sabe.
+:::
+
+------------------------------------------------------------------------
+
+## Los 4 límites estructurales de los LLMs
+
+```{=html}
+<div style="display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; font-size:0.78em; margin-top:0.5rem;">
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; border-left:4px solid #E74C3C;">
+    <div style="color:#ff7070; font-weight:700; margin-bottom:0.5rem;">🎭 Alucinaciones</div>
+    <div style="color:#d0c0c0; line-height:1.6;">El modelo genera respuestas fluidas, confiadas y falsas. No tiene mecanismo para saber que no sabe. <em>No se arreglará: es inherente al diseño.</em></div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; border-left:4px solid #F39C12;">
+    <div style="color:#fbbf24; font-weight:700; margin-bottom:0.5rem;">📅 Corte temporal</div>
+    <div style="color:#d0c0c0; line-height:1.6;">El modelo tiene una fecha de entrenamiento fija. No conoce eventos recientes. Para decisiones que dependen de información actual, necesita búsqueda externa (RAG).</div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; border-left:4px solid #8B5CF6;">
+    <div style="color:#a78bfa; font-weight:700; margin-bottom:0.5rem;">📐 Sesgo en el entrenamiento</div>
+    <div style="color:#d0c0c0; line-height:1.6;">Aprende los sesgos presentes en los datos: de género, culturales, históricos. La respuesta "promedio" de internet no siempre es neutral ni correcta.</div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; border-left:4px solid #4A9FD4;">
+    <div style="color:#4A9FD4; font-weight:700; margin-bottom:0.5rem;">🔒 Sin contexto organizacional</div>
+    <div style="color:#d0c0c0; line-height:1.6;">El modelo no sabe nada de tu institución, tu cultura interna, tus restricciones ni tu audiencia específica. Ese contexto debe ser provisto siempre por el usuario.</div>
+  </div>
+
+</div>
+```
+
+------------------------------------------------------------------------
+
+## ⚖️ Ética en el uso de la IA
+
+::: r-stack
+<br>
+
+![](images/pro_07.png){.fragment .fade-in-then-out fig-align="center" width="900"}
+
+![](images/pro_061.png){.fragment fig-align="center" width="800"}
+:::
+
+------------------------------------------------------------------------
+
+## La ética en 2026: seis dimensiones que han escalado
+
+```{=html}
+<div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0.85rem; font-size:0.76em; margin-top:0.4rem;">
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.1rem; color:white; border-left:4px solid #E74C3C;">
+    <div style="color:#ff7070; font-weight:700; margin-bottom:0.4rem;">🎭 Alucinaciones 2.0</div>
+    <div style="color:#d0c0c0; line-height:1.55;">Ya no son solo datos falsos. Los <strong style="color:#ff9090;">agentes alucinan acciones</strong>: borrar archivos, enviar correos, ejecutar código. El impacto es operacional.</div>
+    <div style="color:#6B7A8D; font-size:0.85em; margin-top:0.5rem;">↗ RAG · grounding · human-in-loop</div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.1rem; color:white; border-left:4px solid #F39C12;">
+    <div style="color:#fbbf24; font-weight:700; margin-bottom:0.4rem;">⚖️ Sesgo sistémico</div>
+    <div style="color:#d0c0c0; line-height:1.55;">El sesgo ya está en producción: <strong style="color:#ffd080;">contratación, crédito, salud</strong>. Las auditorías ex-post no alcanzan cuando la escala es masiva.</div>
+    <div style="color:#6B7A8D; font-size:0.85em; margin-top:0.5rem;">↗ fairness metrics · EU AI Act</div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.1rem; color:white; border-left:4px solid #8B5CF6;">
+    <div style="color:#a78bfa; font-weight:700; margin-bottom:0.4rem;">🏭 Concentración de poder</div>
+    <div style="color:#d0c0c0; line-height:1.55;">3 empresas controlan el 80% de la infraestructura de IA global. <strong style="color:#c4aaff;">Dependencia tecnológica</strong> y riesgo de lock-in institucional.</div>
+    <div style="color:#6B7A8D; font-size:0.85em; margin-top:0.5rem;">↗ open source · soberanía digital</div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.1rem; color:white; border-left:4px solid #E84393;">
+    <div style="color:#f472b6; font-weight:700; margin-bottom:0.4rem;">🔐 Ciberseguridad e IA</div>
+    <div style="color:#d0c0c0; line-height:1.55;"><strong style="color:#f9a8d4;">Deepfakes, phishing generativo</strong>, jailbreaks y prompt injection. La IA arma los ataques y también los defiende.</div>
+    <div style="color:#6B7A8D; font-size:0.85em; margin-top:0.5rem;">↗ detección de contenido sintético</div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.1rem; color:white; border-left:4px solid #27AE60;">
+    <div style="color:#6fcf6f; font-weight:700; margin-bottom:0.4rem;">🤖 IA agéntica</div>
+    <div style="color:#d0c0c0; line-height:1.55;">Agentes que navegan, ejecutan código y toman decisiones <strong style="color:#a3e8a3;">sin supervisión humana</strong> continua. ¿Quién responde si algo falla?</div>
+    <div style="color:#6B7A8D; font-size:0.85em; margin-top:0.5rem;">↗ human oversight · audit trails</div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.1rem; color:white; border-left:4px solid #4A9FD4;">
+    <div style="color:#4A9FD4; font-weight:700; margin-bottom:0.4rem;">📜 Privacidad y regulación</div>
+    <div style="color:#d0c0c0; line-height:1.55;"><strong style="color:#93c5fd;">EU AI Act en vigor.</strong> Chile tramita su Ley de IA. Los datos de entrenamiento son el nuevo campo de batalla legal.</div>
+    <div style="color:#6B7A8D; font-size:0.85em; margin-top:0.5rem;">↗ Ley 19.628 · GDPR · AI Act</div>
+  </div>
+
+</div>
+```
+
+------------------------------------------------------------------------
+
+## 🎭 Alucinaciones 2.0 — cuando el error tiene consecuencias reales
+
+::::: columns
+::: {.column width="52%"}
+<br>
+
+**Lo que ya sabías:**
+
+-   El modelo genera texto falso con total confianza
+-   No distingue entre saber y no saber
+-   Cita fuentes que no existen
+
+**Lo que cambió en 2025–2026:**
+
+-   Los LLMs ahora tienen **herramientas** (tools): buscan, escriben, ejecutan
+-   Una alucinación ya no es solo texto incorrecto: puede ser una **acción irreversible**
+-   Ejemplo: un agente resume un contrato y "inventa" una cláusula que nadie revisa
+:::
+
+::: {.column width="48%"}
+<br><br>
+
+```{=html}
+<div style="background:#0F2044; border-radius:10px; padding:1.3rem; color:white; font-size:0.75em;">
+  <div style="color:#ff7070; font-weight:700; margin-bottom:0.8rem;">⚡ Del texto a la acción</div>
+  <div style="display:flex; flex-direction:column; gap:0.5rem;">
+    <div style="background:#1A0A0A; border-left:3px solid #E74C3C; padding:0.5rem 0.8rem; border-radius:0 6px 6px 0;">
+      <span style="color:#ff9090;">Antes:</span> <span style="color:#d0c0c0;">respuesta incorrecta en pantalla</span>
+    </div>
+    <div style="color:#6B7A8D; text-align:center; font-size:0.9em;">↓ agentes con tools</div>
+    <div style="background:#1A0A0A; border-left:3px solid #C0392B; padding:0.5rem 0.8rem; border-radius:0 6px 6px 0;">
+      <span style="color:#ff7070;">Ahora:</span> <span style="color:#d0c0c0;">correo enviado / archivo borrado / compra hecha</span>
+    </div>
+  </div>
+  <div style="margin-top:1rem; padding:0.7rem; background:#2A1010; border-radius:6px; color:#fca5a5; font-size:0.9em; line-height:1.5;">
+    💡 Regla práctica: cuanto más autónomo el sistema, más crítica es la revisión humana antes de ejecutar.
+  </div>
+</div>
+```
+:::
+:::::
+
+::: callout-warning
+## ¿Cuándo confiar en el output de un agente?
+
+Nunca sin revisión si la acción es irreversible. El nivel de supervisión debe ser proporcional al costo del error.
+:::
+
+------------------------------------------------------------------------
+
+## 🔐 Ciberseguridad e IA — la amenaza que escala
+
+::::: columns
+::: {.column width="50%"}
+<br>
+
+**Vectores de ataque habilitados por IA:**
+
+-   **Phishing generativo**: correos personalizados a escala masiva, imposibles de distinguir de los legítimos
+-   **Deepfakes de audio/video**: suplantación de directivos para fraudes internos
+-   **Prompt injection**: atacar sistemas agénticos inyectando instrucciones maliciosas en el contexto
+-   **Jailbreaks**: bypasses de restricciones de seguridad en modelos desplegados
+:::
+
+::: {.column width="50%"}
+<br>
+
+**Defensa habilitada por IA:**
+
+-   Detección de anomalías en tiempo real
+-   Clasificación automática de correos sospechosos
+-   Análisis de código malicioso a escala
+
+```{=html}
+<div style="background:#0F2044; border-radius:10px; padding:1rem; color:white; font-size:0.75em; margin-top:1rem;">
+  <div style="color:#f472b6; font-weight:700; margin-bottom:0.5rem;">📍 Caso concreto para organizaciones</div>
+  <div style="color:#d0c0c0; line-height:1.6;">Un atacante usa IA para generar 10.000 correos personalizados con el nombre, cargo y contexto real de cada empleado. Sin IA defensiva, la tasa de clic es 5–8×  mayor que un phishing genérico.</div>
+</div>
+```
+:::
+:::::
+
+::: callout-important
+## La paradoja de la ciberseguridad con IA
+
+La misma tecnología que mejora tu defensa también mejora el ataque. La asimetría favorece al atacante: solo necesita tener éxito una vez.
+:::
+
+------------------------------------------------------------------------
+
+## 🤖 IA agéntica — el salto de chatbot a agente
+
+<br>
+
+```{=html}
+<div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; font-size:0.78em; margin-bottom:1rem;">
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.1rem; color:white; border-top:4px solid #6B7A8D; opacity:0.8;">
+    <div style="color:#8FA8C8; font-size:0.85em; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.5rem;">2022–2023</div>
+    <div style="color:#d0dce8; font-weight:700; margin-bottom:0.4rem;">Chatbot</div>
+    <div style="color:#8FA8C8; line-height:1.6;">Responde preguntas. El humano lee, evalúa y actúa. Error = texto incorrecto.</div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.1rem; color:white; border-top:4px solid #6B7A8D; opacity:0.8;">
+    <div style="color:#8FA8C8; font-size:0.85em; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.5rem;">2024</div>
+    <div style="color:#d0dce8; font-weight:700; margin-bottom:0.4rem;">Copiloto</div>
+    <div style="color:#8FA8C8; line-height:1.6;">Sugiere acciones. El humano aprueba antes de ejecutar. Supervisión todavía presente.</div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.1rem; color:white; border-top:4px solid #27AE60;">
+    <div style="color:#27AE60; font-size:0.85em; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.5rem;">2025–2026 🎯 Hoy</div>
+    <div style="color:#d0dce8; font-weight:700; margin-bottom:0.4rem;">Agente autónomo</div>
+    <div style="color:#8FA8C8; line-height:1.6;">Ejecuta tareas completas: busca, escribe, envía, decide. El humano define el objetivo, no cada paso.</div>
+  </div>
+
+</div>
+```
+
+::: callout-important
+## La pregunta ética central de la IA agéntica
+
+**¿En qué decisiones organizacionales estás dispuesto a eliminar la revisión humana?**\
+La respuesta determina tu arquitectura de control, no solo tu política de uso.
+:::
+
+------------------------------------------------------------------------
+
+## 🏭 Concentración de poder — la ética que nadie discute en la empresa
+
+::::: columns
+::: {.column width="55%"}
+<br>
+
+-   **3 empresas** (OpenAI · Google · Anthropic/Amazon) concentran la mayor parte de la infraestructura de modelos de frontera
+-   Los modelos más potentes corren en servidores en EE.UU. — fuera de la jurisdicción de Chile
+-   **Lock-in tecnológico**: si cambias de proveedor, pierdes historial, fine-tuning y contexto acumulado
+-   El open source (Llama, Mistral, Qwen) es la alternativa, pero requiere capacidad técnica interna
+:::
+
+::: {.column width="45%"}
+<br>
+
+```{=html}
+<div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; font-size:0.75em;">
+  <div style="color:#a78bfa; font-weight:700; margin-bottom:0.8rem;">🏛️ Preguntas para instituciones públicas</div>
+  <div style="display:flex; flex-direction:column; gap:0.6rem;">
+    <div style="background:#1A1030; padding:0.6rem 0.8rem; border-radius:6px; color:#d0c0e8; line-height:1.5;">
+      ¿Dónde se almacenan los datos que enviamos al proveedor de IA?
+    </div>
+    <div style="background:#1A1030; padding:0.6rem 0.8rem; border-radius:6px; color:#d0c0e8; line-height:1.5;">
+      ¿Se usan nuestros prompts para reentrenar el modelo?
+    </div>
+    <div style="background:#1A1030; padding:0.6rem 0.8rem; border-radius:6px; color:#d0c0e8; line-height:1.5;">
+      ¿Podemos auditar cómo funciona el sistema que usamos?
+    </div>
+    <div style="background:#1A1030; padding:0.6rem 0.8rem; border-radius:6px; color:#d0c0e8; line-height:1.5;">
+      ¿Qué ocurre si el proveedor sube precios o cierra el servicio?
+    </div>
+  </div>
+</div>
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## 📜 Regulación — el mapa legal que está cambiando
+
+<br>
+
+```{=html}
+<div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; font-size:0.76em; margin-top:0.3rem;">
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; border-top:4px solid #4A9FD4;">
+    <div style="color:#4A9FD4; font-weight:700; margin-bottom:0.5rem;">🇪🇺 EU AI Act</div>
+    <div style="color:#d0c0c0; line-height:1.6; margin-bottom:0.6rem;">En vigor desde 2024. Clasifica los sistemas de IA por <strong style="color:#93c5fd;">nivel de riesgo</strong>. Los de alto riesgo (contratación, crédito, educación) requieren auditorías, transparencia y supervisión humana obligatoria.</div>
+    <div style="color:#6B7A8D; font-size:0.88em;">Aplica a cualquier empresa que opere en la UE.</div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; border-top:4px solid #F39C12;">
+    <div style="color:#fbbf24; font-weight:700; margin-bottom:0.5rem;">🇨🇱 Chile — Ley de IA</div>
+    <div style="color:#d0c0c0; line-height:1.6; margin-bottom:0.6rem;">Proyecto en tramitación parlamentaria. Inspirado parcialmente en el marco europeo. Incluye disposiciones sobre <strong style="color:#ffd080;">transparencia, no discriminación</strong> y protección de datos personales en sistemas automatizados.</div>
+    <div style="color:#6B7A8D; font-size:0.88em;">Ley 19.628 ya aplica a datos personales hoy.</div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.2rem; color:white; border-top:4px solid #27AE60;">
+    <div style="color:#6fcf6f; font-weight:700; margin-bottom:0.5rem;">⚖️ Litigios globales</div>
+    <div style="color:#d0c0c0; line-height:1.6; margin-bottom:0.6rem;">NYT vs. OpenAI, Getty Images vs. Stability AI, autores vs. Meta. Los datos de entrenamiento son el <strong style="color:#a3e8a3;">nuevo campo de batalla</strong>: ¿qué puede usar la IA sin permiso?</div>
+    <div style="color:#6B7A8D; font-size:0.88em;">Resultados definirán el sector en 2026–2027.</div>
+  </div>
+
+</div>
+```
+
+<br>
+
+::: {style="text-align: center; background: rgba(74,159,212,0.1); border-left: 4px solid #4A9FD4; padding: 0.75rem 1.5rem; border-radius: 4px; font-size: 0.9rem;"}
+**Regla práctica:** Si tu sistema de IA toma decisiones que afectan a personas, ya existe o existirá pronto una norma que te exige justificarlas.
+:::
+
+------------------------------------------------------------------------
+
+## Ética aplicada: casos concretos
+
+:::::::::::::::::::::: panel-tabset
+## 🔑 Credenciales
+
+**Nunca compartas información sensible en prompts de IA.**
+
+::::: columns
+::: {.column width="50%"}
+❌ **Prompt inadecuado:**
+
+> "Mi API key es `1234-5678` y mi contraseña es `mypassword123`. ¿Puedes conectarte por mí?"
+:::
+
+::: {.column width="50%"}
+✅ **Prompt correcto:**
+
+> "¿Cómo guardar credenciales en un archivo `.env` y cargarlas de forma segura en Python?"
+:::
+:::::
+
+::: {.callout-important style="font-size:0.80em;"}
+Los prompts enviados a servicios en la nube pueden ser almacenados, usados para entrenamiento o accedidos por terceros según los términos de servicio.
+:::
+
+## 🔒 Privacidad
+
+**Los prompts no deben exponer datos personales de terceros.**
+
+::::: columns
+::: {.column width="50%"}
+❌ **Prompt inadecuado:**
+
+> "Tengo el RUT y dirección de una persona. ¿Puedes decirme su número de teléfono?"
+:::
+
+::: {.column width="50%"}
+✅ **Prompt correcto:**
+
+> "¿Cómo anonimizar datos personales antes de usarlos en un análisis?"
+:::
+:::::
+
+::: {.callout-important style="font-size:0.80em;"}
+La Ley 19.628 de Chile regula el tratamiento de datos personales. Compartir datos identificables con servicios externos puede constituir una infracción.
+:::
+
+## 🤖 IA Agéntica
+
+**Antes de delegar una tarea a un agente, define explícitamente qué puede y qué no puede hacer.**
+
+::::: columns
+::: {.column width="50%"}
+❌ **Delegación sin control:**
+
+> "Revisa mis correos, responde los urgentes y agenda reuniones si es necesario."
+:::
+
+::: {.column width="50%"}
+✅ **Delegación con límites:**
+
+> "Lee mis correos de esta semana y prepara borradores de respuesta para los marcados como urgentes. No envíes nada sin mi aprobación."
+:::
+:::::
+
+::: {.callout-important style="font-size:0.80em;"}
+Un agente sin restricciones explícitas opera con el alcance más amplio posible. Define siempre qué puede **leer**, qué puede **escribir** y qué puede **ejecutar**.
+:::
+
+## 🔐 Ciberseguridad
+
+**Verifica siempre la identidad antes de actuar, aunque el mensaje parezca legítimo.**
+
+::::: columns
+::: {.column width="50%"}
+❌ **Escenario de riesgo:**
+
+> Recibes un correo del "director de finanzas" pidiendo transferir fondos urgentemente. El texto es perfecto, el tono es exacto.
+:::
+
+::: {.column width="50%"}
+✅ **Buena práctica:**
+
+> Verificar por un segundo canal (llamada, mensaje directo) cualquier solicitud urgente de dinero, datos o accesos, independientemente de cuán legítimo parezca el remitente.
+:::
+:::::
+
+::: {.callout-warning style="font-size:0.80em;"}
+El phishing generado por IA ya no tiene errores gramaticales. La verificación por canal alternativo es la única defensa confiable.
+:::
+
+## 🏛️ Uso institucional
+
+**En el contexto organizacional, la IA implica responsabilidades adicionales.**
+
+::::: columns
+::: {.column width="50%"}
+**⚠️ Riesgos institucionales:**
+
+-   Compartir datos estratégicos confidenciales con servicios externos
+-   Publicar contenido generado por IA sin revisión ni validación
+-   Usar IA para tomar decisiones sobre personas sin supervisión humana
+-   Presentar outputs de IA como trabajo propio sin transparencia
+:::
+
+::: {.column width="50%"}
+**✅ Buenas prácticas:**
+
+-   Revisar y validar siempre los outputs antes de usar
+-   Declarar el uso de IA en informes y entregables cuando corresponde
+-   Mantener al ser humano en el loop para decisiones que afectan a personas
+-   Establecer políticas institucionales claras sobre uso de IA
+:::
+:::::
+::::::::::::::::::::::
+
+------------------------------------------------------------------------
+
+## La pregunta que no cambia
+
+<br>
+
+```{=html}
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; font-size:0.80em; margin-bottom:1.2rem;">
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.3rem; color:white; border-left:4px solid #E74C3C;">
+    <div style="color:#ff7070; font-weight:700; font-size:1.05em; margin-bottom:0.6rem;">❌ La pregunta equivocada</div>
+    <div style="color:#d0c0c0; line-height:1.7; font-size:1.05em;">"¿Podemos usar IA para esto?"</div>
+    <div style="color:#8FA8C8; margin-top:0.5rem; line-height:1.5;">La respuesta casi siempre es sí. Pero es la pregunta menos importante.</div>
+  </div>
+
+  <div style="background:#0F2044; border-radius:10px; padding:1.3rem; color:white; border-left:4px solid #27AE60;">
+    <div style="color:#6fcf6f; font-weight:700; font-size:1.05em; margin-bottom:0.6rem;">✅ Las preguntas correctas</div>
+    <div style="color:#d0dce8; line-height:1.8;">
+      ¿<strong style="color:#a3e8a3;">Quién decide</strong> cuando el modelo se equivoca?<br>
+      ¿<strong style="color:#a3e8a3;">Quién responde</strong> si el error tiene consecuencias?<br>
+      ¿<strong style="color:#a3e8a3;">Quién controla</strong> los datos y el sistema?<br>
+      ¿<strong style="color:#a3e8a3;">Quién audita</strong> que funciona como se espera?
+    </div>
+  </div>
+
+</div>
+```
+
+::: {style="text-align: center; background: rgba(201,168,76,0.1); border-left: 4px solid #C9A84C; padding: 0.75rem 1.5rem; border-radius: 4px; font-size: 1.05rem;"}
+**La IA no es ni buena ni mala. Es tan responsable como el sistema humano que la rodea.**
+:::

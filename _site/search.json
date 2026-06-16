@@ -1990,9 +1990,9 @@
   {
     "objectID": "usm_dtd/semana_03.html#historia-de-los-llm",
     "href": "usm_dtd/semana_03.html#historia-de-los-llm",
-    "title": "Diplomado Transformación Digital",
-    "section": "⏳ Historia de los LLM",
-    "text": "⏳ Historia de los LLM"
+    "title": "Toma de Decisiones Basadas en Datos e IA",
+    "section": "Historia de los LLM",
+    "text": "Historia de los LLM"
   },
   {
     "objectID": "usm_dtd/semana_03.html#desafío",
@@ -2006,28 +2006,28 @@
     "href": "usm_dtd/semana_03.html#section-1",
     "title": "Toma de Decisiones Basadas en Datos e IA",
     "section": "",
-    "text": "Parte 1\n¿Qué son los LLMs?\nNo es magia, es ciencia — y tiene límites"
+    "text": "Parte 1\n¿Qué son los LLMs?\nSpoiler: no razonan, predicen"
   },
   {
     "objectID": "usm_dtd/semana_03.html#section-2",
     "href": "usm_dtd/semana_03.html#section-2",
     "title": "Toma de Decisiones Basadas en Datos e IA",
     "section": "",
-    "text": "Parte 2\nCómo funcionan: de bits a tokens\nTodo en el computador son bits — el contexto lo es todo"
+    "text": "Parte 2\nPrompt Engineering aplicado a datos\nNo son trucos, son formas de comunicarse con precisión"
   },
   {
     "objectID": "usm_dtd/semana_03.html#section-3",
     "href": "usm_dtd/semana_03.html#section-3",
     "title": "Toma de Decisiones Basadas en Datos e IA",
     "section": "",
-    "text": "00000000 00101010\nPodría ser el número 42 escrito en binario…"
+    "text": "Parte 4\nLímites reales y ética en el uso de IA\nUna mirada crítica — indispensable antes de desplegar"
   },
   {
     "objectID": "usm_dtd/semana_03.html#section-4",
     "href": "usm_dtd/semana_03.html#section-4",
     "title": "Toma de Decisiones Basadas en Datos e IA",
     "section": "",
-    "text": "00000000 00101010\nPodría ser el carácter * en la convención ASCII…"
+    "text": "Parte 4\nLímites reales y ética en el uso de IA\nUna mirada crítica — indispensable antes de desplegar"
   },
   {
     "objectID": "usm_dtd/semana_03.html#representación",
@@ -2132,7 +2132,7 @@
     "href": "usm_dtd/semana_03.html#actividad-probemos-algunos-prompts",
     "title": "Toma de Decisiones Basadas en Datos e IA",
     "section": "🎯 Actividad: ¡Probemos algunos prompts!",
-    "text": "🎯 Actividad: ¡Probemos algunos prompts!\n\n\n\n\n\n\n\nInstrucciones:\n\n👩‍💻 Paso 1: Elige un asistente (ChatGPT, Claude, Gemini, DeepSeek)\n📝 Paso 2: Escribe el mismo prompt en al menos dos asistentes distintos\n🔍 Paso 3: Compara las respuestas — ¿difieren en formato, tono, precisión?\n🤔 Paso 4: Ahora aplica la estructura completa (Rol + Tarea + Contexto + Formato) y observa cómo cambia el resultado\n💬 Paso 5: Comparte con el grupo: ¿qué diferencias encontraron?"
+    "text": "🎯 Actividad: ¡Probemos algunos prompts!\n\n\n\n\n\n\n\nInstrucciones:\n\n👩‍💻 Paso 1: Elige un asistente (ChatGPT, Claude, Gemini)\n📝 Paso 2: Mismo prompt en al menos dos asistentes distintos\n🔍 Paso 3: Compara las respuestas\n🤔 Paso 4: Ahora aplica la estructura completa (Rol + Tarea + Contexto + Formato) y observa cómo cambia el resultado\n💬 Paso 5: ¿Qué diferencias encontraron?"
   },
   {
     "objectID": "usm_dtd/semana_03.html#estructura-de-un-buen-prompts",
@@ -8138,7 +8138,7 @@
     "href": "usm_dtd/semana_03.html#large-language-models",
     "title": "Toma de Decisiones Basadas en Datos e IA",
     "section": "Large Language Models",
-    "text": "Large Language Models\n\n\n\n\nUn LLM (Large Language Model) es una red neuronal entrenada con cantidades masivas de texto.\nAprende distribuciones de probabilidad sobre secuencias de palabras y frases.\nSu tarea fundamental: predecir el siguiente token más probable.\nNo tiene un modelo del mundo. No tiene intenciones. No “entiende” en el sentido humano.\n\n\n\n\n\n\n\nLa frase más importante de esta clase\n\n\nUn LLM no razona, predice. Entender esto es la diferencia entre usarlo bien y confiar ciegamente en él."
+    "text": "Large Language Models\n\n\n\n\nUn LLM es una red neuronal entrenada con cantidades masivas de texto.\nAprende distribuciones de probabilidad sobre secuencias de tokens.\nSu tarea fundamental: predecir el siguiente token más probable.\nNo tiene un modelo del mundo. No tiene intenciones. No “entiende”.\nTodo lo que parece razonamiento es interpolación estadística muy sofisticada.\n\n\n\n\n  🧠 ¿Qué hace un LLM?\n  \n    Input: \"El cielo es de color\"\n  \n  ↓ tokeniza\n  \n    [231, 4892, 12, 8743, ...]\n  \n  ↓ atiende + predice\n  \n    P(\"azul\") = 0.71 · P(\"gris\") = 0.12 · ...\n  \n  No hay comprensión. Solo probabilidad.\n\n\n\n\n\n\n\n\n\nLa frase más importante de esta charla\n\n\nUn LLM no razona, predice. Todo lo demás se deriva de entender esto bien. Incluido su costo."
   },
   {
     "objectID": "usm_dtd/semana_03.html#características-de-los-llms",
@@ -8166,7 +8166,7 @@
     "href": "usm_dtd/semana_03.html#section-5",
     "title": "Toma de Decisiones Basadas en Datos e IA",
     "section": "",
-    "text": "00000000 00101010 00000101 00000101 00000101 00000101\nPodría ser parte de un número decimal, 0.4523 o \\(\\pi\\)…"
+    "text": "Parte 5\nActividad final\nCrear tu propio chatbot con IA"
   },
   {
     "objectID": "usm_dtd/semana_03.html#section-6",
@@ -8222,7 +8222,7 @@
     "href": "usm_dtd/semana_03.html#qué-es-un-prompt",
     "title": "Toma de Decisiones Basadas en Datos e IA",
     "section": "¿Qué es un Prompt?",
-    "text": "¿Qué es un Prompt?\n\n\n\nUn prompt es la instrucción que le das al modelo para que genere una respuesta o realice una tarea.\nEl modelo toma tus palabras literalmente — la ambigüedad en el prompt produce ambigüedad en la respuesta.\nTipos básicos:\n\nPregunta directa: “¿Qué es la inteligencia artificial?”\nInstrucción: “Escribe un resumen ejecutivo de este informe.”\nComando: “Genera un código Python para calcular la deserción mensual.”\nRol + Tarea: “Eres un analista senior. Evalúa este plan de acción e identifica los 3 riesgos principales.”"
+    "text": "¿Qué es un Prompt?\n\n\n\n\n\n\n\n\n\nUn prompt es la interfaz entre tú y el modelo. Cada palabra cuenta — literalmente.\nComponentes de un prompt efectivo:\n\n🎯 Instrucción: qué quieres que haga\n🎭 Rol: quién debe ser el modelo\n📄 Contexto: info relevante (solo la necesaria)\n🖼️ Formato: cómo responder (JSON, número, tabla)\n📌 Ejemplos: qué es correcto / qué no\n\n\n  [ROL] Eres un econometrista experto en salarios.\n  [CONTEXTO] Dataset wage1, n=526, EE.UU.\n  [INSTRUCCIÓN] Interpreta el coeficiente de educ.\n  [FORMATO] Responde en JSON con keys:\n   {\"interpretacion\": \"...\", \"es_causal\": false}"
   },
   {
     "objectID": "usm_dtd/semana_03.html#prompt-simple-vs.-prompt-estructurado",
@@ -8250,7 +8250,7 @@
     "href": "usm_dtd/semana_03.html#los-cuatro-límites-que-todo-decisor-debe-conocer",
     "title": "Toma de Decisiones Basadas en Datos e IA",
     "section": "Los cuatro límites que todo decisor debe conocer",
-    "text": "Los cuatro límites que todo decisor debe conocer\n\n\n\n\n\n\n\n\n\n\n🚨 Problema\n💬 Ejemplo de prompt\n❌ Falla del modelo\n🛡️ Mitigación\n\n\n\n\nAlucinaciones\n¿Cuántos continentes hay?\nHay 4 continentes.\nVerificar con fuentes externas\n\n\nDatos obsoletos\n¿Quién es el presidente de Argentina?\nMauricio Macri.\nRAG con datos actualizados\n\n\nAmbigüedad\n¿País más grande?\nPodría ser China o EE.UU.\nPrompt más específico\n\n\nSesgo\n¿Quién programa mejor?\nLos hombres, por su lógica natural.\nEvaluar outputs críticamente\n\n\n\n\n\n\n\n\n\n\nPara decisores organizacionales\n\n\nLas alucinaciones no son bugs que se arreglarán — son una consecuencia estructural de cómo aprenden estos modelos. Un LLM responde con igual confianza cuando sabe y cuando no sabe."
+    "text": "Los cuatro límites que todo decisor debe conocer"
   },
   {
     "objectID": "usm_dtd/semana_03.html#los-4-límites-estructurales-de-los-llms",
@@ -8263,8 +8263,8 @@
     "objectID": "usm_dtd/semana_03.html#ética-en-el-uso-de-la-ia",
     "href": "usm_dtd/semana_03.html#ética-en-el-uso-de-la-ia",
     "title": "Toma de Decisiones Basadas en Datos e IA",
-    "section": "⚖️ Ética en el uso de la IA",
-    "text": "⚖️ Ética en el uso de la IA"
+    "section": "Ética en el uso de la IA",
+    "text": "Ética en el uso de la IA"
   },
   {
     "objectID": "usm_dtd/semana_03.html#ética-aplicada-casos-concretos",
@@ -9616,5 +9616,544 @@
     "title": "Talks",
     "section": "De cero a RAG",
     "text": "De cero a RAG\n\n📓 Google Colab + OpenAI API\nConstruye aplicaciones con LLMs desde cero hasta RAG\nColab · API keys seguras · Prompt Engineering · RAG de punta a punta\n\n  \n  Abrir en Google Colab"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#section",
+    "href": "ai/analitica_dtd.html#section",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "",
+    "text": "Dirección de Transformación Digital · UTFSM\nStack tecnológico del área de Analítica\nHerramientas, proyectos y flujos de trabajo\nValparaíso · Chile"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#qué-hace-el-área-de-analítica",
+    "href": "ai/analitica_dtd.html#qué-hace-el-área-de-analítica",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "¿Qué hace el área de Analítica?",
+    "text": "¿Qué hace el área de Analítica?\n\n\n\n\nConstruimos modelos predictivos que anticipan riesgos y comportamientos institucionales.\nDiseñamos dashboards e indicadores para apoyar la gestión y la toma de decisiones.\nOperamos sistemas de alerta temprana que detectan problemas antes de que escalen.\nResolvemos problemas de optimización (asignación de salas, horarios, recursos).\nDamos soporte a la decisión institucional con evidencia cuantitativa y reproducible.\n\n\n\n\n  🔄 El ciclo analítico\n  \n    1 · Capturar datos\n  \n  ↓\n  \n    2 · Modelar & analizar\n  \n  ↓\n  \n    3 · Exponer como servicio\n  \n  ↓\n  \n    4 · Visualizar & comunicar\n  \n  ↺ decidir & retroalimentar"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#section-1",
+    "href": "ai/analitica_dtd.html#section-1",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "",
+    "text": "Sección 1\nCapa de datos\nFuentes, formatos y conexiones"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#fuentes-de-datos",
+    "href": "ai/analitica_dtd.html#fuentes-de-datos",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "Fuentes de datos",
+    "text": "Fuentes de datos\n\n\n\n\n\n\nFuente\nFormato\nUso típico\n\n\n\n\nBD institucional\nSQL / Oracle\nMatrículas, notas, cohortes\n\n\nArchivos planos\nCSV / Excel\nCargas manuales, históricos\n\n\nAPIs REST\nJSON\nServicios internos y externos\n\n\nFormularios\nGoogle Forms / SIAC\nEncuestas, solicitudes\n\n\n\n\n\n\n\n\n\n\nNota\n\n\nLa capa de datos unifica fuentes heterogéneas en un formato tabular limpio antes de modelar.\n\n\n\n\n\nimport pandas as pd\nfrom sqlalchemy import create_engine\n\n# Archivos planos\ndf_csv = pd.read_csv(\"matriculas_2025.csv\")\n\n# Base de datos institucional\nengine = create_engine(\n    \"oracle+oracledb://user:pwd@host:1521/dtd\"\n)\ndf_sql = pd.read_sql(\n    \"SELECT rut, carrera, promedio \"\n    \"FROM academico.alumnos\",\n    engine,\n)"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#section-2",
+    "href": "ai/analitica_dtd.html#section-2",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "",
+    "text": "Sección 2\nCapa de modelos\nMachine learning, estadística y optimización"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#machine-learning-xgboost-shap",
+    "href": "ai/analitica_dtd.html#machine-learning-xgboost-shap",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "Machine learning: XGBoost + SHAP",
+    "text": "Machine learning: XGBoost + SHAP\n\n\n\n\nXGBoost es un algoritmo de gradient boosting sobre árboles de decisión.\nEs el estándar de facto para datos tabulares: notas, asistencia, cohortes.\nRobusto a datos faltantes, escalas mixtas y relaciones no lineales.\nSHAP explica cada predicción: cuánto aporta cada variable al riesgo.\nPasamos de una caja negra a una decisión auditable y comunicable.\n\n\n\n\n\n\n\nLa frase clave del área\n\n\nNo basta con predecir bien: la institución necesita entender y confiar en el porqué de cada alerta.\n\n\n\n\n\n\n  📊 Aporte de cada variable (SHAP)\n  \n    Asistencia\n    \n  \n  \n    Notas 1er sem.\n    \n  \n  \n    Ramos reprobados\n    \n  \n  \n    PSU / PAES\n    \n  \n  \n    Nivel socioecon.\n    \n  \n  → mayor barra = mayor impacto en el riesgo"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#ejemplo-concreto-sat-e",
+    "href": "ai/analitica_dtd.html#ejemplo-concreto-sat-e",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "Ejemplo concreto: SAT-E",
+    "text": "Ejemplo concreto: SAT-E\n\n\n\nSistema de Alerta Temprana Estudiantil\n\nPredice el riesgo de deserción / bajo rendimiento por estudiante.\nTrabaja por cohortes y se actualiza cada semestre.\nVariables: asistencia, notas, ramos reprobados, ingreso, trayectoria.\nGenera una Alerta 1 para los casos de mayor riesgo, priorizados.\n\n\n\n\n\n\n\nImpacto\n\n\nCubre a toda la población de pregrado de la USM y entrega a las unidades una lista accionable y explicada.\n\n\n\n\n\n\n  ⚙️ Esquema del modelo\n  📥 datos académicos\n  ↓\n  🌲 XGBoost M23 / M24 / M25\n  ↓\n  🔍 SHAP — explicación\n  ↓\n  🎯 score de riesgo\n  ↓\n  🚨 Alerta 1"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#modelos-estadísticos-y-optimización",
+    "href": "ai/analitica_dtd.html#modelos-estadísticos-y-optimización",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "Modelos estadísticos y optimización",
+    "text": "Modelos estadísticos y optimización\n\n\n  \n    📈 Series temporales\n    \n      Regresión, ARIMA y descomposición de tendencias para proyectar matrícula, demanda y comportamientos institucionales.\n    \n  \n  \n    🧮 ILP / optimización\n    \n      Gurobi y programación lineal entera para scheduling: asignación óptima de salas, horarios y recursos.\n    \n  \n  \n    📐 Econometría\n    \n      Modelos de regresión, control de heteroscedasticidad e inferencia asintótica para análisis causal y de impacto.\n    \n  \n\n\n\n\n\n\n\n\nTip\n\n\nCada problema elige su herramienta: predecir (ML), explicar (econometría) o decidir óptimamente (optimización)."
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#pipelines-kedro-pandas",
+    "href": "ai/analitica_dtd.html#pipelines-kedro-pandas",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "Pipelines: Kedro + pandas",
+    "text": "Pipelines: Kedro + pandas\n\n\n\n\nKedro es un framework de ingeniería de datos para Python.\nAporta reproducibilidad: cada paso es un nodo versionado y testeable.\nEl Data Catalog desacopla el código de las rutas y formatos de datos.\nLos pipelines convierten notebooks frágiles en producción mantenible.\n\n\n\n\n\n\n\nNota\n\n\nMismo pipeline corre en local, en CI y en el servidor — sin reescribir nada.\n\n\n\n\n\nfrom kedro.pipeline import node, pipeline\n\ndef entrenar_modelo(datos, params):\n    X, y = datos.drop(\"riesgo\", axis=1), datos[\"riesgo\"]\n    modelo = XGBClassifier(**params).fit(X, y)\n    return modelo\n\npipeline_sate = pipeline([\n    node(\n        func=entrenar_modelo,\n        inputs=[\"datos_limpios\", \"params:xgb\"],\n        outputs=\"modelo_riesgo\",\n        name=\"entrenar_riesgo\",\n    ),\n])"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#section-3",
+    "href": "ai/analitica_dtd.html#section-3",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "",
+    "text": "Sección 3\nBackend y servicios\nFastAPI, autenticación y gateway"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#fastapi",
+    "href": "ai/analitica_dtd.html#fastapi",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "FastAPI",
+    "text": "FastAPI\n\n\n\n\nFramework moderno para exponer modelos ML como endpoints REST.\nValidación automática de entradas con Pydantic.\nSoporte async nativo y alto rendimiento.\nDocumentación interactiva (Swagger) generada sola.\n\n\n\n\n\n\n\nVentaja sobre Flask\n\n\nValidación con Pydantic, async y docs automáticas: menos código de plomería, más foco en el modelo.\n\n\n\n\n\nfrom fastapi import FastAPI\nfrom pydantic import BaseModel\n\napp = FastAPI()\n\nclass Alumno(BaseModel):\n    asistencia: float\n    notas: float\n    reprobados: int\n\n@app.post(\"/predecir\")\ndef predecir(a: Alumno):\n    score = modelo.predict_proba(\n        [[a.asistencia, a.notas, a.reprobados]]\n    )[0, 1]\n    return {\"riesgo\": float(score)}"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#nginx-como-gateway",
+    "href": "ai/analitica_dtd.html#nginx-como-gateway",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "Nginx como gateway",
+    "text": "Nginx como gateway\n\n\n\nQué hace en el área:\n\nProxy inverso: una sola puerta de entrada pública.\nTermina SSL/TLS (HTTPS) para todos los servicios.\nRouting por path: cada ruta va a su servicio interno.\nBalanceo de carga y archivos estáticos.\n\n\n\n  Flujo de red\n  🌐 Internet\n    ↓\n  🛡️ Nginx (443 / 80)\n    ├─→ FastAPI :8000\n    ├─→ Streamlit :8501\n    └─→ React SPA :3000\n\n\n\nserver {\n    listen 443 ssl;\n    server_name analitica.dtd.usm.cl;\n\n    location /api/ {\n        proxy_pass http://127.0.0.1:8000/;\n    }\n\n    location /app/ {\n        proxy_pass http://127.0.0.1:8501/;\n    }\n\n    location / {\n        proxy_pass http://127.0.0.1:3000/;\n    }\n}"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#section-4",
+    "href": "ai/analitica_dtd.html#section-4",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "",
+    "text": "Sección 4\nCapa de presentación\nTres herramientas, tres audiencias"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#streamlit-exploración-rápida",
+    "href": "ai/analitica_dtd.html#streamlit-exploración-rápida",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "Streamlit: exploración rápida",
+    "text": "Streamlit: exploración rápida\n\n\n\n\nStreamlit convierte un script Python en una app web.\nPara el área: dashboards exploratorios, demos de modelos y prototipos internos.\nDe idea a interfaz funcional en minutos, sin frontend.\n\nimport streamlit as st\n\nst.title(\"Riesgo académico — SAT-E\")\ndf = cargar_cohorte()\nst.dataframe(df)\nst.plotly_chart(grafico_riesgo(df))\n\n\n\n\n\n\nStreamlit vs React\n\n\nStreamlit para velocidad y uso interno; React cuando se necesita escala y uso masivo.\n\n\n\n\n\n\n  ▴ Streamlit\n  de script a app web\n  ⚡ Prototipado en minutos\n  🐍 100% Python\n  📊 Demos de modelos"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#react-18-mui-5-spa-institucional",
+    "href": "ai/analitica_dtd.html#react-18-mui-5-spa-institucional",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "React 18 + MUI 5: SPA institucional",
+    "text": "React 18 + MUI 5: SPA institucional\n\n\n\n\nReact 18 para aplicaciones de uso masivo y flujos complejos.\nMUI 5 aporta componentes Material Design: tablas, formularios, temas.\nPara el área: interfaces para toda la comunidad USM.\nSe construye como SPA y se sirve detrás de Nginx.\n\n\n\nimport { DataGrid } from '@mui/x-data-grid';\n\nconst columns = [\n  { field: 'rut', headerName: 'RUT', width: 120 },\n  { field: 'carrera', headerName: 'Carrera', width: 200 },\n  { field: 'riesgo', headerName: 'Riesgo', width: 110 },\n];\n\nexport default function TablaRiesgo({ rows }) {\n  return &lt;DataGrid rows={rows} columns={columns}\n                   pageSize={10} checkboxSelection /&gt;;\n}"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#power-bi-reportes-institucionales",
+    "href": "ai/analitica_dtd.html#power-bi-reportes-institucionales",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "Power BI: reportes institucionales",
+    "text": "Power BI: reportes institucionales\n\n\n\n\nPower BI crea reportes y visualizaciones sin código.\nPara el área: reportes para autoridades e indicadores de gestión.\nMejor que Streamlit/React cuando la audiencia es no técnica.\nActualización automática desde la base de datos institucional.\n\n\n\n\n\n\n\nIntegración\n\n\nConecta directo a SQL Server, Oracle y Excel institucionales, con refresco programado.\n\n\n\n\n\n\n  ▮▮ Power BI\n  reportes para decidir\n  👔 Audiencia ejecutiva\n  🔄 Refresco automático\n  🖱️ Sin código"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#cuándo-usar-qué",
+    "href": "ai/analitica_dtd.html#cuándo-usar-qué",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "¿Cuándo usar qué?",
+    "text": "¿Cuándo usar qué?\n\n\n\n\n\n\n\n\n\n\n\nHerramienta\nAudiencia\nVelocidad dev\nEscala\nCuándo usarla\n\n\n\n\nStreamlit\nEquipo técnico / interna\n⚡ Muy alta\nBaja–media\nExplorar datos, demos de modelos, prototipos\n\n\nReact + MUI\nComunidad USM / masiva\n🐢 Media–baja\nAlta\nApps de producción, flujos complejos, uso masivo\n\n\nPower BI\nAutoridades / gestión\n🚀 Alta\nMedia\nReportes ejecutivos, indicadores, sin código\n\n\n\n\n\n\n\n\n\n\nTip\n\n\nNo hay herramienta “mejor”: hay una adecuada a cada audiencia y a cada escala."
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#section-5",
+    "href": "ai/analitica_dtd.html#section-5",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "",
+    "text": "Sección 6\nControl de calidad y reproducibilidad\nVersionado, testing y monitoreo"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#proyecto-sat-e-arquitectura-completa",
+    "href": "ai/analitica_dtd.html#proyecto-sat-e-arquitectura-completa",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "Proyecto: SAT-E — arquitectura completa",
+    "text": "Proyecto: SAT-E — arquitectura completa\n\n\n\nSistema de Alerta Temprana Estudiantil\nDe los datos académicos a una alerta accionable y explicada, en un flujo reproducible de punta a punta.\n\nDatos → BD institucional + cargas\nPipeline → Kedro + pandas\nModelo → XGBoost + SHAP\nServicio → FastAPI tras Nginx\nVista → dashboard para las unidades\n\n\n\n\n  🏗️ Flujo técnico completo\n  \n    🗄️ BD / CSV\n    →\n    🧱 Kedro\n    →\n    🌲 XGBoost\n    →\n    🔍 SHAP\n  \n  ↓\n  \n    ⚡ FastAPI\n    →\n    🛡️ Nginx\n    →\n    📊 Dashboard\n    →\n    🚨 Alerta 1"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#proyecto-usm-scheduler",
+    "href": "ai/analitica_dtd.html#proyecto-usm-scheduler",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "Proyecto: USM Scheduler",
+    "text": "Proyecto: USM Scheduler\n\n\n\nOptimización de espacios académicos\n\nProblema: asignar salas y horarios a cientos de cursos sin choques.\nHerramientas: Gurobi, MILP, orquestado con Kedro.\nResultado: reducción de conflictos de asignación y mejor uso de salas.\n\n\n\n\n\n\n\nRestricción clave resuelta\n\n\nNingún profesor ni sala puede estar en dos lugares a la vez — modelado como restricciones de exclusión en el MILP.\n\n\n\n\n\n\n  🧮 Modelo de optimización\n  \n    Variables: x[curso, sala, bloque] ∈ {0,1}\n  \n  \n    Objetivo: min conflictos + huecos\n  \n  \n    Sujeto a: capacidad de sala\n  \n  \n    Sujeto a: no solapamiento profesor/sala\n  \n  ✓ resuelto con Gurobi (MILP)"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#recursos-y-referencias",
+    "href": "ai/analitica_dtd.html#recursos-y-referencias",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "Recursos y referencias",
+    "text": "Recursos y referencias\n\n\n\n  \n    Documentación\n    FastAPI docs\n    Streamlit docs\n    MUI docs\n    Kedro docs\n  \n  \n    Machine learning\n    SHAP docs\n    XGBoost paper (Chen & Guestrin)\n    scikit-learn user guide\n  \n  \n    Optimización\n    Gurobi docs\n    scipy.optimize\n  \n  \n    Comunidad DTD\n    Wiki interna del área de Analítica\n    GitHub del área (repos de proyectos)\n    Dirección de Transformación Digital · UTFSM"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#section-6",
+    "href": "ai/analitica_dtd.html#section-6",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "",
+    "text": "Sección 7\nProyectos destacados\nDel problema al producto"
+  },
+  {
+    "objectID": "ai/pyday_2026.html#ia-maty-fco-3",
+    "href": "ai/pyday_2026.html#ia-maty-fco-3",
+    "title": "Talks",
+    "section": "IA + maty + fco = <3 …",
+    "text": "IA + maty + fco = &lt;3 …"
+  },
+  {
+    "objectID": "usm_dtd/geo.html#section",
+    "href": "usm_dtd/geo.html#section",
+    "title": "Gestión de Operaciones",
+    "section": "",
+    "text": "Gestión de Operaciones\nAMPL + Python · Flujo de trabajo moderno\n\n\nOptimización · Inventarios · Logística · Redes de distribución\nDepartamento de Industrias · UTFSM · 2026\n\n\nFrancisco Alfaro - Matias Bahamondes\nUniversidad Técnica Federico Santa María\nDepartamento de Industrias · 2026"
+  },
+  {
+    "objectID": "usm_dtd/geo.html#qué-veremos-hoy",
+    "href": "usm_dtd/geo.html#qué-veremos-hoy",
+    "title": "Gestión de Operaciones",
+    "section": "¿Qué veremos hoy?",
+    "text": "¿Qué veremos hoy?\n\n\n\n\n  \n    🏭\n    Los ramos\n    ICN-343 y ICN-344: objetivos, contenidos y metodología\n  \n  \n    ⚙️\n    AMPL\n    ¿Qué es? ¿Para qué sirve? Sintaxis básica y flujo de modelación\n  \n  \n    ☁️\n    Google Colab\n    AMPL + Python sin instalación local: todo en la nube\n  \n  \n    🐙\n    GitHub\n    Entregar tareas de forma profesional: control de versiones aplicado\n  \n\n\n\nEl objetivo no es cambiar herramientas por cambiar — es trabajar mejor: menos fricción, más foco en los modelos."
+  },
+  {
+    "objectID": "usm_dtd/geo.html#section-1",
+    "href": "usm_dtd/geo.html#section-1",
+    "title": "Gestión de Operaciones",
+    "section": "",
+    "text": "Parte 1\nLos ramos: ICN-343 e ICN-344\n¿Qué se aprende y cómo se evalúa?"
+  },
+  {
+    "objectID": "usm_dtd/geo.html#icn-343-gestión-de-operaciones",
+    "href": "usm_dtd/geo.html#icn-343-gestión-de-operaciones",
+    "title": "Gestión de Operaciones",
+    "section": "ICN-343 · Gestión de Operaciones",
+    "text": "ICN-343 · Gestión de Operaciones\n\n\n\nEl estudiante aplica modelos matemáticos para tomar decisiones tácticas y operativas en:\n\n📈 Proyección de demanda\n📦 Administración de inventarios\n🏗️ Planificación de producción\n🔩 Plan de requerimiento de materiales (MRP)\n🗓️ Programación de la producción\n\n\n\n\n\n\n\nEje formativo\n\n\nIngeniería Aplicada · Prerrequisito: ILN-250\n4 créditos UTFSM — 183 horas cronológicas\n\n\n\n\nEvaluación\n\n\n\nInstrumento\nN°\n%\n\n\n\n\nCertamen 1\n1\n35%\n\n\nCertamen 2\n1\n35%\n\n\nControles\n3–4\n15%\n\n\nTareas\n3\n15%\n\n\n\n\n\\[\\text{NF} = 0{,}35 \\cdot C_1 + 0{,}35 \\cdot C_2 + 0{,}30 \\cdot \\overline{Q+T}\\]"
+  },
+  {
+    "objectID": "usm_dtd/geo.html#icn-344-gestión-de-operaciones-ii",
+    "href": "usm_dtd/geo.html#icn-344-gestión-de-operaciones-ii",
+    "title": "Gestión de Operaciones",
+    "section": "ICN-344 · Gestión de Operaciones II",
+    "text": "ICN-344 · Gestión de Operaciones II\n\n\n\nEl estudiante aplica modelos y metodologías para decisiones sobre logística y operaciones estratégicas:\n\n🌐 Logística y cadenas de abastecimiento\n📏 Capacidad de largo plazo\n📍 Localización de instalaciones\n🚚 Modelos de transporte\n🏢 Distribución física de plantas (Layout)\n\n\n\n\n\n\n\nEje formativo\n\n\nIngeniería Aplicada · Prerrequisito: ICN-343\n4 créditos UTFSM — 143 horas cronológicas\n\n\n\n\nEvaluación\n\n\n\nInstrumento\nN°\n%\n\n\n\n\nCertamen 1\n1\n35%\n\n\nCertamen 2\n1\n35%\n\n\nTareas Computacionales\n2\n30%\n\n\n\n\n\\[\\text{NF} = 0{,}35 \\cdot C_1 + 0{,}35 \\cdot C_2 + 0{,}30 \\cdot TC\\]\n\n\n\n\n\n\nTip\n\n\nLas Tareas Computacionales son el corazón del ramo — requieren código, análisis e interpretación."
+  },
+  {
+    "objectID": "usm_dtd/geo.html#section-2",
+    "href": "usm_dtd/geo.html#section-2",
+    "title": "Gestión de Operaciones",
+    "section": "",
+    "text": "Parte 2\nAMPL: el lenguaje de optimización\nModelar problemas reales con sintaxis clara"
+  },
+  {
+    "objectID": "usm_dtd/geo.html#qué-es-ampl",
+    "href": "usm_dtd/geo.html#qué-es-ampl",
+    "title": "Gestión de Operaciones",
+    "section": "¿Qué es AMPL?",
+    "text": "¿Qué es AMPL?\n\n\n\nAMPL (A Mathematical Programming Language) es un lenguaje algebraico de modelación para problemas de optimización:\n\nSeparación limpia entre modelo y datos\nCompatible con solvers industriales: CPLEX, Gurobi, HiGHS, Cbc\nAmpliamente usado en investigación de operaciones, logística, supply chain\nSintaxis cercana a la notación matemática\n\n\n\n\n\n\n\n¿Por qué AMPL y no Excel Solver?\n\n\nExcel Solver escala mal. AMPL maneja modelos con miles de variables y restricciones, y produce código reproducible y auditable.\n\n\n\n\nEstructura de un modelo AMPL\n\n# 1. Conjuntos\nset PRODUCTOS;\n\n# 2. Parámetros\nparam demanda {PRODUCTOS};\nparam costo   {PRODUCTOS};\nparam capacidad;\n\n# 3. Variables\nvar x {PRODUCTOS} &gt;= 0;\n\n# 4. Objetivo\nminimize CostoTotal:\n  sum {p in PRODUCTOS} costo[p] * x[p];\n\n# 5. Restricciones\nsubject to CapacidadMax:\n  sum {p in PRODUCTOS} x[p] &lt;= capacidad;\n\nsubject to SatisfacerDemanda {p in PRODUCTOS}:\n  x[p] &gt;= demanda[p];"
+  },
+  {
+    "objectID": "usm_dtd/geo.html#instalación-pasos",
+    "href": "usm_dtd/geo.html#instalación-pasos",
+    "title": "Gestión de Operaciones",
+    "section": "Instalación: pasos",
+    "text": "Instalación: pasos\n\n\n\n\n\n\n1. Descargar\nIngresa a ampl.com/community-edition\ny descarga el archivo para tu sistema operativo.\n2. Descomprimir\nExtrae el contenido en una carpeta personal\n(sin permisos de administrador).\n3. Abrir amplide/\nBusca el directorio amplide dentro de la carpeta extraída.\n4. Ejecutar\nDoble clic en amplide.exe (Windows)\no en el ícono de cabeza de gato (macOS/Linux).\n\n\n\n\n\n\n\nAdvertencia\n\n\nAtención: Lo más complejo de este proceso es que AMPL debe instalarse localmente. Dependiendo del sistema operativo, puede surgir problemas de rutas, permisos o compatibilidad con el solver."
+  },
+  {
+    "objectID": "usm_dtd/geo.html#section-3",
+    "href": "usm_dtd/geo.html#section-3",
+    "title": "Gestión de Operaciones",
+    "section": "",
+    "text": "Parte 3\nGoogle Colab: todo en la nube\nAMPL + Python sin instalar nada en tu computador"
+  },
+  {
+    "objectID": "usm_dtd/geo.html#el-problema-del-flujo-de-trabajo-tradicional",
+    "href": "usm_dtd/geo.html#el-problema-del-flujo-de-trabajo-tradicional",
+    "title": "Gestión de Operaciones",
+    "section": "El problema del flujo de trabajo tradicional",
+    "text": "El problema del flujo de trabajo tradicional\n\n\n¿Cómo se trabaja habitualmente?\n\n  \n    Instalar AMPL en el computador personal (licencias, versiones, SO)\n  \n  \n    Archivos .mod y .dat dispersos en distintas carpetas del equipo\n  \n  \n    Envío por correo de archivos sueltos sin historial de cambios\n  \n  \n    \"En mi PC funciona\" — resultados no reproducibles entre equipos\n  \n\n\nLo que proponemos\n\n  \n    Google Colab: AMPL y Python corriendo en la nube sin instalar nada\n  \n  \n    Notebooks: modelo, datos, resultados y graficos en un solo lugar\n  \n  \n    GitHub: repositorio por tarea con historial completo de versiones\n  \n  \n    100% reproducible: cualquiera abre el notebook y obtiene el resultado"
+  },
+  {
+    "objectID": "usm_dtd/geo.html#ampl-en-google-colab-instalación-en-3-líneas",
+    "href": "usm_dtd/geo.html#ampl-en-google-colab-instalación-en-3-líneas",
+    "title": "Gestión de Operaciones",
+    "section": "AMPL en Google Colab: instalación en 3 líneas",
+    "text": "AMPL en Google Colab: instalación en 3 líneas\n\n\n\n¿Cómo se instala AMPL en Colab?\n\n# Celda 1: instalar el cliente Python de AMPL\n!pip install amplpy -q\n\n# Celda 2: descargar módulos y solvers\nfrom amplpy import AMPL, tools\ntools.ampl_notebook(\n    modules=[\"highs\", \"cplex\"],\n    license_uuid=\"default\"\n)\n\n\n\n\n\n\n\nLicencia académica\n\n\nAMPL ofrece una licencia gratuita para uso educativo a través de amplpy. No requiere tarjeta de crédito.\n\n\n\n\nResolver un problema completo en Colab\n\nfrom amplpy import AMPL\n\nampl = AMPL()\n\n# Modelo inline (también puede ser un archivo .mod)\nampl.eval(\"\"\"\n  var x &gt;= 0;\n  var y &gt;= 0;\n  maximize obj: 5*x + 4*y;\n  s.t. c1: 6*x + 4*y &lt;= 24;\n  s.t. c2:   x + 2*y &lt;=  6;\n\"\"\")\n\nampl.option[\"solver\"] = \"highs\"\nampl.solve()\n\nprint(\"x =\", ampl.var[\"x\"].value())\nprint(\"y =\", ampl.var[\"y\"].value())\nprint(\"obj =\", ampl.obj[\"obj\"].value())"
+  },
+  {
+    "objectID": "usm_dtd/geo.html#python-para-análisis-y-visualización",
+    "href": "usm_dtd/geo.html#python-para-análisis-y-visualización",
+    "title": "Gestión de Operaciones",
+    "section": "Python para análisis y visualización",
+    "text": "Python para análisis y visualización\n\n\n\nJunto con AMPL, usamos Python para:\n\nPreparar los datos de entrada (pandas)\nExtraer resultados del modelo y transformarlos\nVisualizar sensibilidades, inventarios, rutas (matplotlib, plotly)\nInterpretar la solución en contexto del negocio\n\n\n\n\n\n\n\nDivisión clara de roles\n\n\n\nAMPL → formula y resuelve el modelo de optimización\nPython → prepara datos, procesa resultados, genera gráficos\n\n\n\n\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Extraer solución de AMPL a DataFrame\nresultados = ampl.var[\"x\"].to_pandas()\n\n# Visualizar producción óptima por período\nfig, ax = plt.subplots(figsize=(8, 4))\nax.bar(\n    resultados.index,\n    resultados[\"x.val\"],\n    color=\"#4A9FD4\"\n)\nax.set_title(\"Plan de producción óptimo\", fontsize=13)\nax.set_xlabel(\"Período\")\nax.set_ylabel(\"Unidades producidas\")\nax.axhline(\n    y=demanda_promedio,\n    color=\"#C9A84C\",\n    linestyle=\"--\",\n    label=\"Demanda promedio\"\n)\nax.legend()\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "usm_dtd/geo.html#section-4",
+    "href": "usm_dtd/geo.html#section-4",
+    "title": "Gestión de Operaciones",
+    "section": "",
+    "text": "Parte 4\nGitHub: entregar tareas como ingenieros\nControl de versiones aplicado al trabajo académico"
+  },
+  {
+    "objectID": "usm_dtd/geo.html#por-qué-github-y-no-solo-el-correo",
+    "href": "usm_dtd/geo.html#por-qué-github-y-no-solo-el-correo",
+    "title": "Gestión de Operaciones",
+    "section": "¿Por qué GitHub y no solo el correo?",
+    "text": "¿Por qué GitHub y no solo el correo?\n\n\n\n  \n    📧 Entrega por correo (forma tradicional)\n    \n      ❌  \"tarea_v3_FINAL_corregida.zip\"\n      ❌  Sin historial de qué cambió y cuándo\n      ❌  Difícil de retroalimentar con precisión\n      ❌  No se puede ver el proceso, solo el resultado\n      ❌  Archivos perdidos o versiones equivocadas\n    \n  \n\n  \n    🐙 Entrega por GitHub (forma moderna)\n    \n      ✅  Repositorio con estructura clara por tarea\n      ✅  Historial completo de commits con mensajes\n      ✅  Feedback directo en el código mediante Issues\n      ✅  El notebook se puede abrir y ejecutar en Colab\n      ✅  Portafolio profesional para después de la U\n    \n  \n\n\n\n\nGit y GitHub son habilidades requeridas en la industria. Practicarlas desde el ramo es una ventaja directa."
+  },
+  {
+    "objectID": "usm_dtd/geo.html#estructura-de-un-repositorio-de-tarea",
+    "href": "usm_dtd/geo.html#estructura-de-un-repositorio-de-tarea",
+    "title": "Gestión de Operaciones",
+    "section": "Estructura de un repositorio de tarea",
+    "text": "Estructura de un repositorio de tarea\n\n\n\nEstructura recomendada\n\n\n\n\n\ntarea_01_inventarios/\n\n\n\n├── README.md\n← descripción del problema y resultados\n\n\n├── notebook.ipynb\n← código AMPL + Python (abre en Colab)\n\n\n├── data/\n\n\n\n   └── datos_demanda.csv\n← datos de entrada\n\n\n├── model/\n\n\n\n   └── inventario.mod\n← modelo AMPL (opcional)\n\n\n└── results/\n\n\n\n   └── plan_optimo.png\n← gráfico de la solución\n\n\n\n\n\n\nFlujo de trabajo\n\n  \n    1\n    Crear repositorio en GitHub con el nombre de la tarea\n  \n  \n    2\n    Abrir el notebook en Google Colab (botón \"Open in Colab\")\n  \n  \n    3\n    Trabajar: modelar, resolver, analizar, visualizar\n  \n  \n    4\n    Hacer commit con mensajes descriptivos de los avances\n  \n  \n    5\n    Entregar: compartir el link del repositorio (no enviar archivos)"
+  },
+  {
+    "objectID": "usm_dtd/geo.html#flujo-de-trabajo-integrado",
+    "href": "usm_dtd/geo.html#flujo-de-trabajo-integrado",
+    "title": "Gestión de Operaciones",
+    "section": "Flujo de trabajo integrado",
+    "text": "Flujo de trabajo integrado\n\n\n\n  \n    📋\n    Enunciado\n    Problema de operaciones publicado en el curso\n  \n\n  →\n\n  \n    🐙\n    GitHub\n    Crear repo, clonar template del curso\n  \n\n  →\n\n  \n    ☁️\n    Google Colab\n    Modelar en AMPL, analizar con Python\n  \n\n  →\n\n  \n    💾\n    Commit\n    Guardar avances con mensajes claros\n  \n\n  →\n\n  \n    ✅\n    Entrega\n    Link al repositorio público → el docente evalúa directamente\n  \n\n\n\n\n  Todo en un solo ecosistema — sin envíos de archivos, sin \"¿cuál es la versión final?\", sin problemas de instalación."
+  },
+  {
+    "objectID": "usm_dtd/geo.html#resumen-qué-cambia-y-qué-no",
+    "href": "usm_dtd/geo.html#resumen-qué-cambia-y-qué-no",
+    "title": "Gestión de Operaciones",
+    "section": "Resumen: ¿qué cambia y qué no?",
+    "text": "Resumen: ¿qué cambia y qué no?\n\n\n\n  \n    🔄 Lo que cambia (la forma)\n    \n      • AMPL corre en Google Colab, no en el PC local\n      • Las tareas se entregan como repositorios GitHub\n      • Modelo + datos + resultados en un notebook\n      • Feedback del docente directo en el repositorio\n    \n  \n\n  \n    ✅ Lo que no cambia (el fondo)\n    \n      • La formulación matemática de cada modelo\n      • Los contenidos temáticos de ambos ramos\n      • La exigencia académica y los criterios de evaluación\n      • El énfasis en interpretación y toma de decisiones\n    \n  \n\n\n\n\n\n\n\n\n\nLo importante\n\n\nLa herramienta cambia para que puedan enfocarse en lo que importa: formular bien el problema, entender la solución y tomar decisiones fundamentadas."
+  },
+  {
+    "objectID": "usm_dtd/geo.html#próximos-pasos",
+    "href": "usm_dtd/geo.html#próximos-pasos",
+    "title": "Gestión de Operaciones",
+    "section": "Próximos pasos",
+    "text": "Próximos pasos\n\n\nEsta semana:\n\nCrear una cuenta en github.com si no tienen\nAbrir el repositorio template del curso y clonarlo\nEjecutar el notebook de introducción a AMPL en Google Colab\nResolver el ejercicio de calentamiento (EOQ básico)\n\n\n\n\n\n\n\nRecursos disponibles\n\n\n\n🔗 Repositorio del curso: github.com/[curso]/icn343\n📓 Notebook de introducción: intro_ampl.ipynb\n📖 Guía rápida de Git para el ramo: README.md\n\n\n\n\n\nCalendario de tareas\n\n\n\nTarea\nTema\nEntrega\n\n\n\n\nT1\nInventarios (EOQ/MRP)\nSemana 5\n\n\nT2\nPlanificación producción\nSemana 9\n\n\nT3\nTransporte/Localización\nSemana 13\n\n\n\n\n\n\n\n\n\n\nRecomendación\n\n\nNo esperen a la última semana para hacer commit. El historial de commits cuenta — muestra que trabajaron el problema y no solo copiaron una solución."
+  },
+  {
+    "objectID": "usm_dtd/geo.html#manos-a-la-obra",
+    "href": "usm_dtd/geo.html#manos-a-la-obra",
+    "title": "Gestión de Operaciones",
+    "section": "🎉 ¡Manos a la obra!",
+    "text": "🎉 ¡Manos a la obra!\n\n\n\nEl flujo completo en una línea:\n\nEnunciado → GitHub → Colab (AMPL + Python) → Commit → Link de entrega\n\n\n❓ ¿Preguntas sobre la metodología?\n📧 Contacto del curso: [correo@usm.cl]\n🔗 Repositorio: github.com/[curso]/icn343\n\n\nLos materiales de esta presentación estarán disponibles en el repositorio del curso.\n\n\n\n  🚀\n  Stack tecnológico del ramo\n  \n    \n      ⚙️\n      AMPL\n      Optimización\n    \n    \n      🐍\n      Python\n      Análisis y gráficos\n    \n    \n      ☁️\n      Google Colab\n      Entorno en la nube\n    \n    \n      🐙\n      GitHub\n      Entrega y versiones"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#validación-y-limpieza-con-pandas",
+    "href": "ai/analitica_dtd.html#validación-y-limpieza-con-pandas",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "Validación y limpieza con pandas",
+    "text": "Validación y limpieza con pandas\n\n\n\n\nAntes de modelar: un dato sucio es una alerta equivocada.\nmerge con validate=\"1:1\" detecta RUT duplicados al unir fuentes heterogéneas.\npd.to_numeric(errors=\"coerce\") + fillna para tipos mixtos y huecos.\nastype(\"category\") reduce memoria en variables como carrera.\npandera convierte los supuestos en un contrato verificable del dataset.\n\n\n\n\n\n\n\nNota\n\n\nValidar con lazy=True acumula todos los errores en un solo reporte, en vez de fallar en el primero.\n\n\n\n\n\nimport pandas as pd\nimport pandera as pa\nfrom pandera import Column, Check\n\n# 1 · Merge de fuentes heterogéneas (BD + CSV + forms)\ndf = (df_sql.merge(df_csv, on=\"rut\", how=\"left\", validate=\"1:1\")\n            .merge(df_forms, on=\"rut\", how=\"left\"))\n\n# 2 · Casting de tipos y normalización\ndf[\"rut\"] = df[\"rut\"].astype(\"string\").str.replace(\".\", \"\", regex=False)\ndf[\"promedio\"] = pd.to_numeric(df[\"promedio\"], errors=\"coerce\")\ndf[\"asistencia\"] = df[\"asistencia\"].fillna(df[\"asistencia\"].median())\ndf[\"carrera\"] = df[\"carrera\"].astype(\"category\")\n\n# 3 · Validación de esquema (contrato de datos)\nschema = pa.DataFrameSchema({\n    \"rut\":        Column(\"string\", unique=True),\n    \"promedio\":   Column(float, Check.in_range(1.0, 7.0)),\n    \"asistencia\": Column(float, Check.in_range(0, 100)),\n    \"carrera\":    Column(\"category\", nullable=False),\n})\ndf = schema.validate(df, lazy=True)   # acumula todos los errores"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#backtesting-temporal-walk-forward-por-cohorte",
+    "href": "ai/analitica_dtd.html#backtesting-temporal-walk-forward-por-cohorte",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "Backtesting temporal: walk-forward por cohorte",
+    "text": "Backtesting temporal: walk-forward por cohorte\n\n\n\n\nValidar con un split aleatorio mira al futuro (fuga temporal).\nWalk-forward: se entrena con cohortes pasadas y se evalúa en la siguiente.\nM23 → predice M24 · M23+M24 → predice M25.\nReplica las condiciones reales: el modelo solo conoce el pasado.\nCada generación tiene su AUC → medimos estabilidad en el tiempo.\n\n\n\n\n\n\n\nImportante\n\n\nUn AUC alto en cross-validation aleatorio puede ser un espejismo si las cohortes cambian. El backtesting temporal es la prueba honesta.\n\n\n\n\n\n# Walk-forward: entrenar en el pasado, validar en el futuro\ncohortes = [\"M23\", \"M24\", \"M25\"]\nresultados = []\n\nfor i in range(1, len(cohortes)):\n    train = df[df[\"cohorte\"].isin(cohortes[:i])]   # M23 → M23,M24\n    test  = df[df[\"cohorte\"] == cohortes[i]]        # generación sgte.\n\n    Xtr, ytr = train.drop(columns=\"riesgo\"), train[\"riesgo\"]\n    Xte, yte = test.drop(columns=\"riesgo\"),  test[\"riesgo\"]\n\n    modelo = XGBClassifier(\n        n_estimators=400, max_depth=5,\n        learning_rate=0.05, eval_metric=\"auc\",\n    ).fit(Xtr, ytr)\n\n    proba = modelo.predict_proba(Xte)[:, 1]\n    resultados.append({\n        \"valida_en\": cohortes[i],\n        \"auc\": roc_auc_score(yte, proba),\n        \"n\": len(yte),\n    })\n\nbacktest = pd.DataFrame(resultados)   # AUC por generación"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#métricas-de-evaluación-qué-medimos",
+    "href": "ai/analitica_dtd.html#métricas-de-evaluación-qué-medimos",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "Métricas de evaluación: ¿qué medimos?",
+    "text": "Métricas de evaluación: ¿qué medimos?\n\n\n\n\nAUC-ROC → ¿el modelo ordena bien el riesgo? (independiente del umbral).\nF1 → equilibrio entre precisión y recall en la clase de riesgo.\nPrecision@K → de los K casos más prioritarios, ¿cuántos son aciertos?\n\n\n\n\n\n\n\nPor qué precision@K y no accuracy\n\n\nLa deserción es un evento raro (~10-15%). Un modelo que dice “nadie deserta” tendría ~85% de accuracy y sería inútil. Como las unidades solo pueden intervenir a un número limitado de estudiantes, lo que importa es acertar en el top-K priorizado.\n\n\n\n\n\nfrom sklearn.metrics import roc_auc_score, f1_score\n\ndef precision_at_k(y_true, y_score, k):\n    \"\"\"Precisión entre los k estudiantes de mayor riesgo.\"\"\"\n    top_k = y_score.argsort()[::-1][:k]\n    return y_true.iloc[top_k].mean()\n\nauc = roc_auc_score(y_test, proba)        # ranking global\nf1  = f1_score(y_test, proba &gt; 0.5)       # balance P/R\n\n# Las unidades solo pueden contactar a ~150 estudiantes\np_at_150 = precision_at_k(y_test, proba, k=150)\n\nprint(f\"AUC-ROC      : {auc:.3f}\")\nprint(f\"F1           : {f1:.3f}\")\nprint(f\"Precision@150: {p_at_150:.3f}\")"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#optimización-el-modelo-milp-del-scheduler",
+    "href": "ai/analitica_dtd.html#optimización-el-modelo-milp-del-scheduler",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "Optimización: el modelo MILP del scheduler",
+    "text": "Optimización: el modelo MILP del scheduler\n\n\n\nAsignar cursos a salas y bloques minimizando huecos:\n\\[\\min \\sum_{c,s,b} h_{csb}\\, x_{csb}\\]\nSujeto a:\n\\[\\sum_{s,b} x_{csb} = 1 \\quad \\forall c\\]\n\\[\\sum_{c} x_{csb} \\le 1 \\quad \\forall s,b\\]\n\\[x_{csb}\\, n_c \\le \\text{cap}_s \\quad \\forall c,s,b\\]\ncon \\(x_{csb} \\in \\{0,1\\}\\) · \\(n_c\\) inscritos · \\(\\text{cap}_s\\) capacidad.\n\n\nimport gurobipy as gp\nfrom gurobipy import GRB\n\nm = gp.Model(\"scheduler_salas\")\n\n# x[c,s,b] = 1 si el curso c se dicta en sala s, bloque b\nx = m.addVars(cursos, salas, bloques, vtype=GRB.BINARY, name=\"x\")\n\n# (1) Cada curso se asigna exactamente una vez\nm.addConstrs((gp.quicksum(x[c, s, b] for s in salas for b in bloques) == 1\n              for c in cursos), name=\"asignacion_unica\")\n\n# (2) Una sala no puede tener dos cursos en el mismo bloque\nm.addConstrs((gp.quicksum(x[c, s, b] for c in cursos) &lt;= 1\n              for s in salas for b in bloques), name=\"sala_sin_choque\")\n\n# (3) Capacidad: la sala debe caber al curso\nm.addConstrs((x[c, s, b] * inscritos[c] &lt;= capacidad[s]\n              for c in cursos for s in salas for b in bloques),\n             name=\"capacidad\")\n\nm.setObjective(gp.quicksum(huecos[c, s, b] * x[c, s, b]\n               for c in cursos for s in salas for b in bloques),\n               GRB.MINIMIZE)\nm.optimize()"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#kedro-el-data-catalog",
+    "href": "ai/analitica_dtd.html#kedro-el-data-catalog",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "Kedro: el Data Catalog",
+    "text": "Kedro: el Data Catalog\n\n\n\n\nEl Data Catalog declara dónde y cómo viven los datos — el código nunca toca rutas.\nCSVDataset, SQLTableDataset, ParquetDataset, PickleDataset: un tipo por formato.\ncredentials separa secretos del repositorio (credentials.yml, fuera de git).\nversioned: true guarda cada versión del modelo con timestamp → trazabilidad total.\n\n\n\n\n\n\n\nNota\n\n\nCambiar de CSV a base de datos es una línea en el catálogo, sin tocar la lógica del pipeline.\n\n\n\n\n\n# conf/base/catalog.yml — contrato único de datos\n\nmatriculas_raw:\n  type: pandas.CSVDataset\n  filepath: data/01_raw/matriculas_2025.csv\n  load_args:\n    sep: \";\"\n    encoding: latin-1\n\nalumnos_bd:\n  type: pandas.SQLTableDataset\n  table_name: academico.alumnos\n  credentials: db_oracle\n  load_args:\n    schema: dtd\n\ndatos_limpios:\n  type: pandas.ParquetDataset\n  filepath: data/03_primary/datos_limpios.parquet\n\nmodelo_riesgo:\n  type: pickle.PickleDataset\n  filepath: data/06_models/xgb_sate.pkl\n  versioned: true"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#kedro-el-dag-del-pipeline-sat-e",
+    "href": "ai/analitica_dtd.html#kedro-el-dag-del-pipeline-sat-e",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "Kedro: el DAG del pipeline SAT-E",
+    "text": "Kedro: el DAG del pipeline SAT-E\n\n\n\n\nCada nodo es una función Python pura: entradas → transformación → salidas.\nKedro resuelve el orden de ejecución automáticamente desde el catálogo.\nkedro viz genera el grafo interactivo; aquí su versión esquemática.\nNodos independientes corren en paralelo; los dependientes, en orden.\n\n\n\n\n\n\n\nTip\n\n\nEl DAG hace visible la dependencia entre datos y código: nada se ejecuta antes de que sus entradas existan.\n\n\n\n\n\n\n  🧱 kedro viz — pipeline SAT-E\n  \n    🗄️ alumnos_bd\n    📄 matriculas_raw\n  \n  ↓\n  ⚙️ limpiar_datos\n  ↓ datos_limpios\n  🧪 feature_engineering\n  ↓ features  +  params:xgb\n  🌲 entrenar_modelo\n  ↓ modelo_riesgo\n  \n    🔍 explicar_shap\n    →\n    🚨 reporte_alertas"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#fastapi-estructura-del-proyecto",
+    "href": "ai/analitica_dtd.html#fastapi-estructura-del-proyecto",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "FastAPI: estructura del proyecto",
+    "text": "FastAPI: estructura del proyecto\n\n\n\n\nSeparar por responsabilidad evita el “main.py de 2000 líneas”.\nrouters/ → endpoints · schemas/ → contratos Pydantic · services/ → lógica de negocio.\nmodels/ aísla la carga del .pkl para no recargarlo en cada request.\nAPIRouter registra y versiona grupos de endpoints bajo /api/....\n\n\n\n\n\n\n\nTip\n\n\nEs la estructura que recomienda la documentación oficial para Bigger Applications: escala sin reescrituras.\n\n\n\n\n\napp/\n├── main.py              # crea FastAPI(), incluye routers\n├── routers/\n│   ├── predecir.py      # POST /predecir  (endpoints SAT-E)\n│   └── salud.py         # GET  /health\n├── schemas/\n│   └── alumno.py        # modelos Pydantic (entrada/salida)\n├── models/\n│   └── riesgo.py        # carga del modelo XGBoost (.pkl)\n├── services/\n│   └── scoring.py       # lógica de negocio: score + SHAP\n└── core/\n    └── config.py        # settings, variables de entorno\n# app/routers/predecir.py\nfrom fastapi import APIRouter\nfrom app.schemas.alumno import AlumnoIn, RiesgoOut\nfrom app.services.scoring import calcular_riesgo\n\nrouter = APIRouter(prefix=\"/api\", tags=[\"SAT-E\"])\n\n@router.post(\"/predecir\", response_model=RiesgoOut)\ndef predecir(alumno: AlumnoIn):\n    return calcular_riesgo(alumno)"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#fastapi-autenticación-con-oauth2-jwt",
+    "href": "ai/analitica_dtd.html#fastapi-autenticación-con-oauth2-jwt",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "FastAPI: autenticación con OAuth2 / JWT",
+    "text": "FastAPI: autenticación con OAuth2 / JWT\n\n\n\n\nLos datos académicos son sensibles: cada endpoint exige identidad verificada.\nOAuth2PasswordBearer extrae el Bearer token de la cabecera Authorization.\nEl JWT firmado lleva el usuario (sub) y expiración; se valida sin tocar la BD.\nDepends(usuario_actual) protege cualquier endpoint con una sola línea.\n\n\n\n\n\n\n\nImportante\n\n\nSi el token se manipula o expira, jwt.decode lanza JWTError y el acceso se rechaza con 401.\n\n\n\n\n\nfrom fastapi import Depends, HTTPException, status\nfrom fastapi.security import OAuth2PasswordBearer\nfrom jose import jwt, JWTError\n\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"api/token\")\nSECRET, ALGO = settings.jwt_secret, \"HS256\"\n\ndef usuario_actual(token: str = Depends(oauth2_scheme)):\n    cred_error = HTTPException(\n        status_code=status.HTTP_401_UNAUTHORIZED,\n        detail=\"Token inválido o expirado\",\n        headers={\"WWW-Authenticate\": \"Bearer\"},\n    )\n    try:\n        payload = jwt.decode(token, SECRET, algorithms=[ALGO])\n        usuario = payload.get(\"sub\")\n        if usuario is None:\n            raise cred_error\n    except JWTError:\n        raise cred_error\n    return usuario\n\n@router.get(\"/alertas\")\ndef listar_alertas(usuario: str = Depends(usuario_actual)):\n    return obtener_alertas_unidad(usuario)   # solo autenticados"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#orquestación-con-docker-compose",
+    "href": "ai/analitica_dtd.html#orquestación-con-docker-compose",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "Orquestación con Docker Compose",
+    "text": "Orquestación con Docker Compose\n\n\n\n\nUn solo docker compose up levanta todo el stack reproducible.\nexpose mantiene los servicios internos; solo Nginx publica puertos (443/80).\nhealthcheck + depends_on: service_healthy → el dashboard arranca solo si la API responde.\nvolumes montan modelos y certificados sin reconstruir la imagen.\n\n\n\n\n\n\n\nNota\n\n\nEl modelo se monta como volumen :ro (solo lectura): actualizar el .pkl no exige reconstruir la imagen de la API.\n\n\n\n\n\nservices:\n  api:                          # FastAPI + XGBoost\n    build: ./api\n    expose: [\"8000\"]\n    environment:\n      - MODEL_PATH=/models/xgb_sate.pkl\n    volumes:\n      - ./models:/models:ro\n    healthcheck:\n      test: [\"CMD\", \"curl\", \"-f\", \"http://localhost:8000/health\"]\n      interval: 30s\n      retries: 3\n\n  dashboard:                    # Streamlit\n    build: ./dashboard\n    expose: [\"8501\"]\n    depends_on:\n      api:\n        condition: service_healthy\n\n  nginx:                        # gateway público\n    image: nginx:1.25-alpine\n    ports: [\"443:443\", \"80:80\"]\n    volumes:\n      - ./nginx.conf:/etc/nginx/nginx.conf:ro\n      - ./certs:/etc/nginx/certs:ro\n    depends_on: [api, dashboard]"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#streamlit-estado-con-st.session_state",
+    "href": "ai/analitica_dtd.html#streamlit-estado-con-st.session_state",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "Streamlit: estado con st.session_state",
+    "text": "Streamlit: estado con st.session_state\n\n\n\n\nStreamlit re-ejecuta todo el script en cada interacción → las variables se pierden.\nst.session_state es un diccionario que persiste entre reruns.\nGuardamos los filtros (campus, umbral) para no perder el contexto del usuario.\nHabilita flujos multi-paso: seleccionar cohorte → filtrar → exportar, sin reiniciar.\n\n\n\n\n\n\n\nTip\n\n\nSin session_state, mover un slider reiniciaría los demás filtros. Con él, el dashboard se comporta como una app con memoria.\n\n\n\n\n\nimport streamlit as st\n\n# Estado inicial (solo la primera vez)\nif \"filtros\" not in st.session_state:\n    st.session_state.filtros = {\"campus\": \"Casa Central\",\n                                \"umbral\": 0.7}\n\n# Los widgets leen y escriben en session_state\nst.session_state.filtros[\"campus\"] = st.selectbox(\n    \"Campus\", CAMPUS,\n    index=CAMPUS.index(st.session_state.filtros[\"campus\"]),\n)\nst.session_state.filtros[\"umbral\"] = st.slider(\n    \"Umbral de riesgo\", 0.0, 1.0,\n    st.session_state.filtros[\"umbral\"],\n)\n\n# El filtro sobrevive a cada rerun del script\ndf_filtrado = aplicar_filtros(df, st.session_state.filtros)\nst.metric(\"Alumnos en alerta\", len(df_filtrado))"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#streamlit-fastapi-consumir-el-modelo",
+    "href": "ai/analitica_dtd.html#streamlit-fastapi-consumir-el-modelo",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "Streamlit ↔︎ FastAPI: consumir el modelo",
+    "text": "Streamlit ↔︎ FastAPI: consumir el modelo\n\n\n\n\nEl dashboard no carga el modelo: lo consume vía la API (separación de capas).\nrequests.get con Bearer token reutiliza la autenticación JWT del backend.\n@st.cache_data(ttl=300) evita golpear la API en cada rerun.\nMismo modelo, una sola fuente de verdad para Streamlit, React y Power BI.\n\n\n\n\n\n\n\nNota\n\n\nDesacoplar vista y modelo permite actualizar el XGBoost sin tocar el dashboard — solo cambia lo que responde la API.\n\n\n\n\n\nimport streamlit as st\nimport requests\n\nAPI = \"https://analitica.dtd.usm.cl/api\"\n\n@st.cache_data(ttl=300)            # cachea 5 min, evita llamar de más\ndef consultar_riesgo(rut: str) -&gt; dict:\n    r = requests.get(\n        f\"{API}/predecir/{rut}\",\n        headers={\"Authorization\": f\"Bearer {st.session_state.token}\"},\n        timeout=10,\n    )\n    r.raise_for_status()\n    return r.json()\n\nrut = st.text_input(\"RUT del estudiante\")\nif rut:\n    datos = consultar_riesgo(rut)\n    st.metric(\"Riesgo\", f\"{datos['riesgo']:.0%}\")\n    st.bar_chart(datos[\"shap\"])     # aporte de cada variable"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#control-de-versiones-git-github",
+    "href": "ai/analitica_dtd.html#control-de-versiones-git-github",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "Control de versiones: Git + GitHub",
+    "text": "Control de versiones: Git + GitHub\n\n\n\n\nTodo el código vive en GitHub: pipelines, API, dashboards e infraestructura.\nBranching: main (producción) ← develop ← feature/sate-*.\nNadie hace push directo a main: todo entra por Pull Request.\nCada PR exige revisión de un par + CI en verde antes de fusionar.\nTags de versión (v2.3-M25) marcan cada release del modelo.\n\n\n\n\n\n\n\nTip\n\n\nLa rama main siempre está desplegable. Si un experimento falla, se descarta la rama — producción nunca se rompe.\n\n\n\n\n\n\n  🌿 Flujo de ramas del equipo\n  \n    main\n    ● v2.2\n    ────────\n    ● v2.3-M25\n  \n  \n    develop\n    ● ─ ● ─ ●\n    ↑ merge\n  \n  \n    feature/*\n    ● ─ ●\n    → PR\n  \n  PR + review + CI ✓ → merge a develop → release a main"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#testing-en-pipelines-de-datos",
+    "href": "ai/analitica_dtd.html#testing-en-pipelines-de-datos",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "Testing en pipelines de datos",
+    "text": "Testing en pipelines de datos\n\n\n\n\npytest prueba la lógica: ¿la función de limpieza hace lo que prometemos?\ngreat_expectations prueba los datos: ¿el dataset cumple sus expectativas?\nLas expectativas corren en cada ejecución → un dato fuera de rango frena el pipeline.\nFixtures pequeños y deterministas hacen los tests rápidos y reproducibles.\n\n\n\n\n\n\n\nImportante\n\n\nUn test que falla detiene el despliegue. Es preferible frenar un pipeline a publicar una alerta basada en datos corruptos.\n\n\n\n\n\n# tests/test_datos.py — pytest valida la lógica\nimport pandas as pd\nfrom pipelines.limpieza import limpiar_datos\n\ndef test_no_hay_ruts_duplicados():\n    df = limpiar_datos(cargar_fixture(\"muestra.csv\"))\n    assert df[\"rut\"].is_unique\n\ndef test_promedios_en_rango():\n    df = limpiar_datos(cargar_fixture(\"muestra.csv\"))\n    assert df[\"promedio\"].between(1.0, 7.0).all()\n# great_expectations — expectativas sobre el dataset\nimport great_expectations as gx\n\nbatch = gx.read_csv(\"data/03_primary/datos_limpios.parquet\")\nbatch.expect_column_values_to_not_be_null(\"rut\")\nbatch.expect_column_values_to_be_between(\"asistencia\", 0, 100)\nbatch.expect_column_values_to_be_in_set(\"campus\", CAMPUS_USM)"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#drift-detection-ks-test-y-psi",
+    "href": "ai/analitica_dtd.html#drift-detection-ks-test-y-psi",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "Drift detection: KS test y PSI",
+    "text": "Drift detection: KS test y PSI\n\n\n\n\nUn modelo entrenado en M23 puede degradarse si las cohortes nuevas cambian.\nKS test (ks_2samp) compara distribuciones: ¿train y producción difieren?\nPSI cuantifica el desplazamiento: &lt;0.1 estable · 0.1–0.25 alerta · &gt;0.25 severo.\nMonitoreamos las variables clave (asistencia, notas) en cada generación.\n\n\n\n\n\n\n\nImportante\n\n\nEl drift es la señal de “reentrenar”. Sin monitoreo, el modelo envejece en silencio y las alertas pierden precisión sin que nadie lo note.\n\n\n\n\n\nfrom scipy.stats import ks_2samp\nimport numpy as np\n\ndef psi(esperado, actual, bins=10):\n    \"\"\"Population Stability Index entre train y producción.\"\"\"\n    cortes = np.quantile(esperado, np.linspace(0, 1, bins + 1))\n    e = np.histogram(esperado, cortes)[0] / len(esperado)\n    a = np.histogram(actual,   cortes)[0] / len(actual)\n    e, a = np.clip(e, 1e-4, None), np.clip(a, 1e-4, None)\n    return np.sum((a - e) * np.log(a / e))\n\n# KS test: ¿cambió la distribución de asistencia?\nstat, p = ks_2samp(train[\"asistencia\"], prod[\"asistencia\"])\nhay_drift_ks = p &lt; 0.05\n\npsi_asist = psi(train[\"asistencia\"], prod[\"asistencia\"])\n# PSI &gt; 0.25 → cambio severo, reentrenar el modelo\nprint(f\"KS p-value={p:.3f}  ·  PSI={psi_asist:.3f}\")"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#registro-de-experimentos-mlflow",
+    "href": "ai/analitica_dtd.html#registro-de-experimentos-mlflow",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "Registro de experimentos: MLflow",
+    "text": "Registro de experimentos: MLflow\n\n\n\n\nCada entrenamiento queda registrado: parámetros, métricas y artefactos.\nlog_params / log_metrics → comparar generaciones M23/M24/M25 lado a lado.\nlog_model versiona el .pkl en el Model Registry (staging → production).\nReproducibilidad total: cada alerta se rastrea al modelo exacto que la generó.\n\n\n\n\n\n\n\nNota\n\n\nMLflow responde la pregunta auditora: “¿qué modelo, con qué datos y qué métricas, generó esta alerta?” — clave en un sistema institucional.\n\n\n\n\n\nimport mlflow, mlflow.sklearn\n\nmlflow.set_experiment(\"SAT-E\")\n\nwith mlflow.start_run(run_name=\"xgb_M25_walkforward\"):\n    mlflow.log_params({\n        \"n_estimators\": 400, \"max_depth\": 5,\n        \"learning_rate\": 0.05, \"cohorte_train\": \"M23+M24\",\n    })\n\n    modelo = XGBClassifier(**params).fit(Xtr, ytr)\n    proba = modelo.predict_proba(Xte)[:, 1]\n\n    mlflow.log_metrics({\n        \"auc\": roc_auc_score(yte, proba),\n        \"f1\":  f1_score(yte, proba &gt; 0.5),\n        \"precision_at_150\": precision_at_k(yte, proba, 150),\n    })\n    mlflow.sklearn.log_model(\n        modelo, \"modelo\", registered_model_name=\"sate\")"
+  },
+  {
+    "objectID": "ai/analitica_dtd.html#section-7",
+    "href": "ai/analitica_dtd.html#section-7",
+    "title": "Stack tecnológico del área de Analítica",
+    "section": "",
+    "text": "¿Preguntas?\nÁrea de Analítica · Dirección de Transformación Digital\nanalitica@dtd.usm.cl · github.com/dtd-usm\n\nDTD · UTFSM · Valparaíso"
+  },
+  {
+    "objectID": "ai/IMAGENES_REQUERIDAS.html",
+    "href": "ai/IMAGENES_REQUERIDAS.html",
+    "title": "Imágenes requeridas — analitica_dtd.qmd",
+    "section": "",
+    "text": "Guía de imágenes que elevarían la presentación del Stack tecnológico del área de Analítica (DTD · UTFSM). Todas las imágenes van en ai/images/.\nPaleta del tema (úsala en diagramas): #0F2044 navy · #1A3A6B card · #C9A84C gold (títulos) · #4A9FD4 blue (acentos) · #E74C3C rojo alerta · #27AE60 verde OK. Fondo oscuro, fuente serif/Georgia.\n\n\n\n\n\n\nSlide: “Kedro: el DAG del pipeline SAT-E” (reemplaza/acompaña el DAG en HTML).\nDebe mostrar: el grafo de nodos del pipeline SAT-E: alumnos_bd + matriculas_raw → limpiar_datos → feature_engineering → entrenar_modelo (+ params:xgb) → explicar_shap → reporte_alertas. Nodos = funciones, óvalos/cajas = datasets.\nCómo generarla: ejecutar kedro viz en el repo real del proyecto SAT-E y tomar captura del grafo. Alternativa: exportar con kedro viz --save-file o reconstruirlo en draw.io con la paleta del tema sobre fondo #0F2044.\n\n\n\n\n\nSlide: “Machine learning: XGBoost + SHAP” (junto al gráfico de barras HTML).\nDebe mostrar: beeswarm plot de SHAP con las variables más influyentes ordenadas por importancia (asistencia, notas 1er sem., ramos reprobados, PSU/PAES, nivel socioecon.).\nCómo generarla: en Python con el modelo real:\nimport shap, matplotlib.pyplot as plt\nexplainer = shap.TreeExplainer(modelo)\nshap_values = explainer(X_test)\nshap.plots.beeswarm(shap_values, max_display=10, show=False)\nplt.savefig(\"images/shap_beeswarm.png\", dpi=160, bbox_inches=\"tight\")\nUsar fondo claro o transparente; recortar márgenes.\n\n\n\n\n\nSlide: “FastAPI” o “FastAPI: estructura del proyecto”.\nDebe mostrar: la UI Swagger (/docs) del endpoint POST /predecir, con el schema AlumnoIn expandido y un ejemplo de respuesta {\"riesgo\": ...}.\nCómo generarla: levantar la API (uvicorn app.main:app), abrir http://localhost:8000/docs, expandir /predecir y capturar pantalla.\n\n\n\n\n\nSlide: “Backtesting temporal: walk-forward por cohorte”.\nDebe mostrar: curvas de AUC por cohorte/generación (M23, M24, M25) — train vs validación, evidenciando estabilidad temporal. Una línea por generación o barras de AUC por valida_en.\nCómo generarla: matplotlib usando el DataFrame backtest del código del slide:\nax = backtest.plot(x=\"valida_en\", y=\"auc\", marker=\"o\")\nax.set_ylabel(\"AUC-ROC\"); ax.set_ylim(0.5, 1.0)\nplt.savefig(\"images/xgb_learning_curves.png\", dpi=160, bbox_inches=\"tight\")\n\n\n\n\n\nSlide: “Registro de experimentos: MLflow”.\nDebe mostrar: la UI de MLflow (mlflow ui) con el experimento SAT-E: tabla de runs con columnas de params (n_estimators, max_depth) y métricas (auc, f1, precision_at_150).\nCómo generarla: correr algunos experimentos, mlflow ui, abrir el experimento SAT-E y capturar la tabla comparativa de runs.\n\n\n\n\n\nSlide: “Proyecto: SAT-E — arquitectura completa” (reemplaza/acompaña el flujo HTML).\nDebe mostrar: diagrama de punta a punta: BD/CSV → Kedro → XGBoost+SHAP → FastAPI → Nginx → React / Streamlit / Power BI, con la Alerta 1 como salida.\nCómo generarla: draw.io / diagrams.net con fondo oscuro (#0F2044), cajas #1A3A6B, títulos #C9A84C, flechas #4A9FD4. Exportar PNG a 2x. Alternativa: librería diagrams (Python) con iconos de cada tecnología.\n\n\n\n\n\n\n\n\n\nSlide: “Orquestación con Docker Compose”.\nDebe mostrar: tres contenedores (api:8000, dashboard:8501, nginx:443/80) con sus volúmenes (./models:ro, ./certs:ro), healthcheck en la API y dependencias (depends_on: service_healthy). Solo Nginx expone puertos al exterior.\nCómo generarla: draw.io con la paleta del tema; cada contenedor como card #1A3A6B, borde de la red interna punteado, único puerto público resaltado en #C9A84C.\n\n\n\n\n\n\nDescargar de la fuente oficial; preferir PNG con fondo transparente. Tamaño sugerido: alto ~80px.\n\n\n\n\n\n\n\n\nArchivo\nTecnología\nFuente oficial\n\n\n\n\nimages/logo_kedro.png\nKedro\ngithub.com/kedro-org/kedro (brand assets)\n\n\nimages/logo_fastapi.png\nFastAPI\nfastapi.tiangolo.com (logo en el header)\n\n\nimages/logo_xgboost.png\nXGBoost\ngithub.com/dmlc/xgboost (doc/logo)\n\n\nimages/logo_shap.png\nSHAP\ngithub.com/shap/shap (README logo)\n\n\nimages/logo_streamlit.png\nStreamlit\nstreamlit.io / brand kit\n\n\nimages/logo_powerbi.png\nPower BI\nMicrosoft brand / icon pack oficial\n\n\nimages/logo_mlflow.png\nMLflow\nmlflow.org (brand assets)\n\n\nimages/logo_gurobi.png\nGurobi\ngurobi.com (media kit)\n\n\n\n\nNota de licencia: usar los logos solo con fines ilustrativos/educativos respetando las guías de marca de cada proyecto. Mantener proporciones originales (no deformar).\n\n\n\n\n\n\nResolución mínima 1600px de ancho para diagramas a pantalla completa; 2x para capturas.\nDiagramas propios: fondo #0F2044, sin sombras agresivas, tipografía sans/serif legible.\nCapturas de UI: recortar al área útil, sin barras del navegador ni datos sensibles reales (anonimizar RUT/nombres en cualquier captura de SAT-E)."
+  },
+  {
+    "objectID": "ai/IMAGENES_REQUERIDAS.html#prioridad-alta-mayor-impacto-visual",
+    "href": "ai/IMAGENES_REQUERIDAS.html#prioridad-alta-mayor-impacto-visual",
+    "title": "Imágenes requeridas — analitica_dtd.qmd",
+    "section": "",
+    "text": "Slide: “Kedro: el DAG del pipeline SAT-E” (reemplaza/acompaña el DAG en HTML).\nDebe mostrar: el grafo de nodos del pipeline SAT-E: alumnos_bd + matriculas_raw → limpiar_datos → feature_engineering → entrenar_modelo (+ params:xgb) → explicar_shap → reporte_alertas. Nodos = funciones, óvalos/cajas = datasets.\nCómo generarla: ejecutar kedro viz en el repo real del proyecto SAT-E y tomar captura del grafo. Alternativa: exportar con kedro viz --save-file o reconstruirlo en draw.io con la paleta del tema sobre fondo #0F2044.\n\n\n\n\n\nSlide: “Machine learning: XGBoost + SHAP” (junto al gráfico de barras HTML).\nDebe mostrar: beeswarm plot de SHAP con las variables más influyentes ordenadas por importancia (asistencia, notas 1er sem., ramos reprobados, PSU/PAES, nivel socioecon.).\nCómo generarla: en Python con el modelo real:\nimport shap, matplotlib.pyplot as plt\nexplainer = shap.TreeExplainer(modelo)\nshap_values = explainer(X_test)\nshap.plots.beeswarm(shap_values, max_display=10, show=False)\nplt.savefig(\"images/shap_beeswarm.png\", dpi=160, bbox_inches=\"tight\")\nUsar fondo claro o transparente; recortar márgenes.\n\n\n\n\n\nSlide: “FastAPI” o “FastAPI: estructura del proyecto”.\nDebe mostrar: la UI Swagger (/docs) del endpoint POST /predecir, con el schema AlumnoIn expandido y un ejemplo de respuesta {\"riesgo\": ...}.\nCómo generarla: levantar la API (uvicorn app.main:app), abrir http://localhost:8000/docs, expandir /predecir y capturar pantalla.\n\n\n\n\n\nSlide: “Backtesting temporal: walk-forward por cohorte”.\nDebe mostrar: curvas de AUC por cohorte/generación (M23, M24, M25) — train vs validación, evidenciando estabilidad temporal. Una línea por generación o barras de AUC por valida_en.\nCómo generarla: matplotlib usando el DataFrame backtest del código del slide:\nax = backtest.plot(x=\"valida_en\", y=\"auc\", marker=\"o\")\nax.set_ylabel(\"AUC-ROC\"); ax.set_ylim(0.5, 1.0)\nplt.savefig(\"images/xgb_learning_curves.png\", dpi=160, bbox_inches=\"tight\")\n\n\n\n\n\nSlide: “Registro de experimentos: MLflow”.\nDebe mostrar: la UI de MLflow (mlflow ui) con el experimento SAT-E: tabla de runs con columnas de params (n_estimators, max_depth) y métricas (auc, f1, precision_at_150).\nCómo generarla: correr algunos experimentos, mlflow ui, abrir el experimento SAT-E y capturar la tabla comparativa de runs.\n\n\n\n\n\nSlide: “Proyecto: SAT-E — arquitectura completa” (reemplaza/acompaña el flujo HTML).\nDebe mostrar: diagrama de punta a punta: BD/CSV → Kedro → XGBoost+SHAP → FastAPI → Nginx → React / Streamlit / Power BI, con la Alerta 1 como salida.\nCómo generarla: draw.io / diagrams.net con fondo oscuro (#0F2044), cajas #1A3A6B, títulos #C9A84C, flechas #4A9FD4. Exportar PNG a 2x. Alternativa: librería diagrams (Python) con iconos de cada tecnología."
+  },
+  {
+    "objectID": "ai/IMAGENES_REQUERIDAS.html#prioridad-media",
+    "href": "ai/IMAGENES_REQUERIDAS.html#prioridad-media",
+    "title": "Imágenes requeridas — analitica_dtd.qmd",
+    "section": "",
+    "text": "Slide: “Orquestación con Docker Compose”.\nDebe mostrar: tres contenedores (api:8000, dashboard:8501, nginx:443/80) con sus volúmenes (./models:ro, ./certs:ro), healthcheck en la API y dependencias (depends_on: service_healthy). Solo Nginx expone puertos al exterior.\nCómo generarla: draw.io con la paleta del tema; cada contenedor como card #1A3A6B, borde de la red interna punteado, único puerto público resaltado en #C9A84C."
+  },
+  {
+    "objectID": "ai/IMAGENES_REQUERIDAS.html#logos-oficiales-footerencabezado-de-cada-slide-de-tecnología",
+    "href": "ai/IMAGENES_REQUERIDAS.html#logos-oficiales-footerencabezado-de-cada-slide-de-tecnología",
+    "title": "Imágenes requeridas — analitica_dtd.qmd",
+    "section": "",
+    "text": "Descargar de la fuente oficial; preferir PNG con fondo transparente. Tamaño sugerido: alto ~80px.\n\n\n\n\n\n\n\n\nArchivo\nTecnología\nFuente oficial\n\n\n\n\nimages/logo_kedro.png\nKedro\ngithub.com/kedro-org/kedro (brand assets)\n\n\nimages/logo_fastapi.png\nFastAPI\nfastapi.tiangolo.com (logo en el header)\n\n\nimages/logo_xgboost.png\nXGBoost\ngithub.com/dmlc/xgboost (doc/logo)\n\n\nimages/logo_shap.png\nSHAP\ngithub.com/shap/shap (README logo)\n\n\nimages/logo_streamlit.png\nStreamlit\nstreamlit.io / brand kit\n\n\nimages/logo_powerbi.png\nPower BI\nMicrosoft brand / icon pack oficial\n\n\nimages/logo_mlflow.png\nMLflow\nmlflow.org (brand assets)\n\n\nimages/logo_gurobi.png\nGurobi\ngurobi.com (media kit)\n\n\n\n\nNota de licencia: usar los logos solo con fines ilustrativos/educativos respetando las guías de marca de cada proyecto. Mantener proporciones originales (no deformar)."
+  },
+  {
+    "objectID": "ai/IMAGENES_REQUERIDAS.html#convenciones-generales",
+    "href": "ai/IMAGENES_REQUERIDAS.html#convenciones-generales",
+    "title": "Imágenes requeridas — analitica_dtd.qmd",
+    "section": "",
+    "text": "Resolución mínima 1600px de ancho para diagramas a pantalla completa; 2x para capturas.\nDiagramas propios: fondo #0F2044, sin sombras agresivas, tipografía sans/serif legible.\nCapturas de UI: recortar al área útil, sin barras del navegador ni datos sensibles reales (anonimizar RUT/nombres en cualquier captura de SAT-E)."
+  },
+  {
+    "objectID": "ai/CHANGELOG.html",
+    "href": "ai/CHANGELOG.html",
+    "title": "CHANGELOG — analitica_dtd.qmd",
+    "section": "",
+    "text": "Mejora exhaustiva de la presentación del Stack tecnológico del área de Analítica (DTD · UTFSM). Se pasó de ~22 slides a ~38 slides, profundizando en código real del contexto SAT-E/DTD y agregando una nueva sección de calidad y reproducibilidad. Sin animaciones incrementales; estilo, paleta y patrón de 2 columnas mantenidos.\n\n\n\n\n\nValidación y limpieza con pandas — merge validate=\"1:1\" de fuentes heterogéneas, casting/fillna, y validación de esquema con pandera (DataFrameSchema, lazy=True).\n\n\n\n\n\nBacktesting temporal: walk-forward por cohorte — loop M23→M24→M25 entrenando en el pasado y validando en la generación siguiente, con AUC por cohorte.\nMétricas de evaluación: ¿qué medimos? — AUC-ROC, F1 y precision@K (función propia), con callout-important explicando por qué precision@K supera a accuracy en eventos raros.\nOptimización: el modelo MILP del scheduler — formulación matemática formal en LaTeX ($$) + código gurobipy con 3 restricciones (asignación única, sala sin choque, capacidad).\nKedro: el Data Catalog — catalog.yml con CSVDataset, SQLTableDataset, ParquetDataset y PickleDataset (versioned: true).\nKedro: el DAG del pipeline SAT-E — DAG visual en HTML (estilo del tema) con los nodos del pipeline de extremo a extremo.\n\n\n\n\n\nFastAPI: estructura del proyecto — árbol de carpetas routers/ schemas/ models/   services/ core/ + ejemplo de APIRouter.\nFastAPI: autenticación con OAuth2 / JWT — OAuth2PasswordBearer, validación de Bearer token con jose.jwt, dependencia usuario_actual que protege endpoints.\nOrquestación con Docker Compose — YAML con servicios api, dashboard, nginx; expose, volumes :ro, healthcheck y depends_on: service_healthy.\n\n\n\n\n\nStreamlit: estado con st.session_state — persistencia de filtros (campus, umbral) entre reruns.\nStreamlit ↔︎ FastAPI: consumir el modelo — requests.get con Bearer token y @st.cache_data(ttl=300).\n\n\n\n\n\nPortada de sección — divider con background_slides3.png (opacity 0.3).\nControl de versiones: Git + GitHub — branching main/develop/feature/*, PR + review + CI, tags de release; diagrama de ramas en HTML.\nTesting en pipelines de datos — pytest (lógica) + great_expectations (datos).\nDrift detection: KS test y PSI — scipy.stats.ks_2samp + función psi propia con umbrales de interpretación.\nRegistro de experimentos: MLflow — log_params, log_metrics, sklearn.log_model con Model Registry.\n\n\n\n\n\n\nPortada de sección “Proyectos destacados” — renumerada de Sección 5 a Sección 7 por la inserción de la nueva Sección 6.\n\n\n\n\n\nTitle, ¿Qué hace el área?, dividers de Secciones 1–4, Fuentes de datos, ML XGBoost+SHAP, Ejemplo SAT-E, Modelos estadísticos y optimización, Pipelines Kedro+pandas, FastAPI, Nginx, Streamlit, React+MUI, Power BI, ¿Cuándo usar qué?, SAT-E arquitectura, USM Scheduler, Recursos y referencias, ¿Preguntas?\n\n\n\n\n\nincremental: false y el resto del front-matter YAML intactos.\nTodas las slides nuevas siguen el patrón de 2 columnas (texto izquierda / código o HTML derecha) y la paleta del tema en los bloques HTML.\nVerificado con quarto render analitica_dtd.qmd --to revealjs → Output created sin errores.\nVer IMAGENES_REQUERIDAS.md para las imágenes recomendadas (kedro_dag, shap_beeswarm, fastapi_swagger, etc.)."
+  },
+  {
+    "objectID": "ai/CHANGELOG.html#slides-nuevas",
+    "href": "ai/CHANGELOG.html#slides-nuevas",
+    "title": "CHANGELOG — analitica_dtd.qmd",
+    "section": "",
+    "text": "Validación y limpieza con pandas — merge validate=\"1:1\" de fuentes heterogéneas, casting/fillna, y validación de esquema con pandera (DataFrameSchema, lazy=True).\n\n\n\n\n\nBacktesting temporal: walk-forward por cohorte — loop M23→M24→M25 entrenando en el pasado y validando en la generación siguiente, con AUC por cohorte.\nMétricas de evaluación: ¿qué medimos? — AUC-ROC, F1 y precision@K (función propia), con callout-important explicando por qué precision@K supera a accuracy en eventos raros.\nOptimización: el modelo MILP del scheduler — formulación matemática formal en LaTeX ($$) + código gurobipy con 3 restricciones (asignación única, sala sin choque, capacidad).\nKedro: el Data Catalog — catalog.yml con CSVDataset, SQLTableDataset, ParquetDataset y PickleDataset (versioned: true).\nKedro: el DAG del pipeline SAT-E — DAG visual en HTML (estilo del tema) con los nodos del pipeline de extremo a extremo.\n\n\n\n\n\nFastAPI: estructura del proyecto — árbol de carpetas routers/ schemas/ models/   services/ core/ + ejemplo de APIRouter.\nFastAPI: autenticación con OAuth2 / JWT — OAuth2PasswordBearer, validación de Bearer token con jose.jwt, dependencia usuario_actual que protege endpoints.\nOrquestación con Docker Compose — YAML con servicios api, dashboard, nginx; expose, volumes :ro, healthcheck y depends_on: service_healthy.\n\n\n\n\n\nStreamlit: estado con st.session_state — persistencia de filtros (campus, umbral) entre reruns.\nStreamlit ↔︎ FastAPI: consumir el modelo — requests.get con Bearer token y @st.cache_data(ttl=300).\n\n\n\n\n\nPortada de sección — divider con background_slides3.png (opacity 0.3).\nControl de versiones: Git + GitHub — branching main/develop/feature/*, PR + review + CI, tags de release; diagrama de ramas en HTML.\nTesting en pipelines de datos — pytest (lógica) + great_expectations (datos).\nDrift detection: KS test y PSI — scipy.stats.ks_2samp + función psi propia con umbrales de interpretación.\nRegistro de experimentos: MLflow — log_params, log_metrics, sklearn.log_model con Model Registry."
+  },
+  {
+    "objectID": "ai/CHANGELOG.html#slides-modificadas",
+    "href": "ai/CHANGELOG.html#slides-modificadas",
+    "title": "CHANGELOG — analitica_dtd.qmd",
+    "section": "",
+    "text": "Portada de sección “Proyectos destacados” — renumerada de Sección 5 a Sección 7 por la inserción de la nueva Sección 6."
+  },
+  {
+    "objectID": "ai/CHANGELOG.html#sin-cambios",
+    "href": "ai/CHANGELOG.html#sin-cambios",
+    "title": "CHANGELOG — analitica_dtd.qmd",
+    "section": "",
+    "text": "Title, ¿Qué hace el área?, dividers de Secciones 1–4, Fuentes de datos, ML XGBoost+SHAP, Ejemplo SAT-E, Modelos estadísticos y optimización, Pipelines Kedro+pandas, FastAPI, Nginx, Streamlit, React+MUI, Power BI, ¿Cuándo usar qué?, SAT-E arquitectura, USM Scheduler, Recursos y referencias, ¿Preguntas?"
+  },
+  {
+    "objectID": "ai/CHANGELOG.html#notas-técnicas",
+    "href": "ai/CHANGELOG.html#notas-técnicas",
+    "title": "CHANGELOG — analitica_dtd.qmd",
+    "section": "",
+    "text": "incremental: false y el resto del front-matter YAML intactos.\nTodas las slides nuevas siguen el patrón de 2 columnas (texto izquierda / código o HTML derecha) y la paleta del tema en los bloques HTML.\nVerificado con quarto render analitica_dtd.qmd --to revealjs → Output created sin errores.\nVer IMAGENES_REQUERIDAS.md para las imágenes recomendadas (kedro_dag, shap_beeswarm, fastapi_swagger, etc.)."
+  },
+  {
+    "objectID": "usm_dtd/semana_03.html#ia-maty-fco-3",
+    "href": "usm_dtd/semana_03.html#ia-maty-fco-3",
+    "title": "Toma de Decisiones Basadas en Datos e IA",
+    "section": "IA + maty + fco = <3 …",
+    "text": "IA + maty + fco = &lt;3 …"
+  },
+  {
+    "objectID": "usm_dtd/semana_03.html#la-realidad",
+    "href": "usm_dtd/semana_03.html#la-realidad",
+    "title": "Toma de Decisiones Basadas en Datos e IA",
+    "section": "La realidad …",
+    "text": "La realidad …"
+  },
+  {
+    "objectID": "usm_dtd/semana_03.html#la-triste-realidad",
+    "href": "usm_dtd/semana_03.html#la-triste-realidad",
+    "title": "Toma de Decisiones Basadas en Datos e IA",
+    "section": "La triste realidad …",
+    "text": "La triste realidad …"
+  },
+  {
+    "objectID": "usm_dtd/semana_03.html#de-texto-a-tokens-la-unidad-económica-de-la-ia",
+    "href": "usm_dtd/semana_03.html#de-texto-a-tokens-la-unidad-económica-de-la-ia",
+    "title": "Toma de Decisiones Basadas en Datos e IA",
+    "section": "De texto a tokens — la unidad económica de la IA",
+    "text": "De texto a tokens — la unidad económica de la IA\n\n\n\n\nLos modelos no procesan palabras, procesan tokens (fragmentos de texto).\nUn token ≈ 0.75 palabras en inglés. En español: menos eficiente (~0.6).\nLa tokenización afecta directamente el costo, la velocidad y la precisión.\nPalabras técnicas, nombres propios o en otro idioma usan varios tokens.\nCada token que envías y recibes se cobra. Sin excepciones.\n\n\n\n\n  📏 ¿Cuántos tokens usa tu contenido?\n  \n    📄 1 página A4 ≈ 500 tokens\n    📚 1 libro estándar ≈ 100K tokens\n    💻 100 líneas de código ≈ 800 tokens\n    🖼️ 1 imagen (vision) ≈ 765–2K tokens\n    📊 CSV 1000 filas × 10 cols ≈ 15–50K tokens\n  \n  ⚠️ Enviar un dataset completo a la API puede costar $0.05–$2 por llamada."
+  },
+  {
+    "objectID": "usm_dtd/semana_03.html#tokenizador-interactivo",
+    "href": "usm_dtd/semana_03.html#tokenizador-interactivo",
+    "title": "Toma de Decisiones Basadas en Datos e IA",
+    "section": "Tokenizador interactivo",
+    "text": "Tokenizador interactivo"
+  },
+  {
+    "objectID": "usm_dtd/semana_03.html#diagrama-de-un-llm-animado",
+    "href": "usm_dtd/semana_03.html#diagrama-de-un-llm-animado",
+    "title": "Toma de Decisiones Basadas en Datos e IA",
+    "section": "Diagrama de un LLM — animado",
+    "text": "Diagrama de un LLM — animado"
+  },
+  {
+    "objectID": "usm_dtd/semana_03.html#ia-en-los-medios",
+    "href": "usm_dtd/semana_03.html#ia-en-los-medios",
+    "title": "Toma de Decisiones Basadas en Datos e IA",
+    "section": "IA en los medios …",
+    "text": "IA en los medios …"
+  },
+  {
+    "objectID": "usm_dtd/semana_03.html#sobre-los-costos",
+    "href": "usm_dtd/semana_03.html#sobre-los-costos",
+    "title": "Toma de Decisiones Basadas en Datos e IA",
+    "section": "Sobre los costos …",
+    "text": "Sobre los costos …"
+  },
+  {
+    "objectID": "usm_dtd/semana_03.html#los-4-límites-estructurales-de-los-llms-1",
+    "href": "usm_dtd/semana_03.html#los-4-límites-estructurales-de-los-llms-1",
+    "title": "Toma de Decisiones Basadas en Datos e IA",
+    "section": "Los 4 límites estructurales de los LLMs",
+    "text": "Los 4 límites estructurales de los LLMs\n\n\n  \n    🎭 Alucinaciones\n    El modelo genera respuestas fluidas, confiadas y falsas. No tiene mecanismo para saber que no sabe. No se arreglará: es inherente al diseño.\n  \n\n  \n    📅 Corte temporal\n    El modelo tiene una fecha de entrenamiento fija. No conoce eventos recientes. Para decisiones que dependen de información actual, necesita búsqueda externa (RAG).\n  \n\n  \n    📐 Sesgo en el entrenamiento\n    Aprende los sesgos presentes en los datos: de género, culturales, históricos. La respuesta \"promedio\" de internet no siempre es neutral ni correcta.\n  \n\n  \n    🔒 Sin contexto organizacional\n    El modelo no sabe nada de tu institución, tu cultura interna, tus restricciones ni tu audiencia específica. Ese contexto debe ser provisto siempre por el usuario."
   }
 ]
