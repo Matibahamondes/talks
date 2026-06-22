@@ -1,0 +1,490 @@
+---
+pagetitle: "Datastorytelling + A.I."
+author: 
+  - Francisco Alfaro
+date: 07 nov 2025
+format: 
+  revealjs:
+    theme: [default, style2.scss]
+    transition: fade
+    title-slide-attributes: 
+      data-background-image: images/background.jpg
+filters:
+  - quarto-ext/shinylive
+---
+
+##  {#hello-quarto-title data-menu-title="Hola Quarto" background-image="images/horst_penguins_telescope.png" data-state="no-logo"}
+
+[Del Dato al Impacto]{.custom-title}
+
+[presentaciones finales del curso]{.custom-subtitle}
+
+[Francisco Alfaro Medina <br> U. Federico Santa María]{.custom-author}
+
+[<https://fralfaro.github.io/talks/>]{.custom-url}
+
+## Agenda
+
+::::: columns
+::: {.column .incremental width="30%"}
+-   
+
+-   No
+
+-   Nope
+
+-   No chance
+:::
+
+::: {.column .fragment width="70%"}
+<img src="images/neg.png" alt="Tachado" style="width: 50%; height: auto;"/>
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## 
+
+:::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+::: callout-note
+## Storytelling principle #1
+
+Nunca revelar el final antes de tiempo.\
+[Siempre eleva la tensión y el drama]{.fragment}
+:::
+::::
+
+<br>
+
+------------------------------------------------------------------------
+
+## Agenda (v2)
+
+::: incremental
+1.  Nunca reveles [el final]{style="background-color:black;"}\
+2.  Los detalles son importantes, pero [no **todos** los detalles.]{style="background-color:black;"}\
+3.  Explicar menos, [Mostrar más]{style="background-color:black;"}
+4.  Tu primera versión será [horrible.]{style="background-color:black;"}\
+:::
+
+# Storytelling {.title-middle-dark background-image="images/horst_quarto_penguins_share.png" data-state="no-logo"}
+
+------------------------------------------------------------------------
+
+## Qué es Storytelling?
+
+::::: columns
+::: {.column width="50%"}
+![](images/cave.jpg){fig-align="center" width="90%"}
+:::
+
+::: {.column .fragment width="50%"}
+![](images/fire.jpg){fig-align="center" width="100%"}
+:::
+:::::
+
+. . .
+
+::: {style="text-align: center; "}
+🔥 Las **historias** son la primera tecnología humana.
+:::
+
+::: notes
+Stories are how humans share knowledge.\
+It’s our oldest learning tool — built for memory, connection, and meaning.\
+Use it well.
+:::
+
+------------------------------------------------------------------------
+
+## Qué es Data Storytelling?
+
+<br>
+
+::: r-stack
+![](images/storytelling/dst2.png){.fragment fig-align="center" width="70%"}
+:::
+
+. . .
+
+<br>
+
+::: {style="text-align: center; "}
+📊 **Data Storytelling** es una forma de comunicar con datos.
+:::
+
+------------------------------------------------------------------------
+
+## Ohh, nuestros cerebros son hackables...
+
+::: r-stack
+![](images/storytelling/sketplanation2.png){.fragment .fade-in-then-out fig-align="center" width="90%"}
+
+![](images/storytelling/got.jpg){.fragment fig-align="center" width="100%"}
+:::
+
+------------------------------------------------------------------------
+
+## Narrativa
+
+::::: columns
+::: {.column width="60%"}
+<br><br>
+
+Usa **trucos** de Storytelling (narrativa) para crear presentaciones que serán **recordadas** y que causarán **impacto**
+:::
+
+::: {.column .fragment width="40%"}
+![](images/emotions.png){fig-align="center"}
+:::
+:::::
+
+. . .
+
+::: {style="text-align: center;"}
+🎭 Emociones inspiran acción
+:::
+
+::: notes
+Great ideas need great communication.\
+Storytelling is your toolkit to move people.\
+Facts inform — emotions inspire action.
+:::
+
+------------------------------------------------------------------------
+
+## Más que gráficos bonitos
+
+::::: columns
+::: {.column width="50%"}
+![](images/dst_before.png){fig-align="center"} *🔢 No compartas números*
+:::
+
+::: {.column .fragment width="50%"}
+![](images/dst_after.png){fig-align="center"} *🪶Comparte una historia*
+:::
+:::::
+
+. . .
+
+<br><br> [(C) Storytelling with Data, por Cole Nussbaumer Knaflic.]{style="font-size: 0.75em; color: gray"}
+
+------------------------------------------------------------------------
+
+## 
+
+:::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+::: callout-note
+## Storytelling principle #2
+
+Los detalles son importantes, [pero no **todos** los detalles son importantes.]{.fragment}
+:::
+::::
+
+::: notes
+Details guide attention.\
+Show less — but better.\
+Focus only on what moves the story forward.
+:::
+
+------------------------------------------------------------------------
+
+## Ejemplo: Spotify Wrapped
+
+:::::: columns
+::: {.column .fragment width="30%" fragment-index="1"}
+![](images/storytelling/spotify1.png){fig-align="center"}
+:::
+
+::: {.column .center width="40%"}
+<br><br> Cómo hacer millones de personas compartir estadísticas en redes sociales?
+:::
+
+::: {.column .fragment width="30%" fragment-index="1"}
+![](images/storytelling/spotify2.png){fig-align="center"}
+:::
+::::::
+
+# Visualización {.title-top-ice background-image="images/horst_penguins_telescope.png" data-state="no-logo"}
+
+------------------------------------------------------------------------
+
+## Visualización ...
+
+::::: columns
+::: {.column .fragment width="60%"}
+<br><br>
+
+-   Gráficos claros y comprensibles
+-   Elección correcta del gráfico
+-   Patrones y anomalías visibles
+-   Datos complejos → ideas simples
+:::
+
+::: {.column width="40%"}
+![](images/viz/ojo.png){fig-align="center"}
+:::
+:::::
+
+. . .
+
+> ⌛ Si no se entiende en 5-7 segundos, simplifica o cambia el título.
+
+------------------------------------------------------------------------
+
+## 
+
+<br>
+
+![](images/viz/tasks3.png){fig-align="center" width="80%"}
+
+. . .
+
+<br>
+
+::: {style="text-align:center; font-size:25px; font-family:sans-serif;"}
+[Más fácil de distinguir]{style="color:green; font-weight:bold;"} [⟵────────────────────────────⟶]{style="margin: 0 15px; font-size:18px; background: linear-gradient(to right, green, orange, red); -webkit-background-clip: text; color: transparent;"} [Más difícil de distinguir]{style="color:red; font-weight:bold;"}
+:::
+
+------------------------------------------------------------------------
+
+## Ejemplos {background-image="images/background.jpg" background-opacity="0.25" transition="zoom"}
+
+<br>
+
+::::: columns
+::: {.column width="50%" style="text-align: center;"}
+![](images/viz/monster.jpg){fig-align="center" width="82%"}
+
+<br> *❌ Chartjunk*
+:::
+
+::: {.column .fragment width="50%" style="text-align: center;"}
+![](images/viz/viz_03.png){fig-align="center" width="100%"}
+
+*✅ Good Chart*
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## 
+
+:::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+::: callout-note
+## Storytelling principle #3
+
+[Explicar Menos]{style="color: red"}, [Mostrar Más]{.fragment style="color: green"}
+:::
+::::
+
+------------------------------------------------------------------------
+
+## Mejores Gráficos para tus Datos
+
+::: r-stack
+<br>
+
+![](images/storytelling/plot1.png){.fragment .fade-in-then-out fig-align="left"}
+
+![](images/storytelling/plot2.png){.fragment fig-align="right"}
+:::
+
+. . .
+
+[(C) Essential chart types for data visualization, by Atlassian.]{style="font-size: 0.75em; color: gray"}
+
+::: notes
+You don’t need fancy charts.\
+Bar, scatter, box, heatmap, big text — that's 90% of data storytelling.\
+Simple wins.
+:::
+
+# Inteligencia Artificial {.title-middle-ice background-image="images/horst_quarto_penguins_teach.png" data-state="no-logo"}
+
+------------------------------------------------------------------------
+
+## 
+
+<br><br>
+
+:::::: columns
+::: {.column width="35%"}
+![](images/gh_before.png){.fragment fig-align="center"}
+:::
+
+::: {.column width="30%"}
+![](images/proceso.svg){.fragment fig-align="center" width="100%"}
+:::
+
+::: {.column width="35%"}
+![](images/gh_after.png){.fragment fig-align="center"}
+:::
+::::::
+
+. . .
+
+::: {style="text-align: center;"}
+🥱 1° version $<$ ... $<$ 😊 última version
+:::
+
+::: notes
+First versions are never perfect.\
+Draft → feedback → improve.\
+Storytelling is an iterative process.
+:::
+
+------------------------------------------------------------------------
+
+## 
+
+:::: {style="display: flex; justify-content: center; align-items: center; height: 60vh; flex-direction: column; text-align: center;"}
+::: callout-note
+## Storytelling principle #4
+
+Tu primera versión será [**siempre** horrible.]{.fragment}
+:::
+::::
+
+::: notes
+Bad first drafts are normal.\
+Don’t aim for perfect — aim to start.\
+Refining comes later.
+:::
+
+------------------------------------------------------------------------
+
+## AI tools
+
+::: r-stack
+![](https://media.beehiiv.com/uploads/asset/file/882af82d-1a22-4feb-9444-24f143c08f32/gamma.gif?t=1728863209){.fragment .fade-in-then-out fig-align="center" width="100%"}
+
+![](https://storage.googleapis.com/gweb-cloudblog-publish/original_images/1_DSA_Simplifies_Workflows.gif){.fragment .fade-in-then-out fig-align="center" width="80%"}
+
+![](https://miro.medium.com/v2/0*S4mDgR2LnUbrQ-rV.gif){.fragment fig-align="center" width="70%"}
+:::
+
+------------------------------------------------------------------------
+
+# Los 4 Principios {.title-top-ice background-image="images/horst_quarto_penguins_reimagine.png" data-state="no-logo"}
+
+## Agenda (v2)
+
+::: incremental
+1.  Nunca reveles el [**final**]{.fragment style="color:grey;"}\
+2.  Los detalles son importantes, pero [no **todos** los detalles]{.fragment style="color:grey;"}\
+3.  Explica menos, [**muestra más**]{.fragment style="color:grey;"}\
+4.  Tu primer borrador será [**horrible**]{.fragment style="color:grey;"}\
+:::
+
+::: notes
+A mysterious agenda — like a good story.
+
+Now you’ve seen how each point connects.
+
+Simple rules to tell better stories with data.
+:::
+
+# Sobre el proyecto {.title-top-ice background-image="images/horst_penguins_telescope.png" data-state="no-logo"}
+
+## Proyecto de Ciencia de Datos
+
+::::: columns
+::: {.column .fragment width="60%"}
+<br>
+
+-   Problema real o pregunta de interés
+-   Dataset abierto, propio o de referencia
+-   Utilizar lo aprendido en el curso
+-   **Objetivo**: generar evidencia, modelos e insights accionables
+:::
+
+::: {.column width="40%"}
+![](images/proceso.png){fig-align="center"}
+:::
+:::::
+
+. . .
+
+> Para ejemplos de datasets y proyectos tipo, visitar Kaggle. <br> 🔗 Un caso posible: [Telco Customer Churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
+
+------------------------------------------------------------------------
+
+## Entregables
+
+<br>
+
+::::: columns
+::: {.column width="50%"}
+![](https://magenta.withgoogle.com/assets/colab/gansynth_colab.png){fig-align="center" width="600px" height="400px"}\
+[Google Colab](https://colab.research.google.com/)
+:::
+
+::: {.column .fragment width="50%"}
+![](https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/1/1b/Beamer-titlepageUpdated.png){fig-align="center" width="600px" height="400px"}\
+[Presentación Beamer](https://www.overleaf.com/)
+:::
+:::::
+
+##  {background-image="images/background.jpg" background-opacity="0.25" transition="zoom"}
+
+<br>
+
+:::::: r-stack
+::: {.fragment .fade-in-then-out}
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/BEuTmw4Irb1Viv?hostedIn=slideshare&amp;page=upload" width="1200" height="600" frameborder="0" scrolling="si" style="max-width:100%; border:1px solid #CCC; border-radius:10px;" allowfullscreen>
+
+</iframe>
+:::
+
+::: fade-in-then-out
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/nRhiu326vcBPnW?hostedIn=slideshare&amp;page=upload" width="1200" height="600" frameborder="0" scrolling="si" style="max-width:100%; border:1px solid #CCC; border-radius:10px;" allowfullscreen>
+
+</iframe>
+:::
+
+::: fragment
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/eUNDWTAdYMfD7M?hostedIn=slideshare&amp;page=upload" width="1200" height="600" frameborder="0" scrolling="si" style="max-width:100%; border:1px solid #CCC; border-radius:10px;" allowfullscreen>
+
+</iframe>
+:::
+::::::
+
+# Mucho éxito! {.title-top-dark background-image="images/horst_quarto_penguins_thankyou.png" data-state="no-logo"}
+
+```{=html}
+<style>
+/* Ajusta el tamaño del título y subtítulo */
+.reveal .slides h1 {
+  font-size: 2em; /* Tamaño más pequeño para el título */
+}
+
+.reveal .slides h2 {
+  font-size: 1.5em; /* Tamaño más pequeño para el subtítulo */
+}
+
+/* Ajusta el tamaño del texto en los párrafos */
+.reveal .slides p {
+  font-size: 0.8em; /* Texto más pequeño */
+}
+
+/* Ajusta el tamaño de las tablas */
+.reveal .slides table {
+  font-size: 0.8em; /* Tamaño de fuente más pequeño en las tablas */
+  width: 90%; /* Ajusta el ancho de la tabla */
+  margin: 0 auto; /* Centra la tabla */
+}
+
+/* Ajusta el tamaño de los bullets */
+.reveal .slides ul {
+  font-size: 0.8em; /* Tamaño de fuente más pequeño en los bullets */
+
+}
+
+.reveal .slide-logo {
+   max-height: 2.5em !important;
+
+}
+
+</style>
+```

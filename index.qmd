@@ -51,6 +51,15 @@ Curso en focado en temas de aprendizaje por refuerzo.\
 [Charla Capítulo 13](ipd446/talk1.html) · [Avance del Tema](ipd446/talk2.html) ·[Presentación Final](ipd446/talk3.html)
 :::
 
+## Charlas Cursos
+
+::: card
+### Del Dato al Impacto
+
+Presentaciones finales del curso sobre data storytelling e inteligencia artificial.\
+**Presentaciones:** [Datastorytelling + A.I.](ai/presentacion_mat281.html)
+:::
+
 ## Charlas
 
 ::: card
@@ -95,4 +104,4 @@ Prompts, RAG, agentes, vibe coding y seguridad — para audiencias no técnicas.
 
 AMPL + Python · Flujo de trabajo moderno.\
 **Presentaciones:** [Gestión de Operaciones](usm_dtd/geo.html)
-::::
+:::
