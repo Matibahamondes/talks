@@ -165,7 +165,7 @@ El estudiante aplica modelos y metodologías para decisiones sobre **logística 
 ## Eje formativo
 
 Ingeniería Aplicada · Prerrequisito: ICN-343\
-4 créditos UTFSM — 143 horas cronológicas
+5 créditos UTFSM — 143 horas cronológicas
 :::
 ::::
 
@@ -174,13 +174,17 @@ Ingeniería Aplicada · Prerrequisito: ICN-343\
 
 | Instrumento            | N°  | \%  |
 |------------------------|-----|-----|
-| Certamen 1             | 1   | 35% |
-| Certamen 2             | 1   | 35% |
+| Certamen 1             | 1   | 23,33% |
+| Certamen 2             | 1   | 23,33% |
+| Certamen 3             | 1   | 23,33% |
 | Tareas Computacionales | 2   | 30% |
 
 <br>
 
-$$\text{NF} = 0{,}35 \cdot C_1 + 0{,}35 \cdot C_2 + 0{,}30 \cdot TC$$
+- El promedio de los 3 certámenes debe ser **mayor o igual a 45**.
+- El promedio de las 2 tareas es la **nota de tareas**.
+
+$$\text{NF} = 0{,}7 \cdot \overline{C_1,C_2,C_3} + 0{,}3 \cdot \overline{T_1,T_2}$$
 
 ::: callout-tip
 Las **Tareas Computacionales** son el corazón del ramo — requieren código, análisis e interpretación.
