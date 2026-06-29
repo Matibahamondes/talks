@@ -125,7 +125,7 @@ El estudiante aplica **modelos matemáticos** para tomar decisiones tácticas y 
 ## Eje formativo
 
 Ingeniería Aplicada · Prerrequisito: ILN-250\
-4 créditos UTFSM — 183 horas cronológicas
+6 créditos UTFSM — 183 horas cronológicas
 :::
 ::::
 
@@ -134,14 +134,17 @@ Ingeniería Aplicada · Prerrequisito: ILN-250\
 
 | Instrumento | N°  | \%  |
 |-------------|-----|-----|
-| Certamen 1  | 1   | 35% |
-| Certamen 2  | 1   | 35% |
-| Controles   | 3–4 | 15% |
-| Tareas      | 3   | 15% |
+| Certamen 1  | 1   | 23,33% |
+| Certamen 2  | 1   | 23,33% |
+| Certamen 3  | 1   | 23,33% |
+| Tareas      | 3   | 30% |
 
 <br>
 
-$$\text{NF} = 0{,}35 \cdot C_1 + 0{,}35 \cdot C_2 + 0{,}30 \cdot \overline{Q+T}$$
+- El promedio de los 3 certámenes debe ser **mayor o igual a 45**.
+- El promedio de las 3 tareas es la **nota de tareas**.
+
+$$\text{NF} = 0{,}7 \cdot \frac{C_1 + C_2 + C_3}{3} + 0{,}3 \cdot \frac{T_1 + T_2 + T_3}{3}$$
 :::
 ::::::
 
